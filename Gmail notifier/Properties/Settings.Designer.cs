@@ -22,5 +22,65 @@ namespace notifier.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool StartWithWindows {
+            get {
+                return ((bool)(this["StartWithWindows"]));
+            }
+            set {
+                this["StartWithWindows"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AskonExit {
+            get {
+                return ((bool)(this["AskonExit"]));
+            }
+            set {
+                this["AskonExit"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public decimal NumericDelay {
+            get {
+                return ((decimal)(this["NumericDelay"]));
+            }
+            set {
+                this["NumericDelay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("minute(s)")]
+        public string StepDelay {
+            get {
+                return ((string)(this["StepDelay"]));
+            }
+            set {
+                this["StepDelay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AudioNotification {
+            get {
+                return ((bool)(this["AudioNotification"]));
+            }
+            set {
+                this["AudioNotification"] = value;
+            }
+        }
     }
 }
