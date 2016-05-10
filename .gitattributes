@@ -1,0 +1,8 @@
+# Auto detect text files by default
+* text=auto
+
+# End of line as the WINDOWS convention (CRLF: Carriage Return Line Feed)
+* eol=crlf
+
+# Custom for Visual Studio
+*.cs     diff=csharp
