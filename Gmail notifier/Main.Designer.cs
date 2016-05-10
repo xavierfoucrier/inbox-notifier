@@ -33,15 +33,11 @@
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPagePreferences = new System.Windows.Forms.TabPage();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
-			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.fieldNumericDelay = new System.Windows.Forms.NumericUpDown();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.fieldStartWithWindows = new System.Windows.Forms.CheckBox();
 			this.fieldMinimizeToSystray = new System.Windows.Forms.CheckBox();
-			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
 			this.tabPageAbout = new System.Windows.Forms.TabPage();
+			this.linkWebsiteYusuke = new System.Windows.Forms.LinkLabel();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
@@ -52,14 +48,18 @@
 			this.labelSettingsSaved = new System.Windows.Forms.Label();
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.linkWebsiteYusuke = new System.Windows.Forms.LinkLabel();
+			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
+			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
+			this.fieldNumericDelay = new System.Windows.Forms.NumericUpDown();
+			this.fieldStartWithWindows = new System.Windows.Forms.CheckBox();
+			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
 			this.panel1.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabPagePreferences.SuspendLayout();
 			this.groupBox2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.tabPageAbout.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// separator
@@ -148,30 +148,6 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Emails";
 			// 
-			// fieldStepDelay
-			// 
-			this.fieldStepDelay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldStepDelay.FormattingEnabled = true;
-			this.fieldStepDelay.Items.AddRange(new object[] {
-            "minute(s)",
-            "heure(s)"});
-			this.fieldStepDelay.Location = new System.Drawing.Point(171, 24);
-			this.fieldStepDelay.Name = "fieldStepDelay";
-			this.fieldStepDelay.Size = new System.Drawing.Size(73, 21);
-			this.fieldStepDelay.TabIndex = 2;
-			// 
-			// fieldAudioNotification
-			// 
-			this.fieldAudioNotification.AutoSize = true;
-			this.fieldAudioNotification.Checked = true;
-			this.fieldAudioNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldAudioNotification.Location = new System.Drawing.Point(17, 71);
-			this.fieldAudioNotification.Name = "fieldAudioNotification";
-			this.fieldAudioNotification.Size = new System.Drawing.Size(233, 17);
-			this.fieldAudioNotification.TabIndex = 0;
-			this.fieldAudioNotification.Text = "Notification sonore à la réception des emails";
-			this.fieldAudioNotification.UseVisualStyleBackColor = true;
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -180,24 +156,6 @@
 			this.label1.Size = new System.Drawing.Size(106, 13);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Délai de vérification :";
-			// 
-			// fieldNumericDelay
-			// 
-			this.fieldNumericDelay.Location = new System.Drawing.Point(124, 24);
-			this.fieldNumericDelay.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-			this.fieldNumericDelay.Name = "fieldNumericDelay";
-			this.fieldNumericDelay.Size = new System.Drawing.Size(41, 20);
-			this.fieldNumericDelay.TabIndex = 0;
-			this.fieldNumericDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.fieldNumericDelay.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
 			// 
 			// groupBox1
 			// 
@@ -211,18 +169,6 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Comportement";
 			// 
-			// fieldStartWithWindows
-			// 
-			this.fieldStartWithWindows.AutoSize = true;
-			this.fieldStartWithWindows.Checked = true;
-			this.fieldStartWithWindows.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldStartWithWindows.Location = new System.Drawing.Point(15, 25);
-			this.fieldStartWithWindows.Name = "fieldStartWithWindows";
-			this.fieldStartWithWindows.Size = new System.Drawing.Size(189, 17);
-			this.fieldStartWithWindows.TabIndex = 0;
-			this.fieldStartWithWindows.Text = "Lancer au démarrage de Windows";
-			this.fieldStartWithWindows.UseVisualStyleBackColor = true;
-			// 
 			// fieldMinimizeToSystray
 			// 
 			this.fieldMinimizeToSystray.AutoSize = true;
@@ -235,18 +181,6 @@
 			this.fieldMinimizeToSystray.TabIndex = 0;
 			this.fieldMinimizeToSystray.Text = "Réduire dans la zone de notification";
 			this.fieldMinimizeToSystray.UseVisualStyleBackColor = true;
-			// 
-			// fieldAskonExit
-			// 
-			this.fieldAskonExit.AutoSize = true;
-			this.fieldAskonExit.Checked = true;
-			this.fieldAskonExit.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldAskonExit.Location = new System.Drawing.Point(15, 71);
-			this.fieldAskonExit.Name = "fieldAskonExit";
-			this.fieldAskonExit.Size = new System.Drawing.Size(226, 17);
-			this.fieldAskonExit.TabIndex = 2;
-			this.fieldAskonExit.Text = "Me demander avant de quitter l\'application";
-			this.fieldAskonExit.UseVisualStyleBackColor = true;
 			// 
 			// tabPageAbout
 			// 
@@ -264,6 +198,19 @@
 			this.tabPageAbout.TabIndex = 2;
 			this.tabPageAbout.Text = "À propos";
 			this.tabPageAbout.UseVisualStyleBackColor = true;
+			// 
+			// linkWebsiteYusuke
+			// 
+			this.linkWebsiteYusuke.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteYusuke.AutoSize = true;
+			this.linkWebsiteYusuke.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteYusuke.Location = new System.Drawing.Point(264, 39);
+			this.linkWebsiteYusuke.Name = "linkWebsiteYusuke";
+			this.linkWebsiteYusuke.Size = new System.Drawing.Size(132, 13);
+			this.linkWebsiteYusuke.TabIndex = 25;
+			this.linkWebsiteYusuke.TabStop = true;
+			this.linkWebsiteYusuke.Text = "p.yusukekamiyamane.com";
+			this.linkWebsiteYusuke.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			// 
 			// label10
 			// 
@@ -343,18 +290,80 @@
 			this.labelSettingsSaved.Text = "Préférences d\'application sauvegardées.";
 			this.labelSettingsSaved.Visible = false;
 			// 
-			// linkWebsiteYusuke
+			// fieldStepDelay
 			// 
-			this.linkWebsiteYusuke.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
-			this.linkWebsiteYusuke.AutoSize = true;
-			this.linkWebsiteYusuke.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
-			this.linkWebsiteYusuke.Location = new System.Drawing.Point(264, 39);
-			this.linkWebsiteYusuke.Name = "linkWebsiteYusuke";
-			this.linkWebsiteYusuke.Size = new System.Drawing.Size(132, 13);
-			this.linkWebsiteYusuke.TabIndex = 25;
-			this.linkWebsiteYusuke.TabStop = true;
-			this.linkWebsiteYusuke.Text = "p.yusukekamiyamane.com";
-			this.linkWebsiteYusuke.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.fieldStepDelay.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::notifier.Properties.Settings.Default, "StepDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldStepDelay.DisplayMember = "minute(s)";
+			this.fieldStepDelay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldStepDelay.Enabled = false;
+			this.fieldStepDelay.FormattingEnabled = true;
+			this.fieldStepDelay.Items.AddRange(new object[] {
+            "minute(s)",
+            "heure(s)"});
+			this.fieldStepDelay.Location = new System.Drawing.Point(171, 24);
+			this.fieldStepDelay.Name = "fieldStepDelay";
+			this.fieldStepDelay.Size = new System.Drawing.Size(73, 21);
+			this.fieldStepDelay.TabIndex = 2;
+			this.fieldStepDelay.Text = global::notifier.Properties.Settings.Default.StepDelay;
+			this.fieldStepDelay.ValueMember = "minute(s)";
+			// 
+			// fieldAudioNotification
+			// 
+			this.fieldAudioNotification.AutoSize = true;
+			this.fieldAudioNotification.Checked = global::notifier.Properties.Settings.Default.AudioNotification;
+			this.fieldAudioNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAudioNotification.Enabled = false;
+			this.fieldAudioNotification.Location = new System.Drawing.Point(17, 71);
+			this.fieldAudioNotification.Name = "fieldAudioNotification";
+			this.fieldAudioNotification.Size = new System.Drawing.Size(233, 17);
+			this.fieldAudioNotification.TabIndex = 0;
+			this.fieldAudioNotification.Text = "Notification sonore à la réception des emails";
+			this.fieldAudioNotification.UseVisualStyleBackColor = true;
+			// 
+			// fieldNumericDelay
+			// 
+			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldNumericDelay.Enabled = false;
+			this.fieldNumericDelay.Location = new System.Drawing.Point(124, 24);
+			this.fieldNumericDelay.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.fieldNumericDelay.Name = "fieldNumericDelay";
+			this.fieldNumericDelay.Size = new System.Drawing.Size(41, 20);
+			this.fieldNumericDelay.TabIndex = 0;
+			this.fieldNumericDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.fieldNumericDelay.Value = global::notifier.Properties.Settings.Default.NumericDelay;
+			// 
+			// fieldStartWithWindows
+			// 
+			this.fieldStartWithWindows.AutoSize = true;
+			this.fieldStartWithWindows.Checked = global::notifier.Properties.Settings.Default.StartWithWindows;
+			this.fieldStartWithWindows.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldStartWithWindows.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "StartWithWindows", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldStartWithWindows.Enabled = false;
+			this.fieldStartWithWindows.Location = new System.Drawing.Point(15, 25);
+			this.fieldStartWithWindows.Name = "fieldStartWithWindows";
+			this.fieldStartWithWindows.Size = new System.Drawing.Size(189, 17);
+			this.fieldStartWithWindows.TabIndex = 0;
+			this.fieldStartWithWindows.Text = "Lancer au démarrage de Windows";
+			this.fieldStartWithWindows.UseVisualStyleBackColor = true;
+			// 
+			// fieldAskonExit
+			// 
+			this.fieldAskonExit.AutoSize = true;
+			this.fieldAskonExit.Checked = global::notifier.Properties.Settings.Default.AskonExit;
+			this.fieldAskonExit.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldAskonExit.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AskonExit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAskonExit.Enabled = false;
+			this.fieldAskonExit.Location = new System.Drawing.Point(15, 71);
+			this.fieldAskonExit.Name = "fieldAskonExit";
+			this.fieldAskonExit.Size = new System.Drawing.Size(226, 17);
+			this.fieldAskonExit.TabIndex = 2;
+			this.fieldAskonExit.Text = "Me demander avant de quitter l\'application";
+			this.fieldAskonExit.UseVisualStyleBackColor = true;
 			// 
 			// Main
 			// 
@@ -381,11 +390,11 @@
 			this.tabPagePreferences.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.tabPageAbout.ResumeLayout(false);
 			this.tabPageAbout.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
