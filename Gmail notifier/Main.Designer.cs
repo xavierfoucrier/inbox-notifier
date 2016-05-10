@@ -1,5 +1,5 @@
-﻿namespace Gmail_notifier {
-	partial class Form1 {
+﻿namespace notifier {
+	partial class Main {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
