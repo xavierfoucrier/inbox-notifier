@@ -250,3 +250,6 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Denote all files that are truly binary and should not be modified
+*.ico binary
