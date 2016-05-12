@@ -63,7 +63,15 @@ namespace notifier {
 		/// </summary>
 		private async void AsyncAuthentication() {
 			try {
+				
+				// waits for the user authorization
 				this.credential = await AsyncAuthorizationBroker();
+
+				// creates the gmail api service
+				this.service = new GmailService(new BaseClientService.Initializer() {
+					HttpClientInitializer = this.credential,
+					ApplicationName = "Gmail notifier for Windows"
+				});
 			} catch(Exception) {
 				MessageBox.Show("Vous avez refusé que l'application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.\n\nL'application va désormais quitter.", "Erreur d'authentification", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				Application.Exit();
