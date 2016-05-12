@@ -44,6 +44,21 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Prompts the user before closing the form
+		/// </summary>
+		private void Main_FormClosing(object sender, FormClosingEventArgs e) {
+
+			// asks the user for exit, depending on the application settings
+			if (e.CloseReason != CloseReason.ApplicationExitCall && Properties.Settings.Default.AskonExit) {
+				DialogResult dialog = MessageBox.Show("Vous êtes sur le point de quitter l'application.\n\nVoulez-vous vraiment quitter l'application ?", "Fermeture de l'application", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+				if (dialog == DialogResult.No) {
+					e.Cancel = true;
+				}
+			}
+		}
+
+		/// <summary>
 		/// Asynchronous method used to get user credential
 		/// </summary>
 		private async void AsyncAuthentication() {
@@ -73,6 +88,15 @@ namespace notifier {
 					new FileDataStore(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop), true)
 				);
 			}
+		}
+
+		/// <summary>
+		/// Manages the AskonExit user setting
+		/// </summary>
+		private void fieldAskonExit_CheckedChanged(object sender, EventArgs e) {
+			Properties.Settings.Default.AskonExit = fieldAskonExit.Checked;
+			Properties.Settings.Default.Save();
+			labelSettingsSaved.Visible = true;
 		}
 	}
 }

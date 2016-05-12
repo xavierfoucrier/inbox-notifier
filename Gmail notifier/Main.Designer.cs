@@ -249,13 +249,13 @@
 			this.fieldAskonExit.Checked = global::notifier.Properties.Settings.Default.AskonExit;
 			this.fieldAskonExit.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.fieldAskonExit.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AskonExit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAskonExit.Enabled = false;
 			this.fieldAskonExit.Location = new System.Drawing.Point(15, 71);
 			this.fieldAskonExit.Name = "fieldAskonExit";
 			this.fieldAskonExit.Size = new System.Drawing.Size(226, 17);
 			this.fieldAskonExit.TabIndex = 2;
 			this.fieldAskonExit.Text = "Me demander avant de quitter l\'application";
 			this.fieldAskonExit.UseVisualStyleBackColor = true;
+			this.fieldAskonExit.CheckedChanged += new System.EventHandler(this.fieldAskonExit_CheckedChanged);
 			// 
 			// tabPageAbout
 			// 
@@ -384,6 +384,7 @@
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Préférences";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
 			this.Load += new System.EventHandler(this.Main_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
