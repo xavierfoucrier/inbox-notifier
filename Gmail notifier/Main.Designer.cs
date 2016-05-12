@@ -26,9 +26,6 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
 			this.separator = new System.Windows.Forms.Label();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
 			this.buttonOK = new System.Windows.Forms.Button();
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPagePreferences = new System.Windows.Forms.TabPage();
@@ -53,13 +50,14 @@
 			this.labelSettingsSaved = new System.Windows.Forms.Label();
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.panel1.SuspendLayout();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.tabControl.SuspendLayout();
 			this.tabPagePreferences.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.tabPageAbout.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// separator
@@ -69,40 +67,6 @@
 			this.separator.Name = "separator";
 			this.separator.Size = new System.Drawing.Size(540, 2);
 			this.separator.TabIndex = 22;
-			// 
-			// panel1
-			// 
-			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.panel1.Controls.Add(this.label3);
-			this.panel1.Controls.Add(this.label2);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel1.Location = new System.Drawing.Point(0, 0);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(564, 70);
-			this.panel1.TabIndex = 20;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.BackColor = System.Drawing.Color.Transparent;
-			this.label3.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.White;
-			this.label3.Location = new System.Drawing.Point(11, 42);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(123, 18);
-			this.label3.TabIndex = 1;
-			this.label3.Text = "Notifier for Windows";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Roboto", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(4, 3);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(112, 46);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "Gmail";
 			// 
 			// buttonOK
 			// 
@@ -365,13 +329,23 @@
 			this.labelSettingsSaved.Text = "Préférences d\'application sauvegardées.";
 			this.labelSettingsSaved.Visible = false;
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::notifier.Properties.Resources.header;
+			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(564, 70);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+			this.pictureBox1.TabIndex = 23;
+			this.pictureBox1.TabStop = false;
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(564, 316);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.separator);
-			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.buttonOK);
 			this.Controls.Add(this.tabControl);
 			this.Controls.Add(this.labelSettingsSaved);
@@ -386,8 +360,6 @@
 			this.Text = "Préférences";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
 			this.Load += new System.EventHandler(this.Main_Load);
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
 			this.tabControl.ResumeLayout(false);
 			this.tabPagePreferences.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
@@ -397,6 +369,7 @@
 			this.groupBox1.PerformLayout();
 			this.tabPageAbout.ResumeLayout(false);
 			this.tabPageAbout.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -405,9 +378,6 @@
 		#endregion
 
 		private System.Windows.Forms.Label separator;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button buttonOK;
 		private System.Windows.Forms.TabControl tabControl;
 		private System.Windows.Forms.TabPage tabPagePreferences;
@@ -432,6 +402,7 @@
 		private System.Windows.Forms.NotifyIcon notifyIcon;
 		private System.Windows.Forms.Timer timer;
 		private System.Windows.Forms.LinkLabel linkWebsiteYusuke;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }
 
