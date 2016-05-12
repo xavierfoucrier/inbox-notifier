@@ -329,6 +329,12 @@
 			this.labelSettingsSaved.Text = "Préférences d\'application sauvegardées.";
 			this.labelSettingsSaved.Visible = false;
 			// 
+			// notifyIcon
+			// 
+			this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+			this.notifyIcon.Text = "Synchronisation en cours ...";
+			this.notifyIcon.Visible = true;
+			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = global::notifier.Properties.Resources.header;
@@ -358,6 +364,7 @@
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Préférences";
+			this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
 			this.Load += new System.EventHandler(this.Main_Load);
 			this.tabControl.ResumeLayout(false);
