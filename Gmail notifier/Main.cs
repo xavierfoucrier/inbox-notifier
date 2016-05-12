@@ -35,8 +35,8 @@ namespace notifier {
 		/// </summary>
 		private void Main_Load(object sender, EventArgs e) {
 
-			// authenticates the application
-			GmailAuthentication();
+			// authenticates the user
+			AsyncAuthentication();
 
 			// displays the product version
 			string[] version = Application.ProductVersion.Split('.');
@@ -44,19 +44,34 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Authenticates the application through the gmail api
+		/// Asynchronous method used to get user credential
 		/// </summary>
-		private void GmailAuthentication() {
+		private async void AsyncAuthentication() {
+			try {
+				this.credential = await AsyncAuthorizationBroker();
+			} catch(Exception) {
+				MessageBox.Show("Vous avez refusé que l'application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.\n\nL'application va désormais quitter.", "Erreur d'authentification", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				Application.Exit();
+			}
+		}
 
-			// creates web authorization broker and waits for the user validation
+		/// <summary>
+		/// Asynchronous task used to get the user authorization
+		/// </summary>
+		/// <returns>OAuth 2.0 user credential</returns>
+		private async Task<UserCredential> AsyncAuthorizationBroker() {
+
+			// uses the client secret file for the context
 			using (var stream = new FileStream("client_secret.json", FileMode.Open, FileAccess.Read)) {
-				this.credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-					GoogleClientSecrets.Load(new FileStream("client_secret.json", FileMode.Open, FileAccess.Read)).Secrets,
+
+				// waits for the user validation, only if the user has not already authorized the application
+				return await GoogleWebAuthorizationBroker.AuthorizeAsync(
+					GoogleClientSecrets.Load(stream).Secrets,
 					new string[] { GmailService.Scope.GmailReadonly },
 					"user",
 					CancellationToken.None,
 					new FileDataStore(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop), true)
-				).Result;
+				);
 			}
 		}
 	}
