@@ -119,6 +119,9 @@ namespace notifier {
 
 				// shows the number of unread mails
 				MessageBox.Show("Vous avez " + this.inbox.ThreadsUnread.ToString() + " email(s) non lu(s).");
+
+				// restores the default icon to the systray
+				notifyIcon.Icon = Properties.Resources.normal;
 			} catch(Exception exception) {
 				MessageBox.Show(exception.Message);
 			}
