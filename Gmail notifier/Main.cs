@@ -102,7 +102,7 @@ namespace notifier {
 					new string[] { GmailService.Scope.GmailReadonly },
 					"user",
 					CancellationToken.None,
-					new FileDataStore(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop), true)
+					new FileDataStore(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier", true)
 				);
 			}
 		}
