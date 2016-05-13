@@ -23,6 +23,9 @@ namespace notifier {
 		// user credential for the gmail authentication
 		private UserCredential credential;
 
+		// inbox label
+		private Google.Apis.Gmail.v1.Data.Label inbox;
+
 		/// <summary>
 		/// Initializes the class
 		/// </summary>
@@ -37,6 +40,9 @@ namespace notifier {
 
 			// authenticates the user
 			AsyncAuthentication();
+
+			// synchronizes the user mailbox
+			SyncInbox();
 
 			// displays the product version
 			string[] version = Application.ProductVersion.Split('.');
@@ -95,6 +101,22 @@ namespace notifier {
 					CancellationToken.None,
 					new FileDataStore(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop), true)
 				);
+			}
+		}
+
+		/// <summary>
+		/// Synchronizes the user inbox
+		/// </summary>
+		private void SyncInbox() {
+			try {
+
+				// gets the "inbox" label
+				this.inbox = service.Users.Labels.Get("me", "INBOX").Execute();
+
+				// shows the number of unread mails
+				MessageBox.Show("Vous avez " + this.inbox.ThreadsUnread.ToString() + " email(s) non lu(s).");
+			} catch(Exception exception) {
+				MessageBox.Show(exception.Message);
 			}
 		}
 
