@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -153,6 +154,13 @@ namespace notifier {
 		/// </summary>
 		private void menuItemExit_Click(object sender, EventArgs e) {
 			this.Close();
+		}
+
+		/// <summary>
+		/// Opens the gmail inbox in a browser when you double click on the systray icon
+		/// </summary>
+		private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
+			Process.Start("https://mail.google.com/mail/u/0/#inbox");
 		}
 	}
 }
