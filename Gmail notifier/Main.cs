@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -117,8 +118,17 @@ namespace notifier {
 				// gets the "inbox" label
 				this.inbox = service.Users.Labels.Get("me", "INBOX").Execute();
 
-				// shows the number of unread mails
-				MessageBox.Show("Vous avez " + this.inbox.ThreadsUnread.ToString() + " email(s) non lu(s).");
+				// manages unread threads
+				if (this.inbox.ThreadsUnread > 0) {
+
+					// plays a sound on unread threads
+					if (Properties.Settings.Default.AudioNotification) {
+						SystemSounds.Exclamation.Play();
+					}
+
+					// displays a balloon tip in the systray with the total of unread threads
+					notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu"), "Double-cliquez sur l'icône pour accéder à votre boîte de réception.", ToolTipIcon.Info);
+				}
 
 				// restores the default icon to the systray
 				notifyIcon.Icon = Properties.Resources.normal;
@@ -132,6 +142,15 @@ namespace notifier {
 		/// </summary>
 		private void fieldAskonExit_CheckedChanged(object sender, EventArgs e) {
 			Properties.Settings.Default.AskonExit = fieldAskonExit.Checked;
+			Properties.Settings.Default.Save();
+			labelSettingsSaved.Visible = true;
+		}
+
+		/// <summary>
+		/// Manages the AudioNotification user setting
+		/// </summary>
+		private void fieldAudioNotification_CheckedChanged(object sender, EventArgs e) {
+			Properties.Settings.Default.AudioNotification = fieldAudioNotification.Checked;
 			Properties.Settings.Default.Save();
 			labelSettingsSaved.Visible = true;
 		}

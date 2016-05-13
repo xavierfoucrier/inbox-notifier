@@ -140,13 +140,13 @@
 			this.fieldAudioNotification.Checked = global::notifier.Properties.Settings.Default.AudioNotification;
 			this.fieldAudioNotification.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAudioNotification.Enabled = false;
 			this.fieldAudioNotification.Location = new System.Drawing.Point(17, 71);
 			this.fieldAudioNotification.Name = "fieldAudioNotification";
 			this.fieldAudioNotification.Size = new System.Drawing.Size(233, 17);
 			this.fieldAudioNotification.TabIndex = 0;
 			this.fieldAudioNotification.Text = "Notification sonore à la réception des emails";
 			this.fieldAudioNotification.UseVisualStyleBackColor = true;
+			this.fieldAudioNotification.CheckedChanged += new System.EventHandler(this.fieldAudioNotification_CheckedChanged);
 			// 
 			// label1
 			// 
