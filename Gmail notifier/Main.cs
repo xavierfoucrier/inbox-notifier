@@ -44,6 +44,9 @@ namespace notifier {
 			// synchronizes the user mailbox
 			SyncInbox();
 
+			// attaches the context menu to the systray icon
+			notifyIcon.ContextMenu = contextMenu;
+
 			// displays the product version
 			string[] version = Application.ProductVersion.Split('.');
 			labelVersion.Text = version[0] + "." + version[1] + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "") + (version[3] != "0" ? " " + version[3] : "");
@@ -127,6 +130,29 @@ namespace notifier {
 			Properties.Settings.Default.AskonExit = fieldAskonExit.Checked;
 			Properties.Settings.Default.Save();
 			labelSettingsSaved.Visible = true;
+		}
+
+		/// <summary>
+		/// Closes the preferences when the OK button is clicked
+		/// </summary>
+		private void buttonOK_Click(object sender, EventArgs e) {
+			this.WindowState = FormWindowState.Minimized;
+			this.ShowInTaskbar = false;
+		}
+
+		/// <summary>
+		/// Manages the context menu Settings item
+		/// </summary>
+		private void menuItemSettings_Click(object sender, EventArgs e) {
+			this.ShowInTaskbar = true;
+			this.WindowState = FormWindowState.Normal;
+		}
+
+		/// <summary>
+		/// Manages the context menu exit item
+		/// </summary>
+		private void menuItemExit_Click(object sender, EventArgs e) {
+			this.Close();
 		}
 	}
 }

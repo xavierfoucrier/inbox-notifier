@@ -51,6 +51,10 @@
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.contextMenu = new System.Windows.Forms.ContextMenu();
+			this.menuItemSettings = new System.Windows.Forms.MenuItem();
+			this.menuItem2 = new System.Windows.Forms.MenuItem();
+			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.tabControl.SuspendLayout();
 			this.tabPagePreferences.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -76,6 +80,7 @@
 			this.buttonOK.TabIndex = 19;
 			this.buttonOK.Text = "OK";
 			this.buttonOK.UseVisualStyleBackColor = true;
+			this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
 			// 
 			// tabControl
 			// 
@@ -345,6 +350,30 @@
 			this.pictureBox1.TabIndex = 23;
 			this.pictureBox1.TabStop = false;
 			// 
+			// contextMenu
+			// 
+			this.contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemSettings,
+            this.menuItem2,
+            this.menuItemExit});
+			// 
+			// menuItemSettings
+			// 
+			this.menuItemSettings.Index = 0;
+			this.menuItemSettings.Text = "Préférences";
+			this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
+			// 
+			// menuItem2
+			// 
+			this.menuItem2.Index = 1;
+			this.menuItem2.Text = "-";
+			// 
+			// menuItemExit
+			// 
+			this.menuItemExit.Index = 2;
+			this.menuItemExit.Text = "Quitter";
+			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,6 +439,10 @@
 		private System.Windows.Forms.Timer timer;
 		private System.Windows.Forms.LinkLabel linkWebsiteYusuke;
 		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.ContextMenu contextMenu;
+		private System.Windows.Forms.MenuItem menuItemExit;
+		private System.Windows.Forms.MenuItem menuItem2;
+		private System.Windows.Forms.MenuItem menuItemSettings;
 	}
 }
 
