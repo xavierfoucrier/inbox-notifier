@@ -91,6 +91,7 @@
 			this.tabControl.SelectedIndex = 0;
 			this.tabControl.Size = new System.Drawing.Size(540, 171);
 			this.tabControl.TabIndex = 18;
+			this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
 			// 
 			// tabPagePreferences
 			// 

@@ -159,6 +159,13 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Hides the settings saved label
+		/// </summary>
+		private void tabControl_Selecting(object sender, TabControlCancelEventArgs e) {
+			labelSettingsSaved.Visible = false;
+		}
+
+		/// <summary>
 		/// Closes the preferences when the OK button is clicked
 		/// </summary>
 		private void buttonOK_Click(object sender, EventArgs e) {
