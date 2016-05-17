@@ -159,6 +159,13 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Opens the credit website
+		/// </summary>
+		private void linkWebsiteYusuke_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+			Process.Start("http://p.yusukekamiyamane.com");
+		}
+
+		/// <summary>
 		/// Hides the settings saved label
 		/// </summary>
 		private void tabControl_Selecting(object sender, TabControlCancelEventArgs e) {

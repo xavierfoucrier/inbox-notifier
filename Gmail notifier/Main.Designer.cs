@@ -256,6 +256,7 @@
 			this.linkWebsiteYusuke.TabStop = true;
 			this.linkWebsiteYusuke.Text = "p.yusukekamiyamane.com";
 			this.linkWebsiteYusuke.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteYusuke.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsiteYusuke_LinkClicked);
 			// 
 			// label10
 			// 
