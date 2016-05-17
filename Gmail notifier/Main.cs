@@ -143,7 +143,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the AskonExit user setting
 		/// </summary>
-		private void fieldAskonExit_CheckedChanged(object sender, EventArgs e) {
+		private void fieldAskonExit_Click(object sender, EventArgs e) {
 			Properties.Settings.Default.AskonExit = fieldAskonExit.Checked;
 			Properties.Settings.Default.Save();
 			labelSettingsSaved.Visible = true;
@@ -152,7 +152,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the AudioNotification user setting
 		/// </summary>
-		private void fieldAudioNotification_CheckedChanged(object sender, EventArgs e) {
+		private void fieldAudioNotification_Click(object sender, EventArgs e) {
 			Properties.Settings.Default.AudioNotification = fieldAudioNotification.Checked;
 			Properties.Settings.Default.Save();
 			labelSettingsSaved.Visible = true;

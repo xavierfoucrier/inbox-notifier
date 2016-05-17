@@ -146,7 +146,7 @@
 			this.fieldAudioNotification.TabIndex = 0;
 			this.fieldAudioNotification.Text = "Notification sonore à la réception des emails";
 			this.fieldAudioNotification.UseVisualStyleBackColor = true;
-			this.fieldAudioNotification.CheckedChanged += new System.EventHandler(this.fieldAudioNotification_CheckedChanged);
+			this.fieldAudioNotification.Click += new System.EventHandler(this.fieldAudioNotification_Click);
 			// 
 			// label1
 			// 
@@ -224,7 +224,7 @@
 			this.fieldAskonExit.TabIndex = 2;
 			this.fieldAskonExit.Text = "Me demander avant de quitter l\'application";
 			this.fieldAskonExit.UseVisualStyleBackColor = true;
-			this.fieldAskonExit.CheckedChanged += new System.EventHandler(this.fieldAskonExit_CheckedChanged);
+			this.fieldAskonExit.Click += new System.EventHandler(this.fieldAskonExit_Click);
 			// 
 			// tabPageAbout
 			// 
