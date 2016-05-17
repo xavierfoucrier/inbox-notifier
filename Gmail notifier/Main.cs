@@ -128,6 +128,9 @@ namespace notifier {
 
 					// displays a balloon tip in the systray with the total of unread threads
 					notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu"), "Double-cliquez sur l'icône pour accéder à votre boîte de réception.", ToolTipIcon.Info);
+					notifyIcon.Text = this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu");
+				} else {
+					notifyIcon.Text = "Pas de nouveau message";
 				}
 
 				// restores the default icon to the systray
