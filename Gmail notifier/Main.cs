@@ -49,6 +49,12 @@ namespace notifier {
 			// attaches the context menu to the systray icon
 			notifyIcon.ContextMenu = contextMenu;
 
+			// binds the "PropertyChanged" event of the settings to automatically save the user settings and display the setting label
+			Properties.Settings.Default.PropertyChanged += new PropertyChangedEventHandler((object o, PropertyChangedEventArgs target) => {
+				Properties.Settings.Default.Save();
+				labelSettingsSaved.Visible = true;
+			});
+
 			// displays the product version
 			string[] version = Application.ProductVersion.Split('.');
 			labelVersion.Text = version[0] + "." + version[1] + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "") + (version[3] != "0" ? " " + version[3] : "");
@@ -145,8 +151,6 @@ namespace notifier {
 		/// </summary>
 		private void fieldAskonExit_Click(object sender, EventArgs e) {
 			Properties.Settings.Default.AskonExit = fieldAskonExit.Checked;
-			Properties.Settings.Default.Save();
-			labelSettingsSaved.Visible = true;
 		}
 
 		/// <summary>
@@ -154,8 +158,6 @@ namespace notifier {
 		/// </summary>
 		private void fieldAudioNotification_Click(object sender, EventArgs e) {
 			Properties.Settings.Default.AudioNotification = fieldAudioNotification.Checked;
-			Properties.Settings.Default.Save();
-			labelSettingsSaved.Visible = true;
 		}
 
 		/// <summary>
@@ -164,8 +166,6 @@ namespace notifier {
 		private void fieldNumericDelay_ValueChanged(object sender, EventArgs e) {
 			Properties.Settings.Default.TimerInterval = 1000 * (fieldStepDelay.Text == "minute(s)" ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
 			Properties.Settings.Default.NumericDelay = fieldNumericDelay.Value;
-			Properties.Settings.Default.Save();
-			labelSettingsSaved.Visible = true;
 		}
 
 		/// <summary>
@@ -174,8 +174,6 @@ namespace notifier {
 		private void fieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
 			Properties.Settings.Default.TimerInterval = 1000 * (fieldStepDelay.Text == "minute(s)" ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
 			Properties.Settings.Default.StepDelay = fieldStepDelay.Text;
-			Properties.Settings.Default.Save();
-			labelSettingsSaved.Visible = true;
 		}
 
 		/// <summary>
