@@ -127,6 +127,9 @@ namespace notifier {
 				// manages unread threads
 				if (this.inbox.ThreadsUnread > 0) {
 
+					// sets the notification icon and text
+					notifyIcon.Icon = this.inbox.ThreadsUnread <= 9 ? (Icon)Properties.Resources.ResourceManager.GetObject("mail_" + this.inbox.ThreadsUnread.ToString()) : Properties.Resources.mail_more;
+
 					// plays a sound on unread threads
 					if (Properties.Settings.Default.AudioNotification) {
 						SystemSounds.Exclamation.Play();
@@ -136,11 +139,11 @@ namespace notifier {
 					notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu"), "Double-cliquez sur l'icône pour accéder à votre boîte de réception.", ToolTipIcon.Info);
 					notifyIcon.Text = this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu");
 				} else {
+
+					// restores the default systray icon and text
+					notifyIcon.Icon = Properties.Resources.normal;
 					notifyIcon.Text = "Pas de nouveau message";
 				}
-
-				// restores the default icon to the systray
-				notifyIcon.Icon = Properties.Resources.normal;
 			} catch(Exception exception) {
 				MessageBox.Show(exception.Message);
 			}

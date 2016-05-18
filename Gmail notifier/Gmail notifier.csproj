@@ -171,6 +171,36 @@
   <ItemGroup>
     <None Include="Resources\normal.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-7.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-9.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail-more.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
