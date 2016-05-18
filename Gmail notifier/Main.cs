@@ -159,6 +159,26 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Manages the NumericDelay user setting
+		/// </summary>
+		private void fieldNumericDelay_ValueChanged(object sender, EventArgs e) {
+			Properties.Settings.Default.TimerInterval = 1000 * (fieldStepDelay.Text == "minute(s)" ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
+			Properties.Settings.Default.NumericDelay = fieldNumericDelay.Value;
+			Properties.Settings.Default.Save();
+			labelSettingsSaved.Visible = true;
+		}
+
+		/// <summary>
+		/// Manages the StepDelay user setting
+		/// </summary>
+		private void fieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
+			Properties.Settings.Default.TimerInterval = 1000 * (fieldStepDelay.Text == "minute(s)" ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
+			Properties.Settings.Default.StepDelay = fieldStepDelay.Text;
+			Properties.Settings.Default.Save();
+			labelSettingsSaved.Visible = true;
+		}
+
+		/// <summary>
 		/// Opens the credit website
 		/// </summary>
 		private void linkWebsiteYusuke_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
@@ -200,6 +220,13 @@ namespace notifier {
 		/// </summary>
 		private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
 			Process.Start("https://mail.google.com/mail/u/0/#inbox");
+		}
+
+		/// <summary>
+		/// Synchronizes the user mailbox on every timer tick
+		/// </summary>
+		private void timer_Tick(object sender, EventArgs e) {
+			SyncInbox();
 		}
 	}
 }

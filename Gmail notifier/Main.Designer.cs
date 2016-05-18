@@ -123,7 +123,6 @@
 			this.fieldStepDelay.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::notifier.Properties.Settings.Default, "StepDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldStepDelay.DisplayMember = "minute(s)";
 			this.fieldStepDelay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldStepDelay.Enabled = false;
 			this.fieldStepDelay.FormattingEnabled = true;
 			this.fieldStepDelay.Items.AddRange(new object[] {
             "minute(s)",
@@ -134,6 +133,7 @@
 			this.fieldStepDelay.TabIndex = 2;
 			this.fieldStepDelay.Text = global::notifier.Properties.Settings.Default.StepDelay;
 			this.fieldStepDelay.ValueMember = "minute(s)";
+			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.fieldStepDelay_SelectionChangeCommitted);
 			// 
 			// fieldAudioNotification
 			// 
@@ -161,7 +161,6 @@
 			// fieldNumericDelay
 			// 
 			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldNumericDelay.Enabled = false;
 			this.fieldNumericDelay.Location = new System.Drawing.Point(124, 24);
 			this.fieldNumericDelay.Minimum = new decimal(new int[] {
             1,
@@ -173,6 +172,7 @@
 			this.fieldNumericDelay.TabIndex = 0;
 			this.fieldNumericDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.fieldNumericDelay.Value = global::notifier.Properties.Settings.Default.NumericDelay;
+			this.fieldNumericDelay.ValueChanged += new System.EventHandler(this.fieldNumericDelay_ValueChanged);
 			// 
 			// groupBox1
 			// 
@@ -342,6 +342,12 @@
 			this.notifyIcon.Text = "Synchronisation en cours ...";
 			this.notifyIcon.Visible = true;
 			this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+			// 
+			// timer
+			// 
+			this.timer.Enabled = true;
+			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
+			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
 			// pictureBox1
 			// 
