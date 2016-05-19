@@ -52,6 +52,7 @@
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.contextMenu = new System.Windows.Forms.ContextMenu();
+			this.menuItemSynchronize = new System.Windows.Forms.MenuItem();
 			this.menuItemSettings = new System.Windows.Forms.MenuItem();
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
@@ -362,24 +363,31 @@
 			// contextMenu
 			// 
 			this.contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemSynchronize,
             this.menuItemSettings,
             this.menuItem2,
             this.menuItemExit});
 			// 
+			// menuItemSynchronize
+			// 
+			this.menuItemSynchronize.Index = 0;
+			this.menuItemSynchronize.Text = "Synchroniser";
+			this.menuItemSynchronize.Click += new System.EventHandler(this.menuItemSynchronize_Click);
+			// 
 			// menuItemSettings
 			// 
-			this.menuItemSettings.Index = 0;
+			this.menuItemSettings.Index = 1;
 			this.menuItemSettings.Text = "Préférences";
 			this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
 			// 
 			// menuItem2
 			// 
-			this.menuItem2.Index = 1;
+			this.menuItem2.Index = 2;
 			this.menuItem2.Text = "-";
 			// 
 			// menuItemExit
 			// 
-			this.menuItemExit.Index = 2;
+			this.menuItemExit.Index = 3;
 			this.menuItemExit.Text = "Quitter";
 			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
 			// 
@@ -452,6 +460,7 @@
 		private System.Windows.Forms.MenuItem menuItemExit;
 		private System.Windows.Forms.MenuItem menuItem2;
 		private System.Windows.Forms.MenuItem menuItemSettings;
+		private System.Windows.Forms.MenuItem menuItemSynchronize;
 	}
 }
 

@@ -121,6 +121,10 @@ namespace notifier {
 		private void SyncInbox() {
 			try {
 
+				// sets the synchronization icon
+				notifyIcon.Icon = Properties.Resources.sync;
+				notifyIcon.Text = "Synchronisation en cours ...";
+
 				// gets the "inbox" label
 				this.inbox = service.Users.Labels.Get("me", "INBOX").Execute();
 
@@ -199,6 +203,13 @@ namespace notifier {
 		private void buttonOK_Click(object sender, EventArgs e) {
 			this.WindowState = FormWindowState.Minimized;
 			this.ShowInTaskbar = false;
+		}
+
+		/// <summary>
+		/// Manages the context menu Synchronize item
+		/// </summary>
+		private void menuItemSynchronize_Click(object sender, EventArgs e) {
+			this.SyncInbox();
 		}
 
 		/// <summary>
