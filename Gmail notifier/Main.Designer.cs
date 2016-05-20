@@ -191,7 +191,6 @@
 			// 
 			this.fieldStartWithWindows.AutoSize = true;
 			this.fieldStartWithWindows.Checked = global::notifier.Properties.Settings.Default.StartWithWindows;
-			this.fieldStartWithWindows.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.fieldStartWithWindows.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "StartWithWindows", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldStartWithWindows.Enabled = false;
 			this.fieldStartWithWindows.Location = new System.Drawing.Point(15, 25);
