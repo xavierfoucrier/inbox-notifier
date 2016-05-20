@@ -149,7 +149,11 @@ namespace notifier {
 					notifyIcon.Text = "Pas de nouveau message";
 				}
 			} catch(Exception exception) {
-				MessageBox.Show(exception.Message);
+
+				// displays a balloon tip in the systray with the detailed error message
+				notifyIcon.Icon = Properties.Resources.warning;
+				notifyIcon.Text = "Erreur lors de la synchronisation";
+				notifyIcon.ShowBalloonTip(450, "Erreur", "Une erreur est survenue lors de la synchronisation de la boite de réception : " + exception.Message, ToolTipIcon.Warning);
 			}
 		}
 
