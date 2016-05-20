@@ -2,6 +2,8 @@ Gmail notifier
 ======
 Gmail notifications instantly in the windows taskbar
 
+![Gmail Notifier](https://raw.github.com/xavierfoucrier/gmail-notifier/master/screenshots/main.png "Gmail Notifier")
+
 
 Updates
 -------
