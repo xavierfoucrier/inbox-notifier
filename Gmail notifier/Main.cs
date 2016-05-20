@@ -118,12 +118,14 @@ namespace notifier {
 		/// <summary>
 		/// Synchronizes the user inbox
 		/// </summary>
-		private void SyncInbox() {
+		private void SyncInbox(bool timertick = false) {
 			try {
 
-				// sets the synchronization icon
-				notifyIcon.Icon = Properties.Resources.sync;
-				notifyIcon.Text = "Synchronisation en cours ...";
+				// displays the sync icon, but not on every tick of the timer
+				if (!timertick) {
+					notifyIcon.Icon = Properties.Resources.sync;
+					notifyIcon.Text = "Synchronisation en cours ...";
+				}
 
 				// gets the "inbox" label
 				this.inbox = service.Users.Labels.Get("me", "INBOX").Execute();
@@ -242,7 +244,7 @@ namespace notifier {
 		/// Synchronizes the user mailbox on every timer tick
 		/// </summary>
 		private void timer_Tick(object sender, EventArgs e) {
-			SyncInbox();
+			SyncInbox(true);
 		}
 	}
 }
