@@ -28,6 +28,9 @@ namespace notifier {
 		// inbox label
 		private Google.Apis.Gmail.v1.Data.Label inbox;
 
+		// unread threads
+		private int? unreadthreads = 0;
+
 		/// <summary>
 		/// Initializes the class
 		/// </summary>
@@ -130,6 +133,11 @@ namespace notifier {
 				// gets the "inbox" label
 				this.inbox = service.Users.Labels.Get("me", "INBOX").Execute();
 
+				// exits the sync if the number of unread threads is the same as before
+				if (timertick && (this.inbox.ThreadsUnread == this.unreadthreads)) {
+					return;
+				}
+
 				// manages unread threads
 				if (this.inbox.ThreadsUnread > 0) {
 
@@ -150,6 +158,9 @@ namespace notifier {
 					notifyIcon.Icon = Properties.Resources.normal;
 					notifyIcon.Text = "Pas de nouveau message";
 				}
+
+				// saves the number of unread threads
+				this.unreadthreads = this.inbox.ThreadsUnread;
 			} catch(Exception exception) {
 
 				// displays a balloon tip in the systray with the detailed error message
