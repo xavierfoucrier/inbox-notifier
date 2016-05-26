@@ -5,6 +5,11 @@ Gmail notifications instantly in the windows taskbar
 ![Gmail Notifier](https://raw.github.com/xavierfoucrier/gmail-notifier/master/screenshots/main.png "Gmail Notifier")
 
 
+Download
+-------
+The application is under development and **anything may change at any time**, so don't use it on a production environment.
+
+
 Updates
 -------
 You can **track the project** on [Github](http://github.com/xavierfoucrier) and/or **follow me** on [Twitter](http://twitter.com/xavierfoucrier).
