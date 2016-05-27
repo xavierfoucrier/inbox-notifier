@@ -45,10 +45,10 @@ namespace notifier {
 		private void Main_Load(object sender, EventArgs e) {
 
 			// authenticates the user
-			AsyncAuthentication();
+			this.AsyncAuthentication();
 
 			// synchronizes the user mailbox
-			SyncInbox();
+			this.SyncInbox();
 
 			// attaches the context menu to the systray icon
 			notifyIcon.ContextMenu = contextMenu;
@@ -132,7 +132,7 @@ namespace notifier {
 				}
 
 				// gets the "inbox" label
-				this.inbox = service.Users.Labels.Get("me", "INBOX").Execute();
+				this.inbox = this.service.Users.Labels.Get("me", "INBOX").Execute();
 
 				// exits the sync if the number of unread threads is the same as before
 				if (timertick && (this.inbox.ThreadsUnread == this.unreadthreads)) {
@@ -222,8 +222,8 @@ namespace notifier {
 		/// Closes the preferences when the OK button is clicked
 		/// </summary>
 		private void buttonOK_Click(object sender, EventArgs e) {
-			this.WindowState = FormWindowState.Minimized;
-			this.ShowInTaskbar = false;
+			WindowState = FormWindowState.Minimized;
+			ShowInTaskbar = false;
 		}
 
 		/// <summary>
@@ -244,7 +244,7 @@ namespace notifier {
 				notifyIcon.Text = "Synchronisation en cours ...";
 
 				// gets all unread threads
-				UsersResource.ThreadsResource.ListRequest threads = service.Users.Threads.List("me");
+				UsersResource.ThreadsResource.ListRequest threads = this.service.Users.Threads.List("me");
 				threads.LabelIds = "UNREAD";
 				IList<Google.Apis.Gmail.v1.Data.Thread> unread = threads.Execute().Threads;
 
@@ -252,7 +252,7 @@ namespace notifier {
 				foreach (Google.Apis.Gmail.v1.Data.Thread thread in unread) {
 					ModifyThreadRequest request = new ModifyThreadRequest();
 					request.RemoveLabelIds = new List<string>() { "UNREAD" };
-					service.Users.Threads.Modify(request, "me", thread.Id).Execute();
+					this.service.Users.Threads.Modify(request, "me", thread.Id).Execute();
 				}
 
 				// restores the default systray icon and text
@@ -277,8 +277,8 @@ namespace notifier {
 		/// Manages the context menu Settings item
 		/// </summary>
 		private void menuItemSettings_Click(object sender, EventArgs e) {
-			this.ShowInTaskbar = true;
-			this.WindowState = FormWindowState.Normal;
+			ShowInTaskbar = true;
+			WindowState = FormWindowState.Normal;
 		}
 
 		/// <summary>
@@ -299,7 +299,7 @@ namespace notifier {
 		/// Synchronizes the user mailbox on every timer tick
 		/// </summary>
 		private void timer_Tick(object sender, EventArgs e) {
-			SyncInbox(true);
+			this.SyncInbox(true);
 		}
 	}
 }
