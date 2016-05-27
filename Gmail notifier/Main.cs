@@ -161,6 +161,9 @@ namespace notifier {
 					// restores the default systray icon and text
 					notifyIcon.Icon = Properties.Resources.normal;
 					notifyIcon.Text = "Pas de nouveau message";
+
+					// disables the mark as read menu item
+					menuItemMarkAsRead.Enabled = false;
 				}
 
 				// saves the number of unread threads
