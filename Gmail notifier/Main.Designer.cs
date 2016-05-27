@@ -53,6 +53,7 @@
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.contextMenu = new System.Windows.Forms.ContextMenu();
 			this.menuItemSynchronize = new System.Windows.Forms.MenuItem();
+			this.menuItemMarkAsRead = new System.Windows.Forms.MenuItem();
 			this.menuItemSettings = new System.Windows.Forms.MenuItem();
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
@@ -363,6 +364,7 @@
 			// 
 			this.contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemSynchronize,
+            this.menuItemMarkAsRead,
             this.menuItemSettings,
             this.menuItem2,
             this.menuItemExit});
@@ -373,20 +375,27 @@
 			this.menuItemSynchronize.Text = "Synchroniser";
 			this.menuItemSynchronize.Click += new System.EventHandler(this.menuItemSynchronize_Click);
 			// 
+			// menuItemMarkAsRead
+			// 
+			this.menuItemMarkAsRead.Enabled = false;
+			this.menuItemMarkAsRead.Index = 1;
+			this.menuItemMarkAsRead.Text = "Marquer comme lu(s)";
+			this.menuItemMarkAsRead.Click += new System.EventHandler(this.menuItemMarkAsRead_Click);
+			// 
 			// menuItemSettings
 			// 
-			this.menuItemSettings.Index = 1;
+			this.menuItemSettings.Index = 2;
 			this.menuItemSettings.Text = "Préférences";
 			this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
 			// 
 			// menuItem2
 			// 
-			this.menuItem2.Index = 2;
+			this.menuItem2.Index = 3;
 			this.menuItem2.Text = "-";
 			// 
 			// menuItemExit
 			// 
-			this.menuItemExit.Index = 3;
+			this.menuItemExit.Index = 4;
 			this.menuItemExit.Text = "Quitter";
 			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
 			// 
@@ -460,6 +469,7 @@
 		private System.Windows.Forms.MenuItem menuItem2;
 		private System.Windows.Forms.MenuItem menuItemSettings;
 		private System.Windows.Forms.MenuItem menuItemSynchronize;
+		private System.Windows.Forms.MenuItem menuItemMarkAsRead;
 	}
 }
 

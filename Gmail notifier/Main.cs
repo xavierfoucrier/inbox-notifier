@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Gmail.v1;
+using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 
@@ -110,7 +111,7 @@ namespace notifier {
 				// waits for the user validation, only if the user has not already authorized the application
 				return await GoogleWebAuthorizationBroker.AuthorizeAsync(
 					GoogleClientSecrets.Load(stream).Secrets,
-					new string[] { GmailService.Scope.GmailReadonly },
+					new string[] { GmailService.Scope.GmailModify },
 					"user",
 					CancellationToken.None,
 					new FileDataStore(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier", true)
@@ -152,6 +153,9 @@ namespace notifier {
 					// displays a balloon tip in the systray with the total of unread threads
 					notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu"), "Double-cliquez sur l'icône pour accéder à votre boîte de réception.", ToolTipIcon.Info);
 					notifyIcon.Text = this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu");
+
+					// enables the mark as read menu item
+					menuItemMarkAsRead.Enabled = true;
 				} else {
 
 					// restores the default systray icon and text
@@ -227,6 +231,46 @@ namespace notifier {
 		/// </summary>
 		private void menuItemSynchronize_Click(object sender, EventArgs e) {
 			this.SyncInbox();
+		}
+
+		/// <summary>
+		/// Manages the context menu MarkAsRead item
+		/// </summary>
+		private void menuItemMarkAsRead_Click(object sender, EventArgs e) {
+			try {
+
+				// displays the sync icon
+				notifyIcon.Icon = Properties.Resources.sync;
+				notifyIcon.Text = "Synchronisation en cours ...";
+
+				// gets all unread threads
+				UsersResource.ThreadsResource.ListRequest threads = service.Users.Threads.List("me");
+				threads.LabelIds = "UNREAD";
+				IList<Google.Apis.Gmail.v1.Data.Thread> unreadthreads = threads.Execute().Threads;
+
+				// loops through all unread threads and removes the "unread" label for each one
+				foreach (Google.Apis.Gmail.v1.Data.Thread thread in unreadthreads) {
+					ModifyThreadRequest request = new ModifyThreadRequest();
+					request.RemoveLabelIds = new List<string>() { "UNREAD" };
+					service.Users.Threads.Modify(request, "me", thread.Id).Execute();
+				}
+
+				// restores the default systray icon and text
+				notifyIcon.Icon = Properties.Resources.normal;
+				notifyIcon.Text = "Pas de nouveau message";
+
+				// disables the mark as read menu item
+				menuItemMarkAsRead.Enabled = false;
+			} catch (Exception exception) {
+
+				// enabled the mark as read menu item
+				menuItemMarkAsRead.Enabled = true;
+
+				// displays a balloon tip in the systray with the detailed error message
+				notifyIcon.Icon = Properties.Resources.warning;
+				notifyIcon.Text = "Erreur lors de l'opération \"Marquer comme lu(s)\"";
+				notifyIcon.ShowBalloonTip(450, "Erreur", "Une erreur est survenue lors de l'opération \"Marquer comme lu(s)\" : " + exception.Message, ToolTipIcon.Warning);
+			}
 		}
 
 		/// <summary>
