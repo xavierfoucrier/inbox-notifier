@@ -246,10 +246,10 @@ namespace notifier {
 				// gets all unread threads
 				UsersResource.ThreadsResource.ListRequest threads = service.Users.Threads.List("me");
 				threads.LabelIds = "UNREAD";
-				IList<Google.Apis.Gmail.v1.Data.Thread> unreadthreads = threads.Execute().Threads;
+				IList<Google.Apis.Gmail.v1.Data.Thread> unread = threads.Execute().Threads;
 
 				// loops through all unread threads and removes the "unread" label for each one
-				foreach (Google.Apis.Gmail.v1.Data.Thread thread in unreadthreads) {
+				foreach (Google.Apis.Gmail.v1.Data.Thread thread in unread) {
 					ModifyThreadRequest request = new ModifyThreadRequest();
 					request.RemoveLabelIds = new List<string>() { "UNREAD" };
 					service.Users.Threads.Modify(request, "me", thread.Id).Execute();
