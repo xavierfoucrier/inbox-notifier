@@ -122,6 +122,7 @@ namespace notifier {
 		/// <summary>
 		/// Synchronizes the user inbox
 		/// </summary>
+		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
 		private void SyncInbox(bool timertick = false) {
 			try {
 
