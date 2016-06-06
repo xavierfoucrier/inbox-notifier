@@ -54,6 +54,12 @@
 			this.contextMenu = new System.Windows.Forms.ContextMenu();
 			this.menuItemSynchronize = new System.Windows.Forms.MenuItem();
 			this.menuItemMarkAsRead = new System.Windows.Forms.MenuItem();
+			this.menuItemTimout = new System.Windows.Forms.MenuItem();
+			this.menuItemTimeoutDisabled = new System.Windows.Forms.MenuItem();
+			this.menuItemTimeout30m = new System.Windows.Forms.MenuItem();
+			this.menuItemTimeout1h = new System.Windows.Forms.MenuItem();
+			this.menuItemTimeout2h = new System.Windows.Forms.MenuItem();
+			this.menuItemTimeout5h = new System.Windows.Forms.MenuItem();
 			this.menuItemSettings = new System.Windows.Forms.MenuItem();
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
@@ -375,6 +381,7 @@
 			this.contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemSynchronize,
             this.menuItemMarkAsRead,
+            this.menuItemTimout,
             this.menuItemSettings,
             this.menuItem2,
             this.menuItemExit});
@@ -392,20 +399,62 @@
 			this.menuItemMarkAsRead.Text = "Marquer comme lu(s)";
 			this.menuItemMarkAsRead.Click += new System.EventHandler(this.menuItemMarkAsRead_Click);
 			// 
+			// menuItemTimout
+			// 
+			this.menuItemTimout.Index = 2;
+			this.menuItemTimout.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemTimeoutDisabled,
+            this.menuItemTimeout30m,
+            this.menuItemTimeout1h,
+            this.menuItemTimeout2h,
+            this.menuItemTimeout5h});
+			this.menuItemTimout.Text = "Ne pas déranger";
+			// 
+			// menuItemTimeoutDisabled
+			// 
+			this.menuItemTimeoutDisabled.Checked = true;
+			this.menuItemTimeoutDisabled.Index = 0;
+			this.menuItemTimeoutDisabled.RadioCheck = true;
+			this.menuItemTimeoutDisabled.Text = "Désactivé";
+			// 
+			// menuItemTimeout30m
+			// 
+			this.menuItemTimeout30m.Index = 1;
+			this.menuItemTimeout30m.RadioCheck = true;
+			this.menuItemTimeout30m.Text = "30 minutes";
+			// 
+			// menuItemTimeout1h
+			// 
+			this.menuItemTimeout1h.Index = 2;
+			this.menuItemTimeout1h.RadioCheck = true;
+			this.menuItemTimeout1h.Text = "1 heure";
+			// 
+			// menuItemTimeout2h
+			// 
+			this.menuItemTimeout2h.Index = 3;
+			this.menuItemTimeout2h.RadioCheck = true;
+			this.menuItemTimeout2h.Text = "2 heures";
+			// 
+			// menuItemTimeout5h
+			// 
+			this.menuItemTimeout5h.Index = 4;
+			this.menuItemTimeout5h.RadioCheck = true;
+			this.menuItemTimeout5h.Text = "5 heures";
+			// 
 			// menuItemSettings
 			// 
-			this.menuItemSettings.Index = 2;
+			this.menuItemSettings.Index = 3;
 			this.menuItemSettings.Text = "Préférences";
 			this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
 			// 
 			// menuItem2
 			// 
-			this.menuItem2.Index = 3;
+			this.menuItem2.Index = 4;
 			this.menuItem2.Text = "-";
 			// 
 			// menuItemExit
 			// 
-			this.menuItemExit.Index = 4;
+			this.menuItemExit.Index = 5;
 			this.menuItemExit.Text = "Quitter";
 			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
 			// 
@@ -487,6 +536,12 @@
 		private System.Windows.Forms.MenuItem menuItemSynchronize;
 		private System.Windows.Forms.MenuItem menuItemMarkAsRead;
 		private System.Windows.Forms.CheckBox fieldSpamNotification;
+		private System.Windows.Forms.MenuItem menuItemTimout;
+		private System.Windows.Forms.MenuItem menuItemTimeout30m;
+		private System.Windows.Forms.MenuItem menuItemTimeout1h;
+		private System.Windows.Forms.MenuItem menuItemTimeout2h;
+		private System.Windows.Forms.MenuItem menuItemTimeout5h;
+		private System.Windows.Forms.MenuItem menuItemTimeoutDisabled;
 	}
 }
 
