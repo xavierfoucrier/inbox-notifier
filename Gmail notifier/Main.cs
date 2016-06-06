@@ -148,7 +148,7 @@ namespace notifier {
 
 					// plays a sound on unread threads
 					if (Properties.Settings.Default.AudioNotification) {
-						SystemSounds.Exclamation.Play();
+						SystemSounds.Asterisk.Play();
 					}
 
 					// displays a balloon tip in the systray with the total of unread threads
