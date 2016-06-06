@@ -132,6 +132,31 @@ namespace notifier {
 					notifyIcon.Text = "Synchronisation en cours ...";
 				}
 
+				// manages the spam notification
+				if (Properties.Settings.Default.SpamNotification) {
+
+					// gets the "spam" label
+					Google.Apis.Gmail.v1.Data.Label spam = this.service.Users.Labels.Get("me", "SPAM").Execute();
+
+					// manages unread spams
+					if (spam.ThreadsUnread > 0) {
+
+						// sets the notification icon and text
+						notifyIcon.Icon = Properties.Resources.spam;
+
+						// plays a sound on unread spams
+						if (Properties.Settings.Default.AudioNotification) {
+							SystemSounds.Exclamation.Play();
+						}
+
+						// displays a balloon tip in the systray with the total of unread threads
+						notifyIcon.ShowBalloonTip(450, spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? "spams non lus" : "spam non lu"), "Double-cliquez sur l'icône pour accéder à votre boîte de réception. Tant que vous n'aurez pas vérifié ce spam, votre boite de réception ne sera pas synchronisée et vous ne serez pas informé de l'arrivée de nouveaux messages.", ToolTipIcon.Error);
+						notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? "spams non lus" : "spam non lu");
+
+						return;
+					}
+				}
+
 				// gets the "inbox" label
 				this.inbox = this.service.Users.Labels.Get("me", "INBOX").Execute();
 
@@ -190,6 +215,13 @@ namespace notifier {
 		/// </summary>
 		private void fieldAudioNotification_Click(object sender, EventArgs e) {
 			Properties.Settings.Default.AudioNotification = fieldAudioNotification.Checked;
+		}
+
+		/// <summary>
+		/// Manages the SpamNotification user setting
+		/// </summary>
+		private void fieldSpamNotification_Click(object sender, EventArgs e) {
+			Properties.Settings.Default.SpamNotification = fieldSpamNotification.Checked;
 		}
 
 		/// <summary>

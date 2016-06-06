@@ -145,13 +145,13 @@
 			this.fieldSpamNotification.Checked = global::notifier.Properties.Settings.Default.SpamNotification;
 			this.fieldSpamNotification.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.fieldSpamNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "SpamNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldSpamNotification.Enabled = false;
 			this.fieldSpamNotification.Location = new System.Drawing.Point(17, 94);
 			this.fieldSpamNotification.Name = "fieldSpamNotification";
 			this.fieldSpamNotification.Size = new System.Drawing.Size(204, 30);
 			this.fieldSpamNotification.TabIndex = 0;
 			this.fieldSpamNotification.Text = "Afficher une notification à la réception\r\nd\'un courrier indésirable (SPAM)";
 			this.fieldSpamNotification.UseVisualStyleBackColor = true;
+			this.fieldSpamNotification.Click += new System.EventHandler(this.fieldSpamNotification_Click);
 			// 
 			// fieldAudioNotification
 			// 
