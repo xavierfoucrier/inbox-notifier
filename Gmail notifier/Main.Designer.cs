@@ -31,6 +31,7 @@
 			this.tabPagePreferences = new System.Windows.Forms.TabPage();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
+			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
 			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.fieldNumericDelay = new System.Windows.Forms.NumericUpDown();
@@ -49,7 +50,6 @@
 			this.label14 = new System.Windows.Forms.Label();
 			this.labelSettingsSaved = new System.Windows.Forms.Label();
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.contextMenu = new System.Windows.Forms.ContextMenu();
 			this.menuItemSynchronize = new System.Windows.Forms.MenuItem();
@@ -57,6 +57,7 @@
 			this.menuItemSettings = new System.Windows.Forms.MenuItem();
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
+			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.tabControl.SuspendLayout();
 			this.tabPagePreferences.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -110,6 +111,7 @@
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.fieldStepDelay);
+			this.groupBox2.Controls.Add(this.fieldSpamNotification);
 			this.groupBox2.Controls.Add(this.fieldAudioNotification);
 			this.groupBox2.Controls.Add(this.label1);
 			this.groupBox2.Controls.Add(this.fieldNumericDelay);
@@ -136,6 +138,20 @@
 			this.fieldStepDelay.Text = global::notifier.Properties.Settings.Default.StepDelay;
 			this.fieldStepDelay.ValueMember = "minute(s)";
 			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.fieldStepDelay_SelectionChangeCommitted);
+			// 
+			// fieldSpamNotification
+			// 
+			this.fieldSpamNotification.AutoSize = true;
+			this.fieldSpamNotification.Checked = global::notifier.Properties.Settings.Default.SpamNotification;
+			this.fieldSpamNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldSpamNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "SpamNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldSpamNotification.Enabled = false;
+			this.fieldSpamNotification.Location = new System.Drawing.Point(17, 94);
+			this.fieldSpamNotification.Name = "fieldSpamNotification";
+			this.fieldSpamNotification.Size = new System.Drawing.Size(204, 30);
+			this.fieldSpamNotification.TabIndex = 0;
+			this.fieldSpamNotification.Text = "Afficher une notification à la réception\r\nd\'un courrier indésirable (SPAM)";
+			this.fieldSpamNotification.UseVisualStyleBackColor = true;
 			// 
 			// fieldAudioNotification
 			// 
@@ -344,12 +360,6 @@
 			this.notifyIcon.Visible = true;
 			this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
 			// 
-			// timer
-			// 
-			this.timer.Enabled = true;
-			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
-			this.timer.Tick += new System.EventHandler(this.timer_Tick);
-			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = global::notifier.Properties.Resources.header;
@@ -398,6 +408,12 @@
 			this.menuItemExit.Index = 4;
 			this.menuItemExit.Text = "Quitter";
 			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
+			// 
+			// timer
+			// 
+			this.timer.Enabled = true;
+			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
+			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
 			// Main
 			// 
@@ -470,6 +486,7 @@
 		private System.Windows.Forms.MenuItem menuItemSettings;
 		private System.Windows.Forms.MenuItem menuItemSynchronize;
 		private System.Windows.Forms.MenuItem menuItemMarkAsRead;
+		private System.Windows.Forms.CheckBox fieldSpamNotification;
 	}
 }
 

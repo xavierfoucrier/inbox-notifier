@@ -94,5 +94,17 @@ namespace notifier.Properties {
                 this["TimerInterval"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SpamNotification {
+            get {
+                return ((bool)(this["SpamNotification"]));
+            }
+            set {
+                this["SpamNotification"] = value;
+            }
+        }
     }
 }
