@@ -50,7 +50,7 @@
 			this.label14 = new System.Windows.Forms.Label();
 			this.labelSettingsSaved = new System.Windows.Forms.Label();
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxHeader = new System.Windows.Forms.PictureBox();
 			this.contextMenu = new System.Windows.Forms.ContextMenu();
 			this.menuItemSynchronize = new System.Windows.Forms.MenuItem();
 			this.menuItemMarkAsRead = new System.Windows.Forms.MenuItem();
@@ -64,7 +64,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.tabPageAbout.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// separator
@@ -360,15 +360,15 @@
 			this.notifyIcon.Visible = true;
 			this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
 			// 
-			// pictureBox1
+			// pictureBoxHeader
 			// 
-			this.pictureBox1.Image = global::notifier.Properties.Resources.header;
-			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(564, 70);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-			this.pictureBox1.TabIndex = 23;
-			this.pictureBox1.TabStop = false;
+			this.pictureBoxHeader.Image = global::notifier.Properties.Resources.header;
+			this.pictureBoxHeader.Location = new System.Drawing.Point(0, 0);
+			this.pictureBoxHeader.Name = "pictureBoxHeader";
+			this.pictureBoxHeader.Size = new System.Drawing.Size(564, 70);
+			this.pictureBoxHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+			this.pictureBoxHeader.TabIndex = 23;
+			this.pictureBoxHeader.TabStop = false;
 			// 
 			// contextMenu
 			// 
@@ -420,7 +420,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(564, 316);
-			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.pictureBoxHeader);
 			this.Controls.Add(this.separator);
 			this.Controls.Add(this.buttonOK);
 			this.Controls.Add(this.tabControl);
@@ -446,7 +446,7 @@
 			this.groupBox1.PerformLayout();
 			this.tabPageAbout.ResumeLayout(false);
 			this.tabPageAbout.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -479,7 +479,7 @@
 		private System.Windows.Forms.NotifyIcon notifyIcon;
 		private System.Windows.Forms.Timer timer;
 		private System.Windows.Forms.LinkLabel linkWebsiteYusuke;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.PictureBox pictureBoxHeader;
 		private System.Windows.Forms.ContextMenu contextMenu;
 		private System.Windows.Forms.MenuItem menuItemExit;
 		private System.Windows.Forms.MenuItem menuItem2;
