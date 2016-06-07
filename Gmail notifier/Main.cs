@@ -124,13 +124,14 @@ namespace notifier {
 		/// </summary>
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
 		private void SyncInbox(bool timertick = false) {
-			try {
 
-				// displays the sync icon, but not on every tick of the timer
-				if (!timertick) {
-					notifyIcon.Icon = Properties.Resources.sync;
-					notifyIcon.Text = "Synchronisation en cours ...";
-				}
+			// displays the sync icon, but not on every tick of the timer
+			if (!timertick) {
+				notifyIcon.Icon = Properties.Resources.sync;
+				notifyIcon.Text = "Synchronisation en cours ...";
+			}
+
+			try {
 
 				// manages the spam notification
 				if (Properties.Settings.Default.SpamNotification) {
