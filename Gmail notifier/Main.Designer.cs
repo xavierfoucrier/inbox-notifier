@@ -416,30 +416,35 @@
 			this.menuItemTimeoutDisabled.Index = 0;
 			this.menuItemTimeoutDisabled.RadioCheck = true;
 			this.menuItemTimeoutDisabled.Text = "Désactivé";
+			this.menuItemTimeoutDisabled.Click += new System.EventHandler(this.menuItemTimeoutDisabled_Click);
 			// 
 			// menuItemTimeout30m
 			// 
 			this.menuItemTimeout30m.Index = 1;
 			this.menuItemTimeout30m.RadioCheck = true;
 			this.menuItemTimeout30m.Text = "30 minutes";
+			this.menuItemTimeout30m.Click += new System.EventHandler(this.menuItemTimeout30m_Click);
 			// 
 			// menuItemTimeout1h
 			// 
 			this.menuItemTimeout1h.Index = 2;
 			this.menuItemTimeout1h.RadioCheck = true;
 			this.menuItemTimeout1h.Text = "1 heure";
+			this.menuItemTimeout1h.Click += new System.EventHandler(this.menuItemTimeout1h_Click);
 			// 
 			// menuItemTimeout2h
 			// 
 			this.menuItemTimeout2h.Index = 3;
 			this.menuItemTimeout2h.RadioCheck = true;
 			this.menuItemTimeout2h.Text = "2 heures";
+			this.menuItemTimeout2h.Click += new System.EventHandler(this.menuItemTimeout2h_Click);
 			// 
 			// menuItemTimeout5h
 			// 
 			this.menuItemTimeout5h.Index = 4;
 			this.menuItemTimeout5h.RadioCheck = true;
 			this.menuItemTimeout5h.Text = "5 heures";
+			this.menuItemTimeout5h.Click += new System.EventHandler(this.menuItemTimeout5h_Click);
 			// 
 			// menuItemSettings
 			// 

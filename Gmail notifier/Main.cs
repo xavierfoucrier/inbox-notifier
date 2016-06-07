@@ -311,6 +311,96 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Delays the inbox sync during a certain time
+		/// </summary>
+		/// <param name="delay">Delay until the next inbox sync</param>
+		private void DoNotDisturb(int delay) {
+
+			// sets the new timer interval depending on the user settings
+			timer.Interval = delay;
+
+			// shows the current user choice by unchecking others menu items
+			foreach (MenuItem item in menuItemTimout.MenuItems) {
+				item.Checked = false;
+			}
+
+			// updates the systray icon and text
+			notifyIcon.Icon = Properties.Resources.timeout;
+			notifyIcon.Text = "Ne pas déranger";
+		}
+
+		/// <summary>
+		/// Manages the context menu TimeoutDisabled item
+		/// </summary>
+		private void menuItemTimeoutDisabled_Click(object sender, EventArgs e) {
+
+			// exits if the item is already selected
+			if (menuItemTimeoutDisabled.Checked) {
+				return;
+			}
+
+			// restores the timer interval when the do not disturb time has elapsed
+			timer.Interval = Properties.Settings.Default.TimerInterval;
+
+			// unchecks others menu items
+			foreach (MenuItem item in menuItemTimout.MenuItems) {
+				item.Checked = false;
+			}
+
+			// disables the do not disturb option and synchronizes the inbox (silently)
+			menuItemTimeoutDisabled.Checked = true;
+			this.SyncInbox();
+		}
+
+		/// <summary>
+		/// Manages the context menu Timeout30m item
+		/// </summary>
+		private void menuItemTimeout30m_Click(object sender, EventArgs e) {
+			if (menuItemTimeout30m.Checked) {
+				return;
+			}
+
+			DoNotDisturb(1800000);
+			menuItemTimeout30m.Checked = true;
+		}
+
+		/// <summary>
+		/// Manages the context menu Timeout1h item
+		/// </summary>
+		private void menuItemTimeout1h_Click(object sender, EventArgs e) {
+			if (menuItemTimeout1h.Checked) {
+				return;
+			}
+
+			DoNotDisturb(3600000);
+			menuItemTimeout1h.Checked = true;
+		}
+
+		/// <summary>
+		/// Manages the context menu Timeout2h item
+		/// </summary>
+		private void menuItemTimeout2h_Click(object sender, EventArgs e) {
+			if (menuItemTimeout2h.Checked) {
+				return;
+			}
+
+			DoNotDisturb(7200000);
+			menuItemTimeout2h.Checked = true;
+		}
+
+		/// <summary>
+		/// Manages the context menu Timeout5h item
+		/// </summary>
+		private void menuItemTimeout5h_Click(object sender, EventArgs e) {
+			if (menuItemTimeout5h.Checked) {
+				return;
+			}
+
+			DoNotDisturb(18000000);
+			menuItemTimeout5h.Checked = true;
+		}
+
+		/// <summary>
 		/// Manages the context menu Settings item
 		/// </summary>
 		private void menuItemSettings_Click(object sender, EventArgs e) {
@@ -340,6 +430,24 @@ namespace notifier {
 		/// Synchronizes the user mailbox on every timer tick
 		/// </summary>
 		private void timer_Tick(object sender, EventArgs e) {
+
+			// restores the timer interval when the do not disturb time has elapsed
+			if (timer.Interval != Properties.Settings.Default.TimerInterval) {
+				timer.Interval = Properties.Settings.Default.TimerInterval;
+
+				// unchecks others menu items
+				foreach (MenuItem item in menuItemTimout.MenuItems) {
+					item.Checked = false;
+				}
+
+				// disables the do not disturb option and synchronizes the inbox (silently)
+				menuItemTimeoutDisabled.Checked = true;
+				this.SyncInbox();
+
+				return;
+			}
+			
+			// synchronizes the inbox
 			this.SyncInbox(true);
 		}
 	}
