@@ -334,31 +334,19 @@ namespace notifier {
 			timer.Interval = delay;
 
 			// updates the systray icon and text
-			notifyIcon.Icon = Properties.Resources.timeout;
-			notifyIcon.Text = "Ne pas déranger";
+			if (delay != Properties.Settings.Default.TimerInterval) {
+				notifyIcon.Icon = Properties.Resources.timeout;
+				notifyIcon.Text = "Ne pas déranger";
+			} else {
+				this.SyncInbox();
+			}
 		}
 
 		/// <summary>
 		/// Manages the context menu TimeoutDisabled item
 		/// </summary>
 		private void menuItemTimeoutDisabled_Click(object sender, EventArgs e) {
-
-			// exits if the item is already selected
-			if (menuItemTimeoutDisabled.Checked) {
-				return;
-			}
-
-			// restores the timer interval when the do not disturb time has elapsed
-			timer.Interval = Properties.Settings.Default.TimerInterval;
-
-			// unchecks others menu items
-			foreach (MenuItem item in menuItemTimout.MenuItems) {
-				item.Checked = false;
-			}
-
-			// disables the do not disturb option and synchronizes the inbox (silently)
-			menuItemTimeoutDisabled.Checked = true;
-			this.SyncInbox();
+			DoNotDisturb((MenuItem)sender, Properties.Settings.Default.TimerInterval);
 		}
 
 		/// <summary>
