@@ -313,16 +313,25 @@ namespace notifier {
 		/// <summary>
 		/// Delays the inbox sync during a certain time
 		/// </summary>
+		/// <param name="item">Item selected in the menu</param>
 		/// <param name="delay">Delay until the next inbox sync</param>
-		private void DoNotDisturb(int delay) {
+		private void DoNotDisturb(MenuItem item, int delay) {
+
+			// exits if the selected menu item is already checked
+			if (item.Checked) {
+				return;
+			}
+
+			// unchecks all menu items
+			foreach (MenuItem i in menuItemTimout.MenuItems) {
+				i.Checked = false;
+			}
+
+			// displays the user choice
+			item.Checked = true;
 
 			// sets the new timer interval depending on the user settings
 			timer.Interval = delay;
-
-			// shows the current user choice by unchecking others menu items
-			foreach (MenuItem item in menuItemTimout.MenuItems) {
-				item.Checked = false;
-			}
 
 			// updates the systray icon and text
 			notifyIcon.Icon = Properties.Resources.timeout;
@@ -356,48 +365,28 @@ namespace notifier {
 		/// Manages the context menu Timeout30m item
 		/// </summary>
 		private void menuItemTimeout30m_Click(object sender, EventArgs e) {
-			if (menuItemTimeout30m.Checked) {
-				return;
-			}
-
-			DoNotDisturb(1800000);
-			menuItemTimeout30m.Checked = true;
+			DoNotDisturb((MenuItem)sender, 1800000);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout1h item
 		/// </summary>
 		private void menuItemTimeout1h_Click(object sender, EventArgs e) {
-			if (menuItemTimeout1h.Checked) {
-				return;
-			}
-
-			DoNotDisturb(3600000);
-			menuItemTimeout1h.Checked = true;
+			DoNotDisturb((MenuItem)sender, 3600000);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout2h item
 		/// </summary>
 		private void menuItemTimeout2h_Click(object sender, EventArgs e) {
-			if (menuItemTimeout2h.Checked) {
-				return;
-			}
-
-			DoNotDisturb(7200000);
-			menuItemTimeout2h.Checked = true;
+			DoNotDisturb((MenuItem)sender, 7200000);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout5h item
 		/// </summary>
 		private void menuItemTimeout5h_Click(object sender, EventArgs e) {
-			if (menuItemTimeout5h.Checked) {
-				return;
-			}
-
-			DoNotDisturb(18000000);
-			menuItemTimeout5h.Checked = true;
+			DoNotDisturb((MenuItem)sender, 18000000);
 		}
 
 		/// <summary>
