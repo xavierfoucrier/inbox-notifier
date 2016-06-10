@@ -365,28 +365,28 @@ namespace notifier {
 		/// Manages the context menu Timeout30m item
 		/// </summary>
 		private void menuItemTimeout30m_Click(object sender, EventArgs e) {
-			DoNotDisturb((MenuItem)sender, 1800000);
+			DoNotDisturb((MenuItem)sender, 1000 * 60 * 30);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout1h item
 		/// </summary>
 		private void menuItemTimeout1h_Click(object sender, EventArgs e) {
-			DoNotDisturb((MenuItem)sender, 3600000);
+			DoNotDisturb((MenuItem)sender, 1000 * 60 * 60);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout2h item
 		/// </summary>
 		private void menuItemTimeout2h_Click(object sender, EventArgs e) {
-			DoNotDisturb((MenuItem)sender, 7200000);
+			DoNotDisturb((MenuItem)sender, 1000 * 60 * 60 * 2);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout5h item
 		/// </summary>
 		private void menuItemTimeout5h_Click(object sender, EventArgs e) {
-			DoNotDisturb((MenuItem)sender, 18000000);
+			DoNotDisturb((MenuItem)sender, 1000 * 60 * 60 * 5);
 		}
 
 		/// <summary>
