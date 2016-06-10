@@ -56,6 +56,7 @@
 			this.menuItemMarkAsRead = new System.Windows.Forms.MenuItem();
 			this.menuItemTimout = new System.Windows.Forms.MenuItem();
 			this.menuItemTimeoutDisabled = new System.Windows.Forms.MenuItem();
+			this.menuItem1 = new System.Windows.Forms.MenuItem();
 			this.menuItemTimeout30m = new System.Windows.Forms.MenuItem();
 			this.menuItemTimeout1h = new System.Windows.Forms.MenuItem();
 			this.menuItemTimeout2h = new System.Windows.Forms.MenuItem();
@@ -404,6 +405,7 @@
 			this.menuItemTimout.Index = 2;
 			this.menuItemTimout.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemTimeoutDisabled,
+            this.menuItem1,
             this.menuItemTimeout30m,
             this.menuItemTimeout1h,
             this.menuItemTimeout2h,
@@ -418,30 +420,35 @@
 			this.menuItemTimeoutDisabled.Text = "Désactivé";
 			this.menuItemTimeoutDisabled.Click += new System.EventHandler(this.menuItemTimeoutDisabled_Click);
 			// 
+			// menuItem1
+			// 
+			this.menuItem1.Index = 1;
+			this.menuItem1.Text = "-";
+			// 
 			// menuItemTimeout30m
 			// 
-			this.menuItemTimeout30m.Index = 1;
+			this.menuItemTimeout30m.Index = 2;
 			this.menuItemTimeout30m.RadioCheck = true;
 			this.menuItemTimeout30m.Text = "30 minutes";
 			this.menuItemTimeout30m.Click += new System.EventHandler(this.menuItemTimeout30m_Click);
 			// 
 			// menuItemTimeout1h
 			// 
-			this.menuItemTimeout1h.Index = 2;
+			this.menuItemTimeout1h.Index = 3;
 			this.menuItemTimeout1h.RadioCheck = true;
 			this.menuItemTimeout1h.Text = "1 heure";
 			this.menuItemTimeout1h.Click += new System.EventHandler(this.menuItemTimeout1h_Click);
 			// 
 			// menuItemTimeout2h
 			// 
-			this.menuItemTimeout2h.Index = 3;
+			this.menuItemTimeout2h.Index = 4;
 			this.menuItemTimeout2h.RadioCheck = true;
 			this.menuItemTimeout2h.Text = "2 heures";
 			this.menuItemTimeout2h.Click += new System.EventHandler(this.menuItemTimeout2h_Click);
 			// 
 			// menuItemTimeout5h
 			// 
-			this.menuItemTimeout5h.Index = 4;
+			this.menuItemTimeout5h.Index = 5;
 			this.menuItemTimeout5h.RadioCheck = true;
 			this.menuItemTimeout5h.Text = "5 heures";
 			this.menuItemTimeout5h.Click += new System.EventHandler(this.menuItemTimeout5h_Click);
@@ -547,6 +554,7 @@
 		private System.Windows.Forms.MenuItem menuItemTimeout2h;
 		private System.Windows.Forms.MenuItem menuItemTimeout5h;
 		private System.Windows.Forms.MenuItem menuItemTimeoutDisabled;
+		private System.Windows.Forms.MenuItem menuItem1;
 	}
 }
 
