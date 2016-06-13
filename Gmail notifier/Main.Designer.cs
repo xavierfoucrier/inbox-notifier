@@ -455,8 +455,9 @@
 			// 
 			// menuItemSettings
 			// 
+			this.menuItemSettings.DefaultItem = true;
 			this.menuItemSettings.Index = 3;
-			this.menuItemSettings.Text = "Préférences";
+			this.menuItemSettings.Text = "Ouvrir";
 			this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
 			// 
 			// menuItem2
