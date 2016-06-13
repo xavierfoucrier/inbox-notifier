@@ -410,20 +410,11 @@ namespace notifier {
 
 			// restores the timer interval when the do not disturb time has elapsed
 			if (timer.Interval != Properties.Settings.Default.TimerInterval) {
-				timer.Interval = Properties.Settings.Default.TimerInterval;
-
-				// unchecks others menu items
-				foreach (MenuItem item in menuItemTimout.MenuItems) {
-					item.Checked = false;
-				}
-
-				// disables the do not disturb option and synchronizes the inbox (silently)
-				menuItemTimeoutDisabled.Checked = true;
-				this.SyncInbox();
+				DoNotDisturb(menuItemTimeoutDisabled, Properties.Settings.Default.TimerInterval);
 
 				return;
 			}
-			
+
 			// synchronizes the inbox
 			this.SyncInbox(true);
 		}
