@@ -336,7 +336,7 @@ namespace notifier {
 			// updates the systray icon and text
 			if (delay != Properties.Settings.Default.TimerInterval) {
 				notifyIcon.Icon = Properties.Resources.timeout;
-				notifyIcon.Text = "Ne pas déranger";
+				notifyIcon.Text = "Ne pas déranger - " + DateTime.Now.AddMilliseconds(delay).ToShortTimeString();
 			} else {
 				this.SyncInbox();
 			}
