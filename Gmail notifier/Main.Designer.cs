@@ -495,7 +495,7 @@
 			this.Name = "Main";
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Préférences";
+			this.Text = "Gmail notifier";
 			this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
 			this.Load += new System.EventHandler(this.Main_Load);
