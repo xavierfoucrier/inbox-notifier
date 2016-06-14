@@ -106,5 +106,17 @@ namespace notifier.Properties {
                 this["SpamNotification"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NetworkConnectivityNotification {
+            get {
+                return ((bool)(this["NetworkConnectivityNotification"]));
+            }
+            set {
+                this["NetworkConnectivityNotification"] = value;
+            }
+        }
     }
 }
