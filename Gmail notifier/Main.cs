@@ -80,6 +80,7 @@ namespace notifier {
 				// loops through all network interface to check network connectivity
 				foreach (NetworkInterface network in NetworkInterface.GetAllNetworkInterfaces()) {
 
+					// discards "non-up" status, modem, serial, loopback and tunnel
 					if (network.OperationalStatus != OperationalStatus.Up || network.Speed < 0 || network.NetworkInterfaceType == NetworkInterfaceType.Loopback || network.NetworkInterfaceType == NetworkInterfaceType.Tunnel) {
 						continue;
 					}
@@ -88,10 +89,12 @@ namespace notifier {
 						continue;
 					}
 
+					// syncs the inbox when a network interface is available
 					this.SyncInbox();
 					break;
 				}
 
+				// displays a notification to indicate that the network connectivity has been restored
 				notifyIcon.ShowBalloonTip(450, "Connexion au réseau rétablie", "La connexion au réseau a été rétablie : vous êtes de nouveau connecté à Internet. La boite de réception a été automatiquement synchronisée.", ToolTipIcon.Info);
 			});
 
