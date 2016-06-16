@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -57,6 +58,41 @@ namespace notifier {
 			Properties.Settings.Default.PropertyChanged += new PropertyChangedEventHandler((object o, PropertyChangedEventArgs target) => {
 				Properties.Settings.Default.Save();
 				labelSettingsSaved.Visible = true;
+			});
+
+			// binds the "NetworkAvailabilityChanged" event to automatically display a notification about network connectivity, depending on the user settings
+			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object o, NetworkAvailabilityEventArgs target) => {
+
+				// discards notification
+				if (!Properties.Settings.Default.NetworkConnectivityNotification) {
+					return;
+				}
+
+				// checks for available networks
+				if (!NetworkInterface.GetIsNetworkAvailable()) {
+					notifyIcon.Icon = Properties.Resources.warning;
+					notifyIcon.Text = "Erreur réseau";
+					notifyIcon.ShowBalloonTip(450, "Erreur réseau", "Aucun réseau n'est actuellement disponible, vous n'êtes probablement pas connecté à Internet. Le service sera rétabli dès que vous serez à nouveau connecté à Internet.", ToolTipIcon.Warning);
+
+					return;
+				}
+
+				// loops through all network interface to check network connectivity
+				foreach (NetworkInterface network in NetworkInterface.GetAllNetworkInterfaces()) {
+
+					if (network.OperationalStatus != OperationalStatus.Up || network.Speed < 0 || network.NetworkInterfaceType == NetworkInterfaceType.Loopback || network.NetworkInterfaceType == NetworkInterfaceType.Tunnel) {
+						continue;
+					}
+
+					// discards virtual cards (like virtual box, virtual pc, etc.) and microsoft loopback adapter (showing as ethernet card)
+						continue;
+					}
+
+					this.SyncInbox();
+					break;
+				}
+
+				notifyIcon.ShowBalloonTip(450, "Connexion au réseau rétablie", "La connexion au réseau a été rétablie : vous êtes de nouveau connecté à Internet. La boite de réception a été automatiquement synchronisée.", ToolTipIcon.Info);
 			});
 
 			// displays the product version
