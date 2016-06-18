@@ -69,6 +69,12 @@
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.tabPagePrivacy = new System.Windows.Forms.TabPage();
+			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
+			this.fieldPrivacyNotificationShort = new System.Windows.Forms.RadioButton();
+			this.fieldPrivacyNotificationAll = new System.Windows.Forms.RadioButton();
+			this.label2 = new System.Windows.Forms.Label();
 			this.tabControl.SuspendLayout();
 			this.tabPagePreferences.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -78,6 +84,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.tabPageAbout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).BeginInit();
+			this.tabPagePrivacy.SuspendLayout();
+			this.groupBox4.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// separator
@@ -102,6 +110,7 @@
 			// 
 			this.tabControl.Controls.Add(this.tabPagePreferences);
 			this.tabControl.Controls.Add(this.tabPageNotification);
+			this.tabControl.Controls.Add(this.tabPagePrivacy);
 			this.tabControl.Controls.Add(this.tabPageAbout);
 			this.tabControl.Location = new System.Drawing.Point(12, 83);
 			this.tabControl.Name = "tabControl";
@@ -526,6 +535,74 @@
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
+			// tabPagePrivacy
+			// 
+			this.tabPagePrivacy.Controls.Add(this.groupBox4);
+			this.tabPagePrivacy.Location = new System.Drawing.Point(4, 22);
+			this.tabPagePrivacy.Name = "tabPagePrivacy";
+			this.tabPagePrivacy.Size = new System.Drawing.Size(532, 145);
+			this.tabPagePrivacy.TabIndex = 4;
+			this.tabPagePrivacy.Text = "Confidentialité";
+			this.tabPagePrivacy.UseVisualStyleBackColor = true;
+			// 
+			// groupBox4
+			// 
+			this.groupBox4.Controls.Add(this.label2);
+			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationAll);
+			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationShort);
+			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationNone);
+			this.groupBox4.Location = new System.Drawing.Point(6, 6);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(519, 133);
+			this.groupBox4.TabIndex = 4;
+			this.groupBox4.TabStop = false;
+			this.groupBox4.Text = "Notification";
+			// 
+			// fieldPrivacyNotificationNone
+			// 
+			this.fieldPrivacyNotificationNone.AutoSize = true;
+			this.fieldPrivacyNotificationNone.Enabled = false;
+			this.fieldPrivacyNotificationNone.Location = new System.Drawing.Point(15, 50);
+			this.fieldPrivacyNotificationNone.Name = "fieldPrivacyNotificationNone";
+			this.fieldPrivacyNotificationNone.Size = new System.Drawing.Size(195, 17);
+			this.fieldPrivacyNotificationNone.TabIndex = 1;
+			this.fieldPrivacyNotificationNone.TabStop = true;
+			this.fieldPrivacyNotificationNone.Text = "Afficher tout le contenu du message";
+			this.fieldPrivacyNotificationNone.UseVisualStyleBackColor = true;
+			// 
+			// fieldPrivacyNotificationShort
+			// 
+			this.fieldPrivacyNotificationShort.AutoSize = true;
+			this.fieldPrivacyNotificationShort.Enabled = false;
+			this.fieldPrivacyNotificationShort.Location = new System.Drawing.Point(15, 73);
+			this.fieldPrivacyNotificationShort.Name = "fieldPrivacyNotificationShort";
+			this.fieldPrivacyNotificationShort.Size = new System.Drawing.Size(228, 17);
+			this.fieldPrivacyNotificationShort.TabIndex = 1;
+			this.fieldPrivacyNotificationShort.TabStop = true;
+			this.fieldPrivacyNotificationShort.Text = "Afficher une partie du contenu du message";
+			this.fieldPrivacyNotificationShort.UseVisualStyleBackColor = true;
+			// 
+			// fieldPrivacyNotificationAll
+			// 
+			this.fieldPrivacyNotificationAll.AutoSize = true;
+			this.fieldPrivacyNotificationAll.Enabled = false;
+			this.fieldPrivacyNotificationAll.Location = new System.Drawing.Point(15, 96);
+			this.fieldPrivacyNotificationAll.Name = "fieldPrivacyNotificationAll";
+			this.fieldPrivacyNotificationAll.Size = new System.Drawing.Size(200, 17);
+			this.fieldPrivacyNotificationAll.TabIndex = 1;
+			this.fieldPrivacyNotificationAll.TabStop = true;
+			this.fieldPrivacyNotificationAll.Text = "Masquer tout le contenu du message";
+			this.fieldPrivacyNotificationAll.UseVisualStyleBackColor = true;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(12, 25);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(191, 13);
+			this.label2.TabIndex = 2;
+			this.label2.Text = "À la réception d\'un nouveau message :";
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,6 +638,9 @@
 			this.tabPageAbout.ResumeLayout(false);
 			this.tabPageAbout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).EndInit();
+			this.tabPagePrivacy.ResumeLayout(false);
+			this.groupBox4.ResumeLayout(false);
+			this.groupBox4.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -612,6 +692,12 @@
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.CheckBox fieldNotification;
 		private System.Windows.Forms.CheckBox fieldNetworkConnectivityNotification;
+		private System.Windows.Forms.TabPage tabPagePrivacy;
+		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.RadioButton fieldPrivacyNotificationShort;
+		private System.Windows.Forms.RadioButton fieldPrivacyNotificationNone;
+		private System.Windows.Forms.RadioButton fieldPrivacyNotificationAll;
+		private System.Windows.Forms.Label label2;
 	}
 }
 
