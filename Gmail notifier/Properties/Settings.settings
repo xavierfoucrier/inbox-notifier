@@ -26,5 +26,8 @@
     <Setting Name="NetworkConnectivityNotification" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="PrivacyNotification" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Afficher une partie du contenu du message</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

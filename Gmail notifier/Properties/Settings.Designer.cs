@@ -118,5 +118,17 @@ namespace notifier.Properties {
                 this["NetworkConnectivityNotification"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Afficher une partie du contenu du message")]
+        public string PrivacyNotification {
+            get {
+                return ((string)(this["PrivacyNotification"]));
+            }
+            set {
+                this["PrivacyNotification"] = value;
+            }
+        }
     }
 }
