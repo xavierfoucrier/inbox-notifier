@@ -282,6 +282,13 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Manages the NetworkConnectivityNotification user setting
+		/// </summary>
+		private void fieldNetworkConnectivityNotification_Click(object sender, EventArgs e) {
+			Properties.Settings.Default.NetworkConnectivityNotification = fieldNetworkConnectivityNotification.Checked;
+		}
+
+		/// <summary>
 		/// Opens the credit website
 		/// </summary>
 		private void linkWebsiteYusuke_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {

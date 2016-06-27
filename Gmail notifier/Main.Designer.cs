@@ -30,13 +30,25 @@
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPagePreferences = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.fieldStartWithWindows = new System.Windows.Forms.CheckBox();
 			this.fieldMinimizeToSystray = new System.Windows.Forms.CheckBox();
+			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.fieldNetworkConnectivityNotification = new System.Windows.Forms.CheckBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
+			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.fieldNumericDelay = new System.Windows.Forms.NumericUpDown();
 			this.fieldNotification = new System.Windows.Forms.CheckBox();
+			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
+			this.tabPagePrivacy = new System.Windows.Forms.TabPage();
+			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.fieldPrivacyNotificationAll = new System.Windows.Forms.RadioButton();
+			this.fieldPrivacyNotificationShort = new System.Windows.Forms.RadioButton();
+			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
 			this.tabPageAbout = new System.Windows.Forms.TabPage();
 			this.linkWebsiteYusuke = new System.Windows.Forms.LinkLabel();
 			this.label10 = new System.Windows.Forms.Label();
@@ -62,18 +74,6 @@
 			this.menuItemSettings = new System.Windows.Forms.MenuItem();
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
-			this.tabPagePrivacy = new System.Windows.Forms.TabPage();
-			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
-			this.fieldPrivacyNotificationShort = new System.Windows.Forms.RadioButton();
-			this.fieldPrivacyNotificationAll = new System.Windows.Forms.RadioButton();
-			this.label2 = new System.Windows.Forms.Label();
-			this.fieldStartWithWindows = new System.Windows.Forms.CheckBox();
-			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
-			this.fieldNetworkConnectivityNotification = new System.Windows.Forms.CheckBox();
-			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
-			this.fieldNumericDelay = new System.Windows.Forms.NumericUpDown();
-			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.tabControl.SuspendLayout();
 			this.tabPagePreferences.SuspendLayout();
@@ -81,11 +81,11 @@
 			this.tabPageNotification.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
-			this.tabPageAbout.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.tabPagePrivacy.SuspendLayout();
 			this.groupBox4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
+			this.tabPageAbout.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// separator
@@ -142,6 +142,19 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Comportement";
 			// 
+			// fieldStartWithWindows
+			// 
+			this.fieldStartWithWindows.AutoSize = true;
+			this.fieldStartWithWindows.Checked = global::notifier.Properties.Settings.Default.StartWithWindows;
+			this.fieldStartWithWindows.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "StartWithWindows", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldStartWithWindows.Enabled = false;
+			this.fieldStartWithWindows.Location = new System.Drawing.Point(15, 25);
+			this.fieldStartWithWindows.Name = "fieldStartWithWindows";
+			this.fieldStartWithWindows.Size = new System.Drawing.Size(189, 17);
+			this.fieldStartWithWindows.TabIndex = 0;
+			this.fieldStartWithWindows.Text = "Lancer au démarrage de Windows";
+			this.fieldStartWithWindows.UseVisualStyleBackColor = true;
+			// 
 			// fieldMinimizeToSystray
 			// 
 			this.fieldMinimizeToSystray.AutoSize = true;
@@ -154,6 +167,20 @@
 			this.fieldMinimizeToSystray.TabIndex = 0;
 			this.fieldMinimizeToSystray.Text = "Réduire dans la zone de notification";
 			this.fieldMinimizeToSystray.UseVisualStyleBackColor = true;
+			// 
+			// fieldAskonExit
+			// 
+			this.fieldAskonExit.AutoSize = true;
+			this.fieldAskonExit.Checked = global::notifier.Properties.Settings.Default.AskonExit;
+			this.fieldAskonExit.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldAskonExit.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AskonExit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAskonExit.Location = new System.Drawing.Point(15, 71);
+			this.fieldAskonExit.Name = "fieldAskonExit";
+			this.fieldAskonExit.Size = new System.Drawing.Size(226, 17);
+			this.fieldAskonExit.TabIndex = 2;
+			this.fieldAskonExit.Text = "Me demander avant de quitter l\'application";
+			this.fieldAskonExit.UseVisualStyleBackColor = true;
+			this.fieldAskonExit.Click += new System.EventHandler(this.fieldAskonExit_Click);
 			// 
 			// tabPageNotification
 			// 
@@ -175,6 +202,20 @@
 			this.groupBox3.TabIndex = 4;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Réseau";
+			// 
+			// fieldNetworkConnectivityNotification
+			// 
+			this.fieldNetworkConnectivityNotification.AutoSize = true;
+			this.fieldNetworkConnectivityNotification.Checked = global::notifier.Properties.Settings.Default.NetworkConnectivityNotification;
+			this.fieldNetworkConnectivityNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldNetworkConnectivityNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "NetworkConnectivityNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldNetworkConnectivityNotification.Location = new System.Drawing.Point(15, 25);
+			this.fieldNetworkConnectivityNotification.Name = "fieldNetworkConnectivityNotification";
+			this.fieldNetworkConnectivityNotification.Size = new System.Drawing.Size(162, 17);
+			this.fieldNetworkConnectivityNotification.TabIndex = 0;
+			this.fieldNetworkConnectivityNotification.Text = "Perte de connectivité réseau";
+			this.fieldNetworkConnectivityNotification.UseVisualStyleBackColor = true;
+			this.fieldNetworkConnectivityNotification.Click += new System.EventHandler(this.fieldNetworkConnectivityNotification_Click);
 			// 
 			// groupBox2
 			// 
@@ -205,6 +246,21 @@
 			this.fieldStepDelay.Size = new System.Drawing.Size(73, 21);
 			this.fieldStepDelay.TabIndex = 2;
 			this.fieldStepDelay.ValueMember = "minute(s)";
+			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.fieldStepDelay_SelectionChangeCommitted);
+			// 
+			// fieldSpamNotification
+			// 
+			this.fieldSpamNotification.AutoSize = true;
+			this.fieldSpamNotification.Checked = global::notifier.Properties.Settings.Default.SpamNotification;
+			this.fieldSpamNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldSpamNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "SpamNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldSpamNotification.Location = new System.Drawing.Point(15, 71);
+			this.fieldSpamNotification.Name = "fieldSpamNotification";
+			this.fieldSpamNotification.Size = new System.Drawing.Size(154, 17);
+			this.fieldSpamNotification.TabIndex = 0;
+			this.fieldSpamNotification.Text = "Courrier indésirable (SPAM)";
+			this.fieldSpamNotification.UseVisualStyleBackColor = true;
+			this.fieldSpamNotification.Click += new System.EventHandler(this.fieldSpamNotification_Click);
 			// 
 			// label1
 			// 
@@ -214,6 +270,22 @@
 			this.label1.Size = new System.Drawing.Size(106, 13);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Délai de vérification :";
+			// 
+			// fieldNumericDelay
+			// 
+			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldNumericDelay.Location = new System.Drawing.Point(124, 101);
+			this.fieldNumericDelay.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.fieldNumericDelay.Name = "fieldNumericDelay";
+			this.fieldNumericDelay.Size = new System.Drawing.Size(41, 20);
+			this.fieldNumericDelay.TabIndex = 0;
+			this.fieldNumericDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.fieldNumericDelay.Value = global::notifier.Properties.Settings.Default.NumericDelay;
+			this.fieldNumericDelay.ValueChanged += new System.EventHandler(this.fieldNumericDelay_ValueChanged);
 			// 
 			// fieldNotification
 			// 
@@ -227,6 +299,87 @@
 			this.fieldNotification.TabIndex = 0;
 			this.fieldNotification.Text = "Nouveau message";
 			this.fieldNotification.UseVisualStyleBackColor = true;
+			// 
+			// fieldAudioNotification
+			// 
+			this.fieldAudioNotification.AutoSize = true;
+			this.fieldAudioNotification.Checked = global::notifier.Properties.Settings.Default.AudioNotification;
+			this.fieldAudioNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAudioNotification.Location = new System.Drawing.Point(15, 48);
+			this.fieldAudioNotification.Name = "fieldAudioNotification";
+			this.fieldAudioNotification.Size = new System.Drawing.Size(114, 17);
+			this.fieldAudioNotification.TabIndex = 0;
+			this.fieldAudioNotification.Text = "Notification sonore";
+			this.fieldAudioNotification.UseVisualStyleBackColor = true;
+			this.fieldAudioNotification.Click += new System.EventHandler(this.fieldAudioNotification_Click);
+			// 
+			// tabPagePrivacy
+			// 
+			this.tabPagePrivacy.Controls.Add(this.groupBox4);
+			this.tabPagePrivacy.Location = new System.Drawing.Point(4, 22);
+			this.tabPagePrivacy.Name = "tabPagePrivacy";
+			this.tabPagePrivacy.Size = new System.Drawing.Size(532, 145);
+			this.tabPagePrivacy.TabIndex = 4;
+			this.tabPagePrivacy.Text = "Confidentialité";
+			this.tabPagePrivacy.UseVisualStyleBackColor = true;
+			// 
+			// groupBox4
+			// 
+			this.groupBox4.Controls.Add(this.label2);
+			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationAll);
+			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationShort);
+			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationNone);
+			this.groupBox4.Location = new System.Drawing.Point(6, 6);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(519, 133);
+			this.groupBox4.TabIndex = 4;
+			this.groupBox4.TabStop = false;
+			this.groupBox4.Text = "Notification";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(12, 25);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(191, 13);
+			this.label2.TabIndex = 2;
+			this.label2.Text = "À la réception d\'un nouveau message :";
+			// 
+			// fieldPrivacyNotificationAll
+			// 
+			this.fieldPrivacyNotificationAll.AutoSize = true;
+			this.fieldPrivacyNotificationAll.Enabled = false;
+			this.fieldPrivacyNotificationAll.Location = new System.Drawing.Point(15, 96);
+			this.fieldPrivacyNotificationAll.Name = "fieldPrivacyNotificationAll";
+			this.fieldPrivacyNotificationAll.Size = new System.Drawing.Size(200, 17);
+			this.fieldPrivacyNotificationAll.TabIndex = 1;
+			this.fieldPrivacyNotificationAll.Text = "Masquer tout le contenu du message";
+			this.fieldPrivacyNotificationAll.UseVisualStyleBackColor = true;
+			// 
+			// fieldPrivacyNotificationShort
+			// 
+			this.fieldPrivacyNotificationShort.AutoSize = true;
+			this.fieldPrivacyNotificationShort.Checked = true;
+			this.fieldPrivacyNotificationShort.Enabled = false;
+			this.fieldPrivacyNotificationShort.Location = new System.Drawing.Point(15, 73);
+			this.fieldPrivacyNotificationShort.Name = "fieldPrivacyNotificationShort";
+			this.fieldPrivacyNotificationShort.Size = new System.Drawing.Size(228, 17);
+			this.fieldPrivacyNotificationShort.TabIndex = 1;
+			this.fieldPrivacyNotificationShort.TabStop = true;
+			this.fieldPrivacyNotificationShort.Text = "Afficher une partie du contenu du message";
+			this.fieldPrivacyNotificationShort.UseVisualStyleBackColor = true;
+			// 
+			// fieldPrivacyNotificationNone
+			// 
+			this.fieldPrivacyNotificationNone.AutoSize = true;
+			this.fieldPrivacyNotificationNone.Enabled = false;
+			this.fieldPrivacyNotificationNone.Location = new System.Drawing.Point(15, 50);
+			this.fieldPrivacyNotificationNone.Name = "fieldPrivacyNotificationNone";
+			this.fieldPrivacyNotificationNone.Size = new System.Drawing.Size(195, 17);
+			this.fieldPrivacyNotificationNone.TabIndex = 1;
+			this.fieldPrivacyNotificationNone.Text = "Afficher tout le contenu du message";
+			this.fieldPrivacyNotificationNone.UseVisualStyleBackColor = true;
 			// 
 			// tabPageAbout
 			// 
@@ -448,154 +601,6 @@
 			this.menuItemExit.Text = "Quitter";
 			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
 			// 
-			// tabPagePrivacy
-			// 
-			this.tabPagePrivacy.Controls.Add(this.groupBox4);
-			this.tabPagePrivacy.Location = new System.Drawing.Point(4, 22);
-			this.tabPagePrivacy.Name = "tabPagePrivacy";
-			this.tabPagePrivacy.Size = new System.Drawing.Size(532, 145);
-			this.tabPagePrivacy.TabIndex = 4;
-			this.tabPagePrivacy.Text = "Confidentialité";
-			this.tabPagePrivacy.UseVisualStyleBackColor = true;
-			// 
-			// groupBox4
-			// 
-			this.groupBox4.Controls.Add(this.label2);
-			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationAll);
-			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationShort);
-			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationNone);
-			this.groupBox4.Location = new System.Drawing.Point(6, 6);
-			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(519, 133);
-			this.groupBox4.TabIndex = 4;
-			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Notification";
-			// 
-			// fieldPrivacyNotificationNone
-			// 
-			this.fieldPrivacyNotificationNone.AutoSize = true;
-			this.fieldPrivacyNotificationNone.Enabled = false;
-			this.fieldPrivacyNotificationNone.Location = new System.Drawing.Point(15, 50);
-			this.fieldPrivacyNotificationNone.Name = "fieldPrivacyNotificationNone";
-			this.fieldPrivacyNotificationNone.Size = new System.Drawing.Size(195, 17);
-			this.fieldPrivacyNotificationNone.TabIndex = 1;
-			this.fieldPrivacyNotificationNone.Text = "Afficher tout le contenu du message";
-			this.fieldPrivacyNotificationNone.UseVisualStyleBackColor = true;
-			// 
-			// fieldPrivacyNotificationShort
-			// 
-			this.fieldPrivacyNotificationShort.AutoSize = true;
-			this.fieldPrivacyNotificationShort.Checked = true;
-			this.fieldPrivacyNotificationShort.Enabled = false;
-			this.fieldPrivacyNotificationShort.Location = new System.Drawing.Point(15, 73);
-			this.fieldPrivacyNotificationShort.Name = "fieldPrivacyNotificationShort";
-			this.fieldPrivacyNotificationShort.Size = new System.Drawing.Size(228, 17);
-			this.fieldPrivacyNotificationShort.TabIndex = 1;
-			this.fieldPrivacyNotificationShort.TabStop = true;
-			this.fieldPrivacyNotificationShort.Text = "Afficher une partie du contenu du message";
-			this.fieldPrivacyNotificationShort.UseVisualStyleBackColor = true;
-			// 
-			// fieldPrivacyNotificationAll
-			// 
-			this.fieldPrivacyNotificationAll.AutoSize = true;
-			this.fieldPrivacyNotificationAll.Enabled = false;
-			this.fieldPrivacyNotificationAll.Location = new System.Drawing.Point(15, 96);
-			this.fieldPrivacyNotificationAll.Name = "fieldPrivacyNotificationAll";
-			this.fieldPrivacyNotificationAll.Size = new System.Drawing.Size(200, 17);
-			this.fieldPrivacyNotificationAll.TabIndex = 1;
-			this.fieldPrivacyNotificationAll.Text = "Masquer tout le contenu du message";
-			this.fieldPrivacyNotificationAll.UseVisualStyleBackColor = true;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(12, 25);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(191, 13);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "À la réception d\'un nouveau message :";
-			// 
-			// fieldStartWithWindows
-			// 
-			this.fieldStartWithWindows.AutoSize = true;
-			this.fieldStartWithWindows.Checked = global::notifier.Properties.Settings.Default.StartWithWindows;
-			this.fieldStartWithWindows.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "StartWithWindows", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldStartWithWindows.Enabled = false;
-			this.fieldStartWithWindows.Location = new System.Drawing.Point(15, 25);
-			this.fieldStartWithWindows.Name = "fieldStartWithWindows";
-			this.fieldStartWithWindows.Size = new System.Drawing.Size(189, 17);
-			this.fieldStartWithWindows.TabIndex = 0;
-			this.fieldStartWithWindows.Text = "Lancer au démarrage de Windows";
-			this.fieldStartWithWindows.UseVisualStyleBackColor = true;
-			// 
-			// fieldAskonExit
-			// 
-			this.fieldAskonExit.AutoSize = true;
-			this.fieldAskonExit.Checked = global::notifier.Properties.Settings.Default.AskonExit;
-			this.fieldAskonExit.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldAskonExit.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AskonExit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAskonExit.Location = new System.Drawing.Point(15, 71);
-			this.fieldAskonExit.Name = "fieldAskonExit";
-			this.fieldAskonExit.Size = new System.Drawing.Size(226, 17);
-			this.fieldAskonExit.TabIndex = 2;
-			this.fieldAskonExit.Text = "Me demander avant de quitter l\'application";
-			this.fieldAskonExit.UseVisualStyleBackColor = true;
-			this.fieldAskonExit.Click += new System.EventHandler(this.fieldAskonExit_Click);
-			// 
-			// fieldNetworkConnectivityNotification
-			// 
-			this.fieldNetworkConnectivityNotification.AutoSize = true;
-			this.fieldNetworkConnectivityNotification.Checked = global::notifier.Properties.Settings.Default.NetworkConnectivityNotification;
-			this.fieldNetworkConnectivityNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldNetworkConnectivityNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "NetworkConnectivityNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldNetworkConnectivityNotification.Location = new System.Drawing.Point(15, 25);
-			this.fieldNetworkConnectivityNotification.Name = "fieldNetworkConnectivityNotification";
-			this.fieldNetworkConnectivityNotification.Size = new System.Drawing.Size(162, 17);
-			this.fieldNetworkConnectivityNotification.TabIndex = 0;
-			this.fieldNetworkConnectivityNotification.Text = "Perte de connectivité réseau";
-			this.fieldNetworkConnectivityNotification.UseVisualStyleBackColor = true;
-			// 
-			// fieldSpamNotification
-			// 
-			this.fieldSpamNotification.AutoSize = true;
-			this.fieldSpamNotification.Checked = global::notifier.Properties.Settings.Default.SpamNotification;
-			this.fieldSpamNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldSpamNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "SpamNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldSpamNotification.Location = new System.Drawing.Point(15, 71);
-			this.fieldSpamNotification.Name = "fieldSpamNotification";
-			this.fieldSpamNotification.Size = new System.Drawing.Size(154, 17);
-			this.fieldSpamNotification.TabIndex = 0;
-			this.fieldSpamNotification.Text = "Courrier indésirable (SPAM)";
-			this.fieldSpamNotification.UseVisualStyleBackColor = true;
-			// 
-			// fieldNumericDelay
-			// 
-			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldNumericDelay.Location = new System.Drawing.Point(124, 101);
-			this.fieldNumericDelay.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-			this.fieldNumericDelay.Name = "fieldNumericDelay";
-			this.fieldNumericDelay.Size = new System.Drawing.Size(41, 20);
-			this.fieldNumericDelay.TabIndex = 0;
-			this.fieldNumericDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.fieldNumericDelay.Value = global::notifier.Properties.Settings.Default.NumericDelay;
-			// 
-			// fieldAudioNotification
-			// 
-			this.fieldAudioNotification.AutoSize = true;
-			this.fieldAudioNotification.Checked = global::notifier.Properties.Settings.Default.AudioNotification;
-			this.fieldAudioNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAudioNotification.Location = new System.Drawing.Point(15, 48);
-			this.fieldAudioNotification.Name = "fieldAudioNotification";
-			this.fieldAudioNotification.Size = new System.Drawing.Size(114, 17);
-			this.fieldAudioNotification.TabIndex = 0;
-			this.fieldAudioNotification.Text = "Notification sonore";
-			this.fieldAudioNotification.UseVisualStyleBackColor = true;
-			// 
 			// timer
 			// 
 			this.timer.Enabled = true;
@@ -633,13 +638,13 @@
 			this.groupBox3.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
-			this.tabPageAbout.ResumeLayout(false);
-			this.tabPageAbout.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).EndInit();
 			this.tabPagePrivacy.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).EndInit();
+			this.tabPageAbout.ResumeLayout(false);
+			this.tabPageAbout.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
