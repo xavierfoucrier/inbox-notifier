@@ -349,19 +349,18 @@
 			// fieldPrivacyNotificationAll
 			// 
 			this.fieldPrivacyNotificationAll.AutoSize = true;
-			this.fieldPrivacyNotificationAll.Enabled = false;
 			this.fieldPrivacyNotificationAll.Location = new System.Drawing.Point(15, 96);
 			this.fieldPrivacyNotificationAll.Name = "fieldPrivacyNotificationAll";
 			this.fieldPrivacyNotificationAll.Size = new System.Drawing.Size(200, 17);
 			this.fieldPrivacyNotificationAll.TabIndex = 1;
 			this.fieldPrivacyNotificationAll.Text = "Masquer tout le contenu du message";
 			this.fieldPrivacyNotificationAll.UseVisualStyleBackColor = true;
+			this.fieldPrivacyNotificationAll.CheckedChanged += new System.EventHandler(this.fieldPrivacyNotificationAll_CheckedChanged);
 			// 
 			// fieldPrivacyNotificationShort
 			// 
 			this.fieldPrivacyNotificationShort.AutoSize = true;
 			this.fieldPrivacyNotificationShort.Checked = true;
-			this.fieldPrivacyNotificationShort.Enabled = false;
 			this.fieldPrivacyNotificationShort.Location = new System.Drawing.Point(15, 73);
 			this.fieldPrivacyNotificationShort.Name = "fieldPrivacyNotificationShort";
 			this.fieldPrivacyNotificationShort.Size = new System.Drawing.Size(228, 17);
@@ -369,17 +368,18 @@
 			this.fieldPrivacyNotificationShort.TabStop = true;
 			this.fieldPrivacyNotificationShort.Text = "Afficher une partie du contenu du message";
 			this.fieldPrivacyNotificationShort.UseVisualStyleBackColor = true;
+			this.fieldPrivacyNotificationShort.CheckedChanged += new System.EventHandler(this.fieldPrivacyNotificationShort_CheckedChanged);
 			// 
 			// fieldPrivacyNotificationNone
 			// 
 			this.fieldPrivacyNotificationNone.AutoSize = true;
-			this.fieldPrivacyNotificationNone.Enabled = false;
 			this.fieldPrivacyNotificationNone.Location = new System.Drawing.Point(15, 50);
 			this.fieldPrivacyNotificationNone.Name = "fieldPrivacyNotificationNone";
 			this.fieldPrivacyNotificationNone.Size = new System.Drawing.Size(195, 17);
 			this.fieldPrivacyNotificationNone.TabIndex = 1;
 			this.fieldPrivacyNotificationNone.Text = "Afficher tout le contenu du message";
 			this.fieldPrivacyNotificationNone.UseVisualStyleBackColor = true;
+			this.fieldPrivacyNotificationNone.CheckedChanged += new System.EventHandler(this.fieldPrivacyNotificationNone_CheckedChanged);
 			// 
 			// tabPageAbout
 			// 

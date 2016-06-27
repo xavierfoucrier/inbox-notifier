@@ -99,6 +99,20 @@ namespace notifier {
 				notifyIcon.ShowBalloonTip(450, "Connexion au réseau rétablie", "La connexion au réseau a été rétablie : vous êtes de nouveau connecté à Internet. La boite de réception a été automatiquement synchronisée.", ToolTipIcon.Info);
 			});
 
+			// displays the privacy notification setting
+			switch (Properties.Settings.Default.PrivacyNotification) {
+				case "Afficher tout le contenu du message":
+					fieldPrivacyNotificationNone.Checked = true;
+					break;
+				default:
+				case "Afficher une partie du contenu du message":
+					fieldPrivacyNotificationShort.Checked = true;
+					break;
+				case "Masquer tout le contenu du message":
+					fieldPrivacyNotificationAll.Checked = true;
+					break;
+			}
+
 			// displays the product version
 			string[] version = Application.ProductVersion.Split('.');
 			labelVersion.Text = version[0] + "." + version[1] + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "") + (version[3] != "0" ? " " + version[3] : "");
@@ -286,6 +300,27 @@ namespace notifier {
 		/// </summary>
 		private void fieldNetworkConnectivityNotification_Click(object sender, EventArgs e) {
 			Properties.Settings.Default.NetworkConnectivityNotification = fieldNetworkConnectivityNotification.Checked;
+		}
+
+		/// <summary>
+		/// Manages the PrivacyNotificationNone user setting
+		/// </summary>
+		private void fieldPrivacyNotificationNone_CheckedChanged(object sender, EventArgs e) {
+			Properties.Settings.Default.PrivacyNotification = "Afficher tout le contenu du message";
+		}
+
+		/// <summary>
+		/// Manages the PrivacyNotificationShort user setting
+		/// </summary>
+		private void fieldPrivacyNotificationShort_CheckedChanged(object sender, EventArgs e) {
+			Properties.Settings.Default.PrivacyNotification = "Afficher une partie du contenu du message";
+		}
+
+		/// <summary>
+		/// Manages the PrivacyNotificationAll user setting
+		/// </summary>
+		private void fieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
+			Properties.Settings.Default.PrivacyNotification = "Masquer tout le contenu du message";
 		}
 
 		/// <summary>
