@@ -17,6 +17,7 @@ using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using notifier.Properties;
 
 namespace notifier {
 	public partial class Main : Form {
@@ -55,8 +56,8 @@ namespace notifier {
 			notifyIcon.ContextMenu = contextMenu;
 
 			// binds the "PropertyChanged" event of the settings to automatically save the user settings and display the setting label
-			Properties.Settings.Default.PropertyChanged += new PropertyChangedEventHandler((object o, PropertyChangedEventArgs target) => {
-				Properties.Settings.Default.Save();
+			Settings.Default.PropertyChanged += new PropertyChangedEventHandler((object o, PropertyChangedEventArgs target) => {
+				Settings.Default.Save();
 				labelSettingsSaved.Visible = true;
 			});
 
@@ -64,13 +65,13 @@ namespace notifier {
 			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object o, NetworkAvailabilityEventArgs target) => {
 
 				// discards notification
-				if (!Properties.Settings.Default.NetworkConnectivityNotification) {
+				if (!Settings.Default.NetworkConnectivityNotification) {
 					return;
 				}
 
 				// checks for available networks
 				if (!NetworkInterface.GetIsNetworkAvailable()) {
-					notifyIcon.Icon = Properties.Resources.warning;
+					notifyIcon.Icon = Resources.warning;
 					notifyIcon.Text = "Erreur réseau";
 					notifyIcon.ShowBalloonTip(450, "Erreur réseau", "Aucun réseau n'est actuellement disponible, vous n'êtes probablement pas connecté à Internet. Le service sera rétabli dès que vous serez à nouveau connecté à Internet.", ToolTipIcon.Warning);
 
@@ -100,7 +101,7 @@ namespace notifier {
 			});
 
 			// displays the privacy notification setting
-			switch (Properties.Settings.Default.PrivacyNotification) {
+			switch (Settings.Default.PrivacyNotification) {
 				case "Afficher tout le contenu du message":
 					fieldPrivacyNotificationNone.Checked = true;
 					break;
@@ -124,7 +125,7 @@ namespace notifier {
 		private void Main_FormClosing(object sender, FormClosingEventArgs e) {
 
 			// asks the user for exit, depending on the application settings
-			if (e.CloseReason != CloseReason.ApplicationExitCall && Properties.Settings.Default.AskonExit) {
+			if (e.CloseReason != CloseReason.ApplicationExitCall && Settings.Default.AskonExit) {
 				DialogResult dialog = MessageBox.Show("Vous êtes sur le point de quitter l'application.\n\nVoulez-vous vraiment quitter l'application ?", "Fermeture de l'application", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
 				if (dialog == DialogResult.No) {
@@ -181,14 +182,14 @@ namespace notifier {
 
 			// displays the sync icon, but not on every tick of the timer
 			if (!timertick) {
-				notifyIcon.Icon = Properties.Resources.sync;
+				notifyIcon.Icon = Resources.sync;
 				notifyIcon.Text = "Synchronisation en cours ...";
 			}
 
 			try {
 
 				// manages the spam notification
-				if (Properties.Settings.Default.SpamNotification) {
+				if (Settings.Default.SpamNotification) {
 
 					// gets the "spam" label
 					Google.Apis.Gmail.v1.Data.Label spam = this.service.Users.Labels.Get("me", "SPAM").Execute();
@@ -197,10 +198,10 @@ namespace notifier {
 					if (spam.ThreadsUnread > 0) {
 
 						// sets the notification icon and text
-						notifyIcon.Icon = Properties.Resources.spam;
+						notifyIcon.Icon = Resources.spam;
 
 						// plays a sound on unread spams
-						if (Properties.Settings.Default.AudioNotification) {
+						if (Settings.Default.AudioNotification) {
 							SystemSounds.Exclamation.Play();
 						}
 
@@ -224,10 +225,10 @@ namespace notifier {
 				if (this.inbox.ThreadsUnread > 0) {
 
 					// sets the notification icon and text
-					notifyIcon.Icon = this.inbox.ThreadsUnread <= 9 ? (Icon)Properties.Resources.ResourceManager.GetObject("mail_" + this.inbox.ThreadsUnread.ToString()) : Properties.Resources.mail_more;
+					notifyIcon.Icon = this.inbox.ThreadsUnread <= 9 ? (Icon)Resources.ResourceManager.GetObject("mail_" + this.inbox.ThreadsUnread.ToString()) : Resources.mail_more;
 
 					// plays a sound on unread threads
-					if (Properties.Settings.Default.AudioNotification) {
+					if (Settings.Default.AudioNotification) {
 						SystemSounds.Asterisk.Play();
 					}
 
@@ -240,7 +241,7 @@ namespace notifier {
 				} else {
 
 					// restores the default systray icon and text
-					notifyIcon.Icon = Properties.Resources.normal;
+					notifyIcon.Icon = Resources.normal;
 					notifyIcon.Text = "Pas de nouveau message";
 
 					// disables the mark as read menu item
@@ -252,7 +253,7 @@ namespace notifier {
 			} catch(Exception exception) {
 
 				// displays a balloon tip in the systray with the detailed error message
-				notifyIcon.Icon = Properties.Resources.warning;
+				notifyIcon.Icon = Resources.warning;
 				notifyIcon.Text = "Erreur lors de la synchronisation";
 				notifyIcon.ShowBalloonTip(450, "Erreur", "Une erreur est survenue lors de la synchronisation de la boite de réception : " + exception.Message, ToolTipIcon.Warning);
 			}
@@ -262,65 +263,65 @@ namespace notifier {
 		/// Manages the AskonExit user setting
 		/// </summary>
 		private void fieldAskonExit_Click(object sender, EventArgs e) {
-			Properties.Settings.Default.AskonExit = fieldAskonExit.Checked;
+			Settings.Default.AskonExit = fieldAskonExit.Checked;
 		}
 
 		/// <summary>
 		/// Manages the AudioNotification user setting
 		/// </summary>
 		private void fieldAudioNotification_Click(object sender, EventArgs e) {
-			Properties.Settings.Default.AudioNotification = fieldAudioNotification.Checked;
+			Settings.Default.AudioNotification = fieldAudioNotification.Checked;
 		}
 
 		/// <summary>
 		/// Manages the SpamNotification user setting
 		/// </summary>
 		private void fieldSpamNotification_Click(object sender, EventArgs e) {
-			Properties.Settings.Default.SpamNotification = fieldSpamNotification.Checked;
+			Settings.Default.SpamNotification = fieldSpamNotification.Checked;
 		}
 
 		/// <summary>
 		/// Manages the NumericDelay user setting
 		/// </summary>
 		private void fieldNumericDelay_ValueChanged(object sender, EventArgs e) {
-			Properties.Settings.Default.TimerInterval = 1000 * (fieldStepDelay.Text == "minute(s)" ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
-			Properties.Settings.Default.NumericDelay = fieldNumericDelay.Value;
+			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.Text == "minute(s)" ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
+			Settings.Default.NumericDelay = fieldNumericDelay.Value;
 		}
 
 		/// <summary>
 		/// Manages the StepDelay user setting
 		/// </summary>
 		private void fieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
-			Properties.Settings.Default.TimerInterval = 1000 * (fieldStepDelay.Text == "minute(s)" ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
-			Properties.Settings.Default.StepDelay = fieldStepDelay.Text;
+			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.Text == "minute(s)" ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
+			Settings.Default.StepDelay = fieldStepDelay.Text;
 		}
 
 		/// <summary>
 		/// Manages the NetworkConnectivityNotification user setting
 		/// </summary>
 		private void fieldNetworkConnectivityNotification_Click(object sender, EventArgs e) {
-			Properties.Settings.Default.NetworkConnectivityNotification = fieldNetworkConnectivityNotification.Checked;
+			Settings.Default.NetworkConnectivityNotification = fieldNetworkConnectivityNotification.Checked;
 		}
 
 		/// <summary>
 		/// Manages the PrivacyNotificationNone user setting
 		/// </summary>
 		private void fieldPrivacyNotificationNone_CheckedChanged(object sender, EventArgs e) {
-			Properties.Settings.Default.PrivacyNotification = "Afficher tout le contenu du message";
+			Settings.Default.PrivacyNotification = "Afficher tout le contenu du message";
 		}
 
 		/// <summary>
 		/// Manages the PrivacyNotificationShort user setting
 		/// </summary>
 		private void fieldPrivacyNotificationShort_CheckedChanged(object sender, EventArgs e) {
-			Properties.Settings.Default.PrivacyNotification = "Afficher une partie du contenu du message";
+			Settings.Default.PrivacyNotification = "Afficher une partie du contenu du message";
 		}
 
 		/// <summary>
 		/// Manages the PrivacyNotificationAll user setting
 		/// </summary>
 		private void fieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
-			Properties.Settings.Default.PrivacyNotification = "Masquer tout le contenu du message";
+			Settings.Default.PrivacyNotification = "Masquer tout le contenu du message";
 		}
 
 		/// <summary>
@@ -359,7 +360,7 @@ namespace notifier {
 			try {
 
 				// displays the sync icon
-				notifyIcon.Icon = Properties.Resources.sync;
+				notifyIcon.Icon = Resources.sync;
 				notifyIcon.Text = "Synchronisation en cours ...";
 
 				// gets all unread threads
@@ -375,7 +376,7 @@ namespace notifier {
 				}
 
 				// restores the default systray icon and text
-				notifyIcon.Icon = Properties.Resources.normal;
+				notifyIcon.Icon = Resources.normal;
 				notifyIcon.Text = "Pas de nouveau message";
 
 				// disables the mark as read menu item
@@ -386,7 +387,7 @@ namespace notifier {
 				menuItemMarkAsRead.Enabled = true;
 
 				// displays a balloon tip in the systray with the detailed error message
-				notifyIcon.Icon = Properties.Resources.warning;
+				notifyIcon.Icon = Resources.warning;
 				notifyIcon.Text = "Erreur lors de l'opération \"Marquer comme lu(s)\"";
 				notifyIcon.ShowBalloonTip(450, "Erreur", "Une erreur est survenue lors de l'opération \"Marquer comme lu(s)\" : " + exception.Message, ToolTipIcon.Warning);
 			}
@@ -416,8 +417,8 @@ namespace notifier {
 			timer.Interval = delay;
 
 			// updates the systray icon and text
-			if (delay != Properties.Settings.Default.TimerInterval) {
-				notifyIcon.Icon = Properties.Resources.timeout;
+			if (delay != Settings.Default.TimerInterval) {
+				notifyIcon.Icon = Resources.timeout;
 				notifyIcon.Text = "Ne pas déranger - " + DateTime.Now.AddMilliseconds(delay).ToShortTimeString();
 			} else {
 				this.SyncInbox();
@@ -428,7 +429,7 @@ namespace notifier {
 		/// Manages the context menu TimeoutDisabled item
 		/// </summary>
 		private void menuItemTimeoutDisabled_Click(object sender, EventArgs e) {
-			DoNotDisturb((MenuItem)sender, Properties.Settings.Default.TimerInterval);
+			DoNotDisturb((MenuItem)sender, Settings.Default.TimerInterval);
 		}
 
 		/// <summary>
@@ -481,7 +482,7 @@ namespace notifier {
 			Process.Start("https://mail.google.com/mail/u/0/#inbox");
 
 			// restores the default systray icon and text: pretends that the user had read all his mail
-			notifyIcon.Icon = Properties.Resources.normal;
+			notifyIcon.Icon = Resources.normal;
 			notifyIcon.Text = "Pas de nouveau message";
 		}
 
@@ -491,8 +492,8 @@ namespace notifier {
 		private void timer_Tick(object sender, EventArgs e) {
 
 			// restores the timer interval when the do not disturb time has elapsed
-			if (timer.Interval != Properties.Settings.Default.TimerInterval) {
-				DoNotDisturb(menuItemTimeoutDisabled, Properties.Settings.Default.TimerInterval);
+			if (timer.Interval != Settings.Default.TimerInterval) {
+				DoNotDisturb(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
 
 				return;
 			}
