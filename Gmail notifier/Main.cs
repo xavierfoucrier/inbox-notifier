@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
@@ -232,8 +233,34 @@ namespace notifier {
 						SystemSounds.Asterisk.Play();
 					}
 
-					// displays a balloon tip in the systray with the total of unread threads
-					notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu"), "Double-cliquez sur l'icône pour accéder à votre boîte de réception.", ToolTipIcon.Info);
+					//  displays a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
+					if (this.inbox.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != "Masquer tout le contenu du message") {
+						UsersResource.MessagesResource.ListRequest messages = this.service.Users.Messages.List("me");
+						messages.LabelIds = "UNREAD";
+						messages.MaxResults = 1;
+						Google.Apis.Gmail.v1.Data.Message message = this.service.Users.Messages.Get("me", messages.Execute().Messages.First().Id).Execute();
+
+						string subject = "";
+						string from = "";
+
+						foreach (MessagePartHeader header in message.Payload.Headers) {
+							if (header.Name == "Subject") {
+								subject = header.Value;
+							} else if (header.Name == "From") {
+								from = System.Text.RegularExpressions.Regex.Replace(header.Value, "<.*>", "");
+							}
+						}
+
+						if (Settings.Default.PrivacyNotification == "Afficher tout le contenu du message") {
+							notifyIcon.ShowBalloonTip(450, from, WebUtility.HtmlDecode(message.Snippet), ToolTipIcon.Info);
+						} else if (Settings.Default.PrivacyNotification == "Afficher une partie du contenu du message") {
+							notifyIcon.ShowBalloonTip(450, from, subject, ToolTipIcon.Info);
+						}
+					} else {
+						notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu"), "Double-cliquez sur l'icône pour accéder à votre boîte de réception.", ToolTipIcon.Info);
+					}
+
+					// displays the notification text
 					notifyIcon.Text = this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu");
 
 					// enables the mark as read menu item
