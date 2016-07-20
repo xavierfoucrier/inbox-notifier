@@ -352,10 +352,17 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Opens the credit website
+		/// Opens the Yusuke website
 		/// </summary>
 		private void linkWebsiteYusuke_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start("http://p.yusukekamiyamane.com");
+		}
+
+		/// <summary>
+		/// Opens the Xavier website
+		/// </summary>
+		private void linkWebsiteXavier_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+			Process.Start("http://www.xavierfoucrier.fr");
 		}
 
 		/// <summary>

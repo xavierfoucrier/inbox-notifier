@@ -75,6 +75,7 @@
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.linkWebsiteXavier = new System.Windows.Forms.LinkLabel();
 			this.tabControl.SuspendLayout();
 			this.tabPagePreferences.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -383,6 +384,7 @@
 			// 
 			// tabPageAbout
 			// 
+			this.tabPageAbout.Controls.Add(this.linkWebsiteXavier);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteYusuke);
 			this.tabPageAbout.Controls.Add(this.label10);
 			this.tabPageAbout.Controls.Add(this.label7);
@@ -426,9 +428,9 @@
 			this.label7.AutoSize = true;
 			this.label7.Location = new System.Drawing.Point(25, 97);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(168, 26);
+			this.label7.Size = new System.Drawing.Size(151, 26);
 			this.label7.TabIndex = 21;
-			this.label7.Text = "Visual Studio 2013, C#\r\nDéveloppé par Xavier FOUCRIER";
+			this.label7.Text = "Visual Studio 2013, C#\r\nDéveloppé par Xavier Foucrier";
 			// 
 			// label11
 			// 
@@ -607,6 +609,20 @@
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
+			// linkWebsiteXavier
+			// 
+			this.linkWebsiteXavier.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteXavier.AutoSize = true;
+			this.linkWebsiteXavier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteXavier.Location = new System.Drawing.Point(98, 110);
+			this.linkWebsiteXavier.Name = "linkWebsiteXavier";
+			this.linkWebsiteXavier.Size = new System.Drawing.Size(78, 13);
+			this.linkWebsiteXavier.TabIndex = 25;
+			this.linkWebsiteXavier.TabStop = true;
+			this.linkWebsiteXavier.Text = "Xavier Foucrier";
+			this.linkWebsiteXavier.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteXavier.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsiteXavier_LinkClicked);
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,6 +718,7 @@
 		private System.Windows.Forms.RadioButton fieldPrivacyNotificationNone;
 		private System.Windows.Forms.RadioButton fieldPrivacyNotificationAll;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.LinkLabel linkWebsiteXavier;
 	}
 }
 
