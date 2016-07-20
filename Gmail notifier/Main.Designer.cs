@@ -50,6 +50,7 @@
 			this.fieldPrivacyNotificationShort = new System.Windows.Forms.RadioButton();
 			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
 			this.tabPageAbout = new System.Windows.Forms.TabPage();
+			this.linkWebsiteXavier = new System.Windows.Forms.LinkLabel();
 			this.linkWebsiteYusuke = new System.Windows.Forms.LinkLabel();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.linkWebsiteXavier = new System.Windows.Forms.LinkLabel();
 			this.tabControl.SuspendLayout();
 			this.tabPagePreferences.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -245,7 +245,7 @@
 			this.fieldStepDelay.Location = new System.Drawing.Point(171, 101);
 			this.fieldStepDelay.Name = "fieldStepDelay";
 			this.fieldStepDelay.Size = new System.Drawing.Size(73, 21);
-			this.fieldStepDelay.TabIndex = 2;
+			this.fieldStepDelay.TabIndex = 4;
 			this.fieldStepDelay.ValueMember = "minute(s)";
 			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.fieldStepDelay_SelectionChangeCommitted);
 			// 
@@ -258,7 +258,7 @@
 			this.fieldSpamNotification.Location = new System.Drawing.Point(15, 71);
 			this.fieldSpamNotification.Name = "fieldSpamNotification";
 			this.fieldSpamNotification.Size = new System.Drawing.Size(154, 17);
-			this.fieldSpamNotification.TabIndex = 0;
+			this.fieldSpamNotification.TabIndex = 2;
 			this.fieldSpamNotification.Text = "Courrier indésirable (SPAM)";
 			this.fieldSpamNotification.UseVisualStyleBackColor = true;
 			this.fieldSpamNotification.Click += new System.EventHandler(this.fieldSpamNotification_Click);
@@ -283,7 +283,7 @@
             0});
 			this.fieldNumericDelay.Name = "fieldNumericDelay";
 			this.fieldNumericDelay.Size = new System.Drawing.Size(41, 20);
-			this.fieldNumericDelay.TabIndex = 0;
+			this.fieldNumericDelay.TabIndex = 3;
 			this.fieldNumericDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.fieldNumericDelay.Value = global::notifier.Properties.Settings.Default.NumericDelay;
 			this.fieldNumericDelay.ValueChanged += new System.EventHandler(this.fieldNumericDelay_ValueChanged);
@@ -310,7 +310,7 @@
 			this.fieldAudioNotification.Location = new System.Drawing.Point(15, 48);
 			this.fieldAudioNotification.Name = "fieldAudioNotification";
 			this.fieldAudioNotification.Size = new System.Drawing.Size(114, 17);
-			this.fieldAudioNotification.TabIndex = 0;
+			this.fieldAudioNotification.TabIndex = 1;
 			this.fieldAudioNotification.Text = "Notification sonore";
 			this.fieldAudioNotification.UseVisualStyleBackColor = true;
 			this.fieldAudioNotification.Click += new System.EventHandler(this.fieldAudioNotification_Click);
@@ -353,7 +353,7 @@
 			this.fieldPrivacyNotificationAll.Location = new System.Drawing.Point(15, 96);
 			this.fieldPrivacyNotificationAll.Name = "fieldPrivacyNotificationAll";
 			this.fieldPrivacyNotificationAll.Size = new System.Drawing.Size(200, 17);
-			this.fieldPrivacyNotificationAll.TabIndex = 1;
+			this.fieldPrivacyNotificationAll.TabIndex = 2;
 			this.fieldPrivacyNotificationAll.Text = "Masquer tout le contenu du message";
 			this.fieldPrivacyNotificationAll.UseVisualStyleBackColor = true;
 			this.fieldPrivacyNotificationAll.CheckedChanged += new System.EventHandler(this.fieldPrivacyNotificationAll_CheckedChanged);
@@ -377,7 +377,7 @@
 			this.fieldPrivacyNotificationNone.Location = new System.Drawing.Point(15, 50);
 			this.fieldPrivacyNotificationNone.Name = "fieldPrivacyNotificationNone";
 			this.fieldPrivacyNotificationNone.Size = new System.Drawing.Size(195, 17);
-			this.fieldPrivacyNotificationNone.TabIndex = 1;
+			this.fieldPrivacyNotificationNone.TabIndex = 0;
 			this.fieldPrivacyNotificationNone.Text = "Afficher tout le contenu du message";
 			this.fieldPrivacyNotificationNone.UseVisualStyleBackColor = true;
 			this.fieldPrivacyNotificationNone.CheckedChanged += new System.EventHandler(this.fieldPrivacyNotificationNone_CheckedChanged);
@@ -399,6 +399,20 @@
 			this.tabPageAbout.TabIndex = 2;
 			this.tabPageAbout.Text = "À propos";
 			this.tabPageAbout.UseVisualStyleBackColor = true;
+			// 
+			// linkWebsiteXavier
+			// 
+			this.linkWebsiteXavier.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteXavier.AutoSize = true;
+			this.linkWebsiteXavier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteXavier.Location = new System.Drawing.Point(98, 110);
+			this.linkWebsiteXavier.Name = "linkWebsiteXavier";
+			this.linkWebsiteXavier.Size = new System.Drawing.Size(78, 13);
+			this.linkWebsiteXavier.TabIndex = 25;
+			this.linkWebsiteXavier.TabStop = true;
+			this.linkWebsiteXavier.Text = "Xavier Foucrier";
+			this.linkWebsiteXavier.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteXavier.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsiteXavier_LinkClicked);
 			// 
 			// linkWebsiteYusuke
 			// 
@@ -608,20 +622,6 @@
 			this.timer.Enabled = true;
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
-			// 
-			// linkWebsiteXavier
-			// 
-			this.linkWebsiteXavier.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
-			this.linkWebsiteXavier.AutoSize = true;
-			this.linkWebsiteXavier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
-			this.linkWebsiteXavier.Location = new System.Drawing.Point(98, 110);
-			this.linkWebsiteXavier.Name = "linkWebsiteXavier";
-			this.linkWebsiteXavier.Size = new System.Drawing.Size(78, 13);
-			this.linkWebsiteXavier.TabIndex = 25;
-			this.linkWebsiteXavier.TabStop = true;
-			this.linkWebsiteXavier.Text = "Xavier Foucrier";
-			this.linkWebsiteXavier.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
-			this.linkWebsiteXavier.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsiteXavier_LinkClicked);
 			// 
 			// Main
 			// 
