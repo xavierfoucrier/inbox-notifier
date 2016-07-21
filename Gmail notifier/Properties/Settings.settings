@@ -9,7 +9,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="NumericDelay" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="StepDelay" Type="System.String" Scope="User">
       <Value Profile="(Default)">minute(s)</Value>
@@ -18,7 +18,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TimerInterval" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">60000</Value>
+      <Value Profile="(Default)">600000</Value>
     </Setting>
     <Setting Name="SpamNotification" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

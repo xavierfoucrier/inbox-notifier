@@ -49,7 +49,7 @@ namespace notifier.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public decimal NumericDelay {
             get {
                 return ((decimal)(this["NumericDelay"]));
@@ -85,7 +85,7 @@ namespace notifier.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("60000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("600000")]
         public int TimerInterval {
             get {
                 return ((int)(this["TimerInterval"]));
