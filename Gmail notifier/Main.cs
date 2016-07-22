@@ -50,9 +50,6 @@ namespace notifier {
 			// authenticates the user
 			this.AsyncAuthentication();
 
-			// synchronizes the user mailbox
-			this.SyncInbox();
-
 			// attaches the context menu to the systray icon
 			notifyIcon.ContextMenu = contextMenu;
 
@@ -149,6 +146,9 @@ namespace notifier {
 					HttpClientInitializer = this.credential,
 					ApplicationName = "Gmail notifier for Windows"
 				});
+
+				// synchronizes the user mailbox
+				this.SyncInbox();
 			} catch(Exception) {
 				MessageBox.Show("Vous avez refusé que l'application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.\n\nL'application va désormais quitter.", "Erreur d'authentification", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				Application.Exit();
