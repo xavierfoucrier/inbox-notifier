@@ -376,6 +376,7 @@ namespace notifier {
 		/// Closes the preferences when the OK button is clicked
 		/// </summary>
 		private void buttonOK_Click(object sender, EventArgs e) {
+			labelSettingsSaved.Visible = false;
 			WindowState = FormWindowState.Minimized;
 			ShowInTaskbar = false;
 		}
