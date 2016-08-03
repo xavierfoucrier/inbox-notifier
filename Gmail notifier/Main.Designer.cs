@@ -246,7 +246,7 @@
 			this.fieldStepDelay.Name = "fieldStepDelay";
 			this.fieldStepDelay.Size = new System.Drawing.Size(73, 21);
 			this.fieldStepDelay.TabIndex = 4;
-			this.fieldStepDelay.ValueMember = "minute(s)";
+			this.fieldStepDelay.Text = global::notifier.Properties.Settings.Default.StepDelay;
 			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.fieldStepDelay_SelectionChangeCommitted);
 			// 
 			// fieldSpamNotification
