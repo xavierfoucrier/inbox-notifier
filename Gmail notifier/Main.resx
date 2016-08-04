@@ -177,9 +177,6 @@
   <data name="fieldLanguage.Items1" xml:space="preserve">
     <value>English</value>
   </data>
-  <data name="fieldLanguage.Items2" xml:space="preserve">
-    <value>Deutsch</value>
-  </data>
   <data name="fieldLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 22</value>
   </data>
@@ -1903,9 +1900,6 @@ Développé par Xavier Foucrier</value>
         AAPAAAAAAAAAA8AAAAAAAAADwAAAAAAAAAPgAAAAAAAAB///////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
