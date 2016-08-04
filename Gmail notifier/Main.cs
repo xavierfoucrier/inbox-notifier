@@ -103,14 +103,14 @@ namespace notifier {
 
 			// displays the privacy notification setting
 			switch (Settings.Default.PrivacyNotification) {
-				case "Afficher tout le contenu du message":
+				case 0:
 					fieldPrivacyNotificationNone.Checked = true;
 					break;
 				default:
-				case "Afficher une partie du contenu du message":
+				case 1:
 					fieldPrivacyNotificationShort.Checked = true;
 					break;
-				case "Masquer tout le contenu du message":
+				case 2:
 					fieldPrivacyNotificationAll.Checked = true;
 					break;
 			}
@@ -237,7 +237,7 @@ namespace notifier {
 					}
 
 					//  displays a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
-					if (this.inbox.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != "Masquer tout le contenu du message") {
+					if (this.inbox.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != 2) {
 						UsersResource.MessagesResource.ListRequest messages = this.service.Users.Messages.List("me");
 						messages.LabelIds = "UNREAD";
 						messages.MaxResults = 1;
@@ -254,9 +254,9 @@ namespace notifier {
 							}
 						}
 
-						if (Settings.Default.PrivacyNotification == "Afficher tout le contenu du message") {
+						if (Settings.Default.PrivacyNotification == 0) {
 							notifyIcon.ShowBalloonTip(450, from, WebUtility.HtmlDecode(message.Snippet), ToolTipIcon.Info);
-						} else if (Settings.Default.PrivacyNotification == "Afficher une partie du contenu du message") {
+						} else if (Settings.Default.PrivacyNotification == 1) {
 							notifyIcon.ShowBalloonTip(450, from, subject, ToolTipIcon.Info);
 						}
 					} else {
@@ -337,21 +337,21 @@ namespace notifier {
 		/// Manages the PrivacyNotificationNone user setting
 		/// </summary>
 		private void fieldPrivacyNotificationNone_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = "Afficher tout le contenu du message";
+			Settings.Default.PrivacyNotification = 0;
 		}
 
 		/// <summary>
 		/// Manages the PrivacyNotificationShort user setting
 		/// </summary>
 		private void fieldPrivacyNotificationShort_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = "Afficher une partie du contenu du message";
+			Settings.Default.PrivacyNotification = 1;
 		}
 
 		/// <summary>
 		/// Manages the PrivacyNotificationAll user setting
 		/// </summary>
 		private void fieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = "Masquer tout le contenu du message";
+			Settings.Default.PrivacyNotification = 2;
 		}
 
 		/// <summary>

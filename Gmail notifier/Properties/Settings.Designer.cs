@@ -121,10 +121,10 @@ namespace notifier.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Afficher une partie du contenu du message")]
-        public string PrivacyNotification {
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int PrivacyNotification {
             get {
-                return ((string)(this["PrivacyNotification"]));
+                return ((int)(this["PrivacyNotification"]));
             }
             set {
                 this["PrivacyNotification"] = value;
