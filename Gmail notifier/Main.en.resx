@@ -154,6 +154,12 @@
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>Ask me before leaving the application</value>
   </data>
+  <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 13</value>
+  </data>
+  <data name="labelSettingsSaved.Text" xml:space="preserve">
+    <value>Application preferences have been saved.</value>
+  </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
@@ -177,6 +183,36 @@
         AAAAAAAA//8AAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAD//wAA//8AAA==
 </value>
+  </data>
+  <data name="notifyIcon.Text" xml:space="preserve">
+    <value>Starting up...</value>
+  </data>
+  <data name="menuItemSynchronize.Text" xml:space="preserve">
+    <value>Synchronize</value>
+  </data>
+  <data name="menuItemMarkAsRead.Text" xml:space="preserve">
+    <value>Mark as read</value>
+  </data>
+  <data name="menuItemTimout.Text" xml:space="preserve">
+    <value>Do not disturb</value>
+  </data>
+  <data name="menuItemSettings.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="menuItemExit.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="menuItemTimeoutDisabled.Text" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="menuItemTimeout1h.Text" xml:space="preserve">
+    <value>1 hour</value>
+  </data>
+  <data name="menuItemTimeout2h.Text" xml:space="preserve">
+    <value>2 hours</value>
+  </data>
+  <data name="menuItemTimeout5h.Text" xml:space="preserve">
+    <value>5 hours</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
