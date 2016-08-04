@@ -297,6 +297,13 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Manages the Language user setting
+		/// </summary>
+		private void fieldLanguage_SelectionChangeCommitted(object sender, EventArgs e) {
+			Settings.Default.Language = fieldLanguage.Text;
+		}
+
+		/// <summary>
 		/// Manages the AudioNotification user setting
 		/// </summary>
 		private void fieldAudioNotification_Click(object sender, EventArgs e) {

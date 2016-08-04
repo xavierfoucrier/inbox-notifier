@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="separator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="separator.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 268</value>
@@ -139,6 +143,9 @@
   </data>
   <data name="&gt;&gt;separator.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="buttonOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>477, 281</value>
@@ -163,9 +170,6 @@
   </data>
   <data name="&gt;&gt;buttonOK.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="fieldLanguage.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="fieldLanguage.Items" xml:space="preserve">
     <value>Français</value>
@@ -200,8 +204,8 @@
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label3.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 25</value>
@@ -257,6 +261,9 @@
   <data name="fieldStartWithWindows.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="fieldStartWithWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="fieldStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 25</value>
   </data>
@@ -287,6 +294,9 @@
   <data name="fieldMinimizeToSystray.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="fieldMinimizeToSystray.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="fieldMinimizeToSystray.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 48</value>
   </data>
@@ -313,6 +323,9 @@
   </data>
   <data name="fieldAskonExit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="fieldAskonExit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="fieldAskonExit.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 71</value>
@@ -365,7 +378,6 @@
   <data name="tabPagePreferences.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPagePreferences.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
@@ -392,6 +404,9 @@
   </data>
   <data name="fieldNetworkConnectivityNotification.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="fieldNetworkConnectivityNotification.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="fieldNetworkConnectivityNotification.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 25</value>
@@ -471,6 +486,9 @@
   <data name="fieldSpamNotification.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="fieldSpamNotification.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="fieldSpamNotification.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 71</value>
   </data>
@@ -497,6 +515,9 @@
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 104</value>
@@ -552,6 +573,9 @@
   <data name="fieldNotification.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="fieldNotification.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="fieldNotification.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 25</value>
   </data>
@@ -578,6 +602,9 @@
   </data>
   <data name="fieldAudioNotification.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="fieldAudioNotification.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="fieldAudioNotification.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 48</value>
@@ -654,6 +681,9 @@
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 25</value>
   </data>
@@ -680,6 +710,9 @@
   </data>
   <data name="fieldPrivacyNotificationAll.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="fieldPrivacyNotificationAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="fieldPrivacyNotificationAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 96</value>
@@ -708,6 +741,9 @@
   <data name="fieldPrivacyNotificationShort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="fieldPrivacyNotificationShort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="fieldPrivacyNotificationShort.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 73</value>
   </data>
@@ -734,6 +770,9 @@
   </data>
   <data name="fieldPrivacyNotificationNone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="fieldPrivacyNotificationNone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="fieldPrivacyNotificationNone.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 50</value>
@@ -810,6 +849,9 @@
   <data name="linkWebsiteXavier.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="linkWebsiteXavier.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="linkWebsiteXavier.Location" type="System.Drawing.Point, System.Drawing">
     <value>98, 110</value>
   </data>
@@ -836,6 +878,9 @@
   </data>
   <data name="linkWebsiteYusuke.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="linkWebsiteYusuke.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="linkWebsiteYusuke.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 39</value>
@@ -864,6 +909,9 @@
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 97</value>
   </data>
@@ -891,6 +939,9 @@ All rights reserved.</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 97</value>
@@ -923,6 +974,9 @@ Développé par Xavier Foucrier</value>
   <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 79</value>
   </data>
@@ -952,6 +1006,9 @@ Développé par Xavier Foucrier</value>
   </data>
   <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 21</value>
@@ -983,6 +1040,9 @@ Développé par Xavier Foucrier</value>
   <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
+  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 79</value>
   </data>
@@ -1009,6 +1069,9 @@ Développé par Xavier Foucrier</value>
   </data>
   <data name="labelVersion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="labelVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="labelVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 39</value>
@@ -1039,6 +1102,9 @@ Développé par Xavier Foucrier</value>
   </data>
   <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 21</value>
@@ -1112,6 +1178,9 @@ Développé par Xavier Foucrier</value>
   <data name="labelSettingsSaved.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelSettingsSaved.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="labelSettingsSaved.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 286</value>
   </data>
@@ -1171,6 +1240,9 @@ Développé par Xavier Foucrier</value>
   </data>
   <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="pictureBoxHeader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="pictureBoxHeader.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -1243,9 +1315,6 @@ Développé par Xavier Foucrier</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>61</value>
@@ -1834,6 +1903,9 @@ Développé par Xavier Foucrier</value>
         AAPAAAAAAAAAA8AAAAAAAAADwAAAAAAAAAPgAAAAAAAAB///////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
