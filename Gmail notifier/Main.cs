@@ -306,6 +306,9 @@ namespace notifier {
 		/// </summary>
 		private void fieldLanguage_SelectionChangeCommitted(object sender, EventArgs e) {
 			Settings.Default.Language = fieldLanguage.Text;
+
+			// indicates to the user that to apply the new language on the interface, the application must be restarted
+			labelRestartToApply.Visible = true;
 		}
 
 		/// <summary>

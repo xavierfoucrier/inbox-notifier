@@ -30,6 +30,7 @@
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPagePreferences = new System.Windows.Forms.TabPage();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.labelRestartToApply = new System.Windows.Forms.Label();
 			this.fieldLanguage = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -95,8 +96,8 @@
 			// 
 			// separator
 			// 
-			this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			resources.ApplyResources(this.separator, "separator");
+			this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.separator.Name = "separator";
 			// 
 			// buttonOK
@@ -108,39 +109,47 @@
 			// 
 			// tabControl
 			// 
+			resources.ApplyResources(this.tabControl, "tabControl");
 			this.tabControl.Controls.Add(this.tabPagePreferences);
 			this.tabControl.Controls.Add(this.tabPageNotification);
 			this.tabControl.Controls.Add(this.tabPagePrivacy);
 			this.tabControl.Controls.Add(this.tabPageAbout);
-			resources.ApplyResources(this.tabControl, "tabControl");
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
 			this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
 			// 
 			// tabPagePreferences
 			// 
+			resources.ApplyResources(this.tabPagePreferences, "tabPagePreferences");
 			this.tabPagePreferences.Controls.Add(this.groupBox5);
 			this.tabPagePreferences.Controls.Add(this.groupBox1);
-			resources.ApplyResources(this.tabPagePreferences, "tabPagePreferences");
 			this.tabPagePreferences.Name = "tabPagePreferences";
 			this.tabPagePreferences.UseVisualStyleBackColor = true;
 			// 
 			// groupBox5
 			// 
+			resources.ApplyResources(this.groupBox5, "groupBox5");
+			this.groupBox5.Controls.Add(this.labelRestartToApply);
 			this.groupBox5.Controls.Add(this.fieldLanguage);
 			this.groupBox5.Controls.Add(this.label3);
-			resources.ApplyResources(this.groupBox5, "groupBox5");
 			this.groupBox5.Name = "groupBox5";
 			this.groupBox5.TabStop = false;
 			// 
+			// labelRestartToApply
+			// 
+			resources.ApplyResources(this.labelRestartToApply, "labelRestartToApply");
+			this.labelRestartToApply.ForeColor = System.Drawing.Color.RoyalBlue;
+			this.labelRestartToApply.Image = global::notifier.Properties.Resources.information;
+			this.labelRestartToApply.Name = "labelRestartToApply";
+			// 
 			// fieldLanguage
 			// 
+			resources.ApplyResources(this.fieldLanguage, "fieldLanguage");
 			this.fieldLanguage.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::notifier.Properties.Settings.Default, "Language", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.fieldLanguage.Items.AddRange(new object[] {
             resources.GetString("fieldLanguage.Items"),
             resources.GetString("fieldLanguage.Items1")});
-			resources.ApplyResources(this.fieldLanguage, "fieldLanguage");
 			this.fieldLanguage.Name = "fieldLanguage";
 			this.fieldLanguage.Text = global::notifier.Properties.Settings.Default.Language;
 			this.fieldLanguage.SelectionChangeCommitted += new System.EventHandler(this.fieldLanguage_SelectionChangeCommitted);
@@ -152,10 +161,10 @@
 			// 
 			// groupBox1
 			// 
+			resources.ApplyResources(this.groupBox1, "groupBox1");
 			this.groupBox1.Controls.Add(this.fieldStartWithWindows);
 			this.groupBox1.Controls.Add(this.fieldMinimizeToSystray);
 			this.groupBox1.Controls.Add(this.fieldAskonExit);
-			resources.ApplyResources(this.groupBox1, "groupBox1");
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.TabStop = false;
 			// 
@@ -187,16 +196,16 @@
 			// 
 			// tabPageNotification
 			// 
+			resources.ApplyResources(this.tabPageNotification, "tabPageNotification");
 			this.tabPageNotification.Controls.Add(this.groupBox3);
 			this.tabPageNotification.Controls.Add(this.groupBox2);
-			resources.ApplyResources(this.tabPageNotification, "tabPageNotification");
 			this.tabPageNotification.Name = "tabPageNotification";
 			this.tabPageNotification.UseVisualStyleBackColor = true;
 			// 
 			// groupBox3
 			// 
-			this.groupBox3.Controls.Add(this.fieldNetworkConnectivityNotification);
 			resources.ApplyResources(this.groupBox3, "groupBox3");
+			this.groupBox3.Controls.Add(this.fieldNetworkConnectivityNotification);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
 			// 
@@ -212,24 +221,24 @@
 			// 
 			// groupBox2
 			// 
+			resources.ApplyResources(this.groupBox2, "groupBox2");
 			this.groupBox2.Controls.Add(this.fieldStepDelay);
 			this.groupBox2.Controls.Add(this.fieldSpamNotification);
 			this.groupBox2.Controls.Add(this.label1);
 			this.groupBox2.Controls.Add(this.fieldNumericDelay);
 			this.groupBox2.Controls.Add(this.fieldNotification);
 			this.groupBox2.Controls.Add(this.fieldAudioNotification);
-			resources.ApplyResources(this.groupBox2, "groupBox2");
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.TabStop = false;
 			// 
 			// fieldStepDelay
 			// 
+			resources.ApplyResources(this.fieldStepDelay, "fieldStepDelay");
 			this.fieldStepDelay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.fieldStepDelay.FormattingEnabled = true;
 			this.fieldStepDelay.Items.AddRange(new object[] {
             resources.GetString("fieldStepDelay.Items"),
             resources.GetString("fieldStepDelay.Items1")});
-			resources.ApplyResources(this.fieldStepDelay, "fieldStepDelay");
 			this.fieldStepDelay.Name = "fieldStepDelay";
 			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.fieldStepDelay_SelectionChangeCommitted);
 			// 
@@ -250,8 +259,8 @@
 			// 
 			// fieldNumericDelay
 			// 
-			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			resources.ApplyResources(this.fieldNumericDelay, "fieldNumericDelay");
+			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldNumericDelay.Minimum = new decimal(new int[] {
             1,
             0,
@@ -281,18 +290,18 @@
 			// 
 			// tabPagePrivacy
 			// 
-			this.tabPagePrivacy.Controls.Add(this.groupBox4);
 			resources.ApplyResources(this.tabPagePrivacy, "tabPagePrivacy");
+			this.tabPagePrivacy.Controls.Add(this.groupBox4);
 			this.tabPagePrivacy.Name = "tabPagePrivacy";
 			this.tabPagePrivacy.UseVisualStyleBackColor = true;
 			// 
 			// groupBox4
 			// 
+			resources.ApplyResources(this.groupBox4, "groupBox4");
 			this.groupBox4.Controls.Add(this.label2);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationAll);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationShort);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationNone);
-			resources.ApplyResources(this.groupBox4, "groupBox4");
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.TabStop = false;
 			// 
@@ -326,6 +335,7 @@
 			// 
 			// tabPageAbout
 			// 
+			resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
 			this.tabPageAbout.Controls.Add(this.linkWebsiteXavier);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteYusuke);
 			this.tabPageAbout.Controls.Add(this.label10);
@@ -335,14 +345,13 @@
 			this.tabPageAbout.Controls.Add(this.label13);
 			this.tabPageAbout.Controls.Add(this.labelVersion);
 			this.tabPageAbout.Controls.Add(this.label14);
-			resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
 			this.tabPageAbout.Name = "tabPageAbout";
 			this.tabPageAbout.UseVisualStyleBackColor = true;
 			// 
 			// linkWebsiteXavier
 			// 
-			this.linkWebsiteXavier.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			resources.ApplyResources(this.linkWebsiteXavier, "linkWebsiteXavier");
+			this.linkWebsiteXavier.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteXavier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteXavier.Name = "linkWebsiteXavier";
 			this.linkWebsiteXavier.TabStop = true;
@@ -351,8 +360,8 @@
 			// 
 			// linkWebsiteYusuke
 			// 
-			this.linkWebsiteYusuke.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			resources.ApplyResources(this.linkWebsiteYusuke, "linkWebsiteYusuke");
+			this.linkWebsiteYusuke.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteYusuke.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteYusuke.Name = "linkWebsiteYusuke";
 			this.linkWebsiteYusuke.TabStop = true;
@@ -407,8 +416,8 @@
 			// 
 			// pictureBoxHeader
 			// 
-			this.pictureBoxHeader.Image = global::notifier.Properties.Resources.header;
 			resources.ApplyResources(this.pictureBoxHeader, "pictureBoxHeader");
+			this.pictureBoxHeader.Image = global::notifier.Properties.Resources.header;
 			this.pictureBoxHeader.Name = "pictureBoxHeader";
 			this.pictureBoxHeader.TabStop = false;
 			// 
@@ -421,11 +430,12 @@
             this.menuItemSettings,
             this.menuItem2,
             this.menuItemExit});
+			resources.ApplyResources(this.contextMenu, "contextMenu");
 			// 
 			// menuItemSynchronize
 			// 
-			this.menuItemSynchronize.Index = 0;
 			resources.ApplyResources(this.menuItemSynchronize, "menuItemSynchronize");
+			this.menuItemSynchronize.Index = 0;
 			this.menuItemSynchronize.Click += new System.EventHandler(this.menuItemSynchronize_Click);
 			// 
 			// menuItemMarkAsRead
@@ -436,6 +446,7 @@
 			// 
 			// menuItemTimout
 			// 
+			resources.ApplyResources(this.menuItemTimout, "menuItemTimout");
 			this.menuItemTimout.Index = 2;
 			this.menuItemTimout.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemTimeoutDisabled,
@@ -444,65 +455,64 @@
             this.menuItemTimeout1h,
             this.menuItemTimeout2h,
             this.menuItemTimeout5h});
-			resources.ApplyResources(this.menuItemTimout, "menuItemTimout");
 			// 
 			// menuItemTimeoutDisabled
 			// 
 			this.menuItemTimeoutDisabled.Checked = true;
+			resources.ApplyResources(this.menuItemTimeoutDisabled, "menuItemTimeoutDisabled");
 			this.menuItemTimeoutDisabled.Index = 0;
 			this.menuItemTimeoutDisabled.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeoutDisabled, "menuItemTimeoutDisabled");
 			this.menuItemTimeoutDisabled.Click += new System.EventHandler(this.menuItemTimeoutDisabled_Click);
 			// 
 			// menuItem1
 			// 
-			this.menuItem1.Index = 1;
 			resources.ApplyResources(this.menuItem1, "menuItem1");
+			this.menuItem1.Index = 1;
 			// 
 			// menuItemTimeout30m
 			// 
+			resources.ApplyResources(this.menuItemTimeout30m, "menuItemTimeout30m");
 			this.menuItemTimeout30m.Index = 2;
 			this.menuItemTimeout30m.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout30m, "menuItemTimeout30m");
 			this.menuItemTimeout30m.Click += new System.EventHandler(this.menuItemTimeout30m_Click);
 			// 
 			// menuItemTimeout1h
 			// 
+			resources.ApplyResources(this.menuItemTimeout1h, "menuItemTimeout1h");
 			this.menuItemTimeout1h.Index = 3;
 			this.menuItemTimeout1h.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout1h, "menuItemTimeout1h");
 			this.menuItemTimeout1h.Click += new System.EventHandler(this.menuItemTimeout1h_Click);
 			// 
 			// menuItemTimeout2h
 			// 
+			resources.ApplyResources(this.menuItemTimeout2h, "menuItemTimeout2h");
 			this.menuItemTimeout2h.Index = 4;
 			this.menuItemTimeout2h.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout2h, "menuItemTimeout2h");
 			this.menuItemTimeout2h.Click += new System.EventHandler(this.menuItemTimeout2h_Click);
 			// 
 			// menuItemTimeout5h
 			// 
+			resources.ApplyResources(this.menuItemTimeout5h, "menuItemTimeout5h");
 			this.menuItemTimeout5h.Index = 5;
 			this.menuItemTimeout5h.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout5h, "menuItemTimeout5h");
 			this.menuItemTimeout5h.Click += new System.EventHandler(this.menuItemTimeout5h_Click);
 			// 
 			// menuItemSettings
 			// 
 			this.menuItemSettings.DefaultItem = true;
-			this.menuItemSettings.Index = 3;
 			resources.ApplyResources(this.menuItemSettings, "menuItemSettings");
+			this.menuItemSettings.Index = 3;
 			this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
 			// 
 			// menuItem2
 			// 
-			this.menuItem2.Index = 4;
 			resources.ApplyResources(this.menuItem2, "menuItem2");
+			this.menuItem2.Index = 4;
 			// 
 			// menuItemExit
 			// 
-			this.menuItemExit.Index = 5;
 			resources.ApplyResources(this.menuItemExit, "menuItemExit");
+			this.menuItemExit.Index = 5;
 			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
 			// 
 			// timer
@@ -608,6 +618,7 @@
 		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.ComboBox fieldLanguage;
 		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label labelRestartToApply;
 	}
 }
 
