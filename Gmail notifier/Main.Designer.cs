@@ -37,6 +37,7 @@
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.fieldNotification = new System.Windows.Forms.CheckBox();
 			this.tabPagePrivacy = new System.Windows.Forms.TabPage();
@@ -71,7 +72,6 @@
 			this.menuItemSettings = new System.Windows.Forms.MenuItem();
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
-			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
 			this.fieldStartWithWindows = new System.Windows.Forms.CheckBox();
 			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
 			this.fieldNetworkConnectivityNotification = new System.Windows.Forms.CheckBox();
@@ -192,6 +192,17 @@
 			this.groupBox2.Controls.Add(this.fieldAudioNotification);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.TabStop = false;
+			// 
+			// fieldStepDelay
+			// 
+			resources.ApplyResources(this.fieldStepDelay, "fieldStepDelay");
+			this.fieldStepDelay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldStepDelay.FormattingEnabled = true;
+			this.fieldStepDelay.Items.AddRange(new object[] {
+            resources.GetString("fieldStepDelay.Items"),
+            resources.GetString("fieldStepDelay.Items1")});
+			this.fieldStepDelay.Name = "fieldStepDelay";
+			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.fieldStepDelay_SelectionChangeCommitted);
 			// 
 			// label1
 			// 
@@ -432,17 +443,6 @@
 			resources.ApplyResources(this.menuItemExit, "menuItemExit");
 			this.menuItemExit.Index = 5;
 			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
-			// 
-			// fieldStepDelay
-			// 
-			resources.ApplyResources(this.fieldStepDelay, "fieldStepDelay");
-			this.fieldStepDelay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldStepDelay.FormattingEnabled = true;
-			this.fieldStepDelay.Items.AddRange(new object[] {
-            resources.GetString("fieldStepDelay.Items"),
-            resources.GetString("fieldStepDelay.Items1")});
-			this.fieldStepDelay.Name = "fieldStepDelay";
-			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.fieldStepDelay_SelectionChangeCommitted);
 			// 
 			// fieldStartWithWindows
 			// 
