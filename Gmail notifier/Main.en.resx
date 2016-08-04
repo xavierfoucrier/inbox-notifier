@@ -127,46 +127,7 @@
   <data name="tabPagePreferences.Text" xml:space="preserve">
     <value>General</value>
   </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 13</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Upon receipt of a new message:</value>
-  </data>
-  <data name="fieldPrivacyNotificationAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="fieldPrivacyNotificationAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 17</value>
-  </data>
-  <data name="fieldPrivacyNotificationAll.Text" xml:space="preserve">
-    <value>Hide all message content</value>
-  </data>
-  <data name="fieldPrivacyNotificationShort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="fieldPrivacyNotificationShort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 17</value>
-  </data>
-  <data name="fieldPrivacyNotificationShort.Text" xml:space="preserve">
-    <value>Display a part of the message content</value>
-  </data>
-  <data name="fieldPrivacyNotificationNone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="fieldPrivacyNotificationNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 17</value>
-  </data>
-  <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
-    <value>Display all message content</value>
-  </data>
-  <data name="tabPagePrivacy.Text" xml:space="preserve">
-    <value>Privacy</value>
-  </data>
   <data name="fieldLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>78, 22</value>
   </data>
@@ -221,8 +182,53 @@
   <data name="fieldNotification.Text" xml:space="preserve">
     <value>New message</value>
   </data>
+  <data name="tabPagePrivacy.Text" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Upon receipt of a new message:</value>
+  </data>
+  <data name="fieldPrivacyNotificationAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="fieldPrivacyNotificationAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 17</value>
+  </data>
+  <data name="fieldPrivacyNotificationAll.Text" xml:space="preserve">
+    <value>Hide all message content</value>
+  </data>
+  <data name="fieldPrivacyNotificationShort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="fieldPrivacyNotificationShort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 17</value>
+  </data>
+  <data name="fieldPrivacyNotificationShort.Text" xml:space="preserve">
+    <value>Display a part of the message content</value>
+  </data>
+  <data name="fieldPrivacyNotificationNone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="fieldPrivacyNotificationNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 17</value>
+  </data>
+  <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
+    <value>Display all message content</value>
+  </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="linkWebsiteXavier.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="linkWebsiteXavier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 110</value>
   </data>
   <data name="linkWebsiteYusuke.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -233,14 +239,30 @@
   <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 26</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Visual Studio 2013, C#
+Developed by Xavier Foucrier</value>
+  </data>
   <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Credits</value>
+  </data>
   <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Development</value>
   </data>
   <data name="labelVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -937,8 +959,5 @@
         AAPAAAAAAAAAA8AAAAAAAAADwAAAAAAAAAPgAAAAAAAAB///////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>
