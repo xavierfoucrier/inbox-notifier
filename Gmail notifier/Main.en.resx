@@ -121,6 +121,42 @@
     <value>General</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fieldNetworkConnectivityNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 17</value>
+  </data>
+  <data name="fieldNetworkConnectivityNotification.Text" xml:space="preserve">
+    <value>Loss of network connectivity</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Network</value>
+  </data>
+  <data name="fieldSpamNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 17</value>
+  </data>
+  <data name="fieldSpamNotification.Text" xml:space="preserve">
+    <value>Junk mail (SPAM)</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Verification delay:</value>
+  </data>
+  <data name="fieldNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 17</value>
+  </data>
+  <data name="fieldNotification.Text" xml:space="preserve">
+    <value>New message</value>
+  </data>
+  <data name="fieldAudioNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 17</value>
+  </data>
+  <data name="fieldAudioNotification.Text" xml:space="preserve">
+    <value>Sound notification</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Mail</value>
+  </data>
   <data name="fieldLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>78, 22</value>
   </data>
@@ -196,12 +232,6 @@
   <data name="menuItemTimout.Text" xml:space="preserve">
     <value>Do not disturb</value>
   </data>
-  <data name="menuItemSettings.Text" xml:space="preserve">
-    <value>Open</value>
-  </data>
-  <data name="menuItemExit.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
   <data name="menuItemTimeoutDisabled.Text" xml:space="preserve">
     <value>Disable</value>
   </data>
@@ -213,6 +243,12 @@
   </data>
   <data name="menuItemTimeout5h.Text" xml:space="preserve">
     <value>5 hours</value>
+  </data>
+  <data name="menuItemSettings.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="menuItemExit.Text" xml:space="preserve">
+    <value>Exit</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
