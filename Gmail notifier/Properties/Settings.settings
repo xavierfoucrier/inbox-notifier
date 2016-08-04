@@ -11,8 +11,8 @@
     <Setting Name="NumericDelay" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">10</Value>
     </Setting>
-    <Setting Name="StepDelay" Type="System.String" Scope="User">
-      <Value Profile="(Default)">minute(s)</Value>
+    <Setting Name="StepDelay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="AudioNotification" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

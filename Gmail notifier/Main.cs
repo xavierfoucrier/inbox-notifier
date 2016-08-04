@@ -98,6 +98,9 @@ namespace notifier {
 				notifyIcon.ShowBalloonTip(450, "Connexion au réseau rétablie", "La connexion au réseau a été rétablie : vous êtes de nouveau connecté à Internet. La boite de réception a été automatiquement synchronisée.", ToolTipIcon.Info);
 			});
 
+			// displays the step delay setting
+			fieldStepDelay.SelectedIndex = Settings.Default.StepDelay;
+
 			// displays the privacy notification setting
 			switch (Settings.Default.PrivacyNotification) {
 				case "Afficher tout le contenu du message":
@@ -311,7 +314,7 @@ namespace notifier {
 		/// Manages the NumericDelay user setting
 		/// </summary>
 		private void fieldNumericDelay_ValueChanged(object sender, EventArgs e) {
-			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.Text == "minute(s)" ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
+			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
 			Settings.Default.NumericDelay = fieldNumericDelay.Value;
 		}
 
@@ -319,8 +322,8 @@ namespace notifier {
 		/// Manages the StepDelay user setting
 		/// </summary>
 		private void fieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
-			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.Text == "minute(s)" ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
-			Settings.Default.StepDelay = fieldStepDelay.Text;
+			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
+			Settings.Default.StepDelay = fieldStepDelay.SelectedIndex;
 		}
 
 		/// <summary>

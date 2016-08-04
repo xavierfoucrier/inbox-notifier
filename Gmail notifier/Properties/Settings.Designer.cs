@@ -61,10 +61,10 @@ namespace notifier.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("minute(s)")]
-        public string StepDelay {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int StepDelay {
             get {
-                return ((string)(this["StepDelay"]));
+                return ((int)(this["StepDelay"]));
             }
             set {
                 this["StepDelay"] = value;
