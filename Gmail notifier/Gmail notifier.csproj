@@ -125,6 +125,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Languages\translation.en.Designer.cs">
+      <DependentUpon>translation.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Languages\translation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>translation.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.en.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +151,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Languages\translation.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>translation.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\translation.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>translation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="client_secret.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
