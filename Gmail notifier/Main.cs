@@ -19,6 +19,7 @@ using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using notifier.Languages;
 using notifier.Properties;
 
 namespace notifier {
@@ -75,8 +76,8 @@ namespace notifier {
 				// checks for available networks
 				if (!NetworkInterface.GetIsNetworkAvailable()) {
 					notifyIcon.Icon = Resources.warning;
-					notifyIcon.Text = "Erreur réseau";
-					notifyIcon.ShowBalloonTip(450, "Erreur réseau", "Aucun réseau n'est actuellement disponible, vous n'êtes probablement pas connecté à Internet. Le service sera rétabli dès que vous serez à nouveau connecté à Internet.", ToolTipIcon.Warning);
+					notifyIcon.Text = translation.networkLost;
+					notifyIcon.ShowBalloonTip(450, translation.networkLost, translation.networkConnectivityLost, ToolTipIcon.Warning);
 
 					return;
 				}
@@ -100,7 +101,7 @@ namespace notifier {
 				}
 
 				// displays a notification to indicate that the network connectivity has been restored
-				notifyIcon.ShowBalloonTip(450, "Connexion au réseau rétablie", "La connexion au réseau a été rétablie : vous êtes de nouveau connecté à Internet. La boite de réception a été automatiquement synchronisée.", ToolTipIcon.Info);
+				notifyIcon.ShowBalloonTip(450, translation.networkRestored, translation.networkConnectivityRestored, ToolTipIcon.Info);
 			});
 
 			// displays the step delay setting
@@ -132,7 +133,7 @@ namespace notifier {
 
 			// asks the user for exit, depending on the application settings
 			if (e.CloseReason != CloseReason.ApplicationExitCall && Settings.Default.AskonExit) {
-				DialogResult dialog = MessageBox.Show("Vous êtes sur le point de quitter l'application.\n\nVoulez-vous vraiment quitter l'application ?", "Fermeture de l'application", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+				DialogResult dialog = MessageBox.Show(translation.applicationExitQuestion, translation.applicationExit, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
 				if (dialog == DialogResult.No) {
 					e.Cancel = true;
@@ -158,7 +159,7 @@ namespace notifier {
 				// synchronizes the user mailbox
 				this.SyncInbox();
 			} catch(Exception) {
-				MessageBox.Show("Vous avez refusé que l'application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.\n\nL'application va désormais quitter.", "Erreur d'authentification", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(translation.authenticationWithGmailRefused, translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				Application.Exit();
 			}
 		}
@@ -192,7 +193,7 @@ namespace notifier {
 			// displays the sync icon, but not on every tick of the timer
 			if (!timertick) {
 				notifyIcon.Icon = Resources.sync;
-				notifyIcon.Text = "Synchronisation en cours ...";
+				notifyIcon.Text = translation.sync;
 			}
 
 			try {
@@ -215,8 +216,8 @@ namespace notifier {
 						}
 
 						// displays a balloon tip in the systray with the total of unread threads
-						notifyIcon.ShowBalloonTip(450, spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? "spams non lus" : "spam non lu"), "Double-cliquez sur l'icône pour accéder à votre boîte de réception. Tant que vous n'aurez pas vérifié ce spam, votre boite de réception ne sera pas synchronisée et vous ne serez pas informé de l'arrivée de nouveaux messages.", ToolTipIcon.Error);
-						notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? "spams non lus" : "spam non lu");
+						notifyIcon.ShowBalloonTip(450, spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? translation.unreadSpams : translation.unreadSpam), translation.newUnreadSpam, ToolTipIcon.Error);
+						notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? translation.unreadSpams : translation.unreadSpam);
 
 						return;
 					}
@@ -265,11 +266,11 @@ namespace notifier {
 							notifyIcon.ShowBalloonTip(450, from, subject, ToolTipIcon.Info);
 						}
 					} else {
-						notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu"), "Double-cliquez sur l'icône pour accéder à votre boîte de réception.", ToolTipIcon.Info);
+						notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? translation.unreadMessages : translation.unreadMessage), translation.newUnreadMessage, ToolTipIcon.Info);
 					}
 
 					// displays the notification text
-					notifyIcon.Text = this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? "emails non lus" : "email non lu");
+					notifyIcon.Text = this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? translation.unreadMessages : translation.unreadMessage);
 
 					// enables the mark as read menu item
 					menuItemMarkAsRead.Enabled = true;
@@ -277,7 +278,7 @@ namespace notifier {
 
 					// restores the default systray icon and text
 					notifyIcon.Icon = Resources.normal;
-					notifyIcon.Text = "Pas de nouveau message";
+					notifyIcon.Text = translation.noMessage;
 
 					// disables the mark as read menu item
 					menuItemMarkAsRead.Enabled = false;
@@ -289,8 +290,8 @@ namespace notifier {
 
 				// displays a balloon tip in the systray with the detailed error message
 				notifyIcon.Icon = Resources.warning;
-				notifyIcon.Text = "Erreur lors de la synchronisation";
-				notifyIcon.ShowBalloonTip(450, "Erreur", "Une erreur est survenue lors de la synchronisation de la boite de réception : " + exception.Message, ToolTipIcon.Warning);
+				notifyIcon.Text = translation.syncError;
+				notifyIcon.ShowBalloonTip(450, translation.error, translation.syncErrorOccured + exception.Message, ToolTipIcon.Warning);
 			}
 		}
 
@@ -414,7 +415,7 @@ namespace notifier {
 
 				// displays the sync icon
 				notifyIcon.Icon = Resources.sync;
-				notifyIcon.Text = "Synchronisation en cours ...";
+				notifyIcon.Text = translation.sync;
 
 				// gets all unread threads
 				UsersResource.ThreadsResource.ListRequest threads = this.service.Users.Threads.List("me");
@@ -430,7 +431,7 @@ namespace notifier {
 
 				// restores the default systray icon and text
 				notifyIcon.Icon = Resources.normal;
-				notifyIcon.Text = "Pas de nouveau message";
+				notifyIcon.Text = translation.noMessage;
 
 				// disables the mark as read menu item
 				menuItemMarkAsRead.Enabled = false;
@@ -441,8 +442,8 @@ namespace notifier {
 
 				// displays a balloon tip in the systray with the detailed error message
 				notifyIcon.Icon = Resources.warning;
-				notifyIcon.Text = "Erreur lors de l'opération \"Marquer comme lu(s)\"";
-				notifyIcon.ShowBalloonTip(450, "Erreur", "Une erreur est survenue lors de l'opération \"Marquer comme lu(s)\" : " + exception.Message, ToolTipIcon.Warning);
+				notifyIcon.Text = translation.markAsReadError;
+				notifyIcon.ShowBalloonTip(450, translation.error, translation.markAsReadErrorOccured + exception.Message, ToolTipIcon.Warning);
 			}
 		}
 
@@ -472,7 +473,7 @@ namespace notifier {
 			// updates the systray icon and text
 			if (delay != Settings.Default.TimerInterval) {
 				notifyIcon.Icon = Resources.timeout;
-				notifyIcon.Text = "Ne pas déranger - " + DateTime.Now.AddMilliseconds(delay).ToShortTimeString();
+				notifyIcon.Text = translation.doNotDisturb + " - " + DateTime.Now.AddMilliseconds(delay).ToShortTimeString();
 			} else {
 				this.SyncInbox();
 			}
@@ -536,7 +537,7 @@ namespace notifier {
 
 			// restores the default systray icon and text: pretends that the user had read all his mail
 			notifyIcon.Icon = Resources.normal;
-			notifyIcon.Text = "Pas de nouveau message";
+			notifyIcon.Text = translation.noMessage;
 		}
 
 		/// <summary>

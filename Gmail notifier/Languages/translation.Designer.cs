@@ -59,5 +59,203 @@ namespace notifier.Languages {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Fermeture de l&apos;application.
+        /// </summary>
+        internal static string applicationExit {
+            get {
+                return ResourceManager.GetString("applicationExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous êtes sur le point de quitter l&apos;application.\n\nVoulez-vous vraiment quitter l&apos;application ?.
+        /// </summary>
+        internal static string applicationExitQuestion {
+            get {
+                return ResourceManager.GetString("applicationExitQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur d&apos;authentification.
+        /// </summary>
+        internal static string authenticationFailed {
+            get {
+                return ResourceManager.GetString("authenticationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous avez refusé que l&apos;application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.\n\nL&apos;application va désormais quitter..
+        /// </summary>
+        internal static string authenticationWithGmailRefused {
+            get {
+                return ResourceManager.GetString("authenticationWithGmailRefused", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ne pas déranger.
+        /// </summary>
+        internal static string doNotDisturb {
+            get {
+                return ResourceManager.GetString("doNotDisturb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur.
+        /// </summary>
+        internal static string error {
+            get {
+                return ResourceManager.GetString("error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur lors de l&apos;opération &quot;Marquer comme lu(s)&quot;.
+        /// </summary>
+        internal static string markAsReadError {
+            get {
+                return ResourceManager.GetString("markAsReadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Une erreur est survenue lors de l&apos;opération &quot;Marquer comme lu(s)&quot; :.
+        /// </summary>
+        internal static string markAsReadErrorOccured {
+            get {
+                return ResourceManager.GetString("markAsReadErrorOccured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Aucun réseau n&apos;est actuellement disponible, vous n&apos;êtes probablement pas connecté à Internet. Le service sera rétabli dès que vous serez à nouveau connecté à Internet..
+        /// </summary>
+        internal static string networkConnectivityLost {
+            get {
+                return ResourceManager.GetString("networkConnectivityLost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à La connexion au réseau a été rétablie : vous êtes de nouveau connecté à Internet. La boite de réception a été automatiquement synchronisée..
+        /// </summary>
+        internal static string networkConnectivityRestored {
+            get {
+                return ResourceManager.GetString("networkConnectivityRestored", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur réseau.
+        /// </summary>
+        internal static string networkLost {
+            get {
+                return ResourceManager.GetString("networkLost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Connexion au réseau rétablie.
+        /// </summary>
+        internal static string networkRestored {
+            get {
+                return ResourceManager.GetString("networkRestored", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Double-cliquez sur l&apos;icône pour accéder à votre boîte de réception..
+        /// </summary>
+        internal static string newUnreadMessage {
+            get {
+                return ResourceManager.GetString("newUnreadMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Double-cliquez sur l&apos;icône pour accéder à votre boîte de réception. Tant que vous n&apos;aurez pas vérifié le dossier spam, votre boite de réception ne sera pas synchronisée et vous ne serez pas informé de l&apos;arrivée de nouveaux messages..
+        /// </summary>
+        internal static string newUnreadSpam {
+            get {
+                return ResourceManager.GetString("newUnreadSpam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Pas de nouveau message.
+        /// </summary>
+        internal static string noMessage {
+            get {
+                return ResourceManager.GetString("noMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Synchronisation en cours ....
+        /// </summary>
+        internal static string sync {
+            get {
+                return ResourceManager.GetString("sync", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur lors de la synchronisation.
+        /// </summary>
+        internal static string syncError {
+            get {
+                return ResourceManager.GetString("syncError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Une erreur est survenue lors de la synchronisation de la boite de réception :.
+        /// </summary>
+        internal static string syncErrorOccured {
+            get {
+                return ResourceManager.GetString("syncErrorOccured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à email non lu.
+        /// </summary>
+        internal static string unreadMessage {
+            get {
+                return ResourceManager.GetString("unreadMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à emails non lus.
+        /// </summary>
+        internal static string unreadMessages {
+            get {
+                return ResourceManager.GetString("unreadMessages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à spam non lu.
+        /// </summary>
+        internal static string unreadSpam {
+            get {
+                return ResourceManager.GetString("unreadSpam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à spams non lus.
+        /// </summary>
+        internal static string unreadSpams {
+            get {
+                return ResourceManager.GetString("unreadSpams", resourceCulture);
+            }
+        }
     }
 }
