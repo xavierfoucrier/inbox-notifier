@@ -121,13 +121,17 @@
     <value>Fermeture de l'application</value>
   </data>
   <data name="applicationExitQuestion" xml:space="preserve">
-    <value>Vous êtes sur le point de quitter l'application.\n\nVoulez-vous vraiment quitter l'application ?</value>
+    <value>Vous êtes sur le point de quitter l'application.
+
+Voulez-vous vraiment quitter l'application ?</value>
   </data>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Erreur d'authentification</value>
   </data>
   <data name="authenticationWithGmailRefused" xml:space="preserve">
-    <value>Vous avez refusé que l'application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.\n\nL'application va désormais quitter.</value>
+    <value>Vous avez refusé que l'application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.
+
+L'application va désormais quitter.</value>
   </data>
   <data name="doNotDisturb" xml:space="preserve">
     <value>Ne pas déranger</value>

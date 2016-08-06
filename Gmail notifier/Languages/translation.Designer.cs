@@ -70,7 +70,9 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous êtes sur le point de quitter l&apos;application.\n\nVoulez-vous vraiment quitter l&apos;application ?.
+        ///   Recherche une chaîne localisée semblable à Vous êtes sur le point de quitter l&apos;application.
+        ///
+        ///Voulez-vous vraiment quitter l&apos;application ?.
         /// </summary>
         internal static string applicationExitQuestion {
             get {
@@ -88,7 +90,9 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous avez refusé que l&apos;application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.\n\nL&apos;application va désormais quitter..
+        ///   Recherche une chaîne localisée semblable à Vous avez refusé que l&apos;application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.
+        ///
+        ///L&apos;application va désormais quitter..
         /// </summary>
         internal static string authenticationWithGmailRefused {
             get {

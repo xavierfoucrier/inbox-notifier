@@ -121,13 +121,17 @@
     <value>Closing the application</value>
   </data>
   <data name="applicationExitQuestion" xml:space="preserve">
-    <value>You are about to leave the application.\n\nDo you really want to exit?</value>
+    <value>You are about to leave the application.
+
+Do you really want to exit?</value>
   </data>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Authentification failed</value>
   </data>
   <data name="authenticationWithGmailRefused" xml:space="preserve">
-    <value>You refused the application accesses your Gmail account. This step is required and will be asked again the next time.\n\nThe application will now quit.</value>
+    <value>You refused the application accesses your Gmail account. This step is required and will be asked again the next time.
+
+The application will now quit.</value>
   </data>
   <data name="doNotDisturb" xml:space="preserve">
     <value>Do not disturb</value>
