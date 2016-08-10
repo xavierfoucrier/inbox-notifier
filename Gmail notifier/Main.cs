@@ -156,6 +156,9 @@ namespace notifier {
 					ApplicationName = "Gmail notifier for Windows"
 				});
 
+				// displays the user email address
+				labelEmailAddress.Text = this.service.Users.GetProfile("me").Execute().EmailAddress;
+
 				// synchronizes the user mailbox
 				this.SyncInbox();
 			} catch(Exception) {

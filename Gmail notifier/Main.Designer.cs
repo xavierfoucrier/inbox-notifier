@@ -80,6 +80,7 @@
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.labelEmailAddress = new System.Windows.Forms.Label();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -520,10 +521,17 @@
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
+			// labelEmailAddress
+			// 
+			resources.ApplyResources(this.labelEmailAddress, "labelEmailAddress");
+			this.labelEmailAddress.ForeColor = System.Drawing.Color.Gray;
+			this.labelEmailAddress.Name = "labelEmailAddress";
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.labelEmailAddress);
 			this.Controls.Add(this.pictureBoxHeader);
 			this.Controls.Add(this.separator);
 			this.Controls.Add(this.buttonOK);
@@ -618,6 +626,7 @@
 		private System.Windows.Forms.ComboBox fieldLanguage;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label labelRestartToApply;
+		private System.Windows.Forms.Label labelEmailAddress;
 	}
 }
 
