@@ -19,7 +19,7 @@ namespace notifier {
 		static void Main() {
 
 			// initializes the interface with the specified culture, depending on the user settings
-			System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language == "Français" ? "fr" : "en");
+			System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language == "Français" ? "fr-FR" : "en-US");
 
 			// check if there is an instance running
 			if (!mutex.WaitOne(TimeSpan.Zero, true)) {
