@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
@@ -41,10 +40,6 @@ namespace notifier {
 		/// Initializes the class
 		/// </summary>
 		public Main() {
-
-			// initializes the interface with the specified culture, depending on the user settings
-			System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language == "Français" ? "fr" : "en");
-
 			InitializeComponent();
 		}
 

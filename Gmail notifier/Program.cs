@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using notifier.Properties;
 
 namespace notifier {
 	static class Program {
@@ -15,6 +17,9 @@ namespace notifier {
 
 		[STAThread]
 		static void Main() {
+
+			// initializes the interface with the specified culture, depending on the user settings
+			System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language == "Français" ? "fr" : "en");
 
 			// check if there is an instance running
 			if (!mutex.WaitOne(TimeSpan.Zero, true)) {
