@@ -137,6 +137,26 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Instances multiples.
+        /// </summary>
+        internal static string multipleInstances {
+            get {
+                return ResourceManager.GetString("multipleInstances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;application &quot;Gmail notifier&quot; est déjà en cours d&apos;exécution : vous ne pouvez pas lancer plusieurs instances de l&apos;application sur un même ordinateur.
+        ///
+        ///Cette option n&apos;est pas activée sur ce type d&apos;application..
+        /// </summary>
+        internal static string mutexError {
+            get {
+                return ResourceManager.GetString("mutexError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Aucun réseau n&apos;est actuellement disponible, vous n&apos;êtes probablement pas connecté à Internet. Le service sera rétabli dès que vous serez à nouveau connecté à Internet..
         /// </summary>
         internal static string networkConnectivityLost {

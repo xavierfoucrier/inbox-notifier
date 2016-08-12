@@ -145,6 +145,14 @@ L'application va désormais quitter.</value>
   <data name="markAsReadErrorOccured" xml:space="preserve">
     <value>Une erreur est survenue lors de l'opération "Marquer comme lu(s)" :</value>
   </data>
+  <data name="multipleInstances" xml:space="preserve">
+    <value>Instances multiples</value>
+  </data>
+  <data name="mutexError" xml:space="preserve">
+    <value>L'application "Gmail notifier" est déjà en cours d'exécution : vous ne pouvez pas lancer plusieurs instances de l'application sur un même ordinateur.
+
+Cette option n'est pas activée sur ce type d'application.</value>
+  </data>
   <data name="networkConnectivityLost" xml:space="preserve">
     <value>Aucun réseau n'est actuellement disponible, vous n'êtes probablement pas connecté à Internet. Le service sera rétabli dès que vous serez à nouveau connecté à Internet.</value>
   </data>

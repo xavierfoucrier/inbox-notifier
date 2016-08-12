@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using notifier.Languages;
 using notifier.Properties;
 
 namespace notifier {
@@ -23,7 +24,7 @@ namespace notifier {
 
 			// check if there is an instance running
 			if (!mutex.WaitOne(TimeSpan.Zero, true)) {
-				MessageBox.Show("L'application \"Gmail notifier\" est déjà en cours d'exécution : vous ne pouvez pas lancer plusieurs instances de l'application sur un même ordinateur.\n\nCette option n'est pas activée sur ce type d'application.", "Instances multiples", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show(translation.mutexError, translation.multipleInstances, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 				return;
 			}

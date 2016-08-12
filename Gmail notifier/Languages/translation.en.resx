@@ -145,6 +145,14 @@ The application will now quit.</value>
   <data name="markAsReadErrorOccured" xml:space="preserve">
     <value>An error occurred during the "Mark Read" operation:</value>
   </data>
+  <data name="multipleInstances" xml:space="preserve">
+    <value>Multiple instances</value>
+  </data>
+  <data name="mutexError" xml:space="preserve">
+    <value>The "Gmail notifier" application is already running: you can not run multiple instances of the application on the same computer.
+
+This option is not enabled on this type of application.</value>
+  </data>
   <data name="networkConnectivityLost" xml:space="preserve">
     <value>No network is currently available, you're probably not connected to the Internet. Service will be restored as soon as you will be reconnected to the Internet.</value>
   </data>
