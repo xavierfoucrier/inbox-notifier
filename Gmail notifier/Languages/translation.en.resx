@@ -133,9 +133,6 @@ Do you really want to exit?</value>
 
 The application will now quit.</value>
   </data>
-  <data name="doNotDisturb" xml:space="preserve">
-    <value>Do not disturb</value>
-  </data>
   <data name="error" xml:space="preserve">
     <value>Error</value>
   </data>
@@ -182,6 +179,9 @@ This option is not enabled on this type of application.</value>
   </data>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>An error occurred during the synchronization of the inbox:</value>
+  </data>
+  <data name="timeout" xml:space="preserve">
+    <value>Do not disturb</value>
   </data>
   <data name="unreadMessage" xml:space="preserve">
     <value>unread message</value>

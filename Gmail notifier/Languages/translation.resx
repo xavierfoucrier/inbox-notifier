@@ -133,9 +133,6 @@ Voulez-vous vraiment quitter l'application ?</value>
 
 L'application va désormais quitter.</value>
   </data>
-  <data name="doNotDisturb" xml:space="preserve">
-    <value>Ne pas déranger</value>
-  </data>
   <data name="error" xml:space="preserve">
     <value>Erreur</value>
   </data>
@@ -182,6 +179,9 @@ Cette option n'est pas activée sur ce type d'application.</value>
   </data>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>Une erreur est survenue lors de la synchronisation de la boite de réception :</value>
+  </data>
+  <data name="timeout" xml:space="preserve">
+    <value>Ne pas déranger</value>
   </data>
   <data name="unreadMessage" xml:space="preserve">
     <value>email non lu</value>

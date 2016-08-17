@@ -101,15 +101,6 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Ne pas déranger.
-        /// </summary>
-        internal static string doNotDisturb {
-            get {
-                return ResourceManager.GetString("doNotDisturb", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur.
         /// </summary>
         internal static string error {
@@ -243,6 +234,15 @@ namespace notifier.Languages {
         internal static string syncErrorOccured {
             get {
                 return ResourceManager.GetString("syncErrorOccured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ne pas déranger.
+        /// </summary>
+        internal static string timeout {
+            get {
+                return ResourceManager.GetString("timeout", resourceCulture);
             }
         }
         

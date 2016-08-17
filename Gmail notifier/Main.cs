@@ -450,7 +450,7 @@ namespace notifier {
 		/// </summary>
 		/// <param name="item">Item selected in the menu</param>
 		/// <param name="delay">Delay until the next inbox sync</param>
-		private void DoNotDisturb(MenuItem item, int delay) {
+		private void Timeout(MenuItem item, int delay) {
 
 			// exits if the selected menu item is already checked
 			if (item.Checked) {
@@ -471,7 +471,7 @@ namespace notifier {
 			// updates the systray icon and text
 			if (delay != Settings.Default.TimerInterval) {
 				notifyIcon.Icon = Resources.timeout;
-				notifyIcon.Text = translation.doNotDisturb + " - " + DateTime.Now.AddMilliseconds(delay).ToShortTimeString();
+				notifyIcon.Text = translation.timeout + " - " + DateTime.Now.AddMilliseconds(delay).ToShortTimeString();
 			} else {
 				this.SyncInbox();
 			}
@@ -481,35 +481,35 @@ namespace notifier {
 		/// Manages the context menu TimeoutDisabled item
 		/// </summary>
 		private void menuItemTimeoutDisabled_Click(object sender, EventArgs e) {
-			DoNotDisturb((MenuItem)sender, Settings.Default.TimerInterval);
+			Timeout((MenuItem)sender, Settings.Default.TimerInterval);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout30m item
 		/// </summary>
 		private void menuItemTimeout30m_Click(object sender, EventArgs e) {
-			DoNotDisturb((MenuItem)sender, 1000 * 60 * 30);
+			Timeout((MenuItem)sender, 1000 * 60 * 30);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout1h item
 		/// </summary>
 		private void menuItemTimeout1h_Click(object sender, EventArgs e) {
-			DoNotDisturb((MenuItem)sender, 1000 * 60 * 60);
+			Timeout((MenuItem)sender, 1000 * 60 * 60);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout2h item
 		/// </summary>
 		private void menuItemTimeout2h_Click(object sender, EventArgs e) {
-			DoNotDisturb((MenuItem)sender, 1000 * 60 * 60 * 2);
+			Timeout((MenuItem)sender, 1000 * 60 * 60 * 2);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout5h item
 		/// </summary>
 		private void menuItemTimeout5h_Click(object sender, EventArgs e) {
-			DoNotDisturb((MenuItem)sender, 1000 * 60 * 60 * 5);
+			Timeout((MenuItem)sender, 1000 * 60 * 60 * 5);
 		}
 
 		/// <summary>
@@ -533,7 +533,7 @@ namespace notifier {
 		private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
 			Process.Start("https://mail.google.com/mail/u/0/#inbox");
 
-			// restores the default systray icon and text: pretends that the user had read all his mail, except if the "do not disturb" option is activated
+			// restores the default systray icon and text: pretends that the user had read all his mail, except if the timeout option is activated
 			if (timer.Interval == Settings.Default.TimerInterval) {
 				notifyIcon.Icon = Resources.normal;
 				notifyIcon.Text = translation.noMessage;
@@ -545,9 +545,9 @@ namespace notifier {
 		/// </summary>
 		private void timer_Tick(object sender, EventArgs e) {
 
-			// restores the timer interval when the do not disturb time has elapsed
+			// restores the timer interval when the timeout time has elapsed
 			if (timer.Interval != Settings.Default.TimerInterval) {
-				DoNotDisturb(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
+				Timeout(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
 
 				return;
 			}
