@@ -533,9 +533,11 @@ namespace notifier {
 		private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
 			Process.Start("https://mail.google.com/mail/u/0/#inbox");
 
-			// restores the default systray icon and text: pretends that the user had read all his mail
-			notifyIcon.Icon = Resources.normal;
-			notifyIcon.Text = translation.noMessage;
+			// restores the default systray icon and text: pretends that the user had read all his mail, except if the "do not disturb" option is activated
+			if (timer.Interval == Settings.Default.TimerInterval) {
+				notifyIcon.Icon = Resources.normal;
+				notifyIcon.Text = translation.noMessage;
+			}
 		}
 
 		/// <summary>
