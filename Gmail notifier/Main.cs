@@ -188,6 +188,14 @@ namespace notifier {
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
 		private void SyncInbox(bool timertick = false) {
 
+			// disables the timeout when the user do a manual synchronization
+			if (timer.Interval != Settings.Default.TimerInterval) {
+				Timeout(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
+
+				// exits the method because the timeout function automatically restarts a synchronization once it has been disabled
+				return;
+			}
+
 			// displays the sync icon, but not on every tick of the timer
 			if (!timertick) {
 				notifyIcon.Icon = Resources.sync;
