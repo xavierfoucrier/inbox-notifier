@@ -24,6 +24,13 @@ using notifier.Properties;
 namespace notifier {
 	public partial class Main : Form {
 
+		// privacy possibilities
+		private enum Privacy:int {
+			None = 0,
+			Short = 1,
+			All = 2
+		}
+
 		// gmail api service
 		private GmailService service;
 
@@ -104,14 +111,14 @@ namespace notifier {
 
 			// displays the privacy notification setting
 			switch (Settings.Default.PrivacyNotification) {
-				case 0:
+				case (int)Privacy.None:
 					fieldPrivacyNotificationNone.Checked = true;
 					break;
 				default:
-				case 1:
+				case (int)Privacy.Short:
 					fieldPrivacyNotificationShort.Checked = true;
 					break;
-				case 2:
+				case (int)Privacy.All:
 					fieldPrivacyNotificationAll.Checked = true;
 					break;
 			}
@@ -249,7 +256,7 @@ namespace notifier {
 					}
 
 					//  displays a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
-					if (this.inbox.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != 2) {
+					if (this.inbox.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != (int)Privacy.All) {
 						UsersResource.MessagesResource.ListRequest messages = this.service.Users.Messages.List("me");
 						messages.LabelIds = "UNREAD";
 						messages.MaxResults = 1;
@@ -266,9 +273,9 @@ namespace notifier {
 							}
 						}
 
-						if (Settings.Default.PrivacyNotification == 0) {
+						if (Settings.Default.PrivacyNotification == (int)Privacy.None) {
 							notifyIcon.ShowBalloonTip(450, from, WebUtility.HtmlDecode(message.Snippet), ToolTipIcon.Info);
-						} else if (Settings.Default.PrivacyNotification == 1) {
+						} else if (Settings.Default.PrivacyNotification == (int)Privacy.Short) {
 							notifyIcon.ShowBalloonTip(450, from, subject, ToolTipIcon.Info);
 						}
 					} else {
@@ -359,21 +366,21 @@ namespace notifier {
 		/// Manages the PrivacyNotificationNone user setting
 		/// </summary>
 		private void fieldPrivacyNotificationNone_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = 0;
+			Settings.Default.PrivacyNotification = (int)Privacy.None;
 		}
 
 		/// <summary>
 		/// Manages the PrivacyNotificationShort user setting
 		/// </summary>
 		private void fieldPrivacyNotificationShort_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = 1;
+			Settings.Default.PrivacyNotification = (int)Privacy.Short;
 		}
 
 		/// <summary>
 		/// Manages the PrivacyNotificationAll user setting
 		/// </summary>
 		private void fieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = 2;
+			Settings.Default.PrivacyNotification = (int)Privacy.All;
 		}
 
 		/// <summary>
