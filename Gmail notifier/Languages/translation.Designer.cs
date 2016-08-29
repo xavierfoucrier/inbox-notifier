@@ -110,6 +110,105 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Pose une question avant de quitter totalement l&apos;application.
+        /// </summary>
+        internal static string helpAskonExit {
+            get {
+                return ResourceManager.GetString("helpAskonExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Joue un son lors de l&apos;affichage d&apos;une notification.
+        /// </summary>
+        internal static string helpAudioNotification {
+            get {
+                return ResourceManager.GetString("helpAudioNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Compte Gmail actuellement connecté à l&apos;application.
+        /// </summary>
+        internal static string helpEmailAddress {
+            get {
+                return ResourceManager.GetString("helpEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Langue de l&apos;interface.
+        /// </summary>
+        internal static string helpLanguage {
+            get {
+                return ResourceManager.GetString("helpLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affiche une notification lorsque l&apos;application n&apos;arrive plus à communiquer avec le réseau.
+        /// </summary>
+        internal static string helpNetworkConnectivityNotification {
+            get {
+                return ResourceManager.GetString("helpNetworkConnectivityNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Délai de synchronisation de la boite de réception.
+        /// </summary>
+        internal static string helpNumericDelay {
+            get {
+                return ResourceManager.GetString("helpNumericDelay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affiche une notification ne contenant aucune informations sur le message.
+        /// </summary>
+        internal static string helpPrivacyNotificationAll {
+            get {
+                return ResourceManager.GetString("helpPrivacyNotificationAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affiche le nom de l&apos;expéditeur ainsi que le contenu du message.
+        /// </summary>
+        internal static string helpPrivacyNotificationNone {
+            get {
+                return ResourceManager.GetString("helpPrivacyNotificationNone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affiche le nom de l&apos;expéditeur et l&apos;objet du message.
+        /// </summary>
+        internal static string helpPrivacyNotificationShort {
+            get {
+                return ResourceManager.GetString("helpPrivacyNotificationShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affiche une notification lors de la réception de courrier indésirable.
+        /// </summary>
+        internal static string helpSpamNotification {
+            get {
+                return ResourceManager.GetString("helpSpamNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Échelle de temps pour la synchronisation de la boite de réception.
+        /// </summary>
+        internal static string helpStepDelay {
+            get {
+                return ResourceManager.GetString("helpStepDelay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur lors de l&apos;opération &quot;Marquer comme lu(s)&quot;.
         /// </summary>
         internal static string markAsReadError {

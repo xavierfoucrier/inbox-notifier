@@ -136,6 +136,39 @@ The application will now quit.</value>
   <data name="error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="helpAskonExit" xml:space="preserve">
+    <value>Asks a question before completely leaving the app</value>
+  </data>
+  <data name="helpAudioNotification" xml:space="preserve">
+    <value>Plays a sound when displaying a notification</value>
+  </data>
+  <data name="helpEmailAddress" xml:space="preserve">
+    <value>Gmail account currently logged in to the application</value>
+  </data>
+  <data name="helpLanguage" xml:space="preserve">
+    <value>Language of the interface</value>
+  </data>
+  <data name="helpNetworkConnectivityNotification" xml:space="preserve">
+    <value>Displays a notification when the application runs short to communicate with the network</value>
+  </data>
+  <data name="helpNumericDelay" xml:space="preserve">
+    <value>Timing delay of the inbox</value>
+  </data>
+  <data name="helpPrivacyNotificationAll" xml:space="preserve">
+    <value>Displays a notification containing no information about the message</value>
+  </data>
+  <data name="helpPrivacyNotificationNone" xml:space="preserve">
+    <value>Displays the name of the sender and the message content</value>
+  </data>
+  <data name="helpPrivacyNotificationShort" xml:space="preserve">
+    <value>Displays the name of the sender and the subject line</value>
+  </data>
+  <data name="helpSpamNotification" xml:space="preserve">
+    <value>Displays a notification when receiving a junk message</value>
+  </data>
+  <data name="helpStepDelay" xml:space="preserve">
+    <value>Time scale for the inbox synchronization</value>
+  </data>
   <data name="markAsReadError" xml:space="preserve">
     <value>Error with the "Mark as read" operation</value>
   </data>

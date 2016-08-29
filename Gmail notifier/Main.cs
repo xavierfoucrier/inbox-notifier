@@ -55,6 +55,20 @@ namespace notifier {
 		/// </summary>
 		private void Main_Load(object sender, EventArgs e) {
 
+			// configures the help provider
+			HelpProvider help = new HelpProvider();
+			help.SetHelpString(labelEmailAddress, translation.helpEmailAddress);
+			help.SetHelpString(fieldAskonExit, translation.helpAskonExit);
+			help.SetHelpString(fieldLanguage, translation.helpLanguage);
+			help.SetHelpString(fieldAudioNotification, translation.helpAudioNotification);
+			help.SetHelpString(fieldSpamNotification, translation.helpSpamNotification);
+			help.SetHelpString(fieldNumericDelay, translation.helpNumericDelay);
+			help.SetHelpString(fieldStepDelay, translation.helpStepDelay);
+			help.SetHelpString(fieldNetworkConnectivityNotification, translation.helpNetworkConnectivityNotification);
+			help.SetHelpString(fieldPrivacyNotificationNone, translation.helpPrivacyNotificationNone);
+			help.SetHelpString(fieldPrivacyNotificationShort, translation.helpPrivacyNotificationShort);
+			help.SetHelpString(fieldPrivacyNotificationAll, translation.helpPrivacyNotificationAll);
+
 			// authenticates the user
 			this.AsyncAuthentication();
 

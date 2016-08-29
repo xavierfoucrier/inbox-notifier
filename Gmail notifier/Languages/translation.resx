@@ -136,6 +136,39 @@ L'application va désormais quitter.</value>
   <data name="error" xml:space="preserve">
     <value>Erreur</value>
   </data>
+  <data name="helpAskonExit" xml:space="preserve">
+    <value>Pose une question avant de quitter totalement l'application</value>
+  </data>
+  <data name="helpAudioNotification" xml:space="preserve">
+    <value>Joue un son lors de l'affichage d'une notification</value>
+  </data>
+  <data name="helpEmailAddress" xml:space="preserve">
+    <value>Compte Gmail actuellement connecté à l'application</value>
+  </data>
+  <data name="helpLanguage" xml:space="preserve">
+    <value>Langue de l'interface</value>
+  </data>
+  <data name="helpNetworkConnectivityNotification" xml:space="preserve">
+    <value>Affiche une notification lorsque l'application n'arrive plus à communiquer avec le réseau</value>
+  </data>
+  <data name="helpNumericDelay" xml:space="preserve">
+    <value>Délai de synchronisation de la boite de réception</value>
+  </data>
+  <data name="helpPrivacyNotificationAll" xml:space="preserve">
+    <value>Affiche une notification ne contenant aucune informations sur le message</value>
+  </data>
+  <data name="helpPrivacyNotificationNone" xml:space="preserve">
+    <value>Affiche le nom de l'expéditeur ainsi que le contenu du message</value>
+  </data>
+  <data name="helpPrivacyNotificationShort" xml:space="preserve">
+    <value>Affiche le nom de l'expéditeur et l'objet du message</value>
+  </data>
+  <data name="helpSpamNotification" xml:space="preserve">
+    <value>Affiche une notification lors de la réception de courrier indésirable</value>
+  </data>
+  <data name="helpStepDelay" xml:space="preserve">
+    <value>Échelle de temps pour la synchronisation de la boite de réception</value>
+  </data>
   <data name="markAsReadError" xml:space="preserve">
     <value>Erreur lors de l'opération "Marquer comme lu(s)"</value>
   </data>
