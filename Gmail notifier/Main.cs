@@ -337,6 +337,7 @@ namespace notifier {
 		/// </summary>
 		private void fieldSpamNotification_Click(object sender, EventArgs e) {
 			Settings.Default.SpamNotification = fieldSpamNotification.Checked;
+			this.SyncInbox();
 		}
 
 		/// <summary>
