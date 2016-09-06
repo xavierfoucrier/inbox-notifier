@@ -39,7 +39,9 @@
 			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
 			this.tabPageAccount = new System.Windows.Forms.TabPage();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
+			this.labelTokenDelivery = new System.Windows.Forms.Label();
 			this.labelEmailAddress = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
@@ -85,8 +87,6 @@
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.labelTokenDelivery = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -222,11 +222,22 @@
 			this.groupBox6.Name = "groupBox6";
 			this.groupBox6.TabStop = false;
 			// 
+			// labelTokenDelivery
+			// 
+			this.labelTokenDelivery.ForeColor = System.Drawing.Color.Gray;
+			resources.ApplyResources(this.labelTokenDelivery, "labelTokenDelivery");
+			this.labelTokenDelivery.Name = "labelTokenDelivery";
+			// 
 			// labelEmailAddress
 			// 
 			this.labelEmailAddress.ForeColor = System.Drawing.Color.Gray;
 			resources.ApplyResources(this.labelEmailAddress, "labelEmailAddress");
 			this.labelEmailAddress.Name = "labelEmailAddress";
+			// 
+			// label5
+			// 
+			resources.ApplyResources(this.label5, "label5");
+			this.label5.Name = "label5";
 			// 
 			// label4
 			// 
@@ -564,17 +575,6 @@
 			this.timer.Enabled = true;
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
-			// 
-			// labelTokenDelivery
-			// 
-			this.labelTokenDelivery.ForeColor = System.Drawing.Color.Gray;
-			resources.ApplyResources(this.labelTokenDelivery, "labelTokenDelivery");
-			this.labelTokenDelivery.Name = "labelTokenDelivery";
-			// 
-			// label5
-			// 
-			resources.ApplyResources(this.label5, "label5");
-			this.label5.Name = "label5";
 			// 
 			// Main
 			// 

@@ -140,9 +140,6 @@ at the next application startup.</value>
   <data name="label3.Text" xml:space="preserve">
     <value>Language:</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Behavior</value>
-  </data>
   <data name="fieldStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
   </data>
@@ -161,11 +158,29 @@ at the next application startup.</value>
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>Ask me before leaving the application</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Token delivery :</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Gmail account :</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Authentication</value>
+  </data>
   <data name="tabPageAccount.Text" xml:space="preserve">
     <value>Account</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Network</value>
   </data>
   <data name="fieldNetworkConnectivityNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 17</value>
@@ -173,8 +188,8 @@ at the next application startup.</value>
   <data name="fieldNetworkConnectivityNotification.Text" xml:space="preserve">
     <value>Loss of network connectivity</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Mail</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Network</value>
   </data>
   <data name="fieldStepDelay.Items1" xml:space="preserve">
     <value>hour(s)</value>
@@ -203,8 +218,8 @@ at the next application startup.</value>
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Sound notification</value>
   </data>
-  <data name="tabPagePrivacy.Text" xml:space="preserve">
-    <value>Privacy</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Mail</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 13</value>
@@ -230,8 +245,8 @@ at the next application startup.</value>
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Display all message content</value>
   </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>About</value>
+  <data name="tabPagePrivacy.Text" xml:space="preserve">
+    <value>Privacy</value>
   </data>
   <data name="linkWebsiteXavier.Location" type="System.Drawing.Point, System.Drawing">
     <value>94, 110</value>
@@ -251,6 +266,9 @@ Developed by Xavier Foucrier</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Development</value>
+  </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>About</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 13</value>
@@ -291,9 +309,6 @@ Developed by Xavier Foucrier</value>
   <data name="menuItemMarkAsRead.Text" xml:space="preserve">
     <value>Mark as read</value>
   </data>
-  <data name="menuItemTimout.Text" xml:space="preserve">
-    <value>Do not disturb</value>
-  </data>
   <data name="menuItemTimeoutDisabled.Text" xml:space="preserve">
     <value>Disable</value>
   </data>
@@ -305,6 +320,9 @@ Developed by Xavier Foucrier</value>
   </data>
   <data name="menuItemTimeout5h.Text" xml:space="preserve">
     <value>5 hours</value>
+  </data>
+  <data name="menuItemTimout.Text" xml:space="preserve">
+    <value>Do not disturb</value>
   </data>
   <data name="menuItemSettings.Text" xml:space="preserve">
     <value>Open</value>
