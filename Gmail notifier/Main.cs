@@ -157,7 +157,9 @@ namespace notifier {
 			}
 
 			// disposes the gmail api service
-			this.service.Dispose();
+			if (this.service != null) {
+				this.service.Dispose();
+			}
 		}
 
 		/// <summary>
