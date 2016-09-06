@@ -234,9 +234,6 @@
   <data name="labelTokenDelivery.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
-  <data name="labelTokenDelivery.Text" xml:space="preserve">
-    <value>00/00/0000 00:00</value>
-  </data>
   <data name="labelTokenDelivery.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -263,9 +260,6 @@
   </data>
   <data name="labelEmailAddress.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
-  </data>
-  <data name="labelEmailAddress.Text" xml:space="preserve">
-    <value>account@gmail.com</value>
   </data>
   <data name="labelEmailAddress.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
