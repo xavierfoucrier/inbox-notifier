@@ -174,6 +174,7 @@ namespace notifier {
 
 				// displays the user email address
 				labelEmailAddress.Text = this.service.Users.GetProfile("me").Execute().EmailAddress;
+				labelTokenDelivery.Text = this.credential.Token.Issued.ToString();
 
 				// synchronizes the user mailbox
 				this.SyncInbox();

@@ -222,20 +222,50 @@
   <data name="&gt;&gt;tabPageGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="labelEmailAddress.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 6.75pt</value>
+  <data name="labelTokenDelivery.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelTokenDelivery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 41</value>
+  </data>
+  <data name="labelTokenDelivery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 19</value>
+  </data>
+  <data name="labelTokenDelivery.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="labelTokenDelivery.Text" xml:space="preserve">
+    <value>00/00/0000 00:00</value>
+  </data>
+  <data name="labelTokenDelivery.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;labelTokenDelivery.Name" xml:space="preserve">
+    <value>labelTokenDelivery</value>
+  </data>
+  <data name="&gt;&gt;labelTokenDelivery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelTokenDelivery.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;labelTokenDelivery.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="labelEmailAddress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="labelEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 38</value>
+    <value>142, 22</value>
   </data>
   <data name="labelEmailAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 19</value>
+    <value>371, 19</value>
   </data>
   <data name="labelEmailAddress.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
+  </data>
+  <data name="labelEmailAddress.Text" xml:space="preserve">
+    <value>account@gmail.com</value>
   </data>
   <data name="labelEmailAddress.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -250,7 +280,37 @@
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;labelEmailAddress.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 44</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Connecté depuis le :</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -259,13 +319,13 @@
     <value>12, 25</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>309, 13</value>
+    <value>76, 13</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Vous êtes actuellement connecté à l'application avec l'adresse :</value>
+    <value>Compte gmail :</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -277,7 +337,7 @@
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="button1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -286,7 +346,7 @@
     <value>False</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 93</value>
+    <value>15, 95</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -307,7 +367,7 @@
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>

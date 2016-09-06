@@ -39,6 +39,7 @@
 			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
 			this.tabPageAccount = new System.Windows.Forms.TabPage();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
+			this.labelEmailAddress = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
@@ -84,7 +85,8 @@
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.labelEmailAddress = new System.Windows.Forms.Label();
+			this.labelTokenDelivery = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -211,12 +213,20 @@
 			// 
 			// groupBox6
 			// 
+			this.groupBox6.Controls.Add(this.labelTokenDelivery);
 			this.groupBox6.Controls.Add(this.labelEmailAddress);
+			this.groupBox6.Controls.Add(this.label5);
 			this.groupBox6.Controls.Add(this.label4);
 			this.groupBox6.Controls.Add(this.button1);
 			resources.ApplyResources(this.groupBox6, "groupBox6");
 			this.groupBox6.Name = "groupBox6";
 			this.groupBox6.TabStop = false;
+			// 
+			// labelEmailAddress
+			// 
+			this.labelEmailAddress.ForeColor = System.Drawing.Color.Gray;
+			resources.ApplyResources(this.labelEmailAddress, "labelEmailAddress");
+			this.labelEmailAddress.Name = "labelEmailAddress";
 			// 
 			// label4
 			// 
@@ -555,11 +565,16 @@
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
-			// labelEmailAddress
+			// labelTokenDelivery
 			// 
-			resources.ApplyResources(this.labelEmailAddress, "labelEmailAddress");
-			this.labelEmailAddress.ForeColor = System.Drawing.Color.Gray;
-			this.labelEmailAddress.Name = "labelEmailAddress";
+			this.labelTokenDelivery.ForeColor = System.Drawing.Color.Gray;
+			resources.ApplyResources(this.labelTokenDelivery, "labelTokenDelivery");
+			this.labelTokenDelivery.Name = "labelTokenDelivery";
+			// 
+			// label5
+			// 
+			resources.ApplyResources(this.label5, "label5");
+			this.label5.Name = "label5";
 			// 
 			// Main
 			// 
@@ -667,6 +682,8 @@
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label labelEmailAddress;
 		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label labelTokenDelivery;
+		private System.Windows.Forms.Label label5;
 	}
 }
 
