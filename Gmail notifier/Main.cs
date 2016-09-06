@@ -155,6 +155,9 @@ namespace notifier {
 					e.Cancel = true;
 				}
 			}
+
+			// disposes the gmail api service
+			this.service.Dispose();
 		}
 
 		/// <summary>
