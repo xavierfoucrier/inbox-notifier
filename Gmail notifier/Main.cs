@@ -181,6 +181,11 @@ namespace notifier {
 				labelEmailAddress.Text = this.service.Users.GetProfile("me").Execute().EmailAddress;
 				labelTokenDelivery.Text = this.credential.Token.Issued.ToString();
 
+				// activates the necessary menu items
+				menuItemSynchronize.Enabled = true;
+				menuItemTimout.Enabled = true;
+				menuItemSettings.Enabled = true;
+
 				// synchronizes the user mailbox
 				this.SyncInbox();
 			} catch(Exception) {
