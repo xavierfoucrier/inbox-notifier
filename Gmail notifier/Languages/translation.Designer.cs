@@ -110,6 +110,26 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Déconnexion de votre compte Gmail.
+        /// </summary>
+        internal static string gmailDisconnect {
+            get {
+                return ResourceManager.GetString("gmailDisconnect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous êtes sur le point de déconnecter votre compte Gmail de l&apos;application : vous ne recevrez plus de notifications en provenance du compte {account_name} et vous serez invité à vous reconnecter au prochain démarrage.
+        ///
+        ///Voulez-vous vraiment déconnecter votre compte Google et redémarrer l&apos;application maintenant ?.
+        /// </summary>
+        internal static string gmailDisconnectQuestion {
+            get {
+                return ResourceManager.GetString("gmailDisconnectQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Pose une question avant de quitter totalement l&apos;application.
         /// </summary>
         internal static string helpAskonExit {

@@ -136,6 +136,14 @@ The application will now quit.</value>
   <data name="error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="gmailDisconnect" xml:space="preserve">
+    <value>Disconnecting your Gmail account</value>
+  </data>
+  <data name="gmailDisconnectQuestion" xml:space="preserve">
+    <value>You are about to disconnect your Gmail account from the applivation: you will no longer receive notifications from the account {account_name} and you will be prompted to log in next time.
+
+Do you really want to disconnect your Gmail account and restart the application now?</value>
+  </data>
   <data name="helpAskonExit" xml:space="preserve">
     <value>Asks a question before completely leaving the app</value>
   </data>

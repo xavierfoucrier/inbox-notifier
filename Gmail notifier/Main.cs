@@ -591,5 +591,30 @@ namespace notifier {
 			// synchronizes the inbox
 			this.SyncInbox(true);
 		}
+
+		/// <summary>
+		/// Disconnects the Gmail account from the application
+		/// </summary>
+		private void buttonGmailDisconnect_Click(object sender, EventArgs e) {
+
+			// asks the user for disconnect
+			DialogResult dialog = MessageBox.Show(translation.gmailDisconnectQuestion.Replace("{account_name}", labelEmailAddress.Text), translation.gmailDisconnect, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+			if (dialog == DialogResult.No) {
+				return;
+			}
+
+			// deletes the local application data folder and the client token file
+			Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier", true);
+			
+			// starts a new process
+			ProcessStartInfo command = new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"");
+			command.WindowStyle = ProcessWindowStyle.Hidden;
+			command.CreateNoWindow = true;
+			Process.Start(command);
+
+			// exits the application
+			Application.Exit();
+		}
 	}
 }

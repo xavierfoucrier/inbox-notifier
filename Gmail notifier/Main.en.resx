@@ -173,7 +173,7 @@ at the next application startup.</value>
   <data name="label4.Text" xml:space="preserve">
     <value>Gmail account :</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
+  <data name="buttonGmailDisconnect.Text" xml:space="preserve">
     <value>Disconnect</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
