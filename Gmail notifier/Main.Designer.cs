@@ -224,14 +224,14 @@
 			// 
 			// labelTokenDelivery
 			// 
-			this.labelTokenDelivery.ForeColor = System.Drawing.Color.Gray;
 			resources.ApplyResources(this.labelTokenDelivery, "labelTokenDelivery");
+			this.labelTokenDelivery.ForeColor = System.Drawing.Color.Gray;
 			this.labelTokenDelivery.Name = "labelTokenDelivery";
 			// 
 			// labelEmailAddress
 			// 
-			this.labelEmailAddress.ForeColor = System.Drawing.Color.Gray;
 			resources.ApplyResources(this.labelEmailAddress, "labelEmailAddress");
+			this.labelEmailAddress.ForeColor = System.Drawing.Color.Gray;
 			this.labelEmailAddress.Name = "labelEmailAddress";
 			// 
 			// label5
@@ -490,8 +490,8 @@
 			// 
 			// menuItemSynchronize
 			// 
-			resources.ApplyResources(this.menuItemSynchronize, "menuItemSynchronize");
 			this.menuItemSynchronize.Index = 0;
+			resources.ApplyResources(this.menuItemSynchronize, "menuItemSynchronize");
 			this.menuItemSynchronize.Click += new System.EventHandler(this.menuItemSynchronize_Click);
 			// 
 			// menuItemMarkAsRead
@@ -502,7 +502,6 @@
 			// 
 			// menuItemTimout
 			// 
-			resources.ApplyResources(this.menuItemTimout, "menuItemTimout");
 			this.menuItemTimout.Index = 2;
 			this.menuItemTimout.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemTimeoutDisabled,
@@ -511,6 +510,7 @@
             this.menuItemTimeout1h,
             this.menuItemTimeout2h,
             this.menuItemTimeout5h});
+			resources.ApplyResources(this.menuItemTimout, "menuItemTimout");
 			// 
 			// menuItemTimeoutDisabled
 			// 
@@ -556,8 +556,8 @@
 			// menuItemSettings
 			// 
 			this.menuItemSettings.DefaultItem = true;
-			resources.ApplyResources(this.menuItemSettings, "menuItemSettings");
 			this.menuItemSettings.Index = 3;
+			resources.ApplyResources(this.menuItemSettings, "menuItemSettings");
 			this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
 			// 
 			// menuItem2
