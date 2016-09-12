@@ -57,9 +57,11 @@ namespace notifier {
 
 			// configures the help provider
 			HelpProvider help = new HelpProvider();
-			help.SetHelpString(labelEmailAddress, translation.helpEmailAddress);
 			help.SetHelpString(fieldAskonExit, translation.helpAskonExit);
 			help.SetHelpString(fieldLanguage, translation.helpLanguage);
+			help.SetHelpString(labelEmailAddress, translation.helpEmailAddress);
+			help.SetHelpString(labelTokenDelivery, translation.helpTokenDelivery);
+			help.SetHelpString(buttonGmailDisconnect, translation.helpGmailDisconnect);
 			help.SetHelpString(fieldAudioNotification, translation.helpAudioNotification);
 			help.SetHelpString(fieldSpamNotification, translation.helpSpamNotification);
 			help.SetHelpString(fieldNumericDelay, translation.helpNumericDelay);

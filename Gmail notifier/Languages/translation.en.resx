@@ -153,6 +153,9 @@ Do you really want to disconnect your Gmail account and restart the application 
   <data name="helpEmailAddress" xml:space="preserve">
     <value>Gmail account currently logged in to the application</value>
   </data>
+  <data name="helpGmailDisconnect" xml:space="preserve">
+    <value>Disconnect the Gmail account and restarts the application to request a new authentication</value>
+  </data>
   <data name="helpLanguage" xml:space="preserve">
     <value>Language of the interface</value>
   </data>
@@ -176,6 +179,9 @@ Do you really want to disconnect your Gmail account and restart the application 
   </data>
   <data name="helpStepDelay" xml:space="preserve">
     <value>Time scale for the inbox synchronization</value>
+  </data>
+  <data name="helpTokenDelivery" xml:space="preserve">
+    <value>Latest update of the authentication token delivery</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
     <value>Error with the "Mark as read" operation</value>

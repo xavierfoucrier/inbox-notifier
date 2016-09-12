@@ -153,6 +153,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   <data name="helpEmailAddress" xml:space="preserve">
     <value>Compte Gmail actuellement connecté à l'application</value>
   </data>
+  <data name="helpGmailDisconnect" xml:space="preserve">
+    <value>Déconnecte le compte Gmail et redémarre l'application pour demander une nouvelle authentification</value>
+  </data>
   <data name="helpLanguage" xml:space="preserve">
     <value>Langue de l'interface</value>
   </data>
@@ -176,6 +179,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   </data>
   <data name="helpStepDelay" xml:space="preserve">
     <value>Échelle de temps pour la synchronisation de la boite de réception</value>
+  </data>
+  <data name="helpTokenDelivery" xml:space="preserve">
+    <value>Date de dernière mise à jour du jeton de validité de l'authentification</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
     <value>Erreur lors de l'opération "Marquer comme lu(s)"</value>

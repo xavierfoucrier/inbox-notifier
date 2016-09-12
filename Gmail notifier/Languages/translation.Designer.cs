@@ -157,6 +157,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Déconnecte le compte Gmail et redémarre l&apos;application pour demander une nouvelle authentification.
+        /// </summary>
+        internal static string helpGmailDisconnect {
+            get {
+                return ResourceManager.GetString("helpGmailDisconnect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Langue de l&apos;interface.
         /// </summary>
         internal static string helpLanguage {
@@ -225,6 +234,15 @@ namespace notifier.Languages {
         internal static string helpStepDelay {
             get {
                 return ResourceManager.GetString("helpStepDelay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Date de dernière mise à jour du jeton de validité de l&apos;authentification.
+        /// </summary>
+        internal static string helpTokenDelivery {
+            get {
+                return ResourceManager.GetString("helpTokenDelivery", resourceCulture);
             }
         }
         
