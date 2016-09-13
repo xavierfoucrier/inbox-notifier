@@ -23,8 +23,7 @@ Download
 -------
 The application is under development and **anything may change at any time**, so don't use it on a production environment.
 
-For now, there is no setup installer but you can check the [Github release channel](https://github.com/xavierfoucrier/gmail-notifier/releases) if you want to
-get in touch with the application and see how it works: keep in mind that the alpha version is just a prerelease.
+Grab the version you want on the [Github release channel](https://github.com/xavierfoucrier/gmail-notifier/releases) to get in touch with the application and see how it works: keep in mind that the alpha/beta versions are just "pre-releases". Setup installer is coming soon.
 
 
 Updates
