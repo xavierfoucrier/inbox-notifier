@@ -352,6 +352,7 @@ namespace notifier {
 
 			// indicates to the user that to apply the new language on the interface, the application must be restarted
 			labelRestartToApply.Visible = true;
+			linkRestartToApply.Visible = true;
 		}
 
 		/// <summary>
@@ -622,7 +623,23 @@ namespace notifier {
 
 			// deletes the local application data folder and the client token file
 			Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier", true);
-			
+
+			// restarts the application
+			this.restart();
+		}
+
+		/// <summary>
+		/// Restarts the application to apply new user settings
+		/// </summary>
+		private void linkRestartToApply_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+			this.restart();
+		}
+
+		/// <summary>
+		/// Restarts the application
+		/// </summary>
+		private void restart() {
+
 			// starts a new process
 			ProcessStartInfo command = new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"");
 			command.WindowStyle = ProcessWindowStyle.Hidden;
