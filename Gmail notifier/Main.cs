@@ -297,7 +297,7 @@ namespace notifier {
 							if (header.Name == "Subject") {
 								subject = header.Value != "" ? header.Value : translation.newUnreadMessage;
 							} else if (header.Name == "From") {
-								Match match = Regex.Match(header.Value, "<.*>");
+								Match match = Regex.Match(header.Value, "<?.*>?");
 								from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, this.inbox.ThreadsUnread.ToString() + " " + translation.unreadMessage);
 							}
 						}
