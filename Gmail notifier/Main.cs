@@ -10,6 +10,7 @@ using System.Media;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -294,14 +295,15 @@ namespace notifier {
 
 						foreach (MessagePartHeader header in message.Payload.Headers) {
 							if (header.Name == "Subject") {
-								subject = header.Value;
+								subject = header.Value != "" ? header.Value : translation.newUnreadMessage;
 							} else if (header.Name == "From") {
-								from = System.Text.RegularExpressions.Regex.Replace(header.Value, "<.*>", "");
+								Match match = Regex.Match(header.Value, "<.*>");
+								from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, this.inbox.ThreadsUnread.ToString() + " " + translation.unreadMessage);
 							}
 						}
 
 						if (Settings.Default.PrivacyNotification == (int)Privacy.None) {
-							notifyIcon.ShowBalloonTip(450, from, WebUtility.HtmlDecode(message.Snippet), ToolTipIcon.Info);
+							notifyIcon.ShowBalloonTip(450, from, message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : translation.newUnreadMessage, ToolTipIcon.Info);
 						} else if (Settings.Default.PrivacyNotification == (int)Privacy.Short) {
 							notifyIcon.ShowBalloonTip(450, from, subject, ToolTipIcon.Info);
 						}
