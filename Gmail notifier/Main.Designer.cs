@@ -68,7 +68,6 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
-			this.labelVersion = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
 			this.labelSettingsSaved = new System.Windows.Forms.Label();
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -87,6 +86,7 @@
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.linkVersion = new System.Windows.Forms.LinkLabel();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -392,6 +392,7 @@
 			// 
 			// tabPageAbout
 			// 
+			this.tabPageAbout.Controls.Add(this.linkVersion);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteXavier);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteYusuke);
 			this.tabPageAbout.Controls.Add(this.label10);
@@ -399,7 +400,6 @@
 			this.tabPageAbout.Controls.Add(this.label11);
 			this.tabPageAbout.Controls.Add(this.label12);
 			this.tabPageAbout.Controls.Add(this.label13);
-			this.tabPageAbout.Controls.Add(this.labelVersion);
 			this.tabPageAbout.Controls.Add(this.label14);
 			resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
 			this.tabPageAbout.Name = "tabPageAbout";
@@ -449,11 +449,6 @@
 			// 
 			resources.ApplyResources(this.label13, "label13");
 			this.label13.Name = "label13";
-			// 
-			// labelVersion
-			// 
-			resources.ApplyResources(this.labelVersion, "labelVersion");
-			this.labelVersion.Name = "labelVersion";
 			// 
 			// label14
 			// 
@@ -577,6 +572,16 @@
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
+			// linkVersion
+			// 
+			resources.ApplyResources(this.linkVersion, "linkVersion");
+			this.linkVersion.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkVersion.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkVersion.Name = "linkVersion";
+			this.linkVersion.TabStop = true;
+			this.linkVersion.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkVersion_LinkClicked);
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -637,7 +642,6 @@
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Label labelVersion;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.Label labelSettingsSaved;
 		private System.Windows.Forms.NotifyIcon notifyIcon;
@@ -685,6 +689,7 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label labelTokenDelivery;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.LinkLabel linkVersion;
 	}
 }
 

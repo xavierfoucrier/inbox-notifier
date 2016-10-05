@@ -142,7 +142,7 @@ namespace notifier {
 
 			// displays the product version
 			string[] version = Application.ProductVersion.Split('.');
-			labelVersion.Text = version[0] + "." + version[1] + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "") + (version[3] != "0" ? " " + version[3] : "");
+			linkVersion.Text = version[0] + "." + version[1] + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "") + (version[3] != "0" ? " " + version[3] : "");
 		}
 
 		/// <summary>
@@ -411,6 +411,13 @@ namespace notifier {
 		/// </summary>
 		private void fieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
 			Settings.Default.PrivacyNotification = (int)Privacy.All;
+		}
+
+		/// <summary>
+		/// Opens the Github release section of the current build
+		/// </summary>
+		private void linkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+			Process.Start("https://github.com/xavierfoucrier/gmail-notifier/releases/tag/v" + linkVersion.Text.Replace(" ", "-"));
 		}
 
 		/// <summary>
