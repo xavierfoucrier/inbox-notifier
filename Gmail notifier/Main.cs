@@ -151,7 +151,7 @@ namespace notifier {
 		private void Main_FormClosing(object sender, FormClosingEventArgs e) {
 
 			// asks the user for exit, depending on the application settings
-			if (e.CloseReason != CloseReason.ApplicationExitCall && Settings.Default.AskonExit) {
+			if (e.CloseReason != CloseReason.ApplicationExitCall && e.CloseReason != CloseReason.WindowsShutDown && Settings.Default.AskonExit) {
 				DialogResult dialog = MessageBox.Show(translation.applicationExitQuestion, translation.applicationExit, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
 				if (dialog == DialogResult.No) {
