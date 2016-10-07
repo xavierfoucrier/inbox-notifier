@@ -297,8 +297,14 @@ namespace notifier {
 							if (header.Name == "Subject") {
 								subject = header.Value != "" ? header.Value : translation.newUnreadMessage;
 							} else if (header.Name == "From") {
-								Match match = Regex.Match(header.Value, "<?.*>?");
-								from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, this.inbox.ThreadsUnread.ToString() + " " + translation.unreadMessage);
+								Match match = Regex.Match(header.Value, ".* <");
+
+								if (match.Length != 0) {
+									from = match.Captures[0].Value.Replace(" <", "");
+								} else {
+									match = Regex.Match(header.Value, "<?.*>?");
+									from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, this.inbox.ThreadsUnread.ToString() + " " + translation.unreadMessage);
+								}
 							}
 						}
 
