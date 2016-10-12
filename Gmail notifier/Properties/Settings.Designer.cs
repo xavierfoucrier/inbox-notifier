@@ -142,5 +142,17 @@ namespace notifier.Properties {
                 this["Language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MessageNotification {
+            get {
+                return ((bool)(this["MessageNotification"]));
+            }
+            set {
+                this["MessageNotification"] = value;
+            }
+        }
     }
 }
