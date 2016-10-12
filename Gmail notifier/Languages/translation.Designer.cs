@@ -175,6 +175,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affiche une notification lors de la réception de nouveaux messages.
+        /// </summary>
+        internal static string helpMessageNotification {
+            get {
+                return ResourceManager.GetString("helpMessageNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Affiche une notification lorsque l&apos;application n&apos;arrive plus à communiquer avec le réseau.
         /// </summary>
         internal static string helpNetworkConnectivityNotification {

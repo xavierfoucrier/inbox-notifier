@@ -53,7 +53,7 @@
 			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.fieldNumericDelay = new System.Windows.Forms.NumericUpDown();
-			this.fieldNotification = new System.Windows.Forms.CheckBox();
+			this.fieldMessageNotification = new System.Windows.Forms.CheckBox();
 			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
 			this.tabPagePrivacy = new System.Windows.Forms.TabPage();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -295,7 +295,7 @@
 			this.groupBox2.Controls.Add(this.fieldSpamNotification);
 			this.groupBox2.Controls.Add(this.label1);
 			this.groupBox2.Controls.Add(this.fieldNumericDelay);
-			this.groupBox2.Controls.Add(this.fieldNotification);
+			this.groupBox2.Controls.Add(this.fieldMessageNotification);
 			this.groupBox2.Controls.Add(this.fieldAudioNotification);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.TabStop = false;
@@ -339,13 +339,14 @@
 			this.fieldNumericDelay.Value = global::notifier.Properties.Settings.Default.NumericDelay;
 			this.fieldNumericDelay.ValueChanged += new System.EventHandler(this.fieldNumericDelay_ValueChanged);
 			// 
-			// fieldNotification
+			// fieldMessageNotification
 			// 
-			resources.ApplyResources(this.fieldNotification, "fieldNotification");
-			this.fieldNotification.Checked = true;
-			this.fieldNotification.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.fieldNotification.Name = "fieldNotification";
-			this.fieldNotification.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.fieldMessageNotification, "fieldMessageNotification");
+			this.fieldMessageNotification.Checked = global::notifier.Properties.Settings.Default.MessageNotification;
+			this.fieldMessageNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldMessageNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldMessageNotification.Name = "fieldMessageNotification";
+			this.fieldMessageNotification.UseVisualStyleBackColor = true;
 			// 
 			// fieldAudioNotification
 			// 
@@ -353,6 +354,8 @@
 			this.fieldAudioNotification.Checked = global::notifier.Properties.Settings.Default.AudioNotification;
 			this.fieldAudioNotification.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAudioNotification.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
 			this.fieldAudioNotification.Name = "fieldAudioNotification";
 			this.fieldAudioNotification.UseVisualStyleBackColor = true;
 			this.fieldAudioNotification.Click += new System.EventHandler(this.fieldAudioNotification_Click);
@@ -682,7 +685,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.NumericUpDown fieldNumericDelay;
 		private System.Windows.Forms.GroupBox groupBox3;
-		private System.Windows.Forms.CheckBox fieldNotification;
+		private System.Windows.Forms.CheckBox fieldMessageNotification;
 		private System.Windows.Forms.CheckBox fieldNetworkConnectivityNotification;
 		private System.Windows.Forms.TabPage tabPagePrivacy;
 		private System.Windows.Forms.GroupBox groupBox4;

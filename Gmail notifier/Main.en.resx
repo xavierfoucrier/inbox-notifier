@@ -221,10 +221,10 @@ at the next application startup.</value>
   <data name="label1.Text" xml:space="preserve">
     <value>Verification delay:</value>
   </data>
-  <data name="fieldNotification.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="fieldMessageNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
   </data>
-  <data name="fieldNotification.Text" xml:space="preserve">
+  <data name="fieldMessageNotification.Text" xml:space="preserve">
     <value>New message</value>
   </data>
   <data name="fieldAudioNotification.Size" type="System.Drawing.Size, System.Drawing">

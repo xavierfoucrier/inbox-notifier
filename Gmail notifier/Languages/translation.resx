@@ -159,6 +159,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   <data name="helpLanguage" xml:space="preserve">
     <value>Langue de l'interface</value>
   </data>
+  <data name="helpMessageNotification" xml:space="preserve">
+    <value>Affiche une notification lors de la réception de nouveaux messages</value>
+  </data>
   <data name="helpNetworkConnectivityNotification" xml:space="preserve">
     <value>Affiche une notification lorsque l'application n'arrive plus à communiquer avec le réseau</value>
   </data>

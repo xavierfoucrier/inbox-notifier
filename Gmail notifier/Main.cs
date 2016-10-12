@@ -63,6 +63,7 @@ namespace notifier {
 			help.SetHelpString(labelEmailAddress, translation.helpEmailAddress);
 			help.SetHelpString(labelTokenDelivery, translation.helpTokenDelivery);
 			help.SetHelpString(buttonGmailDisconnect, translation.helpGmailDisconnect);
+			help.SetHelpString(fieldMessageNotification, translation.helpMessageNotification);
 			help.SetHelpString(fieldAudioNotification, translation.helpAudioNotification);
 			help.SetHelpString(fieldSpamNotification, translation.helpSpamNotification);
 			help.SetHelpString(fieldNumericDelay, translation.helpNumericDelay);
@@ -278,43 +279,47 @@ namespace notifier {
 					// sets the notification icon and text
 					notifyIcon.Icon = this.inbox.ThreadsUnread <= 9 ? (Icon)Resources.ResourceManager.GetObject("mail_" + this.inbox.ThreadsUnread.ToString()) : Resources.mail_more;
 
-					// plays a sound on unread threads
-					if (Settings.Default.AudioNotification) {
-						SystemSounds.Asterisk.Play();
-					}
+					// manages message notification
+					if (Settings.Default.MessageNotification) {
 
-					//  displays a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
-					if (this.inbox.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != (int)Privacy.All) {
-						UsersResource.MessagesResource.ListRequest messages = this.service.Users.Messages.List("me");
-						messages.LabelIds = "UNREAD";
-						messages.MaxResults = 1;
-						Google.Apis.Gmail.v1.Data.Message message = this.service.Users.Messages.Get("me", messages.Execute().Messages.First().Id).Execute();
+						// plays a sound on unread threads
+						if (Settings.Default.AudioNotification) {
+							SystemSounds.Asterisk.Play();
+						}
 
-						string subject = "";
-						string from = "";
+						//  displays a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
+						if (this.inbox.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != (int)Privacy.All) {
+							UsersResource.MessagesResource.ListRequest messages = this.service.Users.Messages.List("me");
+							messages.LabelIds = "UNREAD";
+							messages.MaxResults = 1;
+							Google.Apis.Gmail.v1.Data.Message message = this.service.Users.Messages.Get("me", messages.Execute().Messages.First().Id).Execute();
 
-						foreach (MessagePartHeader header in message.Payload.Headers) {
-							if (header.Name == "Subject") {
-								subject = header.Value != "" ? header.Value : translation.newUnreadMessage;
-							} else if (header.Name == "From") {
-								Match match = Regex.Match(header.Value, ".* <");
+							string subject = "";
+							string from = "";
 
-								if (match.Length != 0) {
-									from = match.Captures[0].Value.Replace(" <", "");
-								} else {
-									match = Regex.Match(header.Value, "<?.*>?");
-									from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, this.inbox.ThreadsUnread.ToString() + " " + translation.unreadMessage);
+							foreach (MessagePartHeader header in message.Payload.Headers) {
+								if (header.Name == "Subject") {
+									subject = header.Value != "" ? header.Value : translation.newUnreadMessage;
+								} else if (header.Name == "From") {
+									Match match = Regex.Match(header.Value, ".* <");
+
+									if (match.Length != 0) {
+										from = match.Captures[0].Value.Replace(" <", "");
+									} else {
+										match = Regex.Match(header.Value, "<?.*>?");
+										from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, this.inbox.ThreadsUnread.ToString() + " " + translation.unreadMessage);
+									}
 								}
 							}
-						}
 
-						if (Settings.Default.PrivacyNotification == (int)Privacy.None) {
-							notifyIcon.ShowBalloonTip(450, from, message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : translation.newUnreadMessage, ToolTipIcon.Info);
-						} else if (Settings.Default.PrivacyNotification == (int)Privacy.Short) {
-							notifyIcon.ShowBalloonTip(450, from, subject, ToolTipIcon.Info);
+							if (Settings.Default.PrivacyNotification == (int)Privacy.None) {
+								notifyIcon.ShowBalloonTip(450, from, message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : translation.newUnreadMessage, ToolTipIcon.Info);
+							} else if (Settings.Default.PrivacyNotification == (int)Privacy.Short) {
+								notifyIcon.ShowBalloonTip(450, from, subject, ToolTipIcon.Info);
+							}
+						} else {
+							notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? translation.unreadMessages : translation.unreadMessage), translation.newUnreadMessage, ToolTipIcon.Info);
 						}
-					} else {
-						notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? translation.unreadMessages : translation.unreadMessage), translation.newUnreadMessage, ToolTipIcon.Info);
 					}
 
 					// displays the notification text
