@@ -348,6 +348,26 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Pas de connexion internet.
+        /// </summary>
+        internal static string noInternet {
+            get {
+                return ResourceManager.GetString("noInternet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous n&apos;êtes actuellement pas connecté à Internet. L&apos;application nécessite une connexion à internet pour se connecter à votre compte Gmail.
+        ///
+        ///L&apos;application va désormais quitter..
+        /// </summary>
+        internal static string noInternetAtStartup {
+            get {
+                return ResourceManager.GetString("noInternetAtStartup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Pas de nouveau message.
         /// </summary>
         internal static string noMessage {

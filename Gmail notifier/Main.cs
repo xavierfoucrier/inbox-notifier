@@ -73,6 +73,14 @@ namespace notifier {
 			help.SetHelpString(fieldPrivacyNotificationShort, translation.helpPrivacyNotificationShort);
 			help.SetHelpString(fieldPrivacyNotificationAll, translation.helpPrivacyNotificationAll);
 
+			// checks internet connectivity
+			if (!this.IsInternetAvailable()) {
+				MessageBox.Show(translation.noInternetAtStartup, translation.noInternet, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				Application.Exit();
+
+				return;
+			}
+
 			// authenticates the user
 			this.AsyncAuthentication();
 
@@ -163,6 +171,21 @@ namespace notifier {
 			// disposes the gmail api service
 			if (this.service != null) {
 				this.service.Dispose();
+			}
+		}
+
+		/// <summary>
+		/// Pings the 8.8.8.8 server to checks the internet connectivity
+		/// </summary>
+		/// <returns>Indicates if the user is connected to the internet, false means the ping to 8.8.8.8 server has failed</returns>
+		private bool IsInternetAvailable() {
+			try {
+				Ping ping = new Ping();
+				PingReply reply = ping.Send("8.8.8.8", 1000, new byte[32]);
+
+				return reply.Status == IPStatus.Success;
+			} catch (Exception) {
+				return false;
 			}
 		}
 
