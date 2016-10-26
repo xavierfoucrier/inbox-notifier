@@ -154,5 +154,17 @@ namespace notifier.Properties {
                 this["MessageNotification"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLoad {
+            get {
+                return ((bool)(this["FirstLoad"]));
+            }
+            set {
+                this["FirstLoad"] = value;
+            }
+        }
     }
 }
