@@ -136,6 +136,9 @@ L'application va désormais quitter.</value>
   <data name="error" xml:space="preserve">
     <value>Erreur</value>
   </data>
+  <data name="firstLoad" xml:space="preserve">
+    <value>Gmail notifier s'exécute désormais en arrière plan sur votre ordinateur. Dans quelques secondes, vous serez invité à vous connecter sur votre compte Gmail afin d'autoriser l'application à accéder à votre boite de réception.</value>
+  </data>
   <data name="gmailDisconnect" xml:space="preserve">
     <value>Déconnexion de votre compte Gmail</value>
   </data>
@@ -252,5 +255,8 @@ L'application va désormais quitter.</value>
   </data>
   <data name="unreadSpams" xml:space="preserve">
     <value>spams non lus</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Bienvenue !</value>
   </data>
 </root>

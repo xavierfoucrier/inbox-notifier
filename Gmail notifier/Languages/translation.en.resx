@@ -136,6 +136,9 @@ The application will now quit.</value>
   <data name="error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="firstLoad" xml:space="preserve">
+    <value>Gmail notifier now runs in the background on your computer. In a few seconds you will be prompted to sign in to your Gmail account to allow the application to access your inbox.</value>
+  </data>
   <data name="gmailDisconnect" xml:space="preserve">
     <value>Disconnecting your Gmail account</value>
   </data>
@@ -252,5 +255,8 @@ The application will now quit.</value>
   </data>
   <data name="unreadSpams" xml:space="preserve">
     <value>unread spams</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Welcome!</value>
   </data>
 </root>

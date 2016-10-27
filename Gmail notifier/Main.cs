@@ -56,6 +56,18 @@ namespace notifier {
 		/// </summary>
 		private void Main_Load(object sender, EventArgs e) {
 
+			// displays a systray notification on first load
+			if (Settings.Default.FirstLoad) {
+				notifyIcon.ShowBalloonTip(10000, translation.welcome, translation.firstLoad, ToolTipIcon.Info);
+
+				// switchs the first load state
+				Settings.Default.FirstLoad = false;
+				Settings.Default.Save();
+
+				// waits for 10 seconds to complete the thread
+				System.Threading.Thread.Sleep(10000);
+			}
+
 			// configures the help provider
 			HelpProvider help = new HelpProvider();
 			help.SetHelpString(fieldAskonExit, translation.helpAskonExit);

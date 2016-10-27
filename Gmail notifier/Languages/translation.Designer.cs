@@ -110,6 +110,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Gmail notifier s&apos;exécute désormais en arrière plan sur votre ordinateur. Dans quelques secondes, vous serez invité à vous connecter sur votre compte Gmail afin d&apos;autoriser l&apos;application à accéder à votre boite de réception..
+        /// </summary>
+        internal static string firstLoad {
+            get {
+                return ResourceManager.GetString("firstLoad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Déconnexion de votre compte Gmail.
         /// </summary>
         internal static string gmailDisconnect {
@@ -445,6 +454,15 @@ namespace notifier.Languages {
         internal static string unreadSpams {
             get {
                 return ResourceManager.GetString("unreadSpams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Bienvenue !.
+        /// </summary>
+        internal static string welcome {
+            get {
+                return ResourceManager.GetString("welcome", resourceCulture);
             }
         }
     }
