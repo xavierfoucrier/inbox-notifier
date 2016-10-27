@@ -137,7 +137,7 @@ The application will now quit.</value>
     <value>Error</value>
   </data>
   <data name="firstLoad" xml:space="preserve">
-    <value>Gmail notifier now runs in the background on your computer. In a few seconds you will be prompted to sign in to your Gmail account to allow the application to access your inbox.</value>
+    <value>Gmail notifier now runs in background on your computer. In a few seconds you will be prompted to sign in to your Gmail account to allow the application to access your inbox.</value>
   </data>
   <data name="gmailDisconnect" xml:space="preserve">
     <value>Disconnecting your Gmail account</value>
