@@ -197,6 +197,7 @@
 			this.fieldRunAtWindowsStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "RunAtWindowsStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldRunAtWindowsStartup.Name = "fieldRunAtWindowsStartup";
 			this.fieldRunAtWindowsStartup.UseVisualStyleBackColor = true;
+			this.fieldRunAtWindowsStartup.CheckedChanged += new System.EventHandler(this.fieldRunAtWindowsStartup_CheckedChanged);
 			// 
 			// fieldMinimizeToSystray
 			// 

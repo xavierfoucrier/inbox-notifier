@@ -19,6 +19,7 @@ using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using Microsoft.Win32;
 using notifier.Languages;
 using notifier.Properties;
 
@@ -380,6 +381,21 @@ namespace notifier {
 				notifyIcon.Icon = Resources.warning;
 				notifyIcon.Text = translation.syncError;
 				notifyIcon.ShowBalloonTip(450, translation.error, translation.syncErrorOccured + exception.Message, ToolTipIcon.Warning);
+			}
+		}
+
+		/// <summary>
+		/// Manages the RunAtWindowsStartup user setting
+		/// </summary>
+		private void fieldRunAtWindowsStartup_CheckedChanged(object sender, EventArgs e) {
+			if (fieldRunAtWindowsStartup.Checked) {
+				using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true)) {
+					key.SetValue("Gmail notifier", '"' + Application.ExecutablePath + '"');
+				}
+			} else {
+				using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true)) {
+					key.DeleteValue("Gmail notifier", false);
+				}
 			}
 		}
 
