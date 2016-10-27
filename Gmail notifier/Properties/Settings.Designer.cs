@@ -26,12 +26,12 @@ namespace notifier.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool StartWithWindows {
+        public bool RunAtWindowsStartup {
             get {
-                return ((bool)(this["StartWithWindows"]));
+                return ((bool)(this["RunAtWindowsStartup"]));
             }
             set {
-                this["StartWithWindows"] = value;
+                this["RunAtWindowsStartup"] = value;
             }
         }
         

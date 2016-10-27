@@ -328,34 +328,34 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="fieldStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
+  <data name="fieldRunAtWindowsStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="fieldStartWithWindows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="fieldRunAtWindowsStartup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="fieldStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="fieldRunAtWindowsStartup.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 25</value>
   </data>
-  <data name="fieldStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="fieldRunAtWindowsStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 17</value>
   </data>
-  <data name="fieldStartWithWindows.TabIndex" type="System.Int32, mscorlib">
+  <data name="fieldRunAtWindowsStartup.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="fieldStartWithWindows.Text" xml:space="preserve">
+  <data name="fieldRunAtWindowsStartup.Text" xml:space="preserve">
     <value>Lancer au démarrage de Windows</value>
   </data>
-  <data name="&gt;&gt;fieldStartWithWindows.Name" xml:space="preserve">
-    <value>fieldStartWithWindows</value>
+  <data name="&gt;&gt;fieldRunAtWindowsStartup.Name" xml:space="preserve">
+    <value>fieldRunAtWindowsStartup</value>
   </data>
-  <data name="&gt;&gt;fieldStartWithWindows.Type" xml:space="preserve">
+  <data name="&gt;&gt;fieldRunAtWindowsStartup.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;fieldStartWithWindows.Parent" xml:space="preserve">
+  <data name="&gt;&gt;fieldRunAtWindowsStartup.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;fieldStartWithWindows.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;fieldRunAtWindowsStartup.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="fieldMinimizeToSystray.AutoSize" type="System.Boolean, mscorlib">

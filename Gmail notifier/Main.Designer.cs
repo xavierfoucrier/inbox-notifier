@@ -35,7 +35,7 @@
 			this.fieldLanguage = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.fieldStartWithWindows = new System.Windows.Forms.CheckBox();
+			this.fieldRunAtWindowsStartup = new System.Windows.Forms.CheckBox();
 			this.fieldMinimizeToSystray = new System.Windows.Forms.CheckBox();
 			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
 			this.tabPageAccount = new System.Windows.Forms.TabPage();
@@ -183,20 +183,20 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.fieldStartWithWindows);
+			this.groupBox1.Controls.Add(this.fieldRunAtWindowsStartup);
 			this.groupBox1.Controls.Add(this.fieldMinimizeToSystray);
 			this.groupBox1.Controls.Add(this.fieldAskonExit);
 			resources.ApplyResources(this.groupBox1, "groupBox1");
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.TabStop = false;
 			// 
-			// fieldStartWithWindows
+			// fieldRunAtWindowsStartup
 			// 
-			resources.ApplyResources(this.fieldStartWithWindows, "fieldStartWithWindows");
-			this.fieldStartWithWindows.Checked = global::notifier.Properties.Settings.Default.StartWithWindows;
-			this.fieldStartWithWindows.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "StartWithWindows", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldStartWithWindows.Name = "fieldStartWithWindows";
-			this.fieldStartWithWindows.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.fieldRunAtWindowsStartup, "fieldRunAtWindowsStartup");
+			this.fieldRunAtWindowsStartup.Checked = global::notifier.Properties.Settings.Default.RunAtWindowsStartup;
+			this.fieldRunAtWindowsStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "RunAtWindowsStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldRunAtWindowsStartup.Name = "fieldRunAtWindowsStartup";
+			this.fieldRunAtWindowsStartup.UseVisualStyleBackColor = true;
 			// 
 			// fieldMinimizeToSystray
 			// 
@@ -648,7 +648,7 @@
 		private System.Windows.Forms.TabControl tabControl;
 		private System.Windows.Forms.TabPage tabPageGeneral;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.CheckBox fieldStartWithWindows;
+		private System.Windows.Forms.CheckBox fieldRunAtWindowsStartup;
 		private System.Windows.Forms.CheckBox fieldMinimizeToSystray;
 		private System.Windows.Forms.CheckBox fieldAskonExit;
 		private System.Windows.Forms.TabPage tabPageAbout;

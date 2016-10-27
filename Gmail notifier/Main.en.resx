@@ -155,10 +155,10 @@ at the next application startup.</value>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Behavior</value>
   </data>
-  <data name="fieldStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="fieldRunAtWindowsStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
   </data>
-  <data name="fieldStartWithWindows.Text" xml:space="preserve">
+  <data name="fieldRunAtWindowsStartup.Text" xml:space="preserve">
     <value>Run at windows startup</value>
   </data>
   <data name="fieldMinimizeToSystray.Size" type="System.Drawing.Size, System.Drawing">
