@@ -400,13 +400,6 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Manages the AskonExit user setting
-		/// </summary>
-		private void fieldAskonExit_Click(object sender, EventArgs e) {
-			Settings.Default.AskonExit = fieldAskonExit.Checked;
-		}
-
-		/// <summary>
 		/// Manages the Language user setting
 		/// </summary>
 		private void fieldLanguage_SelectionChangeCommitted(object sender, EventArgs e) {
@@ -418,17 +411,9 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Manages the AudioNotification user setting
-		/// </summary>
-		private void fieldAudioNotification_Click(object sender, EventArgs e) {
-			Settings.Default.AudioNotification = fieldAudioNotification.Checked;
-		}
-
-		/// <summary>
 		/// Manages the SpamNotification user setting
 		/// </summary>
 		private void fieldSpamNotification_Click(object sender, EventArgs e) {
-			Settings.Default.SpamNotification = fieldSpamNotification.Checked;
 			this.SyncInbox();
 		}
 
@@ -446,13 +431,6 @@ namespace notifier {
 		private void fieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
 			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
 			Settings.Default.StepDelay = fieldStepDelay.SelectedIndex;
-		}
-
-		/// <summary>
-		/// Manages the NetworkConnectivityNotification user setting
-		/// </summary>
-		private void fieldNetworkConnectivityNotification_Click(object sender, EventArgs e) {
-			Settings.Default.NetworkConnectivityNotification = fieldNetworkConnectivityNotification.Checked;
 		}
 
 		/// <summary>

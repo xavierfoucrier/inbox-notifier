@@ -215,7 +215,6 @@
 			this.fieldAskonExit.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AskonExit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldAskonExit.Name = "fieldAskonExit";
 			this.fieldAskonExit.UseVisualStyleBackColor = true;
-			this.fieldAskonExit.Click += new System.EventHandler(this.fieldAskonExit_Click);
 			// 
 			// tabPageAccount
 			// 
@@ -287,7 +286,6 @@
 			this.fieldNetworkConnectivityNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "NetworkConnectivityNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldNetworkConnectivityNotification.Name = "fieldNetworkConnectivityNotification";
 			this.fieldNetworkConnectivityNotification.UseVisualStyleBackColor = true;
-			this.fieldNetworkConnectivityNotification.Click += new System.EventHandler(this.fieldNetworkConnectivityNotification_Click);
 			// 
 			// groupBox2
 			// 
@@ -359,7 +357,6 @@
 			this.fieldAudioNotification.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
 			this.fieldAudioNotification.Name = "fieldAudioNotification";
 			this.fieldAudioNotification.UseVisualStyleBackColor = true;
-			this.fieldAudioNotification.Click += new System.EventHandler(this.fieldAudioNotification_Click);
 			// 
 			// tabPagePrivacy
 			// 
