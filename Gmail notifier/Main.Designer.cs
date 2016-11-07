@@ -63,9 +63,9 @@
 			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
 			this.tabPageAbout = new System.Windows.Forms.TabPage();
 			this.linkVersion = new System.Windows.Forms.LinkLabel();
+			this.linkLicense = new System.Windows.Forms.LinkLabel();
 			this.linkWebsiteXavier = new System.Windows.Forms.LinkLabel();
 			this.linkWebsiteYusuke = new System.Windows.Forms.LinkLabel();
-			this.label10 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
@@ -406,9 +406,9 @@
 			// tabPageAbout
 			// 
 			this.tabPageAbout.Controls.Add(this.linkVersion);
+			this.tabPageAbout.Controls.Add(this.linkLicense);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteXavier);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteYusuke);
-			this.tabPageAbout.Controls.Add(this.label10);
 			this.tabPageAbout.Controls.Add(this.label7);
 			this.tabPageAbout.Controls.Add(this.label11);
 			this.tabPageAbout.Controls.Add(this.label12);
@@ -427,6 +427,17 @@
 			this.linkVersion.TabStop = true;
 			this.linkVersion.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkVersion_LinkClicked);
+			// 
+			// linkLicense
+			// 
+			this.linkLicense.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			resources.ApplyResources(this.linkLicense, "linkLicense");
+			this.linkLicense.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkLicense.Name = "linkLicense";
+			this.linkLicense.TabStop = true;
+			this.linkLicense.UseCompatibleTextRendering = true;
+			this.linkLicense.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLicense_LinkClicked);
 			// 
 			// linkWebsiteXavier
 			// 
@@ -447,11 +458,6 @@
 			this.linkWebsiteYusuke.TabStop = true;
 			this.linkWebsiteYusuke.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteYusuke.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsiteYusuke_LinkClicked);
-			// 
-			// label10
-			// 
-			resources.ApplyResources(this.label10, "label10");
-			this.label10.Name = "label10";
 			// 
 			// label7
 			// 
@@ -650,7 +656,6 @@
 		private System.Windows.Forms.CheckBox fieldMinimizeToSystray;
 		private System.Windows.Forms.CheckBox fieldAskonExit;
 		private System.Windows.Forms.TabPage tabPageAbout;
-		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label12;
@@ -704,6 +709,7 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.LinkLabel linkVersion;
 		private System.Windows.Forms.LinkLabel linkRestartToApply;
+		private System.Windows.Forms.LinkLabel linkLicense;
 	}
 }
 

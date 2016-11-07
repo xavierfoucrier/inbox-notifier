@@ -476,6 +476,13 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Opens the Github license file
+		/// </summary>
+		private void linkLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+			Process.Start("https://github.com/xavierfoucrier/gmail-notifier/blob/master/LICENSE.md");
+		}
+
+		/// <summary>
 		/// Hides the settings saved label
 		/// </summary>
 		private void tabControl_Selecting(object sender, TabControlCancelEventArgs e) {

@@ -1144,6 +1144,40 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;linkVersion.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="linkLicense.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLicense.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>41, 11</value>
+  </data>
+  <data name="linkLicense.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 97</value>
+  </data>
+  <data name="linkLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 30</value>
+  </data>
+  <data name="linkLicense.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="linkLicense.Text" xml:space="preserve">
+    <value>©2016 Tous droits réservés
+Open Source, Licence MIT</value>
+  </data>
+  <data name="&gt;&gt;linkLicense.Name" xml:space="preserve">
+    <value>linkLicense</value>
+  </data>
+  <data name="&gt;&gt;linkLicense.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLicense.Parent" xml:space="preserve">
+    <value>tabPageAbout</value>
+  </data>
+  <data name="&gt;&gt;linkLicense.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="linkWebsiteXavier.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1172,7 +1206,7 @@ prochain démarrage de l'application.</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;linkWebsiteXavier.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="linkWebsiteYusuke.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1202,37 +1236,6 @@ prochain démarrage de l'application.</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;linkWebsiteYusuke.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 97</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 26</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>© 2016
-All rights reserved.</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>tabPageAbout</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
