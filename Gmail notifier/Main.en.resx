@@ -274,13 +274,13 @@ at the next application startup.</value>
     <value>©2016 All rights reserved
 Open Source, MIT License</value>
   </data>
-  <data name="linkWebsiteXavier.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 110</value>
+  <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>37, 15</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 26</value>
+  <data name="linkWebsiteXavier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 30</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
+  <data name="linkWebsiteXavier.Text" xml:space="preserve">
     <value>Visual Studio 2013, C#
 Developed by Xavier Foucrier</value>
   </data>

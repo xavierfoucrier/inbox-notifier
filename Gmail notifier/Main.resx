@@ -1184,17 +1184,21 @@ Open Source, Licence MIT</value>
   <data name="linkWebsiteXavier.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>38, 15</value>
+  </data>
   <data name="linkWebsiteXavier.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 110</value>
+    <value>27, 97</value>
   </data>
   <data name="linkWebsiteXavier.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
+    <value>158, 30</value>
   </data>
   <data name="linkWebsiteXavier.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="linkWebsiteXavier.Text" xml:space="preserve">
-    <value>Xavier Foucrier</value>
+    <value>Visual Studio 2013, C#
+Développé par Xavier Foucrier</value>
   </data>
   <data name="&gt;&gt;linkWebsiteXavier.Name" xml:space="preserve">
     <value>linkWebsiteXavier</value>
@@ -1238,37 +1242,6 @@ Open Source, Licence MIT</value>
   <data name="&gt;&gt;linkWebsiteYusuke.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 97</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 26</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Visual Studio 2013, C#
-Développé par Xavier Foucrier</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>tabPageAbout</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1300,7 +1273,7 @@ Développé par Xavier Foucrier</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1333,7 +1306,7 @@ Développé par Xavier Foucrier</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1366,7 +1339,7 @@ Développé par Xavier Foucrier</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1399,7 +1372,7 @@ Développé par Xavier Foucrier</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="tabPageAbout.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

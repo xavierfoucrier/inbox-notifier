@@ -66,7 +66,6 @@
 			this.linkLicense = new System.Windows.Forms.LinkLabel();
 			this.linkWebsiteXavier = new System.Windows.Forms.LinkLabel();
 			this.linkWebsiteYusuke = new System.Windows.Forms.LinkLabel();
-			this.label7 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
@@ -409,7 +408,6 @@
 			this.tabPageAbout.Controls.Add(this.linkLicense);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteXavier);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteYusuke);
-			this.tabPageAbout.Controls.Add(this.label7);
 			this.tabPageAbout.Controls.Add(this.label11);
 			this.tabPageAbout.Controls.Add(this.label12);
 			this.tabPageAbout.Controls.Add(this.label13);
@@ -446,6 +444,7 @@
 			this.linkWebsiteXavier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteXavier.Name = "linkWebsiteXavier";
 			this.linkWebsiteXavier.TabStop = true;
+			this.linkWebsiteXavier.UseCompatibleTextRendering = true;
 			this.linkWebsiteXavier.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteXavier.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsiteXavier_LinkClicked);
 			// 
@@ -458,11 +457,6 @@
 			this.linkWebsiteYusuke.TabStop = true;
 			this.linkWebsiteYusuke.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteYusuke.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsiteYusuke_LinkClicked);
-			// 
-			// label7
-			// 
-			resources.ApplyResources(this.label7, "label7");
-			this.label7.Name = "label7";
 			// 
 			// label11
 			// 
@@ -656,7 +650,6 @@
 		private System.Windows.Forms.CheckBox fieldMinimizeToSystray;
 		private System.Windows.Forms.CheckBox fieldAskonExit;
 		private System.Windows.Forms.TabPage tabPageAbout;
-		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label13;
