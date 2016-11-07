@@ -57,6 +57,9 @@ namespace notifier {
 		/// </summary>
 		private void Main_Load(object sender, EventArgs e) {
 
+			// hides the form by default
+			Visible = false;
+
 			// displays a systray notification on first load
 			if (Settings.Default.FirstLoad) {
 				notifyIcon.ShowBalloonTip(10000, translation.welcome, translation.firstLoad, ToolTipIcon.Info);
@@ -496,6 +499,7 @@ namespace notifier {
 			labelSettingsSaved.Visible = false;
 			WindowState = FormWindowState.Minimized;
 			ShowInTaskbar = false;
+			Visible = false;
 		}
 
 		/// <summary>
@@ -616,6 +620,7 @@ namespace notifier {
 		/// Manages the context menu Settings item
 		/// </summary>
 		private void menuItemSettings_Click(object sender, EventArgs e) {
+			Visible = true;
 			ShowInTaskbar = true;
 			WindowState = FormWindowState.Normal;
 		}
