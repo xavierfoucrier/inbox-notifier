@@ -47,6 +47,7 @@
 			this.buttonGmailDisconnect = new System.Windows.Forms.Button();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.fieldAttemptToReconnectNotification = new System.Windows.Forms.CheckBox();
 			this.fieldNetworkConnectivityNotification = new System.Windows.Forms.CheckBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
@@ -272,10 +273,17 @@
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.fieldAttemptToReconnectNotification);
 			this.groupBox3.Controls.Add(this.fieldNetworkConnectivityNotification);
 			resources.ApplyResources(this.groupBox3, "groupBox3");
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
+			// 
+			// fieldAttemptToReconnectNotification
+			// 
+			resources.ApplyResources(this.fieldAttemptToReconnectNotification, "fieldAttemptToReconnectNotification");
+			this.fieldAttemptToReconnectNotification.Name = "fieldAttemptToReconnectNotification";
+			this.fieldAttemptToReconnectNotification.UseVisualStyleBackColor = true;
 			// 
 			// fieldNetworkConnectivityNotification
 			// 
@@ -703,6 +711,7 @@
 		private System.Windows.Forms.LinkLabel linkVersion;
 		private System.Windows.Forms.LinkLabel linkRestartToApply;
 		private System.Windows.Forms.LinkLabel linkLicense;
+		private System.Windows.Forms.CheckBox fieldAttemptToReconnectNotification;
 	}
 }
 

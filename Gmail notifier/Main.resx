@@ -670,6 +670,36 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;tabPageAccount.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="fieldAttemptToReconnectNotification.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fieldAttemptToReconnectNotification.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="fieldAttemptToReconnectNotification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 48</value>
+  </data>
+  <data name="fieldAttemptToReconnectNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 17</value>
+  </data>
+  <data name="fieldAttemptToReconnectNotification.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="fieldAttemptToReconnectNotification.Text" xml:space="preserve">
+    <value>Tentative de reconnexion automatique</value>
+  </data>
+  <data name="&gt;&gt;fieldAttemptToReconnectNotification.Name" xml:space="preserve">
+    <value>fieldAttemptToReconnectNotification</value>
+  </data>
+  <data name="&gt;&gt;fieldAttemptToReconnectNotification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fieldAttemptToReconnectNotification.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;fieldAttemptToReconnectNotification.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="fieldNetworkConnectivityNotification.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -698,7 +728,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;fieldNetworkConnectivityNotification.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>270, 6</value>
