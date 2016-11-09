@@ -166,5 +166,17 @@ namespace notifier.Properties {
                 this["FirstLoad"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AttemptToReconnectNotification {
+            get {
+                return ((bool)(this["AttemptToReconnectNotification"]));
+            }
+            set {
+                this["AttemptToReconnectNotification"] = value;
+            }
+        }
     }
 }
