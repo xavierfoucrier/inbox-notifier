@@ -88,6 +88,7 @@
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -606,6 +607,10 @@
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
+			// timerReconnect
+			// 
+			this.timerReconnect.Interval = 10000;
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -715,6 +720,7 @@
 		private System.Windows.Forms.LinkLabel linkRestartToApply;
 		private System.Windows.Forms.LinkLabel linkLicense;
 		private System.Windows.Forms.CheckBox fieldAttemptToReconnectNotification;
+		private System.Windows.Forms.Timer timerReconnect;
 	}
 }
 
