@@ -45,6 +45,9 @@ namespace notifier {
 		// unread threads
 		private int? unreadthreads = 0;
 
+		// number of automatic reconnection
+		private int reconnect = 0;
+
 		/// <summary>
 		/// Initializes the class
 		/// </summary>
@@ -262,6 +265,19 @@ namespace notifier {
 		/// </summary>
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
 		private void SyncInbox(bool timertick = false) {
+
+			// if internet is down, attempts to reconnect the user mailbox, depending on the user notification setting
+			if (Settings.Default.AttemptToReconnectNotification && !this.IsInternetAvailable()) {
+				timerReconnect.Enabled = true;
+				timer.Enabled = false;
+
+				// displays a balloon tip in the systray with the detailed reconnection message
+				notifyIcon.Icon = Resources.warning;
+				notifyIcon.Text = "Tentative de reconnexion...";
+				notifyIcon.ShowBalloonTip(450, "Tentative de reconnexion", "Vous n'êtes plus connecté à Internet : l'application tente de se reconnecter à votre boîte de réception.", ToolTipIcon.Warning);
+
+				return;
+			}
 
 			// disables the timeout when the user do a manual synchronization
 			if (timer.Interval != Settings.Default.TimerInterval) {
@@ -700,6 +716,36 @@ namespace notifier {
 
 			// exits the application
 			Application.Exit();
+		}
+
+		// attempts to reconnect the user mailbox
+		private void timerReconnect_Tick(object sender, EventArgs e) {
+
+			// checks internet connectivity
+			if (!this.IsInternetAvailable()) {
+
+				// increases the number of reconnection attempt
+				this.reconnect++;
+
+				// after 3 unsuccessull reconnection attempts, the application waits for the next sync
+				if (reconnect == 3) {
+					timerReconnect.Enabled = false;
+					timer.Enabled = true;
+					this.reconnect = 1;
+
+					// displays a balloon tip in the systray with the last detailed reconnection message
+					notifyIcon.Icon = Resources.warning;
+					notifyIcon.Text = "Reconnexion impossible";
+					notifyIcon.ShowBalloonTip(450, "Reconnexion impossible", "Vous n'êtes toujours pas connecté à Internet : le service sera rétabli dès que vous serez à nouveau connecté à Internet.", ToolTipIcon.Warning);
+				}
+			} else {
+
+				// syncs the user mailbox when the internet is available
+				timerReconnect.Enabled = false;
+				timer.Enabled = true;
+				this.reconnect = 1;
+				this.SyncInbox();
+			}
 		}
 	}
 }

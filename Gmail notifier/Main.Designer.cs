@@ -610,6 +610,7 @@
 			// timerReconnect
 			// 
 			this.timerReconnect.Interval = 10000;
+			this.timerReconnect.Tick += new System.EventHandler(this.timerReconnect_Tick);
 			// 
 			// Main
 			// 
