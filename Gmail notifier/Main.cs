@@ -48,6 +48,9 @@ namespace notifier {
 		// number of automatic reconnection
 		private int reconnect = 0;
 
+		// number of maximum automatic reconnection
+		private const int MAX_AUTO_RECONNECT = 3;
+
 		/// <summary>
 		/// Initializes the class
 		/// </summary>
@@ -728,7 +731,7 @@ namespace notifier {
 				this.reconnect++;
 
 				// after 3 unsuccessull reconnection attempts, the application waits for the next sync
-				if (reconnect == 3) {
+				if (reconnect == MAX_AUTO_RECONNECT) {
 					timerReconnect.Enabled = false;
 					timer.Enabled = true;
 					this.reconnect = 1;
