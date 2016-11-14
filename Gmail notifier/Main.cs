@@ -269,15 +269,17 @@ namespace notifier {
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
 		private void SyncInbox(bool timertick = false) {
 
-			// if internet is down, attempts to reconnect the user mailbox, depending on the user notification setting
-			if (Settings.Default.AttemptToReconnectNotification && !this.IsInternetAvailable()) {
+			// if internet is down, attempts to reconnect the user mailbox
+			if (!this.IsInternetAvailable()) {
 				timerReconnect.Enabled = true;
 				timer.Enabled = false;
 
-				// displays a balloon tip in the systray with the detailed reconnection message
-				notifyIcon.Icon = Resources.warning;
-				notifyIcon.Text = translation.reconnectAttempt;
-				notifyIcon.ShowBalloonTip(450, translation.reconnectAttempt, translation.reconnectNow, ToolTipIcon.Warning);
+				// displays a balloon tip in the systray with the detailed reconnection message, depending on the user notification setting
+				if (Settings.Default.AttemptToReconnectNotification) {
+					notifyIcon.Icon = Resources.warning;
+					notifyIcon.Text = translation.reconnectAttempt;
+					notifyIcon.ShowBalloonTip(450, translation.reconnectAttempt, translation.reconnectNow, ToolTipIcon.Warning);
+				}
 
 				return;
 			}
@@ -736,10 +738,12 @@ namespace notifier {
 					timer.Enabled = true;
 					this.reconnect = 1;
 
-					// displays a balloon tip in the systray with the last detailed reconnection message
-					notifyIcon.Icon = Resources.warning;
-					notifyIcon.Text = translation.reconnectFailed;
-					notifyIcon.ShowBalloonTip(450, translation.reconnectFailed, translation.reconnectNextTime, ToolTipIcon.Warning);
+					// displays a balloon tip in the systray with the last detailed reconnection message, depending on the user notification setting
+					if (Settings.Default.AttemptToReconnectNotification) {
+						notifyIcon.Icon = Resources.warning;
+						notifyIcon.Text = translation.reconnectFailed;
+						notifyIcon.ShowBalloonTip(450, translation.reconnectFailed, translation.reconnectNextTime, ToolTipIcon.Warning);
+					}
 				}
 			} else {
 
