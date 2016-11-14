@@ -232,6 +232,18 @@ L'application va désormais quitter.</value>
   <data name="noMessage" xml:space="preserve">
     <value>Pas de nouveau message</value>
   </data>
+  <data name="reconnectAttempt" xml:space="preserve">
+    <value>Tentative de reconnexion...</value>
+  </data>
+  <data name="reconnectFailed" xml:space="preserve">
+    <value>Reconnexion impossible</value>
+  </data>
+  <data name="reconnectNextTime" xml:space="preserve">
+    <value>Vous n'êtes toujours pas connecté à Internet : le service sera rétabli dès que vous serez à nouveau connecté à Internet.</value>
+  </data>
+  <data name="reconnectNow" xml:space="preserve">
+    <value>Vous n'êtes plus connecté à Internet : l'application tente de se reconnecter à votre boîte de réception.</value>
+  </data>
   <data name="sync" xml:space="preserve">
     <value>Synchronisation en cours ...</value>
   </data>

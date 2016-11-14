@@ -276,8 +276,8 @@ namespace notifier {
 
 				// displays a balloon tip in the systray with the detailed reconnection message
 				notifyIcon.Icon = Resources.warning;
-				notifyIcon.Text = "Tentative de reconnexion...";
-				notifyIcon.ShowBalloonTip(450, "Tentative de reconnexion", "Vous n'êtes plus connecté à Internet : l'application tente de se reconnecter à votre boîte de réception.", ToolTipIcon.Warning);
+				notifyIcon.Text = translation.reconnectAttempt;
+				notifyIcon.ShowBalloonTip(450, translation.reconnectAttempt, translation.reconnectNow, ToolTipIcon.Warning);
 
 				return;
 			}
@@ -730,7 +730,7 @@ namespace notifier {
 				// increases the number of reconnection attempt
 				this.reconnect++;
 
-				// after 3 unsuccessull reconnection attempts, the application waits for the next sync
+				// after max unsuccessull reconnection attempts, the application waits for the next sync
 				if (reconnect == MAX_AUTO_RECONNECT) {
 					timerReconnect.Enabled = false;
 					timer.Enabled = true;
@@ -738,8 +738,8 @@ namespace notifier {
 
 					// displays a balloon tip in the systray with the last detailed reconnection message
 					notifyIcon.Icon = Resources.warning;
-					notifyIcon.Text = "Reconnexion impossible";
-					notifyIcon.ShowBalloonTip(450, "Reconnexion impossible", "Vous n'êtes toujours pas connecté à Internet : le service sera rétabli dès que vous serez à nouveau connecté à Internet.", ToolTipIcon.Warning);
+					notifyIcon.Text = translation.reconnectFailed;
+					notifyIcon.ShowBalloonTip(450, translation.reconnectFailed, translation.reconnectNextTime, ToolTipIcon.Warning);
 				}
 			} else {
 
