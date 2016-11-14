@@ -232,6 +232,18 @@ The application will now quit.</value>
   <data name="noMessage" xml:space="preserve">
     <value>No new message</value>
   </data>
+  <data name="reconnectAttempt" xml:space="preserve">
+    <value>Attempting to reconnect...</value>
+  </data>
+  <data name="reconnectFailed" xml:space="preserve">
+    <value>Reconnection failed</value>
+  </data>
+  <data name="reconnectNextTime" xml:space="preserve">
+    <value>You are still not connected to the Internet: the service will be restored as soon as you are connected to the Internet again.</value>
+  </data>
+  <data name="reconnectNow" xml:space="preserve">
+    <value>You are no longer connected to the Internet: the application tries to reconnect to your inbox.</value>
+  </data>
   <data name="sync" xml:space="preserve">
     <value>Syncing...</value>
   </data>
