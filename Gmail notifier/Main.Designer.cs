@@ -89,6 +89,7 @@
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
+			this.pictureBoxPrivacyPreview = new System.Windows.Forms.PictureBox();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -103,6 +104,7 @@
 			this.groupBox4.SuspendLayout();
 			this.tabPageAbout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// separator
@@ -378,6 +380,7 @@
 			// 
 			// groupBox4
 			// 
+			this.groupBox4.Controls.Add(this.pictureBoxPrivacyPreview);
 			this.groupBox4.Controls.Add(this.label2);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationAll);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationShort);
@@ -612,6 +615,12 @@
 			this.timerReconnect.Interval = 10000;
 			this.timerReconnect.Tick += new System.EventHandler(this.timerReconnect_Tick);
 			// 
+			// pictureBoxPrivacyPreview
+			// 
+			resources.ApplyResources(this.pictureBoxPrivacyPreview, "pictureBoxPrivacyPreview");
+			this.pictureBoxPrivacyPreview.Name = "pictureBoxPrivacyPreview";
+			this.pictureBoxPrivacyPreview.TabStop = false;
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -651,6 +660,7 @@
 			this.tabPageAbout.ResumeLayout(false);
 			this.tabPageAbout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -722,6 +732,7 @@
 		private System.Windows.Forms.LinkLabel linkLicense;
 		private System.Windows.Forms.CheckBox fieldAttemptToReconnectNotification;
 		private System.Windows.Forms.Timer timerReconnect;
+		private System.Windows.Forms.PictureBox pictureBoxPrivacyPreview;
 	}
 }
 
