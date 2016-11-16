@@ -256,6 +256,9 @@ L'application va désormais quitter.</value>
   <data name="timeout" xml:space="preserve">
     <value>Ne pas déranger</value>
   </data>
+  <data name="tipReleaseNotes" xml:space="preserve">
+    <value>Notes de version Github</value>
+  </data>
   <data name="unreadMessage" xml:space="preserve">
     <value>email non lu</value>
   </data>
