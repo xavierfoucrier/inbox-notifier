@@ -430,8 +430,8 @@
 			// 
 			// linkVersion
 			// 
-			resources.ApplyResources(this.linkVersion, "linkVersion");
 			this.linkVersion.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			resources.ApplyResources(this.linkVersion, "linkVersion");
 			this.linkVersion.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkVersion.Name = "linkVersion";
 			this.linkVersion.TabStop = true;
