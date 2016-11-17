@@ -58,6 +58,7 @@
 			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
 			this.tabPagePrivacy = new System.Windows.Forms.TabPage();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.pictureBoxPrivacyPreview = new System.Windows.Forms.PictureBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.fieldPrivacyNotificationAll = new System.Windows.Forms.RadioButton();
 			this.fieldPrivacyNotificationShort = new System.Windows.Forms.RadioButton();
@@ -89,7 +90,6 @@
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
-			this.pictureBoxPrivacyPreview = new System.Windows.Forms.PictureBox();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -102,9 +102,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.tabPagePrivacy.SuspendLayout();
 			this.groupBox4.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).BeginInit();
 			this.tabPageAbout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// separator
@@ -389,6 +389,13 @@
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.TabStop = false;
 			// 
+			// pictureBoxPrivacyPreview
+			// 
+			this.pictureBoxPrivacyPreview.Image = global::notifier.Properties.Resources.information;
+			resources.ApplyResources(this.pictureBoxPrivacyPreview, "pictureBoxPrivacyPreview");
+			this.pictureBoxPrivacyPreview.Name = "pictureBoxPrivacyPreview";
+			this.pictureBoxPrivacyPreview.TabStop = false;
+			// 
 			// label2
 			// 
 			resources.ApplyResources(this.label2, "label2");
@@ -615,12 +622,6 @@
 			this.timerReconnect.Interval = 10000;
 			this.timerReconnect.Tick += new System.EventHandler(this.timerReconnect_Tick);
 			// 
-			// pictureBoxPrivacyPreview
-			// 
-			resources.ApplyResources(this.pictureBoxPrivacyPreview, "pictureBoxPrivacyPreview");
-			this.pictureBoxPrivacyPreview.Name = "pictureBoxPrivacyPreview";
-			this.pictureBoxPrivacyPreview.TabStop = false;
-			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -657,10 +658,10 @@
 			this.tabPagePrivacy.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).EndInit();
 			this.tabPageAbout.ResumeLayout(false);
 			this.tabPageAbout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
