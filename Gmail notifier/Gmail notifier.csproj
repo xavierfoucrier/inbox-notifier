@@ -249,6 +249,15 @@
   <ItemGroup>
     <None Include="Resources\information.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\privacy-all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\privacy-short.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\privacy-none.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>echo Cleaning bin directory by deleting *.xml and *.pdb files
