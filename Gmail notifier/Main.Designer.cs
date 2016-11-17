@@ -391,7 +391,6 @@
 			// 
 			// pictureBoxPrivacyPreview
 			// 
-			this.pictureBoxPrivacyPreview.Image = global::notifier.Properties.Resources.information;
 			resources.ApplyResources(this.pictureBoxPrivacyPreview, "pictureBoxPrivacyPreview");
 			this.pictureBoxPrivacyPreview.Name = "pictureBoxPrivacyPreview";
 			this.pictureBoxPrivacyPreview.TabStop = false;
