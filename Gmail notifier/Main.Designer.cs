@@ -90,7 +90,6 @@
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
-			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -734,7 +733,6 @@
 		private System.Windows.Forms.CheckBox fieldAttemptToReconnectNotification;
 		private System.Windows.Forms.Timer timerReconnect;
 		private System.Windows.Forms.PictureBox pictureBoxPrivacyPreview;
-		private System.Windows.Forms.ToolTip toolTip;
 	}
 }
 
