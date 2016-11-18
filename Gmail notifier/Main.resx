@@ -973,6 +973,33 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;tabPageNotification.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="pictureBoxPrivacyPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBoxPrivacyPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 27</value>
+  </data>
+  <data name="pictureBoxPrivacyPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="pictureBoxPrivacyPreview.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pictureBoxPrivacyPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPrivacyPreview.Name" xml:space="preserve">
+    <value>pictureBoxPrivacyPreview</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPrivacyPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPrivacyPreview.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxPrivacyPreview.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1001,7 +1028,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="fieldPrivacyNotificationAll.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1031,7 +1058,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;fieldPrivacyNotificationAll.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="fieldPrivacyNotificationShort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1061,7 +1088,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;fieldPrivacyNotificationShort.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="fieldPrivacyNotificationNone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1091,7 +1118,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;fieldPrivacyNotificationNone.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>

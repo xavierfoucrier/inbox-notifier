@@ -58,6 +58,7 @@
 			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
 			this.tabPagePrivacy = new System.Windows.Forms.TabPage();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.pictureBoxPrivacyPreview = new System.Windows.Forms.PictureBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.fieldPrivacyNotificationAll = new System.Windows.Forms.RadioButton();
 			this.fieldPrivacyNotificationShort = new System.Windows.Forms.RadioButton();
@@ -101,6 +102,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.tabPagePrivacy.SuspendLayout();
 			this.groupBox4.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).BeginInit();
 			this.tabPageAbout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).BeginInit();
 			this.SuspendLayout();
@@ -378,6 +380,7 @@
 			// 
 			// groupBox4
 			// 
+			this.groupBox4.Controls.Add(this.pictureBoxPrivacyPreview);
 			this.groupBox4.Controls.Add(this.label2);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationAll);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationShort);
@@ -385,6 +388,12 @@
 			resources.ApplyResources(this.groupBox4, "groupBox4");
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.TabStop = false;
+			// 
+			// pictureBoxPrivacyPreview
+			// 
+			resources.ApplyResources(this.pictureBoxPrivacyPreview, "pictureBoxPrivacyPreview");
+			this.pictureBoxPrivacyPreview.Name = "pictureBoxPrivacyPreview";
+			this.pictureBoxPrivacyPreview.TabStop = false;
 			// 
 			// label2
 			// 
@@ -648,6 +657,7 @@
 			this.tabPagePrivacy.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).EndInit();
 			this.tabPageAbout.ResumeLayout(false);
 			this.tabPageAbout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).EndInit();
@@ -722,6 +732,7 @@
 		private System.Windows.Forms.LinkLabel linkLicense;
 		private System.Windows.Forms.CheckBox fieldAttemptToReconnectNotification;
 		private System.Windows.Forms.Timer timerReconnect;
+		private System.Windows.Forms.PictureBox pictureBoxPrivacyPreview;
 	}
 }
 

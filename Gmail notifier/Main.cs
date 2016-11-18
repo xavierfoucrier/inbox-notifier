@@ -51,6 +51,9 @@ namespace notifier {
 		// number of maximum automatic reconnection
 		private const int MAX_AUTO_RECONNECT = 3;
 
+		// application tooltip instance
+		private ToolTip tooltip = new ToolTip();
+
 		/// <summary>
 		/// Initializes the class
 		/// </summary>
@@ -161,13 +164,16 @@ namespace notifier {
 			switch (Settings.Default.PrivacyNotification) {
 				case (int)Privacy.None:
 					fieldPrivacyNotificationNone.Checked = true;
+					pictureBoxPrivacyPreview.Image = Resources.privacy_none;
 					break;
 				default:
 				case (int)Privacy.Short:
 					fieldPrivacyNotificationShort.Checked = true;
+					pictureBoxPrivacyPreview.Image = Resources.privacy_short;
 					break;
 				case (int)Privacy.All:
 					fieldPrivacyNotificationAll.Checked = true;
+					pictureBoxPrivacyPreview.Image = Resources.privacy_all;
 					break;
 			}
 
@@ -469,6 +475,7 @@ namespace notifier {
 		/// </summary>
 		private void fieldPrivacyNotificationNone_CheckedChanged(object sender, EventArgs e) {
 			Settings.Default.PrivacyNotification = (int)Privacy.None;
+			pictureBoxPrivacyPreview.Image = Resources.privacy_none;
 		}
 
 		/// <summary>
@@ -476,6 +483,7 @@ namespace notifier {
 		/// </summary>
 		private void fieldPrivacyNotificationShort_CheckedChanged(object sender, EventArgs e) {
 			Settings.Default.PrivacyNotification = (int)Privacy.Short;
+			pictureBoxPrivacyPreview.Image = Resources.privacy_short;
 		}
 
 		/// <summary>
@@ -483,6 +491,7 @@ namespace notifier {
 		/// </summary>
 		private void fieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
 			Settings.Default.PrivacyNotification = (int)Privacy.All;
+			pictureBoxPrivacyPreview.Image = Resources.privacy_all;
 		}
 
 		/// <summary>
