@@ -51,9 +51,6 @@ namespace notifier {
 		// number of maximum automatic reconnection
 		private const int MAX_AUTO_RECONNECT = 3;
 
-		// application tooltip instance
-		private ToolTip tooltip = new ToolTip();
-
 		/// <summary>
 		/// Initializes the class
 		/// </summary>
