@@ -184,6 +184,16 @@ namespace notifier {
 			tipTag.ToolTipTitle = translation.tipReleaseNotes;
 			tipTag.ToolTipIcon = ToolTipIcon.Info;
 			tipTag.IsBalloon = false;
+
+			// displays a tooltip for the website link
+			ToolTip tipWebsiteYusuke = new ToolTip();
+			tipWebsiteYusuke.SetToolTip(linkWebsiteYusuke, "http://p.yusukekamiyamane.com");
+			tipWebsiteYusuke.IsBalloon = false;
+
+			// displays a tooltip for the website link
+			ToolTip tipWebsiteXavier = new ToolTip();
+			tipWebsiteXavier.SetToolTip(linkWebsiteXavier, "http://www.xavierfoucrier.fr");
+			tipWebsiteXavier.IsBalloon = false;
 		}
 
 		/// <summary>
