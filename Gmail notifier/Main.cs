@@ -680,7 +680,8 @@ namespace notifier {
 		/// Opens the gmail inbox in a browser when you double click on the systray icon
 		/// </summary>
 		private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
-			Process.Start("https://mail.google.com/mail/u/0/#inbox");
+			if (e.Button == MouseButtons.Left) {
+				Process.Start("https://mail.google.com/mail/u/0/#inbox");
 
 			// restores the default systray icon and text: pretends that the user had read all his mail, except if the timeout option is activated
 			if (timer.Interval == Settings.Default.TimerInterval) {
