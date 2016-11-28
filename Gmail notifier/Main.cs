@@ -67,7 +67,7 @@ namespace notifier {
 			Visible = false;
 
 			// displays a systray notification on first load
-			if (Settings.Default.FirstLoad) {
+			if (Settings.Default.FirstLoad && !Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier").Any()) {
 				notifyIcon.ShowBalloonTip(10000, translation.welcome, translation.firstLoad, ToolTipIcon.Info);
 
 				// switchs the first load state
