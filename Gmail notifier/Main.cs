@@ -257,12 +257,17 @@ namespace notifier {
 				menuItemSynchronize.Enabled = true;
 				menuItemTimout.Enabled = true;
 				menuItemSettings.Enabled = true;
+			} catch(Exception) {
+
+				// exits the application if the google api token file doesn't exists
+				if (!Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier").Any()) {
+					MessageBox.Show(translation.authenticationWithGmailRefused, translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					Application.Exit();
+				}
+			} finally {
 
 				// synchronizes the user mailbox
 				this.SyncInbox();
-			} catch(Exception) {
-				MessageBox.Show(translation.authenticationWithGmailRefused, translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-				Application.Exit();
 			}
 		}
 
