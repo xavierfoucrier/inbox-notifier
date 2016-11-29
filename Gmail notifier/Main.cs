@@ -51,6 +51,9 @@ namespace notifier {
 		// number of maximum automatic reconnection
 		private const int MAX_AUTO_RECONNECT = 3;
 
+		// number in seconds between reconnections (in seconds)
+		private const int INTERVAL_RECONNECT = 10;
+
 		/// <summary>
 		/// Initializes the class
 		/// </summary>
