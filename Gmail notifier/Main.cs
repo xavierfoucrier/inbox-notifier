@@ -294,13 +294,6 @@ namespace notifier {
 				timerReconnect.Enabled = true;
 				timer.Enabled = false;
 
-				// displays a balloon tip in the systray with the detailed reconnection message, depending on the user notification setting
-				if (Settings.Default.AttemptToReconnectNotification) {
-					notifyIcon.Icon = Resources.warning;
-					notifyIcon.Text = translation.reconnectAttempt;
-					notifyIcon.ShowBalloonTip(450, translation.reconnectAttempt, translation.reconnectNow, ToolTipIcon.Warning);
-				}
-
 				return;
 			}
 
@@ -759,6 +752,13 @@ namespace notifier {
 
 				// increases the number of reconnection attempt
 				this.reconnect++;
+
+				// displays a balloon tip one time in the systray with the detailed reconnection message, depending on the user notification setting
+				if (this.reconnect == 1 && Settings.Default.AttemptToReconnectNotification) {
+					notifyIcon.Icon = Resources.warning;
+					notifyIcon.Text = translation.reconnectAttempt;
+					notifyIcon.ShowBalloonTip(450, translation.reconnectAttempt, translation.reconnectNow, ToolTipIcon.Warning);
+				}
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
 				if (reconnect == MAX_AUTO_RECONNECT) {
