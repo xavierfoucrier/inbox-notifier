@@ -754,6 +754,9 @@ namespace notifier {
 		// attempts to reconnect the user mailbox
 		private void timerReconnect_Tick(object sender, EventArgs e) {
 
+			// sets the reconnection interval
+			timerReconnect.Interval = INTERVAL_RECONNECT * 1000;
+
 			// checks internet connectivity
 			if (!this.IsInternetAvailable()) {
 
