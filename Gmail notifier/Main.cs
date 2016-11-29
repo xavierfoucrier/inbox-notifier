@@ -775,10 +775,14 @@ namespace notifier {
 				}
 			} else {
 
-				// syncs the user mailbox when the internet is available
+				// restores default operation when internet is available
 				timerReconnect.Enabled = false;
 				timer.Enabled = true;
-				this.reconnect = 1;
+
+				// resets reconnection count
+				this.reconnect = 0;
+
+				// syncs the user mailbox
 				this.SyncInbox();
 			}
 		}
