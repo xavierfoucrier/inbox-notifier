@@ -221,14 +221,6 @@ This option is not enabled on this type of application.</value>
   <data name="newUnreadSpam" xml:space="preserve">
     <value>Double-click the icon to access your inbox. Until you have not checked the spam folder, your inbox will not be synchronized and you will not be notified of new messages.</value>
   </data>
-  <data name="noInternet" xml:space="preserve">
-    <value>No internet connection</value>
-  </data>
-  <data name="noInternetAtStartup" xml:space="preserve">
-    <value>You are currently not connected to the Internet. The application requires an internet connection to connect to your Gmail account.
-
-The application will now quit.</value>
-  </data>
   <data name="noMessage" xml:space="preserve">
     <value>No new message</value>
   </data>

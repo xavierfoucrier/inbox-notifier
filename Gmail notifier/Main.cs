@@ -98,14 +98,6 @@ namespace notifier {
 			help.SetHelpString(fieldPrivacyNotificationShort, translation.helpPrivacyNotificationShort);
 			help.SetHelpString(fieldPrivacyNotificationAll, translation.helpPrivacyNotificationAll);
 
-			// checks internet connectivity
-			if (!this.IsInternetAvailable()) {
-				MessageBox.Show(translation.noInternetAtStartup, translation.noInternet, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-				Application.Exit();
-
-				return;
-			}
-
 			// authenticates the user
 			this.AsyncAuthentication();
 

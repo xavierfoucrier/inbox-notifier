@@ -221,14 +221,6 @@ Cette option n'est pas activée sur ce type d'application.</value>
   <data name="newUnreadSpam" xml:space="preserve">
     <value>Double-cliquez sur l'icône pour accéder à votre boîte de réception. Tant que vous n'aurez pas vérifié le dossier spam, votre boite de réception ne sera pas synchronisée et vous ne serez pas informé de l'arrivée de nouveaux messages.</value>
   </data>
-  <data name="noInternet" xml:space="preserve">
-    <value>Pas de connexion internet</value>
-  </data>
-  <data name="noInternetAtStartup" xml:space="preserve">
-    <value>Vous n'êtes actuellement pas connecté à Internet. L'application nécessite une connexion à internet pour se connecter à votre compte Gmail.
-
-L'application va désormais quitter.</value>
-  </data>
   <data name="noMessage" xml:space="preserve">
     <value>Pas de nouveau message</value>
   </data>
