@@ -427,7 +427,7 @@ namespace notifier {
 				// displays a balloon tip in the systray with the detailed error message
 				notifyIcon.Icon = Resources.warning;
 				notifyIcon.Text = translation.syncError;
-				notifyIcon.ShowBalloonTip(450, translation.error, translation.syncErrorOccured + exception.Message, ToolTipIcon.Warning);
+				notifyIcon.ShowBalloonTip(1500, translation.error, translation.syncErrorOccured + exception.Message, ToolTipIcon.Warning);
 			}
 		}
 
@@ -592,7 +592,7 @@ namespace notifier {
 				// displays a balloon tip in the systray with the detailed error message
 				notifyIcon.Icon = Resources.warning;
 				notifyIcon.Text = translation.markAsReadError;
-				notifyIcon.ShowBalloonTip(450, translation.error, translation.markAsReadErrorOccured + exception.Message, ToolTipIcon.Warning);
+				notifyIcon.ShowBalloonTip(1500, translation.error, translation.markAsReadErrorOccured + exception.Message, ToolTipIcon.Warning);
 			}
 		}
 
