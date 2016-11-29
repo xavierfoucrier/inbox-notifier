@@ -68,14 +68,14 @@ namespace notifier {
 
 			// displays a systray notification on first load
 			if (Settings.Default.FirstLoad && !Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier").Any()) {
-				notifyIcon.ShowBalloonTip(10000, translation.welcome, translation.firstLoad, ToolTipIcon.Info);
+				notifyIcon.ShowBalloonTip(7000, translation.welcome, translation.firstLoad, ToolTipIcon.Info);
 
 				// switchs the first load state
 				Settings.Default.FirstLoad = false;
 				Settings.Default.Save();
 
-				// waits for 10 seconds to complete the thread
-				System.Threading.Thread.Sleep(10000);
+				// waits for 7 seconds to complete the thread
+				System.Threading.Thread.Sleep(7000);
 			}
 
 			// configures the help provider
