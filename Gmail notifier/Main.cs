@@ -244,11 +244,6 @@ namespace notifier {
 				// displays the user email address
 				labelEmailAddress.Text = this.service.Users.GetProfile("me").Execute().EmailAddress;
 				labelTokenDelivery.Text = this.credential.Token.Issued.ToString();
-
-				// activates the necessary menu items
-				menuItemSynchronize.Enabled = true;
-				menuItemTimout.Enabled = true;
-				menuItemSettings.Enabled = true;
 			} catch(Exception) {
 
 				// exits the application if the google api token file doesn't exists
@@ -296,6 +291,11 @@ namespace notifier {
 
 				return;
 			}
+
+			// activates the necessary menu items
+			menuItemSynchronize.Enabled = true;
+			menuItemTimout.Enabled = true;
+			menuItemSettings.Enabled = true;
 
 			// disables the timeout when the user do a manual synchronization
 			if (timer.Interval != Settings.Default.TimerInterval) {
@@ -749,6 +749,11 @@ namespace notifier {
 
 			// checks internet connectivity
 			if (!this.IsInternetAvailable()) {
+
+				// disables the menu items
+				menuItemSynchronize.Enabled = false;
+				menuItemTimout.Enabled = false;
+				menuItemSettings.Enabled = false;
 
 				// increases the number of reconnection attempt
 				this.reconnect++;
