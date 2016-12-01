@@ -189,6 +189,11 @@ namespace notifier {
 			ToolTip tipWebsiteXavier = new ToolTip();
 			tipWebsiteXavier.SetToolTip(linkWebsiteXavier, "http://www.xavierfoucrier.fr");
 			tipWebsiteXavier.IsBalloon = false;
+
+			// displays a tooltip for the license link
+			ToolTip tipLicense = new ToolTip();
+			tipLicense.SetToolTip(linkLicense, "https://github.com/xavierfoucrier/gmail-notifier/blob/master/LICENSE.md");
+			tipLicense.IsBalloon = false;
 		}
 
 		/// <summary>
