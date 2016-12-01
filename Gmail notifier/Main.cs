@@ -54,6 +54,9 @@ namespace notifier {
 		// number in seconds between reconnections (in seconds)
 		private const int INTERVAL_RECONNECT = 10;
 
+		// github repository root link
+		private const string GITHUB_REPOSITORY = "https://github.com/xavierfoucrier/gmail-notifier";
+
 		/// <summary>
 		/// Initializes the class
 		/// </summary>
@@ -175,7 +178,7 @@ namespace notifier {
 
 			// displays a tooltip for the product version
 			ToolTip tipTag = new ToolTip();
-			tipTag.SetToolTip(linkVersion, "https://github.com/xavierfoucrier/gmail-notifier/releases/tag/v" + linkVersion.Text.Replace(" ", "-"));
+			tipTag.SetToolTip(linkVersion, GITHUB_REPOSITORY + "/releases/tag/v" + linkVersion.Text.Replace(" ", "-"));
 			tipTag.ToolTipTitle = translation.tipReleaseNotes;
 			tipTag.ToolTipIcon = ToolTipIcon.Info;
 			tipTag.IsBalloon = false;
@@ -192,7 +195,7 @@ namespace notifier {
 
 			// displays a tooltip for the license link
 			ToolTip tipLicense = new ToolTip();
-			tipLicense.SetToolTip(linkLicense, "https://github.com/xavierfoucrier/gmail-notifier/blob/master/LICENSE.md");
+			tipLicense.SetToolTip(linkLicense, GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
 			tipLicense.IsBalloon = false;
 		}
 
@@ -503,7 +506,7 @@ namespace notifier {
 		/// Opens the Github release section of the current build
 		/// </summary>
 		private void linkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start("https://github.com/xavierfoucrier/gmail-notifier/releases/tag/v" + linkVersion.Text.Replace(" ", "-"));
+			Process.Start(GITHUB_REPOSITORY + "/releases/tag/v" + linkVersion.Text.Replace(" ", "-"));
 		}
 
 		/// <summary>
@@ -524,7 +527,7 @@ namespace notifier {
 		/// Opens the Github license file
 		/// </summary>
 		private void linkLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start("https://github.com/xavierfoucrier/gmail-notifier/blob/master/LICENSE.md");
+			Process.Start(GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
 		}
 
 		/// <summary>
