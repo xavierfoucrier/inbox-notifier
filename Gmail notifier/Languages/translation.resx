@@ -150,6 +150,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   <data name="helpAskonExit" xml:space="preserve">
     <value>Pose une question avant de quitter totalement l'application</value>
   </data>
+  <data name="helpAttemptToReconnectNotification" xml:space="preserve">
+    <value>Affiche une notification lorsque l'application tente de se reconnecter au réseau</value>
+  </data>
   <data name="helpAudioNotification" xml:space="preserve">
     <value>Joue un son lors de l'affichage d'une notification</value>
   </data>
@@ -179,6 +182,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   </data>
   <data name="helpPrivacyNotificationShort" xml:space="preserve">
     <value>Affiche le nom de l'expéditeur et l'objet du message</value>
+  </data>
+  <data name="helpRunAtWindowsStartup" xml:space="preserve">
+    <value>Lance l'application au démarrage de Windows</value>
   </data>
   <data name="helpSpamNotification" xml:space="preserve">
     <value>Affiche une notification lors de la réception de courrier indésirable</value>

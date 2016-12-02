@@ -148,6 +148,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Affiche une notification lorsque l&apos;application tente de se reconnecter au réseau.
+        /// </summary>
+        internal static string helpAttemptToReconnectNotification {
+            get {
+                return ResourceManager.GetString("helpAttemptToReconnectNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Joue un son lors de l&apos;affichage d&apos;une notification.
         /// </summary>
         internal static string helpAudioNotification {
@@ -234,6 +243,15 @@ namespace notifier.Languages {
         internal static string helpPrivacyNotificationShort {
             get {
                 return ResourceManager.GetString("helpPrivacyNotificationShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lance l&apos;application au démarrage de Windows.
+        /// </summary>
+        internal static string helpRunAtWindowsStartup {
+            get {
+                return ResourceManager.GetString("helpRunAtWindowsStartup", resourceCulture);
             }
         }
         

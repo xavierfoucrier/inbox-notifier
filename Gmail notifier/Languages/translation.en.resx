@@ -150,6 +150,9 @@ Do you really want to disconnect your Gmail account and restart the application 
   <data name="helpAskonExit" xml:space="preserve">
     <value>Asks a question before completely leaving the app</value>
   </data>
+  <data name="helpAttemptToReconnectNotification" xml:space="preserve">
+    <value>Displays a notification when the application tries to reconnect to the network</value>
+  </data>
   <data name="helpAudioNotification" xml:space="preserve">
     <value>Plays a sound when displaying a notification</value>
   </data>
@@ -179,6 +182,9 @@ Do you really want to disconnect your Gmail account and restart the application 
   </data>
   <data name="helpPrivacyNotificationShort" xml:space="preserve">
     <value>Displays the name of the sender and the subject line</value>
+  </data>
+  <data name="helpRunAtWindowsStartup" xml:space="preserve">
+    <value>Launch the application on Windows startup</value>
   </data>
   <data name="helpSpamNotification" xml:space="preserve">
     <value>Displays a notification when receiving a junk message</value>
