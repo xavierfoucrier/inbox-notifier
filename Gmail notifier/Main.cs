@@ -690,6 +690,9 @@ namespace notifier {
 				if (timer.Interval == Settings.Default.TimerInterval) {
 					notifyIcon.Icon = Resources.normal;
 					notifyIcon.Text = translation.noMessage;
+
+					// disables the mark as read menu item
+					menuItemMarkAsRead.Enabled = false;
 				}
 			}
 		}
