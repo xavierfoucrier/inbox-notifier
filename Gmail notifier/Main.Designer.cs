@@ -32,9 +32,12 @@
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
 			this.linkRestartToApply = new System.Windows.Forms.LinkLabel();
 			this.labelRestartToApply = new System.Windows.Forms.Label();
+			this.fieldLanguage = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.fieldRunAtWindowsStartup = new System.Windows.Forms.CheckBox();
 			this.fieldMinimizeToSystray = new System.Windows.Forms.CheckBox();
+			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
 			this.tabPageAccount = new System.Windows.Forms.TabPage();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.labelTokenDelivery = new System.Windows.Forms.Label();
@@ -44,9 +47,15 @@
 			this.buttonGmailDisconnect = new System.Windows.Forms.Button();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.fieldAttemptToReconnectNotification = new System.Windows.Forms.CheckBox();
+			this.fieldNetworkConnectivityNotification = new System.Windows.Forms.CheckBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
+			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.fieldNumericDelay = new System.Windows.Forms.NumericUpDown();
+			this.fieldMessageNotification = new System.Windows.Forms.CheckBox();
+			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
 			this.tabPagePrivacy = new System.Windows.Forms.TabPage();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.pictureBoxPrivacyPreview = new System.Windows.Forms.PictureBox();
@@ -80,15 +89,6 @@
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
-			this.fieldLanguage = new System.Windows.Forms.ComboBox();
-			this.fieldRunAtWindowsStartup = new System.Windows.Forms.CheckBox();
-			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
-			this.fieldAttemptToReconnectNotification = new System.Windows.Forms.CheckBox();
-			this.fieldNetworkConnectivityNotification = new System.Windows.Forms.CheckBox();
-			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
-			this.fieldNumericDelay = new System.Windows.Forms.NumericUpDown();
-			this.fieldMessageNotification = new System.Windows.Forms.CheckBox();
-			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
@@ -99,18 +99,18 @@
 			this.tabPageNotification.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.tabPagePrivacy.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).BeginInit();
 			this.tabPageAbout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// separator
 			// 
-			this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			resources.ApplyResources(this.separator, "separator");
+			this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.separator.Name = "separator";
 			// 
 			// buttonOK
@@ -122,38 +122,38 @@
 			// 
 			// tabControl
 			// 
+			resources.ApplyResources(this.tabControl, "tabControl");
 			this.tabControl.Controls.Add(this.tabPageGeneral);
 			this.tabControl.Controls.Add(this.tabPageAccount);
 			this.tabControl.Controls.Add(this.tabPageNotification);
 			this.tabControl.Controls.Add(this.tabPagePrivacy);
 			this.tabControl.Controls.Add(this.tabPageAbout);
-			resources.ApplyResources(this.tabControl, "tabControl");
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
 			this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
 			// 
 			// tabPageGeneral
 			// 
+			resources.ApplyResources(this.tabPageGeneral, "tabPageGeneral");
 			this.tabPageGeneral.Controls.Add(this.groupBox5);
 			this.tabPageGeneral.Controls.Add(this.groupBox1);
-			resources.ApplyResources(this.tabPageGeneral, "tabPageGeneral");
 			this.tabPageGeneral.Name = "tabPageGeneral";
 			this.tabPageGeneral.UseVisualStyleBackColor = true;
 			// 
 			// groupBox5
 			// 
+			resources.ApplyResources(this.groupBox5, "groupBox5");
 			this.groupBox5.Controls.Add(this.linkRestartToApply);
 			this.groupBox5.Controls.Add(this.labelRestartToApply);
 			this.groupBox5.Controls.Add(this.fieldLanguage);
 			this.groupBox5.Controls.Add(this.label3);
-			resources.ApplyResources(this.groupBox5, "groupBox5");
 			this.groupBox5.Name = "groupBox5";
 			this.groupBox5.TabStop = false;
 			// 
 			// linkRestartToApply
 			// 
-			this.linkRestartToApply.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
 			resources.ApplyResources(this.linkRestartToApply, "linkRestartToApply");
+			this.linkRestartToApply.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
 			this.linkRestartToApply.LinkColor = System.Drawing.Color.RoyalBlue;
 			this.linkRestartToApply.Name = "linkRestartToApply";
 			this.linkRestartToApply.TabStop = true;
@@ -167,6 +167,18 @@
 			this.labelRestartToApply.Image = global::notifier.Properties.Resources.information;
 			this.labelRestartToApply.Name = "labelRestartToApply";
 			// 
+			// fieldLanguage
+			// 
+			resources.ApplyResources(this.fieldLanguage, "fieldLanguage");
+			this.fieldLanguage.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::notifier.Properties.Settings.Default, "Language", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldLanguage.Items.AddRange(new object[] {
+            resources.GetString("fieldLanguage.Items"),
+            resources.GetString("fieldLanguage.Items1")});
+			this.fieldLanguage.Name = "fieldLanguage";
+			this.fieldLanguage.Text = global::notifier.Properties.Settings.Default.Language;
+			this.fieldLanguage.SelectionChangeCommitted += new System.EventHandler(this.fieldLanguage_SelectionChangeCommitted);
+			// 
 			// label3
 			// 
 			resources.ApplyResources(this.label3, "label3");
@@ -174,12 +186,21 @@
 			// 
 			// groupBox1
 			// 
+			resources.ApplyResources(this.groupBox1, "groupBox1");
 			this.groupBox1.Controls.Add(this.fieldRunAtWindowsStartup);
 			this.groupBox1.Controls.Add(this.fieldMinimizeToSystray);
 			this.groupBox1.Controls.Add(this.fieldAskonExit);
-			resources.ApplyResources(this.groupBox1, "groupBox1");
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.TabStop = false;
+			// 
+			// fieldRunAtWindowsStartup
+			// 
+			resources.ApplyResources(this.fieldRunAtWindowsStartup, "fieldRunAtWindowsStartup");
+			this.fieldRunAtWindowsStartup.Checked = global::notifier.Properties.Settings.Default.RunAtWindowsStartup;
+			this.fieldRunAtWindowsStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "RunAtWindowsStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldRunAtWindowsStartup.Name = "fieldRunAtWindowsStartup";
+			this.fieldRunAtWindowsStartup.UseVisualStyleBackColor = true;
+			this.fieldRunAtWindowsStartup.CheckedChanged += new System.EventHandler(this.fieldRunAtWindowsStartup_CheckedChanged);
 			// 
 			// fieldMinimizeToSystray
 			// 
@@ -189,21 +210,29 @@
 			this.fieldMinimizeToSystray.Name = "fieldMinimizeToSystray";
 			this.fieldMinimizeToSystray.UseVisualStyleBackColor = true;
 			// 
+			// fieldAskonExit
+			// 
+			resources.ApplyResources(this.fieldAskonExit, "fieldAskonExit");
+			this.fieldAskonExit.Checked = global::notifier.Properties.Settings.Default.AskonExit;
+			this.fieldAskonExit.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AskonExit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAskonExit.Name = "fieldAskonExit";
+			this.fieldAskonExit.UseVisualStyleBackColor = true;
+			// 
 			// tabPageAccount
 			// 
-			this.tabPageAccount.Controls.Add(this.groupBox6);
 			resources.ApplyResources(this.tabPageAccount, "tabPageAccount");
+			this.tabPageAccount.Controls.Add(this.groupBox6);
 			this.tabPageAccount.Name = "tabPageAccount";
 			this.tabPageAccount.UseVisualStyleBackColor = true;
 			// 
 			// groupBox6
 			// 
+			resources.ApplyResources(this.groupBox6, "groupBox6");
 			this.groupBox6.Controls.Add(this.labelTokenDelivery);
 			this.groupBox6.Controls.Add(this.labelEmailAddress);
 			this.groupBox6.Controls.Add(this.label5);
 			this.groupBox6.Controls.Add(this.label4);
 			this.groupBox6.Controls.Add(this.buttonGmailDisconnect);
-			resources.ApplyResources(this.groupBox6, "groupBox6");
 			this.groupBox6.Name = "groupBox6";
 			this.groupBox6.TabStop = false;
 			// 
@@ -238,63 +267,124 @@
 			// 
 			// tabPageNotification
 			// 
+			resources.ApplyResources(this.tabPageNotification, "tabPageNotification");
 			this.tabPageNotification.Controls.Add(this.groupBox3);
 			this.tabPageNotification.Controls.Add(this.groupBox2);
-			resources.ApplyResources(this.tabPageNotification, "tabPageNotification");
 			this.tabPageNotification.Name = "tabPageNotification";
 			this.tabPageNotification.UseVisualStyleBackColor = true;
 			// 
 			// groupBox3
 			// 
+			resources.ApplyResources(this.groupBox3, "groupBox3");
 			this.groupBox3.Controls.Add(this.fieldAttemptToReconnectNotification);
 			this.groupBox3.Controls.Add(this.fieldNetworkConnectivityNotification);
-			resources.ApplyResources(this.groupBox3, "groupBox3");
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
 			// 
+			// fieldAttemptToReconnectNotification
+			// 
+			resources.ApplyResources(this.fieldAttemptToReconnectNotification, "fieldAttemptToReconnectNotification");
+			this.fieldAttemptToReconnectNotification.Checked = global::notifier.Properties.Settings.Default.AttemptToReconnectNotification;
+			this.fieldAttemptToReconnectNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldAttemptToReconnectNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AttemptToReconnectNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAttemptToReconnectNotification.Name = "fieldAttemptToReconnectNotification";
+			this.fieldAttemptToReconnectNotification.UseVisualStyleBackColor = true;
+			// 
+			// fieldNetworkConnectivityNotification
+			// 
+			resources.ApplyResources(this.fieldNetworkConnectivityNotification, "fieldNetworkConnectivityNotification");
+			this.fieldNetworkConnectivityNotification.Checked = global::notifier.Properties.Settings.Default.NetworkConnectivityNotification;
+			this.fieldNetworkConnectivityNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldNetworkConnectivityNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "NetworkConnectivityNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldNetworkConnectivityNotification.Name = "fieldNetworkConnectivityNotification";
+			this.fieldNetworkConnectivityNotification.UseVisualStyleBackColor = true;
+			// 
 			// groupBox2
 			// 
+			resources.ApplyResources(this.groupBox2, "groupBox2");
 			this.groupBox2.Controls.Add(this.fieldStepDelay);
 			this.groupBox2.Controls.Add(this.fieldSpamNotification);
 			this.groupBox2.Controls.Add(this.label1);
 			this.groupBox2.Controls.Add(this.fieldNumericDelay);
 			this.groupBox2.Controls.Add(this.fieldMessageNotification);
 			this.groupBox2.Controls.Add(this.fieldAudioNotification);
-			resources.ApplyResources(this.groupBox2, "groupBox2");
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.TabStop = false;
 			// 
 			// fieldStepDelay
 			// 
+			resources.ApplyResources(this.fieldStepDelay, "fieldStepDelay");
 			this.fieldStepDelay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.fieldStepDelay.FormattingEnabled = true;
 			this.fieldStepDelay.Items.AddRange(new object[] {
             resources.GetString("fieldStepDelay.Items"),
             resources.GetString("fieldStepDelay.Items1")});
-			resources.ApplyResources(this.fieldStepDelay, "fieldStepDelay");
 			this.fieldStepDelay.Name = "fieldStepDelay";
 			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.fieldStepDelay_SelectionChangeCommitted);
+			// 
+			// fieldSpamNotification
+			// 
+			resources.ApplyResources(this.fieldSpamNotification, "fieldSpamNotification");
+			this.fieldSpamNotification.Checked = global::notifier.Properties.Settings.Default.SpamNotification;
+			this.fieldSpamNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldSpamNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "SpamNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldSpamNotification.Name = "fieldSpamNotification";
+			this.fieldSpamNotification.UseVisualStyleBackColor = true;
+			this.fieldSpamNotification.Click += new System.EventHandler(this.fieldSpamNotification_Click);
 			// 
 			// label1
 			// 
 			resources.ApplyResources(this.label1, "label1");
 			this.label1.Name = "label1";
 			// 
+			// fieldNumericDelay
+			// 
+			resources.ApplyResources(this.fieldNumericDelay, "fieldNumericDelay");
+			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldNumericDelay.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.fieldNumericDelay.Name = "fieldNumericDelay";
+			this.fieldNumericDelay.Value = global::notifier.Properties.Settings.Default.NumericDelay;
+			this.fieldNumericDelay.ValueChanged += new System.EventHandler(this.fieldNumericDelay_ValueChanged);
+			// 
+			// fieldMessageNotification
+			// 
+			resources.ApplyResources(this.fieldMessageNotification, "fieldMessageNotification");
+			this.fieldMessageNotification.Checked = global::notifier.Properties.Settings.Default.MessageNotification;
+			this.fieldMessageNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldMessageNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldMessageNotification.Name = "fieldMessageNotification";
+			this.fieldMessageNotification.UseVisualStyleBackColor = true;
+			// 
+			// fieldAudioNotification
+			// 
+			resources.ApplyResources(this.fieldAudioNotification, "fieldAudioNotification");
+			this.fieldAudioNotification.Checked = global::notifier.Properties.Settings.Default.AudioNotification;
+			this.fieldAudioNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAudioNotification.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
+			this.fieldAudioNotification.Name = "fieldAudioNotification";
+			this.fieldAudioNotification.UseVisualStyleBackColor = true;
+			// 
 			// tabPagePrivacy
 			// 
-			this.tabPagePrivacy.Controls.Add(this.groupBox4);
 			resources.ApplyResources(this.tabPagePrivacy, "tabPagePrivacy");
+			this.tabPagePrivacy.Controls.Add(this.groupBox4);
 			this.tabPagePrivacy.Name = "tabPagePrivacy";
 			this.tabPagePrivacy.UseVisualStyleBackColor = true;
 			// 
 			// groupBox4
 			// 
+			resources.ApplyResources(this.groupBox4, "groupBox4");
 			this.groupBox4.Controls.Add(this.pictureBoxPrivacyPreview);
 			this.groupBox4.Controls.Add(this.label2);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationAll);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationShort);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationNone);
-			resources.ApplyResources(this.groupBox4, "groupBox4");
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.TabStop = false;
 			// 
@@ -334,6 +424,7 @@
 			// 
 			// tabPageAbout
 			// 
+			resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
 			this.tabPageAbout.Controls.Add(this.linkVersion);
 			this.tabPageAbout.Controls.Add(this.linkLicense);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteXavier);
@@ -342,14 +433,13 @@
 			this.tabPageAbout.Controls.Add(this.label12);
 			this.tabPageAbout.Controls.Add(this.label13);
 			this.tabPageAbout.Controls.Add(this.label14);
-			resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
 			this.tabPageAbout.Name = "tabPageAbout";
 			this.tabPageAbout.UseVisualStyleBackColor = true;
 			// 
 			// linkVersion
 			// 
-			this.linkVersion.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			resources.ApplyResources(this.linkVersion, "linkVersion");
+			this.linkVersion.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkVersion.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkVersion.Name = "linkVersion";
 			this.linkVersion.TabStop = true;
@@ -358,8 +448,8 @@
 			// 
 			// linkLicense
 			// 
-			this.linkLicense.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			resources.ApplyResources(this.linkLicense, "linkLicense");
+			this.linkLicense.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkLicense.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkLicense.Name = "linkLicense";
 			this.linkLicense.TabStop = true;
@@ -369,8 +459,8 @@
 			// 
 			// linkWebsiteXavier
 			// 
-			this.linkWebsiteXavier.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			resources.ApplyResources(this.linkWebsiteXavier, "linkWebsiteXavier");
+			this.linkWebsiteXavier.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteXavier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteXavier.Name = "linkWebsiteXavier";
 			this.linkWebsiteXavier.TabStop = true;
@@ -380,8 +470,8 @@
 			// 
 			// linkWebsiteYusuke
 			// 
-			this.linkWebsiteYusuke.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			resources.ApplyResources(this.linkWebsiteYusuke, "linkWebsiteYusuke");
+			this.linkWebsiteYusuke.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteYusuke.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteYusuke.Name = "linkWebsiteYusuke";
 			this.linkWebsiteYusuke.TabStop = true;
@@ -421,8 +511,8 @@
 			// 
 			// pictureBoxHeader
 			// 
-			this.pictureBoxHeader.Image = global::notifier.Properties.Resources.header;
 			resources.ApplyResources(this.pictureBoxHeader, "pictureBoxHeader");
+			this.pictureBoxHeader.Image = global::notifier.Properties.Resources.header;
 			this.pictureBoxHeader.Name = "pictureBoxHeader";
 			this.pictureBoxHeader.TabStop = false;
 			// 
@@ -435,6 +525,7 @@
             this.menuItemSettings,
             this.menuItem2,
             this.menuItemExit});
+			resources.ApplyResources(this.contextMenu, "contextMenu");
 			// 
 			// menuItemSynchronize
 			// 
@@ -463,42 +554,42 @@
 			// menuItemTimeoutDisabled
 			// 
 			this.menuItemTimeoutDisabled.Checked = true;
+			resources.ApplyResources(this.menuItemTimeoutDisabled, "menuItemTimeoutDisabled");
 			this.menuItemTimeoutDisabled.Index = 0;
 			this.menuItemTimeoutDisabled.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeoutDisabled, "menuItemTimeoutDisabled");
 			this.menuItemTimeoutDisabled.Click += new System.EventHandler(this.menuItemTimeoutDisabled_Click);
 			// 
 			// menuItem1
 			// 
-			this.menuItem1.Index = 1;
 			resources.ApplyResources(this.menuItem1, "menuItem1");
+			this.menuItem1.Index = 1;
 			// 
 			// menuItemTimeout30m
 			// 
+			resources.ApplyResources(this.menuItemTimeout30m, "menuItemTimeout30m");
 			this.menuItemTimeout30m.Index = 2;
 			this.menuItemTimeout30m.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout30m, "menuItemTimeout30m");
 			this.menuItemTimeout30m.Click += new System.EventHandler(this.menuItemTimeout30m_Click);
 			// 
 			// menuItemTimeout1h
 			// 
+			resources.ApplyResources(this.menuItemTimeout1h, "menuItemTimeout1h");
 			this.menuItemTimeout1h.Index = 3;
 			this.menuItemTimeout1h.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout1h, "menuItemTimeout1h");
 			this.menuItemTimeout1h.Click += new System.EventHandler(this.menuItemTimeout1h_Click);
 			// 
 			// menuItemTimeout2h
 			// 
+			resources.ApplyResources(this.menuItemTimeout2h, "menuItemTimeout2h");
 			this.menuItemTimeout2h.Index = 4;
 			this.menuItemTimeout2h.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout2h, "menuItemTimeout2h");
 			this.menuItemTimeout2h.Click += new System.EventHandler(this.menuItemTimeout2h_Click);
 			// 
 			// menuItemTimeout5h
 			// 
+			resources.ApplyResources(this.menuItemTimeout5h, "menuItemTimeout5h");
 			this.menuItemTimeout5h.Index = 5;
 			this.menuItemTimeout5h.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout5h, "menuItemTimeout5h");
 			this.menuItemTimeout5h.Click += new System.EventHandler(this.menuItemTimeout5h_Click);
 			// 
 			// menuItemSettings
@@ -510,108 +601,18 @@
 			// 
 			// menuItem2
 			// 
-			this.menuItem2.Index = 4;
 			resources.ApplyResources(this.menuItem2, "menuItem2");
+			this.menuItem2.Index = 4;
 			// 
 			// menuItemExit
 			// 
-			this.menuItemExit.Index = 5;
 			resources.ApplyResources(this.menuItemExit, "menuItemExit");
+			this.menuItemExit.Index = 5;
 			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
 			// 
 			// timerReconnect
 			// 
 			this.timerReconnect.Tick += new System.EventHandler(this.timerReconnect_Tick);
-			// 
-			// fieldLanguage
-			// 
-			this.fieldLanguage.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::notifier.Properties.Settings.Default, "Language", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldLanguage.Items.AddRange(new object[] {
-            resources.GetString("fieldLanguage.Items"),
-            resources.GetString("fieldLanguage.Items1")});
-			resources.ApplyResources(this.fieldLanguage, "fieldLanguage");
-			this.fieldLanguage.Name = "fieldLanguage";
-			this.fieldLanguage.Text = global::notifier.Properties.Settings.Default.Language;
-			this.fieldLanguage.SelectionChangeCommitted += new System.EventHandler(this.fieldLanguage_SelectionChangeCommitted);
-			// 
-			// fieldRunAtWindowsStartup
-			// 
-			resources.ApplyResources(this.fieldRunAtWindowsStartup, "fieldRunAtWindowsStartup");
-			this.fieldRunAtWindowsStartup.Checked = global::notifier.Properties.Settings.Default.RunAtWindowsStartup;
-			this.fieldRunAtWindowsStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "RunAtWindowsStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldRunAtWindowsStartup.Name = "fieldRunAtWindowsStartup";
-			this.fieldRunAtWindowsStartup.UseVisualStyleBackColor = true;
-			this.fieldRunAtWindowsStartup.CheckedChanged += new System.EventHandler(this.fieldRunAtWindowsStartup_CheckedChanged);
-			// 
-			// fieldAskonExit
-			// 
-			resources.ApplyResources(this.fieldAskonExit, "fieldAskonExit");
-			this.fieldAskonExit.Checked = global::notifier.Properties.Settings.Default.AskonExit;
-			this.fieldAskonExit.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AskonExit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAskonExit.Name = "fieldAskonExit";
-			this.fieldAskonExit.UseVisualStyleBackColor = true;
-			// 
-			// fieldAttemptToReconnectNotification
-			// 
-			resources.ApplyResources(this.fieldAttemptToReconnectNotification, "fieldAttemptToReconnectNotification");
-			this.fieldAttemptToReconnectNotification.Checked = global::notifier.Properties.Settings.Default.AttemptToReconnectNotification;
-			this.fieldAttemptToReconnectNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldAttemptToReconnectNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AttemptToReconnectNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAttemptToReconnectNotification.Name = "fieldAttemptToReconnectNotification";
-			this.fieldAttemptToReconnectNotification.UseVisualStyleBackColor = true;
-			// 
-			// fieldNetworkConnectivityNotification
-			// 
-			resources.ApplyResources(this.fieldNetworkConnectivityNotification, "fieldNetworkConnectivityNotification");
-			this.fieldNetworkConnectivityNotification.Checked = global::notifier.Properties.Settings.Default.NetworkConnectivityNotification;
-			this.fieldNetworkConnectivityNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldNetworkConnectivityNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "NetworkConnectivityNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldNetworkConnectivityNotification.Name = "fieldNetworkConnectivityNotification";
-			this.fieldNetworkConnectivityNotification.UseVisualStyleBackColor = true;
-			// 
-			// fieldSpamNotification
-			// 
-			resources.ApplyResources(this.fieldSpamNotification, "fieldSpamNotification");
-			this.fieldSpamNotification.Checked = global::notifier.Properties.Settings.Default.SpamNotification;
-			this.fieldSpamNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldSpamNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "SpamNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldSpamNotification.Name = "fieldSpamNotification";
-			this.fieldSpamNotification.UseVisualStyleBackColor = true;
-			this.fieldSpamNotification.Click += new System.EventHandler(this.fieldSpamNotification_Click);
-			// 
-			// fieldNumericDelay
-			// 
-			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			resources.ApplyResources(this.fieldNumericDelay, "fieldNumericDelay");
-			this.fieldNumericDelay.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-			this.fieldNumericDelay.Name = "fieldNumericDelay";
-			this.fieldNumericDelay.Value = global::notifier.Properties.Settings.Default.NumericDelay;
-			this.fieldNumericDelay.ValueChanged += new System.EventHandler(this.fieldNumericDelay_ValueChanged);
-			// 
-			// fieldMessageNotification
-			// 
-			resources.ApplyResources(this.fieldMessageNotification, "fieldMessageNotification");
-			this.fieldMessageNotification.Checked = global::notifier.Properties.Settings.Default.MessageNotification;
-			this.fieldMessageNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldMessageNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldMessageNotification.Name = "fieldMessageNotification";
-			this.fieldMessageNotification.UseVisualStyleBackColor = true;
-			// 
-			// fieldAudioNotification
-			// 
-			resources.ApplyResources(this.fieldAudioNotification, "fieldAudioNotification");
-			this.fieldAudioNotification.Checked = global::notifier.Properties.Settings.Default.AudioNotification;
-			this.fieldAudioNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAudioNotification.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
-			this.fieldAudioNotification.Name = "fieldAudioNotification";
-			this.fieldAudioNotification.UseVisualStyleBackColor = true;
 			// 
 			// timer
 			// 
@@ -651,6 +652,7 @@
 			this.groupBox3.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).EndInit();
 			this.tabPagePrivacy.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
@@ -658,7 +660,6 @@
 			this.tabPageAbout.ResumeLayout(false);
 			this.tabPageAbout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
