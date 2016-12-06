@@ -137,6 +137,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>translation.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Languages\translation.de.resx" />
     <EmbeddedResource Include="Main.de.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
