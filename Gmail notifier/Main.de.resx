@@ -117,6 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 87</value>
+  </data>
+  <data name="linkRestartToApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 12</value>
+  </data>
+  <data name="linkRestartToApply.Text" xml:space="preserve">
+    <value>Jetzt neu starten</value>
+  </data>
+  <data name="labelRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 48</value>
+  </data>
+  <data name="labelRestartToApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 30</value>
+  </data>
+  <data name="labelRestartToApply.Text" xml:space="preserve">
+    <value>Dieser Parameter berücksichtigt werden,
+nächsten Start der Anwendung.</value>
+  </data>
+  <data name="fieldLanguage.Items2" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Sprache :</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Schnittstelle</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Verhalten</value>
+  </data>
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>General</value>
   </data>
@@ -132,7 +167,37 @@
   <data name="tabPageAbout.Text" xml:space="preserve">
     <value>Über</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fieldRunAtWindowsStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 17</value>
+  </data>
+  <data name="fieldRunAtWindowsStartup.Text" xml:space="preserve">
+    <value>Starten Sie beim starten von Windows</value>
+  </data>
+  <data name="fieldMinimizeToSystray.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 17</value>
+  </data>
+  <data name="fieldMinimizeToSystray.Text" xml:space="preserve">
+    <value>Minimieren in system-tray</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fieldAskonExit.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="fieldAskonExit.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="fieldAskonExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 30</value>
+  </data>
+  <data name="fieldAskonExit.Text" xml:space="preserve">
+    <value>Fragen Sie mich bitte, bevor sie die Anwendung zu verlassen</value>
+  </data>
+  <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 13</value>
+  </data>
+  <data name="labelSettingsSaved.Text" xml:space="preserve">
+    <value>Gespeicherte Anwendungseinstellungen.</value>
+  </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA

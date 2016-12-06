@@ -174,7 +174,8 @@
 			this.fieldLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.fieldLanguage.Items.AddRange(new object[] {
             resources.GetString("fieldLanguage.Items"),
-            resources.GetString("fieldLanguage.Items1")});
+            resources.GetString("fieldLanguage.Items1"),
+            resources.GetString("fieldLanguage.Items2")});
 			this.fieldLanguage.Name = "fieldLanguage";
 			this.fieldLanguage.Text = global::notifier.Properties.Settings.Default.Language;
 			this.fieldLanguage.SelectionChangeCommitted += new System.EventHandler(this.fieldLanguage_SelectionChangeCommitted);
