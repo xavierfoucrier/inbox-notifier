@@ -126,36 +126,39 @@
   <data name="tabPageNotification.Text" xml:space="preserve">
     <value>Benachrichtigung</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 13</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Nach dem Empfang einer neuen Nachricht :</value>
-  </data>
-  <data name="fieldPrivacyNotificationAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 17</value>
-  </data>
-  <data name="fieldPrivacyNotificationAll.Text" xml:space="preserve">
-    <value>Wie bitte Nachrichteninhalt</value>
-  </data>
-  <data name="fieldPrivacyNotificationShort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 17</value>
-  </data>
-  <data name="fieldPrivacyNotificationShort.Text" xml:space="preserve">
-    <value>Ansicht Teil des Nachrichteninhalts</value>
-  </data>
-  <data name="fieldPrivacyNotificationNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 17</value>
-  </data>
-  <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
-    <value>Alle anzeigen Inhalt der Nachricht</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Benachrichtigung</value>
-  </data>
   <data name="tabPagePrivacy.Text" xml:space="preserve">
     <value>Vertraulichkeit</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>44, 10</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="linkLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 30</value>
+  </data>
+  <data name="linkLicense.Text" xml:space="preserve">
+    <value>©2016 Alle Rechte vorbehalten
+Open Source, MIT-Lizenz</value>
+  </data>
+  <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>39, 15</value>
+  </data>
+  <data name="linkWebsiteXavier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 30</value>
+  </data>
+  <data name="linkWebsiteXavier.Text" xml:space="preserve">
+    <value>Visual Studio 2013, C#
+Entwickelt von Xavier Foucrier</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Entwicklung</value>
   </data>
   <data name="tabPageAbout.Text" xml:space="preserve">
     <value>Über</value>
@@ -287,6 +290,33 @@ nächsten Start der Anwendung.</value>
   </data>
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Sound-Benachrichtigung</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Benachrichtigung</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Nach dem Empfang einer neuen Nachricht :</value>
+  </data>
+  <data name="fieldPrivacyNotificationAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 17</value>
+  </data>
+  <data name="fieldPrivacyNotificationAll.Text" xml:space="preserve">
+    <value>Wie bitte Nachrichteninhalt</value>
+  </data>
+  <data name="fieldPrivacyNotificationShort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 17</value>
+  </data>
+  <data name="fieldPrivacyNotificationShort.Text" xml:space="preserve">
+    <value>Ansicht Teil des Nachrichteninhalts</value>
+  </data>
+  <data name="fieldPrivacyNotificationNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 17</value>
+  </data>
+  <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
+    <value>Alle anzeigen Inhalt der Nachricht</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 13</value>
