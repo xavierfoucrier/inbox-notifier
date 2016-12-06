@@ -123,44 +123,35 @@
   <data name="tabPageAccount.Text" xml:space="preserve">
     <value>Konto</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Netzwerk</value>
-  </data>
-  <data name="fieldStepDelay.Items" xml:space="preserve">
-    <value>minute (n)</value>
-  </data>
-  <data name="fieldStepDelay.Items1" xml:space="preserve">
-    <value>zeit (s)</value>
+  <data name="tabPageNotification.Text" xml:space="preserve">
+    <value>Benachrichtigung</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="fieldSpamNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 17</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 13</value>
   </data>
-  <data name="fieldSpamNotification.Text" xml:space="preserve">
-    <value>Junk-Mail (SPAM)</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Nach dem Empfang einer neuen Nachricht :</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
+  <data name="fieldPrivacyNotificationAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 17</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Prüffrist :</value>
+  <data name="fieldPrivacyNotificationAll.Text" xml:space="preserve">
+    <value>Wie bitte Nachrichteninhalt</value>
   </data>
-  <data name="fieldMessageNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 17</value>
+  <data name="fieldPrivacyNotificationShort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 17</value>
   </data>
-  <data name="fieldMessageNotification.Text" xml:space="preserve">
-    <value>Neuen Beitrag</value>
+  <data name="fieldPrivacyNotificationShort.Text" xml:space="preserve">
+    <value>Ansicht Teil des Nachrichteninhalts</value>
   </data>
-  <data name="fieldAudioNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 17</value>
+  <data name="fieldPrivacyNotificationNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 17</value>
   </data>
-  <data name="fieldAudioNotification.Text" xml:space="preserve">
-    <value>Sound-Benachrichtigung</value>
+  <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
+    <value>Alle anzeigen Inhalt der Nachricht</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Post</value>
-  </data>
-  <data name="tabPageNotification.Text" xml:space="preserve">
+  <data name="groupBox4.Text" xml:space="preserve">
     <value>Benachrichtigung</value>
   </data>
   <data name="tabPagePrivacy.Text" xml:space="preserve">
@@ -252,6 +243,9 @@ nächsten Start der Anwendung.</value>
   <data name="buttonGmailDisconnect.Text" xml:space="preserve">
     <value>Austragen</value>
   </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Netzwerk</value>
+  </data>
   <data name="fieldAttemptToReconnectNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 17</value>
   </data>
@@ -260,6 +254,39 @@ nächsten Start der Anwendung.</value>
   </data>
   <data name="fieldNetworkConnectivityNotification.Text" xml:space="preserve">
     <value>Verlust der Netzkonnektivität</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="fieldStepDelay.Items" xml:space="preserve">
+    <value>minute (n)</value>
+  </data>
+  <data name="fieldStepDelay.Items1" xml:space="preserve">
+    <value>zeit (s)</value>
+  </data>
+  <data name="fieldSpamNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 17</value>
+  </data>
+  <data name="fieldSpamNotification.Text" xml:space="preserve">
+    <value>Junk-Mail (SPAM)</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Prüffrist :</value>
+  </data>
+  <data name="fieldMessageNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 17</value>
+  </data>
+  <data name="fieldMessageNotification.Text" xml:space="preserve">
+    <value>Neuen Beitrag</value>
+  </data>
+  <data name="fieldAudioNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 17</value>
+  </data>
+  <data name="fieldAudioNotification.Text" xml:space="preserve">
+    <value>Sound-Benachrichtigung</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 13</value>

@@ -795,9 +795,6 @@
   <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>540, 171</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
   <data name="&gt;&gt;fieldPrivacyNotificationShort.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -984,6 +981,9 @@
   <data name="&gt;&gt;tabPageGeneral.Name" xml:space="preserve">
     <value>tabPageGeneral</value>
   </data>
+  <data name="&gt;&gt;linkVersion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -1103,9 +1103,6 @@
   </data>
   <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
-  </data>
-  <data name="tabPagePrivacy.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -1587,6 +1584,9 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;pictureBoxPrivacyPreview.Name" xml:space="preserve">
     <value>pictureBoxPrivacyPreview</value>
   </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
   <data name="linkWebsiteYusuke.Text" xml:space="preserve">
     <value>p.yusukekamiyamane.com</value>
   </data>
@@ -1680,8 +1680,8 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;tabPageAbout.Name" xml:space="preserve">
     <value>tabPageAbout</value>
   </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
+  <data name="tabPagePrivacy.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="fieldStepDelay.Items" xml:space="preserve">
     <value>minute(s)</value>
@@ -2133,8 +2133,8 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;fieldPrivacyNotificationNone.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;linkVersion.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
   </data>
   <data name="&gt;&gt;tabPageNotification.ZOrder" xml:space="preserve">
     <value>2</value>
