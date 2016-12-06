@@ -120,33 +120,45 @@
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>General</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelTokenDelivery.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 43</value>
-  </data>
-  <data name="labelEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 24</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 13</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Online seit :</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 13</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Gmail konto :</value>
-  </data>
-  <data name="buttonGmailDisconnect.Text" xml:space="preserve">
-    <value>Austragen</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Beglaubigung</value>
-  </data>
   <data name="tabPageAccount.Text" xml:space="preserve">
     <value>Konto</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Netzwerk</value>
+  </data>
+  <data name="fieldStepDelay.Items" xml:space="preserve">
+    <value>minute (n)</value>
+  </data>
+  <data name="fieldStepDelay.Items1" xml:space="preserve">
+    <value>zeit (s)</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fieldSpamNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 17</value>
+  </data>
+  <data name="fieldSpamNotification.Text" xml:space="preserve">
+    <value>Junk-Mail (SPAM)</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Prüffrist :</value>
+  </data>
+  <data name="fieldMessageNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 17</value>
+  </data>
+  <data name="fieldMessageNotification.Text" xml:space="preserve">
+    <value>Neuen Beitrag</value>
+  </data>
+  <data name="fieldAudioNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 17</value>
+  </data>
+  <data name="fieldAudioNotification.Text" xml:space="preserve">
+    <value>Sound-Benachrichtigung</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Post</value>
   </data>
   <data name="tabPageNotification.Text" xml:space="preserve">
     <value>Benachrichtigung</value>
@@ -215,6 +227,39 @@ nächsten Start der Anwendung.</value>
   </data>
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>Fragen Sie mich bitte, bevor sie die Anwendung zu verlassen</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Beglaubigung</value>
+  </data>
+  <data name="labelTokenDelivery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 43</value>
+  </data>
+  <data name="labelEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 24</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Online seit :</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Gmail konto :</value>
+  </data>
+  <data name="buttonGmailDisconnect.Text" xml:space="preserve">
+    <value>Austragen</value>
+  </data>
+  <data name="fieldAttemptToReconnectNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 17</value>
+  </data>
+  <data name="fieldAttemptToReconnectNotification.Text" xml:space="preserve">
+    <value>Automatische Wiederversuch</value>
+  </data>
+  <data name="fieldNetworkConnectivityNotification.Text" xml:space="preserve">
+    <value>Verlust der Netzkonnektivität</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 13</value>

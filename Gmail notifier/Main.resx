@@ -124,6 +124,10 @@
   <data name="&gt;&gt;fieldAttemptToReconnectNotification.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
@@ -146,7 +150,6 @@
   <data name="fieldRunAtWindowsStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 17</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelSettingsSaved.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -927,6 +930,9 @@
   <data name="&gt;&gt;linkRestartToApply.Parent" xml:space="preserve">
     <value>groupBox5</value>
   </data>
+  <data name="&gt;&gt;tabPagePrivacy.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="fieldLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -959,9 +965,6 @@
   </data>
   <data name="labelEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
     <value>142, 24</value>
-  </data>
-  <data name="labelEmailAddress.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
   </data>
   <data name="fieldPrivacyNotificationAll.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1310,8 +1313,8 @@ Open Source, Licence MIT</value>
   <data name="fieldSpamNotification.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="labelEmailAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
   <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
     <value>tabPageGeneral</value>
@@ -1488,6 +1491,9 @@ Développé par Xavier Foucrier</value>
   <data name="fieldMinimizeToSystray.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="fieldMessageNotification.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1596,9 +1602,6 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
     <value>tabPageNotification</value>
   </data>
-  <data name="&gt;&gt;pictureBoxHeader.Name" xml:space="preserve">
-    <value>pictureBoxHeader</value>
-  </data>
   <data name="&gt;&gt;menuItemTimeout1h.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1700,9 +1703,6 @@ Développé par Xavier Foucrier</value>
   </data>
   <data name="&gt;&gt;label12.Parent" xml:space="preserve">
     <value>tabPageAbout</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Gmail notifier</value>
   </data>
   <data name="&gt;&gt;fieldLanguage.Parent" xml:space="preserve">
     <value>groupBox5</value>
@@ -2058,8 +2058,8 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;linkWebsiteXavier.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPagePrivacy.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="labelEmailAddress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="linkLicense.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2121,8 +2121,8 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;fieldPrivacyNotificationShort.Parent" xml:space="preserve">
     <value>groupBox4</value>
   </data>
-  <data name="&gt;&gt;menuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Gmail notifier</value>
   </data>
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>Me demander avant de quitter l'application</value>
@@ -2241,8 +2241,8 @@ Développé par Xavier Foucrier</value>
   <data name="linkRestartToApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="labelEmailAddress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;menuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelTokenDelivery.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2289,8 +2289,8 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;menuItemSettings.Name" xml:space="preserve">
     <value>menuItemSettings</value>
   </data>
-  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;pictureBoxHeader.Name" xml:space="preserve">
+    <value>pictureBoxHeader</value>
   </data>
   <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
