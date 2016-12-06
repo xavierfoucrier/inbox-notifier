@@ -117,7 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tabPageGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelTokenDelivery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 43</value>
+  </data>
+  <data name="labelEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 24</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Online seit :</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Gmail konto :</value>
+  </data>
+  <data name="buttonGmailDisconnect.Text" xml:space="preserve">
+    <value>Austragen</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Beglaubigung</value>
+  </data>
+  <data name="tabPageAccount.Text" xml:space="preserve">
+    <value>Konto</value>
+  </data>
+  <data name="tabPageNotification.Text" xml:space="preserve">
+    <value>Benachrichtigung</value>
+  </data>
+  <data name="tabPagePrivacy.Text" xml:space="preserve">
+    <value>Vertraulichkeit</value>
+  </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Schnittstelle</value>
+  </data>
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 87</value>
   </data>
@@ -146,26 +188,8 @@ nächsten Start der Anwendung.</value>
   <data name="label3.Text" xml:space="preserve">
     <value>Sprache :</value>
   </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Schnittstelle</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Verhalten</value>
-  </data>
-  <data name="tabPageGeneral.Text" xml:space="preserve">
-    <value>General</value>
-  </data>
-  <data name="tabPageAccount.Text" xml:space="preserve">
-    <value>Konto</value>
-  </data>
-  <data name="tabPageNotification.Text" xml:space="preserve">
-    <value>Benachrichtigung</value>
-  </data>
-  <data name="tabPagePrivacy.Text" xml:space="preserve">
-    <value>Vertraulichkeit</value>
-  </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>Über</value>
   </data>
   <data name="fieldRunAtWindowsStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 17</value>

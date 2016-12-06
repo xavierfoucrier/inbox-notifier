@@ -792,6 +792,9 @@
   <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>540, 171</value>
   </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
   <data name="&gt;&gt;fieldPrivacyNotificationShort.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -818,9 +821,6 @@
   </data>
   <data name="pictureBoxHeader.Size" type="System.Drawing.Size, System.Drawing">
     <value>564, 70</value>
-  </data>
-  <data name="&gt;&gt;tabPagePrivacy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pictureBoxPrivacyPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -960,6 +960,9 @@
   <data name="labelEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
     <value>142, 24</value>
   </data>
+  <data name="labelEmailAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
   <data name="fieldPrivacyNotificationAll.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1098,6 +1101,9 @@
   <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
   </data>
+  <data name="tabPagePrivacy.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
@@ -1226,8 +1232,8 @@ Open Source, Licence MIT</value>
   <data name="&gt;&gt;fieldNumericDelay.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tabPageNotification.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="&gt;&gt;menuItemTimeout2h.Name" xml:space="preserve">
+    <value>menuItemTimeout2h</value>
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -1247,8 +1253,8 @@ Open Source, Licence MIT</value>
   <data name="linkWebsiteYusuke.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="menuItemSettings.Text" xml:space="preserve">
-    <value>Ouvrir</value>
+  <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1288,9 +1294,6 @@ Open Source, Licence MIT</value>
   </data>
   <data name="&gt;&gt;labelRestartToApply.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="pictureBoxHeader.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -1506,8 +1509,8 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;menuItemTimeoutDisabled.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="buttonGmailDisconnect.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;menuItemTimout.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1578,9 +1581,6 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;pictureBoxPrivacyPreview.Name" xml:space="preserve">
     <value>pictureBoxPrivacyPreview</value>
   </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="linkWebsiteYusuke.Text" xml:space="preserve">
     <value>p.yusukekamiyamane.com</value>
   </data>
@@ -1626,8 +1626,8 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;timer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
   </data>
   <data name="&gt;&gt;fieldAttemptToReconnectNotification.Name" xml:space="preserve">
     <value>fieldAttemptToReconnectNotification</value>
@@ -1644,8 +1644,8 @@ Développé par Xavier Foucrier</value>
   <data name="fieldPrivacyNotificationNone.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 17</value>
   </data>
-  <data name="&gt;&gt;linkVersion.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;tabPagePrivacy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fieldSpamNotification.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1659,8 +1659,8 @@ Développé par Xavier Foucrier</value>
   <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="labelEmailAddress.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+  <data name="menuItemSettings.Text" xml:space="preserve">
+    <value>Ouvrir</value>
   </data>
   <data name="fieldAudioNotification.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1836,9 +1836,6 @@ Développé par Xavier Foucrier</value>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Courrier</value>
   </data>
-  <data name="&gt;&gt;menuItemTimeout2h.Name" xml:space="preserve">
-    <value>menuItemTimeout2h</value>
-  </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Développement</value>
   </data>
@@ -1880,6 +1877,9 @@ Développé par Xavier Foucrier</value>
   </data>
   <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="&gt;&gt;linkLicense.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="labelEmailAddress.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 13</value>
@@ -1968,9 +1968,6 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;fieldAttemptToReconnectNotification.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;linkLicense.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2016,8 +2013,8 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tabPagePrivacy.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;linkLicense.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fieldRunAtWindowsStartup.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2082,8 +2079,8 @@ Développé par Xavier Foucrier</value>
   <data name="fieldAskonExit.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 71</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
+  <data name="tabPageNotification.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;menuItemSynchronize.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2136,8 +2133,8 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;fieldPrivacyNotificationNone.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
+  <data name="&gt;&gt;linkVersion.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tabPageNotification.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -2153,6 +2150,9 @@ Développé par Xavier Foucrier</value>
   </data>
   <data name="fieldRunAtWindowsStartup.Text" xml:space="preserve">
     <value>Lancer au démarrage de Windows</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
   </data>
   <data name="linkVersion.Size" type="System.Drawing.Size, System.Drawing">
     <value>10, 13</value>
@@ -2220,7 +2220,7 @@ Développé par Xavier Foucrier</value>
   <data name="labelRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 48</value>
   </data>
-  <data name="&gt;&gt;linkLicense.ZOrder" xml:space="preserve">
+  <data name="buttonGmailDisconnect.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
