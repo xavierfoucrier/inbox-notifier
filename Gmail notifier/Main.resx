@@ -822,9 +822,6 @@
   <data name="pictureBoxHeader.Size" type="System.Drawing.Size, System.Drawing">
     <value>564, 70</value>
   </data>
-  <data name="&gt;&gt;tabPagePrivacy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="pictureBoxPrivacyPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -983,6 +980,9 @@
   </data>
   <data name="&gt;&gt;tabPageGeneral.Name" xml:space="preserve">
     <value>tabPageGeneral</value>
+  </data>
+  <data name="&gt;&gt;linkVersion.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1584,6 +1584,9 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;pictureBoxPrivacyPreview.Name" xml:space="preserve">
     <value>pictureBoxPrivacyPreview</value>
   </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
   <data name="linkWebsiteYusuke.Text" xml:space="preserve">
     <value>p.yusukekamiyamane.com</value>
   </data>
@@ -1644,8 +1647,8 @@ Développé par Xavier Foucrier</value>
   <data name="fieldPrivacyNotificationNone.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 17</value>
   </data>
-  <data name="&gt;&gt;linkVersion.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;tabPagePrivacy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fieldSpamNotification.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1677,8 +1680,8 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;tabPageAbout.Name" xml:space="preserve">
     <value>tabPageAbout</value>
   </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
+  <data name="tabPagePrivacy.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="fieldStepDelay.Items" xml:space="preserve">
     <value>minute(s)</value>
@@ -1965,9 +1968,6 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;fieldAttemptToReconnectNotification.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;linkLicense.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2013,8 +2013,8 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tabPagePrivacy.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;linkLicense.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fieldRunAtWindowsStartup.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
