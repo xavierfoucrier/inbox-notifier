@@ -48,6 +48,9 @@ namespace notifier {
 		// number of automatic reconnection
 		private int reconnect = 0;
 
+		// local application data folder name
+		private string appdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
+
 		// number of maximum automatic reconnection
 		private const int MAX_AUTO_RECONNECT = 3;
 
@@ -73,7 +76,7 @@ namespace notifier {
 			Visible = false;
 
 			// displays a systray notification on first load
-			if (Settings.Default.FirstLoad && !Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier").Any()) {
+			if (Settings.Default.FirstLoad && !Directory.Exists(appdata)) {
 				notifyIcon.ShowBalloonTip(7000, translation.welcome, translation.firstLoad, ToolTipIcon.Info);
 
 				// switchs the first load state
@@ -257,7 +260,7 @@ namespace notifier {
 			} catch(Exception) {
 
 				// exits the application if the google api token file doesn't exists
-				if (!Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier").Any()) {
+				if (!Directory.Exists(appdata) || !Directory.EnumerateFiles(appdata).Any()) {
 					MessageBox.Show(translation.authenticationWithGmailRefused, translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					Application.Exit();
 				}
@@ -283,7 +286,7 @@ namespace notifier {
 					new string[] { GmailService.Scope.GmailModify },
 					"user",
 					CancellationToken.None,
-					new FileDataStore(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier", true)
+					new FileDataStore(appdata, true)
 				);
 			}
 		}
@@ -726,7 +729,9 @@ namespace notifier {
 			}
 
 			// deletes the local application data folder and the client token file
-			Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier", true);
+			if (Directory.Exists(appdata)) {
+				Directory.Delete(appdata, true);
+			}
 
 			// restarts the application
 			this.restart();
