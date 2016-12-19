@@ -121,13 +121,8 @@ namespace notifier {
 			// binds the "NetworkAvailabilityChanged" event to automatically display a notification about network connectivity, depending on the user settings
 			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object o, NetworkAvailabilityEventArgs target) => {
 
-				// discards notification
-				if (!Settings.Default.NetworkConnectivityNotification) {
-					return;
-				}
-
 				// checks for available networks
-				if (!NetworkInterface.GetIsNetworkAvailable()) {
+				if (Settings.Default.NetworkConnectivityNotification && !NetworkInterface.GetIsNetworkAvailable()) {
 					notifyIcon.Icon = Resources.warning;
 					notifyIcon.Text = translation.networkLost;
 					notifyIcon.ShowBalloonTip(450, translation.networkLost, translation.networkConnectivityLost, ToolTipIcon.Warning);
@@ -154,7 +149,9 @@ namespace notifier {
 				}
 
 				// displays a notification to indicate that the network connectivity has been restored
-				notifyIcon.ShowBalloonTip(450, translation.networkRestored, translation.networkConnectivityRestored, ToolTipIcon.Info);
+				if (Settings.Default.NetworkConnectivityNotification) {
+					notifyIcon.ShowBalloonTip(450, translation.networkRestored, translation.networkConnectivityRestored, ToolTipIcon.Info);
+				}
 			});
 
 			// displays the step delay setting
