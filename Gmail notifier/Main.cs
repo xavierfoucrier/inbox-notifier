@@ -178,6 +178,9 @@ namespace notifier {
 			string[] version = Application.ProductVersion.Split('.');
 			linkVersion.Text = version[0] + "." + version[1] + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "") + (version[3] != "0" ? " " + version[3] : "");
 
+			// positioning the check for update link
+			linkCheckForUpdate.Left = linkVersion.Right + 2;
+
 			// displays a tooltip for the product version
 			ToolTip tipTag = new ToolTip();
 			tipTag.SetToolTip(linkVersion, GITHUB_REPOSITORY + "/releases/tag/v" + linkVersion.Text.Replace(" ", "-"));
