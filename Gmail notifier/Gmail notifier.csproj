@@ -265,6 +265,9 @@
   <ItemGroup>
     <None Include="Resources\update-check.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update-hourglass.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>echo Cleaning bin directory by deleting *.xml and *.pdb files
