@@ -133,6 +133,9 @@ Voulez-vous vraiment quitter l'application ?</value>
 
 L'application va désormais quitter.</value>
   </data>
+  <data name="checkForUpdate" xml:space="preserve">
+    <value>Vérifier les mises à jour</value>
+  </data>
   <data name="error" xml:space="preserve">
     <value>Erreur</value>
   </data>
@@ -195,6 +198,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   <data name="helpTokenDelivery" xml:space="preserve">
     <value>Date de dernière mise à jour du jeton de validité de l'authentification</value>
   </data>
+  <data name="latestVersion" xml:space="preserve">
+    <value>Vous disposez de la dernière version de l'application.</value>
+  </data>
   <data name="markAsReadError" xml:space="preserve">
     <value>Erreur lors de l'opération "Marquer comme lu(s)"</value>
   </data>
@@ -226,6 +232,12 @@ Cette option n'est pas activée sur ce type d'application.</value>
   </data>
   <data name="newUnreadSpam" xml:space="preserve">
     <value>Double-cliquez sur l'icône pour accéder à votre boîte de réception. Tant que vous n'aurez pas vérifié le dossier spam, votre boite de réception ne sera pas synchronisée et vous ne serez pas informé de l'arrivée de nouveaux messages.</value>
+  </data>
+  <data name="newVersion" xml:space="preserve">
+    <value>Une version plus récente de l'application est disponible sur Github :
+Gmail Notifier {version}.
+
+Voulez-vous la télécharger maintenant ?</value>
   </data>
   <data name="noMessage" xml:space="preserve">
     <value>Pas de nouveau message</value>

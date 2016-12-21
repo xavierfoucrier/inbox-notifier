@@ -190,7 +190,7 @@ namespace notifier {
 
 			// displays a tooltip for the product version
 			ToolTip tipCheckForUpdate = new ToolTip();
-			tipCheckForUpdate.SetToolTip(linkCheckForUpdate, "Vérifier les mises à jour");
+			tipCheckForUpdate.SetToolTip(linkCheckForUpdate, translation.checkForUpdate);
 			tipCheckForUpdate.IsBalloon = false;
 
 			// displays a tooltip for the website link
@@ -813,6 +813,43 @@ namespace notifier {
 				// syncs the user mailbox
 				this.SyncInbox();
 			}
+		}
+
+		/// <summary>
+		/// Check for update
+		/// </summary>
+		private void linkCheckForUpdate_Click(object sender, EventArgs e) {
+			linkCheckForUpdate.Image = Resources.update_hourglass;
+			linkCheckForUpdate.Enabled = false;
+			Cursor.Current = DefaultCursor;
+
+			try {
+
+				// gets the list of tags in the Github repository tags webpage
+				HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlWeb().Load(GITHUB_REPOSITORY + "/tags");
+				HtmlAgilityPack.HtmlNodeCollection collection = document.DocumentNode.SelectNodes("//span[@class='tag-name']");
+
+				if (collection != null && collection.Count > 0) {
+					List<string> tags = collection.Select(p => p.InnerText).ToList();
+
+					// the current version tag is not at the top of the list
+					if (tags.IndexOf("v" + linkVersion.Text.Replace(" ", "-")) > 0) {
+						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+
+						// redirects the user to the Github repository releases webpage
+						if (dialog == DialogResult.Yes) {
+							Process.Start(GITHUB_REPOSITORY + "/releases/" + tags[0]);
+						}
+					} else {
+						MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+				}
+			} catch (Exception) {
+				// nothing to catch
+			}
+
+			linkCheckForUpdate.Enabled = true;
+			linkCheckForUpdate.Image = Resources.update_check;
 		}
 	}
 }

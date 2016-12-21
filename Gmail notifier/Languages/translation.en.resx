@@ -133,6 +133,9 @@ Do you really want to exit?</value>
 
 The application will now quit.</value>
   </data>
+  <data name="checkForUpdate" xml:space="preserve">
+    <value>Check for update</value>
+  </data>
   <data name="error" xml:space="preserve">
     <value>Error</value>
   </data>
@@ -195,6 +198,9 @@ Do you really want to disconnect your Gmail account and restart the application 
   <data name="helpTokenDelivery" xml:space="preserve">
     <value>Latest update of the authentication token delivery</value>
   </data>
+  <data name="latestVersion" xml:space="preserve">
+    <value>You have the latest version of the application.</value>
+  </data>
   <data name="markAsReadError" xml:space="preserve">
     <value>Error with the "Mark as read" operation</value>
   </data>
@@ -226,6 +232,12 @@ This option is not enabled on this type of application.</value>
   </data>
   <data name="newUnreadSpam" xml:space="preserve">
     <value>Double-click the icon to access your inbox. Until you have not checked the spam folder, your inbox will not be synchronized and you will not be notified of new messages.</value>
+  </data>
+  <data name="newVersion" xml:space="preserve">
+    <value>A newer version of the application is available on Github:
+Gmail Notifier {version}.
+
+Do you want to download it now?</value>
   </data>
   <data name="noMessage" xml:space="preserve">
     <value>No new message</value>

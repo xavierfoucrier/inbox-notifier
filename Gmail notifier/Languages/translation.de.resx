@@ -133,6 +133,9 @@ Wollen Sie wirklich beenden wollen?</value>
 
 Die Anwendung wird nun beendet.</value>
   </data>
+  <data name="checkForUpdate" xml:space="preserve">
+    <value>Auf Update überprüfen</value>
+  </data>
   <data name="error" xml:space="preserve">
     <value>Fehler</value>
   </data>
@@ -195,6 +198,9 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   <data name="helpTokenDelivery" xml:space="preserve">
     <value>Datum der letzten Aktualisierung der Gültigkeit der Authentifizierungstoken</value>
   </data>
+  <data name="latestVersion" xml:space="preserve">
+    <value>Sie haben die neueste Version der Anwendung.</value>
+  </data>
   <data name="markAsReadError" xml:space="preserve">
     <value>Fehlerbetrieb "Mark Read (s)"</value>
   </data>
@@ -226,6 +232,12 @@ Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
   </data>
   <data name="newUnreadSpam" xml:space="preserve">
     <value>Doppelklicken Sie auf das Symbol Posteingang zugreifen. Da Sie nicht den Spam-Ordner überprüft haben, werden nicht Ihrem Posteingang synchronisiert werden und Sie werden nicht über neue Nachrichten informiert werden.</value>
+  </data>
+  <data name="newVersion" xml:space="preserve">
+    <value>Eine neuere Version der Anwendung ist auf Github:
+Gmail Notifier {version}.
+
+Möchten Sie sie jetzt herunterladen?</value>
   </data>
   <data name="noMessage" xml:space="preserve">
     <value>Keine neuen Beiträge</value>

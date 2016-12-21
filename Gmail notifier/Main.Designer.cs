@@ -441,9 +441,11 @@
 			// 
 			// linkCheckForUpdate
 			// 
+			this.linkCheckForUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.linkCheckForUpdate.Image = global::notifier.Properties.Resources.update_check;
 			resources.ApplyResources(this.linkCheckForUpdate, "linkCheckForUpdate");
 			this.linkCheckForUpdate.Name = "linkCheckForUpdate";
+			this.linkCheckForUpdate.Click += new System.EventHandler(this.linkCheckForUpdate_Click);
 			// 
 			// linkVersion
 			// 
