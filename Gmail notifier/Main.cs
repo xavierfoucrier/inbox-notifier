@@ -188,6 +188,11 @@ namespace notifier {
 			tipTag.ToolTipIcon = ToolTipIcon.Info;
 			tipTag.IsBalloon = false;
 
+			// displays a tooltip for the product version
+			ToolTip tipCheckForUpdate = new ToolTip();
+			tipCheckForUpdate.SetToolTip(linkCheckForUpdate, "Vérifier les mises à jour");
+			tipCheckForUpdate.IsBalloon = false;
+
 			// displays a tooltip for the website link
 			ToolTip tipWebsiteYusuke = new ToolTip();
 			tipWebsiteYusuke.SetToolTip(linkWebsiteYusuke, "http://p.yusukekamiyamane.com");
