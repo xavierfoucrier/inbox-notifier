@@ -21,6 +21,7 @@ LicenseFile=..\LICENSE.md
 OutputDir=..\setup
 ArchitecturesInstallIn64BitMode=x64
 OutputBaseFilename=Gmail Notifier setup
+SetupIconFile=setup.ico
 Compression=lzma
 SolidCompression=yes
 
