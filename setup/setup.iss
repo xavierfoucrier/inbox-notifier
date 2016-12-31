@@ -8,7 +8,7 @@
 AppId={{7E60E047-C79B-49A4-8CF6-B33D5565B2E8}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppCopyright=Copyright Â© 2016
+AppCopyright=Copyright © 2016
 AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
