@@ -22,8 +22,8 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-LicenseFile=C:\Users\Copyrightx\Documents\GitHub\gmail-notifier\LICENSE.md
-OutputDir=C:\Users\Copyrightx\Documents\GitHub\gmail-notifier\setup
+LicenseFile=..\LICENSE.md
+OutputDir=..\setup
 ArchitecturesInstallIn64BitMode=x64
 OutputBaseFilename=Gmail Notifier setup
 Compression=lzma
@@ -39,10 +39,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "C:\Users\Copyrightx\Documents\GitHub\gmail-notifier\Gmail notifier\bin\Release 32 bits (x86)\Gmail notifier.exe"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode
-Source: "C:\Users\Copyrightx\Documents\GitHub\gmail-notifier\Gmail notifier\bin\Release 32 bits (x86)\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Check: not Is64BitInstallMode
-Source: "C:\Users\Copyrightx\Documents\GitHub\gmail-notifier\Gmail notifier\bin\Release 64 bits (x64)\Gmail notifier.exe"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode
-Source: "C:\Users\Copyrightx\Documents\GitHub\gmail-notifier\Gmail notifier\bin\Release 64 bits (x64)\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Check: Is64BitInstallMode
+Source: "..\Gmail notifier\bin\Release 32 bits (x86)\Gmail notifier.exe"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: "..\Gmail notifier\bin\Release 32 bits (x86)\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Check: not Is64BitInstallMode
+Source: "..\Gmail notifier\bin\Release 64 bits (x64)\Gmail notifier.exe"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: "..\Gmail notifier\bin\Release 64 bits (x64)\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Check: Is64BitInstallMode
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
