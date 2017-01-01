@@ -24,6 +24,7 @@ OutputBaseFilename=Gmail Notifier setup
 SetupIconFile=setup.ico
 Compression=lzma
 SolidCompression=yes
+PrivilegesRequired=admin
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
