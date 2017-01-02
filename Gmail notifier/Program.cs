@@ -17,7 +17,7 @@ namespace notifier {
 		static void Main(string[] args) {
 
 			// initializes the configuration file with setup installer settings
-			if (args.Length == 2 && args[0] == "install") {
+			if (args.Length == 3 && args[0] == "install") {
 
 				// language application setting
 				switch (args[1]) {
@@ -32,6 +32,9 @@ namespace notifier {
 						Settings.Default.Language = "Deutsch";
 						break;
 				}
+
+				// start with Windows setting
+				Settings.Default.RunAtWindowsStartup = args[2] == "auto";
 
 				// commits changes to the configuration file
 				Settings.Default.Save();
