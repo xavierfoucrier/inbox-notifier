@@ -63,9 +63,9 @@ Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: 
 [Code]
 function autorun(Value: string): string;
 begin
-	if RegValueExists(HKEY_CURRENT_USER, 'Software\Microsoft\Windows\CurrentVersion\Run', 'Gmail notifier') then
-		begin
-			Result := 'auto';
-		end;
-	Result := 'none';
+	if RegValueExists(HKCU, 'Software\Microsoft\Windows\CurrentVersion\Run', 'Gmail notifier') then begin
+		Result := 'auto';
+	end	else begin
+		Result := 'none';
+	end;
 end;
