@@ -27,6 +27,7 @@ Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=admin
 VersionInfoVersion={#MyAppVersion}
+UninstallDisplayIcon={app}\{#MyAppExeName}
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
