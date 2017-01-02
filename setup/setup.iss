@@ -25,6 +25,7 @@ SetupIconFile=setup.ico
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=admin
+VersionInfoVersion={#MyAppVersion}
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
