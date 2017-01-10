@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using notifier.Languages;
 using notifier.Properties;
@@ -17,7 +14,33 @@ namespace notifier {
 		static Mutex mutex = new Mutex(true, "gmailnotifier-115e363ecbfefd771e55c6874680bc0a");
 
 		[STAThread]
-		static void Main() {
+		static void Main(string[] args) {
+
+			// initializes the configuration file with setup installer settings
+			if (args.Length == 3 && args[0] == "install") {
+
+				// language application setting
+				switch (args[1]) {
+					default:
+					case "en":
+						Settings.Default.Language = "English";
+						break;
+					case "fr":
+						Settings.Default.Language = "Français";
+						break;
+					case "de":
+						Settings.Default.Language = "Deutsch";
+						break;
+				}
+
+				// start with Windows setting
+				Settings.Default.RunAtWindowsStartup = args[2] == "auto";
+
+				// commits changes to the configuration file
+				Settings.Default.Save();
+
+				return;
+			}
 
 			// initializes the interface with the specified culture, depending on the user settings
 			switch (Settings.Default.Language) {

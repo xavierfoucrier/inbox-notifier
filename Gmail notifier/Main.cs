@@ -9,7 +9,6 @@ using System.Linq;
 using System.Media;
 using System.Net;
 using System.Net.NetworkInformation;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
