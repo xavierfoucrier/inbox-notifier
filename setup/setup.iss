@@ -69,3 +69,6 @@ begin
 		Result := 'none';
 	end;
 end;
+
+[UninstallDelete]
+Type: filesandordirs; Name: "{localappdata}\Gmail Notifier"
