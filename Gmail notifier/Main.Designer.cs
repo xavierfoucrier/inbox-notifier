@@ -287,7 +287,6 @@
 			// 
 			resources.ApplyResources(this.fieldAttemptToReconnectNotification, "fieldAttemptToReconnectNotification");
 			this.fieldAttemptToReconnectNotification.Checked = global::notifier.Properties.Settings.Default.AttemptToReconnectNotification;
-			this.fieldAttemptToReconnectNotification.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.fieldAttemptToReconnectNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AttemptToReconnectNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldAttemptToReconnectNotification.Name = "fieldAttemptToReconnectNotification";
 			this.fieldAttemptToReconnectNotification.UseVisualStyleBackColor = true;
@@ -296,7 +295,6 @@
 			// 
 			resources.ApplyResources(this.fieldNetworkConnectivityNotification, "fieldNetworkConnectivityNotification");
 			this.fieldNetworkConnectivityNotification.Checked = global::notifier.Properties.Settings.Default.NetworkConnectivityNotification;
-			this.fieldNetworkConnectivityNotification.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.fieldNetworkConnectivityNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "NetworkConnectivityNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldNetworkConnectivityNotification.Name = "fieldNetworkConnectivityNotification";
 			this.fieldNetworkConnectivityNotification.UseVisualStyleBackColor = true;
