@@ -282,7 +282,7 @@ namespace notifier {
 		private async Task<UserCredential> AsyncAuthorizationBroker() {
 
 			// uses the client secret file for the context
-			using (var stream = new FileStream("client_secret.json", FileMode.Open, FileAccess.Read)) {
+			using (var stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
 
 				// waits for the user validation, only if the user has not already authorized the application
 				return await GoogleWebAuthorizationBroker.AuthorizeAsync(
