@@ -59,6 +59,9 @@ namespace notifier {
 		// github repository root link
 		private const string GITHUB_REPOSITORY = "https://github.com/xavierfoucrier/gmail-notifier";
 
+		// gmail base root link
+		private const string GMAIL_BASEURL = "https://mail.google.com/mail/u/0";
+
 		/// <summary>
 		/// Initializes the class
 		/// </summary>
@@ -691,7 +694,7 @@ namespace notifier {
 		/// </summary>
 		private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
 			if (e.Button == MouseButtons.Left) {
-				Process.Start("https://mail.google.com/mail/u/0/#inbox");
+				Process.Start(GMAIL_BASEURL + "/#inbox");
 
 				// restores the default systray icon and text: pretends that the user had read all his mail, except if the timeout option is activated
 				if (timer.Interval == Settings.Default.TimerInterval) {
