@@ -516,6 +516,7 @@
 			// notifyIcon
 			// 
 			resources.ApplyResources(this.notifyIcon, "notifyIcon");
+			this.notifyIcon.BalloonTipClicked += new System.EventHandler(this.notifyIcon_BalloonTipClicked);
 			this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
 			// 
 			// pictureBoxHeader

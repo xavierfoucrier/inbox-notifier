@@ -353,6 +353,7 @@ namespace notifier {
 						// displays a balloon tip in the systray with the total of unread threads
 						notifyIcon.ShowBalloonTip(450, spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? translation.unreadSpams : translation.unreadSpam), translation.newUnreadSpam, ToolTipIcon.Error);
 						notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? translation.unreadSpams : translation.unreadSpam);
+						notifyIcon.Tag = "#spam";
 
 						return;
 					}
@@ -380,13 +381,14 @@ namespace notifier {
 							SystemSounds.Asterisk.Play();
 						}
 
+						// gets the message details
+						UsersResource.MessagesResource.ListRequest messages = this.service.Users.Messages.List("me");
+						messages.LabelIds = "UNREAD";
+						messages.MaxResults = 1;
+						Google.Apis.Gmail.v1.Data.Message message = this.service.Users.Messages.Get("me", messages.Execute().Messages.First().Id).Execute();
+
 						//  displays a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
 						if (this.inbox.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != (int)Privacy.All) {
-							UsersResource.MessagesResource.ListRequest messages = this.service.Users.Messages.List("me");
-							messages.LabelIds = "UNREAD";
-							messages.MaxResults = 1;
-							Google.Apis.Gmail.v1.Data.Message message = this.service.Users.Messages.Get("me", messages.Execute().Messages.First().Id).Execute();
-
 							string subject = "";
 							string from = "";
 
@@ -413,6 +415,9 @@ namespace notifier {
 						} else {
 							notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? translation.unreadMessages : translation.unreadMessage), translation.newUnreadMessage, ToolTipIcon.Info);
 						}
+
+						// manages the balloon tip click event handler: we store the "notification tag" to allow the user to directly display the specified view (inbox/message/spam) in a browser
+						notifyIcon.Tag = "#inbox" + (this.inbox.ThreadsUnread == 1 ? "/" + message.Id : "");
 					}
 
 					// displays the notification text
@@ -690,20 +695,46 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Opens the gmail inbox in a browser when you double click on the systray icon
+		/// Manages the systray icon double click
 		/// </summary>
 		private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
 			if (e.Button == MouseButtons.Left) {
-				Process.Start(GMAIL_BASEURL + "/#inbox");
 
-				// restores the default systray icon and text: pretends that the user had read all his mail, except if the timeout option is activated
-				if (timer.Interval == Settings.Default.TimerInterval) {
-					notifyIcon.Icon = Resources.normal;
-					notifyIcon.Text = translation.noMessage;
-
-					// disables the mark as read menu item
-					menuItemMarkAsRead.Enabled = false;
+				// by default, always open the gmail inbox in a browser
+				if (notifyIcon.Tag == null) {
+					Process.Start(GMAIL_BASEURL + "/#inbox");
+				} else {
+					notifyIconInteraction();
 				}
+			}
+		}
+
+		/// <summary>
+		/// Manages the systray icon balloon click
+		/// </summary>
+		private void notifyIcon_BalloonTipClicked(object sender, EventArgs e) {
+			notifyIconInteraction();
+		}
+
+		/// <summary>
+		/// Opens the gmail specified view (inbox/message/spam) in a browser
+		/// </summary>
+		private void notifyIconInteraction() {
+			if (notifyIcon.Tag == null) {
+				return;
+			}
+
+			// opens a browser
+			Process.Start(GMAIL_BASEURL + "/" + notifyIcon.Tag);
+			notifyIcon.Tag = null;
+
+			// restores the default systray icon and text: pretends that the user had read all his mail, except if the timeout option is activated
+			if (timer.Interval == Settings.Default.TimerInterval) {
+				notifyIcon.Icon = Resources.normal;
+				notifyIcon.Text = translation.noMessage;
+
+				// disables the mark as read menu item
+				menuItemMarkAsRead.Enabled = false;
 			}
 		}
 
