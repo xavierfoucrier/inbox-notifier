@@ -156,6 +156,15 @@ namespace notifier {
 				}
 			});
 
+			// binds the "PowerModeChanged" event to automatically pause/resume the application synchronization
+			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler((object o, PowerModeChangedEventArgs target) => {
+				if (target.Mode == PowerModes.Suspend) {
+					timer.Enabled = false;
+				} else if (target.Mode == PowerModes.Resume) {
+					timer.Enabled = true;
+				}
+			});
+
 			// displays the step delay setting
 			fieldStepDelay.SelectedIndex = Settings.Default.StepDelay;
 
