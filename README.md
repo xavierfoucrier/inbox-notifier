@@ -7,9 +7,9 @@ Gmail notifications instantly in the windows taskbar.
 
 Compatibility
 -------------
-Gmail notifier is fully tested on **Windows 7** desktop *(SP1)*.
+Gmail notifier is fully tested on **Windows 7** desktop *(SP1)* and on a **Windows 10** Virtual Machine.
 
-Many other windows operating systems may work, but are not extensively tested for the moment.
+Many other windows operating systems may work, like Windows 8/8.1, XP or Vista, but are not extensively tested for the moment.
 
 
 Dependencies
@@ -21,9 +21,20 @@ To ensure a stable running of Gmail notifier, you need to have **some requiremen
 
 Download
 -------
-The application is under development and **anything may change at any time**, so don't use it on a production environment.
+#### Setup installer
+The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions. Its the better way to install Windows application and allows you to **cleanly install/uninstall** the application with ease. Note that you will need **administrators rights** to properly complete the installation. Recommanded for all users. :package: [Gmail Notifier 1.0](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v1.0-release/Gmail.Notifier.1.0.exe)
 
-Grab the version you want on the [Github release channel](https://github.com/xavierfoucrier/gmail-notifier/releases) to get in touch with the application and see how it works: keep in mind that the alpha/beta versions are just "pre-releases". Setup installer is coming soon.
+#### Portable version
+The portable version is made for users who want to install the application on a **USB key**, or **removable drive**. In the uninstall process, you will need to manually remove some files from the *%AppData%* folder or edit the registry to completely remove the application from your computer. Recommanded for beta-tester users. :package: [Gmail notifier 1.0-release (x86)](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v1.0-release/Gmail.notifier.1.0-release.x86.zip)  :package: [Gmail notifier 1.0-release (x64)](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v1.0-release/Gmail.notifier.1.0-release.x64.zip)
+
+#### Old versions
+
+You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/gmail-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and are not "production environment" ready. Recommanded for power users.
+
+
+Gallery
+-------
+Discover the application running on Windows 7 in the [image gallery](https://github.com/xavierfoucrier/gmail-notifier/blob/master/GALLERY.md). The application interface is planned to be change in the next main version: [User interface 2.0 #30](https://github.com/xavierfoucrier/gmail-notifier/issues/30).
 
 
 Updates
