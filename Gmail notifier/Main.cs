@@ -606,6 +606,9 @@ namespace notifier {
 				notifyIcon.Icon = Resources.normal;
 				notifyIcon.Text = translation.noMessage;
 
+				// restores the default tag
+				notifyIcon.Tag = null;
+
 				// disables the mark as read menu item
 				menuItemMarkAsRead.Enabled = false;
 			} catch (Exception exception) {
@@ -642,6 +645,9 @@ namespace notifier {
 
 			// sets the new timer interval depending on the user settings
 			timer.Interval = delay;
+
+			// restores the default tag
+			notifyIcon.Tag = null;
 
 			// updates the systray icon and text
 			if (delay != Settings.Default.TimerInterval) {
