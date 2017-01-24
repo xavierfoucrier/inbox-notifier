@@ -728,6 +728,10 @@ namespace notifier {
 		/// Manages the systray icon balloon click
 		/// </summary>
 		private void notifyIcon_BalloonTipClicked(object sender, EventArgs e) {
+			if ((Control.MouseButtons & MouseButtons.Right) == MouseButtons.Right) {
+				return;
+			}
+
 			notifyIconInteraction();
 		}
 
