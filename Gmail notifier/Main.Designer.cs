@@ -91,6 +91,7 @@
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.tabPageUpdate = new System.Windows.Forms.TabPage();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -127,6 +128,7 @@
 			this.tabControl.Controls.Add(this.tabPageAccount);
 			this.tabControl.Controls.Add(this.tabPageNotification);
 			this.tabControl.Controls.Add(this.tabPagePrivacy);
+			this.tabControl.Controls.Add(this.tabPageUpdate);
 			this.tabControl.Controls.Add(this.tabPageAbout);
 			resources.ApplyResources(this.tabControl, "tabControl");
 			this.tabControl.Name = "tabControl";
@@ -629,6 +631,12 @@
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
+			// tabPageUpdate
+			// 
+			resources.ApplyResources(this.tabPageUpdate, "tabPageUpdate");
+			this.tabPageUpdate.Name = "tabPageUpdate";
+			this.tabPageUpdate.UseVisualStyleBackColor = true;
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -742,6 +750,7 @@
 		private System.Windows.Forms.Timer timerReconnect;
 		private System.Windows.Forms.PictureBox pictureBoxPrivacyPreview;
 		private System.Windows.Forms.LinkLabel linkCheckForUpdate;
+		private System.Windows.Forms.TabPage tabPageUpdate;
 	}
 }
 

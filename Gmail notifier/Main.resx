@@ -1171,6 +1171,33 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;tabPagePrivacy.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="tabPageUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPageUpdate.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPageUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>532, 145</value>
+  </data>
+  <data name="tabPageUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tabPageUpdate.Text" xml:space="preserve">
+    <value>Mises à jour</value>
+  </data>
+  <data name="&gt;&gt;tabPageUpdate.Name" xml:space="preserve">
+    <value>tabPageUpdate</value>
+  </data>
+  <data name="&gt;&gt;tabPageUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageUpdate.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabPageUpdate.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="linkCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 38</value>
   </data>
@@ -1474,7 +1501,7 @@ Développé par Xavier Foucrier</value>
     <value>tabControl</value>
   </data>
   <data name="&gt;&gt;tabPageAbout.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 83</value>
