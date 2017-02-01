@@ -47,5 +47,8 @@
     <Setting Name="UpdatePeriod" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="UpdateControl" Type="System.DateTime" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -202,5 +202,13 @@ namespace notifier.Properties {
                 this["UpdatePeriod"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime UpdateControl {
+            get {
+                return ((global::System.DateTime)(this["UpdateControl"]));
+            }
+        }
     }
 }
