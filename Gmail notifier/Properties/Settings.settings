@@ -44,7 +44,7 @@
     <Setting Name="UpdateService" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="UpdatePeriod" Type="System.String" Scope="User">
+    <Setting Name="UpdatePeriod" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="UpdateControl" Type="System.DateTime" Scope="Application">
