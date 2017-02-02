@@ -194,9 +194,9 @@ namespace notifier.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public string UpdatePeriod {
+        public int UpdatePeriod {
             get {
-                return ((string)(this["UpdatePeriod"]));
+                return ((int)(this["UpdatePeriod"]));
             }
             set {
                 this["UpdatePeriod"] = value;
