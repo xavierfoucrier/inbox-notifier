@@ -185,6 +185,12 @@ namespace notifier {
 					break;
 			}
 
+			// displays the update period setting
+			fieldUpdatePeriod.SelectedIndex = Settings.Default.UpdatePeriod;
+
+			// displays the update control setting
+			labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
+
 			// displays the product version
 			string[] version = Application.ProductVersion.Split('.');
 			linkVersion.Text = version[0] + "." + version[1] + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "") + (version[3] != "0" ? "." + version[3] : "");
