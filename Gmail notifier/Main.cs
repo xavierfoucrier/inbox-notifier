@@ -26,7 +26,7 @@ namespace notifier {
 	public partial class Main : Form {
 
 		// privacy possibilities
-		private enum Privacy:int {
+		private enum Privacy : int {
 			None = 0,
 			Short = 1,
 			All = 2
