@@ -884,11 +884,26 @@ namespace notifier {
 		/// <summary>
 		/// Check for update
 		/// </summary>
+		private void buttonCheckForUpdate_Click(object sender, EventArgs e) {
+			checkForUpdate();
+		}
+
+		/// <summary>
+		/// Check for update
+		/// </summary>
 		private void linkCheckForUpdate_Click(object sender, EventArgs e) {
 			linkCheckForUpdate.Image = Resources.update_hourglass;
 			linkCheckForUpdate.Enabled = false;
 			Cursor.Current = DefaultCursor;
+			checkForUpdate();
+			linkCheckForUpdate.Enabled = true;
+			linkCheckForUpdate.Image = Resources.update_check;
+		}
 
+		/// <summary>
+		/// Connect to the repository and check if there is an update available
+		/// </summary>
+		private void checkForUpdate(bool verbose = true) {
 			try {
 
 				// gets the list of tags in the Github repository tags webpage
@@ -907,15 +922,14 @@ namespace notifier {
 							Process.Start(GITHUB_REPOSITORY + "/releases/" + tags[0]);
 						}
 					} else {
-						MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						if (verbose) {
+							MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						}
 					}
 				}
 			} catch (Exception) {
 				// nothing to catch
 			}
-
-			linkCheckForUpdate.Enabled = true;
-			linkCheckForUpdate.Image = Resources.update_check;
 		}
 	}
 }

@@ -457,7 +457,7 @@
 			resources.ApplyResources(this.buttonCheckForUpdate, "buttonCheckForUpdate");
 			this.buttonCheckForUpdate.Name = "buttonCheckForUpdate";
 			this.buttonCheckForUpdate.UseVisualStyleBackColor = true;
-			this.buttonCheckForUpdate.Click += new System.EventHandler(this.linkCheckForUpdate_Click);
+			this.buttonCheckForUpdate.Click += new System.EventHandler(this.buttonCheckForUpdate_Click);
 			// 
 			// labelUpdateControl
 			// 
