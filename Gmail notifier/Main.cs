@@ -32,6 +32,14 @@ namespace notifier {
 			All = 2
 		}
 
+		// update period possibilities
+		private enum Period : int {
+			Startup = 0,
+			Day = 1,
+			Week = 2,
+			Month = 3
+		}
+
 		// gmail api service
 		private GmailService service;
 
