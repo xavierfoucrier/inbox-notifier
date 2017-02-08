@@ -359,6 +359,30 @@ namespace notifier {
 				notifyIcon.Text = translation.sync;
 			}
 
+			// check for update, depending on the user settings
+			if (Settings.Default.UpdateService) {
+				switch (Settings.Default.UpdatePeriod) {
+					case (int)Period.Day:
+						if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(1)) {
+							checkForUpdate(false);
+						}
+
+						break;
+					case (int)Period.Week:
+						if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(7)) {
+							checkForUpdate(false);
+						}
+
+						break;
+					case (int)Period.Month:
+						if (DateTime.Now >= Settings.Default.UpdateControl.AddMonths(1)) {
+							checkForUpdate(false);
+						}
+
+						break;
+				}
+			}
+
 			try {
 
 				// manages the spam notification
