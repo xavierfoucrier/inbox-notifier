@@ -945,6 +945,9 @@ namespace notifier {
 
 			// stores the latest update datetime control
 			Settings.Default.UpdateControl = DateTime.Now;
+
+			// updates the update control label
+			labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
 		}
 	}
 }
