@@ -232,6 +232,11 @@ namespace notifier {
 			ToolTip tipLicense = new ToolTip();
 			tipLicense.SetToolTip(linkLicense, GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
 			tipLicense.IsBalloon = false;
+
+			// check for update, depending on the user settings
+			if (Settings.Default.UpdateService && Settings.Default.UpdatePeriod == (int)Period.Startup) {
+				checkForUpdate(false);
+			}
 		}
 
 		/// <summary>
