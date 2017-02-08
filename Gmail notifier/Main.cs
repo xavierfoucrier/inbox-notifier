@@ -543,6 +543,13 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Manages the UpdatePeriod user setting
+		/// </summary>
+		private void fieldUpdatePeriod_SelectedIndexChanged(object sender, EventArgs e) {
+			Settings.Default.UpdatePeriod = fieldUpdatePeriod.SelectedIndex;
+		}
+
+		/// <summary>
 		/// Opens the Github release section of the current build
 		/// </summary>
 		private void linkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {

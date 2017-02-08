@@ -487,6 +487,7 @@
             resources.GetString("fieldUpdatePeriod.Items3")});
 			resources.ApplyResources(this.fieldUpdatePeriod, "fieldUpdatePeriod");
 			this.fieldUpdatePeriod.Name = "fieldUpdatePeriod";
+			this.fieldUpdatePeriod.SelectedIndexChanged += new System.EventHandler(this.fieldUpdatePeriod_SelectedIndexChanged);
 			// 
 			// label7
 			// 
