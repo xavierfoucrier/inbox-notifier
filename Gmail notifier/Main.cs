@@ -942,6 +942,9 @@ namespace notifier {
 			} catch (Exception) {
 				// nothing to catch
 			}
+
+			// stores the latest update datetime control
+			Settings.Default.UpdateControl = DateTime.Now;
 		}
 	}
 }
