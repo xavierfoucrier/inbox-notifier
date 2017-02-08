@@ -203,12 +203,15 @@ namespace notifier.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("01/01/2017 12:00:00")]
         public global::System.DateTime UpdateControl {
             get {
                 return ((global::System.DateTime)(this["UpdateControl"]));
+            }
+            set {
+                this["UpdateControl"] = value;
             }
         }
     }
