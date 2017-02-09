@@ -282,6 +282,60 @@ nächsten Start der Anwendung.</value>
   <data name="tabPagePrivacy.Text" xml:space="preserve">
     <value>Vertraulichkeit</value>
   </data>
+  <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>424, 95</value>
+  </data>
+  <data name="buttonCheckForUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 23</value>
+  </data>
+  <data name="buttonCheckForUpdate.Text" xml:space="preserve">
+    <value>Jetzt prüfen</value>
+  </data>
+  <data name="labelUpdateControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 84</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Letzte Prüfung:</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items" xml:space="preserve">
+    <value>beim Start der Anwendung</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items1" xml:space="preserve">
+    <value>einmal pro Tag</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items2" xml:space="preserve">
+    <value>einmal pro Woche</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items3" xml:space="preserve">
+    <value>einmal pro Monat</value>
+  </data>
+  <data name="fieldUpdatePeriod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 55</value>
+  </data>
+  <data name="fieldUpdatePeriod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 21</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Prüffrist:</value>
+  </data>
+  <data name="fieldUpdateService.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 17</value>
+  </data>
+  <data name="fieldUpdateService.Text" xml:space="preserve">
+    <value>Aktivieren Sie die automatische Überprüfung von Updates</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Verhalten</value>
+  </data>
+  <data name="tabPageUpdate.Text" xml:space="preserve">
+    <value>Updates</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
     <value>44, 10</value>
