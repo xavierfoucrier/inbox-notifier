@@ -325,14 +325,14 @@ at the next application startup.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>40, 11</value>
+    <value>65, 11</value>
   </data>
   <data name="linkLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 30</value>
+    <value>226, 30</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
-    <value>©2016 All rights reserved
-Open Source, MIT License</value>
+    <value>©2016-2017. All rights reserved.
+Open Source, distributed under MIT License</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
     <value>37, 15</value>
