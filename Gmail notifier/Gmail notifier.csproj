@@ -149,14 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Languages\translation.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>translation.en.Designer.cs</LastGenOutput>
@@ -173,6 +168,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -206,67 +206,67 @@
     <None Include="Resources\header.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\normal.ico" />
+    <None Include="Resources\systray\normal.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mail-1.ico" />
+    <None Include="Resources\systray\mail-1.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mail-2.ico" />
+    <None Include="Resources\systray\mail-2.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mail-3.ico" />
+    <None Include="Resources\systray\mail-3.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mail-4.ico" />
+    <None Include="Resources\systray\mail-4.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mail-5.ico" />
+    <None Include="Resources\systray\mail-5.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mail-6.ico" />
+    <None Include="Resources\systray\mail-6.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mail-7.ico" />
+    <None Include="Resources\systray\mail-7.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mail-8.ico" />
+    <None Include="Resources\systray\mail-8.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mail-9.ico" />
+    <None Include="Resources\systray\mail-9.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mail-more.ico" />
+    <None Include="Resources\systray\mail-more.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sync.ico" />
+    <None Include="Resources\systray\sync.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\warning.ico" />
+    <None Include="Resources\systray\warning.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\spam.ico" />
+    <None Include="Resources\systray\spam.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\timeout.ico" />
+    <None Include="Resources\systray\timeout.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\information.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\privacy-all.png" />
+    <None Include="Resources\privacy\privacy-all.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\privacy-short.png" />
+    <None Include="Resources\privacy\privacy-short.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\privacy-none.png" />
+    <None Include="Resources\privacy\privacy-none.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\update-check.png" />
+    <None Include="Resources\update\update-check.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\update-hourglass.png" />
+    <None Include="Resources\update\update-hourglass.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
