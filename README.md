@@ -52,6 +52,11 @@ Contribute
 If you want to report a bug or if you just want to request for a new feature / improvement, you can simply use the **Github tracker**: please describe as much as possible the issue you encountered.
 
 
+Privacy Policy
+-------
+Discover the [privacy practices](https://github.com/xavierfoucrier/gmail-notifier/blob/master/PRIVACY.md) of the application and how we collect, use or share your data.
+
+
 License
 -------
 The project is developed under the **MIT** license:
