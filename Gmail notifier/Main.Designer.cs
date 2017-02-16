@@ -39,6 +39,8 @@
 			this.fieldMinimizeToSystray = new System.Windows.Forms.CheckBox();
 			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
 			this.tabPageAccount = new System.Windows.Forms.TabPage();
+			this.groupBox8 = new System.Windows.Forms.GroupBox();
+			this.label6 = new System.Windows.Forms.Label();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.labelTokenDelivery = new System.Windows.Forms.Label();
 			this.labelEmailAddress = new System.Windows.Forms.Label();
@@ -99,12 +101,19 @@
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.groupBox8 = new System.Windows.Forms.GroupBox();
+			this.label9 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.label16 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
+			this.label18 = new System.Windows.Forms.Label();
+			this.label19 = new System.Windows.Forms.Label();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.tabPageAccount.SuspendLayout();
+			this.groupBox8.SuspendLayout();
 			this.groupBox6.SuspendLayout();
 			this.tabPageNotification.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -239,6 +248,25 @@
 			resources.ApplyResources(this.tabPageAccount, "tabPageAccount");
 			this.tabPageAccount.Name = "tabPageAccount";
 			this.tabPageAccount.UseVisualStyleBackColor = true;
+			// 
+			// groupBox8
+			// 
+			this.groupBox8.Controls.Add(this.label19);
+			this.groupBox8.Controls.Add(this.label18);
+			this.groupBox8.Controls.Add(this.label17);
+			this.groupBox8.Controls.Add(this.label16);
+			this.groupBox8.Controls.Add(this.label15);
+			this.groupBox8.Controls.Add(this.label10);
+			this.groupBox8.Controls.Add(this.label9);
+			this.groupBox8.Controls.Add(this.label6);
+			resources.ApplyResources(this.groupBox8, "groupBox8");
+			this.groupBox8.Name = "groupBox8";
+			this.groupBox8.TabStop = false;
+			// 
+			// label6
+			// 
+			resources.ApplyResources(this.label6, "label6");
+			this.label6.Name = "label6";
 			// 
 			// groupBox6
 			// 
@@ -714,11 +742,40 @@
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
-			// groupBox8
+			// label9
 			// 
-			resources.ApplyResources(this.groupBox8, "groupBox8");
-			this.groupBox8.Name = "groupBox8";
-			this.groupBox8.TabStop = false;
+			resources.ApplyResources(this.label9, "label9");
+			this.label9.Name = "label9";
+			// 
+			// label10
+			// 
+			resources.ApplyResources(this.label10, "label10");
+			this.label10.Name = "label10";
+			// 
+			// label15
+			// 
+			resources.ApplyResources(this.label15, "label15");
+			this.label15.Name = "label15";
+			// 
+			// label16
+			// 
+			resources.ApplyResources(this.label16, "label16");
+			this.label16.Name = "label16";
+			// 
+			// label17
+			// 
+			resources.ApplyResources(this.label17, "label17");
+			this.label17.Name = "label17";
+			// 
+			// label18
+			// 
+			resources.ApplyResources(this.label18, "label18");
+			this.label18.Name = "label18";
+			// 
+			// label19
+			// 
+			resources.ApplyResources(this.label19, "label19");
+			this.label19.Name = "label19";
 			// 
 			// Main
 			// 
@@ -745,6 +802,8 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.tabPageAccount.ResumeLayout(false);
+			this.groupBox8.ResumeLayout(false);
+			this.groupBox8.PerformLayout();
 			this.groupBox6.ResumeLayout(false);
 			this.groupBox6.PerformLayout();
 			this.tabPageNotification.ResumeLayout(false);
@@ -845,6 +904,14 @@
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Button buttonCheckForUpdate;
 		private System.Windows.Forms.GroupBox groupBox8;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.Label label16;
+		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.Label label18;
 	}
 }
 
