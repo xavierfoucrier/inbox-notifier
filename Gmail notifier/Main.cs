@@ -327,6 +327,42 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Asynchronous method used to get account statistics
+		/// </summary>
+		private async void AsyncStatistics() {
+			try {
+				ListDraftsResponse drafts = await this.AsyncDrafts();
+				ListLabelsResponse label = await this.AsyncLabels();
+				
+				if (drafts != null) {
+					labelTotalDrafts.Text = drafts.Drafts.Count.ToString();
+				}
+
+				if (label != null) {
+					labelTotalLabels.Text = label.Labels.Count.ToString();
+				}
+			} catch (Exception) {
+				// nothing to catch
+			}
+		}
+
+		/// <summary>
+		/// Asynchronous task used to get the user drafts
+		/// </summary>
+		/// <returns>List of drafts</returns>
+		private async Task<ListDraftsResponse> AsyncDrafts() {
+			return await this.service.Users.Drafts.List("me").ExecuteAsync();
+		}
+
+		/// <summary>
+		/// Asynchronous task used to get the user labels
+		/// </summary>
+		/// <returns>List of labels</returns>
+		private async Task<ListLabelsResponse> AsyncLabels() {
+			return await this.service.Users.Labels.List("me").ExecuteAsync();
+		}
+
+		/// <summary>
 		/// Synchronizes the user inbox
 		/// </summary>
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
@@ -413,6 +449,11 @@ namespace notifier {
 
 				// gets the "inbox" label
 				this.inbox = this.service.Users.Labels.Get("me", "INBOX").Execute();
+
+				// displays the statistics
+				labelTotalUnreadMails.Text = this.inbox.ThreadsUnread.ToString();
+				labelTotalMails.Text = this.inbox.ThreadsTotal.ToString();
+				this.AsyncStatistics();
 
 				// exits the sync if the number of unread threads is the same as before
 				if (timertick && (this.inbox.ThreadsUnread == this.unreadthreads)) {
