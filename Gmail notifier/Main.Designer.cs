@@ -40,6 +40,13 @@
 			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
 			this.tabPageAccount = new System.Windows.Forms.TabPage();
 			this.groupBox8 = new System.Windows.Forms.GroupBox();
+			this.labelTotalLabels = new System.Windows.Forms.Label();
+			this.label18 = new System.Windows.Forms.Label();
+			this.labelTotalDrafts = new System.Windows.Forms.Label();
+			this.label16 = new System.Windows.Forms.Label();
+			this.labelTotalMails = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.labelTotalUnreadMails = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.labelTokenDelivery = new System.Windows.Forms.Label();
@@ -101,13 +108,6 @@
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.label9 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.label15 = new System.Windows.Forms.Label();
-			this.label16 = new System.Windows.Forms.Label();
-			this.label17 = new System.Windows.Forms.Label();
-			this.label18 = new System.Windows.Forms.Label();
-			this.label19 = new System.Windows.Forms.Label();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -251,17 +251,52 @@
 			// 
 			// groupBox8
 			// 
-			this.groupBox8.Controls.Add(this.label19);
+			this.groupBox8.Controls.Add(this.labelTotalLabels);
 			this.groupBox8.Controls.Add(this.label18);
-			this.groupBox8.Controls.Add(this.label17);
+			this.groupBox8.Controls.Add(this.labelTotalDrafts);
 			this.groupBox8.Controls.Add(this.label16);
-			this.groupBox8.Controls.Add(this.label15);
+			this.groupBox8.Controls.Add(this.labelTotalMails);
 			this.groupBox8.Controls.Add(this.label10);
-			this.groupBox8.Controls.Add(this.label9);
+			this.groupBox8.Controls.Add(this.labelTotalUnreadMails);
 			this.groupBox8.Controls.Add(this.label6);
 			resources.ApplyResources(this.groupBox8, "groupBox8");
 			this.groupBox8.Name = "groupBox8";
 			this.groupBox8.TabStop = false;
+			// 
+			// labelTotalLabels
+			// 
+			resources.ApplyResources(this.labelTotalLabels, "labelTotalLabels");
+			this.labelTotalLabels.Name = "labelTotalLabels";
+			// 
+			// label18
+			// 
+			resources.ApplyResources(this.label18, "label18");
+			this.label18.Name = "label18";
+			// 
+			// labelTotalDrafts
+			// 
+			resources.ApplyResources(this.labelTotalDrafts, "labelTotalDrafts");
+			this.labelTotalDrafts.Name = "labelTotalDrafts";
+			// 
+			// label16
+			// 
+			resources.ApplyResources(this.label16, "label16");
+			this.label16.Name = "label16";
+			// 
+			// labelTotalMails
+			// 
+			resources.ApplyResources(this.labelTotalMails, "labelTotalMails");
+			this.labelTotalMails.Name = "labelTotalMails";
+			// 
+			// label10
+			// 
+			resources.ApplyResources(this.label10, "label10");
+			this.label10.Name = "label10";
+			// 
+			// labelTotalUnreadMails
+			// 
+			resources.ApplyResources(this.labelTotalUnreadMails, "labelTotalUnreadMails");
+			this.labelTotalUnreadMails.Name = "labelTotalUnreadMails";
 			// 
 			// label6
 			// 
@@ -742,41 +777,6 @@
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
-			// label9
-			// 
-			resources.ApplyResources(this.label9, "label9");
-			this.label9.Name = "label9";
-			// 
-			// label10
-			// 
-			resources.ApplyResources(this.label10, "label10");
-			this.label10.Name = "label10";
-			// 
-			// label15
-			// 
-			resources.ApplyResources(this.label15, "label15");
-			this.label15.Name = "label15";
-			// 
-			// label16
-			// 
-			resources.ApplyResources(this.label16, "label16");
-			this.label16.Name = "label16";
-			// 
-			// label17
-			// 
-			resources.ApplyResources(this.label17, "label17");
-			this.label17.Name = "label17";
-			// 
-			// label18
-			// 
-			resources.ApplyResources(this.label18, "label18");
-			this.label18.Name = "label18";
-			// 
-			// label19
-			// 
-			resources.ApplyResources(this.label19, "label19");
-			this.label19.Name = "label19";
-			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -905,12 +905,12 @@
 		private System.Windows.Forms.Button buttonCheckForUpdate;
 		private System.Windows.Forms.GroupBox groupBox8;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.Label labelTotalUnreadMails;
+		private System.Windows.Forms.Label labelTotalMails;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.Label labelTotalDrafts;
 		private System.Windows.Forms.Label label16;
-		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.Label labelTotalLabels;
 		private System.Windows.Forms.Label label18;
 	}
 }

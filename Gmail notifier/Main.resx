@@ -475,37 +475,37 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;tabPageGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="labelTotalLabels.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
-  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="labelTotalLabels.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labelTotalLabels.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 97</value>
   </data>
-  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="labelTotalLabels.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 26</value>
   </data>
-  <data name="label19.TabIndex" type="System.Int32, mscorlib">
+  <data name="labelTotalLabels.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="label19.Text" xml:space="preserve">
-    <value>-</value>
+  <data name="labelTotalLabels.Text" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="label19.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="labelTotalLabels.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
+  <data name="&gt;&gt;labelTotalLabels.Name" xml:space="preserve">
+    <value>labelTotalLabels</value>
   </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalLabels.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalLabels.Parent" xml:space="preserve">
     <value>groupBox8</value>
   </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalLabels.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
@@ -538,37 +538,37 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="labelTotalDrafts.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
-  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="labelTotalDrafts.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labelTotalDrafts.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 71</value>
   </data>
-  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="labelTotalDrafts.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 26</value>
   </data>
-  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+  <data name="labelTotalDrafts.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>-</value>
+  <data name="labelTotalDrafts.Text" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="label17.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="labelTotalDrafts.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
+  <data name="&gt;&gt;labelTotalDrafts.Name" xml:space="preserve">
+    <value>labelTotalDrafts</value>
   </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalDrafts.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalDrafts.Parent" xml:space="preserve">
     <value>groupBox8</value>
   </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalDrafts.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
@@ -601,37 +601,37 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="labelTotalMails.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
-  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="labelTotalMails.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labelTotalMails.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 45</value>
   </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="labelTotalMails.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 26</value>
   </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+  <data name="labelTotalMails.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>-</value>
+  <data name="labelTotalMails.Text" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="label15.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="labelTotalMails.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
+  <data name="&gt;&gt;labelTotalMails.Name" xml:space="preserve">
+    <value>labelTotalMails</value>
   </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalMails.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalMails.Parent" xml:space="preserve">
     <value>groupBox8</value>
   </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalMails.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
@@ -644,13 +644,13 @@ prochain démarrage de l'application.</value>
     <value>72, 55</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>155, 13</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>mails reçus</value>
+    <value>mails dans la boite de réception</value>
   </data>
   <data name="&gt;&gt;label10.Name" xml:space="preserve">
     <value>label10</value>
@@ -664,37 +664,37 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="labelTotalUnreadMails.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="labelTotalUnreadMails.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labelTotalUnreadMails.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 19</value>
   </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="labelTotalUnreadMails.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 26</value>
   </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+  <data name="labelTotalUnreadMails.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>-</value>
+  <data name="labelTotalUnreadMails.Text" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="label9.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="labelTotalUnreadMails.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
+  <data name="&gt;&gt;labelTotalUnreadMails.Name" xml:space="preserve">
+    <value>labelTotalUnreadMails</value>
   </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalUnreadMails.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalUnreadMails.Parent" xml:space="preserve">
     <value>groupBox8</value>
   </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelTotalUnreadMails.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
