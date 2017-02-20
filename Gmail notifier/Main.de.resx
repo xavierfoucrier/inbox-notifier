@@ -180,6 +180,33 @@ nächsten Start der Anwendung.</value>
   <data name="tabPageAccount.Text" xml:space="preserve">
     <value>Konto</value>
   </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Statistiken</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Etikett(en)</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Entwürfe</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 13</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>mail(s) im Posteingang</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 13</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>ungelesene mail(s)</value>
+  </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>Beglaubigung</value>
   </data>
