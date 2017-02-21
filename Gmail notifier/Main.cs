@@ -332,14 +332,14 @@ namespace notifier {
 		private async void AsyncStatistics() {
 			try {
 				ListDraftsResponse drafts = await this.AsyncDrafts();
-				ListLabelsResponse label = await this.AsyncLabels();
-				
-				if (drafts != null) {
+				ListLabelsResponse labels = await this.AsyncLabels();
+
+				if (drafts.Drafts != null) {
 					labelTotalDrafts.Text = drafts.Drafts.Count.ToString();
 				}
 
-				if (label != null) {
-					labelTotalLabels.Text = label.Labels.Count.ToString();
+				if (labels.Labels != null) {
+					labelTotalLabels.Text = labels.Labels.Count.ToString();
 				}
 			} catch (Exception) {
 				// nothing to catch
