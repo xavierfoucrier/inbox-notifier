@@ -45,7 +45,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="UpdatePeriod" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="UpdateControl" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">01/01/2017 12:00:00</Value>

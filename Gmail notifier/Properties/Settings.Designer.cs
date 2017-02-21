@@ -193,7 +193,7 @@ namespace notifier.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
         public int UpdatePeriod {
             get {
                 return ((int)(this["UpdatePeriod"]));
