@@ -424,6 +424,11 @@ namespace notifier {
 				// manages the spam notification
 				if (Settings.Default.SpamNotification) {
 
+					// exits if a spam is already detected
+					if (timertick && notifyIcon.Tag != null && notifyIcon.Tag.ToString() == "#spam") {
+						return;
+					}
+
 					// gets the "spam" label
 					Google.Apis.Gmail.v1.Data.Label spam = this.service.Users.Labels.Get("me", "SPAM").Execute();
 
