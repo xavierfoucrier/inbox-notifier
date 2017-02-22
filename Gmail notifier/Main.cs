@@ -670,6 +670,19 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Closes the preferences when the Escape key is pressed
+		/// </summary>
+		private void Main_KeyUp(object sender, KeyEventArgs e) {
+			if (e.KeyCode == Keys.Escape) {
+				labelSettingsSaved.Visible = false;
+				WindowState = FormWindowState.Minimized;
+				ShowInTaskbar = false;
+				Visible = false;
+				return;
+			}
+		}
+
+		/// <summary>
 		/// Manages the context menu Synchronize item
 		/// </summary>
 		private void menuItemSynchronize_Click(object sender, EventArgs e) {
