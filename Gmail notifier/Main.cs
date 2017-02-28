@@ -702,13 +702,16 @@ namespace notifier {
 				// gets all unread threads
 				UsersResource.ThreadsResource.ListRequest threads = this.service.Users.Threads.List("me");
 				threads.LabelIds = "UNREAD";
-				IList<Google.Apis.Gmail.v1.Data.Thread> unread = threads.Execute().Threads;
+				ListThreadsResponse list = threads.Execute();
+				IList<Google.Apis.Gmail.v1.Data.Thread> unread = list.Threads;
 
 				// loops through all unread threads and removes the "unread" label for each one
-				foreach (Google.Apis.Gmail.v1.Data.Thread thread in unread) {
-					ModifyThreadRequest request = new ModifyThreadRequest();
-					request.RemoveLabelIds = new List<string>() { "UNREAD" };
-					this.service.Users.Threads.Modify(request, "me", thread.Id).Execute();
+				if (unread != null && unread.Count > 0) {
+					foreach (Google.Apis.Gmail.v1.Data.Thread thread in unread) {
+						ModifyThreadRequest request = new ModifyThreadRequest();
+						request.RemoveLabelIds = new List<string>() { "UNREAD" };
+						this.service.Users.Threads.Modify(request, "me", thread.Id).Execute();
+					}
 				}
 
 				// restores the default systray icon and text
