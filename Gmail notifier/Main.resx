@@ -515,7 +515,7 @@ prochain démarrage de l'application.</value>
     <value>NoControl</value>
   </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 107</value>
+    <value>72, 105</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -578,7 +578,7 @@ prochain démarrage de l'application.</value>
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 81</value>
+    <value>72, 79</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -641,7 +641,7 @@ prochain démarrage de l'application.</value>
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 55</value>
+    <value>72, 53</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 13</value>
@@ -704,7 +704,7 @@ prochain démarrage de l'application.</value>
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 29</value>
+    <value>72, 27</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
