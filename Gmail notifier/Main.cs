@@ -208,7 +208,7 @@ namespace notifier {
 
 			// displays a tooltip for the product version
 			ToolTip tipTag = new ToolTip();
-			tipTag.SetToolTip(linkVersion, GITHUB_REPOSITORY + "/releases/tag/v" + linkVersion.Text.Replace(" ", "-"));
+			tipTag.SetToolTip(linkVersion, GITHUB_REPOSITORY + "/releases/tag/v" + linkVersion.Text);
 			tipTag.ToolTipTitle = translation.tipReleaseNotes;
 			tipTag.ToolTipIcon = ToolTipIcon.Info;
 			tipTag.IsBalloon = false;
@@ -628,7 +628,7 @@ namespace notifier {
 		/// Opens the Github release section of the current build
 		/// </summary>
 		private void linkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start(GITHUB_REPOSITORY + "/releases/tag/v" + linkVersion.Text.Replace(" ", "-"));
+			Process.Start(GITHUB_REPOSITORY + "/releases/tag/v" + linkVersion.Text);
 		}
 
 		/// <summary>
@@ -1012,7 +1012,7 @@ namespace notifier {
 					List<string> tags = collection.Select(p => p.InnerText).ToList();
 
 					// the current version tag is not at the top of the list
-					if (tags.IndexOf("v" + linkVersion.Text.Replace(" ", "-")) > 0) {
+					if (tags.IndexOf("v" + linkVersion.Text) > 0) {
 						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
 						// redirects the user to the Github repository releases webpage
