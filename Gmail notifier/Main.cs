@@ -1019,10 +1019,8 @@ namespace notifier {
 						if (dialog == DialogResult.Yes) {
 							Process.Start(GITHUB_REPOSITORY + "/releases/" + tags[0]);
 						}
-					} else {
-						if (verbose) {
-							MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-						}
+					} else if (verbose) {
+						MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
 				}
 			} catch (Exception) {
