@@ -58,6 +58,9 @@ namespace notifier {
 		// local application data folder name
 		private string appdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
 
+		// version number
+		private string version = "";
+
 		// number of maximum automatic reconnection
 		private const int MAX_AUTO_RECONNECT = 3;
 
@@ -84,6 +87,10 @@ namespace notifier {
 
 			// hides the form by default
 			Visible = false;
+
+			// initializes the application version number
+			string[] version = Application.ProductVersion.Split('.');
+			this.version = "v" + version[0] + "." + version[1] + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "") + (version[3] != "0" ? "." + version[3] : "");
 
 			// displays a systray notification on first load
 			if (Settings.Default.FirstLoad && !Directory.Exists(appdata)) {
@@ -200,15 +207,14 @@ namespace notifier {
 			labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
 
 			// displays the product version
-			string[] version = Application.ProductVersion.Split('.');
-			linkVersion.Text = version[0] + "." + version[1] + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "") + (version[3] != "0" ? "." + version[3] : "");
+			linkVersion.Text = this.version.Substring(1);
 
 			// positioning the check for update link
 			linkCheckForUpdate.Left = linkVersion.Right + 2;
 
 			// displays a tooltip for the product version
 			ToolTip tipTag = new ToolTip();
-			tipTag.SetToolTip(linkVersion, GITHUB_REPOSITORY + "/releases/tag/v" + linkVersion.Text);
+			tipTag.SetToolTip(linkVersion, GITHUB_REPOSITORY + "/releases/tag/" + this.version);
 			tipTag.ToolTipTitle = translation.tipReleaseNotes;
 			tipTag.ToolTipIcon = ToolTipIcon.Info;
 			tipTag.IsBalloon = false;
@@ -628,7 +634,7 @@ namespace notifier {
 		/// Opens the Github release section of the current build
 		/// </summary>
 		private void linkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start(GITHUB_REPOSITORY + "/releases/tag/v" + linkVersion.Text);
+			Process.Start(GITHUB_REPOSITORY + "/releases/tag/" + this.version);
 		}
 
 		/// <summary>
@@ -1012,7 +1018,7 @@ namespace notifier {
 					List<string> tags = collection.Select(p => p.InnerText).ToList();
 
 					// the current version tag is not in the list
-					if (tags.IndexOf("v" + linkVersion.Text) == -1) {
+					if (tags.IndexOf(this.version) == -1) {
 						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
 						// redirects the user to the Github repository releases webpage
