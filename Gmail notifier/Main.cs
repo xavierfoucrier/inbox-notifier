@@ -303,7 +303,7 @@ namespace notifier {
 
 				// displays the user email address
 				labelEmailAddress.Text = this.service.Users.GetProfile("me").Execute().EmailAddress;
-				labelTokenDelivery.Text = this.credential.Token.Issued.ToString();
+				labelTokenDelivery.Text = this.credential.Token.IssuedUtc.ToString();
 			} catch(Exception) {
 
 				// exits the application if the google api token file doesn't exists
