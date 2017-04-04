@@ -85,6 +85,12 @@ namespace notifier {
 		/// </summary>
 		private void Main_Load(object sender, EventArgs e) {
 
+			// upgrades the user configuration if necessary
+			if (Settings.Default.UpdateRequired) {
+				Settings.Default.Upgrade();
+				Settings.Default.Save();
+			}
+
 			// hides the form by default
 			Visible = false;
 
