@@ -1023,8 +1023,8 @@ namespace notifier {
 				if (collection != null && collection.Count > 0) {
 					List<string> tags = collection.Select(p => p.InnerText).ToList();
 
-					// the current version tag is not in the list
-					if (tags.IndexOf(this.version) == -1) {
+					// the current version tag is not at the top of the list
+					if (tags.First() != this.version) {
 						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
 						// redirects the user to the Github repository releases webpage
