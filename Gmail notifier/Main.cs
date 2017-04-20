@@ -957,11 +957,10 @@ namespace notifier {
 				// increases the number of reconnection attempt
 				this.reconnect++;
 
-				// displays a balloon tip one time in the systray with the detailed reconnection message, depending on the user notification setting
-				if (this.reconnect == 1 && Settings.Default.AttemptToReconnectNotification) {
+				// displays the last reconnection message on the icon
+				if (this.reconnect == 1) {
 					notifyIcon.Icon = Resources.warning;
 					notifyIcon.Text = translation.reconnectAttempt;
-					notifyIcon.ShowBalloonTip(450, translation.reconnectAttempt, translation.reconnectNow, ToolTipIcon.Warning);
 				}
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
@@ -970,12 +969,9 @@ namespace notifier {
 					timer.Enabled = true;
 					this.reconnect = 1;
 
-					// displays a balloon tip in the systray with the last detailed reconnection message, depending on the user notification setting
-					if (Settings.Default.AttemptToReconnectNotification) {
-						notifyIcon.Icon = Resources.warning;
-						notifyIcon.Text = translation.reconnectFailed;
-						notifyIcon.ShowBalloonTip(450, translation.reconnectFailed, translation.reconnectNextTime, ToolTipIcon.Warning);
-					}
+					// displays the last reconnection message on the icon
+					notifyIcon.Icon = Resources.warning;
+					notifyIcon.Text = translation.reconnectFailed;
 				}
 			} else {
 

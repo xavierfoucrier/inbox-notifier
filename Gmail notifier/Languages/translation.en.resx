@@ -248,12 +248,6 @@ Do you want to download it now?</value>
   <data name="reconnectFailed" xml:space="preserve">
     <value>Reconnection failed</value>
   </data>
-  <data name="reconnectNextTime" xml:space="preserve">
-    <value>You are still not connected to the Internet: the service will be restored as soon as you are connected to the Internet again.</value>
-  </data>
-  <data name="reconnectNow" xml:space="preserve">
-    <value>You are no longer connected to the Internet: the application tries to reconnect to your inbox.</value>
-  </data>
   <data name="sync" xml:space="preserve">
     <value>Syncing...</value>
   </data>

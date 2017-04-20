@@ -432,24 +432,6 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous n&apos;êtes toujours pas connecté à Internet : le service sera rétabli dès que vous serez à nouveau connecté à Internet..
-        /// </summary>
-        internal static string reconnectNextTime {
-            get {
-                return ResourceManager.GetString("reconnectNextTime", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous n&apos;êtes plus connecté à Internet : l&apos;application tente de se reconnecter à votre boîte de réception..
-        /// </summary>
-        internal static string reconnectNow {
-            get {
-                return ResourceManager.GetString("reconnectNow", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Synchronisation en cours ....
         /// </summary>
         internal static string sync {

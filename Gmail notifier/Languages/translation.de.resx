@@ -248,12 +248,6 @@ Möchten Sie sie jetzt herunterladen?</value>
   <data name="reconnectFailed" xml:space="preserve">
     <value>Wiederverbindung möglich</value>
   </data>
-  <data name="reconnectNextTime" xml:space="preserve">
-    <value>Sie sind immer noch nicht mit dem Internet verbunden ist: der Dienst wieder hergestellt wird, sobald Sie mit dem Internet wieder angeschlossen werden.</value>
-  </data>
-  <data name="reconnectNow" xml:space="preserve">
-    <value>Sie sind mit dem Internet verbunden: die Anwendung versucht, in Ihren Posteingang zu verbinden.</value>
-  </data>
   <data name="sync" xml:space="preserve">
     <value>Synchronisierung läuft ...</value>
   </data>
