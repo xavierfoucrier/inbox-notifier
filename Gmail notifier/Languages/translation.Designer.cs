@@ -211,15 +211,6 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Affiche une notification lorsque l&apos;application n&apos;arrive plus à communiquer avec le réseau.
-        /// </summary>
-        internal static string helpNetworkConnectivityNotification {
-            get {
-                return ResourceManager.GetString("helpNetworkConnectivityNotification", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Délai de synchronisation de la boite de réception.
         /// </summary>
         internal static string helpNumericDelay {

@@ -171,9 +171,6 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   <data name="helpMessageNotification" xml:space="preserve">
     <value>Zeigen Sie eine Benachrichtigung, wenn neue Nachrichten</value>
   </data>
-  <data name="helpNetworkConnectivityNotification" xml:space="preserve">
-    <value>Zeigen Sie eine Benachrichtigung, wenn die Anwendung kurz läuft mit dem Netzwerk zu kommunizieren</value>
-  </data>
   <data name="helpNumericDelay" xml:space="preserve">
     <value>Zeitverzögerung den Posteingang</value>
   </data>

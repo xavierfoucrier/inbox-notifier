@@ -171,9 +171,6 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   <data name="helpMessageNotification" xml:space="preserve">
     <value>Affiche une notification lors de la réception de nouveaux messages</value>
   </data>
-  <data name="helpNetworkConnectivityNotification" xml:space="preserve">
-    <value>Affiche une notification lorsque l'application n'arrive plus à communiquer avec le réseau</value>
-  </data>
   <data name="helpNumericDelay" xml:space="preserve">
     <value>Délai de synchronisation de la boite de réception</value>
   </data>

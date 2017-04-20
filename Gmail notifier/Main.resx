@@ -958,38 +958,8 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;tabPageAccount.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="fieldNetworkConnectivityNotification.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="fieldNetworkConnectivityNotification.Enabled" type="System.Boolean, mscorlib">
+  <data name="groupBox3.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="fieldNetworkConnectivityNotification.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="fieldNetworkConnectivityNotification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 25</value>
-  </data>
-  <data name="fieldNetworkConnectivityNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 17</value>
-  </data>
-  <data name="fieldNetworkConnectivityNotification.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="fieldNetworkConnectivityNotification.Text" xml:space="preserve">
-    <value>Perte de connectivité réseau</value>
-  </data>
-  <data name="&gt;&gt;fieldNetworkConnectivityNotification.Name" xml:space="preserve">
-    <value>fieldNetworkConnectivityNotification</value>
-  </data>
-  <data name="&gt;&gt;fieldNetworkConnectivityNotification.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fieldNetworkConnectivityNotification.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;fieldNetworkConnectivityNotification.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>270, 6</value>

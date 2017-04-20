@@ -56,7 +56,6 @@
 			this.buttonGmailDisconnect = new System.Windows.Forms.Button();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.fieldNetworkConnectivityNotification = new System.Windows.Forms.CheckBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
 			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
@@ -115,7 +114,6 @@
 			this.groupBox8.SuspendLayout();
 			this.groupBox6.SuspendLayout();
 			this.tabPageNotification.SuspendLayout();
-			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.tabPagePrivacy.SuspendLayout();
@@ -352,17 +350,9 @@
 			// 
 			// groupBox3
 			// 
-			this.groupBox3.Controls.Add(this.fieldNetworkConnectivityNotification);
 			resources.ApplyResources(this.groupBox3, "groupBox3");
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
-			// 
-			// fieldNetworkConnectivityNotification
-			// 
-			resources.ApplyResources(this.fieldNetworkConnectivityNotification, "fieldNetworkConnectivityNotification");
-			this.fieldNetworkConnectivityNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "NetworkConnectivityNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldNetworkConnectivityNotification.Name = "fieldNetworkConnectivityNotification";
-			this.fieldNetworkConnectivityNotification.UseVisualStyleBackColor = true;
 			// 
 			// groupBox2
 			// 
@@ -798,8 +788,6 @@
 			this.groupBox6.ResumeLayout(false);
 			this.groupBox6.PerformLayout();
 			this.tabPageNotification.ResumeLayout(false);
-			this.groupBox3.ResumeLayout(false);
-			this.groupBox3.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).EndInit();
@@ -860,7 +848,6 @@
 		private System.Windows.Forms.NumericUpDown fieldNumericDelay;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.CheckBox fieldMessageNotification;
-		private System.Windows.Forms.CheckBox fieldNetworkConnectivityNotification;
 		private System.Windows.Forms.TabPage tabPagePrivacy;
 		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.RadioButton fieldPrivacyNotificationShort;
