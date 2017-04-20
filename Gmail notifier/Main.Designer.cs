@@ -55,7 +55,6 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.buttonGmailDisconnect = new System.Windows.Forms.Button();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
-			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
 			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
@@ -342,17 +341,10 @@
 			// 
 			// tabPageNotification
 			// 
-			this.tabPageNotification.Controls.Add(this.groupBox3);
 			this.tabPageNotification.Controls.Add(this.groupBox2);
 			resources.ApplyResources(this.tabPageNotification, "tabPageNotification");
 			this.tabPageNotification.Name = "tabPageNotification";
 			this.tabPageNotification.UseVisualStyleBackColor = true;
-			// 
-			// groupBox3
-			// 
-			resources.ApplyResources(this.groupBox3, "groupBox3");
-			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.TabStop = false;
 			// 
 			// groupBox2
 			// 
@@ -846,7 +838,6 @@
 		private System.Windows.Forms.CheckBox fieldAudioNotification;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.NumericUpDown fieldNumericDelay;
-		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.CheckBox fieldMessageNotification;
 		private System.Windows.Forms.TabPage tabPagePrivacy;
 		private System.Windows.Forms.GroupBox groupBox4;
