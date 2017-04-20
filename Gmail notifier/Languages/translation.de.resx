@@ -215,18 +215,6 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
 
 Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
   </data>
-  <data name="networkConnectivityLost" xml:space="preserve">
-    <value>Es ist kein Netzwerk derzeit verfügbar sind, sind Sie wahrscheinlich nicht mit dem Internet verbunden ist. Dienst wird so schnell wiederhergestellt werden, wie Sie mit dem Internet wieder angeschlossen werden.</value>
-  </data>
-  <data name="networkConnectivityRestored" xml:space="preserve">
-    <value>Die Netzwerkverbindung wiederhergestellt wurde: Sie sind wieder mit dem Internet verbunden. Der Posteingang wurde automatisch synchronisiert.</value>
-  </data>
-  <data name="networkLost" xml:space="preserve">
-    <value>Netzwerkfehler</value>
-  </data>
-  <data name="networkRestored" xml:space="preserve">
-    <value>Anschließen an das Netzwerk wiederhergestellt</value>
-  </data>
   <data name="newUnreadMessage" xml:space="preserve">
     <value>Doppelklicken Sie auf das Symbol Posteingang zugreifen.</value>
   </data>

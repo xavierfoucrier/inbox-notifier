@@ -215,18 +215,6 @@ Do you really want to disconnect your Gmail account and restart the application 
 
 This option is not enabled on this type of application.</value>
   </data>
-  <data name="networkConnectivityLost" xml:space="preserve">
-    <value>No network is currently available, you're probably not connected to the Internet. Service will be restored as soon as you will be reconnected to the Internet.</value>
-  </data>
-  <data name="networkConnectivityRestored" xml:space="preserve">
-    <value>The network connection has been established: you are now connected to the Internet. The inbox has been automatically synchronized.</value>
-  </data>
-  <data name="networkLost" xml:space="preserve">
-    <value>Network error</value>
-  </data>
-  <data name="networkRestored" xml:space="preserve">
-    <value>Network connectivity restored</value>
-  </data>
   <data name="newUnreadMessage" xml:space="preserve">
     <value>Double-click the icon to access your inbox.</value>
   </data>

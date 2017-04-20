@@ -215,18 +215,6 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
 
 Cette option n'est pas activée sur ce type d'application.</value>
   </data>
-  <data name="networkConnectivityLost" xml:space="preserve">
-    <value>Aucun réseau n'est actuellement disponible, vous n'êtes probablement pas connecté à Internet. Le service sera rétabli dès que vous serez à nouveau connecté à Internet.</value>
-  </data>
-  <data name="networkConnectivityRestored" xml:space="preserve">
-    <value>La connexion au réseau a été rétablie : vous êtes de nouveau connecté à Internet. La boite de réception a été automatiquement synchronisée.</value>
-  </data>
-  <data name="networkLost" xml:space="preserve">
-    <value>Erreur réseau</value>
-  </data>
-  <data name="networkRestored" xml:space="preserve">
-    <value>Connexion au réseau rétablie</value>
-  </data>
   <data name="newUnreadMessage" xml:space="preserve">
     <value>Double-cliquez sur l'icône pour accéder à votre boîte de réception.</value>
   </data>

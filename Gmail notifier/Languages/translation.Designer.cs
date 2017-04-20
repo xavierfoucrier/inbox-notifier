@@ -339,42 +339,6 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Aucun réseau n&apos;est actuellement disponible, vous n&apos;êtes probablement pas connecté à Internet. Le service sera rétabli dès que vous serez à nouveau connecté à Internet..
-        /// </summary>
-        internal static string networkConnectivityLost {
-            get {
-                return ResourceManager.GetString("networkConnectivityLost", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à La connexion au réseau a été rétablie : vous êtes de nouveau connecté à Internet. La boite de réception a été automatiquement synchronisée..
-        /// </summary>
-        internal static string networkConnectivityRestored {
-            get {
-                return ResourceManager.GetString("networkConnectivityRestored", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur réseau.
-        /// </summary>
-        internal static string networkLost {
-            get {
-                return ResourceManager.GetString("networkLost", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Connexion au réseau rétablie.
-        /// </summary>
-        internal static string networkRestored {
-            get {
-                return ResourceManager.GetString("networkRestored", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Double-cliquez sur l&apos;icône pour accéder à votre boîte de réception..
         /// </summary>
         internal static string newUnreadMessage {

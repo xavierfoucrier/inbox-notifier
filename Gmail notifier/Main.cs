@@ -123,7 +123,6 @@ namespace notifier {
 			help.SetHelpString(fieldSpamNotification, translation.helpSpamNotification);
 			help.SetHelpString(fieldNumericDelay, translation.helpNumericDelay);
 			help.SetHelpString(fieldStepDelay, translation.helpStepDelay);
-			help.SetHelpString(fieldNetworkConnectivityNotification, translation.helpNetworkConnectivityNotification);
 			help.SetHelpString(fieldPrivacyNotificationNone, translation.helpPrivacyNotificationNone);
 			help.SetHelpString(fieldPrivacyNotificationShort, translation.helpPrivacyNotificationShort);
 			help.SetHelpString(fieldPrivacyNotificationAll, translation.helpPrivacyNotificationAll);
@@ -140,17 +139,8 @@ namespace notifier {
 				labelSettingsSaved.Visible = true;
 			});
 
-			// binds the "NetworkAvailabilityChanged" event to automatically display a notification about network connectivity, depending on the user settings
+			// binds the "NetworkAvailabilityChanged" event to automatically sync the inbox when a network is available
 			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object o, NetworkAvailabilityEventArgs target) => {
-
-				// checks for available networks
-				if (Settings.Default.NetworkConnectivityNotification && !NetworkInterface.GetIsNetworkAvailable()) {
-					notifyIcon.Icon = Resources.warning;
-					notifyIcon.Text = translation.networkLost;
-					notifyIcon.ShowBalloonTip(450, translation.networkLost, translation.networkConnectivityLost, ToolTipIcon.Warning);
-
-					return;
-				}
 
 				// loops through all network interface to check network connectivity
 				foreach (NetworkInterface network in NetworkInterface.GetAllNetworkInterfaces()) {
@@ -168,11 +158,6 @@ namespace notifier {
 					// syncs the inbox when a network interface is available
 					this.SyncInbox();
 					break;
-				}
-
-				// displays a notification to indicate that the network connectivity has been restored
-				if (Settings.Default.NetworkConnectivityNotification) {
-					notifyIcon.ShowBalloonTip(450, translation.networkRestored, translation.networkConnectivityRestored, ToolTipIcon.Info);
 				}
 			});
 
