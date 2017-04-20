@@ -360,7 +360,6 @@
 			// fieldNetworkConnectivityNotification
 			// 
 			resources.ApplyResources(this.fieldNetworkConnectivityNotification, "fieldNetworkConnectivityNotification");
-			this.fieldNetworkConnectivityNotification.Checked = global::notifier.Properties.Settings.Default.NetworkConnectivityNotification;
 			this.fieldNetworkConnectivityNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "NetworkConnectivityNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldNetworkConnectivityNotification.Name = "fieldNetworkConnectivityNotification";
 			this.fieldNetworkConnectivityNotification.UseVisualStyleBackColor = true;

@@ -23,9 +23,6 @@
     <Setting Name="SpamNotification" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="NetworkConnectivityNotification" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="PrivacyNotification" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
