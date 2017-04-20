@@ -124,7 +124,6 @@ namespace notifier {
 			help.SetHelpString(fieldNumericDelay, translation.helpNumericDelay);
 			help.SetHelpString(fieldStepDelay, translation.helpStepDelay);
 			help.SetHelpString(fieldNetworkConnectivityNotification, translation.helpNetworkConnectivityNotification);
-			help.SetHelpString(fieldAttemptToReconnectNotification, translation.helpAttemptToReconnectNotification);
 			help.SetHelpString(fieldPrivacyNotificationNone, translation.helpPrivacyNotificationNone);
 			help.SetHelpString(fieldPrivacyNotificationShort, translation.helpPrivacyNotificationShort);
 			help.SetHelpString(fieldPrivacyNotificationAll, translation.helpPrivacyNotificationAll);

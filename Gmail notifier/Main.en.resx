@@ -215,12 +215,6 @@ at the next application startup.</value>
   <data name="tabPageAccount.Text" xml:space="preserve">
     <value>Account</value>
   </data>
-  <data name="fieldAttemptToReconnectNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 17</value>
-  </data>
-  <data name="fieldAttemptToReconnectNotification.Text" xml:space="preserve">
-    <value>Attempt to reconnect notification</value>
-  </data>
   <data name="fieldNetworkConnectivityNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 17</value>
   </data>

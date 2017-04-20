@@ -237,12 +237,6 @@ nächsten Start der Anwendung.</value>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Netzwerk</value>
   </data>
-  <data name="fieldAttemptToReconnectNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 17</value>
-  </data>
-  <data name="fieldAttemptToReconnectNotification.Text" xml:space="preserve">
-    <value>Automatische Wiederversuch</value>
-  </data>
   <data name="fieldNetworkConnectivityNotification.Text" xml:space="preserve">
     <value>Verlust der Netzkonnektivität</value>
   </data>
