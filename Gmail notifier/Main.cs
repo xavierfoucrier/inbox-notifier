@@ -102,7 +102,7 @@ namespace notifier {
 			if (Settings.Default.FirstLoad && !Directory.Exists(appdata)) {
 				notifyIcon.ShowBalloonTip(7000, translation.welcome, translation.firstLoad, ToolTipIcon.Info);
 
-				// switchs the first load state
+				// switches the first load state
 				Settings.Default.FirstLoad = false;
 				Settings.Default.Save();
 
