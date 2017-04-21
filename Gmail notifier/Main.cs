@@ -88,6 +88,9 @@ namespace notifier {
 			// upgrades the user configuration if necessary
 			if (Settings.Default.UpdateRequired) {
 				Settings.Default.Upgrade();
+
+				// switches the update required state
+				Settings.Default.UpdateRequired = false;
 				Settings.Default.Save();
 			}
 
