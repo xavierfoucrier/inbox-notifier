@@ -142,6 +142,13 @@ namespace notifier {
 			// binds the "NetworkAvailabilityChanged" event to automatically sync the inbox when a network is available
 			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object o, NetworkAvailabilityEventArgs target) => {
 
+				// stops the reconnect process if it is running
+				if (this.reconnect != 0) {
+					timerReconnect.Enabled = false;
+					timerReconnect.Interval = 100;
+					this.reconnect = 0;
+				}
+
 				// loops through all network interface to check network connectivity
 				foreach (NetworkInterface network in NetworkInterface.GetAllNetworkInterfaces()) {
 
@@ -364,6 +371,12 @@ namespace notifier {
 		/// </summary>
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
 		private void SyncInbox(bool timertick = false) {
+
+			// resets reconnection count and prevents the application from displaying continuous warning icon when a synchronization occurs after a reconnection attempt
+			if (timertick && this.reconnect != 0) {
+				timertick = false;
+				this.reconnect = 0;
+			}
 
 			// if internet is down, attempts to reconnect the user mailbox
 			if (!this.IsInternetAvailable()) {
@@ -928,44 +941,48 @@ namespace notifier {
 		// attempts to reconnect the user mailbox
 		private void timerReconnect_Tick(object sender, EventArgs e) {
 
-			// sets the reconnection interval
-			timerReconnect.Interval = INTERVAL_RECONNECT * 1000;
+			// increases the number of reconnection attempt
+			this.reconnect++;
 
-			// checks internet connectivity
-			if (!this.IsInternetAvailable()) {
+			// bypass the first reconnection attempt because the last synchronization have already checked the internet connectivity
+			if (this.reconnect == 1) {
+
+				// sets the reconnection interval
+				timerReconnect.Interval = INTERVAL_RECONNECT * 1000;
 
 				// disables the menu items
 				menuItemSynchronize.Enabled = false;
 				menuItemTimout.Enabled = false;
 				menuItemSettings.Enabled = false;
 
-				// increases the number of reconnection attempt
-				this.reconnect++;
-
 				// displays the last reconnection message on the icon
-				if (this.reconnect == 1) {
-					notifyIcon.Icon = Resources.warning;
-					notifyIcon.Text = translation.reconnectAttempt;
-				}
+				notifyIcon.Icon = Resources.warning;
+				notifyIcon.Text = translation.reconnectAttempt;
+
+				return;
+			}
+
+			// if internet is down, waits for INTERVAL_RECONNECT seconds before next attempt
+			if (!this.IsInternetAvailable()) {
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
-				if (reconnect == MAX_AUTO_RECONNECT) {
+				if (this.reconnect == MAX_AUTO_RECONNECT) {
 					timerReconnect.Enabled = false;
+					timerReconnect.Interval = 100;
 					timer.Enabled = true;
-					this.reconnect = 1;
+
+					// activates the necessary menu items to allow the user to manually sync the inbox
+					menuItemSynchronize.Enabled = true;
 
 					// displays the last reconnection message on the icon
-					notifyIcon.Icon = Resources.warning;
 					notifyIcon.Text = translation.reconnectFailed;
 				}
 			} else {
 
 				// restores default operation when internet is available
 				timerReconnect.Enabled = false;
+				timerReconnect.Interval = 100;
 				timer.Enabled = true;
-
-				// resets reconnection count
-				this.reconnect = 0;
 
 				// syncs the user mailbox
 				this.SyncInbox();
