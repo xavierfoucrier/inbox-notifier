@@ -256,15 +256,16 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Pings the 8.8.8.8 server to checks the internet connectivity
+		/// Opens the Google website to checks the internet connectivity
 		/// </summary>
-		/// <returns>Indicates if the user is connected to the internet, false means the ping to 8.8.8.8 server has failed</returns>
+		/// <returns>Indicates if the user is connected to the internet, false means that the request to the Google server has failed</returns>
 		private bool IsInternetAvailable() {
 			try {
-				Ping ping = new Ping();
-				PingReply reply = ping.Send("8.8.8.8", 1000, new byte[32]);
-
-				return reply.Status == IPStatus.Success;
+				using (var client = new WebClient()) {
+					using (var stream = client.OpenRead("http://www.google.com")) {
+						return true;
+					}
+				}
 			} catch (Exception) {
 				return false;
 			}
