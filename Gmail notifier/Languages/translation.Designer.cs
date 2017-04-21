@@ -378,7 +378,7 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Reconnexion impossible.
+        ///   Recherche une chaîne localisée semblable à La reconnexion a échoué.
         /// </summary>
         internal static string reconnectFailed {
             get {

@@ -231,7 +231,7 @@ Voulez-vous la télécharger maintenant ?</value>
     <value>Tentative de reconnexion...</value>
   </data>
   <data name="reconnectFailed" xml:space="preserve">
-    <value>Reconnexion impossible</value>
+    <value>La reconnexion a échoué</value>
   </data>
   <data name="sync" xml:space="preserve">
     <value>Synchronisation en cours ...</value>
