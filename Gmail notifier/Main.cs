@@ -55,6 +55,9 @@ namespace notifier {
 		// number of automatic reconnection
 		private int reconnect = 0;
 
+		// last synchronization time
+		private DateTime synctime = DateTime.Now;
+
 		// local application data folder name
 		private string appdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
 
@@ -374,6 +377,9 @@ namespace notifier {
 		/// </summary>
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
 		private void SyncInbox(bool timertick = false) {
+
+			// updates the synchronization time
+			this.synctime = DateTime.Now;
 
 			// resets reconnection count and prevents the application from displaying continuous warning icon when a synchronization occurs after a reconnection attempt
 			if (timertick && this.reconnect != 0) {
