@@ -242,6 +242,9 @@ Möchten Sie sie jetzt herunterladen?</value>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>Ein Fehler ist aufgetreten während der Synchronisation des Posteingangs :</value>
   </data>
+  <data name="syncTime" xml:space="preserve">
+    <value>Aktualisiert um {time}</value>
+  </data>
   <data name="timeout" xml:space="preserve">
     <value>Bitte nicht stören</value>
   </data>

@@ -414,6 +414,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mis à jour à {time}.
+        /// </summary>
+        internal static string syncTime {
+            get {
+                return ResourceManager.GetString("syncTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Ne pas déranger.
         /// </summary>
         internal static string timeout {

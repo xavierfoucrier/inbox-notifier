@@ -560,6 +560,8 @@ namespace notifier {
 				notifyIcon.Icon = Resources.warning;
 				notifyIcon.Text = translation.syncError;
 				notifyIcon.ShowBalloonTip(1500, translation.error, translation.syncErrorOccured + exception.Message, ToolTipIcon.Warning);
+			} finally {
+				notifyIcon.Text = notifyIcon.Text + "\n" + translation.syncTime.Replace("{time}", this.synctime.ToLongTimeString());
 			}
 		}
 

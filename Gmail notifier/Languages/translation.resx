@@ -242,6 +242,9 @@ Voulez-vous la télécharger maintenant ?</value>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>Une erreur est survenue lors de la synchronisation de la boite de réception :</value>
   </data>
+  <data name="syncTime" xml:space="preserve">
+    <value>Mis à jour à {time}</value>
+  </data>
   <data name="timeout" xml:space="preserve">
     <value>Ne pas déranger</value>
   </data>

@@ -242,6 +242,9 @@ Do you want to download it now?</value>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>An error occurred during the synchronization of the inbox:</value>
   </data>
+  <data name="syncTime" xml:space="preserve">
+    <value>Updated at {time}</value>
+  </data>
   <data name="timeout" xml:space="preserve">
     <value>Do not disturb</value>
   </data>
