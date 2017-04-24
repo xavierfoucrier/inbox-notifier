@@ -71,6 +71,8 @@
 			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
 			this.tabPageUpdate = new System.Windows.Forms.TabPage();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
+			this.fieldUpdateDownload = new System.Windows.Forms.CheckBox();
+			this.progressBar = new System.Windows.Forms.ProgressBar();
 			this.buttonCheckForUpdate = new System.Windows.Forms.Button();
 			this.labelUpdateControl = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
@@ -478,6 +480,8 @@
 			// 
 			// groupBox7
 			// 
+			this.groupBox7.Controls.Add(this.fieldUpdateDownload);
+			this.groupBox7.Controls.Add(this.progressBar);
 			this.groupBox7.Controls.Add(this.buttonCheckForUpdate);
 			this.groupBox7.Controls.Add(this.labelUpdateControl);
 			this.groupBox7.Controls.Add(this.label8);
@@ -487,6 +491,23 @@
 			resources.ApplyResources(this.groupBox7, "groupBox7");
 			this.groupBox7.Name = "groupBox7";
 			this.groupBox7.TabStop = false;
+			// 
+			// fieldUpdateDownload
+			// 
+			resources.ApplyResources(this.fieldUpdateDownload, "fieldUpdateDownload");
+			this.fieldUpdateDownload.Checked = global::notifier.Properties.Settings.Default.UpdateDownload;
+			this.fieldUpdateDownload.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "UpdateDownload", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldUpdateDownload.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldUpdateDownload.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
+			this.fieldUpdateDownload.Name = "fieldUpdateDownload";
+			this.fieldUpdateDownload.UseVisualStyleBackColor = true;
+			// 
+			// progressBar
+			// 
+			this.progressBar.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.progressBar.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
+			resources.ApplyResources(this.progressBar, "progressBar");
+			this.progressBar.Name = "progressBar";
 			// 
 			// buttonCheckForUpdate
 			// 
@@ -880,6 +901,8 @@
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Label labelTotalLabels;
 		private System.Windows.Forms.Label label18;
+		private System.Windows.Forms.ProgressBar progressBar;
+		private System.Windows.Forms.CheckBox fieldUpdateDownload;
 	}
 }
 

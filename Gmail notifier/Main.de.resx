@@ -234,12 +234,6 @@ nächsten Start der Anwendung.</value>
   <data name="tabPageNotification.Text" xml:space="preserve">
     <value>Benachrichtigung</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Netzwerk</value>
-  </data>
-  <data name="fieldNetworkConnectivityNotification.Text" xml:space="preserve">
-    <value>Verlust der Netzkonnektivität</value>
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Post</value>
   </data>
@@ -309,6 +303,12 @@ nächsten Start der Anwendung.</value>
   <data name="groupBox7.Text" xml:space="preserve">
     <value>Verhalten</value>
   </data>
+  <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="fieldUpdateDownload.Text" xml:space="preserve">
+    <value>Updates herunterladen</value>
+  </data>
   <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>424, 95</value>
   </data>
@@ -340,10 +340,10 @@ nächsten Start der Anwendung.</value>
     <value>einmal pro Monat</value>
   </data>
   <data name="fieldUpdatePeriod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 55</value>
+    <value>63, 49</value>
   </data>
   <data name="fieldUpdatePeriod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 21</value>
+    <value>215, 21</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -1031,5 +1031,8 @@ Entwickelt von Xavier Foucrier</value>
         AAPAAAAAAAAAA8AAAAAAAAADwAAAAAAAAAPgAAAAAAAAB///////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

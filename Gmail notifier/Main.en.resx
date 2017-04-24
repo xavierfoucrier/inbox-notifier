@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tabPageGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>186, 87</value>
@@ -149,6 +152,9 @@ at the next application startup.</value>
   <data name="label3.Text" xml:space="preserve">
     <value>Language:</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
   <data name="fieldRunAtWindowsStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
   </data>
@@ -167,11 +173,11 @@ at the next application startup.</value>
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>Ask me before leaving the application</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Behavior</value>
+  <data name="tabPageAccount.Text" xml:space="preserve">
+    <value>Account</value>
   </data>
-  <data name="tabPageGeneral.Text" xml:space="preserve">
-    <value>General</value>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Statistics</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -191,8 +197,8 @@ at the next application startup.</value>
   <data name="label6.Text" xml:space="preserve">
     <value>unread mail(s)</value>
   </data>
-  <data name="groupBox8.Text" xml:space="preserve">
-    <value>Statistics</value>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Authentication</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 13</value>
@@ -209,20 +215,8 @@ at the next application startup.</value>
   <data name="buttonGmailDisconnect.Text" xml:space="preserve">
     <value>Disconnect</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Authentication</value>
-  </data>
-  <data name="tabPageAccount.Text" xml:space="preserve">
-    <value>Account</value>
-  </data>
-  <data name="fieldNetworkConnectivityNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 17</value>
-  </data>
-  <data name="fieldNetworkConnectivityNotification.Text" xml:space="preserve">
-    <value>Loss of network connectivity</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Network</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Mail</value>
   </data>
   <data name="fieldStepDelay.Items1" xml:space="preserve">
     <value>hour(s)</value>
@@ -251,8 +245,8 @@ at the next application startup.</value>
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Sound notification</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Mail</value>
+  <data name="tabPagePrivacy.Text" xml:space="preserve">
+    <value>Privacy</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 13</value>
@@ -278,8 +272,17 @@ at the next application startup.</value>
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Display all message content</value>
   </data>
-  <data name="tabPagePrivacy.Text" xml:space="preserve">
-    <value>Privacy</value>
+  <data name="tabPageUpdate.Text" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
+  <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 17</value>
+  </data>
+  <data name="fieldUpdateDownload.Text" xml:space="preserve">
+    <value>Download updates</value>
   </data>
   <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>421, 95</value>
@@ -312,10 +315,10 @@ at the next application startup.</value>
     <value>once a month</value>
   </data>
   <data name="fieldUpdatePeriod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 55</value>
+    <value>95, 49</value>
   </data>
   <data name="fieldUpdatePeriod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 21</value>
+    <value>183, 21</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 13</value>
@@ -329,11 +332,8 @@ at the next application startup.</value>
   <data name="fieldUpdateService.Text" xml:space="preserve">
     <value>Enable automatic update checking</value>
   </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>Behavior</value>
-  </data>
-  <data name="tabPageUpdate.Text" xml:space="preserve">
-    <value>Updates</value>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>About</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
@@ -364,9 +364,6 @@ Developed by Xavier Foucrier</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Development</value>
-  </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>About</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 13</value>
@@ -407,6 +404,9 @@ Developed by Xavier Foucrier</value>
   <data name="menuItemMarkAsRead.Text" xml:space="preserve">
     <value>Mark as read</value>
   </data>
+  <data name="menuItemTimout.Text" xml:space="preserve">
+    <value>Do not disturb</value>
+  </data>
   <data name="menuItemTimeoutDisabled.Text" xml:space="preserve">
     <value>Disable</value>
   </data>
@@ -418,9 +418,6 @@ Developed by Xavier Foucrier</value>
   </data>
   <data name="menuItemTimeout5h.Text" xml:space="preserve">
     <value>5 hours</value>
-  </data>
-  <data name="menuItemTimout.Text" xml:space="preserve">
-    <value>Do not disturb</value>
   </data>
   <data name="menuItemSettings.Text" xml:space="preserve">
     <value>Open</value>
@@ -1006,5 +1003,8 @@ Developed by Xavier Foucrier</value>
         AAPAAAAAAAAAA8AAAAAAAAADwAAAAAAAAAPgAAAAAAAAB///////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

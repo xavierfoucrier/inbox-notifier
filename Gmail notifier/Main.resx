@@ -1372,6 +1372,60 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;tabPagePrivacy.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="fieldUpdateDownload.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fieldUpdateDownload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="fieldUpdateDownload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 82</value>
+  </data>
+  <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 17</value>
+  </data>
+  <data name="fieldUpdateDownload.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="fieldUpdateDownload.Text" xml:space="preserve">
+    <value>Télécharger les mises à jour</value>
+  </data>
+  <data name="&gt;&gt;fieldUpdateDownload.Name" xml:space="preserve">
+    <value>fieldUpdateDownload</value>
+  </data>
+  <data name="&gt;&gt;fieldUpdateDownload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fieldUpdateDownload.Parent" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;fieldUpdateDownload.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="progressBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="progressBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 105</value>
+  </data>
+  <data name="progressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 14</value>
+  </data>
+  <data name="progressBar.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;progressBar.Name" xml:space="preserve">
+    <value>progressBar</value>
+  </data>
+  <data name="&gt;&gt;progressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;progressBar.Parent" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;progressBar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="buttonCheckForUpdate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1400,7 +1454,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;buttonCheckForUpdate.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="labelUpdateControl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1409,7 +1463,7 @@ prochain démarrage de l'application.</value>
     <value>NoControl</value>
   </data>
   <data name="labelUpdateControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 84</value>
+    <value>365, 52</value>
   </data>
   <data name="labelUpdateControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 13</value>
@@ -1430,7 +1484,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;labelUpdateControl.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1439,16 +1493,16 @@ prochain démarrage de l'application.</value>
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 84</value>
+    <value>295, 52</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 13</value>
+    <value>64, 13</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Dernière vérification :</value>
+    <value>Vérifiées le :</value>
   </data>
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
@@ -1460,7 +1514,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="fieldUpdatePeriod.Items" xml:space="preserve">
     <value>au démarrage de l'application</value>
@@ -1475,10 +1529,10 @@ prochain démarrage de l'application.</value>
     <value>une fois par mois</value>
   </data>
   <data name="fieldUpdatePeriod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 55</value>
+    <value>124, 49</value>
   </data>
   <data name="fieldUpdatePeriod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 21</value>
+    <value>154, 21</value>
   </data>
   <data name="fieldUpdatePeriod.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1493,7 +1547,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;fieldUpdatePeriod.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1502,7 +1556,7 @@ prochain démarrage de l'application.</value>
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 58</value>
+    <value>12, 52</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 13</value>
@@ -1523,7 +1577,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="fieldUpdateService.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1553,7 +1607,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;fieldUpdateService.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="groupBox7.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
