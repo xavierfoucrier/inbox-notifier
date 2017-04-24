@@ -202,5 +202,17 @@ namespace notifier.Properties {
                 this["UpdateRequired"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UpdateDownload {
+            get {
+                return ((bool)(this["UpdateDownload"]));
+            }
+            set {
+                this["UpdateDownload"] = value;
+            }
+        }
     }
 }
