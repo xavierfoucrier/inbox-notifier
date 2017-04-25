@@ -1034,11 +1034,17 @@ namespace notifier {
 
 					// the current version tag is not at the top of the list
 					if (tags.First() != this.version) {
-						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
-						// redirects the user to the Github repository releases webpage
-						if (dialog == DialogResult.Yes) {
-							Process.Start(GITHUB_REPOSITORY + "/releases/" + tags[0]);
+						// downloads the update package depending on the user setting
+						if (Settings.Default.UpdateDownload) {
+							// todo: background worker download job
+						} else {
+							DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+
+							// redirects the user to the Github repository releases webpage
+							if (dialog == DialogResult.Yes) {
+								Process.Start(GITHUB_REPOSITORY + "/releases/" + tags[0]);
+							}
 						}
 					} else if (verbose) {
 						MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
