@@ -95,6 +95,15 @@ namespace notifier {
 				// switches the update required state
 				Settings.Default.UpdateRequired = false;
 				Settings.Default.Save();
+
+				// cleans temporary update files from previous upgrade
+				if (Directory.Exists(appdata)) {
+					IEnumerable<string> executables = Directory.EnumerateFiles(appdata, "*.exe", SearchOption.TopDirectoryOnly);
+
+					foreach (string executable in executables) {
+						File.Delete(executable);
+					}
+				}
 			}
 
 			// hides the form by default
