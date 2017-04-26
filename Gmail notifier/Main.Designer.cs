@@ -107,7 +107,6 @@
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -770,10 +769,6 @@
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
-			// backgroundWorker
-			// 
-			this.backgroundWorker.WorkerReportsProgress = true;
-			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -908,7 +903,6 @@
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.ProgressBar progressBar;
 		private System.Windows.Forms.CheckBox fieldUpdateDownload;
-		private System.ComponentModel.BackgroundWorker backgroundWorker;
 	}
 }
 
