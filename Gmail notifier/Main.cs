@@ -105,7 +105,7 @@ namespace notifier {
 			this.version = "v" + version[0] + "." + version[1] + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "") + (version[3] != "0" ? "." + version[3] : "");
 
 			// displays a systray notification on first load
-			if (Settings.Default.FirstLoad && !Directory.Exists(appdata)) {
+			if (Settings.Default.FirstLoad && !Directory.Exists(this.appdata)) {
 				notifyIcon.ShowBalloonTip(7000, translation.welcome, translation.firstLoad, ToolTipIcon.Info);
 
 				// switches the first load state
@@ -305,7 +305,7 @@ namespace notifier {
 			} catch(Exception) {
 
 				// exits the application if the google api token file doesn't exists
-				if (!Directory.Exists(appdata) || !Directory.EnumerateFiles(appdata).Any()) {
+				if (!Directory.Exists(this.appdata) || !Directory.EnumerateFiles(this.appdata).Any()) {
 					MessageBox.Show(translation.authenticationWithGmailRefused, translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					Application.Exit();
 				}
@@ -331,7 +331,7 @@ namespace notifier {
 					new string[] { GmailService.Scope.GmailModify },
 					"user",
 					CancellationToken.None,
-					new FileDataStore(appdata, true)
+					new FileDataStore(this.appdata, true)
 				);
 			}
 		}
@@ -919,8 +919,8 @@ namespace notifier {
 			}
 
 			// deletes the local application data folder and the client token file
-			if (Directory.Exists(appdata)) {
-				Directory.Delete(appdata, true);
+			if (Directory.Exists(this.appdata)) {
+				Directory.Delete(this.appdata, true);
 			}
 
 			// restarts the application
