@@ -504,8 +504,6 @@
 			// 
 			// progressBar
 			// 
-			this.progressBar.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.progressBar.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
 			resources.ApplyResources(this.progressBar, "progressBar");
 			this.progressBar.Name = "progressBar";
 			// 
