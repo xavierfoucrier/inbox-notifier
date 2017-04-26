@@ -1031,9 +1031,10 @@ namespace notifier {
 
 				if (collection != null && collection.Count > 0) {
 					List<string> tags = collection.Select(p => p.InnerText).ToList();
+					string release = tags.First();
 
 					// the current version tag is not at the top of the list
-					if (tags.First() != this.version) {
+					if (release != this.version) {
 
 						// downloads the update package depending on the user setting
 						if (Settings.Default.UpdateDownload) {
@@ -1043,7 +1044,7 @@ namespace notifier {
 
 							// redirects the user to the Github repository releases webpage
 							if (dialog == DialogResult.Yes) {
-								Process.Start(GITHUB_REPOSITORY + "/releases/" + tags[0]);
+								Process.Start(GITHUB_REPOSITORY + "/releases/" + release);
 							}
 						}
 					} else if (verbose) {
