@@ -1029,27 +1029,28 @@ namespace notifier {
 				HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlWeb().Load(GITHUB_REPOSITORY + "/tags");
 				HtmlAgilityPack.HtmlNodeCollection collection = document.DocumentNode.SelectNodes("//span[@class='tag-name']");
 
-				if (collection != null && collection.Count > 0) {
-					List<string> tags = collection.Select(p => p.InnerText).ToList();
-					string release = tags.First();
+				if (collection == null || collection.Count == 0) {
+					return;
+				}
 
-					// the current version tag is not at the top of the list
-					if (release != this.version) {
+				List<string> tags = collection.Select(p => p.InnerText).ToList();
+				string release = tags.First();
 
-						// downloads the update package depending on the user setting
-						if (Settings.Default.UpdateDownload) {
-							// todo: background worker download job
-						} else {
-							DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+				// the current version tag is not at the top of the list
+				if (release != this.version) {
 
-							// redirects the user to the Github repository releases webpage
-							if (dialog == DialogResult.Yes) {
-								Process.Start(GITHUB_REPOSITORY + "/releases/" + release);
-							}
+					// downloads the update package automatically or asks the user, depending on the user setting
+					if (Settings.Default.UpdateDownload) {
+						this.downloadUpdate(release);
+					} else {
+						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+
+						if (dialog == DialogResult.Yes) {
+							this.downloadUpdate(release);
 						}
-					} else if (verbose) {
-						MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
+				} else if (verbose) {
+					MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 			} catch (Exception) {
 				// nothing to catch
@@ -1060,6 +1061,46 @@ namespace notifier {
 
 			// updates the update control label
 			labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
+		}
+
+		/// <summary>
+		/// Downloads and launch the setup installer
+		/// </summary>
+		private void downloadUpdate(string release) {
+
+			// defines the new number version and temp path
+			string newversion = release.Split('-')[0].Substring(1);
+			string updatepath = this.appdata + "/gmnupdate-" + newversion + ".exe";
+
+			try {
+
+				// disables the context menu and displays the update icon in the systray
+				notifyIcon.ContextMenu = null;
+				notifyIcon.Icon = Resources.updating;
+				notifyIcon.Text = translation.updating;
+
+				// creates a new web client instance
+				WebClient client = new WebClient();
+
+				// displays the download progression on the progress bar
+				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object o, DownloadProgressChangedEventArgs target) => {
+					progressBar.Value = target.ProgressPercentage;
+				});
+
+				// starts the setup installer when the download has complete and exits the current application
+				client.DownloadFileCompleted += new AsyncCompletedEventHandler((object o, AsyncCompletedEventArgs target) => {
+					Process.Start(new ProcessStartInfo(updatepath));
+					Application.Exit();
+				});
+
+				// starts the download of the new version from the Github repository
+				client.DownloadFileAsync(new Uri(GITHUB_REPOSITORY + "/releases/download/" + release + "/Gmail.Notifier." + newversion + ".exe"), updatepath);
+			} catch (Exception) {
+
+				// restores the context menu to the systray icon and start a synchronization
+				notifyIcon.ContextMenu = contextMenu;
+				this.SyncInbox();
+			}
 		}
 	}
 }

@@ -477,6 +477,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Téléchargement de la mise à jour ....
+        /// </summary>
+        internal static string updating {
+            get {
+                return ResourceManager.GetString("updating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Bienvenue !.
         /// </summary>
         internal static string welcome {
