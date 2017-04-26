@@ -283,6 +283,16 @@ namespace notifier.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
         /// </summary>
+        internal static System.Drawing.Icon updating {
+            get {
+                object obj = ResourceManager.GetObject("updating", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
         internal static System.Drawing.Icon warning {
             get {
                 object obj = ResourceManager.GetObject("warning", resourceCulture);
