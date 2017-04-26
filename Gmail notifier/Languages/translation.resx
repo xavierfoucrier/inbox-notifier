@@ -228,7 +228,7 @@ Voulez-vous la télécharger maintenant ?</value>
     <value>Pas de nouveau message</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
-    <value>Tentative de reconnexion...</value>
+    <value>Tentative de reconnexion ...</value>
   </data>
   <data name="reconnectFailed" xml:space="preserve">
     <value>La reconnexion a échoué</value>

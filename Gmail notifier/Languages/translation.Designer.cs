@@ -369,7 +369,7 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Tentative de reconnexion....
+        ///   Recherche une chaîne localisée semblable à Tentative de reconnexion ....
         /// </summary>
         internal static string reconnectAttempt {
             get {
