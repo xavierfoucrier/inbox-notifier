@@ -570,7 +570,7 @@ namespace notifier {
 				notifyIcon.Text = translation.syncError;
 				notifyIcon.ShowBalloonTip(1500, translation.error, translation.syncErrorOccured + exception.Message, ToolTipIcon.Warning);
 			} finally {
-				notifyIcon.Text = notifyIcon.Text + "\n" + translation.syncTime.Replace("{time}", this.synctime.ToLongTimeString());
+				notifyIcon.Text = notifyIcon.Text.Split('\n')[0] + "\n" + translation.syncTime.Replace("{time}", this.synctime.ToLongTimeString());
 			}
 		}
 
