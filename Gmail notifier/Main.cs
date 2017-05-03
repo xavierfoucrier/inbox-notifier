@@ -178,7 +178,7 @@ namespace notifier {
 					}
 
 					// syncs the inbox when a network interface is available
-					this.SyncInbox();
+					this.AsyncSyncInbox();
 					break;
 				}
 			});
@@ -321,7 +321,7 @@ namespace notifier {
 			} finally {
 
 				// synchronizes the user mailbox
-				this.SyncInbox();
+				this.AsyncSyncInbox();
 			}
 		}
 
@@ -382,10 +382,10 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Synchronizes the user inbox
+		/// Asynchronous method used to synchronize the user inbox
 		/// </summary>
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
-		private void SyncInbox(bool timertick = false) {
+		private async void AsyncSyncInbox(bool timertick = false) {
 
 			// updates the synchronization time
 			this.synctime = DateTime.Now;
@@ -458,7 +458,7 @@ namespace notifier {
 					}
 
 					// gets the "spam" label
-					Google.Apis.Gmail.v1.Data.Label spam = this.service.Users.Labels.Get("me", "SPAM").Execute();
+					Google.Apis.Gmail.v1.Data.Label spam = await this.service.Users.Labels.Get("me", "SPAM").ExecuteAsync();
 
 					// manages unread spams
 					if (spam.ThreadsUnread > 0) {
@@ -481,7 +481,7 @@ namespace notifier {
 				}
 
 				// gets the "inbox" label
-				this.inbox = this.service.Users.Labels.Get("me", "INBOX").Execute();
+				this.inbox = await this.service.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
 				// displays the statistics
 				labelTotalUnreadMails.Text = this.inbox.ThreadsUnread.ToString();
@@ -511,7 +511,9 @@ namespace notifier {
 						UsersResource.MessagesResource.ListRequest messages = this.service.Users.Messages.List("me");
 						messages.LabelIds = "UNREAD";
 						messages.MaxResults = 1;
-						Google.Apis.Gmail.v1.Data.Message message = this.service.Users.Messages.Get("me", messages.Execute().Messages.First().Id).Execute();
+						Google.Apis.Gmail.v1.Data.Message message = await this.service.Users.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
+							return m.Result.Messages.First().Id;
+						})).ExecuteAsync();
 
 						//  displays a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
 						if (this.inbox.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != (int)Privacy.All) {
@@ -604,7 +606,7 @@ namespace notifier {
 		/// Manages the SpamNotification user setting
 		/// </summary>
 		private void fieldSpamNotification_Click(object sender, EventArgs e) {
-			this.SyncInbox();
+			this.AsyncSyncInbox();
 		}
 
 		/// <summary>
@@ -716,7 +718,7 @@ namespace notifier {
 		/// Manages the context menu Synchronize item
 		/// </summary>
 		private void menuItemSynchronize_Click(object sender, EventArgs e) {
-			this.SyncInbox();
+			this.AsyncSyncInbox();
 		}
 
 		/// <summary>
@@ -796,7 +798,7 @@ namespace notifier {
 				notifyIcon.Icon = Resources.timeout;
 				notifyIcon.Text = translation.timeout + " - " + DateTime.Now.AddMilliseconds(delay).ToShortTimeString();
 			} else {
-				this.SyncInbox();
+				this.AsyncSyncInbox();
 			}
 		}
 
@@ -912,7 +914,7 @@ namespace notifier {
 			}
 
 			// synchronizes the inbox
-			this.SyncInbox(true);
+			this.AsyncSyncInbox(true);
 		}
 
 		/// <summary>
@@ -1005,7 +1007,7 @@ namespace notifier {
 				timer.Enabled = true;
 
 				// syncs the user mailbox
-				this.SyncInbox();
+				this.AsyncSyncInbox();
 			}
 		}
 
@@ -1108,7 +1110,7 @@ namespace notifier {
 
 				// restores the context menu to the systray icon and start a synchronization
 				notifyIcon.ContextMenu = contextMenu;
-				this.SyncInbox();
+				this.AsyncSyncInbox();
 			}
 		}
 	}
