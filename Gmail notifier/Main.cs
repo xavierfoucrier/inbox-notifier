@@ -577,6 +577,52 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Asynchronous method used to mark as read the user inbox
+		/// </summary>
+		private async void AsyncMarkAsRead() {
+			try {
+
+				// displays the sync icon
+				notifyIcon.Icon = Resources.sync;
+				notifyIcon.Text = translation.sync;
+
+				// gets all unread threads
+				UsersResource.ThreadsResource.ListRequest threads = this.service.Users.Threads.List("me");
+				threads.LabelIds = "UNREAD";
+				ListThreadsResponse list = await threads.ExecuteAsync();
+				IList<Google.Apis.Gmail.v1.Data.Thread> unread = list.Threads;
+
+				// loops through all unread threads and removes the "unread" label for each one
+				if (unread != null && unread.Count > 0) {
+					foreach (Google.Apis.Gmail.v1.Data.Thread thread in unread) {
+						ModifyThreadRequest request = new ModifyThreadRequest();
+						request.RemoveLabelIds = new List<string>() { "UNREAD" };
+						await this.service.Users.Threads.Modify(request, "me", thread.Id).ExecuteAsync();
+					}
+				}
+
+				// restores the default systray icon and text
+				notifyIcon.Icon = Resources.normal;
+				notifyIcon.Text = translation.noMessage;
+
+				// restores the default tag
+				notifyIcon.Tag = null;
+
+				// disables the mark as read menu item
+				menuItemMarkAsRead.Enabled = false;
+			} catch (Exception exception) {
+
+				// enabled the mark as read menu item
+				menuItemMarkAsRead.Enabled = true;
+
+				// displays a balloon tip in the systray with the detailed error message
+				notifyIcon.Icon = Resources.warning;
+				notifyIcon.Text = translation.markAsReadError;
+				notifyIcon.ShowBalloonTip(1500, translation.error, translation.markAsReadErrorOccured + exception.Message, ToolTipIcon.Warning);
+			}
+		}
+
+		/// <summary>
 		/// Manages the RunAtWindowsStartup user setting
 		/// </summary>
 		private void fieldRunAtWindowsStartup_CheckedChanged(object sender, EventArgs e) {
@@ -725,46 +771,7 @@ namespace notifier {
 		/// Manages the context menu MarkAsRead item
 		/// </summary>
 		private void menuItemMarkAsRead_Click(object sender, EventArgs e) {
-			try {
-
-				// displays the sync icon
-				notifyIcon.Icon = Resources.sync;
-				notifyIcon.Text = translation.sync;
-
-				// gets all unread threads
-				UsersResource.ThreadsResource.ListRequest threads = this.service.Users.Threads.List("me");
-				threads.LabelIds = "UNREAD";
-				ListThreadsResponse list = threads.Execute();
-				IList<Google.Apis.Gmail.v1.Data.Thread> unread = list.Threads;
-
-				// loops through all unread threads and removes the "unread" label for each one
-				if (unread != null && unread.Count > 0) {
-					foreach (Google.Apis.Gmail.v1.Data.Thread thread in unread) {
-						ModifyThreadRequest request = new ModifyThreadRequest();
-						request.RemoveLabelIds = new List<string>() { "UNREAD" };
-						this.service.Users.Threads.Modify(request, "me", thread.Id).Execute();
-					}
-				}
-
-				// restores the default systray icon and text
-				notifyIcon.Icon = Resources.normal;
-				notifyIcon.Text = translation.noMessage;
-
-				// restores the default tag
-				notifyIcon.Tag = null;
-
-				// disables the mark as read menu item
-				menuItemMarkAsRead.Enabled = false;
-			} catch (Exception exception) {
-
-				// enabled the mark as read menu item
-				menuItemMarkAsRead.Enabled = true;
-
-				// displays a balloon tip in the systray with the detailed error message
-				notifyIcon.Icon = Resources.warning;
-				notifyIcon.Text = translation.markAsReadError;
-				notifyIcon.ShowBalloonTip(1500, translation.error, translation.markAsReadErrorOccured + exception.Message, ToolTipIcon.Warning);
-			}
+			this.AsyncMarkAsRead();
 		}
 
 		/// <summary>
