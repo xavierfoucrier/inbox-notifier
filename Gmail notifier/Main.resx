@@ -2085,6 +2085,12 @@ Développé par Xavier Foucrier</value>
   <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>203, 17</value>
   </metadata>
+  <data name="menuItemNewMessage.Text" xml:space="preserve">
+    <value>Nouveau message</value>
+  </data>
+  <data name="menuItem4.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
   <data name="menuItemSynchronize.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2747,6 +2753,18 @@ Développé par Xavier Foucrier</value>
   </data>
   <data name="&gt;&gt;contextMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuItemNewMessage.Name" xml:space="preserve">
+    <value>menuItemNewMessage</value>
+  </data>
+  <data name="&gt;&gt;menuItemNewMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuItem4.Name" xml:space="preserve">
+    <value>menuItem4</value>
+  </data>
+  <data name="&gt;&gt;menuItem4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuItemSynchronize.Name" xml:space="preserve">
     <value>menuItemSynchronize</value>

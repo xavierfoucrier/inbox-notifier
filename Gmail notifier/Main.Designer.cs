@@ -93,6 +93,8 @@
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.pictureBoxHeader = new System.Windows.Forms.PictureBox();
 			this.contextMenu = new System.Windows.Forms.ContextMenu();
+			this.menuItemNewMessage = new System.Windows.Forms.MenuItem();
+			this.menuItem4 = new System.Windows.Forms.MenuItem();
 			this.menuItemSynchronize = new System.Windows.Forms.MenuItem();
 			this.menuItemMarkAsRead = new System.Windows.Forms.MenuItem();
 			this.menuItemTimout = new System.Windows.Forms.MenuItem();
@@ -669,6 +671,8 @@
 			// contextMenu
 			// 
 			this.contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemNewMessage,
+            this.menuItem4,
             this.menuItemSynchronize,
             this.menuItemMarkAsRead,
             this.menuItemTimout,
@@ -676,22 +680,33 @@
             this.menuItem2,
             this.menuItemExit});
 			// 
+			// menuItemNewMessage
+			// 
+			this.menuItemNewMessage.Index = 0;
+			resources.ApplyResources(this.menuItemNewMessage, "menuItemNewMessage");
+			this.menuItemNewMessage.Click += new System.EventHandler(this.menuItemNewMessage_Click);
+			// 
+			// menuItem4
+			// 
+			this.menuItem4.Index = 1;
+			resources.ApplyResources(this.menuItem4, "menuItem4");
+			// 
 			// menuItemSynchronize
 			// 
 			resources.ApplyResources(this.menuItemSynchronize, "menuItemSynchronize");
-			this.menuItemSynchronize.Index = 0;
+			this.menuItemSynchronize.Index = 2;
 			this.menuItemSynchronize.Click += new System.EventHandler(this.menuItemSynchronize_Click);
 			// 
 			// menuItemMarkAsRead
 			// 
 			resources.ApplyResources(this.menuItemMarkAsRead, "menuItemMarkAsRead");
-			this.menuItemMarkAsRead.Index = 1;
+			this.menuItemMarkAsRead.Index = 3;
 			this.menuItemMarkAsRead.Click += new System.EventHandler(this.menuItemMarkAsRead_Click);
 			// 
 			// menuItemTimout
 			// 
 			resources.ApplyResources(this.menuItemTimout, "menuItemTimout");
-			this.menuItemTimout.Index = 2;
+			this.menuItemTimout.Index = 4;
 			this.menuItemTimout.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemTimeoutDisabled,
             this.menuItem1,
@@ -745,17 +760,17 @@
 			// 
 			this.menuItemSettings.DefaultItem = true;
 			resources.ApplyResources(this.menuItemSettings, "menuItemSettings");
-			this.menuItemSettings.Index = 3;
+			this.menuItemSettings.Index = 5;
 			this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
 			// 
 			// menuItem2
 			// 
-			this.menuItem2.Index = 4;
+			this.menuItem2.Index = 6;
 			resources.ApplyResources(this.menuItem2, "menuItem2");
 			// 
 			// menuItemExit
 			// 
-			this.menuItemExit.Index = 5;
+			this.menuItemExit.Index = 7;
 			resources.ApplyResources(this.menuItemExit, "menuItemExit");
 			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
 			// 
@@ -903,6 +918,8 @@
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.ProgressBar progressBar;
 		private System.Windows.Forms.CheckBox fieldUpdateDownload;
+		private System.Windows.Forms.MenuItem menuItemNewMessage;
+		private System.Windows.Forms.MenuItem menuItem4;
 	}
 }
 

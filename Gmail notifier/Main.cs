@@ -761,6 +761,13 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Manages the context menu New message item
+		/// </summary>
+		private void menuItemNewMessage_Click(object sender, EventArgs e) {
+			Process.Start(GMAIL_BASEURL + "/#inbox?compose=new");
+		}
+
+		/// <summary>
 		/// Manages the context menu Synchronize item
 		/// </summary>
 		private void menuItemSynchronize_Click(object sender, EventArgs e) {
