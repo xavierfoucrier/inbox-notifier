@@ -350,6 +350,9 @@ namespace notifier {
 		/// </summary>
 		private async void AsyncStatistics() {
 			try {
+				labelTotalUnreadMails.Text = this.inbox.ThreadsUnread.ToString();
+				labelTotalMails.Text = this.inbox.ThreadsTotal.ToString();
+
 				ListDraftsResponse drafts = await this.AsyncDrafts();
 				ListLabelsResponse labels = await this.AsyncLabels();
 
@@ -484,8 +487,6 @@ namespace notifier {
 				this.inbox = await this.service.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
 				// displays the statistics
-				labelTotalUnreadMails.Text = this.inbox.ThreadsUnread.ToString();
-				labelTotalMails.Text = this.inbox.ThreadsTotal.ToString();
 				this.AsyncStatistics();
 
 				// exits the sync if the number of unread threads is the same as before
