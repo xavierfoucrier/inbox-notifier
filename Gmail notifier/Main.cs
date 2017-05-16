@@ -785,7 +785,7 @@ namespace notifier {
 		/// Delays the inbox sync during a certain time
 		/// </summary>
 		/// <param name="item">Item selected in the menu</param>
-		/// <param name="delay">Delay until the next inbox sync</param>
+		/// <param name="delay">Delay until the next inbox sync, 0 means "infinite" timeout</param>
 		private void Timeout(MenuItem item, int delay) {
 
 			// exits if the selected menu item is already checked
@@ -801,8 +801,11 @@ namespace notifier {
 			// displays the user choice
 			item.Checked = true;
 
-			// sets the new timer interval depending on the user settings
-			timer.Interval = delay;
+			// disables the timer if the delay is set to "infinite"
+			timer.Enabled = delay != 0;
+
+			// applies "1" if the delay is set to "infinite" because the timer delay attribute does not support "0"
+			timer.Interval = delay != 0 ? delay : 1;
 
 			// restores the default tag
 			notifyIcon.Tag = null;
@@ -810,7 +813,7 @@ namespace notifier {
 			// updates the systray icon and text
 			if (delay != Settings.Default.TimerInterval) {
 				notifyIcon.Icon = Resources.timeout;
-				notifyIcon.Text = translation.timeout + " - " + DateTime.Now.AddMilliseconds(delay).ToShortTimeString();
+				notifyIcon.Text = translation.timeout + " - " + (delay != 0 ? DateTime.Now.AddMilliseconds(delay).ToShortTimeString() : "∞");
 			} else {
 				this.AsyncSyncInbox();
 			}
@@ -849,6 +852,13 @@ namespace notifier {
 		/// </summary>
 		private void menuItemTimeout5h_Click(object sender, EventArgs e) {
 			Timeout((MenuItem)sender, 1000 * 60 * 60 * 5);
+		}
+
+		/// <summary>
+		/// Manages the context menu TimeoutIndefinitely item
+		/// </summary>
+		private void menuItemTimeoutIndefinitely_Click(object sender, EventArgs e) {
+			Timeout((MenuItem)sender, 0);
 		}
 
 		/// <summary>
