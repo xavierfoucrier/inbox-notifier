@@ -486,7 +486,7 @@ namespace notifier {
 				// gets the "inbox" label
 				this.inbox = await this.service.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
-				// displays the statistics
+				// updates the statistics
 				this.AsyncStatistics();
 
 				// exits the sync if the number of unread threads is the same as before
@@ -600,6 +600,12 @@ namespace notifier {
 						request.RemoveLabelIds = new List<string>() { "UNREAD" };
 						await this.service.Users.Threads.Modify(request, "me", thread.Id).ExecuteAsync();
 					}
+
+					// gets the "inbox" label
+					this.inbox = await this.service.Users.Labels.Get("me", "INBOX").ExecuteAsync();
+
+					// updates the statistics
+					this.AsyncStatistics();
 				}
 
 				// restores the default systray icon and text
