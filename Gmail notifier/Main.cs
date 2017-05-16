@@ -26,14 +26,14 @@ namespace notifier {
 	public partial class Main : Form {
 
 		// privacy possibilities
-		private enum Privacy : int {
+		private enum Privacy : uint {
 			None = 0,
 			Short = 1,
 			All = 2
 		}
 
 		// update period possibilities
-		private enum Period : int {
+		private enum Period : uint {
 			Startup = 0,
 			Day = 1,
 			Week = 2,
@@ -53,7 +53,7 @@ namespace notifier {
 		private int? unreadthreads = 0;
 
 		// number of automatic reconnection
-		private int reconnect = 0;
+		private uint reconnect = 0;
 
 		// last synchronization time
 		private DateTime synctime = DateTime.Now;
