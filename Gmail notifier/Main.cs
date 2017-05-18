@@ -393,8 +393,8 @@ namespace notifier {
 			// updates the synchronization time
 			this.synctime = DateTime.Now;
 
-			// resets reconnection count and prevents the application from displaying continuous warning icon when a synchronization occurs after a reconnection attempt
-			if (timertick && this.reconnect != 0) {
+			// resets reconnection count and prevents the application from displaying continuous warning icon when a timertick synchronization occurs after a reconnection attempt
+			if (this.reconnect != 0) {
 				timertick = false;
 				this.reconnect = 0;
 			}
