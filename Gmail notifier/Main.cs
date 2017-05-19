@@ -1008,8 +1008,8 @@ namespace notifier {
 				menuItemTimout.Enabled = false;
 				menuItemSettings.Enabled = false;
 
-				// displays the last reconnection message on the icon
-				notifyIcon.Icon = Resources.warning;
+				// displays the reconnection attempt message on the icon
+				notifyIcon.Icon = Resources.retry;
 				notifyIcon.Text = translation.reconnectAttempt;
 
 				return;
@@ -1028,6 +1028,7 @@ namespace notifier {
 					menuItemSynchronize.Enabled = true;
 
 					// displays the last reconnection message on the icon
+					notifyIcon.Icon = Resources.warning;
 					notifyIcon.Text = translation.reconnectFailed;
 				}
 			} else {
