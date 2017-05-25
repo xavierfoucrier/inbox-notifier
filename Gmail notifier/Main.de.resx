@@ -319,7 +319,7 @@ nächsten Start der Anwendung.</value>
     <value>Jetzt prüfen</value>
   </data>
   <data name="labelUpdateControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 84</value>
+    <value>380, 52</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
@@ -449,9 +449,6 @@ Entwickelt von Xavier Foucrier</value>
   </data>
   <data name="menuItemTimeout5h.Text" xml:space="preserve">
     <value>5 Stunden</value>
-  </data>
-  <data name="menuItem3.Text" xml:space="preserve">
-    <value>Auf unbestimmte Zeit</value>
   </data>
   <data name="menuItemSettings.Text" xml:space="preserve">
     <value>Offen</value>
