@@ -214,5 +214,17 @@ namespace notifier.Properties {
                 this["UpdateDownload"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int NotificationBehavior {
+            get {
+                return ((int)(this["NotificationBehavior"]));
+            }
+            set {
+                this["NotificationBehavior"] = value;
+            }
+        }
     }
 }
