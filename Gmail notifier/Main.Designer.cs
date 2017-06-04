@@ -55,6 +55,10 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.buttonGmailDisconnect = new System.Windows.Forms.Button();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.label15 = new System.Windows.Forms.Label();
+			this.fieldNotificationBehavior = new System.Windows.Forms.ComboBox();
+			this.label9 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
 			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
@@ -110,7 +114,6 @@
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -119,6 +122,7 @@
 			this.groupBox8.SuspendLayout();
 			this.groupBox6.SuspendLayout();
 			this.tabPageNotification.SuspendLayout();
+			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.tabPagePrivacy.SuspendLayout();
@@ -352,6 +356,38 @@
 			resources.ApplyResources(this.tabPageNotification, "tabPageNotification");
 			this.tabPageNotification.Name = "tabPageNotification";
 			this.tabPageNotification.UseVisualStyleBackColor = true;
+			// 
+			// groupBox3
+			// 
+			this.groupBox3.Controls.Add(this.label15);
+			this.groupBox3.Controls.Add(this.fieldNotificationBehavior);
+			this.groupBox3.Controls.Add(this.label9);
+			resources.ApplyResources(this.groupBox3, "groupBox3");
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.TabStop = false;
+			// 
+			// label15
+			// 
+			resources.ApplyResources(this.label15, "label15");
+			this.label15.ForeColor = System.Drawing.Color.RoyalBlue;
+			this.label15.Image = global::notifier.Properties.Resources.information;
+			this.label15.Name = "label15";
+			// 
+			// fieldNotificationBehavior
+			// 
+			this.fieldNotificationBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldNotificationBehavior.FormattingEnabled = true;
+			this.fieldNotificationBehavior.Items.AddRange(new object[] {
+            resources.GetString("fieldNotificationBehavior.Items"),
+            resources.GetString("fieldNotificationBehavior.Items1"),
+            resources.GetString("fieldNotificationBehavior.Items2")});
+			resources.ApplyResources(this.fieldNotificationBehavior, "fieldNotificationBehavior");
+			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
+			// 
+			// label9
+			// 
+			resources.ApplyResources(this.label9, "label9");
+			this.label9.Name = "label9";
 			// 
 			// groupBox2
 			// 
@@ -794,12 +830,6 @@
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
-			// groupBox3
-			// 
-			resources.ApplyResources(this.groupBox3, "groupBox3");
-			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.TabStop = false;
-			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -832,6 +862,8 @@
 			this.groupBox6.ResumeLayout(false);
 			this.groupBox6.PerformLayout();
 			this.tabPageNotification.ResumeLayout(false);
+			this.groupBox3.ResumeLayout(false);
+			this.groupBox3.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).EndInit();
@@ -938,6 +970,9 @@
 		private System.Windows.Forms.MenuItem menuItem4;
 		private System.Windows.Forms.MenuItem menuItemTimeoutIndefinitely;
 		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.ComboBox fieldNotificationBehavior;
+		private System.Windows.Forms.Label label15;
 	}
 }
 
