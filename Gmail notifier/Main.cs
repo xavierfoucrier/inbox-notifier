@@ -918,14 +918,15 @@ namespace notifier {
 				return;
 			}
 
-			notifyIconInteraction();
+			notifyIconInteraction(true);
 		}
 
 		/// <summary>
-		/// Opens the gmail specified view (inbox/message/spam) in a browser
+		/// Do the gmail specified action (inbox/message/spam) in a browser
 		/// </summary>
-		private void notifyIconInteraction() {
-			if (notifyIcon.Tag == null) {
+		/// <param name="systray">Defines if the interaction is provided by the balloon tip</param>
+		private void notifyIconInteraction(bool balloon = false) {
+			if (notifyIcon.Tag == null || (balloon && Settings.Default.NotificationBehavior == 0)) {
 				return;
 			}
 
