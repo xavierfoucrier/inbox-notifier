@@ -232,24 +232,21 @@ nächsten Start der Anwendung.</value>
     <value>Verhalten</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 71</value>
+    <value>23, 71</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 51</value>
+    <value>224, 51</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
-    <value>Nach dem Empfang mehrere Nachrichtenoptionen 
-„Öffnen Sie die Nachricht“ und „auf die Nachricht
-antworten“ automatisch den Posteingang öffnen.</value>
+    <value>Nach dem Empfang mehrere
+Nachrichtenoptionen „Öffnen Sie die Nachricht“
+automatisch den Posteingang öffnen.</value>
   </data>
   <data name="fieldNotificationBehavior.Items" xml:space="preserve">
     <value>nichts tun</value>
   </data>
   <data name="fieldNotificationBehavior.Items1" xml:space="preserve">
     <value>öffnen Sie die Nachricht</value>
-  </data>
-  <data name="fieldNotificationBehavior.Items2" xml:space="preserve">
-    <value>antwort auf die Nachricht</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 13</value>
