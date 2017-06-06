@@ -56,6 +56,7 @@
 			this.buttonGmailDisconnect = new System.Windows.Forms.Button();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.label15 = new System.Windows.Forms.Label();
 			this.fieldNotificationBehavior = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -358,11 +359,19 @@
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.label15);
 			this.groupBox3.Controls.Add(this.fieldNotificationBehavior);
 			this.groupBox3.Controls.Add(this.label9);
 			resources.ApplyResources(this.groupBox3, "groupBox3");
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
+			// 
+			// label15
+			// 
+			resources.ApplyResources(this.label15, "label15");
+			this.label15.ForeColor = System.Drawing.Color.RoyalBlue;
+			this.label15.Image = global::notifier.Properties.Resources.information;
+			this.label15.Name = "label15";
 			// 
 			// fieldNotificationBehavior
 			// 
@@ -372,7 +381,8 @@
 			this.fieldNotificationBehavior.FormattingEnabled = true;
 			this.fieldNotificationBehavior.Items.AddRange(new object[] {
             resources.GetString("fieldNotificationBehavior.Items"),
-            resources.GetString("fieldNotificationBehavior.Items1")});
+            resources.GetString("fieldNotificationBehavior.Items1"),
+            resources.GetString("fieldNotificationBehavior.Items2")});
 			resources.ApplyResources(this.fieldNotificationBehavior, "fieldNotificationBehavior");
 			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
 			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.fieldNotificationBehavior_SelectionChangeCommitted);
@@ -967,6 +977,7 @@
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.ComboBox fieldNotificationBehavior;
+		private System.Windows.Forms.Label label15;
 	}
 }
 
