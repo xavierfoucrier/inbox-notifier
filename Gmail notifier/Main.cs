@@ -195,6 +195,9 @@ namespace notifier {
 			// displays the step delay setting
 			fieldStepDelay.SelectedIndex = Settings.Default.StepDelay;
 
+			// displays the notification behavior setting
+			fieldNotificationBehavior.SelectedIndex = Settings.Default.NotificationBehavior;
+
 			// displays the privacy notification setting
 			switch (Settings.Default.PrivacyNotification) {
 				case (int)Privacy.None:
@@ -676,6 +679,13 @@ namespace notifier {
 		private void fieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
 			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
 			Settings.Default.StepDelay = fieldStepDelay.SelectedIndex;
+		}
+
+		/// <summary>
+		/// Manages the NotificationBehavior user setting
+		/// </summary>
+		private void fieldNotificationBehavior_SelectionChangeCommitted(object sender, EventArgs e) {
+			Settings.Default.NotificationBehavior = fieldNotificationBehavior.SelectedIndex;
 		}
 
 		/// <summary>

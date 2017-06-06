@@ -383,6 +383,7 @@
             resources.GetString("fieldNotificationBehavior.Items2")});
 			resources.ApplyResources(this.fieldNotificationBehavior, "fieldNotificationBehavior");
 			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
+			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.fieldNotificationBehavior_SelectionChangeCommitted);
 			// 
 			// label9
 			// 
