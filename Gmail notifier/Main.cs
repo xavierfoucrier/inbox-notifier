@@ -138,6 +138,7 @@ namespace notifier {
 			help.SetHelpString(fieldSpamNotification, translation.helpSpamNotification);
 			help.SetHelpString(fieldNumericDelay, translation.helpNumericDelay);
 			help.SetHelpString(fieldStepDelay, translation.helpStepDelay);
+			help.SetHelpString(fieldNotificationBehavior, translation.helpNotificationBehavior);
 			help.SetHelpString(fieldPrivacyNotificationNone, translation.helpPrivacyNotificationNone);
 			help.SetHelpString(fieldPrivacyNotificationShort, translation.helpPrivacyNotificationShort);
 			help.SetHelpString(fieldPrivacyNotificationAll, translation.helpPrivacyNotificationAll);

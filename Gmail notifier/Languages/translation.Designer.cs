@@ -211,6 +211,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Action réalisée lors d&apos;un clic sur une notification.
+        /// </summary>
+        internal static string helpNotificationBehavior {
+            get {
+                return ResourceManager.GetString("helpNotificationBehavior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Délai de synchronisation de la boite de réception.
         /// </summary>
         internal static string helpNumericDelay {

@@ -171,6 +171,9 @@ Do you really want to disconnect your Gmail account and restart the application 
   <data name="helpMessageNotification" xml:space="preserve">
     <value>Displays a notification when receiving new messages</value>
   </data>
+  <data name="helpNotificationBehavior" xml:space="preserve">
+    <value>Action performed when clicking on a notification</value>
+  </data>
   <data name="helpNumericDelay" xml:space="preserve">
     <value>Timing delay of the inbox</value>
   </data>
