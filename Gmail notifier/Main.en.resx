@@ -305,10 +305,10 @@ automatically open the inbox.</value>
     <value>Behavior</value>
   </data>
   <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 17</value>
+    <value>266, 17</value>
   </data>
   <data name="fieldUpdateDownload.Text" xml:space="preserve">
-    <value>Download updates automatically</value>
+    <value>Download and start installing updates automatically</value>
   </data>
   <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>421, 95</value>

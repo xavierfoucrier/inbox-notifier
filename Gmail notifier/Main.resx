@@ -128,6 +128,9 @@
   <data name="&gt;&gt;label11.Parent" xml:space="preserve">
     <value>tabPageAbout</value>
   </data>
+  <data name="&gt;&gt;tabPageAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;buttonCheckForUpdate.Name" xml:space="preserve">
     <value>buttonCheckForUpdate</value>
   </data>
@@ -237,9 +240,6 @@
   <data name="linkWebsiteXavier.Location" type="System.Drawing.Point, System.Drawing">
     <value>27, 97</value>
   </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="tabPageNotification.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -345,8 +345,8 @@
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;labelTokenDelivery.Name" xml:space="preserve">
+    <value>labelTokenDelivery</value>
   </data>
   <data name="fieldMessageNotification.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 25</value>
@@ -774,9 +774,6 @@
   <data name="&gt;&gt;tabPagePrivacy.Parent" xml:space="preserve">
     <value>tabControl</value>
   </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 21</value>
   </data>
@@ -1011,9 +1008,6 @@ Développé par Xavier Foucrier</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
-  </data>
-  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="fieldMinimizeToSystray.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1898,6 +1892,9 @@ Open Source, distribué sous Licence MIT</value>
   <data name="&gt;&gt;fieldPrivacyNotificationAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="linkRestartToApply.Text" xml:space="preserve">
+    <value>Redémarrer maintenant</value>
+  </data>
   <data name="&gt;&gt;fieldNumericDelay.Name" xml:space="preserve">
     <value>fieldNumericDelay</value>
   </data>
@@ -1971,7 +1968,7 @@ Open Source, distribué sous Licence MIT</value>
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fieldUpdateDownload.Text" xml:space="preserve">
-    <value>Télécharger automatiquement les mises à jour</value>
+    <value>Télécharger et lancer l'installation des mises à jour automatiquement</value>
   </data>
   <data name="&gt;&gt;buttonOK.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -2086,9 +2083,6 @@ la boite de réception.</value>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
   </data>
-  <data name="menuItemSettings.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="fieldSpamNotification.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 71</value>
   </data>
@@ -2164,6 +2158,9 @@ la boite de réception.</value>
   <data name="&gt;&gt;linkWebsiteYusuke.Name" xml:space="preserve">
     <value>linkWebsiteYusuke</value>
   </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 71</value>
+  </data>
   <data name="&gt;&gt;fieldUpdatePeriod.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -2209,8 +2206,8 @@ la boite de réception.</value>
   <data name="&gt;&gt;label13.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelTokenDelivery.Name" xml:space="preserve">
-    <value>labelTokenDelivery</value>
+  <data name="menuItemSettings.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="buttonGmailDisconnect.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -2236,8 +2233,8 @@ la boite de réception.</value>
   <data name="&gt;&gt;menuItemTimeout1h.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 13</value>
@@ -2422,8 +2419,8 @@ la boite de réception.</value>
   <data name="menuItemNewMessage.Text" xml:space="preserve">
     <value>Nouveau message</value>
   </data>
-  <data name="&gt;&gt;fieldStepDelay.Name" xml:space="preserve">
-    <value>fieldStepDelay</value>
+  <data name="labelTotalDrafts.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="buttonCheckForUpdate.Text" xml:space="preserve">
     <value>Vérifier maintenant</value>
@@ -2440,8 +2437,8 @@ la boite de réception.</value>
   <data name="&gt;&gt;labelEmailAddress.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 71</value>
+  <data name="&gt;&gt;fieldStepDelay.Name" xml:space="preserve">
+    <value>fieldStepDelay</value>
   </data>
   <data name="buttonGmailDisconnect.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2505,6 +2502,9 @@ la boite de réception.</value>
   </data>
   <data name="&gt;&gt;label9.Name" xml:space="preserve">
     <value>label9</value>
+  </data>
+  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;linkRestartToApply.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2729,7 +2729,7 @@ la boite de réception.</value>
     <value>Microsoft Sans Serif, 6.75pt</value>
   </data>
   <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 17</value>
+    <value>345, 17</value>
   </data>
   <data name="&gt;&gt;timer.Name" xml:space="preserve">
     <value>timer</value>
@@ -2792,8 +2792,8 @@ prochain démarrage de l'application.</value>
   <data name="linkWebsiteXavier.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="labelTotalDrafts.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
   </data>
   <data name="labelTotalDrafts.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 26</value>
@@ -2843,8 +2843,8 @@ prochain démarrage de l'application.</value>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 13</value>
   </data>
-  <data name="&gt;&gt;tabPageAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 51</value>
@@ -2933,8 +2933,8 @@ prochain démarrage de l'application.</value>
   <data name="labelTokenDelivery.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
-  <data name="linkRestartToApply.Text" xml:space="preserve">
-    <value>Redémarrer maintenant</value>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;labelTotalUnreadMails.ZOrder" xml:space="preserve">
     <value>6</value>
