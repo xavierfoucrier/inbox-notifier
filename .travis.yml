@@ -1,3 +1,2 @@
 language: csharp
 solution: ./Gmail notifier/Gmail notifier.sln
-os: windows
