@@ -4,4 +4,4 @@ script:
   - xbuild /p:Configuration=Debug Gmail notifier.sln
 install:
   - nuget #lets version number
-  - nuget restore packages.config
+  - nuget restore Gmail notifier/packages.config
