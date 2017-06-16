@@ -3,4 +3,4 @@ solution: ./Gmail notifier/Gmail notifier.sln
 script:
   - xbuild /p:Configuration=Debug Gmail notifier.sln
 install:
-  - nuget restore ./Gmail notifier/packages.config
+  - nuget restore ./Gmail notifier/packages.config -SolutionDirectory Gmail notifier -Verbosity detailed
