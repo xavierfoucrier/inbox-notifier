@@ -1,6 +1,4 @@
 language: csharp
-solution: ./Gmail notifier/Gmail notifier.sln
+solution: "./Gmail notifier/Gmail notifier.sln"
 script:
-  - xbuild /p:Configuration=Debug Gmail notifier.sln
-install:
-  - nuget restore ./Gmail notifier/packages.config -SolutionDirectory Gmail notifier -Verbosity detailed
+  - xbuild /p:Configuration=Debug "Gmail notifier.sln"
