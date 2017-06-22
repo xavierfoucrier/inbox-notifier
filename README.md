@@ -1,4 +1,4 @@
-Gmail notifier
+Gmail notifier – [![Build Status](https://travis-ci.org/xavierfoucrier/gmail-notifier.svg?branch=master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier)
 ======
 Gmail notifications instantly in the windows taskbar.
 
