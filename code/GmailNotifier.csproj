@@ -277,9 +277,10 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>echo Cleaning bin directory by deleting *.xml and *.pdb files
-
 del "$(TargetDir)*.xml" /q
 del "$(TargetDir)*.pdb" /q</PostBuildEvent>
+    <PostBuildEvent Condition=" '$(OS)' == 'Unix'">
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
