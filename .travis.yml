@@ -1,6 +1,5 @@
 language: csharp
 solution: code/GmailNotifier.sln
-install: false
 
 script:
   - msbuild /p:Configuration=Debug code/GmailNotifier.sln
