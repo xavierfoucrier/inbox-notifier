@@ -3,3 +3,6 @@ solution: code/GmailNotifier.sln
 
 script:
   - msbuild /p:Configuration=Debug code/GmailNotifier.sln
+
+notifications:
+  - email: false
