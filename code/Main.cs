@@ -178,8 +178,11 @@ namespace notifier {
 						continue;
 					}
 
-					// syncs the inbox when a network interface is available
-					this.AsyncSyncInbox();
+					// syncs the inbox when a network interface is available and the timeout mode is disabled
+					if (timer.Interval == Settings.Default.TimerInterval) {
+						this.AsyncSyncInbox();
+					}
+
 					break;
 				}
 			});
@@ -189,7 +192,11 @@ namespace notifier {
 				if (target.Mode == PowerModes.Suspend) {
 					timer.Enabled = false;
 				} else if (target.Mode == PowerModes.Resume) {
-					timer.Enabled = true;
+
+					// syncs the inbox it the timeout mode is disabled
+					if (timer.Interval == Settings.Default.TimerInterval) {
+						timer.Enabled = true;
+					}
 				}
 			});
 
