@@ -82,12 +82,12 @@ namespace notifier {
 		public Main() {
 			InitializeComponent();
 		}
-			
+
 		/// <summary>
 		/// Loads the form
 		/// </summary>
 		private void Main_Load(object sender, EventArgs e) {
-
+			
 			// upgrades the user configuration if necessary
 			if (Settings.Default.UpdateRequired) {
 				Settings.Default.Upgrade();
