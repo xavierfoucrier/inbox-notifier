@@ -82,7 +82,7 @@ namespace notifier {
 		public Main() {
 			InitializeComponent();
 		}
-
+			
 		/// <summary>
 		/// Loads the form
 		/// </summary>
