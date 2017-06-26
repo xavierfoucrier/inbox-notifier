@@ -410,6 +410,14 @@ namespace notifier {
 				this.reconnect = 0;
 			}
 
+			// disables the timeout when the user do a manual synchronization
+			if (timer.Interval != Settings.Default.TimerInterval) {
+				Timeout(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
+
+				// exits the method because the timeout function automatically restarts a synchronization once it has been disabled
+				return;
+			}
+
 			// if internet is down, attempts to reconnect the user mailbox
 			if (!this.IsInternetAvailable()) {
 				timerReconnect.Enabled = true;
@@ -422,14 +430,6 @@ namespace notifier {
 			menuItemSynchronize.Enabled = true;
 			menuItemTimout.Enabled = true;
 			menuItemSettings.Enabled = true;
-
-			// disables the timeout when the user do a manual synchronization
-			if (timer.Interval != Settings.Default.TimerInterval) {
-				Timeout(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
-
-				// exits the method because the timeout function automatically restarts a synchronization once it has been disabled
-				return;
-			}
 
 			// displays the sync icon, but not on every tick of the timer
 			if (!timertick) {
