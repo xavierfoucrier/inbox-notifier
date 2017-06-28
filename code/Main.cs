@@ -1144,9 +1144,9 @@ namespace notifier {
 				// creates a new web client instance
 				WebClient client = new WebClient();
 
-				// displays the download progression on the progress bar
+				// displays the download progression on the systray icon
 				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object o, DownloadProgressChangedEventArgs target) => {
-					progressBar.Value = target.ProgressPercentage;
+					notifyIcon.Text = translation.updating + " " + target.ProgressPercentage.ToString() + "%";
 				});
 
 				// starts the setup installer when the download has complete and exits the current application
