@@ -403,6 +403,11 @@ namespace notifier {
 		/// </summary>
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
 		private async void AsyncSyncInbox(bool timertick = false) {
+			
+			// prevents the application from syncing the inbox when updating
+			if (this.updating) {
+				return;
+			}
 
 			// updates the synchronization time
 			this.synctime = DateTime.Now;
@@ -1133,6 +1138,9 @@ namespace notifier {
 		/// </summary>
 		private void downloadUpdate(string release) {
 
+			// defines that the application is currently updating
+			this.updating = true;
+
 			// defines the new number version and temp path
 			string newversion = release.Split('-')[0].Substring(1);
 			string updatepath = this.appdata + "/gmnupdate-" + newversion + ".exe";
@@ -1147,8 +1155,10 @@ namespace notifier {
 				// creates a new web client instance
 				WebClient client = new WebClient();
 
-				// displays the download progression on the systray icon
+				// displays the download progression on the systray icon, and prevents the application from restoring the context menu and systray icon at startup
 				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object o, DownloadProgressChangedEventArgs target) => {
+					notifyIcon.ContextMenu = null;
+					notifyIcon.Icon = Resources.updating;
 					notifyIcon.Text = translation.updating + " " + target.ProgressPercentage.ToString() + "%";
 				});
 
@@ -1161,6 +1171,9 @@ namespace notifier {
 				// starts the download of the new version from the Github repository
 				client.DownloadFileAsync(new Uri(GITHUB_REPOSITORY + "/releases/download/" + release + "/Gmail.Notifier." + newversion + ".exe"), updatepath);
 			} catch (Exception) {
+
+				// defines that the application has exited the updating state
+				this.updating = false;
 
 				// restores the context menu to the systray icon and start a synchronization
 				notifyIcon.ContextMenu = contextMenu;
