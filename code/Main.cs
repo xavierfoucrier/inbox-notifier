@@ -87,7 +87,10 @@ namespace notifier {
 		/// Loads the form
 		/// </summary>
 		private void Main_Load(object sender, EventArgs e) {
-			
+
+			// hides the form by default
+			Visible = false;
+
 			// upgrades the user configuration if necessary
 			if (Settings.Default.UpdateRequired) {
 				Settings.Default.Upgrade();
@@ -105,9 +108,6 @@ namespace notifier {
 					}
 				}
 			}
-
-			// hides the form by default
-			Visible = false;
 
 			// initializes the application version number
 			string[] version = Application.ProductVersion.Split('.');
