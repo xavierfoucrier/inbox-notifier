@@ -64,6 +64,9 @@ namespace notifier {
 		// version number
 		private string version = "";
 
+		// flag defining the update state
+		private bool updating = false;
+
 		// number of maximum automatic reconnection
 		private const int MAX_AUTO_RECONNECT = 3;
 
