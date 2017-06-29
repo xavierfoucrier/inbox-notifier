@@ -1491,6 +1491,36 @@ la boite de réception.</value>
   <data name="&gt;&gt;tabPagePrivacy.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="fieldUpdateQuiet.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fieldUpdateQuiet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="fieldUpdateQuiet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 105</value>
+  </data>
+  <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="fieldUpdateQuiet.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="fieldUpdateQuiet.Text" xml:space="preserve">
+    <value>Installation silencieuse</value>
+  </data>
+  <data name="&gt;&gt;fieldUpdateQuiet.Name" xml:space="preserve">
+    <value>fieldUpdateQuiet</value>
+  </data>
+  <data name="&gt;&gt;fieldUpdateQuiet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fieldUpdateQuiet.Parent" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;fieldUpdateQuiet.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="fieldUpdateDownload.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1519,7 +1549,7 @@ la boite de réception.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;fieldUpdateDownload.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="buttonCheckForUpdate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1549,7 +1579,7 @@ la boite de réception.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;buttonCheckForUpdate.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="labelUpdateControl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1582,7 +1612,7 @@ la boite de réception.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;labelUpdateControl.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1612,7 +1642,7 @@ la boite de réception.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="fieldUpdatePeriod.Items" xml:space="preserve">
     <value>au démarrage de l'application</value>
@@ -1645,7 +1675,7 @@ la boite de réception.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;fieldUpdatePeriod.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1675,7 +1705,7 @@ la boite de réception.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="fieldUpdateService.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1705,7 +1735,7 @@ la boite de réception.</value>
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;fieldUpdateService.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="groupBox7.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
@@ -2836,6 +2866,9 @@ Développé par Xavier Foucrier</value>
         AAPAAAAAAAAAA8AAAAAAAAADwAAAAAAAAAPgAAAAAAAAB///////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
