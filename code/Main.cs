@@ -1109,15 +1109,15 @@ namespace notifier {
 				// the current version tag is not at the top of the list
 				if (release != this.version) {
 
-					// downloads the update package automatically or asks the user, depending on the user setting
-					if (Settings.Default.UpdateDownload) {
-						this.downloadUpdate(release);
-					} else {
+					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
+					if (verbose) {
 						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
 						if (dialog == DialogResult.Yes) {
 							this.downloadUpdate(release);
 						}
+					} else if (Settings.Default.UpdateDownload) {
+						this.downloadUpdate(release);
 					}
 				} else if (verbose) {
 					MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
