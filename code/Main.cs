@@ -1164,7 +1164,7 @@ namespace notifier {
 
 				// starts the setup installer when the download has complete and exits the current application
 				client.DownloadFileCompleted += new AsyncCompletedEventHandler((object o, AsyncCompletedEventArgs target) => {
-					Process.Start(new ProcessStartInfo(updatepath));
+					Process.Start(new ProcessStartInfo(updatepath, Settings.Default.UpdateQuiet ? "/verysilent" : ""));
 					Application.Exit();
 				});
 

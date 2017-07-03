@@ -55,7 +55,7 @@ Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Fil
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Parameters: "install {language} {code:autorun}"; Flags: runhidden
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall
 
 [Registry]
 Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: "Gmail notifier"; ValueData: "{app}\{#MyAppExeName}"; Tasks: startup; Flags: uninsdeletevalue;
