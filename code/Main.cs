@@ -903,6 +903,7 @@ namespace notifier {
 			Visible = true;
 			ShowInTaskbar = true;
 			WindowState = FormWindowState.Normal;
+			Focus();
 		}
 
 		/// <summary>
