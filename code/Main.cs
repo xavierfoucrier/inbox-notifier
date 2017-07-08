@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Net;
+using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -17,6 +18,7 @@ using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using HtmlAgilityPack;
 using Microsoft.Win32;
 using notifier.Languages;
 using notifier.Properties;
@@ -266,7 +268,7 @@ namespace notifier {
 
 			// check for update, depending on the user settings
 			if (Settings.Default.UpdateService && Settings.Default.UpdatePeriod == (int)Period.Startup) {
-				checkForUpdate(false);
+				this.AsyncCheckForUpdate(false);
 			}
 		}
 
@@ -449,19 +451,19 @@ namespace notifier {
 				switch (Settings.Default.UpdatePeriod) {
 					case (int)Period.Day:
 						if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(1)) {
-							checkForUpdate(false);
+							this.AsyncCheckForUpdate(false);
 						}
 
 						break;
 					case (int)Period.Week:
 						if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(7)) {
-							checkForUpdate(false);
+							this.AsyncCheckForUpdate(false);
 						}
 
 						break;
 					case (int)Period.Month:
 						if (DateTime.Now >= Settings.Default.UpdateControl.AddMonths(1)) {
-							checkForUpdate(false);
+							this.AsyncCheckForUpdate(false);
 						}
 
 						break;
@@ -1076,7 +1078,7 @@ namespace notifier {
 		/// Check for update
 		/// </summary>
 		private void buttonCheckForUpdate_Click(object sender, EventArgs e) {
-			checkForUpdate();
+			this.AsyncCheckForUpdate();
 		}
 
 		/// <summary>
@@ -1086,20 +1088,22 @@ namespace notifier {
 			linkCheckForUpdate.Image = Resources.update_hourglass;
 			linkCheckForUpdate.Enabled = false;
 			Cursor.Current = DefaultCursor;
-			checkForUpdate();
-			linkCheckForUpdate.Enabled = true;
-			linkCheckForUpdate.Image = Resources.update_check;
+			this.AsyncCheckForUpdate();
 		}
 
 		/// <summary>
-		/// Connect to the repository and check if there is an update available
+		/// Asynchronous method to connect to the repository and check if there is an update available
 		/// </summary>
-		private void checkForUpdate(bool verbose = true) {
+		private async void AsyncCheckForUpdate(bool verbose = true) {
 			try {
 
 				// gets the list of tags in the Github repository tags webpage
-				HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlWeb().Load(GITHUB_REPOSITORY + "/tags");
-				HtmlAgilityPack.HtmlNodeCollection collection = document.DocumentNode.SelectNodes("//span[@class='tag-name']");
+				HttpResponseMessage response = await new HttpClient().GetAsync(GITHUB_REPOSITORY + "/tags");
+
+				var document = new HtmlAgilityPack.HtmlDocument();
+				document.LoadHtml(await response.Content.ReadAsStringAsync());
+
+				HtmlNodeCollection collection = document.DocumentNode.SelectNodes("//span[@class='tag-name']");
 
 				if (collection == null || collection.Count == 0) {
 					return;
@@ -1126,6 +1130,11 @@ namespace notifier {
 				}
 			} catch (Exception) {
 				// nothing to catch
+			} finally {
+
+				// restores default check icon
+				linkCheckForUpdate.Enabled = true;
+				linkCheckForUpdate.Image = Resources.update_check;
 			}
 
 			// stores the latest update datetime control
