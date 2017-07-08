@@ -1078,6 +1078,7 @@ namespace notifier {
 		/// Check for update
 		/// </summary>
 		private void buttonCheckForUpdate_Click(object sender, EventArgs e) {
+			buttonCheckForUpdate.Enabled = false;
 			this.AsyncCheckForUpdate();
 		}
 
@@ -1132,9 +1133,10 @@ namespace notifier {
 				// nothing to catch
 			} finally {
 
-				// restores default check icon
+				// restores default check icon and check for update button state
 				linkCheckForUpdate.Enabled = true;
 				linkCheckForUpdate.Image = Resources.update_check;
+				buttonCheckForUpdate.Enabled = true;
 			}
 
 			// stores the latest update datetime control
