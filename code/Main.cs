@@ -265,11 +265,6 @@ namespace notifier {
 			ToolTip tipLicense = new ToolTip();
 			tipLicense.SetToolTip(linkLicense, GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
 			tipLicense.IsBalloon = false;
-
-			// check for update, depending on the user settings
-			if (Settings.Default.UpdateService && Settings.Default.UpdatePeriod == (int)Period.Startup) {
-				this.AsyncCheckForUpdate(false);
-			}
 		}
 
 		/// <summary>
@@ -335,8 +330,12 @@ namespace notifier {
 				}
 			} finally {
 
-				// synchronizes the user mailbox
-				this.AsyncSyncInbox();
+				// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
+				if (Settings.Default.UpdateService && Settings.Default.UpdatePeriod == (int)Period.Startup) {
+					this.AsyncCheckForUpdate(false);
+				} else {
+					this.AsyncSyncInbox();
+				}
 			}
 		}
 
@@ -1143,6 +1142,11 @@ namespace notifier {
 
 				// updates the update control label
 				labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
+
+				// synchronizes the inbox if the updates has been checked at startup after asynchronous authentication
+				if (!verbose && Settings.Default.UpdateService && Settings.Default.UpdatePeriod == (int)Period.Startup) {
+					this.AsyncSyncInbox();
+				}
 			}
 		}
 
