@@ -1137,13 +1137,13 @@ namespace notifier {
 				linkCheckForUpdate.Enabled = true;
 				linkCheckForUpdate.Image = Resources.update_check;
 				buttonCheckForUpdate.Enabled = true;
+
+				// stores the latest update datetime control
+				Settings.Default.UpdateControl = DateTime.Now;
+
+				// updates the update control label
+				labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
 			}
-
-			// stores the latest update datetime control
-			Settings.Default.UpdateControl = DateTime.Now;
-
-			// updates the update control label
-			labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
 		}
 
 		/// <summary>
