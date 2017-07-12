@@ -197,7 +197,7 @@ namespace notifier {
 					timer.Enabled = false;
 				} else if (target.Mode == PowerModes.Resume) {
 
-					// syncs the inbox it the timeout mode is disabled
+					// syncs the inbox if the timeout mode is disabled
 					if (timer.Interval == Settings.Default.TimerInterval) {
 						timer.Enabled = true;
 					}
