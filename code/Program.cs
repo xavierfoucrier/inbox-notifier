@@ -70,6 +70,7 @@ namespace notifier {
 			// run the main window
 			Application.Run(new Main());
 
+			// releases the mutex instance
 			mutex.ReleaseMutex();
 		}
 	}
