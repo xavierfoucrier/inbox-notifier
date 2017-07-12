@@ -1094,6 +1094,8 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method to connect to the repository and check if there is an update available
 		/// </summary>
+		/// <param name="verbose">Indicates if the process displays a message when a new update package is available</param>
+		/// <param name="startup">Indicates if the update check process has been started at startup</param>
 		private async void AsyncCheckForUpdate(bool verbose = true, bool startup = false) {
 			try {
 
@@ -1153,6 +1155,7 @@ namespace notifier {
 		/// <summary>
 		/// Downloads and launch the setup installer
 		/// </summary>
+		/// <param name="release">Version number package to download</param>
 		private void downloadUpdate(string release) {
 
 			// defines that the application is currently updating
