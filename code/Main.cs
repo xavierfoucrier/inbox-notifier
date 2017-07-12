@@ -332,7 +332,7 @@ namespace notifier {
 
 				// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
 				if (Settings.Default.UpdateService && Settings.Default.UpdatePeriod == (int)Period.Startup) {
-					this.AsyncCheckForUpdate(false);
+					this.AsyncCheckForUpdate(!Settings.Default.UpdateDownload, true);
 				} else {
 					this.AsyncSyncInbox();
 				}
@@ -1094,7 +1094,7 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method to connect to the repository and check if there is an update available
 		/// </summary>
-		private async void AsyncCheckForUpdate(bool verbose = true) {
+		private async void AsyncCheckForUpdate(bool verbose = true, bool startup = false) {
 			try {
 
 				// gets the list of tags in the Github repository tags webpage
@@ -1114,7 +1114,7 @@ namespace notifier {
 
 				// the current version tag is not at the top of the list
 				if (release != this.version) {
-
+					
 					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
 					if (verbose) {
 						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
@@ -1125,7 +1125,7 @@ namespace notifier {
 					} else if (Settings.Default.UpdateDownload) {
 						this.downloadUpdate(release);
 					}
-				} else if (verbose) {
+				} else if (verbose && !startup) {
 					MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 			} catch (Exception) {
@@ -1144,7 +1144,7 @@ namespace notifier {
 				labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
 
 				// synchronizes the inbox if the updates has been checked at startup after asynchronous authentication
-				if (!verbose && Settings.Default.UpdateService && Settings.Default.UpdatePeriod == (int)Period.Startup) {
+				if (startup) {
 					this.AsyncSyncInbox();
 				}
 			}
