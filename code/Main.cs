@@ -1168,6 +1168,7 @@ namespace notifier {
 			// defines the new number version and temp path
 			string newversion = release.Split('-')[0].Substring(1);
 			string updatepath = this.appdata + "/gmnupdate-" + newversion + ".exe";
+			string package = GITHUB_REPOSITORY + "/releases/download/" + release + "/Gmail.Notifier." + newversion + ".exe";
 
 			try {
 
@@ -1193,7 +1194,7 @@ namespace notifier {
 				});
 
 				// starts the download of the new version from the Github repository
-				client.DownloadFileAsync(new Uri(GITHUB_REPOSITORY + "/releases/download/" + release + "/Gmail.Notifier." + newversion + ".exe"), updatepath);
+				client.DownloadFileAsync(new Uri(package), updatepath);
 			} catch (Exception) {
 
 				// defines that the application has exited the updating state
