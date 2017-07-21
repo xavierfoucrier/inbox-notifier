@@ -1133,7 +1133,9 @@ namespace notifier {
 			} catch (Exception) {
 
 				// indicates to the user that the update service is not reachable for the moment
-				MessageBox.Show(translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				if (verbose) {
+					MessageBox.Show(translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				}
 			} finally {
 
 				// restores default check icon and check for update button state
