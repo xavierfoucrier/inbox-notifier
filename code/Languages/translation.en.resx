@@ -266,6 +266,9 @@ Do you want to download it now?</value>
   <data name="unreadSpams" xml:space="preserve">
     <value>unread spams</value>
   </data>
+  <data name="updateServiceUnreachable" xml:space="preserve">
+    <value>The update service is unreachable.</value>
+  </data>
   <data name="updating" xml:space="preserve">
     <value>Downloading update...</value>
   </data>

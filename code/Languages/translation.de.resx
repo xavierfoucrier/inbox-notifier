@@ -266,6 +266,9 @@ Möchten Sie sie jetzt herunterladen?</value>
   <data name="unreadSpams" xml:space="preserve">
     <value>ungelesenen Spam</value>
   </data>
+  <data name="updateServiceUnreachable" xml:space="preserve">
+    <value>Der Update-Service ist nicht erreichbar.</value>
+  </data>
   <data name="updating" xml:space="preserve">
     <value>Herunterladen der Aktualisierung ...</value>
   </data>
