@@ -1197,6 +1197,9 @@ namespace notifier {
 				client.DownloadFileAsync(new Uri(package), updatepath);
 			} catch (Exception) {
 
+				// indicates to the user that the update service is not reachable for the moment
+				MessageBox.Show(translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
 				// defines that the application has exited the updating state
 				this.updating = false;
 
