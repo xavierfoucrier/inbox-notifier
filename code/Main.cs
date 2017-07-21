@@ -1193,6 +1193,9 @@ namespace notifier {
 					Application.Exit();
 				});
 
+				// ensures that the Github package URI is callable
+				client.OpenRead(package).Close();
+
 				// starts the download of the new version from the Github repository
 				client.DownloadFileAsync(new Uri(package), updatepath);
 			} catch (Exception) {
