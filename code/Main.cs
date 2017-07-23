@@ -68,6 +68,9 @@ namespace notifier {
 		// flag defining the update state
 		private bool updating = false;
 
+		// http client used to check for updates
+		private HttpClient http = new HttpClient();
+
 		// number of maximum automatic reconnection
 		private const int MAX_AUTO_RECONNECT = 3;
 
@@ -1100,7 +1103,7 @@ namespace notifier {
 			try {
 
 				// gets the list of tags in the Github repository tags webpage
-				HttpResponseMessage response = await new HttpClient().GetAsync(GITHUB_REPOSITORY + "/tags");
+				HttpResponseMessage response = await this.http.GetAsync(GITHUB_REPOSITORY + "/tags");
 
 				var document = new HtmlAgilityPack.HtmlDocument();
 				document.LoadHtml(await response.Content.ReadAsStringAsync());
