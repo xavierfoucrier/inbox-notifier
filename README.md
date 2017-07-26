@@ -24,13 +24,13 @@ Download
 #### Setup installer
 The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions. Its the better way to install Windows application and allows you to **cleanly install/uninstall** the application with ease. Note that you will need **administrators rights** to properly complete the installation. Recommanded for all users.
 
-* :package: [Gmail Notifier 1.5](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v1.5-release/Gmail.Notifier.1.5.exe)
+* :package: [Gmail Notifier 1.5-r1](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v1.5-release.1/Gmail.Notifier.1.5-r1.exe)
 
 #### Portable version
 The portable version is made for users who want to install the application on a **USB key**, or **removable drive**. In the uninstall process, you will need to manually remove some files from the *%AppData%* folder or edit the registry to completely remove the application from your computer. Recommanded for beta-tester users.
 
-* :package: [Gmail Notifier Portable (x86)](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v1.5-release/Gmail.Notifier.Portable.x86.zip)
-* :package: [Gmail Notifier Portable (x64)](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v1.5-release/Gmail.Notifier.Portable.x64.zip)
+* :package: [Gmail Notifier Portable (x86)](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v1.5-release.1/Gmail.Notifier.Portable.x86.zip)
+* :package: [Gmail Notifier Portable (x64)](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v1.5-release.1/Gmail.Notifier.Portable.x64.zip)
 
 #### Old versions
 
