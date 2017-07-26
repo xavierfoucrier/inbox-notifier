@@ -111,7 +111,12 @@ namespace notifier {
 					IEnumerable<string> executables = Directory.EnumerateFiles(appdata, "*.exe", SearchOption.TopDirectoryOnly);
 
 					foreach (string executable in executables) {
-						File.Delete(executable);
+						try {
+							File.Delete(executable);
+						} catch(Exception) {
+							// nothing to catch: executable is currently locked
+							// setup package will be removed next time
+						}
 					}
 				}
 			}
