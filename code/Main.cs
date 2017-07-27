@@ -123,7 +123,7 @@ namespace notifier {
 
 			// initializes the application version number
 			string[] version = Application.ProductVersion.Split('.');
-			this.version = "v" + version[0] + "." + version[1] + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "") + (version[3] != "0" ? "." + version[3] : "");
+			this.version = "v" + version[0] + "." + version[1] + (version[3] != "0" ? "." + version[3] : "") + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "");
 
 			// displays a systray notification on first load
 			if (Settings.Default.FirstLoad && !Directory.Exists(this.appdata)) {
