@@ -323,6 +323,12 @@ automatisch den Posteingang öffnen.</value>
   <data name="groupBox7.Text" xml:space="preserve">
     <value>Verhalten</value>
   </data>
+  <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 17</value>
+  </data>
+  <data name="fieldUpdateQuiet.Text" xml:space="preserve">
+    <value>Unbeaufsichtigte Installation</value>
+  </data>
   <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 17</value>
   </data>

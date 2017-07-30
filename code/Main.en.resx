@@ -304,6 +304,12 @@ automatically open the inbox.</value>
   <data name="groupBox7.Text" xml:space="preserve">
     <value>Behavior</value>
   </data>
+  <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="fieldUpdateQuiet.Text" xml:space="preserve">
+    <value>Silent installation</value>
+  </data>
   <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
     <value>266, 17</value>
   </data>
