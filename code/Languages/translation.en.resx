@@ -142,6 +142,9 @@ The application will now quit.</value>
   <data name="firstLoad" xml:space="preserve">
     <value>Gmail notifier now runs in background on your computer. In a few seconds you will be prompted to sign in to your Gmail account to allow the application to access your inbox.</value>
   </data>
+  <data name="freeSoftware" xml:space="preserve">
+    <value>Certified no spyware, no adware, no viruses</value>
+  </data>
   <data name="gmailDisconnect" xml:space="preserve">
     <value>Disconnecting your Gmail account</value>
   </data>
@@ -253,6 +256,9 @@ Do you want to download it now?</value>
   </data>
   <data name="tipReleaseNotes" xml:space="preserve">
     <value>Github release notes</value>
+  </data>
+  <data name="tipSoftpedia" xml:space="preserve">
+    <value>Softpedia, 100% free</value>
   </data>
   <data name="unreadMessage" xml:space="preserve">
     <value>unread message</value>

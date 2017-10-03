@@ -273,6 +273,13 @@ namespace notifier {
 			ToolTip tipLicense = new ToolTip();
 			tipLicense.SetToolTip(linkLicense, GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
 			tipLicense.IsBalloon = false;
+
+			// displays a tooltip for the website link
+			ToolTip tipSoftpedia = new ToolTip();
+			tipSoftpedia.SetToolTip(linkSoftpedia, translation.freeSoftware);
+			tipSoftpedia.ToolTipTitle = translation.tipSoftpedia;
+			tipSoftpedia.ToolTipIcon = ToolTipIcon.Info;
+			tipSoftpedia.IsBalloon = false;
 		}
 
 		/// <summary>
