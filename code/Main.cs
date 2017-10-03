@@ -767,6 +767,13 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Opens the Softpedia website
+		/// </summary>
+		private void linkSoftpedia_Click(object sender, EventArgs e) {
+			Process.Start("http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status");
+		}
+
+		/// <summary>
 		/// Opens the Github license file
 		/// </summary>
 		private void linkLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
