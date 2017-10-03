@@ -84,6 +84,7 @@
 			this.label7 = new System.Windows.Forms.Label();
 			this.fieldUpdateService = new System.Windows.Forms.CheckBox();
 			this.tabPageAbout = new System.Windows.Forms.TabPage();
+			this.linkSoftpedia = new System.Windows.Forms.LinkLabel();
 			this.linkCheckForUpdate = new System.Windows.Forms.LinkLabel();
 			this.linkVersion = new System.Windows.Forms.LinkLabel();
 			this.linkLicense = new System.Windows.Forms.LinkLabel();
@@ -114,7 +115,6 @@
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.linkSoftpedia = new System.Windows.Forms.LinkLabel();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -628,6 +628,14 @@
 			this.tabPageAbout.Name = "tabPageAbout";
 			this.tabPageAbout.UseVisualStyleBackColor = true;
 			// 
+			// linkSoftpedia
+			// 
+			this.linkSoftpedia.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.linkSoftpedia.Image = global::notifier.Properties.Resources.softpedia;
+			resources.ApplyResources(this.linkSoftpedia, "linkSoftpedia");
+			this.linkSoftpedia.Name = "linkSoftpedia";
+			this.linkSoftpedia.Click += new System.EventHandler(this.linkSoftpedia_Click);
+			// 
 			// linkCheckForUpdate
 			// 
 			this.linkCheckForUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -839,14 +847,6 @@
 			this.timer.Enabled = true;
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
-			// 
-			// linkSoftpedia
-			// 
-			this.linkSoftpedia.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.linkSoftpedia.Image = global::notifier.Properties.Resources.softpedia;
-			resources.ApplyResources(this.linkSoftpedia, "linkSoftpedia");
-			this.linkSoftpedia.Name = "linkSoftpedia";
-			this.linkSoftpedia.Click += new System.EventHandler(this.linkSoftpedia_Click);
 			// 
 			// Main
 			// 
