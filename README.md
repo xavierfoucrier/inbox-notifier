@@ -57,6 +57,16 @@ Privacy Policy
 Discover the [privacy practices](https://github.com/xavierfoucrier/gmail-notifier/blob/master/PRIVACY.md) of the application and how we collect, use or share your data.
 
 
+Softpedia award
+-------
+This product was last tested in the **Softpedia Labs** on **28th of July 2017** by *Catalin Chelariu*.
+
+Softpedia guarantees that Gmail notifier is **100% Free**, which means it does not contain any form of malware, including but not limited to: spyware, viruses, trojans and backdoors.
+
+This software product was tested thoroughly and was found **absolutely clean**; therefore, it can be installed with no concern by any computer user. However, it should be noted that this product will be retested periodically and the award may be withdrawn, so you should check back occasionally and pay attention to the date of testing shown above.
+
+Read the [Softpedia Labs review](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml) for more informations.
+
 License
 -------
 The project is developed under the **MIT** license:
