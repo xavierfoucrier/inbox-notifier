@@ -57,7 +57,7 @@ Privacy Policy
 Discover the [privacy practices](https://github.com/xavierfoucrier/gmail-notifier/blob/master/PRIVACY.md) of the application and how we collect, use or share your data.
 
 
-Softpedia award
+Softpedia award certification
 -------
 This product was last tested in the **Softpedia Labs** on **28th of July 2017** by *Catalin Chelariu*.
 
