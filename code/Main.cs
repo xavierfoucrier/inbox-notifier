@@ -691,9 +691,14 @@ namespace notifier {
 			// sets the new application language
 			Settings.Default.Language = fieldLanguage.Text;
 
+			// gets the current systemthreading culture
+			string culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+
 			// indicates to the user that to apply the new language on the interface, the application must be restarted
-			labelRestartToApply.Visible = true;
-			linkRestartToApply.Visible = true;
+			bool changes = !((culture == "en-US" && fieldLanguage.Text == "English") || (culture == "fr-FR" && fieldLanguage.Text == "Français") || (culture == "de-DE" && fieldLanguage.Text == "Deutsch"));
+
+			labelRestartToApply.Visible = changes;
+			linkRestartToApply.Visible = changes;
 		}
 
 		/// <summary>
