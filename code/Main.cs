@@ -683,6 +683,11 @@ namespace notifier {
 		/// </summary>
 		private void fieldLanguage_SelectionChangeCommitted(object sender, EventArgs e) {
 
+			// discard changes if the user select the current application language
+			if (fieldLanguage.Text == Settings.Default.Language) {
+				return;
+			}
+
 			// sets the new application language
 			Settings.Default.Language = fieldLanguage.Text;
 
