@@ -682,6 +682,8 @@ namespace notifier {
 		/// Manages the Language user setting
 		/// </summary>
 		private void fieldLanguage_SelectionChangeCommitted(object sender, EventArgs e) {
+
+			// sets the new application language
 			Settings.Default.Language = fieldLanguage.Text;
 
 			// indicates to the user that to apply the new language on the interface, the application must be restarted
