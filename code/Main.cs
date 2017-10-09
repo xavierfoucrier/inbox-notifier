@@ -630,8 +630,10 @@ namespace notifier {
 				// loops through all unread threads and removes the "unread" label for each one
 				if (unread != null && unread.Count > 0) {
 					foreach (Google.Apis.Gmail.v1.Data.Thread thread in unread) {
-						ModifyThreadRequest request = new ModifyThreadRequest();
-						request.RemoveLabelIds = new List<string>() { "UNREAD" };
+						ModifyThreadRequest request = new ModifyThreadRequest() {
+							RemoveLabelIds = new List<string>() { "UNREAD" }
+						};
+
 						await this.service.Users.Threads.Modify(request, "me", thread.Id).ExecuteAsync();
 					}
 
@@ -1046,9 +1048,11 @@ namespace notifier {
 		private void restart() {
 
 			// starts a new process
-			ProcessStartInfo command = new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"");
-			command.WindowStyle = ProcessWindowStyle.Hidden;
-			command.CreateNoWindow = true;
+			ProcessStartInfo command = new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"") {
+				WindowStyle = ProcessWindowStyle.Hidden,
+				CreateNoWindow = true
+			};
+
 			Process.Start(command);
 
 			// exits the application
