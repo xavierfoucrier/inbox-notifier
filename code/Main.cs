@@ -668,7 +668,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the RunAtWindowsStartup user setting
 		/// </summary>
-		private void fieldRunAtWindowsStartup_CheckedChanged(object sender, EventArgs e) {
+		private void FieldRunAtWindowsStartup_CheckedChanged(object sender, EventArgs e) {
 			if (fieldRunAtWindowsStartup.Checked) {
 				using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true)) {
 					key.SetValue("Gmail notifier", '"' + Application.ExecutablePath + '"');
@@ -683,7 +683,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the Language user setting
 		/// </summary>
-		private void fieldLanguage_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void FieldLanguage_SelectionChangeCommitted(object sender, EventArgs e) {
 
 			// discard changes if the user select the current application language
 			if (fieldLanguage.Text == Settings.Default.Language) {
@@ -706,14 +706,14 @@ namespace notifier {
 		/// <summary>
 		/// Manages the SpamNotification user setting
 		/// </summary>
-		private void fieldSpamNotification_Click(object sender, EventArgs e) {
+		private void FieldSpamNotification_Click(object sender, EventArgs e) {
 			this.AsyncSyncInbox();
 		}
 
 		/// <summary>
 		/// Manages the NumericDelay user setting
 		/// </summary>
-		private void fieldNumericDelay_ValueChanged(object sender, EventArgs e) {
+		private void FieldNumericDelay_ValueChanged(object sender, EventArgs e) {
 			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
 			Settings.Default.NumericDelay = fieldNumericDelay.Value;
 			timer.Interval = Settings.Default.TimerInterval;
@@ -722,7 +722,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the StepDelay user setting
 		/// </summary>
-		private void fieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void FieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
 			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
 			Settings.Default.StepDelay = fieldStepDelay.SelectedIndex;
 			timer.Interval = Settings.Default.TimerInterval;
@@ -731,14 +731,14 @@ namespace notifier {
 		/// <summary>
 		/// Manages the NotificationBehavior user setting
 		/// </summary>
-		private void fieldNotificationBehavior_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void FieldNotificationBehavior_SelectionChangeCommitted(object sender, EventArgs e) {
 			Settings.Default.NotificationBehavior = fieldNotificationBehavior.SelectedIndex;
 		}
 
 		/// <summary>
 		/// Manages the PrivacyNotificationNone user setting
 		/// </summary>
-		private void fieldPrivacyNotificationNone_CheckedChanged(object sender, EventArgs e) {
+		private void FieldPrivacyNotificationNone_CheckedChanged(object sender, EventArgs e) {
 			Settings.Default.PrivacyNotification = (int)Privacy.None;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_none;
 		}
@@ -746,7 +746,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the PrivacyNotificationShort user setting
 		/// </summary>
-		private void fieldPrivacyNotificationShort_CheckedChanged(object sender, EventArgs e) {
+		private void FieldPrivacyNotificationShort_CheckedChanged(object sender, EventArgs e) {
 			Settings.Default.PrivacyNotification = (int)Privacy.Short;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_short;
 		}
@@ -754,7 +754,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the PrivacyNotificationAll user setting
 		/// </summary>
-		private void fieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
+		private void FieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
 			Settings.Default.PrivacyNotification = (int)Privacy.All;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_all;
 		}
@@ -762,56 +762,56 @@ namespace notifier {
 		/// <summary>
 		/// Manages the UpdatePeriod user setting
 		/// </summary>
-		private void fieldUpdatePeriod_SelectedIndexChanged(object sender, EventArgs e) {
+		private void FieldUpdatePeriod_SelectedIndexChanged(object sender, EventArgs e) {
 			Settings.Default.UpdatePeriod = fieldUpdatePeriod.SelectedIndex;
 		}
 
 		/// <summary>
 		/// Opens the Github release section of the current build
 		/// </summary>
-		private void linkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void LinkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start(GITHUB_REPOSITORY + "/releases/tag/" + this.version);
 		}
 
 		/// <summary>
 		/// Opens the Yusuke website
 		/// </summary>
-		private void linkWebsiteYusuke_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void LinkWebsiteYusuke_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start("http://p.yusukekamiyamane.com");
 		}
 
 		/// <summary>
 		/// Opens the Xavier website
 		/// </summary>
-		private void linkWebsiteXavier_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void LinkWebsiteXavier_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start("http://www.xavierfoucrier.fr");
 		}
 
 		/// <summary>
 		/// Opens the Softpedia website
 		/// </summary>
-		private void linkSoftpedia_Click(object sender, EventArgs e) {
+		private void LinkSoftpedia_Click(object sender, EventArgs e) {
 			Process.Start("http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status");
 		}
 
 		/// <summary>
 		/// Opens the Github license file
 		/// </summary>
-		private void linkLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void LinkLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start(GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
 		}
 
 		/// <summary>
 		/// Hides the settings saved label
 		/// </summary>
-		private void tabControl_Selecting(object sender, TabControlCancelEventArgs e) {
+		private void TabControl_Selecting(object sender, TabControlCancelEventArgs e) {
 			labelSettingsSaved.Visible = false;
 		}
 
 		/// <summary>
 		/// Closes the preferences when the OK button is clicked
 		/// </summary>
-		private void buttonOK_Click(object sender, EventArgs e) {
+		private void ButtonOK_Click(object sender, EventArgs e) {
 			labelSettingsSaved.Visible = false;
 			WindowState = FormWindowState.Minimized;
 			ShowInTaskbar = false;
@@ -834,21 +834,21 @@ namespace notifier {
 		/// <summary>
 		/// Manages the context menu New message item
 		/// </summary>
-		private void menuItemNewMessage_Click(object sender, EventArgs e) {
+		private void MenuItemNewMessage_Click(object sender, EventArgs e) {
 			Process.Start(GMAIL_BASEURL + "/#inbox?compose=new");
 		}
 
 		/// <summary>
 		/// Manages the context menu Synchronize item
 		/// </summary>
-		private void menuItemSynchronize_Click(object sender, EventArgs e) {
+		private void MenuItemSynchronize_Click(object sender, EventArgs e) {
 			this.AsyncSyncInbox();
 		}
 
 		/// <summary>
 		/// Manages the context menu MarkAsRead item
 		/// </summary>
-		private void menuItemMarkAsRead_Click(object sender, EventArgs e) {
+		private void MenuItemMarkAsRead_Click(object sender, EventArgs e) {
 			this.AsyncMarkAsRead();
 		}
 
@@ -893,49 +893,49 @@ namespace notifier {
 		/// <summary>
 		/// Manages the context menu TimeoutDisabled item
 		/// </summary>
-		private void menuItemTimeoutDisabled_Click(object sender, EventArgs e) {
+		private void MenuItemTimeoutDisabled_Click(object sender, EventArgs e) {
 			Timeout((MenuItem)sender, Settings.Default.TimerInterval);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout30m item
 		/// </summary>
-		private void menuItemTimeout30m_Click(object sender, EventArgs e) {
+		private void MenuItemTimeout30m_Click(object sender, EventArgs e) {
 			Timeout((MenuItem)sender, 1000 * 60 * 30);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout1h item
 		/// </summary>
-		private void menuItemTimeout1h_Click(object sender, EventArgs e) {
+		private void MenuItemTimeout1h_Click(object sender, EventArgs e) {
 			Timeout((MenuItem)sender, 1000 * 60 * 60);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout2h item
 		/// </summary>
-		private void menuItemTimeout2h_Click(object sender, EventArgs e) {
+		private void MenuItemTimeout2h_Click(object sender, EventArgs e) {
 			Timeout((MenuItem)sender, 1000 * 60 * 60 * 2);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout5h item
 		/// </summary>
-		private void menuItemTimeout5h_Click(object sender, EventArgs e) {
+		private void MenuItemTimeout5h_Click(object sender, EventArgs e) {
 			Timeout((MenuItem)sender, 1000 * 60 * 60 * 5);
 		}
 
 		/// <summary>
 		/// Manages the context menu TimeoutIndefinitely item
 		/// </summary>
-		private void menuItemTimeoutIndefinitely_Click(object sender, EventArgs e) {
+		private void MenuItemTimeoutIndefinitely_Click(object sender, EventArgs e) {
 			Timeout((MenuItem)sender, 0);
 		}
 
 		/// <summary>
 		/// Manages the context menu Settings item
 		/// </summary>
-		private void menuItemSettings_Click(object sender, EventArgs e) {
+		private void MenuItemSettings_Click(object sender, EventArgs e) {
 			Visible = true;
 			ShowInTaskbar = true;
 			WindowState = FormWindowState.Normal;
@@ -945,21 +945,21 @@ namespace notifier {
 		/// <summary>
 		/// Manages the context menu exit item
 		/// </summary>
-		private void menuItemExit_Click(object sender, EventArgs e) {
+		private void MenuItemExit_Click(object sender, EventArgs e) {
 			this.Close();
 		}
 
 		/// <summary>
 		/// Manages the systray icon double click
 		/// </summary>
-		private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
+		private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
 			if (e.Button == MouseButtons.Left) {
 
 				// by default, always open the gmail inbox in a browser
 				if (notifyIcon.Tag == null) {
 					Process.Start(GMAIL_BASEURL + "/#inbox");
 				} else {
-					notifyIconInteraction();
+					NotifyIconInteraction();
 				}
 			}
 		}
@@ -967,19 +967,19 @@ namespace notifier {
 		/// <summary>
 		/// Manages the systray icon balloon click
 		/// </summary>
-		private void notifyIcon_BalloonTipClicked(object sender, EventArgs e) {
+		private void NotifyIcon_BalloonTipClicked(object sender, EventArgs e) {
 			if ((Control.MouseButtons & MouseButtons.Right) == MouseButtons.Right) {
 				return;
 			}
 
-			notifyIconInteraction(true);
+			NotifyIconInteraction(true);
 		}
 
 		/// <summary>
 		/// Do the gmail specified action (inbox/message/spam) in a browser
 		/// </summary>
 		/// <param name="systray">Defines if the interaction is provided by the balloon tip</param>
-		private void notifyIconInteraction(bool balloon = false) {
+		private void NotifyIconInteraction(bool balloon = false) {
 			if (notifyIcon.Tag == null || (balloon && Settings.Default.NotificationBehavior == 0)) {
 				return;
 			}
@@ -1001,7 +1001,7 @@ namespace notifier {
 		/// <summary>
 		/// Synchronizes the user mailbox on every timer tick
 		/// </summary>
-		private void timer_Tick(object sender, EventArgs e) {
+		private void Timer_Tick(object sender, EventArgs e) {
 
 			// restores the timer interval when the timeout time has elapsed
 			if (timer.Interval != Settings.Default.TimerInterval) {
@@ -1017,7 +1017,7 @@ namespace notifier {
 		/// <summary>
 		/// Disconnects the Gmail account from the application
 		/// </summary>
-		private void buttonGmailDisconnect_Click(object sender, EventArgs e) {
+		private void ButtonGmailDisconnect_Click(object sender, EventArgs e) {
 
 			// asks the user for disconnect
 			DialogResult dialog = MessageBox.Show(translation.gmailDisconnectQuestion.Replace("{account_name}", labelEmailAddress.Text), translation.gmailDisconnect, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -1032,20 +1032,20 @@ namespace notifier {
 			}
 
 			// restarts the application
-			this.restart();
+			this.Restart();
 		}
 
 		/// <summary>
 		/// Restarts the application to apply new user settings
 		/// </summary>
-		private void linkRestartToApply_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			this.restart();
+		private void LinkRestartToApply_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+			this.Restart();
 		}
 
 		/// <summary>
 		/// Restarts the application
 		/// </summary>
-		private void restart() {
+		private void Restart() {
 
 			// starts a new process
 			ProcessStartInfo command = new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"") {
@@ -1060,7 +1060,7 @@ namespace notifier {
 		}
 
 		// attempts to reconnect the user mailbox
-		private void timerReconnect_Tick(object sender, EventArgs e) {
+		private void TimerReconnect_Tick(object sender, EventArgs e) {
 
 			// increases the number of reconnection attempt
 			this.reconnect++;
@@ -1114,7 +1114,7 @@ namespace notifier {
 		/// <summary>
 		/// Check for update
 		/// </summary>
-		private void buttonCheckForUpdate_Click(object sender, EventArgs e) {
+		private void ButtonCheckForUpdate_Click(object sender, EventArgs e) {
 			buttonCheckForUpdate.Enabled = false;
 			this.AsyncCheckForUpdate();
 		}
@@ -1122,7 +1122,7 @@ namespace notifier {
 		/// <summary>
 		/// Check for update
 		/// </summary>
-		private void linkCheckForUpdate_Click(object sender, EventArgs e) {
+		private void LinkCheckForUpdate_Click(object sender, EventArgs e) {
 			linkCheckForUpdate.Image = Resources.update_hourglass;
 			linkCheckForUpdate.Enabled = false;
 			Cursor.Current = DefaultCursor;
@@ -1160,10 +1160,10 @@ namespace notifier {
 						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
 						if (dialog == DialogResult.Yes) {
-							this.downloadUpdate(release);
+							this.DownloadUpdate(release);
 						}
 					} else if (Settings.Default.UpdateDownload) {
-						this.downloadUpdate(release);
+						this.DownloadUpdate(release);
 					}
 				} else if (verbose && !startup) {
 					MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1198,7 +1198,7 @@ namespace notifier {
 		/// Downloads and launch the setup installer
 		/// </summary>
 		/// <param name="release">Version number package to download</param>
-		private void downloadUpdate(string release) {
+		private void DownloadUpdate(string release) {
 
 			// defines that the application is currently updating
 			this.updating = true;
