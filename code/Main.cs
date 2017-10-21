@@ -936,6 +936,11 @@ namespace notifier {
 		/// Manages the context menu Settings item
 		/// </summary>
 		private void MenuItemSettings_Click(object sender, EventArgs e) {
+
+			// resets the settings label visibility
+			labelSettingsSaved.Visible = false;
+
+			// displays the form
 			Visible = true;
 			ShowInTaskbar = true;
 			WindowState = FormWindowState.Normal;
