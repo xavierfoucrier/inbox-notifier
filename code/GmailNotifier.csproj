@@ -289,10 +289,10 @@
     <None Include="Resources\update\update-hourglass.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\updating.ico" />
+    <None Include="Resources\systray\updating.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\retry.ico" />
+    <None Include="Resources\systray\retry.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\softpedia.png" />
