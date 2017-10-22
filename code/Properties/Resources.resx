@@ -178,6 +178,9 @@
   <data name="spam" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\systray\spam.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="starting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\systray\starting.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sync" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\systray\sync.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

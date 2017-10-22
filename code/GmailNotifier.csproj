@@ -297,6 +297,9 @@
   <ItemGroup>
     <None Include="Resources\softpedia.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\systray\starting.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>echo Cleaning bin directory by deleting *.xml and *.pdb files
