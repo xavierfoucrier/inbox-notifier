@@ -205,10 +205,12 @@ namespace notifier {
 					timer.Enabled = false;
 				} else if (target.Mode == PowerModes.Resume) {
 
-					// syncs the inbox if the timeout mode is disabled
-					if (timer.Interval == Settings.Default.TimerInterval) {
-						timer.Enabled = true;
+					// do nothing if the timeout mode is set to infinite
+					if (timer.Interval != Settings.Default.TimerInterval && menuItemTimeoutIndefinitely.Checked) {
+						return;
 					}
+
+					this.AsyncSyncInbox();
 				}
 			});
 
