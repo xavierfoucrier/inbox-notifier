@@ -214,6 +214,15 @@ namespace notifier {
 				}
 			});
 
+			// bins the "SessionSwitch" event to automatically sync the inbox on session unlocking
+			SystemEvents.SessionSwitch += new SessionSwitchEventHandler((object o, SessionSwitchEventArgs target) => {
+
+				// syncs the inbox when the user is unlocking the Windows session
+				if (target.Reason == SessionSwitchReason.SessionUnlock) {
+					AsyncSyncInbox();
+				}
+			});
+
 			// displays the step delay setting
 			fieldStepDelay.SelectedIndex = Settings.Default.StepDelay;
 
