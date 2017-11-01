@@ -205,10 +205,21 @@ namespace notifier {
 					timer.Enabled = false;
 				} else if (target.Mode == PowerModes.Resume) {
 
-					// syncs the inbox if the timeout mode is disabled
-					if (timer.Interval == Settings.Default.TimerInterval) {
-						timer.Enabled = true;
+					// do nothing if the timeout mode is set to infinite
+					if (timer.Interval != Settings.Default.TimerInterval && menuItemTimeoutIndefinitely.Checked) {
+						return;
 					}
+
+					this.AsyncSyncInbox();
+				}
+			});
+
+			// bins the "SessionSwitch" event to automatically sync the inbox on session unlocking
+			SystemEvents.SessionSwitch += new SessionSwitchEventHandler((object o, SessionSwitchEventArgs target) => {
+
+				// syncs the inbox when the user is unlocking the Windows session
+				if (target.Reason == SessionSwitchReason.SessionUnlock) {
+					AsyncSyncInbox();
 				}
 			});
 
@@ -936,6 +947,11 @@ namespace notifier {
 		/// Manages the context menu Settings item
 		/// </summary>
 		private void MenuItemSettings_Click(object sender, EventArgs e) {
+
+			// resets the settings label visibility
+			labelSettingsSaved.Visible = false;
+
+			// displays the form
 			Visible = true;
 			ShowInTaskbar = true;
 			WindowState = FormWindowState.Normal;
