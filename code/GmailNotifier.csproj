@@ -220,36 +220,6 @@
     <None Include="Resources\systray\normal.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\systray\mail-1.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\systray\mail-2.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\systray\mail-3.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\systray\mail-4.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\systray\mail-5.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\systray\mail-6.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\systray\mail-7.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\systray\mail-8.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\systray\mail-9.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\systray\mail-more.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\systray\sync.ico" />
   </ItemGroup>
   <ItemGroup>
