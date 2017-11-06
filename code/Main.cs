@@ -77,6 +77,9 @@ namespace notifier {
 		// number in seconds between reconnections (in seconds)
 		private const int INTERVAL_RECONNECT = 10;
 
+		// number of mails used to display or not the systray stack icon
+		private const int UNSTACK_BOUNDARY = 5;
+
 		// github repository root link
 		private const string GITHUB_REPOSITORY = "https://github.com/xavierfoucrier/gmail-notifier";
 
@@ -543,7 +546,7 @@ namespace notifier {
 				if (this.inbox.ThreadsUnread > 0) {
 
 					// sets the notification icon and text
-					notifyIcon.Icon = this.inbox.ThreadsUnread <= 9 ? (Icon)Resources.ResourceManager.GetObject("mail_" + this.inbox.ThreadsUnread.ToString()) : Resources.mail_more;
+					notifyIcon.Icon = this.inbox.ThreadsUnread <= UNSTACK_BOUNDARY ? Resources.mails : Resources.stack;
 
 					// manages message notification
 					if (Settings.Default.MessageNotification) {
