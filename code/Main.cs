@@ -543,7 +543,7 @@ namespace notifier {
 				if (this.inbox.ThreadsUnread > 0) {
 
 					// sets the notification icon and text
-					notifyIcon.Icon = this.inbox.ThreadsUnread <= 9 ? Resources.mails : Resources.stack;
+					notifyIcon.Icon = this.inbox.ThreadsUnread <= 5 ? Resources.mails : Resources.stack;
 
 					// manages message notification
 					if (Settings.Default.MessageNotification) {
