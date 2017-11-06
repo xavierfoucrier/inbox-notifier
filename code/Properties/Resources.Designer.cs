@@ -93,7 +93,9 @@ namespace notifier.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
         /// </summary>
+        internal static System.Drawing.Icon mails {
             get {
+                object obj = ResourceManager.GetObject("mails", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -164,6 +166,16 @@ namespace notifier.Properties {
         internal static System.Drawing.Icon spam {
             get {
                 object obj = ResourceManager.GetObject("spam", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon stack {
+            get {
+                object obj = ResourceManager.GetObject("stack", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
