@@ -999,6 +999,8 @@ namespace notifier {
 		/// </summary>
 		/// <param name="systray">Defines if the interaction is provided by the balloon tip</param>
 		private void NotifyIconInteraction(bool balloon = false) {
+
+			// do nothing if there is no tag or if the notification behavior is set to "do nothing"
 			if (notifyIcon.Tag == null || (balloon && Settings.Default.NotificationBehavior == 0)) {
 				return;
 			}
