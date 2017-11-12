@@ -631,6 +631,9 @@ namespace notifier {
 		private async void AsyncMarkAsRead() {
 			try {
 
+				// updates the synchronization time
+				this.synctime = DateTime.Now;
+
 				// displays the sync icon
 				notifyIcon.Icon = Resources.sync;
 				notifyIcon.Text = translation.sync;
@@ -676,6 +679,8 @@ namespace notifier {
 				notifyIcon.Icon = Resources.warning;
 				notifyIcon.Text = translation.markAsReadError;
 				notifyIcon.ShowBalloonTip(1500, translation.error, translation.markAsReadErrorOccured + exception.Message, ToolTipIcon.Warning);
+			} finally {
+				notifyIcon.Text = notifyIcon.Text.Split('\n')[0] + "\n" + translation.syncTime.Replace("{time}", this.synctime.ToLongTimeString());
 			}
 		}
 
@@ -1011,8 +1016,13 @@ namespace notifier {
 
 			// restores the default systray icon and text: pretends that the user had read all his mail, except if the timeout option is activated
 			if (timer.Interval == Settings.Default.TimerInterval) {
+
+				// updates the synchronization time
+				this.synctime = DateTime.Now;
+
+				// restores the default systray icon and text
 				notifyIcon.Icon = Resources.normal;
-				notifyIcon.Text = translation.noMessage;
+				notifyIcon.Text = translation.noMessage + "\n" + translation.syncTime.Replace("{time}", this.synctime.ToLongTimeString());
 
 				// disables the mark as read menu item
 				menuItemMarkAsRead.Enabled = false;
