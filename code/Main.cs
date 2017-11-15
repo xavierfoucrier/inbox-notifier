@@ -377,14 +377,21 @@ namespace notifier {
 			// uses the client secret file for the context
 			using (FileStream stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
 
+				// defines a cancellation token source
+				CancellationTokenSource cancellation = new CancellationTokenSource();
+				cancellation.CancelAfter(TimeSpan.FromSeconds(20));
+
 				// waits for the user validation, only if the user has not already authorized the application
-				return await GoogleWebAuthorizationBroker.AuthorizeAsync(
+				UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
 					GoogleClientSecrets.Load(stream).Secrets,
 					new string[] { GmailService.Scope.GmailModify },
 					"user",
-					CancellationToken.None,
+					cancellation.Token,
 					new FileDataStore(this.appdata, true)
 				);
+
+				// returns the user credential
+				return credential;
 			}
 		}
 
