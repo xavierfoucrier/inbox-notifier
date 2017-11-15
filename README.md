@@ -56,7 +56,7 @@ Discover the [privacy practices](https://github.com/xavierfoucrier/gmail-notifie
 
 Softpedia award certification
 -------
-This product was last tested in the **Softpedia Labs** on **28th of July 2017** by *Catalin Chelariu*.
+This product was last tested in the **Softpedia Labs** on **9th of November 2017** by *Anca Roman*.
 
 Softpedia guarantees that Gmail notifier is **100% Free**, which means it does not contain any form of malware, including but not limited to: spyware, viruses, trojans and backdoors.
 
