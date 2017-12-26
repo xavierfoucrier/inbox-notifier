@@ -221,6 +221,12 @@ namespace notifier {
 
 				// syncs the inbox when the user is unlocking the Windows session
 				if (target.Reason == SessionSwitchReason.SessionUnlock) {
+
+					// do nothing if the timeout mode is set to infinite
+					if (timer.Interval != Settings.Default.TimerInterval && menuItemTimeoutIndefinitely.Checked) {
+						return;
+					}
+
 					AsyncSyncInbox();
 				}
 			});
