@@ -342,7 +342,7 @@ namespace notifier {
 		/// </summary>
 		private async void AsyncAuthentication() {
 			try {
-				
+
 				// waits for the user authorization
 				this.credential = await AsyncAuthorizationBroker();
 
