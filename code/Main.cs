@@ -359,6 +359,12 @@ namespace notifier {
 
 				// exits the application if the google api token file doesn't exists
 				if (!Directory.Exists(this.appdata) || !Directory.EnumerateFiles(this.appdata).Any()) {
+
+					// displays the authentication icon and title
+					notifyIcon.Icon = Resources.authentication;
+					notifyIcon.Text = translation.authenticationFailed;
+
+					// exits the application
 					MessageBox.Show(translation.authenticationWithGmailRefused, translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					Application.Exit();
 				}
