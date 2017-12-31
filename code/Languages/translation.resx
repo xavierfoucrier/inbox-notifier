@@ -204,6 +204,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   <data name="latestVersion" xml:space="preserve">
     <value>Vous disposez de la dernière version de l'application.</value>
   </data>
+  <data name="markAsRead" xml:space="preserve">
+    <value>Marquer comme lu</value>
+  </data>
   <data name="markAsReadError" xml:space="preserve">
     <value>Erreur lors de l'opération "Marquer comme lu"</value>
   </data>

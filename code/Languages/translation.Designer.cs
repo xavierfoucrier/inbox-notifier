@@ -310,6 +310,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Marquer comme lu.
+        /// </summary>
+        internal static string markAsRead {
+            get {
+                return ResourceManager.GetString("markAsRead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur lors de l&apos;opération &quot;Marquer comme lu&quot;.
         /// </summary>
         internal static string markAsReadError {

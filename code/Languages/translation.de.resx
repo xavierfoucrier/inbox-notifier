@@ -204,6 +204,9 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   <data name="latestVersion" xml:space="preserve">
     <value>Sie haben die neueste Version der Anwendung.</value>
   </data>
+  <data name="markAsRead" xml:space="preserve">
+    <value>Als gelesen markieren</value>
+  </data>
   <data name="markAsReadError" xml:space="preserve">
     <value>Fehlerbetrieb "Als gelesen markieren"</value>
   </data>

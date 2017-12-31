@@ -204,6 +204,9 @@ Do you really want to disconnect your Gmail account and restart the application 
   <data name="latestVersion" xml:space="preserve">
     <value>You have the latest version of the application.</value>
   </data>
+  <data name="markAsRead" xml:space="preserve">
+    <value>Mark as read</value>
+  </data>
   <data name="markAsReadError" xml:space="preserve">
     <value>Error with the "Mark as read" operation</value>
   </data>

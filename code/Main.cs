@@ -638,6 +638,7 @@ namespace notifier {
 					notifyIcon.Text = this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? translation.unreadMessages : translation.unreadMessage);
 
 					// enables the mark as read menu item
+					menuItemMarkAsRead.Text = translation.markAsRead + " (" + this.inbox.ThreadsUnread + ")";
 					menuItemMarkAsRead.Enabled = true;
 				} else {
 
@@ -646,6 +647,7 @@ namespace notifier {
 					notifyIcon.Text = translation.noMessage;
 
 					// disables the mark as read menu item
+					menuItemMarkAsRead.Text = translation.markAsRead;
 					menuItemMarkAsRead.Enabled = false;
 				}
 
@@ -706,10 +708,12 @@ namespace notifier {
 				notifyIcon.Tag = null;
 
 				// disables the mark as read menu item
+				menuItemMarkAsRead.Text = translation.markAsRead;
 				menuItemMarkAsRead.Enabled = false;
 			} catch (Exception exception) {
 
 				// enabled the mark as read menu item
+				menuItemMarkAsRead.Text = translation.markAsRead + " (" + this.inbox.ThreadsUnread + ")";
 				menuItemMarkAsRead.Enabled = true;
 
 				// displays a balloon tip in the systray with the detailed error message
@@ -1062,6 +1066,7 @@ namespace notifier {
 				notifyIcon.Text = translation.noMessage + "\n" + translation.syncTime.Replace("{time}", this.synctime.ToLongTimeString());
 
 				// disables the mark as read menu item
+				menuItemMarkAsRead.Text = translation.markAsRead;
 				menuItemMarkAsRead.Enabled = false;
 			}
 		}
