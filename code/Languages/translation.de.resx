@@ -205,10 +205,10 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
     <value>Sie haben die neueste Version der Anwendung.</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>Fehlerbetrieb "Mark Read"</value>
+    <value>Fehlerbetrieb "Als gelesen markieren"</value>
   </data>
   <data name="markAsReadErrorOccured" xml:space="preserve">
-    <value>Ein Fehler ist aufgetreten während der Operation "Mark Read":</value>
+    <value>Ein Fehler ist aufgetreten während der Operation "Als gelesen markieren":</value>
   </data>
   <data name="multipleInstances" xml:space="preserve">
     <value>Mehrere Instanzen</value>
