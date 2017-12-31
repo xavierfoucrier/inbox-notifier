@@ -310,7 +310,7 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur lors de l&apos;opération &quot;Marquer comme lu(s)&quot;.
+        ///   Recherche une chaîne localisée semblable à Erreur lors de l&apos;opération &quot;Marquer comme lu&quot;.
         /// </summary>
         internal static string markAsReadError {
             get {
@@ -319,7 +319,7 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Une erreur est survenue lors de l&apos;opération &quot;Marquer comme lu(s)&quot; :.
+        ///   Recherche une chaîne localisée semblable à Une erreur est survenue lors de l&apos;opération &quot;Marquer comme lu&quot; :.
         /// </summary>
         internal static string markAsReadErrorOccured {
             get {
