@@ -456,7 +456,7 @@ Entwickelt von Xavier Foucrier</value>
     <value>Synchronisieren</value>
   </data>
   <data name="menuItemMarkAsRead.Text" xml:space="preserve">
-    <value>Alles als gelesen markieren (n)</value>
+    <value>Alles als gelesen markieren</value>
   </data>
   <data name="menuItemTimout.Text" xml:space="preserve">
     <value>Bitte nicht stören</value>
