@@ -212,7 +212,7 @@ namespace notifier {
 						return;
 					}
 
-					this.AsyncSyncInbox();
+					this.AsyncSyncInbox(false, true);
 				}
 			});
 
@@ -227,7 +227,7 @@ namespace notifier {
 						return;
 					}
 
-					AsyncSyncInbox();
+					AsyncSyncInbox(false, true);
 				}
 			});
 
@@ -407,6 +407,20 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Asynchronous method used to refresh the authentication token
+		/// </summary>
+		/// <returns></returns>
+		private async Task<bool> AsyncRefreshToken() {
+
+			// refreshes the token and updates the token delivery date and time on the interface
+			if (await this.credential.RefreshTokenAsync(new CancellationToken())) {
+				labelTokenDelivery.Text = this.credential.Token.IssuedUtc.ToLocalTime().ToString();
+			}
+
+			return true;
+		}
+
+		/// <summary>
 		/// Asynchronous method used to get account statistics
 		/// </summary>
 		private async void AsyncStatistics() {
@@ -449,7 +463,7 @@ namespace notifier {
 		/// Asynchronous method used to synchronize the user inbox
 		/// </summary>
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
-		private async void AsyncSyncInbox(bool timertick = false) {
+		private async void AsyncSyncInbox(bool timertick = false, bool token = false) {
 			
 			// prevents the application from syncing the inbox when updating
 			if (this.updating) {
@@ -479,6 +493,11 @@ namespace notifier {
 				timer.Enabled = false;
 
 				return;
+			}
+
+			// refreshes the authentication token if needed
+			if (token) {
+				await this.AsyncRefreshToken();
 			}
 
 			// activates the necessary menu items
