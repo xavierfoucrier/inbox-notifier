@@ -46,7 +46,7 @@ You can **track the project** on [Github](http://github.com/xavierfoucrier) and/
 
 Contribute
 ----------
-If you want to report a bug or if you just want to request for a new feature / improvement, you can simply use the **Github tracker**: please describe as much as possible the issue you encountered.
+If you want to report a bug or if you just want to request for a new feature / improvement, please **read the project [contributors guidelines](https://github.com/xavierfoucrier/gmail-notifier/blob/master/CONTRIBUTING.md) before**. Thanks for taking time to contribute to Gmail Notifier.
 
 
 Privacy Policy
