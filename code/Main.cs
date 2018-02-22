@@ -58,9 +58,6 @@ namespace notifier {
 		// last synchronization time
 		private DateTime synctime = DateTime.Now;
 
-		// local application data folder name
-		private string appdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
-
 		// version number
 		private string version = "";
 
@@ -109,18 +106,8 @@ namespace notifier {
 				Settings.Default.Save();
 
 				// cleans temporary update files from previous upgrade
-				if (Directory.Exists(appdata)) {
-					IEnumerable<string> executables = Directory.EnumerateFiles(appdata, "*.exe", SearchOption.TopDirectoryOnly);
-
-					foreach (string executable in executables) {
-						try {
-							File.Delete(executable);
-						} catch(Exception) {
-							// nothing to catch: executable is currently locked
-							// setup package will be removed next time
-						}
-					}
-				}
+				Update update = new Update();
+				update.CleanTemporaryUpdateFiles();
 			}
 
 			// initializes the application version number
@@ -128,7 +115,7 @@ namespace notifier {
 			this.version = "v" + version[0] + "." + version[1] + (version[3] != "0" ? "." + version[3] : "") + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "");
 
 			// displays a systray notification on first load
-			if (Settings.Default.FirstLoad && !Directory.Exists(this.appdata)) {
+			if (Settings.Default.FirstLoad && !Directory.Exists(GetAppData())) {
 				notifyIcon.ShowBalloonTip(7000, translation.welcome, translation.firstLoad, ToolTipIcon.Info);
 
 				// switches the first load state
@@ -358,7 +345,7 @@ namespace notifier {
 			} catch(Exception) {
 
 				// exits the application if the google api token file doesn't exists
-				if (!Directory.Exists(this.appdata) || !Directory.EnumerateFiles(this.appdata).Any()) {
+				if (!Directory.Exists(GetAppData()) || !Directory.EnumerateFiles(GetAppData()).Any()) {
 
 					// displays the authentication icon and title
 					notifyIcon.Icon = Resources.authentication;
@@ -398,7 +385,7 @@ namespace notifier {
 					new string[] { GmailService.Scope.GmailModify },
 					"user",
 					cancellation.Token,
-					new FileDataStore(this.appdata, true)
+					new FileDataStore(GetAppData(), true)
 				);
 
 				// returns the user credential
@@ -1100,8 +1087,8 @@ namespace notifier {
 			}
 
 			// deletes the local application data folder and the client token file
-			if (Directory.Exists(this.appdata)) {
-				Directory.Delete(this.appdata, true);
+			if (Directory.Exists(GetAppData())) {
+				Directory.Delete(GetAppData(), true);
 			}
 
 			// restarts the application
@@ -1278,7 +1265,7 @@ namespace notifier {
 
 			// defines the new number version and temp path
 			string newversion = release.Split('-')[0].Substring(1);
-			string updatepath = this.appdata + "/gmnupdate-" + newversion + ".exe";
+			string updatepath = GetAppData() + "/gmnupdate-" + newversion + ".exe";
 			string package = GITHUB_REPOSITORY + "/releases/download/" + release + "/Gmail.Notifier." + newversion + ".exe";
 
 			try {
@@ -1321,6 +1308,13 @@ namespace notifier {
 				notifyIcon.ContextMenu = contextMenu;
 				this.AsyncSyncInbox();
 			}
+		}
+
+		/// <summary>
+		/// Gets the local application data folder path
+		/// </summary>
+		public string GetAppData() {
+			return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
 		}
 	}
 }
