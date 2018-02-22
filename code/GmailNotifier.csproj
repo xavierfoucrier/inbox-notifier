@@ -131,6 +131,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gmail.cs" />
     <Compile Include="Inbox.cs">
       <SubType>Form</SubType>
     </Compile>
