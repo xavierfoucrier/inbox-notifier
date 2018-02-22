@@ -964,15 +964,12 @@
 		private System.Windows.Forms.LinkLabel linkLicense;
 		private System.Windows.Forms.Timer timerReconnect;
 		private System.Windows.Forms.PictureBox pictureBoxPrivacyPreview;
-		private System.Windows.Forms.LinkLabel linkCheckForUpdate;
 		private System.Windows.Forms.TabPage tabPageUpdate;
 		private System.Windows.Forms.GroupBox groupBox7;
 		private System.Windows.Forms.CheckBox fieldUpdateService;
 		private System.Windows.Forms.ComboBox fieldUpdatePeriod;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label labelUpdateControl;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Button buttonCheckForUpdate;
 		private System.Windows.Forms.GroupBox groupBox8;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label labelTotalUnreadMails;
@@ -992,6 +989,9 @@
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.CheckBox fieldUpdateQuiet;
 		private System.Windows.Forms.LinkLabel linkSoftpedia;
+		public System.Windows.Forms.LinkLabel linkCheckForUpdate;
+		public System.Windows.Forms.Button buttonCheckForUpdate;
+		public System.Windows.Forms.Label labelUpdateControl;
 	}
 }
 
