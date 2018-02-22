@@ -59,9 +59,6 @@ namespace notifier {
 		// version number
 		public string version = "";
 
-		// flag defining the update state
-		private bool updating = false;
-
 		// number of maximum automatic reconnection
 		private const int MAX_AUTO_RECONNECT = 3;
 
@@ -450,7 +447,7 @@ namespace notifier {
 		public async void AsyncSyncInbox(bool timertick = false, bool token = false) {
 			
 			// prevents the application from syncing the inbox when updating
-			if (this.updating) {
+			if (UpdateService.IsUpdating()) {
 				return;
 			}
 
@@ -1184,62 +1181,6 @@ namespace notifier {
 			linkCheckForUpdate.Enabled = false;
 			Cursor.Current = DefaultCursor;
 			UpdateService.AsyncCheckForUpdate();
-		}
-
-		/// <summary>
-		/// Downloads and launch the setup installer
-		/// </summary>
-		/// <param name="release">Version number package to download</param>
-		private void DownloadUpdate(string release) {
-
-			// defines that the application is currently updating
-			this.updating = true;
-
-			// defines the new number version and temp path
-			string newversion = release.Split('-')[0].Substring(1);
-			string updatepath = GetAppData() + "/gmnupdate-" + newversion + ".exe";
-			string package = GITHUB_REPOSITORY + "/releases/download/" + release + "/Gmail.Notifier." + newversion + ".exe";
-
-			try {
-
-				// disables the context menu and displays the update icon in the systray
-				notifyIcon.ContextMenu = null;
-				notifyIcon.Icon = Resources.updating;
-				notifyIcon.Text = translation.updating;
-
-				// creates a new web client instance
-				WebClient client = new WebClient();
-
-				// displays the download progression on the systray icon, and prevents the application from restoring the context menu and systray icon at startup
-				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object o, DownloadProgressChangedEventArgs target) => {
-					notifyIcon.ContextMenu = null;
-					notifyIcon.Icon = Resources.updating;
-					notifyIcon.Text = translation.updating + " " + target.ProgressPercentage.ToString() + "%";
-				});
-
-				// starts the setup installer when the download has complete and exits the current application
-				client.DownloadFileCompleted += new AsyncCompletedEventHandler((object o, AsyncCompletedEventArgs target) => {
-					Process.Start(new ProcessStartInfo(updatepath, Settings.Default.UpdateQuiet ? "/verysilent" : ""));
-					Application.Exit();
-				});
-
-				// ensures that the Github package URI is callable
-				client.OpenRead(package).Close();
-
-				// starts the download of the new version from the Github repository
-				client.DownloadFileAsync(new Uri(package), updatepath);
-			} catch (Exception) {
-
-				// indicates to the user that the update service is not reachable for the moment
-				MessageBox.Show(translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-				// defines that the application has exited the updating state
-				this.updating = false;
-
-				// restores the context menu to the systray icon and start a synchronization
-				notifyIcon.ContextMenu = contextMenu;
-				this.AsyncSyncInbox();
-			}
 		}
 
 		/// <summary>
