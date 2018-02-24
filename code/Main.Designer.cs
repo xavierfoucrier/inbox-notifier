@@ -916,9 +916,11 @@
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.Label labelSettingsSaved;
+		private System.Windows.Forms.NotifyIcon notifyIcon;
 		private System.Windows.Forms.Timer timer;
 		private System.Windows.Forms.LinkLabel linkWebsiteYusuke;
 		private System.Windows.Forms.PictureBox pictureBoxHeader;
+		private System.Windows.Forms.ContextMenu contextMenu;
 		private System.Windows.Forms.MenuItem menuItemExit;
 		private System.Windows.Forms.MenuItem menuItem2;
 		private System.Windows.Forms.MenuItem menuItemSettings;
@@ -990,8 +992,6 @@
 		public System.Windows.Forms.LinkLabel linkCheckForUpdate;
 		public System.Windows.Forms.Button buttonCheckForUpdate;
 		public System.Windows.Forms.Label labelUpdateControl;
-		public System.Windows.Forms.NotifyIcon notifyIcon;
-		public System.Windows.Forms.ContextMenu contextMenu;
 	}
 }
 
