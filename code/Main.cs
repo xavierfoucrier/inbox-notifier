@@ -8,10 +8,14 @@ using System.Media;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
+using Google.Apis.Services;
+using Google.Apis.Util.Store;
 using Microsoft.Win32;
 using notifier.Languages;
 using notifier.Properties;
@@ -25,6 +29,20 @@ namespace notifier {
 			Short = 1,
 			All = 2
 		}
+
+		// update period possibilities
+		private enum Period : uint {
+			Startup = 0,
+			Day = 1,
+			Week = 2,
+			Month = 3
+		}
+
+		// gmail api service
+		private GmailService service;
+
+		// user credential for the gmail authentication
+		private UserCredential credential;
 
 		// inbox label
 		private Google.Apis.Gmail.v1.Data.Label inbox;
@@ -58,9 +76,6 @@ namespace notifier {
 
 		// update service instance
 		private Update UpdateService = new Update();
-
-		// gmail service instance
-		private Gmail GmailService = new Gmail();
 
 		/// <summary>
 		/// Initializes the class
@@ -124,7 +139,7 @@ namespace notifier {
 			help.SetHelpString(fieldPrivacyNotificationAll, translation.helpPrivacyNotificationAll);
 
 			// authenticates the user
-			GmailService.AsyncAuthentication();
+			this.AsyncAuthentication();
 
 			// attaches the context menu to the systray icon
 			notifyIcon.ContextMenu = contextMenu;
@@ -282,7 +297,9 @@ namespace notifier {
 			}
 
 			// disposes the gmail api service
-			GmailService.Dispose();
+			if (this.service != null) {
+				this.service.Dispose();
+			}
 		}
 
 		/// <summary>
@@ -299,6 +316,89 @@ namespace notifier {
 			} catch (Exception) {
 				return false;
 			}
+		}
+
+		/// <summary>
+		/// Asynchronous method used to get user credential
+		/// </summary>
+		private async void AsyncAuthentication() {
+			try {
+
+				// waits for the user authorization
+				this.credential = await AsyncAuthorizationBroker();
+
+				// creates the gmail api service
+				this.service = new GmailService(new BaseClientService.Initializer() {
+					HttpClientInitializer = this.credential,
+					ApplicationName = "Gmail notifier for Windows"
+				});
+
+				// displays the user email address
+				labelEmailAddress.Text = this.service.Users.GetProfile("me").Execute().EmailAddress;
+				labelTokenDelivery.Text = this.credential.Token.IssuedUtc.ToLocalTime().ToString();
+			} catch(Exception) {
+
+				// exits the application if the google api token file doesn't exists
+				if (!Directory.Exists(GetAppData()) || !Directory.EnumerateFiles(GetAppData()).Any()) {
+
+					// displays the authentication icon and title
+					notifyIcon.Icon = Resources.authentication;
+					notifyIcon.Text = translation.authenticationFailed;
+
+					// exits the application
+					MessageBox.Show(translation.authenticationWithGmailRefused, translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					Application.Exit();
+				}
+			} finally {
+
+				// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
+				if (Settings.Default.UpdateService && Settings.Default.UpdatePeriod == (int)Period.Startup) {
+					UpdateService.AsyncCheckForUpdate(!Settings.Default.UpdateDownload, true);
+				} else {
+					this.AsyncSyncInbox();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Asynchronous task used to get the user authorization
+		/// </summary>
+		/// <returns>OAuth 2.0 user credential</returns>
+		private async Task<UserCredential> AsyncAuthorizationBroker() {
+
+			// uses the client secret file for the context
+			using (FileStream stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
+
+				// defines a cancellation token source
+				CancellationTokenSource cancellation = new CancellationTokenSource();
+				cancellation.CancelAfter(TimeSpan.FromSeconds(20));
+
+				// waits for the user validation, only if the user has not already authorized the application
+				UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+					GoogleClientSecrets.Load(stream).Secrets,
+					new string[] { GmailService.Scope.GmailModify },
+					"user",
+					cancellation.Token,
+					new FileDataStore(GetAppData(), true)
+				);
+
+				// returns the user credential
+				return credential;
+			}
+		}
+
+		/// <summary>
+		/// Asynchronous method used to refresh the authentication token
+		/// </summary>
+		/// <returns></returns>
+		private async Task<bool> AsyncRefreshToken() {
+
+			// refreshes the token and updates the token delivery date and time on the interface
+			if (await this.credential.RefreshTokenAsync(new CancellationToken())) {
+				labelTokenDelivery.Text = this.credential.Token.IssuedUtc.ToLocalTime().ToString();
+			}
+
+			return true;
 		}
 
 		/// <summary>
@@ -329,7 +429,7 @@ namespace notifier {
 		/// </summary>
 		/// <returns>List of drafts</returns>
 		private async Task<ListDraftsResponse> AsyncDrafts() {
-			return await GmailService.service.Users.Drafts.List("me").ExecuteAsync();
+			return await this.service.Users.Drafts.List("me").ExecuteAsync();
 		}
 
 		/// <summary>
@@ -337,7 +437,7 @@ namespace notifier {
 		/// </summary>
 		/// <returns>List of labels</returns>
 		private async Task<ListLabelsResponse> AsyncLabels() {
-			return await GmailService.service.Users.Labels.List("me").ExecuteAsync();
+			return await this.service.Users.Labels.List("me").ExecuteAsync();
 		}
 
 		/// <summary>
@@ -378,7 +478,7 @@ namespace notifier {
 
 			// refreshes the authentication token if needed
 			if (token) {
-				await GmailService.AsyncRefreshToken();
+				await this.AsyncRefreshToken();
 			}
 
 			// activates the necessary menu items
@@ -394,7 +494,26 @@ namespace notifier {
 
 			// check for update, depending on the user settings
 			if (Settings.Default.UpdateService) {
-				UpdateService.CheckForUpdate();
+				switch (Settings.Default.UpdatePeriod) {
+					case (int)Period.Day:
+						if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(1)) {
+							UpdateService.AsyncCheckForUpdate(false);
+						}
+
+						break;
+					case (int)Period.Week:
+						if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(7)) {
+							UpdateService.AsyncCheckForUpdate(false);
+						}
+
+						break;
+					case (int)Period.Month:
+						if (DateTime.Now >= Settings.Default.UpdateControl.AddMonths(1)) {
+							UpdateService.AsyncCheckForUpdate(false);
+						}
+
+						break;
+				}
 			}
 
 			try {
@@ -408,7 +527,7 @@ namespace notifier {
 					}
 
 					// gets the "spam" label
-					Google.Apis.Gmail.v1.Data.Label spam = await GmailService.service.Users.Labels.Get("me", "SPAM").ExecuteAsync();
+					Google.Apis.Gmail.v1.Data.Label spam = await this.service.Users.Labels.Get("me", "SPAM").ExecuteAsync();
 
 					// manages unread spams
 					if (spam.ThreadsUnread > 0) {
@@ -431,7 +550,7 @@ namespace notifier {
 				}
 
 				// gets the "inbox" label
-				this.inbox = await GmailService.service.Users.Labels.Get("me", "INBOX").ExecuteAsync();
+				this.inbox = await this.service.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
 				// updates the statistics
 				this.AsyncStatistics();
@@ -456,10 +575,10 @@ namespace notifier {
 						}
 
 						// gets the message details
-						UsersResource.MessagesResource.ListRequest messages = GmailService.service.Users.Messages.List("me");
+						UsersResource.MessagesResource.ListRequest messages = this.service.Users.Messages.List("me");
 						messages.LabelIds = "UNREAD";
 						messages.MaxResults = 1;
-						Google.Apis.Gmail.v1.Data.Message message = await GmailService.service.Users.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
+						Google.Apis.Gmail.v1.Data.Message message = await this.service.Users.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
 							return m.Result.Messages.First().Id;
 						})).ExecuteAsync();
 
@@ -540,7 +659,7 @@ namespace notifier {
 				notifyIcon.Text = translation.sync;
 
 				// gets all unread threads
-				UsersResource.ThreadsResource.ListRequest threads = GmailService.service.Users.Threads.List("me");
+				UsersResource.ThreadsResource.ListRequest threads = this.service.Users.Threads.List("me");
 				threads.LabelIds = "UNREAD";
 				ListThreadsResponse list = await threads.ExecuteAsync();
 				IList<Google.Apis.Gmail.v1.Data.Thread> unread = list.Threads;
@@ -552,11 +671,11 @@ namespace notifier {
 							RemoveLabelIds = new List<string>() { "UNREAD" }
 						};
 
-						await GmailService.service.Users.Threads.Modify(request, "me", thread.Id).ExecuteAsync();
+						await this.service.Users.Threads.Modify(request, "me", thread.Id).ExecuteAsync();
 					}
 
 					// gets the "inbox" label
-					this.inbox = await GmailService.service.Users.Labels.Get("me", "INBOX").ExecuteAsync();
+					this.inbox = await this.service.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
 					// updates the statistics
 					this.AsyncStatistics();

@@ -953,7 +953,9 @@
 		private System.Windows.Forms.TabPage tabPageAccount;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.Button buttonGmailDisconnect;
+		private System.Windows.Forms.Label labelEmailAddress;
 		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label labelTokenDelivery;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.LinkLabel linkVersion;
 		private System.Windows.Forms.LinkLabel linkRestartToApply;
@@ -990,8 +992,6 @@
 		public System.Windows.Forms.Label labelUpdateControl;
 		public System.Windows.Forms.NotifyIcon notifyIcon;
 		public System.Windows.Forms.ContextMenu contextMenu;
-		public System.Windows.Forms.Label labelEmailAddress;
-		public System.Windows.Forms.Label labelTokenDelivery;
 	}
 }
 

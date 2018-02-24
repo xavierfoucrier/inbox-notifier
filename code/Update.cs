@@ -14,14 +14,6 @@ using notifier.Properties;
 namespace notifier {
 	class Update : Main {
 
-		// update period possibilities
-		public enum Period : uint {
-			Startup = 0,
-			Day = 1,
-			Week = 2,
-			Month = 3
-		}
-
 		// http client used to check for updates
 		private HttpClient http = new HttpClient();
 
@@ -32,32 +24,6 @@ namespace notifier {
 		/// Class constructor
 		/// </summary>
 		public Update() {
-		}
-
-		/// <summary>
-		/// Checks for update depending on the user setting period
-		/// </summary>
-		public void CheckForUpdate() {
-			switch (Settings.Default.UpdatePeriod) {
-				case (int)Period.Day:
-					if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(1)) {
-						AsyncCheckForUpdate(false);
-					}
-
-					break;
-				case (int)Period.Week:
-					if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(7)) {
-						AsyncCheckForUpdate(false);
-					}
-
-					break;
-				case (int)Period.Month:
-					if (DateTime.Now >= Settings.Default.UpdateControl.AddMonths(1)) {
-						AsyncCheckForUpdate(false);
-					}
-
-					break;
-			}
 		}
 
 		/// <summary>
