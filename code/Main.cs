@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Net;
+using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -16,6 +17,7 @@ using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
+using HtmlAgilityPack;
 using Microsoft.Win32;
 using notifier.Languages;
 using notifier.Properties;
@@ -57,10 +59,13 @@ namespace notifier {
 		private DateTime synctime = DateTime.Now;
 
 		// version number
-		public string version = "";
+		private string version = "";
 
 		// flag defining the update state
 		private bool updating = false;
+
+		// http client used to check for updates
+		private HttpClient http = new HttpClient();
 
 		// number of maximum automatic reconnection
 		private const int MAX_AUTO_RECONNECT = 3;
@@ -72,13 +77,10 @@ namespace notifier {
 		private const int UNSTACK_BOUNDARY = 5;
 
 		// github repository root link
-		public const string GITHUB_REPOSITORY = "https://github.com/xavierfoucrier/gmail-notifier";
+		private const string GITHUB_REPOSITORY = "https://github.com/xavierfoucrier/gmail-notifier";
 
 		// gmail base root link
 		private const string GMAIL_BASEURL = "https://mail.google.com/mail/u/0";
-
-		//
-		private Update UpdateService = new Update();
 
 		/// <summary>
 		/// Initializes the class
@@ -104,7 +106,8 @@ namespace notifier {
 				Settings.Default.Save();
 
 				// cleans temporary update files from previous upgrade
-				UpdateService.CleanTemporaryUpdateFiles();
+				Update update = new Update();
+				update.CleanTemporaryUpdateFiles();
 			}
 
 			// initializes the application version number
@@ -356,7 +359,7 @@ namespace notifier {
 
 				// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
 				if (Settings.Default.UpdateService && Settings.Default.UpdatePeriod == (int)Period.Startup) {
-					UpdateService.AsyncCheckForUpdate(!Settings.Default.UpdateDownload, true);
+					this.AsyncCheckForUpdate(!Settings.Default.UpdateDownload, true);
 				} else {
 					this.AsyncSyncInbox();
 				}
@@ -447,7 +450,7 @@ namespace notifier {
 		/// Asynchronous method used to synchronize the user inbox
 		/// </summary>
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
-		public async void AsyncSyncInbox(bool timertick = false, bool token = false) {
+		private async void AsyncSyncInbox(bool timertick = false, bool token = false) {
 			
 			// prevents the application from syncing the inbox when updating
 			if (this.updating) {
@@ -500,19 +503,19 @@ namespace notifier {
 				switch (Settings.Default.UpdatePeriod) {
 					case (int)Period.Day:
 						if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(1)) {
-							UpdateService.AsyncCheckForUpdate(false);
+							this.AsyncCheckForUpdate(false);
 						}
 
 						break;
 					case (int)Period.Week:
 						if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(7)) {
-							UpdateService.AsyncCheckForUpdate(false);
+							this.AsyncCheckForUpdate(false);
 						}
 
 						break;
 					case (int)Period.Month:
 						if (DateTime.Now >= Settings.Default.UpdateControl.AddMonths(1)) {
-							UpdateService.AsyncCheckForUpdate(false);
+							this.AsyncCheckForUpdate(false);
 						}
 
 						break;
@@ -1173,7 +1176,7 @@ namespace notifier {
 		/// </summary>
 		private void ButtonCheckForUpdate_Click(object sender, EventArgs e) {
 			buttonCheckForUpdate.Enabled = false;
-			UpdateService.AsyncCheckForUpdate();
+			this.AsyncCheckForUpdate();
 		}
 
 		/// <summary>
@@ -1183,7 +1186,72 @@ namespace notifier {
 			linkCheckForUpdate.Image = Resources.update_hourglass;
 			linkCheckForUpdate.Enabled = false;
 			Cursor.Current = DefaultCursor;
-			UpdateService.AsyncCheckForUpdate();
+			this.AsyncCheckForUpdate();
+		}
+
+		/// <summary>
+		/// Asynchronous method to connect to the repository and check if there is an update available
+		/// </summary>
+		/// <param name="verbose">Indicates if the process displays a message when a new update package is available</param>
+		/// <param name="startup">Indicates if the update check process has been started at startup</param>
+		private async void AsyncCheckForUpdate(bool verbose = true, bool startup = false) {
+			try {
+
+				// gets the list of tags in the Github repository tags webpage
+				HttpResponseMessage response = await this.http.GetAsync(GITHUB_REPOSITORY + "/tags");
+
+				var document = new HtmlAgilityPack.HtmlDocument();
+				document.LoadHtml(await response.Content.ReadAsStringAsync());
+
+				HtmlNodeCollection collection = document.DocumentNode.SelectNodes("//span[@class='tag-name']");
+
+				if (collection == null || collection.Count == 0) {
+					return;
+				}
+
+				List<string> tags = collection.Select(p => p.InnerText).ToList();
+				string release = tags.First();
+
+				// the current version tag is not at the top of the list
+				if (release != this.version) {
+					
+					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
+					if (verbose) {
+						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+
+						if (dialog == DialogResult.Yes) {
+							this.DownloadUpdate(release);
+						}
+					} else if (Settings.Default.UpdateDownload) {
+						this.DownloadUpdate(release);
+					}
+				} else if (verbose && !startup) {
+					MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			} catch (Exception) {
+
+				// indicates to the user that the update service is not reachable for the moment
+				if (verbose) {
+					MessageBox.Show(translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				}
+			} finally {
+
+				// restores default check icon and check for update button state
+				linkCheckForUpdate.Enabled = true;
+				linkCheckForUpdate.Image = Resources.update_check;
+				buttonCheckForUpdate.Enabled = true;
+
+				// stores the latest update datetime control
+				Settings.Default.UpdateControl = DateTime.Now;
+
+				// updates the update control label
+				labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
+
+				// synchronizes the inbox if the updates has been checked at startup after asynchronous authentication
+				if (startup) {
+					this.AsyncSyncInbox();
+				}
+			}
 		}
 
 		/// <summary>
