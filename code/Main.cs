@@ -74,7 +74,7 @@ namespace notifier {
 		// gmail base root link
 		private const string GMAIL_BASEURL = "https://mail.google.com/mail/u/0";
 
-		// update service instance
+		//
 		private Update UpdateService = new Update();
 
 		/// <summary>
