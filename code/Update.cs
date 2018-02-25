@@ -152,6 +152,7 @@ namespace notifier {
 		/// </summary>
 		/// <param name="release">Version number package to download</param>
 		private void Download(string release) {
+
 			// defines that the application is currently updating
 			Updating = true;
 
