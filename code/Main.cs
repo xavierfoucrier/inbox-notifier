@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Net;
-using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -17,7 +16,6 @@ using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
-using HtmlAgilityPack;
 using Microsoft.Win32;
 using notifier.Languages;
 using notifier.Properties;
@@ -30,14 +28,6 @@ namespace notifier {
 			None = 0,
 			Short = 1,
 			All = 2
-		}
-
-		// update period possibilities
-		private enum Period : uint {
-			Startup = 0,
-			Day = 1,
-			Week = 2,
-			Month = 3
 		}
 
 		// gmail api service
@@ -59,16 +49,10 @@ namespace notifier {
 		private DateTime synctime = DateTime.Now;
 
 		// local application data folder name
-		private string appdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
+		public string appdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
 
 		// version number
-		private string version = "";
-
-		// flag defining the update state
-		private bool updating = false;
-
-		// http client used to check for updates
-		private HttpClient http = new HttpClient();
+		public string version = "";
 
 		// number of maximum automatic reconnection
 		private const int MAX_AUTO_RECONNECT = 3;
@@ -79,17 +63,23 @@ namespace notifier {
 		// number of mails used to display or not the systray stack icon
 		private const int UNSTACK_BOUNDARY = 5;
 
-		// github repository root link
-		private const string GITHUB_REPOSITORY = "https://github.com/xavierfoucrier/gmail-notifier";
-
 		// gmail base root link
 		private const string GMAIL_BASEURL = "https://mail.google.com/mail/u/0";
+
+		// update service class
+		private Update UpdateService;
 
 		/// <summary>
 		/// Initializes the class
 		/// </summary>
 		public Main() {
 			InitializeComponent();
+
+			// main application instance
+			var Instance = this;
+
+			// initializes services
+			UpdateService = new Update(ref Instance);
 		}
 
 		/// <summary>
@@ -268,7 +258,7 @@ namespace notifier {
 
 			// displays a tooltip for the product version
 			ToolTip tipTag = new ToolTip();
-			tipTag.SetToolTip(linkVersion, GITHUB_REPOSITORY + "/releases/tag/" + this.version);
+			tipTag.SetToolTip(linkVersion, Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + this.version);
 			tipTag.ToolTipTitle = translation.tipReleaseNotes;
 			tipTag.ToolTipIcon = ToolTipIcon.Info;
 			tipTag.IsBalloon = false;
@@ -290,7 +280,7 @@ namespace notifier {
 
 			// displays a tooltip for the license link
 			ToolTip tipLicense = new ToolTip();
-			tipLicense.SetToolTip(linkLicense, GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
+			tipLicense.SetToolTip(linkLicense, Settings.Default.GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
 			tipLicense.IsBalloon = false;
 
 			// displays a tooltip for the website link
@@ -371,8 +361,8 @@ namespace notifier {
 			} finally {
 
 				// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
-				if (Settings.Default.UpdateService && Settings.Default.UpdatePeriod == (int)Period.Startup) {
-					this.AsyncCheckForUpdate(!Settings.Default.UpdateDownload, true);
+				if (Settings.Default.UpdateService && UpdateService.IsPeriodSetToStartup()) {
+					UpdateService.Check(!Settings.Default.UpdateDownload, true);
 				} else {
 					this.AsyncSyncInbox();
 				}
@@ -463,10 +453,10 @@ namespace notifier {
 		/// Asynchronous method used to synchronize the user inbox
 		/// </summary>
 		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
-		private async void AsyncSyncInbox(bool timertick = false, bool token = false) {
+		public async void AsyncSyncInbox(bool timertick = false, bool token = false) {
 			
 			// prevents the application from syncing the inbox when updating
-			if (this.updating) {
+			if (UpdateService.IsUpdating()) {
 				return;
 			}
 
@@ -511,29 +501,8 @@ namespace notifier {
 				notifyIcon.Text = translation.sync;
 			}
 
-			// check for update, depending on the user settings
-			if (Settings.Default.UpdateService) {
-				switch (Settings.Default.UpdatePeriod) {
-					case (int)Period.Day:
-						if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(1)) {
-							this.AsyncCheckForUpdate(false);
-						}
-
-						break;
-					case (int)Period.Week:
-						if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(7)) {
-							this.AsyncCheckForUpdate(false);
-						}
-
-						break;
-					case (int)Period.Month:
-						if (DateTime.Now >= Settings.Default.UpdateControl.AddMonths(1)) {
-							this.AsyncCheckForUpdate(false);
-						}
-
-						break;
-				}
-			}
+			// do a small ping on the update service
+			UpdateService.Ping();
 
 			try {
 
@@ -830,7 +799,7 @@ namespace notifier {
 		/// Opens the Github release section of the current build
 		/// </summary>
 		private void LinkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start(GITHUB_REPOSITORY + "/releases/tag/" + this.version);
+			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + this.version);
 		}
 
 		/// <summary>
@@ -858,7 +827,7 @@ namespace notifier {
 		/// Opens the Github license file
 		/// </summary>
 		private void LinkLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start(GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
+			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
 		}
 
 		/// <summary>
@@ -1189,7 +1158,7 @@ namespace notifier {
 		/// </summary>
 		private void ButtonCheckForUpdate_Click(object sender, EventArgs e) {
 			buttonCheckForUpdate.Enabled = false;
-			this.AsyncCheckForUpdate();
+			UpdateService.Check();
 		}
 
 		/// <summary>
@@ -1199,128 +1168,7 @@ namespace notifier {
 			linkCheckForUpdate.Image = Resources.update_hourglass;
 			linkCheckForUpdate.Enabled = false;
 			Cursor.Current = DefaultCursor;
-			this.AsyncCheckForUpdate();
-		}
-
-		/// <summary>
-		/// Asynchronous method to connect to the repository and check if there is an update available
-		/// </summary>
-		/// <param name="verbose">Indicates if the process displays a message when a new update package is available</param>
-		/// <param name="startup">Indicates if the update check process has been started at startup</param>
-		private async void AsyncCheckForUpdate(bool verbose = true, bool startup = false) {
-			try {
-
-				// gets the list of tags in the Github repository tags webpage
-				HttpResponseMessage response = await this.http.GetAsync(GITHUB_REPOSITORY + "/tags");
-
-				var document = new HtmlAgilityPack.HtmlDocument();
-				document.LoadHtml(await response.Content.ReadAsStringAsync());
-
-				HtmlNodeCollection collection = document.DocumentNode.SelectNodes("//span[@class='tag-name']");
-
-				if (collection == null || collection.Count == 0) {
-					return;
-				}
-
-				List<string> tags = collection.Select(p => p.InnerText).ToList();
-				string release = tags.First();
-
-				// the current version tag is not at the top of the list
-				if (release != this.version) {
-					
-					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
-					if (verbose) {
-						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-
-						if (dialog == DialogResult.Yes) {
-							this.DownloadUpdate(release);
-						}
-					} else if (Settings.Default.UpdateDownload) {
-						this.DownloadUpdate(release);
-					}
-				} else if (verbose && !startup) {
-					MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
-			} catch (Exception) {
-
-				// indicates to the user that the update service is not reachable for the moment
-				if (verbose) {
-					MessageBox.Show(translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-				}
-			} finally {
-
-				// restores default check icon and check for update button state
-				linkCheckForUpdate.Enabled = true;
-				linkCheckForUpdate.Image = Resources.update_check;
-				buttonCheckForUpdate.Enabled = true;
-
-				// stores the latest update datetime control
-				Settings.Default.UpdateControl = DateTime.Now;
-
-				// updates the update control label
-				labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
-
-				// synchronizes the inbox if the updates has been checked at startup after asynchronous authentication
-				if (startup) {
-					this.AsyncSyncInbox();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Downloads and launch the setup installer
-		/// </summary>
-		/// <param name="release">Version number package to download</param>
-		private void DownloadUpdate(string release) {
-
-			// defines that the application is currently updating
-			this.updating = true;
-
-			// defines the new number version and temp path
-			string newversion = release.Split('-')[0].Substring(1);
-			string updatepath = this.appdata + "/gmnupdate-" + newversion + ".exe";
-			string package = GITHUB_REPOSITORY + "/releases/download/" + release + "/Gmail.Notifier." + newversion + ".exe";
-
-			try {
-
-				// disables the context menu and displays the update icon in the systray
-				notifyIcon.ContextMenu = null;
-				notifyIcon.Icon = Resources.updating;
-				notifyIcon.Text = translation.updating;
-
-				// creates a new web client instance
-				WebClient client = new WebClient();
-
-				// displays the download progression on the systray icon, and prevents the application from restoring the context menu and systray icon at startup
-				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object o, DownloadProgressChangedEventArgs target) => {
-					notifyIcon.ContextMenu = null;
-					notifyIcon.Icon = Resources.updating;
-					notifyIcon.Text = translation.updating + " " + target.ProgressPercentage.ToString() + "%";
-				});
-
-				// starts the setup installer when the download has complete and exits the current application
-				client.DownloadFileCompleted += new AsyncCompletedEventHandler((object o, AsyncCompletedEventArgs target) => {
-					Process.Start(new ProcessStartInfo(updatepath, Settings.Default.UpdateQuiet ? "/verysilent" : ""));
-					Application.Exit();
-				});
-
-				// ensures that the Github package URI is callable
-				client.OpenRead(package).Close();
-
-				// starts the download of the new version from the Github repository
-				client.DownloadFileAsync(new Uri(package), updatepath);
-			} catch (Exception) {
-
-				// indicates to the user that the update service is not reachable for the moment
-				MessageBox.Show(translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-				// defines that the application has exited the updating state
-				this.updating = false;
-
-				// restores the context menu to the systray icon and start a synchronization
-				notifyIcon.ContextMenu = contextMenu;
-				this.AsyncSyncInbox();
-			}
+			UpdateService.Check();
 		}
 	}
 }

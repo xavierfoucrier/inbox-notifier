@@ -916,11 +916,9 @@
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.Label labelSettingsSaved;
-		private System.Windows.Forms.NotifyIcon notifyIcon;
 		private System.Windows.Forms.Timer timer;
 		private System.Windows.Forms.LinkLabel linkWebsiteYusuke;
 		private System.Windows.Forms.PictureBox pictureBoxHeader;
-		private System.Windows.Forms.ContextMenu contextMenu;
 		private System.Windows.Forms.MenuItem menuItemExit;
 		private System.Windows.Forms.MenuItem menuItem2;
 		private System.Windows.Forms.MenuItem menuItemSettings;
@@ -964,15 +962,12 @@
 		private System.Windows.Forms.LinkLabel linkLicense;
 		private System.Windows.Forms.Timer timerReconnect;
 		private System.Windows.Forms.PictureBox pictureBoxPrivacyPreview;
-		private System.Windows.Forms.LinkLabel linkCheckForUpdate;
 		private System.Windows.Forms.TabPage tabPageUpdate;
 		private System.Windows.Forms.GroupBox groupBox7;
 		private System.Windows.Forms.CheckBox fieldUpdateService;
 		private System.Windows.Forms.ComboBox fieldUpdatePeriod;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label labelUpdateControl;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Button buttonCheckForUpdate;
 		private System.Windows.Forms.GroupBox groupBox8;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label labelTotalUnreadMails;
@@ -992,6 +987,11 @@
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.CheckBox fieldUpdateQuiet;
 		private System.Windows.Forms.LinkLabel linkSoftpedia;
+		public System.Windows.Forms.Label labelUpdateControl;
+		public System.Windows.Forms.Button buttonCheckForUpdate;
+		public System.Windows.Forms.LinkLabel linkCheckForUpdate;
+		public System.Windows.Forms.NotifyIcon notifyIcon;
+		public System.Windows.Forms.ContextMenu contextMenu;
 	}
 }
 
