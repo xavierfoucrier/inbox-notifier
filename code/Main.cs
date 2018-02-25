@@ -54,18 +54,6 @@ namespace notifier {
 		// version number
 		public string version = "";
 
-		// number of maximum automatic reconnection
-		private const int MAX_AUTO_RECONNECT = 3;
-
-		// number in seconds between reconnections (in seconds)
-		private const int INTERVAL_RECONNECT = 10;
-
-		// number of mails used to display or not the systray stack icon
-		private const int UNSTACK_BOUNDARY = 5;
-
-		// gmail base root link
-		private const string GMAIL_BASEURL = "https://mail.google.com/mail/u/0";
-
 		// update service class
 		private Update UpdateService;
 
@@ -552,7 +540,7 @@ namespace notifier {
 				if (this.inbox.ThreadsUnread > 0) {
 
 					// sets the notification icon and text
-					notifyIcon.Icon = this.inbox.ThreadsUnread <= UNSTACK_BOUNDARY ? Resources.mails : Resources.stack;
+					notifyIcon.Icon = this.inbox.ThreadsUnread <= Settings.Default.UNSTACK_BOUNDARY ? Resources.mails : Resources.stack;
 
 					// manages message notification
 					if (Settings.Default.MessageNotification) {
@@ -864,7 +852,7 @@ namespace notifier {
 		/// Manages the context menu New message item
 		/// </summary>
 		private void MenuItemNewMessage_Click(object sender, EventArgs e) {
-			Process.Start(GMAIL_BASEURL + "/#inbox?compose=new");
+			Process.Start(Settings.Default.GMAIL_BASEURL + "/#inbox?compose=new");
 		}
 
 		/// <summary>
@@ -991,7 +979,7 @@ namespace notifier {
 
 				// by default, always open the gmail inbox in a browser
 				if (notifyIcon.Tag == null) {
-					Process.Start(GMAIL_BASEURL + "/#inbox");
+					Process.Start(Settings.Default.GMAIL_BASEURL + "/#inbox");
 				} else {
 					NotifyIconInteraction();
 				}
@@ -1021,7 +1009,7 @@ namespace notifier {
 			}
 
 			// opens a browser
-			Process.Start(GMAIL_BASEURL + "/" + notifyIcon.Tag);
+			Process.Start(Settings.Default.GMAIL_BASEURL + "/" + notifyIcon.Tag);
 			notifyIcon.Tag = null;
 
 			// restores the default systray icon and text: pretends that the user had read all his mail, except if the timeout option is activated
@@ -1111,7 +1099,7 @@ namespace notifier {
 			if (this.reconnect == 1) {
 
 				// sets the reconnection interval
-				timerReconnect.Interval = INTERVAL_RECONNECT * 1000;
+				timerReconnect.Interval = Settings.Default.INTERVAL_RECONNECT * 1000;
 
 				// disables the menu items
 				menuItemSynchronize.Enabled = false;
@@ -1129,7 +1117,7 @@ namespace notifier {
 			if (!this.IsInternetAvailable()) {
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
-				if (this.reconnect == MAX_AUTO_RECONNECT) {
+				if (this.reconnect == Settings.Default.MAX_AUTO_RECONNECT) {
 					timerReconnect.Enabled = false;
 					timerReconnect.Interval = 100;
 					timer.Enabled = true;

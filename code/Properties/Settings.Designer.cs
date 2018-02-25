@@ -247,5 +247,41 @@ namespace notifier.Properties {
                 return ((string)(this["GITHUB_REPOSITORY"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://mail.google.com/mail/u/0")]
+        public string GMAIL_BASEURL {
+            get {
+                return ((string)(this["GMAIL_BASEURL"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int MAX_AUTO_RECONNECT {
+            get {
+                return ((int)(this["MAX_AUTO_RECONNECT"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int INTERVAL_RECONNECT {
+            get {
+                return ((int)(this["INTERVAL_RECONNECT"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int UNSTACK_BOUNDARY {
+            get {
+                return ((int)(this["UNSTACK_BOUNDARY"]));
+            }
+        }
     }
 }

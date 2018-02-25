@@ -59,5 +59,17 @@
     <Setting Name="GITHUB_REPOSITORY" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://github.com/xavierfoucrier/gmail-notifier</Value>
     </Setting>
+    <Setting Name="GMAIL_BASEURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://mail.google.com/mail/u/0</Value>
+    </Setting>
+    <Setting Name="MAX_AUTO_RECONNECT" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="INTERVAL_RECONNECT" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="UNSTACK_BOUNDARY" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
