@@ -113,10 +113,10 @@ namespace notifier {
 						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
 						if (dialog == DialogResult.Yes) {
-							DownloadUpdate(release);
+							Download(release);
 						}
 					} else if (Settings.Default.UpdateDownload) {
-						DownloadUpdate(release);
+						Download(release);
 					}
 				} else if (verbose && !startup) {
 					MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -151,7 +151,7 @@ namespace notifier {
 		/// Downloads and launch the setup installer
 		/// </summary>
 		/// <param name="release">Version number package to download</param>
-		private void DownloadUpdate(string release) {
+		private void Download(string release) {
 			// defines that the application is currently updating
 			Updating = true;
 
