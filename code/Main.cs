@@ -48,12 +48,6 @@ namespace notifier {
 		// last synchronization time
 		private DateTime synctime = DateTime.Now;
 
-		// local application data folder name
-		public string appdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
-
-		// version number
-		public string version = "";
-
 		// update service class
 		private Update UpdateService;
 
@@ -87,8 +81,8 @@ namespace notifier {
 				Settings.Default.Save();
 
 				// cleans temporary update files from previous upgrade
-				if (Directory.Exists(appdata)) {
-					IEnumerable<string> executables = Directory.EnumerateFiles(appdata, "*.exe", SearchOption.TopDirectoryOnly);
+				if (Directory.Exists(Core.GetApplicationDataFolder())) {
+					IEnumerable<string> executables = Directory.EnumerateFiles(Core.GetApplicationDataFolder(), "*.exe", SearchOption.TopDirectoryOnly);
 
 					foreach (string executable in executables) {
 						try {
@@ -101,12 +95,8 @@ namespace notifier {
 				}
 			}
 
-			// initializes the application version number
-			string[] version = Application.ProductVersion.Split('.');
-			this.version = "v" + version[0] + "." + version[1] + (version[3] != "0" ? "." + version[3] : "") + "-" + (version[2] == "0" ? "alpha" : version[2] == "1" ? "beta" : version[2] == "2" ? "rc" : version[2] == "3" ? "release" : "");
-
 			// displays a systray notification on first load
-			if (Settings.Default.FirstLoad && !Directory.Exists(this.appdata)) {
+			if (Settings.Default.FirstLoad && !Directory.Exists(Core.GetApplicationDataFolder())) {
 				notifyIcon.ShowBalloonTip(7000, translation.welcome, translation.firstLoad, ToolTipIcon.Info);
 
 				// switches the first load state
@@ -239,14 +229,14 @@ namespace notifier {
 			labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
 
 			// displays the product version
-			linkVersion.Text = this.version.Substring(1);
+			linkVersion.Text = Core.GetVersion().Substring(1);
 
 			// positioning the check for update link
 			linkCheckForUpdate.Left = linkVersion.Right + 2;
 
 			// displays a tooltip for the product version
 			ToolTip tipTag = new ToolTip();
-			tipTag.SetToolTip(linkVersion, Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + this.version);
+			tipTag.SetToolTip(linkVersion, Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.GetVersion());
 			tipTag.ToolTipTitle = translation.tipReleaseNotes;
 			tipTag.ToolTipIcon = ToolTipIcon.Info;
 			tipTag.IsBalloon = false;
@@ -336,7 +326,7 @@ namespace notifier {
 			} catch(Exception) {
 
 				// exits the application if the google api token file doesn't exists
-				if (!Directory.Exists(this.appdata) || !Directory.EnumerateFiles(this.appdata).Any()) {
+				if (!Directory.Exists(Core.GetApplicationDataFolder()) || !Directory.EnumerateFiles(Core.GetApplicationDataFolder()).Any()) {
 
 					// displays the authentication icon and title
 					notifyIcon.Icon = Resources.authentication;
@@ -376,7 +366,7 @@ namespace notifier {
 					new string[] { GmailService.Scope.GmailModify },
 					"user",
 					cancellation.Token,
-					new FileDataStore(this.appdata, true)
+					new FileDataStore(Core.GetApplicationDataFolder(), true)
 				);
 
 				// returns the user credential
@@ -787,7 +777,7 @@ namespace notifier {
 		/// Opens the Github release section of the current build
 		/// </summary>
 		private void LinkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + this.version);
+			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.GetVersion());
 		}
 
 		/// <summary>
@@ -1057,8 +1047,8 @@ namespace notifier {
 			}
 
 			// deletes the local application data folder and the client token file
-			if (Directory.Exists(this.appdata)) {
-				Directory.Delete(this.appdata, true);
+			if (Directory.Exists(Core.GetApplicationDataFolder())) {
+				Directory.Delete(Core.GetApplicationDataFolder(), true);
 			}
 
 			// restarts the application
