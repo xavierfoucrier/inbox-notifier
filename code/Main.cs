@@ -80,19 +80,8 @@ namespace notifier {
 				Settings.Default.UpdateRequired = false;
 				Settings.Default.Save();
 
-				// cleans temporary update files from previous upgrade
-				if (Directory.Exists(Core.GetApplicationDataFolder())) {
-					IEnumerable<string> executables = Directory.EnumerateFiles(Core.GetApplicationDataFolder(), "*.exe", SearchOption.TopDirectoryOnly);
-
-					foreach (string executable in executables) {
-						try {
-							File.Delete(executable);
-						} catch(Exception) {
-							// nothing to catch: executable is currently locked
-							// setup package will be removed next time
-						}
-					}
-				}
+				// deletes the setup installer package from the previous upgrade
+				UpdateService.DeleteSetupPackage();
 			}
 
 			// displays a systray notification on first load

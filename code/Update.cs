@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -50,6 +51,26 @@ namespace notifier {
 		/// </summary>
 		public bool IsPeriodSetToStartup() {
 			return Settings.Default.UpdatePeriod == (int)Period.Startup;
+		}
+
+		/// <summary>
+		/// Deletes the setup installer package from the local application data folder
+		/// </summary>
+		public void DeleteSetupPackage() {
+			if (!Directory.Exists(Core.GetApplicationDataFolder())) {
+				return;
+			}
+
+			IEnumerable<string> executables = Directory.EnumerateFiles(Core.GetApplicationDataFolder(), "*.exe", SearchOption.TopDirectoryOnly);
+
+			foreach (string executable in executables) {
+				try {
+					File.Delete(executable);
+				} catch (Exception) {
+					// nothing to catch: executable is currently locked
+					// setup package will be removed next time
+				}
+			}
 		}
 
 		/// <summary>
