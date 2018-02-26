@@ -131,6 +131,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Computer.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>

@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Net;
-using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -43,13 +42,16 @@ namespace notifier {
 		private int? unreadthreads = 0;
 
 		// number of automatic reconnection
-		private uint reconnect = 0;
+		public uint reconnect = 0;
 
 		// last synchronization time
 		private DateTime synctime = DateTime.Now;
 
 		// update service class
 		private Update UpdateService;
+
+		// computer service class
+		private Computer ComputerService;
 
 		/// <summary>
 		/// Initializes the class
@@ -62,6 +64,7 @@ namespace notifier {
 
 			// initializes services
 			UpdateService = new Update(ref Instance);
+			ComputerService = new Computer(ref Instance);
 		}
 
 		/// <summary>
@@ -126,67 +129,10 @@ namespace notifier {
 				labelSettingsSaved.Visible = true;
 			});
 
-			// binds the "NetworkAvailabilityChanged" event to automatically sync the inbox when a network is available
-			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object o, NetworkAvailabilityEventArgs target) => {
-
-				// stops the reconnect process if it is running
-				if (this.reconnect != 0) {
-					timerReconnect.Enabled = false;
-					timerReconnect.Interval = 100;
-					this.reconnect = 0;
-				}
-
-				// loops through all network interface to check network connectivity
-				foreach (NetworkInterface network in NetworkInterface.GetAllNetworkInterfaces()) {
-
-					// discards "non-up" status, modem, serial, loopback and tunnel
-					if (network.OperationalStatus != OperationalStatus.Up || network.Speed < 0 || network.NetworkInterfaceType == NetworkInterfaceType.Loopback || network.NetworkInterfaceType == NetworkInterfaceType.Tunnel) {
-						continue;
-					}
-
-					// discards virtual cards (like virtual box, virtual pc, etc.) and microsoft loopback adapter (showing as ethernet card)
-					if (network.Name.ToLower().Contains("virtual") || network.Description.ToLower().Contains("virtual") || network.Description.ToLower() == ("microsoft loopback adapter")) {
-						continue;
-					}
-
-					// syncs the inbox when a network interface is available and the timeout mode is disabled
-					if (timer.Interval == Settings.Default.TimerInterval) {
-						this.AsyncSyncInbox();
-					}
-
-					break;
-				}
-			});
-
-			// binds the "PowerModeChanged" event to automatically pause/resume the application synchronization
-			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler((object o, PowerModeChangedEventArgs target) => {
-				if (target.Mode == PowerModes.Suspend) {
-					timer.Enabled = false;
-				} else if (target.Mode == PowerModes.Resume) {
-
-					// do nothing if the timeout mode is set to infinite
-					if (timer.Interval != Settings.Default.TimerInterval && menuItemTimeoutIndefinitely.Checked) {
-						return;
-					}
-
-					this.AsyncSyncInbox(false, true);
-				}
-			});
-
-			// bins the "SessionSwitch" event to automatically sync the inbox on session unlocking
-			SystemEvents.SessionSwitch += new SessionSwitchEventHandler((object o, SessionSwitchEventArgs target) => {
-
-				// syncs the inbox when the user is unlocking the Windows session
-				if (target.Reason == SessionSwitchReason.SessionUnlock) {
-
-					// do nothing if the timeout mode is set to infinite
-					if (timer.Interval != Settings.Default.TimerInterval && menuItemTimeoutIndefinitely.Checked) {
-						return;
-					}
-
-					AsyncSyncInbox(false, true);
-				}
-			});
+			// binds all computer services
+			ComputerService.BindNetwork();
+			ComputerService.BindPowerMode();
+			ComputerService.BindSessionSwitch();
 
 			// displays the step delay setting
 			fieldStepDelay.SelectedIndex = Settings.Default.StepDelay;
@@ -275,22 +221,6 @@ namespace notifier {
 			// disposes the gmail api service
 			if (this.service != null) {
 				this.service.Dispose();
-			}
-		}
-
-		/// <summary>
-		/// Opens the Google website to checks the internet connectivity
-		/// </summary>
-		/// <returns>Indicates if the user is connected to the internet, false means that the request to the Google server has failed</returns>
-		private bool IsInternetAvailable() {
-			try {
-				using (var client = new WebClient()) {
-					using (var stream = client.OpenRead("http://www.google.com")) {
-						return true;
-					}
-				}
-			} catch (Exception) {
-				return false;
 			}
 		}
 
@@ -445,7 +375,7 @@ namespace notifier {
 			}
 
 			// if internet is down, attempts to reconnect the user mailbox
-			if (!this.IsInternetAvailable()) {
+			if (!ComputerService.IsInternetAvailable()) {
 				timerReconnect.Enabled = true;
 				timer.Enabled = false;
 
@@ -1093,7 +1023,7 @@ namespace notifier {
 			}
 
 			// if internet is down, waits for INTERVAL_RECONNECT seconds before next attempt
-			if (!this.IsInternetAvailable()) {
+			if (!ComputerService.IsInternetAvailable()) {
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
 				if (this.reconnect == Settings.Default.MAX_AUTO_RECONNECT) {

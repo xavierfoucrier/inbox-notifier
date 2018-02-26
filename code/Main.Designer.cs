@@ -916,7 +916,6 @@
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.Label labelSettingsSaved;
-		private System.Windows.Forms.Timer timer;
 		private System.Windows.Forms.LinkLabel linkWebsiteYusuke;
 		private System.Windows.Forms.PictureBox pictureBoxHeader;
 		private System.Windows.Forms.MenuItem menuItemExit;
@@ -960,7 +959,6 @@
 		private System.Windows.Forms.LinkLabel linkVersion;
 		private System.Windows.Forms.LinkLabel linkRestartToApply;
 		private System.Windows.Forms.LinkLabel linkLicense;
-		private System.Windows.Forms.Timer timerReconnect;
 		private System.Windows.Forms.PictureBox pictureBoxPrivacyPreview;
 		private System.Windows.Forms.TabPage tabPageUpdate;
 		private System.Windows.Forms.GroupBox groupBox7;
@@ -980,7 +978,6 @@
 		private System.Windows.Forms.CheckBox fieldUpdateDownload;
 		private System.Windows.Forms.MenuItem menuItemNewMessage;
 		private System.Windows.Forms.MenuItem menuItem4;
-		private System.Windows.Forms.MenuItem menuItemTimeoutIndefinitely;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.ComboBox fieldNotificationBehavior;
@@ -992,6 +989,9 @@
 		public System.Windows.Forms.LinkLabel linkCheckForUpdate;
 		public System.Windows.Forms.NotifyIcon notifyIcon;
 		public System.Windows.Forms.ContextMenu contextMenu;
+		public System.Windows.Forms.Timer timerReconnect;
+		public System.Windows.Forms.Timer timer;
+		public System.Windows.Forms.MenuItem menuItemTimeoutIndefinitely;
 	}
 }
 
