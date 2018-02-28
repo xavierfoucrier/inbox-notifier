@@ -183,12 +183,12 @@ namespace notifier {
 
 			// displays a tooltip for the website link
 			ToolTip tipWebsiteYusuke = new ToolTip();
-			tipWebsiteYusuke.SetToolTip(linkWebsiteYusuke, "http://p.yusukekamiyamane.com");
+			tipWebsiteYusuke.SetToolTip(linkWebsiteYusuke, Settings.Default.SITE_YUSUKE);
 			tipWebsiteYusuke.IsBalloon = false;
 
 			// displays a tooltip for the website link
 			ToolTip tipWebsiteXavier = new ToolTip();
-			tipWebsiteXavier.SetToolTip(linkWebsiteXavier, "http://www.xavierfoucrier.fr");
+			tipWebsiteXavier.SetToolTip(linkWebsiteXavier, Settings.Default.SITE_AUTHOR);
 			tipWebsiteXavier.IsBalloon = false;
 
 			// displays a tooltip for the license link
@@ -703,21 +703,21 @@ namespace notifier {
 		/// Opens the Yusuke website
 		/// </summary>
 		private void LinkWebsiteYusuke_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start("http://p.yusukekamiyamane.com");
+			Process.Start(Settings.Default.SITE_YUSUKE);
 		}
 
 		/// <summary>
 		/// Opens the Xavier website
 		/// </summary>
 		private void LinkWebsiteXavier_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start("http://www.xavierfoucrier.fr");
+			Process.Start(Settings.Default.SITE_AUTHOR);
 		}
 
 		/// <summary>
 		/// Opens the Softpedia website
 		/// </summary>
 		private void LinkSoftpedia_Click(object sender, EventArgs e) {
-			Process.Start("http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status");
+			Process.Start(Settings.Default.SITE_SOFTPEDIA);
 		}
 
 		/// <summary>

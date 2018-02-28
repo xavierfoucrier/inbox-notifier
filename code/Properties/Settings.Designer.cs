@@ -283,5 +283,33 @@ namespace notifier.Properties {
                 return ((int)(this["UNSTACK_BOUNDARY"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://p.yusukekamiyamane.com")]
+        public string SITE_YUSUKE {
+            get {
+                return ((string)(this["SITE_YUSUKE"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://www.xavierfoucrier.fr")]
+        public string SITE_AUTHOR {
+            get {
+                return ((string)(this["SITE_AUTHOR"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-" +
+            "notifier.shtml#status")]
+        public string SITE_SOFTPEDIA {
+            get {
+                return ((string)(this["SITE_SOFTPEDIA"]));
+            }
+        }
     }
 }
