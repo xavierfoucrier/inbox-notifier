@@ -339,10 +339,10 @@ namespace notifier {
 		//
 		public void Retry() {
 			// increases the number of reconnection attempt
-			this.reconnect++;
+			reconnect++;
 
 			// bypass the first reconnection attempt because the last synchronization have already checked the internet connectivity
-			if (this.reconnect == 1) {
+			if (reconnect == 1) {
 
 				// sets the reconnection interval
 				Interface.timerReconnect.Interval = Settings.Default.INTERVAL_RECONNECT * 1000;
@@ -363,7 +363,7 @@ namespace notifier {
 			if (!Interface.ComputerService.IsInternetAvailable()) {
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
-				if (this.reconnect == Settings.Default.MAX_AUTO_RECONNECT) {
+				if (reconnect == Settings.Default.MAX_AUTO_RECONNECT) {
 					Interface.timerReconnect.Enabled = false;
 					Interface.timerReconnect.Interval = 100;
 					Interface.timer.Enabled = true;

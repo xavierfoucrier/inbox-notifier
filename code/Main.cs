@@ -437,7 +437,7 @@ namespace notifier {
 		/// Manages the context menu exit item
 		/// </summary>
 		private void MenuItemExit_Click(object sender, EventArgs e) {
-			this.Close();
+			Close();
 		}
 
 		/// <summary>
@@ -531,14 +531,14 @@ namespace notifier {
 			}
 
 			// restarts the application
-			this.Restart();
+			Restart();
 		}
 
 		/// <summary>
 		/// Restarts the application to apply new user settings
 		/// </summary>
 		private void LinkRestartToApply_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			this.Restart();
+			Restart();
 		}
 
 		/// <summary>
