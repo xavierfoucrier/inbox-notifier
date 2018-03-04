@@ -190,19 +190,6 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Authentication callback
-		/// </summary>
-		public void AuthenticationCallback() {
-
-			// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
-			if (Settings.Default.UpdateService && UpdateService.IsPeriodSetToStartup()) {
-				UpdateService.Check(!Settings.Default.UpdateDownload, true);
-			} else {
-				GmailService.Inbox.Sync();
-			}
-		}
-
-		/// <summary>
 		/// Manages the RunAtWindowsStartup user setting
 		/// </summary>
 		private void FieldRunAtWindowsStartup_CheckedChanged(object sender, EventArgs e) {

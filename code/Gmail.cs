@@ -59,7 +59,13 @@ namespace notifier {
 					Application.Exit();
 				}
 			} finally {
-				Interface.AuthenticationCallback();
+
+				// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
+				if (Settings.Default.UpdateService && Interface.UpdateService.IsPeriodSetToStartup()) {
+					Interface.UpdateService.Check(!Settings.Default.UpdateDownload, true);
+				} else {
+					Interface.GmailService.Inbox.Sync();
+				}
 			}
 		}
 
