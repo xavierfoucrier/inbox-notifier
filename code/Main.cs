@@ -1,20 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Media;
-using System.Net;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Google.Apis.Auth.OAuth2;
-using Google.Apis.Gmail.v1;
-using Google.Apis.Gmail.v1.Data;
-using Google.Apis.Services;
-using Google.Apis.Util.Store;
 using Microsoft.Win32;
 using notifier.Languages;
 using notifier.Properties;
@@ -22,36 +10,14 @@ using notifier.Properties;
 namespace notifier {
 	public partial class Main : Form {
 
-		// privacy possibilities
-		private enum Privacy : uint {
-			None = 0,
-			Short = 1,
-			All = 2
-		}
-
-		// gmail api service
-		private GmailService service;
-
-		// user credential for the gmail authentication
-		private UserCredential credential;
-
-		// inbox label
-		private Google.Apis.Gmail.v1.Data.Label inbox;
-
-		// unread threads
-		private int? unreadthreads = 0;
-
-		// number of automatic reconnection
-		public uint reconnect = 0;
-
-		// last synchronization time
-		private DateTime synctime = DateTime.Now;
-
 		// update service class
-		private Update UpdateService;
+		internal Update UpdateService;
 
 		// computer service class
-		private Computer ComputerService;
+		internal Computer ComputerService;
+
+		// gmail service class
+		internal Gmail GmailService;
 
 		/// <summary>
 		/// Initializes the class
@@ -65,6 +31,7 @@ namespace notifier {
 			// initializes services
 			UpdateService = new Update(ref Instance);
 			ComputerService = new Computer(ref Instance);
+			GmailService = new Gmail(ref Instance);
 		}
 
 		/// <summary>
@@ -118,7 +85,7 @@ namespace notifier {
 			help.SetHelpString(fieldPrivacyNotificationAll, translation.helpPrivacyNotificationAll);
 
 			// authenticates the user
-			this.AsyncAuthentication();
+			GmailService.Authentication();
 
 			// attaches the context menu to the systray icon
 			notifyIcon.ContextMenu = contextMenu;
@@ -142,16 +109,16 @@ namespace notifier {
 
 			// displays the privacy notification setting
 			switch (Settings.Default.PrivacyNotification) {
-				case (int)Privacy.None:
+				case (int)Notification.Privacy.None:
 					fieldPrivacyNotificationNone.Checked = true;
 					pictureBoxPrivacyPreview.Image = Resources.privacy_none;
 					break;
 				default:
-				case (int)Privacy.Short:
+				case (int)Notification.Privacy.Short:
 					fieldPrivacyNotificationShort.Checked = true;
 					pictureBoxPrivacyPreview.Image = Resources.privacy_short;
 					break;
-				case (int)Privacy.All:
+				case (int)Notification.Privacy.All:
 					fieldPrivacyNotificationAll.Checked = true;
 					pictureBoxPrivacyPreview.Image = Resources.privacy_all;
 					break;
@@ -218,376 +185,20 @@ namespace notifier {
 				}
 			}
 
-			// disposes the gmail api service
-			if (this.service != null) {
-				this.service.Dispose();
-			}
+			// disposes the gmail service
+			GmailService.Dispose();
 		}
 
 		/// <summary>
-		/// Asynchronous method used to get user credential
+		/// Authentication callback
 		/// </summary>
-		private async void AsyncAuthentication() {
-			try {
-
-				// waits for the user authorization
-				this.credential = await AsyncAuthorizationBroker();
-
-				// creates the gmail api service
-				this.service = new GmailService(new BaseClientService.Initializer() {
-					HttpClientInitializer = this.credential,
-					ApplicationName = "Gmail notifier for Windows"
-				});
-
-				// displays the user email address
-				labelEmailAddress.Text = this.service.Users.GetProfile("me").Execute().EmailAddress;
-				labelTokenDelivery.Text = this.credential.Token.IssuedUtc.ToLocalTime().ToString();
-			} catch(Exception) {
-
-				// exits the application if the google api token file doesn't exists
-				if (!Directory.Exists(Core.GetApplicationDataFolder()) || !Directory.EnumerateFiles(Core.GetApplicationDataFolder()).Any()) {
-
-					// displays the authentication icon and title
-					notifyIcon.Icon = Resources.authentication;
-					notifyIcon.Text = translation.authenticationFailed;
-
-					// exits the application
-					MessageBox.Show(translation.authenticationWithGmailRefused, translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-					Application.Exit();
-				}
-			} finally {
-
-				// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
-				if (Settings.Default.UpdateService && UpdateService.IsPeriodSetToStartup()) {
-					UpdateService.Check(!Settings.Default.UpdateDownload, true);
-				} else {
-					this.AsyncSyncInbox();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Asynchronous task used to get the user authorization
-		/// </summary>
-		/// <returns>OAuth 2.0 user credential</returns>
-		private async Task<UserCredential> AsyncAuthorizationBroker() {
-
-			// uses the client secret file for the context
-			using (FileStream stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
-
-				// defines a cancellation token source
-				CancellationTokenSource cancellation = new CancellationTokenSource();
-				cancellation.CancelAfter(TimeSpan.FromSeconds(20));
-
-				// waits for the user validation, only if the user has not already authorized the application
-				UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
-					GoogleClientSecrets.Load(stream).Secrets,
-					new string[] { GmailService.Scope.GmailModify },
-					"user",
-					cancellation.Token,
-					new FileDataStore(Core.GetApplicationDataFolder(), true)
-				);
-
-				// returns the user credential
-				return credential;
-			}
-		}
-
-		/// <summary>
-		/// Asynchronous method used to refresh the authentication token
-		/// </summary>
-		/// <returns></returns>
-		private async Task<bool> AsyncRefreshToken() {
-
-			// refreshes the token and updates the token delivery date and time on the interface
-			if (await this.credential.RefreshTokenAsync(new CancellationToken())) {
-				labelTokenDelivery.Text = this.credential.Token.IssuedUtc.ToLocalTime().ToString();
-			}
-
-			return true;
-		}
-
-		/// <summary>
-		/// Asynchronous method used to get account statistics
-		/// </summary>
-		private async void AsyncStatistics() {
-			try {
-				labelTotalUnreadMails.Text = this.inbox.ThreadsUnread.ToString();
-				labelTotalMails.Text = this.inbox.ThreadsTotal.ToString();
-
-				ListDraftsResponse drafts = await this.AsyncDrafts();
-				ListLabelsResponse labels = await this.AsyncLabels();
-
-				if (drafts.Drafts != null) {
-					labelTotalDrafts.Text = drafts.Drafts.Count.ToString();
-				}
-
-				if (labels.Labels != null) {
-					labelTotalLabels.Text = labels.Labels.Count.ToString();
-				}
-			} catch (Exception) {
-				// nothing to catch
-			}
-		}
-
-		/// <summary>
-		/// Asynchronous task used to get the user drafts
-		/// </summary>
-		/// <returns>List of drafts</returns>
-		private async Task<ListDraftsResponse> AsyncDrafts() {
-			return await this.service.Users.Drafts.List("me").ExecuteAsync();
-		}
-
-		/// <summary>
-		/// Asynchronous task used to get the user labels
-		/// </summary>
-		/// <returns>List of labels</returns>
-		private async Task<ListLabelsResponse> AsyncLabels() {
-			return await this.service.Users.Labels.List("me").ExecuteAsync();
-		}
-
-		/// <summary>
-		/// Asynchronous method used to synchronize the user inbox
-		/// </summary>
-		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
-		public async void AsyncSyncInbox(bool timertick = false, bool token = false) {
-			
-			// prevents the application from syncing the inbox when updating
-			if (UpdateService.IsUpdating()) {
-				return;
-			}
-
-			// updates the synchronization time
-			this.synctime = DateTime.Now;
-
-			// resets reconnection count and prevents the application from displaying continuous warning icon when a timertick synchronization occurs after a reconnection attempt
-			if (this.reconnect != 0) {
-				timertick = false;
-				this.reconnect = 0;
-			}
-
-			// disables the timeout when the user do a manual synchronization
-			if (timer.Interval != Settings.Default.TimerInterval) {
-				Timeout(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
-
-				// exits the method because the timeout function automatically restarts a synchronization once it has been disabled
-				return;
-			}
-
-			// if internet is down, attempts to reconnect the user mailbox
-			if (!ComputerService.IsInternetAvailable()) {
-				timerReconnect.Enabled = true;
-				timer.Enabled = false;
-
-				return;
-			}
-
-			// refreshes the authentication token if needed
-			if (token) {
-				await this.AsyncRefreshToken();
-			}
-
-			// activates the necessary menu items
-			menuItemSynchronize.Enabled = true;
-			menuItemTimout.Enabled = true;
-			menuItemSettings.Enabled = true;
-
-			// displays the sync icon, but not on every tick of the timer
-			if (!timertick) {
-				notifyIcon.Icon = Resources.sync;
-				notifyIcon.Text = translation.sync;
-			}
-
-			// do a small ping on the update service
-			UpdateService.Ping();
-
-			try {
-
-				// manages the spam notification
-				if (Settings.Default.SpamNotification) {
-
-					// exits if a spam is already detected
-					if (timertick && notifyIcon.Tag != null && notifyIcon.Tag.ToString() == "#spam") {
-						return;
-					}
-
-					// gets the "spam" label
-					Google.Apis.Gmail.v1.Data.Label spam = await this.service.Users.Labels.Get("me", "SPAM").ExecuteAsync();
-
-					// manages unread spams
-					if (spam.ThreadsUnread > 0) {
-
-						// sets the notification icon and text
-						notifyIcon.Icon = Resources.spam;
-
-						// plays a sound on unread spams
-						if (Settings.Default.AudioNotification) {
-							SystemSounds.Exclamation.Play();
-						}
-
-						// displays a balloon tip in the systray with the total of unread threads
-						notifyIcon.ShowBalloonTip(450, spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? translation.unreadSpams : translation.unreadSpam), translation.newUnreadSpam, ToolTipIcon.Error);
-						notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? translation.unreadSpams : translation.unreadSpam);
-						notifyIcon.Tag = "#spam";
-
-						return;
-					}
-				}
-
-				// gets the "inbox" label
-				this.inbox = await this.service.Users.Labels.Get("me", "INBOX").ExecuteAsync();
-
-				// updates the statistics
-				this.AsyncStatistics();
-
-				// exits the sync if the number of unread threads is the same as before
-				if (timertick && (this.inbox.ThreadsUnread == this.unreadthreads)) {
-					return;
-				}
-
-				// manages unread threads
-				if (this.inbox.ThreadsUnread > 0) {
-
-					// sets the notification icon and text
-					notifyIcon.Icon = this.inbox.ThreadsUnread <= Settings.Default.UNSTACK_BOUNDARY ? Resources.mails : Resources.stack;
-
-					// manages message notification
-					if (Settings.Default.MessageNotification) {
-
-						// plays a sound on unread threads
-						if (Settings.Default.AudioNotification) {
-							SystemSounds.Asterisk.Play();
-						}
-
-						// gets the message details
-						UsersResource.MessagesResource.ListRequest messages = this.service.Users.Messages.List("me");
-						messages.LabelIds = "UNREAD";
-						messages.MaxResults = 1;
-						Google.Apis.Gmail.v1.Data.Message message = await this.service.Users.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
-							return m.Result.Messages.First().Id;
-						})).ExecuteAsync();
-
-						//  displays a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
-						if (this.inbox.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != (int)Privacy.All) {
-							string subject = "";
-							string from = "";
-
-							foreach (MessagePartHeader header in message.Payload.Headers) {
-								if (header.Name == "Subject") {
-									subject = header.Value != "" ? header.Value : translation.newUnreadMessage;
-								} else if (header.Name == "From") {
-									Match match = Regex.Match(header.Value, ".* <");
-
-									if (match.Length != 0) {
-										from = match.Captures[0].Value.Replace(" <", "").Replace("\"", "");
-									} else {
-										match = Regex.Match(header.Value, "<?.*>?");
-										from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, this.inbox.ThreadsUnread.ToString() + " " + translation.unreadMessage);
-									}
-								}
-							}
-
-							if (Settings.Default.PrivacyNotification == (int)Privacy.None) {
-								notifyIcon.ShowBalloonTip(450, from, message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : translation.newUnreadMessage, ToolTipIcon.Info);
-							} else if (Settings.Default.PrivacyNotification == (int)Privacy.Short) {
-								notifyIcon.ShowBalloonTip(450, from, subject, ToolTipIcon.Info);
-							}
-						} else {
-							notifyIcon.ShowBalloonTip(450, this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? translation.unreadMessages : translation.unreadMessage), translation.newUnreadMessage, ToolTipIcon.Info);
-						}
-
-						// manages the balloon tip click event handler: we store the "notification tag" to allow the user to directly display the specified view (inbox/message/spam) in a browser
-						notifyIcon.Tag = "#inbox" + (this.inbox.ThreadsUnread == 1 ? "/" + message.Id : "");
-					}
-
-					// displays the notification text
-					notifyIcon.Text = this.inbox.ThreadsUnread.ToString() + " " + (this.inbox.ThreadsUnread > 1 ? translation.unreadMessages : translation.unreadMessage);
-
-					// enables the mark as read menu item
-					menuItemMarkAsRead.Text = translation.markAsRead + " (" + this.inbox.ThreadsUnread + ")";
-					menuItemMarkAsRead.Enabled = true;
-				} else {
-
-					// restores the default systray icon and text
-					notifyIcon.Icon = Resources.normal;
-					notifyIcon.Text = translation.noMessage;
-
-					// disables the mark as read menu item
-					menuItemMarkAsRead.Text = translation.markAsRead;
-					menuItemMarkAsRead.Enabled = false;
-				}
-
-				// saves the number of unread threads
-				this.unreadthreads = this.inbox.ThreadsUnread;
-			} catch(Exception exception) {
-
-				// displays a balloon tip in the systray with the detailed error message
-				notifyIcon.Icon = Resources.warning;
-				notifyIcon.Text = translation.syncError;
-				notifyIcon.ShowBalloonTip(1500, translation.error, translation.syncErrorOccured + exception.Message, ToolTipIcon.Warning);
-			} finally {
-				notifyIcon.Text = notifyIcon.Text.Split('\n')[0] + "\n" + translation.syncTime.Replace("{time}", this.synctime.ToLongTimeString());
-			}
-		}
-
-		/// <summary>
-		/// Asynchronous method used to mark as read the user inbox
-		/// </summary>
-		private async void AsyncMarkAsRead() {
-			try {
-
-				// updates the synchronization time
-				this.synctime = DateTime.Now;
-
-				// displays the sync icon
-				notifyIcon.Icon = Resources.sync;
-				notifyIcon.Text = translation.sync;
-
-				// gets all unread threads
-				UsersResource.ThreadsResource.ListRequest threads = this.service.Users.Threads.List("me");
-				threads.LabelIds = "UNREAD";
-				ListThreadsResponse list = await threads.ExecuteAsync();
-				IList<Google.Apis.Gmail.v1.Data.Thread> unread = list.Threads;
-
-				// loops through all unread threads and removes the "unread" label for each one
-				if (unread != null && unread.Count > 0) {
-					foreach (Google.Apis.Gmail.v1.Data.Thread thread in unread) {
-						ModifyThreadRequest request = new ModifyThreadRequest() {
-							RemoveLabelIds = new List<string>() { "UNREAD" }
-						};
-
-						await this.service.Users.Threads.Modify(request, "me", thread.Id).ExecuteAsync();
-					}
-
-					// gets the "inbox" label
-					this.inbox = await this.service.Users.Labels.Get("me", "INBOX").ExecuteAsync();
-
-					// updates the statistics
-					this.AsyncStatistics();
-				}
-
-				// restores the default systray icon and text
-				notifyIcon.Icon = Resources.normal;
-				notifyIcon.Text = translation.noMessage;
-
-				// restores the default tag
-				notifyIcon.Tag = null;
-
-				// disables the mark as read menu item
-				menuItemMarkAsRead.Text = translation.markAsRead;
-				menuItemMarkAsRead.Enabled = false;
-			} catch (Exception exception) {
-
-				// enabled the mark as read menu item
-				menuItemMarkAsRead.Text = translation.markAsRead + " (" + this.inbox.ThreadsUnread + ")";
-				menuItemMarkAsRead.Enabled = true;
-
-				// displays a balloon tip in the systray with the detailed error message
-				notifyIcon.Icon = Resources.warning;
-				notifyIcon.Text = translation.markAsReadError;
-				notifyIcon.ShowBalloonTip(1500, translation.error, translation.markAsReadErrorOccured + exception.Message, ToolTipIcon.Warning);
-			} finally {
-				notifyIcon.Text = notifyIcon.Text.Split('\n')[0] + "\n" + translation.syncTime.Replace("{time}", this.synctime.ToLongTimeString());
+		public void AuthenticationCallback() {
+
+			// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
+			if (Settings.Default.UpdateService && UpdateService.IsPeriodSetToStartup()) {
+				UpdateService.Check(!Settings.Default.UpdateDownload, true);
+			} else {
+				GmailService.GetInbox().Sync();
 			}
 		}
 
@@ -633,7 +244,7 @@ namespace notifier {
 		/// Manages the SpamNotification user setting
 		/// </summary>
 		private void FieldSpamNotification_Click(object sender, EventArgs e) {
-			this.AsyncSyncInbox();
+			GmailService.GetInbox().Sync();
 		}
 
 		/// <summary>
@@ -665,7 +276,7 @@ namespace notifier {
 		/// Manages the PrivacyNotificationNone user setting
 		/// </summary>
 		private void FieldPrivacyNotificationNone_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = (int)Privacy.None;
+			Settings.Default.PrivacyNotification = (int)Notification.Privacy.None;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_none;
 		}
 
@@ -673,7 +284,7 @@ namespace notifier {
 		/// Manages the PrivacyNotificationShort user setting
 		/// </summary>
 		private void FieldPrivacyNotificationShort_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = (int)Privacy.Short;
+			Settings.Default.PrivacyNotification = (int)Notification.Privacy.Short;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_short;
 		}
 
@@ -681,7 +292,7 @@ namespace notifier {
 		/// Manages the PrivacyNotificationAll user setting
 		/// </summary>
 		private void FieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = (int)Privacy.All;
+			Settings.Default.PrivacyNotification = (int)Notification.Privacy.All;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_all;
 		}
 
@@ -768,94 +379,56 @@ namespace notifier {
 		/// Manages the context menu Synchronize item
 		/// </summary>
 		private void MenuItemSynchronize_Click(object sender, EventArgs e) {
-			this.AsyncSyncInbox();
+			GmailService.GetInbox().Sync();
 		}
 
 		/// <summary>
 		/// Manages the context menu MarkAsRead item
 		/// </summary>
 		private void MenuItemMarkAsRead_Click(object sender, EventArgs e) {
-			this.AsyncMarkAsRead();
-		}
-
-		/// <summary>
-		/// Delays the inbox sync during a certain time
-		/// </summary>
-		/// <param name="item">Item selected in the menu</param>
-		/// <param name="delay">Delay until the next inbox sync, 0 means "infinite" timeout</param>
-		private void Timeout(MenuItem item, int delay) {
-
-			// exits if the selected menu item is already checked
-			if (item.Checked) {
-				return;
-			}
-
-			// unchecks all menu items
-			foreach (MenuItem i in menuItemTimout.MenuItems) {
-				i.Checked = false;
-			}
-
-			// displays the user choice
-			item.Checked = true;
-
-			// disables the timer if the delay is set to "infinite"
-			timer.Enabled = delay != 0;
-
-			// applies "1" if the delay is set to "infinite" because the timer delay attribute does not support "0"
-			timer.Interval = delay != 0 ? delay : 1;
-
-			// restores the default tag
-			notifyIcon.Tag = null;
-
-			// updates the systray icon and text
-			if (delay != Settings.Default.TimerInterval) {
-				notifyIcon.Icon = Resources.timeout;
-				notifyIcon.Text = translation.timeout + " - " + (delay != 0 ? DateTime.Now.AddMilliseconds(delay).ToShortTimeString() : "∞");
-			} else {
-				this.AsyncSyncInbox();
-			}
+			GmailService.GetInbox().MarkAsRead();
 		}
 
 		/// <summary>
 		/// Manages the context menu TimeoutDisabled item
 		/// </summary>
 		private void MenuItemTimeoutDisabled_Click(object sender, EventArgs e) {
-			Timeout((MenuItem)sender, Settings.Default.TimerInterval);
+			GmailService.GetInbox().Timeout((MenuItem)sender, Settings.Default.TimerInterval);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout30m item
 		/// </summary>
 		private void MenuItemTimeout30m_Click(object sender, EventArgs e) {
-			Timeout((MenuItem)sender, 1000 * 60 * 30);
+			GmailService.GetInbox().Timeout((MenuItem)sender, 1000 * 60 * 30);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout1h item
 		/// </summary>
 		private void MenuItemTimeout1h_Click(object sender, EventArgs e) {
-			Timeout((MenuItem)sender, 1000 * 60 * 60);
+			GmailService.GetInbox().Timeout((MenuItem)sender, 1000 * 60 * 60);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout2h item
 		/// </summary>
 		private void MenuItemTimeout2h_Click(object sender, EventArgs e) {
-			Timeout((MenuItem)sender, 1000 * 60 * 60 * 2);
+			GmailService.GetInbox().Timeout((MenuItem)sender, 1000 * 60 * 60 * 2);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout5h item
 		/// </summary>
 		private void MenuItemTimeout5h_Click(object sender, EventArgs e) {
-			Timeout((MenuItem)sender, 1000 * 60 * 60 * 5);
+			GmailService.GetInbox().Timeout((MenuItem)sender, 1000 * 60 * 60 * 5);
 		}
 
 		/// <summary>
 		/// Manages the context menu TimeoutIndefinitely item
 		/// </summary>
 		private void MenuItemTimeoutIndefinitely_Click(object sender, EventArgs e) {
-			Timeout((MenuItem)sender, 0);
+			GmailService.GetInbox().Timeout((MenuItem)sender, 0);
 		}
 
 		/// <summary>
@@ -925,11 +498,11 @@ namespace notifier {
 			if (timer.Interval == Settings.Default.TimerInterval) {
 
 				// updates the synchronization time
-				this.synctime = DateTime.Now;
+				GmailService.GetInbox().SetSyncTime(DateTime.Now);
 
 				// restores the default systray icon and text
 				notifyIcon.Icon = Resources.normal;
-				notifyIcon.Text = translation.noMessage + "\n" + translation.syncTime.Replace("{time}", this.synctime.ToLongTimeString());
+				notifyIcon.Text = translation.noMessage + "\n" + translation.syncTime.Replace("{time}", GmailService.GetInbox().GetSyncTime().ToLongTimeString());
 
 				// disables the mark as read menu item
 				menuItemMarkAsRead.Text = translation.markAsRead;
@@ -944,13 +517,13 @@ namespace notifier {
 
 			// restores the timer interval when the timeout time has elapsed
 			if (timer.Interval != Settings.Default.TimerInterval) {
-				Timeout(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
+				GmailService.GetInbox().Timeout(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
 
 				return;
 			}
 
 			// synchronizes the inbox
-			this.AsyncSyncInbox(true);
+			GmailService.GetInbox().Sync(true);
 		}
 
 		/// <summary>
@@ -1000,54 +573,7 @@ namespace notifier {
 
 		// attempts to reconnect the user mailbox
 		private void TimerReconnect_Tick(object sender, EventArgs e) {
-
-			// increases the number of reconnection attempt
-			this.reconnect++;
-
-			// bypass the first reconnection attempt because the last synchronization have already checked the internet connectivity
-			if (this.reconnect == 1) {
-
-				// sets the reconnection interval
-				timerReconnect.Interval = Settings.Default.INTERVAL_RECONNECT * 1000;
-
-				// disables the menu items
-				menuItemSynchronize.Enabled = false;
-				menuItemTimout.Enabled = false;
-				menuItemSettings.Enabled = false;
-
-				// displays the reconnection attempt message on the icon
-				notifyIcon.Icon = Resources.retry;
-				notifyIcon.Text = translation.reconnectAttempt;
-
-				return;
-			}
-
-			// if internet is down, waits for INTERVAL_RECONNECT seconds before next attempt
-			if (!ComputerService.IsInternetAvailable()) {
-
-				// after max unsuccessull reconnection attempts, the application waits for the next sync
-				if (this.reconnect == Settings.Default.MAX_AUTO_RECONNECT) {
-					timerReconnect.Enabled = false;
-					timerReconnect.Interval = 100;
-					timer.Enabled = true;
-
-					// activates the necessary menu items to allow the user to manually sync the inbox
-					menuItemSynchronize.Enabled = true;
-
-					// displays the last reconnection message on the icon
-					notifyIcon.Icon = Resources.warning;
-					notifyIcon.Text = translation.reconnectFailed;
-				}
-			} else {
-
-				// restores default operation when internet is available
-				timerReconnect.Enabled = false;
-				timerReconnect.Interval = 100;
-				timer.Enabled = true;
-
-				// syncs the user mailbox
-				this.AsyncSyncInbox();
-			}
+			GmailService.GetInbox().Retry();
 		}
 
 		/// <summary>

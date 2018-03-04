@@ -920,15 +920,10 @@
 		private System.Windows.Forms.PictureBox pictureBoxHeader;
 		private System.Windows.Forms.MenuItem menuItemExit;
 		private System.Windows.Forms.MenuItem menuItem2;
-		private System.Windows.Forms.MenuItem menuItemSettings;
-		private System.Windows.Forms.MenuItem menuItemSynchronize;
-		private System.Windows.Forms.MenuItem menuItemMarkAsRead;
-		private System.Windows.Forms.MenuItem menuItemTimout;
 		private System.Windows.Forms.MenuItem menuItemTimeout30m;
 		private System.Windows.Forms.MenuItem menuItemTimeout1h;
 		private System.Windows.Forms.MenuItem menuItemTimeout2h;
 		private System.Windows.Forms.MenuItem menuItemTimeout5h;
-		private System.Windows.Forms.MenuItem menuItemTimeoutDisabled;
 		private System.Windows.Forms.MenuItem menuItem1;
 		private System.Windows.Forms.TabPage tabPageNotification;
 		private System.Windows.Forms.GroupBox groupBox2;
@@ -952,9 +947,7 @@
 		private System.Windows.Forms.TabPage tabPageAccount;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.Button buttonGmailDisconnect;
-		private System.Windows.Forms.Label labelEmailAddress;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label labelTokenDelivery;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.LinkLabel linkVersion;
 		private System.Windows.Forms.LinkLabel linkRestartToApply;
@@ -968,12 +961,8 @@
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.GroupBox groupBox8;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label labelTotalUnreadMails;
-		private System.Windows.Forms.Label labelTotalMails;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.Label labelTotalDrafts;
 		private System.Windows.Forms.Label label16;
-		private System.Windows.Forms.Label labelTotalLabels;
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.CheckBox fieldUpdateDownload;
 		private System.Windows.Forms.MenuItem menuItemNewMessage;
@@ -992,6 +981,17 @@
 		public System.Windows.Forms.Timer timerReconnect;
 		public System.Windows.Forms.Timer timer;
 		public System.Windows.Forms.MenuItem menuItemTimeoutIndefinitely;
+		public System.Windows.Forms.Label labelEmailAddress;
+		public System.Windows.Forms.Label labelTokenDelivery;
+		public System.Windows.Forms.MenuItem menuItemMarkAsRead;
+		public System.Windows.Forms.Label labelTotalUnreadMails;
+		public System.Windows.Forms.Label labelTotalMails;
+		public System.Windows.Forms.Label labelTotalDrafts;
+		public System.Windows.Forms.Label labelTotalLabels;
+		public System.Windows.Forms.MenuItem menuItemSynchronize;
+		public System.Windows.Forms.MenuItem menuItemTimout;
+		public System.Windows.Forms.MenuItem menuItemSettings;
+		public System.Windows.Forms.MenuItem menuItemTimeoutDisabled;
 	}
 }
 

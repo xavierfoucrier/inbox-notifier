@@ -25,10 +25,10 @@ namespace notifier {
 			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object o, NetworkAvailabilityEventArgs target) => {
 
 				// stops the reconnect process if it is running
-				if (Interface.reconnect != 0) {
+				if (Interface.GmailService.GetInbox().GetReconnect() != 0) {
 					Interface.timerReconnect.Enabled = false;
 					Interface.timerReconnect.Interval = 100;
-					Interface.reconnect = 0;
+					Interface.GmailService.GetInbox().SetReconnect(0);
 				}
 
 				// loops through all network interface to check network connectivity
@@ -46,7 +46,7 @@ namespace notifier {
 
 					// syncs the inbox when a network interface is available and the timeout mode is disabled
 					if (Interface.timer.Interval == Settings.Default.TimerInterval) {
-						Interface.AsyncSyncInbox();
+						Interface.GmailService.GetInbox().Sync();
 					}
 
 					break;
@@ -67,8 +67,8 @@ namespace notifier {
 					if (Interface.timer.Interval != Settings.Default.TimerInterval && Interface.menuItemTimeoutIndefinitely.Checked) {
 						return;
 					}
-
-					Interface.AsyncSyncInbox(false, true);
+					
+					Interface.GmailService.GetInbox().Sync(false, true);
 				}
 			});
 		}
@@ -87,7 +87,7 @@ namespace notifier {
 						return;
 					}
 
-					Interface.AsyncSyncInbox(false, true);
+					Interface.GmailService.GetInbox().Sync(false, true);
 				}
 			});
 		}
