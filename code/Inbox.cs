@@ -25,13 +25,13 @@ namespace notifier {
 		private Google.Apis.Gmail.v1.Data.Label Box;
 
 		// number of automatic reconnection
-		private uint reconnect = 0;
+		private uint Reconnect = 0;
 
 		// unread threads
-		private int? unreadthreads = 0;
+		private int? UnreadThreads = 0;
 
 		// last synchronization time
-		private DateTime synctime = DateTime.Now;
+		private DateTime SyncTime = DateTime.Now;
 
 		// reference to the main interface
 		private Main Interface;
@@ -65,12 +65,12 @@ namespace notifier {
 			}
 
 			// updates the synchronization time
-			synctime = DateTime.Now;
+			SyncTime = DateTime.Now;
 
 			// resets reconnection count and prevents the application from displaying continuous warning icon when a timertick synchronization occurs after a reconnection attempt
-			if (reconnect != 0) {
+			if (Reconnect != 0) {
 				timertick = false;
-				reconnect = 0;
+				Reconnect = 0;
 			}
 
 			// disables the timeout when the user do a manual synchronization
@@ -148,7 +148,7 @@ namespace notifier {
 				UpdateStatistics();
 
 				// exits the sync if the number of unread threads is the same as before
-				if (timertick && (Box.ThreadsUnread == unreadthreads)) {
+				if (timertick && (Box.ThreadsUnread == UnreadThreads)) {
 					return;
 				}
 
@@ -225,7 +225,7 @@ namespace notifier {
 				}
 
 				// saves the number of unread threads
-				unreadthreads = Box.ThreadsUnread;
+				UnreadThreads = Box.ThreadsUnread;
 			} catch (Exception exception) {
 
 				// displays a balloon tip in the systray with the detailed error message
@@ -233,7 +233,7 @@ namespace notifier {
 				Interface.notifyIcon.Text = translation.syncError;
 				Interface.notifyIcon.ShowBalloonTip(1500, translation.error, translation.syncErrorOccured + exception.Message, ToolTipIcon.Warning);
 			} finally {
-				Interface.notifyIcon.Text = Interface.notifyIcon.Text.Split('\n')[0] + "\n" + translation.syncTime.Replace("{time}", synctime.ToLongTimeString());
+				Interface.notifyIcon.Text = Interface.notifyIcon.Text.Split('\n')[0] + "\n" + translation.syncTime.Replace("{time}", SyncTime.ToLongTimeString());
 			}
 		}
 
@@ -244,7 +244,7 @@ namespace notifier {
 			try {
 
 				// updates the synchronization time
-				synctime = DateTime.Now;
+				SyncTime = DateTime.Now;
 
 				// displays the sync icon
 				Interface.notifyIcon.Icon = Resources.sync;
@@ -294,7 +294,7 @@ namespace notifier {
 				Interface.notifyIcon.Text = translation.markAsReadError;
 				Interface.notifyIcon.ShowBalloonTip(1500, translation.error, translation.markAsReadErrorOccured + exception.Message, ToolTipIcon.Warning);
 			} finally {
-				Interface.notifyIcon.Text = Interface.notifyIcon.Text.Split('\n')[0] + "\n" + translation.syncTime.Replace("{time}", synctime.ToLongTimeString());
+				Interface.notifyIcon.Text = Interface.notifyIcon.Text.Split('\n')[0] + "\n" + translation.syncTime.Replace("{time}", SyncTime.ToLongTimeString());
 			}
 		}
 
@@ -339,10 +339,10 @@ namespace notifier {
 		//
 		public void Retry() {
 			// increases the number of reconnection attempt
-			reconnect++;
+			Reconnect++;
 
 			// bypass the first reconnection attempt because the last synchronization have already checked the internet connectivity
-			if (reconnect == 1) {
+			if (Reconnect == 1) {
 
 				// sets the reconnection interval
 				Interface.timerReconnect.Interval = Settings.Default.INTERVAL_RECONNECT * 1000;
@@ -363,7 +363,7 @@ namespace notifier {
 			if (!Interface.ComputerService.IsInternetAvailable()) {
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
-				if (reconnect == Settings.Default.MAX_AUTO_RECONNECT) {
+				if (Reconnect == Settings.Default.MAX_AUTO_RECONNECT) {
 					Interface.timerReconnect.Enabled = false;
 					Interface.timerReconnect.Interval = 100;
 					Interface.timer.Enabled = true;
@@ -407,14 +407,14 @@ namespace notifier {
 		/// Returns the number of automatic reconnection to the network
 		/// </summary>
 		public uint GetReconnect() {
-			return reconnect;
+			return Reconnect;
 		}
 
 		/// <summary>
 		/// Sets the number of automatic reconnection to the network
 		/// </summary>
 		public void SetReconnect(uint reconnection) {
-			reconnect = reconnection;
+			Reconnect = reconnection;
 		}
 
 		/// <summary>
@@ -422,14 +422,14 @@ namespace notifier {
 		/// </summary>
 		/// <returns></returns>
 		public DateTime GetSyncTime() {
-			return synctime;
+			return SyncTime;
 		}
 		
 		/// <summary>
 		/// Sets the synchronization time
 		/// </summary>
 		public void SetSyncTime(DateTime time) {
-			synctime = time;
+			SyncTime = time;
 		}
 
 		/// <summary>

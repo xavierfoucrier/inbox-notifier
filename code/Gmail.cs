@@ -17,7 +17,7 @@ namespace notifier {
 		internal Inbox Inbox;
 
 		// user credential for the gmail authentication
-		private UserCredential credential;
+		private UserCredential Credential;
 
 		// reference to the main interface
 		private Main Interface;
@@ -37,14 +37,14 @@ namespace notifier {
 			try {
 
 				// waits for the user authorization
-				credential = await AuthorizationBroker();
+				Credential = await AuthorizationBroker();
 
 				// instanciates a new inbox with the credential
-				Inbox = new Inbox(ref Interface, ref credential);
+				Inbox = new Inbox(ref Interface, ref Credential);
 
 				// displays the user email address
 				Interface.labelEmailAddress.Text = Inbox.GetEmailAddress();
-				Interface.labelTokenDelivery.Text = credential.Token.IssuedUtc.ToLocalTime().ToString();
+				Interface.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
 			} catch (Exception) {
 
 				// exits the application if the google api token file doesn't exists
@@ -75,8 +75,8 @@ namespace notifier {
 		public async Task<bool> RefreshToken() {
 
 			// refreshes the token and updates the token delivery date and time on the interface
-			if (await credential.RefreshTokenAsync(new CancellationToken())) {
-				Interface.labelTokenDelivery.Text = credential.Token.IssuedUtc.ToLocalTime().ToString();
+			if (await Credential.RefreshTokenAsync(new CancellationToken())) {
+				Interface.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
 			}
 
 			return true;
