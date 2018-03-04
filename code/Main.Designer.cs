@@ -973,25 +973,25 @@
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.CheckBox fieldUpdateQuiet;
 		private System.Windows.Forms.LinkLabel linkSoftpedia;
-		public System.Windows.Forms.Label labelUpdateControl;
-		public System.Windows.Forms.Button buttonCheckForUpdate;
-		public System.Windows.Forms.LinkLabel linkCheckForUpdate;
-		public System.Windows.Forms.NotifyIcon notifyIcon;
-		public System.Windows.Forms.ContextMenu contextMenu;
-		public System.Windows.Forms.Timer timerReconnect;
-		public System.Windows.Forms.Timer timer;
-		public System.Windows.Forms.MenuItem menuItemTimeoutIndefinitely;
-		public System.Windows.Forms.Label labelEmailAddress;
-		public System.Windows.Forms.Label labelTokenDelivery;
-		public System.Windows.Forms.MenuItem menuItemMarkAsRead;
-		public System.Windows.Forms.Label labelTotalUnreadMails;
-		public System.Windows.Forms.Label labelTotalMails;
-		public System.Windows.Forms.Label labelTotalDrafts;
-		public System.Windows.Forms.Label labelTotalLabels;
-		public System.Windows.Forms.MenuItem menuItemSynchronize;
-		public System.Windows.Forms.MenuItem menuItemTimout;
-		public System.Windows.Forms.MenuItem menuItemSettings;
-		public System.Windows.Forms.MenuItem menuItemTimeoutDisabled;
+		internal System.Windows.Forms.Label labelUpdateControl;
+		internal System.Windows.Forms.Button buttonCheckForUpdate;
+		internal System.Windows.Forms.LinkLabel linkCheckForUpdate;
+		internal System.Windows.Forms.MenuItem menuItemTimeoutIndefinitely;
+		internal System.Windows.Forms.Label labelEmailAddress;
+		internal System.Windows.Forms.Label labelTokenDelivery;
+		internal System.Windows.Forms.Label labelTotalUnreadMails;
+		internal System.Windows.Forms.Label labelTotalMails;
+		internal System.Windows.Forms.Label labelTotalDrafts;
+		internal System.Windows.Forms.Label labelTotalLabels;
+		internal System.Windows.Forms.MenuItem menuItemTimeoutDisabled;
+		internal System.Windows.Forms.NotifyIcon notifyIcon;
+		internal System.Windows.Forms.ContextMenu contextMenu;
+		internal System.Windows.Forms.Timer timerReconnect;
+		internal System.Windows.Forms.Timer timer;
+		internal System.Windows.Forms.MenuItem menuItemMarkAsRead;
+		internal System.Windows.Forms.MenuItem menuItemSynchronize;
+		internal System.Windows.Forms.MenuItem menuItemTimout;
+		internal System.Windows.Forms.MenuItem menuItemSettings;
 	}
 }
 
