@@ -13,11 +13,11 @@ using notifier.Properties;
 namespace notifier {
 	class Gmail {
 
+		// reference to the gmail inbox
+		internal Inbox Inbox;
+
 		// user credential for the gmail authentication
 		private UserCredential credential;
-
-		// reference to the gmail inbox
-		private Inbox Inbox;
 
 		// reference to the main interface
 		private Main Interface;
@@ -108,13 +108,6 @@ namespace notifier {
 				// returns the user credential
 				return credential;
 			}
-		}
-
-		/// <summary>
-		/// Returns the gmail inbox
-		/// </summary>
-		public Inbox GetInbox() {
-			return Inbox;
 		}
 	}
 }

@@ -166,7 +166,7 @@ namespace notifier {
 
 				// synchronizes the inbox if the updates has been checked at startup after asynchronous authentication
 				if (startup) {
-					Interface.GmailService.GetInbox().Sync();
+					Interface.GmailService.Inbox.Sync();
 				}
 			}
 		}
@@ -223,7 +223,7 @@ namespace notifier {
 
 				// restores the context menu to the systray icon and start a synchronization
 				Interface.notifyIcon.ContextMenu = Interface.contextMenu;
-				Interface.GmailService.GetInbox().Sync();
+				Interface.GmailService.Inbox.Sync();
 			}
 		}
 	}

@@ -198,7 +198,7 @@ namespace notifier {
 			if (Settings.Default.UpdateService && UpdateService.IsPeriodSetToStartup()) {
 				UpdateService.Check(!Settings.Default.UpdateDownload, true);
 			} else {
-				GmailService.GetInbox().Sync();
+				GmailService.Inbox.Sync();
 			}
 		}
 
@@ -244,7 +244,7 @@ namespace notifier {
 		/// Manages the SpamNotification user setting
 		/// </summary>
 		private void FieldSpamNotification_Click(object sender, EventArgs e) {
-			GmailService.GetInbox().Sync();
+			GmailService.Inbox.Sync();
 		}
 
 		/// <summary>
@@ -379,56 +379,56 @@ namespace notifier {
 		/// Manages the context menu Synchronize item
 		/// </summary>
 		private void MenuItemSynchronize_Click(object sender, EventArgs e) {
-			GmailService.GetInbox().Sync();
+			GmailService.Inbox.Sync();
 		}
 
 		/// <summary>
 		/// Manages the context menu MarkAsRead item
 		/// </summary>
 		private void MenuItemMarkAsRead_Click(object sender, EventArgs e) {
-			GmailService.GetInbox().MarkAsRead();
+			GmailService.Inbox.MarkAsRead();
 		}
 
 		/// <summary>
 		/// Manages the context menu TimeoutDisabled item
 		/// </summary>
 		private void MenuItemTimeoutDisabled_Click(object sender, EventArgs e) {
-			GmailService.GetInbox().Timeout((MenuItem)sender, Settings.Default.TimerInterval);
+			GmailService.Inbox.Timeout((MenuItem)sender, Settings.Default.TimerInterval);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout30m item
 		/// </summary>
 		private void MenuItemTimeout30m_Click(object sender, EventArgs e) {
-			GmailService.GetInbox().Timeout((MenuItem)sender, 1000 * 60 * 30);
+			GmailService.Inbox.Timeout((MenuItem)sender, 1000 * 60 * 30);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout1h item
 		/// </summary>
 		private void MenuItemTimeout1h_Click(object sender, EventArgs e) {
-			GmailService.GetInbox().Timeout((MenuItem)sender, 1000 * 60 * 60);
+			GmailService.Inbox.Timeout((MenuItem)sender, 1000 * 60 * 60);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout2h item
 		/// </summary>
 		private void MenuItemTimeout2h_Click(object sender, EventArgs e) {
-			GmailService.GetInbox().Timeout((MenuItem)sender, 1000 * 60 * 60 * 2);
+			GmailService.Inbox.Timeout((MenuItem)sender, 1000 * 60 * 60 * 2);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout5h item
 		/// </summary>
 		private void MenuItemTimeout5h_Click(object sender, EventArgs e) {
-			GmailService.GetInbox().Timeout((MenuItem)sender, 1000 * 60 * 60 * 5);
+			GmailService.Inbox.Timeout((MenuItem)sender, 1000 * 60 * 60 * 5);
 		}
 
 		/// <summary>
 		/// Manages the context menu TimeoutIndefinitely item
 		/// </summary>
 		private void MenuItemTimeoutIndefinitely_Click(object sender, EventArgs e) {
-			GmailService.GetInbox().Timeout((MenuItem)sender, 0);
+			GmailService.Inbox.Timeout((MenuItem)sender, 0);
 		}
 
 		/// <summary>
@@ -498,11 +498,11 @@ namespace notifier {
 			if (timer.Interval == Settings.Default.TimerInterval) {
 
 				// updates the synchronization time
-				GmailService.GetInbox().SetSyncTime(DateTime.Now);
+				GmailService.Inbox.SetSyncTime(DateTime.Now);
 
 				// restores the default systray icon and text
 				notifyIcon.Icon = Resources.normal;
-				notifyIcon.Text = translation.noMessage + "\n" + translation.syncTime.Replace("{time}", GmailService.GetInbox().GetSyncTime().ToLongTimeString());
+				notifyIcon.Text = translation.noMessage + "\n" + translation.syncTime.Replace("{time}", GmailService.Inbox.GetSyncTime().ToLongTimeString());
 
 				// disables the mark as read menu item
 				menuItemMarkAsRead.Text = translation.markAsRead;
@@ -517,13 +517,13 @@ namespace notifier {
 
 			// restores the timer interval when the timeout time has elapsed
 			if (timer.Interval != Settings.Default.TimerInterval) {
-				GmailService.GetInbox().Timeout(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
+				GmailService.Inbox.Timeout(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
 
 				return;
 			}
 
 			// synchronizes the inbox
-			GmailService.GetInbox().Sync(true);
+			GmailService.Inbox.Sync(true);
 		}
 
 		/// <summary>
@@ -573,7 +573,7 @@ namespace notifier {
 
 		// attempts to reconnect the user mailbox
 		private void TimerReconnect_Tick(object sender, EventArgs e) {
-			GmailService.GetInbox().Retry();
+			GmailService.Inbox.Retry();
 		}
 
 		/// <summary>
