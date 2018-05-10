@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="applicationExit" xml:space="preserve">
+    <value>Closing the application</value>
+  </data>
+  <data name="applicationExitQuestion" xml:space="preserve">
+    <value>You are about to leave the application.
+
+Do you really want to exit?</value>
+  </data>
+  <data name="authenticationFailed" xml:space="preserve">
+    <value>Authentification failed</value>
+  </data>
+  <data name="authenticationWithGmailRefused" xml:space="preserve">
+    <value>You refused the application accesses your Gmail account. This step is required and will be asked again the next time.
+
+The application will now quit.</value>
+  </data>
+  <data name="checkForUpdate" xml:space="preserve">
+    <value>Check for update</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="firstLoad" xml:space="preserve">
+    <value>Gmail notifier now runs in background on your computer. In a few seconds you will be prompted to sign in to your Gmail account to allow the application to access your inbox.</value>
+  </data>
+  <data name="freeSoftware" xml:space="preserve">
+    <value>Certified no spyware, no adware, no viruses</value>
+  </data>
+  <data name="gmailDisconnect" xml:space="preserve">
+    <value>Disconnecting your Gmail account</value>
+  </data>
+  <data name="gmailDisconnectQuestion" xml:space="preserve">
+    <value>You are about to disconnect your Gmail account from the applivation: you will no longer receive notifications from the account {account_name} and you will be prompted to log in next time.
+
+Do you really want to disconnect your Gmail account and restart the application now?</value>
+  </data>
+  <data name="helpAskonExit" xml:space="preserve">
+    <value>Asks a question before completely leaving the app</value>
+  </data>
+  <data name="helpAttemptToReconnectNotification" xml:space="preserve">
+    <value>Displays a notification when the application tries to reconnect to the network</value>
+  </data>
+  <data name="helpAudioNotification" xml:space="preserve">
+    <value>Plays a sound when displaying a notification</value>
+  </data>
+  <data name="helpEmailAddress" xml:space="preserve">
+    <value>Gmail account currently logged in to the application</value>
+  </data>
+  <data name="helpGmailDisconnect" xml:space="preserve">
+    <value>Disconnect the Gmail account and restarts the application to request a new authentication</value>
+  </data>
+  <data name="helpLanguage" xml:space="preserve">
+    <value>Language of the interface</value>
+  </data>
+  <data name="helpMessageNotification" xml:space="preserve">
+    <value>Displays a notification when receiving new messages</value>
+  </data>
+  <data name="helpNotificationBehavior" xml:space="preserve">
+    <value>Action performed when clicking on a notification</value>
+  </data>
+  <data name="helpNumericDelay" xml:space="preserve">
+    <value>Timing delay of the inbox</value>
+  </data>
+  <data name="helpPrivacyNotificationAll" xml:space="preserve">
+    <value>Displays a notification containing no information about the message</value>
+  </data>
+  <data name="helpPrivacyNotificationNone" xml:space="preserve">
+    <value>Displays the name of the sender and the message content</value>
+  </data>
+  <data name="helpPrivacyNotificationShort" xml:space="preserve">
+    <value>Displays the name of the sender and the subject line</value>
+  </data>
+  <data name="helpRunAtWindowsStartup" xml:space="preserve">
+    <value>Launch the application on Windows startup</value>
+  </data>
+  <data name="helpSpamNotification" xml:space="preserve">
+    <value>Displays a notification when receiving a junk message</value>
+  </data>
+  <data name="helpStepDelay" xml:space="preserve">
+    <value>Time scale for the inbox synchronization</value>
+  </data>
+  <data name="helpTokenDelivery" xml:space="preserve">
+    <value>Latest update of the authentication token delivery</value>
+  </data>
+  <data name="latestVersion" xml:space="preserve">
+    <value>You have the latest version of the application.</value>
+  </data>
+  <data name="markAsRead" xml:space="preserve">
+    <value>Mark as read</value>
+  </data>
+  <data name="markAsReadError" xml:space="preserve">
+    <value>Error with the "Mark as read" operation</value>
+  </data>
+  <data name="markAsReadErrorOccured" xml:space="preserve">
+    <value>An error occurred during the "Mark Read" operation:</value>
+  </data>
+  <data name="multipleInstances" xml:space="preserve">
+    <value>Multiple instances</value>
+  </data>
+  <data name="mutexError" xml:space="preserve">
+    <value>The "Gmail notifier" application is already running: you can not run multiple instances of the application on the same computer.
+
+This option is not enabled on this type of application.</value>
+  </data>
+  <data name="newUnreadMessage" xml:space="preserve">
+    <value>Double-click the icon to access your inbox.</value>
+  </data>
+  <data name="newUnreadSpam" xml:space="preserve">
+    <value>Double-click the icon to access your inbox. Until you have not checked the spam folder, your inbox will not be synchronized and you will not be notified of new messages.</value>
+  </data>
+  <data name="newVersion" xml:space="preserve">
+    <value>A newer version of the application is available on Github:
+Gmail Notifier {version}.
+
+Do you want to download it now?</value>
+  </data>
+  <data name="noMessage" xml:space="preserve">
+    <value>No new message</value>
+  </data>
+  <data name="reconnectAttempt" xml:space="preserve">
+    <value>Attempting to reconnect...</value>
+  </data>
+  <data name="reconnectFailed" xml:space="preserve">
+    <value>Reconnection failed</value>
+  </data>
+  <data name="sync" xml:space="preserve">
+    <value>Syncing...</value>
+  </data>
+  <data name="syncError" xml:space="preserve">
+    <value>Error when syncing</value>
+  </data>
+  <data name="syncErrorOccured" xml:space="preserve">
+    <value>An error occurred during the synchronization of the inbox:</value>
+  </data>
+  <data name="syncTime" xml:space="preserve">
+    <value>Updated at {time}</value>
+  </data>
+  <data name="timeout" xml:space="preserve">
+    <value>Do not disturb</value>
+  </data>
+  <data name="tipReleaseNotes" xml:space="preserve">
+    <value>Github release notes</value>
+  </data>
+  <data name="tipSoftpedia" xml:space="preserve">
+    <value>Softpedia, 100% free</value>
+  </data>
+  <data name="unreadMessage" xml:space="preserve">
+    <value>unread message</value>
+  </data>
+  <data name="unreadMessages" xml:space="preserve">
+    <value>unread messages</value>
+  </data>
+  <data name="unreadSpam" xml:space="preserve">
+    <value>unread spam</value>
+  </data>
+  <data name="unreadSpams" xml:space="preserve">
+    <value>unread spams</value>
+  </data>
+  <data name="updateServiceUnreachable" xml:space="preserve">
+    <value>The update service is unreachable.</value>
+  </data>
+  <data name="updating" xml:space="preserve">
+    <value>Downloading update...</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Welcome!</value>
+  </data>
+</root>
