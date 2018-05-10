@@ -97,7 +97,7 @@
 			this.labelSettingsSaved = new System.Windows.Forms.Label();
 			this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.pictureBoxHeader = new System.Windows.Forms.PictureBox();
-			this.contextMenu = new System.Windows.Forms.ContextMenu();
+			this.notifyMenu = new System.Windows.Forms.ContextMenu();
 			this.menuItemNewMessage = new System.Windows.Forms.MenuItem();
 			this.menuItem4 = new System.Windows.Forms.MenuItem();
 			this.menuItemSynchronize = new System.Windows.Forms.MenuItem();
@@ -725,9 +725,9 @@
 			this.pictureBoxHeader.Name = "pictureBoxHeader";
 			this.pictureBoxHeader.TabStop = false;
 			// 
-			// contextMenu
+			// notifyMenu
 			// 
-			this.contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			this.notifyMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemNewMessage,
             this.menuItem4,
             this.menuItemSynchronize,
@@ -985,7 +985,7 @@
 		internal System.Windows.Forms.Label labelTotalLabels;
 		internal System.Windows.Forms.MenuItem menuItemTimeoutDisabled;
 		internal System.Windows.Forms.NotifyIcon notifyIcon;
-		internal System.Windows.Forms.ContextMenu contextMenu;
+		internal System.Windows.Forms.ContextMenu notifyMenu;
 		internal System.Windows.Forms.Timer timerReconnect;
 		internal System.Windows.Forms.Timer timer;
 		internal System.Windows.Forms.MenuItem menuItemMarkAsRead;

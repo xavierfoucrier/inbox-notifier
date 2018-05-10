@@ -222,7 +222,7 @@ namespace notifier {
 				Updating = false;
 
 				// restores the context menu to the systray icon and start a synchronization
-				Interface.notifyIcon.ContextMenu = Interface.contextMenu;
+				Interface.notifyIcon.ContextMenu = Interface.notifyMenu;
 				Interface.GmailService.Inbox.Sync();
 			}
 		}

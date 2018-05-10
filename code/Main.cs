@@ -88,7 +88,7 @@ namespace notifier {
 			GmailService.Authentication();
 
 			// attaches the context menu to the systray icon
-			notifyIcon.ContextMenu = contextMenu;
+			notifyIcon.ContextMenu = notifyMenu;
 
 			// binds the "PropertyChanged" event of the settings to automatically save the user settings and display the setting label
 			Settings.Default.PropertyChanged += new PropertyChangedEventHandler((object o, PropertyChangedEventArgs target) => {
