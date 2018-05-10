@@ -193,9 +193,9 @@ namespace notifier {
 		/// </summary>
 		private void FieldRunAtWindowsStartup_CheckedChanged(object sender, EventArgs e) {
 			if (fieldRunAtWindowsStartup.Checked) {
-				ComputerService.SetApplicationStartup(Computer.Startup.On);
+				ComputerService.SetApplicationStartup(Computer.Registration.On);
 			} else {
-				ComputerService.SetApplicationStartup(Computer.Startup.Off);
+				ComputerService.SetApplicationStartup(Computer.Registration.Off);
 			}
 		}
 

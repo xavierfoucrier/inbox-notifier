@@ -8,8 +8,8 @@ using notifier.Properties;
 namespace notifier {
 	class Computer {
 
-		// registry possibilities
-		public enum Startup : uint {
+		// registration possibilities
+		public enum Registration : uint {
 			Off = 0,
 			On = 1
 		}
@@ -118,9 +118,10 @@ namespace notifier {
 		/// <summary>
 		/// Register or unregister the application from Windows startup program list
 		/// </summary>
-		public void SetApplicationStartup(Startup mode) {
+		/// <param name="mode">The registration mode for the application, Off means that the application will no longer be started at Windows startup</param>
+		public void SetApplicationStartup(Registration mode) {
 			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {
-				if (mode == Startup.On) {
+				if (mode == Registration.On) {
 					key.SetValue("Gmail notifier", '"' + Application.ExecutablePath + '"');
 				} else {
 					key.DeleteValue("Gmail notifier", false);
