@@ -196,14 +196,14 @@ namespace notifier {
 				WebClient client = new WebClient();
 
 				// displays the download progression on the systray icon, and prevents the application from restoring the context menu and systray icon at startup
-				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object o, DownloadProgressChangedEventArgs target) => {
+				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object source, DownloadProgressChangedEventArgs target) => {
 					Interface.notifyIcon.ContextMenu = null;
 					Interface.notifyIcon.Icon = Resources.updating;
 					Interface.notifyIcon.Text = Translation.updating + " " + target.ProgressPercentage.ToString() + "%";
 				});
 
 				// starts the setup installer when the download has complete and exits the current application
-				client.DownloadFileCompleted += new AsyncCompletedEventHandler((object o, AsyncCompletedEventArgs target) => {
+				client.DownloadFileCompleted += new AsyncCompletedEventHandler((object source, AsyncCompletedEventArgs target) => {
 					Process.Start(new ProcessStartInfo(updatepath, Settings.Default.UpdateQuiet ? "/verysilent" : ""));
 					Application.Exit();
 				});

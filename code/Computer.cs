@@ -22,7 +22,7 @@ namespace notifier {
 		/// Binds the "NetworkAvailabilityChanged" event to automatically sync the inbox when a network is available
 		/// </summary>
 		public void BindNetwork() {
-			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object o, NetworkAvailabilityEventArgs target) => {
+			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object source, NetworkAvailabilityEventArgs target) => {
 
 				// stops the reconnect process if it is running
 				if (Interface.GmailService.Inbox.GetReconnect() != 0) {
@@ -58,7 +58,7 @@ namespace notifier {
 		/// Binds the "PowerModeChanged" event to automatically pause/resume the application synchronization
 		/// </summary>
 		public void BindPowerMode() {
-			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler((object o, PowerModeChangedEventArgs target) => {
+			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler((object source, PowerModeChangedEventArgs target) => {
 				if (target.Mode == PowerModes.Suspend) {
 					Interface.timer.Enabled = false;
 				} else if (target.Mode == PowerModes.Resume) {
@@ -77,7 +77,7 @@ namespace notifier {
 		/// Binds the "SessionSwitch" event to automatically sync the inbox on session unlocking
 		/// </summary>
 		public void BindSessionSwitch() {
-			SystemEvents.SessionSwitch += new SessionSwitchEventHandler((object o, SessionSwitchEventArgs target) => {
+			SystemEvents.SessionSwitch += new SessionSwitchEventHandler((object source, SessionSwitchEventArgs target) => {
 
 				// syncs the inbox when the user is unlocking the Windows session
 				if (target.Reason == SessionSwitchReason.SessionUnlock) {
