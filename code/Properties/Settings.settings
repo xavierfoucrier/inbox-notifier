@@ -80,5 +80,8 @@
     <Setting Name="SITE_SOFTPEDIA" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status</Value>
     </Setting>
+    <Setting Name="REGISTRY_KEY" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SOFTWARE\Microsoft\Windows\CurrentVersion\Run</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

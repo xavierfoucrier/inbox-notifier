@@ -311,5 +311,14 @@ namespace notifier.Properties {
                 return ((string)(this["SITE_SOFTPEDIA"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run")]
+        public string REGISTRY_KEY {
+            get {
+                return ((string)(this["REGISTRY_KEY"]));
+            }
+        }
     }
 }
