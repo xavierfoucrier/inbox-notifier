@@ -56,7 +56,7 @@ namespace notifier {
 
 			// displays a systray notification on first load
 			if (Settings.Default.FirstLoad && !Directory.Exists(Core.GetApplicationDataFolder())) {
-				notifyIcon.ShowBalloonTip(7000, translation.welcome, translation.firstLoad, ToolTipIcon.Info);
+				notifyIcon.ShowBalloonTip(7000, Translation.welcome, Translation.firstLoad, ToolTipIcon.Info);
 
 				// switches the first load state
 				Settings.Default.FirstLoad = false;
@@ -68,21 +68,21 @@ namespace notifier {
 
 			// configures the help provider
 			HelpProvider help = new HelpProvider();
-			help.SetHelpString(fieldRunAtWindowsStartup, translation.helpRunAtWindowsStartup);
-			help.SetHelpString(fieldAskonExit, translation.helpAskonExit);
-			help.SetHelpString(fieldLanguage, translation.helpLanguage);
-			help.SetHelpString(labelEmailAddress, translation.helpEmailAddress);
-			help.SetHelpString(labelTokenDelivery, translation.helpTokenDelivery);
-			help.SetHelpString(buttonGmailDisconnect, translation.helpGmailDisconnect);
-			help.SetHelpString(fieldMessageNotification, translation.helpMessageNotification);
-			help.SetHelpString(fieldAudioNotification, translation.helpAudioNotification);
-			help.SetHelpString(fieldSpamNotification, translation.helpSpamNotification);
-			help.SetHelpString(fieldNumericDelay, translation.helpNumericDelay);
-			help.SetHelpString(fieldStepDelay, translation.helpStepDelay);
-			help.SetHelpString(fieldNotificationBehavior, translation.helpNotificationBehavior);
-			help.SetHelpString(fieldPrivacyNotificationNone, translation.helpPrivacyNotificationNone);
-			help.SetHelpString(fieldPrivacyNotificationShort, translation.helpPrivacyNotificationShort);
-			help.SetHelpString(fieldPrivacyNotificationAll, translation.helpPrivacyNotificationAll);
+			help.SetHelpString(fieldRunAtWindowsStartup, Translation.helpRunAtWindowsStartup);
+			help.SetHelpString(fieldAskonExit, Translation.helpAskonExit);
+			help.SetHelpString(fieldLanguage, Translation.helpLanguage);
+			help.SetHelpString(labelEmailAddress, Translation.helpEmailAddress);
+			help.SetHelpString(labelTokenDelivery, Translation.helpTokenDelivery);
+			help.SetHelpString(buttonGmailDisconnect, Translation.helpGmailDisconnect);
+			help.SetHelpString(fieldMessageNotification, Translation.helpMessageNotification);
+			help.SetHelpString(fieldAudioNotification, Translation.helpAudioNotification);
+			help.SetHelpString(fieldSpamNotification, Translation.helpSpamNotification);
+			help.SetHelpString(fieldNumericDelay, Translation.helpNumericDelay);
+			help.SetHelpString(fieldStepDelay, Translation.helpStepDelay);
+			help.SetHelpString(fieldNotificationBehavior, Translation.helpNotificationBehavior);
+			help.SetHelpString(fieldPrivacyNotificationNone, Translation.helpPrivacyNotificationNone);
+			help.SetHelpString(fieldPrivacyNotificationShort, Translation.helpPrivacyNotificationShort);
+			help.SetHelpString(fieldPrivacyNotificationAll, Translation.helpPrivacyNotificationAll);
 
 			// authenticates the user
 			GmailService.Authentication();
@@ -139,13 +139,13 @@ namespace notifier {
 			// displays a tooltip for the product version
 			ToolTip tipTag = new ToolTip();
 			tipTag.SetToolTip(linkVersion, Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.GetVersion());
-			tipTag.ToolTipTitle = translation.tipReleaseNotes;
+			tipTag.ToolTipTitle = Translation.tipReleaseNotes;
 			tipTag.ToolTipIcon = ToolTipIcon.Info;
 			tipTag.IsBalloon = false;
 
 			// displays a tooltip for the product version
 			ToolTip tipCheckForUpdate = new ToolTip();
-			tipCheckForUpdate.SetToolTip(linkCheckForUpdate, translation.checkForUpdate);
+			tipCheckForUpdate.SetToolTip(linkCheckForUpdate, Translation.checkForUpdate);
 			tipCheckForUpdate.IsBalloon = false;
 
 			// displays a tooltip for the website link
@@ -165,8 +165,8 @@ namespace notifier {
 
 			// displays a tooltip for the website link
 			ToolTip tipSoftpedia = new ToolTip();
-			tipSoftpedia.SetToolTip(linkSoftpedia, translation.freeSoftware);
-			tipSoftpedia.ToolTipTitle = translation.tipSoftpedia;
+			tipSoftpedia.SetToolTip(linkSoftpedia, Translation.freeSoftware);
+			tipSoftpedia.ToolTipTitle = Translation.tipSoftpedia;
 			tipSoftpedia.ToolTipIcon = ToolTipIcon.Info;
 			tipSoftpedia.IsBalloon = false;
 		}
@@ -178,7 +178,7 @@ namespace notifier {
 
 			// asks the user for exit, depending on the application settings
 			if (e.CloseReason != CloseReason.ApplicationExitCall && e.CloseReason != CloseReason.WindowsShutDown && Settings.Default.AskonExit) {
-				DialogResult dialog = MessageBox.Show(translation.applicationExitQuestion, translation.applicationExit, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+				DialogResult dialog = MessageBox.Show(Translation.applicationExitQuestion, Translation.applicationExit, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
 				if (dialog == DialogResult.No) {
 					e.Cancel = true;
@@ -489,10 +489,10 @@ namespace notifier {
 
 				// restores the default systray icon and text
 				notifyIcon.Icon = Resources.normal;
-				notifyIcon.Text = translation.noMessage + "\n" + translation.syncTime.Replace("{time}", GmailService.Inbox.GetSyncTime().ToLongTimeString());
+				notifyIcon.Text = Translation.noMessage + "\n" + Translation.syncTime.Replace("{time}", GmailService.Inbox.GetSyncTime().ToLongTimeString());
 
 				// disables the mark as read menu item
-				menuItemMarkAsRead.Text = translation.markAsRead;
+				menuItemMarkAsRead.Text = Translation.markAsRead;
 				menuItemMarkAsRead.Enabled = false;
 			}
 		}
@@ -519,7 +519,7 @@ namespace notifier {
 		private void ButtonGmailDisconnect_Click(object sender, EventArgs e) {
 
 			// asks the user for disconnect
-			DialogResult dialog = MessageBox.Show(translation.gmailDisconnectQuestion.Replace("{account_name}", labelEmailAddress.Text), translation.gmailDisconnect, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+			DialogResult dialog = MessageBox.Show(Translation.gmailDisconnectQuestion.Replace("{account_name}", labelEmailAddress.Text), Translation.gmailDisconnect, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
 			if (dialog == DialogResult.No) {
 				return;

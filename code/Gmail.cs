@@ -52,10 +52,10 @@ namespace notifier {
 
 					// displays the authentication icon and title
 					Interface.notifyIcon.Icon = Resources.authentication;
-					Interface.notifyIcon.Text = translation.authenticationFailed;
+					Interface.notifyIcon.Text = Translation.authenticationFailed;
 
 					// exits the application
-					MessageBox.Show(translation.authenticationWithGmailRefused, translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					MessageBox.Show(Translation.authenticationWithGmailRefused, Translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					Application.Exit();
 				}
 			} finally {

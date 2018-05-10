@@ -134,7 +134,7 @@ namespace notifier {
 
 					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
 					if (verbose) {
-						DialogResult dialog = MessageBox.Show(translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+						DialogResult dialog = MessageBox.Show(Translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
 						if (dialog == DialogResult.Yes) {
 							Download(release);
@@ -143,13 +143,13 @@ namespace notifier {
 						Download(release);
 					}
 				} else if (verbose && !startup) {
-					MessageBox.Show(translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show(Translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 			} catch (Exception) {
 
 				// indicates to the user that the update service is not reachable for the moment
 				if (verbose) {
-					MessageBox.Show(translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					MessageBox.Show(Translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				}
 			} finally {
 
@@ -190,7 +190,7 @@ namespace notifier {
 				// disables the context menu and displays the update icon in the systray
 				Interface.notifyIcon.ContextMenu = null;
 				Interface.notifyIcon.Icon = Resources.updating;
-				Interface.notifyIcon.Text = translation.updating;
+				Interface.notifyIcon.Text = Translation.updating;
 
 				// creates a new web client instance
 				WebClient client = new WebClient();
@@ -199,7 +199,7 @@ namespace notifier {
 				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object o, DownloadProgressChangedEventArgs target) => {
 					Interface.notifyIcon.ContextMenu = null;
 					Interface.notifyIcon.Icon = Resources.updating;
-					Interface.notifyIcon.Text = translation.updating + " " + target.ProgressPercentage.ToString() + "%";
+					Interface.notifyIcon.Text = Translation.updating + " " + target.ProgressPercentage.ToString() + "%";
 				});
 
 				// starts the setup installer when the download has complete and exits the current application
@@ -216,7 +216,7 @@ namespace notifier {
 			} catch (Exception) {
 
 				// indicates to the user that the update service is not reachable for the moment
-				MessageBox.Show(translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(Translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
 				// defines that the application has exited the updating state
 				Updating = false;

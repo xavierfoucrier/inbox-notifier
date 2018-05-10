@@ -59,7 +59,7 @@ namespace notifier {
 
 			// check if there is an instance running
 			if (!mutex.WaitOne(TimeSpan.Zero, true)) {
-				MessageBox.Show(translation.mutexError, translation.multipleInstances, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show(Translation.mutexError, Translation.multipleInstances, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 				return;
 			}

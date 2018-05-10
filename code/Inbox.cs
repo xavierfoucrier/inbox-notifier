@@ -102,7 +102,7 @@ namespace notifier {
 			// displays the sync icon, but not on every tick of the timer
 			if (!timertick) {
 				Interface.notifyIcon.Icon = Resources.sync;
-				Interface.notifyIcon.Text = translation.sync;
+				Interface.notifyIcon.Text = Translation.sync;
 			}
 
 			// do a small ping on the update service
@@ -133,8 +133,8 @@ namespace notifier {
 						}
 
 						// displays a balloon tip in the systray with the total of unread threads
-						Interface.notifyIcon.ShowBalloonTip(450, spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? translation.unreadSpams : translation.unreadSpam), translation.newUnreadSpam, ToolTipIcon.Error);
-						Interface.notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? translation.unreadSpams : translation.unreadSpam);
+						Interface.notifyIcon.ShowBalloonTip(450, spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam), Translation.newUnreadSpam, ToolTipIcon.Error);
+						Interface.notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam);
 						Interface.notifyIcon.Tag = "#spam";
 
 						return;
@@ -181,7 +181,7 @@ namespace notifier {
 
 							foreach (MessagePartHeader header in message.Payload.Headers) {
 								if (header.Name == "Subject") {
-									subject = header.Value != "" ? header.Value : translation.newUnreadMessage;
+									subject = header.Value != "" ? header.Value : Translation.newUnreadMessage;
 								} else if (header.Name == "From") {
 									Match match = Regex.Match(header.Value, ".* <");
 
@@ -189,18 +189,18 @@ namespace notifier {
 										from = match.Captures[0].Value.Replace(" <", "").Replace("\"", "");
 									} else {
 										match = Regex.Match(header.Value, "<?.*>?");
-										from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, Box.ThreadsUnread.ToString() + " " + translation.unreadMessage);
+										from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, Box.ThreadsUnread.ToString() + " " + Translation.unreadMessage);
 									}
 								}
 							}
 
 							if (Settings.Default.PrivacyNotification == (int)Notification.Privacy.None) {
-								Interface.notifyIcon.ShowBalloonTip(450, from, message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : translation.newUnreadMessage, ToolTipIcon.Info);
+								Interface.notifyIcon.ShowBalloonTip(450, from, message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : Translation.newUnreadMessage, ToolTipIcon.Info);
 							} else if (Settings.Default.PrivacyNotification == (int)Notification.Privacy.Short) {
 								Interface.notifyIcon.ShowBalloonTip(450, from, subject, ToolTipIcon.Info);
 							}
 						} else {
-							Interface.notifyIcon.ShowBalloonTip(450, Box.ThreadsUnread.ToString() + " " + (Box.ThreadsUnread > 1 ? translation.unreadMessages : translation.unreadMessage), translation.newUnreadMessage, ToolTipIcon.Info);
+							Interface.notifyIcon.ShowBalloonTip(450, Box.ThreadsUnread.ToString() + " " + (Box.ThreadsUnread > 1 ? Translation.unreadMessages : Translation.unreadMessage), Translation.newUnreadMessage, ToolTipIcon.Info);
 						}
 
 						// manages the balloon tip click event handler: we store the "notification tag" to allow the user to directly display the specified view (inbox/message/spam) in a browser
@@ -208,19 +208,19 @@ namespace notifier {
 					}
 
 					// displays the notification text
-					Interface.notifyIcon.Text = Box.ThreadsUnread.ToString() + " " + (Box.ThreadsUnread > 1 ? translation.unreadMessages : translation.unreadMessage);
+					Interface.notifyIcon.Text = Box.ThreadsUnread.ToString() + " " + (Box.ThreadsUnread > 1 ? Translation.unreadMessages : Translation.unreadMessage);
 
 					// enables the mark as read menu item
-					Interface.menuItemMarkAsRead.Text = translation.markAsRead + " (" + Box.ThreadsUnread + ")";
+					Interface.menuItemMarkAsRead.Text = Translation.markAsRead + " (" + Box.ThreadsUnread + ")";
 					Interface.menuItemMarkAsRead.Enabled = true;
 				} else {
 
 					// restores the default systray icon and text
 					Interface.notifyIcon.Icon = Resources.normal;
-					Interface.notifyIcon.Text = translation.noMessage;
+					Interface.notifyIcon.Text = Translation.noMessage;
 
 					// disables the mark as read menu item
-					Interface.menuItemMarkAsRead.Text = translation.markAsRead;
+					Interface.menuItemMarkAsRead.Text = Translation.markAsRead;
 					Interface.menuItemMarkAsRead.Enabled = false;
 				}
 
@@ -230,10 +230,10 @@ namespace notifier {
 
 				// displays a balloon tip in the systray with the detailed error message
 				Interface.notifyIcon.Icon = Resources.warning;
-				Interface.notifyIcon.Text = translation.syncError;
-				Interface.notifyIcon.ShowBalloonTip(1500, translation.error, translation.syncErrorOccured + exception.Message, ToolTipIcon.Warning);
+				Interface.notifyIcon.Text = Translation.syncError;
+				Interface.notifyIcon.ShowBalloonTip(1500, Translation.error, Translation.syncErrorOccured + exception.Message, ToolTipIcon.Warning);
 			} finally {
-				Interface.notifyIcon.Text = Interface.notifyIcon.Text.Split('\n')[0] + "\n" + translation.syncTime.Replace("{time}", SyncTime.ToLongTimeString());
+				Interface.notifyIcon.Text = Interface.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", SyncTime.ToLongTimeString());
 			}
 		}
 
@@ -248,7 +248,7 @@ namespace notifier {
 
 				// displays the sync icon
 				Interface.notifyIcon.Icon = Resources.sync;
-				Interface.notifyIcon.Text = translation.sync;
+				Interface.notifyIcon.Text = Translation.sync;
 
 				// gets all unread threads
 				UsersResource.ThreadsResource.ListRequest threads = Api.Users.Threads.List("me");
@@ -275,26 +275,26 @@ namespace notifier {
 
 				// restores the default systray icon and text
 				Interface.notifyIcon.Icon = Resources.normal;
-				Interface.notifyIcon.Text = translation.noMessage;
+				Interface.notifyIcon.Text = Translation.noMessage;
 
 				// restores the default tag
 				Interface.notifyIcon.Tag = null;
 
 				// disables the mark as read menu item
-				Interface.menuItemMarkAsRead.Text = translation.markAsRead;
+				Interface.menuItemMarkAsRead.Text = Translation.markAsRead;
 				Interface.menuItemMarkAsRead.Enabled = false;
 			} catch (Exception exception) {
 
 				// enabled the mark as read menu item
-				Interface.menuItemMarkAsRead.Text = translation.markAsRead + " (" + Box.ThreadsUnread + ")";
+				Interface.menuItemMarkAsRead.Text = Translation.markAsRead + " (" + Box.ThreadsUnread + ")";
 				Interface.menuItemMarkAsRead.Enabled = true;
 
 				// displays a balloon tip in the systray with the detailed error message
 				Interface.notifyIcon.Icon = Resources.warning;
-				Interface.notifyIcon.Text = translation.markAsReadError;
-				Interface.notifyIcon.ShowBalloonTip(1500, translation.error, translation.markAsReadErrorOccured + exception.Message, ToolTipIcon.Warning);
+				Interface.notifyIcon.Text = Translation.markAsReadError;
+				Interface.notifyIcon.ShowBalloonTip(1500, Translation.error, Translation.markAsReadErrorOccured + exception.Message, ToolTipIcon.Warning);
 			} finally {
-				Interface.notifyIcon.Text = Interface.notifyIcon.Text.Split('\n')[0] + "\n" + translation.syncTime.Replace("{time}", SyncTime.ToLongTimeString());
+				Interface.notifyIcon.Text = Interface.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", SyncTime.ToLongTimeString());
 			}
 		}
 
@@ -330,7 +330,7 @@ namespace notifier {
 			// updates the systray icon and text
 			if (delay != Settings.Default.TimerInterval) {
 				Interface.notifyIcon.Icon = Resources.timeout;
-				Interface.notifyIcon.Text = translation.timeout + " - " + (delay != 0 ? DateTime.Now.AddMilliseconds(delay).ToShortTimeString() : "∞");
+				Interface.notifyIcon.Text = Translation.timeout + " - " + (delay != 0 ? DateTime.Now.AddMilliseconds(delay).ToShortTimeString() : "∞");
 			} else {
 				Sync();
 			}
@@ -354,7 +354,7 @@ namespace notifier {
 
 				// displays the reconnection attempt message on the icon
 				Interface.notifyIcon.Icon = Resources.retry;
-				Interface.notifyIcon.Text = translation.reconnectAttempt;
+				Interface.notifyIcon.Text = Translation.reconnectAttempt;
 
 				return;
 			}
@@ -373,7 +373,7 @@ namespace notifier {
 
 					// displays the last reconnection message on the icon
 					Interface.notifyIcon.Icon = Resources.warning;
-					Interface.notifyIcon.Text = translation.reconnectFailed;
+					Interface.notifyIcon.Text = Translation.reconnectFailed;
 				}
 			} else {
 

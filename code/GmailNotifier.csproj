@@ -144,18 +144,14 @@
     <Compile Include="Notification.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Languages\translation.en.Designer.cs">
-      <DependentUpon>translation.en.resx</DependentUpon>
+    <Compile Include="Languages\Translation.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Languages\translation.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>translation.resx</DependentUpon>
+      <DependentUpon>Translation.resx</DependentUpon>
     </Compile>
     <Compile Include="Update.cs" />
-    <EmbeddedResource Include="Languages\translation.de.resx" />
+    <EmbeddedResource Include="Languages\Translation.de.resx" />
+    <EmbeddedResource Include="Languages\Translation.en.resx" />
     <EmbeddedResource Include="Main.de.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,13 +166,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Languages\translation.en.resx">
+    <EmbeddedResource Include="Languages\Translation.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>translation.en.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Languages\translation.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>translation.Designer.cs</LastGenOutput>
+      <LastGenOutput>Translation.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="client_secret.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
