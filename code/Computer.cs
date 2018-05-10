@@ -1,11 +1,18 @@
 ﻿using System;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Windows.Forms;
 using Microsoft.Win32;
 using notifier.Properties;
 
 namespace notifier {
 	class Computer {
+
+		// registry possibilities
+		public enum Startup : uint {
+			Off = 0,
+			On = 1
+		}
 
 		// Reference to the main interface
 		private Main UI;
@@ -105,6 +112,19 @@ namespace notifier {
 				}
 			} catch (Exception) {
 				return false;
+			}
+		}
+
+		/// <summary>
+		/// Register or unregister the application from Windows startup program list
+		/// </summary>
+		public void SetApplicationStartup(Startup mode) {
+			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {
+				if (mode == Startup.On) {
+					key.SetValue("Gmail notifier", '"' + Application.ExecutablePath + '"');
+				} else {
+					key.DeleteValue("Gmail notifier", false);
+				}
 			}
 		}
 	}

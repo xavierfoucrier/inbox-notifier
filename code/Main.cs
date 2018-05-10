@@ -193,13 +193,9 @@ namespace notifier {
 		/// </summary>
 		private void FieldRunAtWindowsStartup_CheckedChanged(object sender, EventArgs e) {
 			if (fieldRunAtWindowsStartup.Checked) {
-				using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true)) {
-					key.SetValue("Gmail notifier", '"' + Application.ExecutablePath + '"');
-				}
+				ComputerService.SetApplicationStartup(Computer.Startup.On);
 			} else {
-				using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true)) {
-					key.DeleteValue("Gmail notifier", false);
-				}
+				ComputerService.SetApplicationStartup(Computer.Startup.Off);
 			}
 		}
 
