@@ -40,15 +40,17 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Indicates if the update service is currently updating
+		/// Gets the updating state
 		/// </summary>
+		/// <returns>Indicates if the update service is currently updating</returns>
 		public bool IsUpdating() {
 			return Updating;
 		}
 
 		/// <summary>
-		/// Indicates if the update period is currently set to startup
+		/// Checks the update period user setting
 		/// </summary>
+		/// <returns>Indicates if the update period is currently set to startup</returns>
 		public bool IsPeriodSetToStartup() {
 			return Settings.Default.UpdatePeriod == (int)Period.Startup;
 		}

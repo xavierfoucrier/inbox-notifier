@@ -57,15 +57,17 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Returns the application data folder path
+		/// Gets the application data folder path
 		/// </summary>
+		/// <returns>The application data folder path</returns>
 		public static string GetApplicationDataFolder() {
 			return ApplicationDataFolder;
 		}
 
 		/// <summary>
-		/// Returns the full application version number
+		/// Gets the full application version number
 		/// </summary>
+		/// <returns>The full application version number, like v1.6.0.0</returns>
 		public static string GetVersion() {
 			return Version;
 		}

@@ -72,6 +72,7 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to refresh the authentication token
 		/// </summary>
+		/// <returns>Indicates if the token has been properly refreshed</returns>
 		public async Task<bool> RefreshToken() {
 
 			// refreshes the token and updates the token delivery date and time on the interface

@@ -336,8 +336,11 @@ namespace notifier {
 			}
 		}
 
-		//
+		/// <summary>
+		/// Retries to reconnect the inbox
+		/// </summary>
 		public void Retry() {
+
 			// increases the number of reconnection attempt
 			Reconnect++;
 
@@ -397,15 +400,17 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Returns the gmail email address
+		/// Gets the gmail email address
 		/// </summary>
+		/// <returns>Gmail email address</returns>
 		public string GetEmailAddress() {
 			return EmailAddress;
 		}
 
 		/// <summary>
-		/// Returns the number of automatic reconnection to the network
+		/// Gets the number of automatic reconnection to the network
 		/// </summary>
+		/// <returns>The number of automatic reconnection to the network</returns>
 		public uint GetReconnect() {
 			return Reconnect;
 		}
@@ -413,21 +418,23 @@ namespace notifier {
 		/// <summary>
 		/// Sets the number of automatic reconnection to the network
 		/// </summary>
+		/// <param name="reconnection">Number of automatic reconnection</param>
 		public void SetReconnect(uint reconnection) {
 			Reconnect = reconnection;
 		}
-
+		
 		/// <summary>
-		/// Returns the last synchronization time
+		/// Gets the last synchronization time
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>Last synchronization time</returns>
 		public DateTime GetSyncTime() {
 			return SyncTime;
 		}
 		
 		/// <summary>
-		/// Sets the synchronization time
+		/// Sets the last synchronization time
 		/// </summary>
+		/// <param name="time">Last synchronization time</param>
 		public void SetSyncTime(DateTime time) {
 			SyncTime = time;
 		}
