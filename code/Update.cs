@@ -34,9 +34,9 @@ namespace notifier {
 		/// <summary>
 		/// Class constructor
 		/// </summary>
-		/// <param name="Form">Reference to the application main window</param>
-		public Update(ref Main Form) {
-			Interface = Form;
+		/// <param name="form">Reference to the application main window</param>
+		public Update(ref Main form) {
+			Interface = form;
 		}
 
 		/// <summary>

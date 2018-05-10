@@ -39,13 +39,13 @@ namespace notifier {
 		/// <summary>
 		/// Class constructor
 		/// </summary>
-		/// <param name="Credential">User credential given by the authorization broker</param>
-		public Inbox(ref Main Form, ref UserCredential Credential) {
-			Interface = Form;
+		/// <param name="credential">User credential given by the authorization broker</param>
+		public Inbox(ref Main form, ref UserCredential credential) {
+			Interface = form;
 
 			// initializes the gmail service base client api
 			Api = new GmailService(new BaseClientService.Initializer() {
-				HttpClientInitializer = Credential,
+				HttpClientInitializer = credential,
 				ApplicationName = "Gmail notifier for Windows"
 			});
 

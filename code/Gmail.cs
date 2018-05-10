@@ -25,9 +25,9 @@ namespace notifier {
 		/// <summary>
 		/// Class constructor
 		/// </summary>
-		/// <param name="Form">Reference to the application main window</param>
-		public Gmail(ref Main Form) {
-			Interface = Form;
+		/// <param name="form">Reference to the application main window</param>
+		public Gmail(ref Main form) {
+			Interface = form;
 		}
 
 		/// <summary>
