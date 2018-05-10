@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace notifier {
@@ -36,6 +37,23 @@ namespace notifier {
 			VersionBuild = ProductVersion[3];
 
 			Version = "v" + VersionMajor + "." + VersionMinor + (VersionBuild != "0" ? "." + VersionBuild : "") + "-" + (VersionRelease == "0" ? "alpha" : VersionRelease == "1" ? "beta" : VersionRelease == "2" ? "rc" : VersionRelease == "3" ? "release" : "");
+		}
+
+		/// <summary>
+		/// Restarts the application
+		/// </summary>
+		public static void RestartApplication() {
+
+			// starts a new process
+			ProcessStartInfo command = new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"") {
+				WindowStyle = ProcessWindowStyle.Hidden,
+				CreateNoWindow = true
+			};
+
+			Process.Start(command);
+
+			// exits the application
+			Application.Exit();
 		}
 
 		/// <summary>

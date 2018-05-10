@@ -531,31 +531,14 @@ namespace notifier {
 			}
 
 			// restarts the application
-			Restart();
+			Core.RestartApplication();
 		}
 
 		/// <summary>
 		/// Restarts the application to apply new user settings
 		/// </summary>
 		private void LinkRestartToApply_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Restart();
-		}
-
-		/// <summary>
-		/// Restarts the application
-		/// </summary>
-		private void Restart() {
-
-			// starts a new process
-			ProcessStartInfo command = new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"") {
-				WindowStyle = ProcessWindowStyle.Hidden,
-				CreateNoWindow = true
-			};
-
-			Process.Start(command);
-
-			// exits the application
-			Application.Exit();
+			Core.RestartApplication();
 		}
 
 		// attempts to reconnect the user mailbox
