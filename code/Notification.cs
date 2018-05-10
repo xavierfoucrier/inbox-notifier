@@ -1,7 +1,9 @@
 ﻿namespace notifier {
 	class Notification {
 
-		// privacy possibilities
+		/// <summary>
+		/// Privacy possibilities
+		/// </summary>
 		public enum Privacy : uint {
 			None = 0,
 			Short = 1,

@@ -8,13 +8,17 @@ using notifier.Properties;
 namespace notifier {
 	class Computer {
 
-		// registration possibilities
+		/// <summary>
+		/// Registration possibilities
+		/// </summary>
 		public enum Registration : uint {
 			Off = 0,
 			On = 1
 		}
 
-		// Reference to the main interface
+		/// <summary>
+		/// Reference to the main interface
+		/// </summary>
 		private Main UI;
 
 		/// <summary>

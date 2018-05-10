@@ -5,22 +5,34 @@ using System.Windows.Forms;
 namespace notifier {
 	static class Core {
 
-		// local application data folder name
+		/// <summary>
+		/// Local application data folder name
+		/// </summary>
 		private static string ApplicationDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
 
-		// version number
+		/// <summary>
+		/// Version number
+		/// </summary>
 		private static string Version = "";
 
-		// major version number
+		/// <summary>
+		/// Major version number
+		/// </summary>
 		private static string VersionMajor = "";
 
-		// minor version number
+		/// <summary>
+		/// Minor version number
+		/// </summary>
 		private static string VersionMinor = "";
 
-		// release version number
+		/// <summary>
+		/// Release version number
+		/// </summary>
 		private static string VersionRelease = "";
 
-		// build version number
+		/// <summary>
+		/// Build version number
+		/// </summary>
 		private static string VersionBuild = "";
 
 		/// <summary>

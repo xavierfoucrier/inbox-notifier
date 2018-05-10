@@ -14,7 +14,9 @@ using notifier.Properties;
 namespace notifier {
 	class Update {
 
-		// update period possibilities
+		/// <summary>
+		/// Update period possibilities
+		/// </summary>
 		private enum Period : uint {
 			Startup = 0,
 			Day = 1,
@@ -22,13 +24,19 @@ namespace notifier {
 			Month = 3
 		}
 
-		// flag defining the update state
+		/// <summary>
+		/// Flag defining the update state
+		/// </summary>
 		private bool Updating = false;
 
-		// http client used to check for updates
+		/// <summary>
+		/// Http client used to check for updates
+		/// </summary>
 		private HttpClient Http = new HttpClient();
 
-		// Reference to the main interface
+		/// <summary>
+		/// Reference to the main interface
+		/// </summary>
 		private Main UI;
 
 		/// <summary>

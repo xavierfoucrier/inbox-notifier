@@ -15,25 +15,39 @@ using notifier.Properties;
 namespace notifier {
 	class Inbox {
 
-		// gmail api service
+		/// <summary>
+		/// Gmail api service
+		/// </summary>
 		private GmailService Api;
 
-		// gmail address
+		/// <summary>
+		/// Gmail address
+		/// </summary>
 		private string EmailAddress;
 
-		// main inbox label
+		/// <summary>
+		/// Main inbox label
+		/// </summary>
 		private Google.Apis.Gmail.v1.Data.Label Box;
 
-		// number of automatic reconnection
+		/// <summary>
+		/// Number of automatic reconnection
+		/// </summary>
 		private uint Reconnect = 0;
 
-		// unread threads
+		/// <summary>
+		/// Unread threads
+		/// </summary>
 		private int? UnreadThreads = 0;
 
-		// last synchronization time
+		/// <summary>
+		/// Last synchronization time
+		/// </summary>
 		private DateTime SyncTime = DateTime.Now;
 
-		// reference to the main interface
+		/// <summary>
+		/// Reference to the main interface
+		/// </summary>
 		private Main UI;
 
 		/// <summary>

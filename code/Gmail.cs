@@ -13,13 +13,19 @@ using notifier.Properties;
 namespace notifier {
 	class Gmail {
 
-		// reference to the gmail inbox
+		/// <summary>
+		/// Reference to the gmail inbox
+		/// </summary>
 		internal Inbox Inbox;
 
-		// user credential for the gmail authentication
+		/// <summary>
+		/// User credential for the gmail authentication
+		/// </summary>
 		private UserCredential Credential;
 
-		// reference to the main interface
+		/// <summary>
+		/// Reference to the main interface
+		/// </summary>
 		private Main UI;
 
 		/// <summary>
