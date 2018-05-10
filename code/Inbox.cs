@@ -39,6 +39,7 @@ namespace notifier {
 		/// <summary>
 		/// Class constructor
 		/// </summary>
+		/// <param name="form">Reference to the application main window</param>
 		/// <param name="credential">User credential given by the authorization broker</param>
 		public Inbox(ref Main form, ref UserCredential credential) {
 			UI = form;
