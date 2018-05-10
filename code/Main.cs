@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
-using Microsoft.Win32;
 using notifier.Languages;
 using notifier.Properties;
 
