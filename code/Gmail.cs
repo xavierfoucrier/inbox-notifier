@@ -20,14 +20,14 @@ namespace notifier {
 		private UserCredential Credential;
 
 		// reference to the main interface
-		private Main Interface;
+		private Main UI;
 
 		/// <summary>
 		/// Class constructor
 		/// </summary>
 		/// <param name="form">Reference to the application main window</param>
 		public Gmail(ref Main form) {
-			Interface = form;
+			UI = form;
 		}
 
 		/// <summary>
@@ -40,19 +40,19 @@ namespace notifier {
 				Credential = await AuthorizationBroker();
 
 				// instanciates a new inbox with the credential
-				Inbox = new Inbox(ref Interface, ref Credential);
+				Inbox = new Inbox(ref UI, ref Credential);
 
 				// displays the user email address
-				Interface.labelEmailAddress.Text = Inbox.GetEmailAddress();
-				Interface.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
+				UI.labelEmailAddress.Text = Inbox.GetEmailAddress();
+				UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
 			} catch (Exception) {
 
 				// exits the application if the google api token file doesn't exists
 				if (!Directory.Exists(Core.GetApplicationDataFolder()) || !Directory.EnumerateFiles(Core.GetApplicationDataFolder()).Any()) {
 
 					// displays the authentication icon and title
-					Interface.notifyIcon.Icon = Resources.authentication;
-					Interface.notifyIcon.Text = Translation.authenticationFailed;
+					UI.notifyIcon.Icon = Resources.authentication;
+					UI.notifyIcon.Text = Translation.authenticationFailed;
 
 					// exits the application
 					MessageBox.Show(Translation.authenticationWithGmailRefused, Translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -61,10 +61,10 @@ namespace notifier {
 			} finally {
 
 				// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
-				if (Settings.Default.UpdateService && Interface.UpdateService.IsPeriodSetToStartup()) {
-					Interface.UpdateService.Check(!Settings.Default.UpdateDownload, true);
+				if (Settings.Default.UpdateService && UI.UpdateService.IsPeriodSetToStartup()) {
+					UI.UpdateService.Check(!Settings.Default.UpdateDownload, true);
 				} else {
-					Interface.GmailService.Inbox.Sync();
+					UI.GmailService.Inbox.Sync();
 				}
 			}
 		}
@@ -76,7 +76,7 @@ namespace notifier {
 
 			// refreshes the token and updates the token delivery date and time on the interface
 			if (await Credential.RefreshTokenAsync(new CancellationToken())) {
-				Interface.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
+				UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
 			}
 
 			return true;

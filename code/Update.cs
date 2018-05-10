@@ -29,14 +29,14 @@ namespace notifier {
 		private HttpClient Http = new HttpClient();
 
 		// Reference to the main interface
-		private Main Interface;
+		private Main UI;
 
 		/// <summary>
 		/// Class constructor
 		/// </summary>
 		/// <param name="form">Reference to the application main window</param>
 		public Update(ref Main form) {
-			Interface = form;
+			UI = form;
 		}
 
 		/// <summary>
@@ -154,19 +154,19 @@ namespace notifier {
 			} finally {
 
 				// restores default check icon and check for update button state
-				Interface.linkCheckForUpdate.Enabled = true;
-				Interface.linkCheckForUpdate.Image = Resources.update_check;
-				Interface.buttonCheckForUpdate.Enabled = true;
+				UI.linkCheckForUpdate.Enabled = true;
+				UI.linkCheckForUpdate.Image = Resources.update_check;
+				UI.buttonCheckForUpdate.Enabled = true;
 
 				// stores the latest update datetime control
 				Settings.Default.UpdateControl = DateTime.Now;
 
 				// updates the update control label
-				Interface.labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
+				UI.labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
 
 				// synchronizes the inbox if the updates has been checked at startup after asynchronous authentication
 				if (startup) {
-					Interface.GmailService.Inbox.Sync();
+					UI.GmailService.Inbox.Sync();
 				}
 			}
 		}
@@ -188,18 +188,18 @@ namespace notifier {
 			try {
 
 				// disables the context menu and displays the update icon in the systray
-				Interface.notifyIcon.ContextMenu = null;
-				Interface.notifyIcon.Icon = Resources.updating;
-				Interface.notifyIcon.Text = Translation.updating;
+				UI.notifyIcon.ContextMenu = null;
+				UI.notifyIcon.Icon = Resources.updating;
+				UI.notifyIcon.Text = Translation.updating;
 
 				// creates a new web client instance
 				WebClient client = new WebClient();
 
 				// displays the download progression on the systray icon, and prevents the application from restoring the context menu and systray icon at startup
 				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object source, DownloadProgressChangedEventArgs target) => {
-					Interface.notifyIcon.ContextMenu = null;
-					Interface.notifyIcon.Icon = Resources.updating;
-					Interface.notifyIcon.Text = Translation.updating + " " + target.ProgressPercentage.ToString() + "%";
+					UI.notifyIcon.ContextMenu = null;
+					UI.notifyIcon.Icon = Resources.updating;
+					UI.notifyIcon.Text = Translation.updating + " " + target.ProgressPercentage.ToString() + "%";
 				});
 
 				// starts the setup installer when the download has complete and exits the current application
@@ -222,8 +222,8 @@ namespace notifier {
 				Updating = false;
 
 				// restores the context menu to the systray icon and start a synchronization
-				Interface.notifyIcon.ContextMenu = Interface.notifyMenu;
-				Interface.GmailService.Inbox.Sync();
+				UI.notifyIcon.ContextMenu = UI.notifyMenu;
+				UI.GmailService.Inbox.Sync();
 			}
 		}
 	}

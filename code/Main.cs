@@ -26,12 +26,12 @@ namespace notifier {
 			InitializeComponent();
 
 			// main application instance
-			var Instance = this;
+			var ui = this;
 
 			// initializes services
-			UpdateService = new Update(ref Instance);
-			ComputerService = new Computer(ref Instance);
-			GmailService = new Gmail(ref Instance);
+			UpdateService = new Update(ref ui);
+			ComputerService = new Computer(ref ui);
+			GmailService = new Gmail(ref ui);
 		}
 
 		/// <summary>

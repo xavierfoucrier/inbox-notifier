@@ -8,14 +8,14 @@ namespace notifier {
 	class Computer {
 
 		// Reference to the main interface
-		private Main Interface;
+		private Main UI;
 
 		/// <summary>
 		/// Class constructor
 		/// </summary>
 		/// <param name="form">Reference to the application main window</param>
 		public Computer(ref Main form) {
-			Interface = form;
+			UI = form;
 		}
 
 		/// <summary>
@@ -25,10 +25,10 @@ namespace notifier {
 			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object source, NetworkAvailabilityEventArgs target) => {
 
 				// stops the reconnect process if it is running
-				if (Interface.GmailService.Inbox.GetReconnect() != 0) {
-					Interface.timerReconnect.Enabled = false;
-					Interface.timerReconnect.Interval = 100;
-					Interface.GmailService.Inbox.SetReconnect(0);
+				if (UI.GmailService.Inbox.GetReconnect() != 0) {
+					UI.timerReconnect.Enabled = false;
+					UI.timerReconnect.Interval = 100;
+					UI.GmailService.Inbox.SetReconnect(0);
 				}
 
 				// loops through all network interface to check network connectivity
@@ -45,8 +45,8 @@ namespace notifier {
 					}
 
 					// syncs the inbox when a network interface is available and the timeout mode is disabled
-					if (Interface.timer.Interval == Settings.Default.TimerInterval) {
-						Interface.GmailService.Inbox.Sync();
+					if (UI.timer.Interval == Settings.Default.TimerInterval) {
+						UI.GmailService.Inbox.Sync();
 					}
 
 					break;
@@ -60,15 +60,15 @@ namespace notifier {
 		public void BindPowerMode() {
 			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler((object source, PowerModeChangedEventArgs target) => {
 				if (target.Mode == PowerModes.Suspend) {
-					Interface.timer.Enabled = false;
+					UI.timer.Enabled = false;
 				} else if (target.Mode == PowerModes.Resume) {
 
 					// do nothing if the timeout mode is set to infinite
-					if (Interface.timer.Interval != Settings.Default.TimerInterval && Interface.menuItemTimeoutIndefinitely.Checked) {
+					if (UI.timer.Interval != Settings.Default.TimerInterval && UI.menuItemTimeoutIndefinitely.Checked) {
 						return;
 					}
-					
-					Interface.GmailService.Inbox.Sync(false, true);
+
+					UI.GmailService.Inbox.Sync(false, true);
 				}
 			});
 		}
@@ -83,11 +83,11 @@ namespace notifier {
 				if (target.Reason == SessionSwitchReason.SessionUnlock) {
 
 					// do nothing if the timeout mode is set to infinite
-					if (Interface.timer.Interval != Settings.Default.TimerInterval && Interface.menuItemTimeoutIndefinitely.Checked) {
+					if (UI.timer.Interval != Settings.Default.TimerInterval && UI.menuItemTimeoutIndefinitely.Checked) {
 						return;
 					}
 
-					Interface.GmailService.Inbox.Sync(false, true);
+					UI.GmailService.Inbox.Sync(false, true);
 				}
 			});
 		}
