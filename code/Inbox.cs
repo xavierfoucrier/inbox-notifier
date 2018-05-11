@@ -170,7 +170,7 @@ namespace notifier {
 				// manages unread threads
 				if (Box.ThreadsUnread > 0) {
 
-					// sets the notification icon and text
+					// sets the notification icon
 					UI.notifyIcon.Icon = Box.ThreadsUnread <= Settings.Default.UNSTACK_BOUNDARY ? Resources.mails : Resources.stack;
 
 					// manages message notification
