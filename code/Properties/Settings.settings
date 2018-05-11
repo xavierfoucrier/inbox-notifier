@@ -75,7 +75,7 @@
       <Value Profile="(Default)">http://p.yusukekamiyamane.com</Value>
     </Setting>
     <Setting Name="SITE_AUTHOR" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://www.xavierfoucrier.fr</Value>
+      <Value Profile="(Default)">https://www.xavierfoucrier.fr</Value>
     </Setting>
     <Setting Name="SITE_SOFTPEDIA" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status</Value>

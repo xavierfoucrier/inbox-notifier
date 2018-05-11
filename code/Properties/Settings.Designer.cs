@@ -295,7 +295,7 @@ namespace notifier.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.xavierfoucrier.fr")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.xavierfoucrier.fr")]
         public string SITE_AUTHOR {
             get {
                 return ((string)(this["SITE_AUTHOR"]));
