@@ -372,7 +372,7 @@ automatically open the inbox.</value>
     <value>226, 30</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
-    <value>©2016-2017. All rights reserved.
+    <value>©2016-2018. All rights reserved.
 Open Source, distributed under MIT License</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">

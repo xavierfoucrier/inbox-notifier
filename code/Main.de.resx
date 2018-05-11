@@ -394,7 +394,7 @@ automatisch den Posteingang öffnen.</value>
     <value>235, 30</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
-    <value>©2016-2017. Alle Rechte vorbehalten.
+    <value>©2016-2018. Alle Rechte vorbehalten.
 Open Source, unter der MIT-Lizenz vertrieben</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
