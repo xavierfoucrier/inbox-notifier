@@ -343,7 +343,7 @@ namespace notifier {
 			UI.timer.Enabled = !infinite;
 
 			// applies "1" if the delay is set to "infinite" because the timer interval attribute does not support "0"
-			UI.timer.Interval = !infinite ? delay : 1;
+			UI.timer.Interval = infinite ? 1 : delay;
 
 			// indicates if the notification service is paused (delay different from the default user synchronization interval)
 			UI.NotificationService.Paused = delay != Settings.Default.TimerInterval;
@@ -354,7 +354,7 @@ namespace notifier {
 			// updates the systray icon and text
 			if (UI.NotificationService.Paused) {
 				UI.notifyIcon.Icon = Resources.timeout;
-				UI.notifyIcon.Text = Translation.timeout + " - " + (!infinite ? DateTime.Now.AddMilliseconds(delay).ToShortTimeString() : "∞");
+				UI.notifyIcon.Text = Translation.timeout + " - " + (infinite ? "∞" : DateTime.Now.AddMilliseconds(delay).ToShortTimeString());
 			} else {
 				Sync();
 			}
