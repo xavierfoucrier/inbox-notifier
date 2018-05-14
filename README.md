@@ -41,7 +41,7 @@ Discover the application running on Windows 7 in the [image gallery](https://git
 
 Updates
 -------
-You can **track the project** on [Github](http://github.com/xavierfoucrier) and/or **follow me** on [Twitter](http://twitter.com/xavierfoucrier).
+You can **track the project** on [Github](https://github.com/xavierfoucrier) and/or **follow me** on [Twitter](https://twitter.com/xavierfoucrier).
 
 
 Contribute
@@ -78,4 +78,4 @@ Read the [full license](https://github.com/xavierfoucrier/gmail-notifier/blob/ma
 Questions?
 ----------
 If you have any questions, please **feel free to contact me!**  
-Check out my website at [http://en.xavierfoucrier.fr](http://en.xavierfoucrier.fr).
+Check out my website at [https://en.xavierfoucrier.fr](https://en.xavierfoucrier.fr).
