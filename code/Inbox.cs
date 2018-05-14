@@ -16,6 +16,11 @@ namespace notifier {
 	class Inbox {
 
 		/// <summary>
+		/// Last synchronization time
+		/// </summary>
+		public DateTime Time = DateTime.Now;
+
+		/// <summary>
 		/// Gmail api service
 		/// </summary>
 		private GmailService Api;
@@ -39,11 +44,6 @@ namespace notifier {
 		/// Unread threads
 		/// </summary>
 		private int? UnreadThreads = 0;
-
-		/// <summary>
-		/// Last synchronization time
-		/// </summary>
-		private DateTime SyncTime = DateTime.Now;
 
 		/// <summary>
 		/// Reference to the main interface
@@ -80,7 +80,7 @@ namespace notifier {
 			}
 
 			// updates the synchronization time
-			SyncTime = DateTime.Now;
+			Time = DateTime.Now;
 
 			// resets reconnection count and prevents the application from displaying continuous warning icon when a timertick synchronization occurs after a reconnection attempt
 			if (Reconnect != 0) {
@@ -251,7 +251,7 @@ namespace notifier {
 				UI.notifyIcon.Text = Translation.syncError;
 				UI.NotificationService.Tip(Translation.error, Translation.syncErrorOccured + exception.Message, Notification.Type.Warning, 1500);
 			} finally {
-				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", SyncTime.ToLongTimeString());
+				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
 			}
 		}
 
@@ -262,7 +262,7 @@ namespace notifier {
 			try {
 
 				// updates the synchronization time
-				SyncTime = DateTime.Now;
+				Time = DateTime.Now;
 
 				// displays the sync icon
 				UI.notifyIcon.Icon = Resources.sync;
@@ -312,7 +312,7 @@ namespace notifier {
 				UI.notifyIcon.Text = Translation.markAsReadError;
 				UI.NotificationService.Tip(Translation.error, Translation.markAsReadErrorOccured + exception.Message, Notification.Type.Warning, 1500);
 			} finally {
-				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", SyncTime.ToLongTimeString());
+				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
 			}
 		}
 
@@ -445,22 +445,6 @@ namespace notifier {
 		/// <param name="reconnection">Number of automatic reconnection</param>
 		public void SetReconnect(uint reconnection) {
 			Reconnect = reconnection;
-		}
-		
-		/// <summary>
-		/// Gets the last synchronization time
-		/// </summary>
-		/// <returns>Last synchronization time</returns>
-		public DateTime GetSyncTime() {
-			return SyncTime;
-		}
-		
-		/// <summary>
-		/// Sets the last synchronization time
-		/// </summary>
-		/// <param name="time">Last synchronization time</param>
-		public void SetSyncTime(DateTime time) {
-			SyncTime = time;
 		}
 
 		/// <summary>

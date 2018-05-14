@@ -88,11 +88,11 @@ namespace notifier {
 			if (!Paused) {
 
 				// updates the synchronization time
-				UI.GmailService.Inbox.SetSyncTime(DateTime.Now);
+				UI.GmailService.Inbox.Time = DateTime.Now;
 
 				// restores the default systray icon and text
 				UI.notifyIcon.Icon = Resources.normal;
-				UI.notifyIcon.Text = Translation.noMessage + "\n" + Translation.syncTime.Replace("{time}", UI.GmailService.Inbox.GetSyncTime().ToLongTimeString());
+				UI.notifyIcon.Text = Translation.noMessage + "\n" + Translation.syncTime.Replace("{time}", DateTime.Now.ToLongTimeString());
 
 				// disables the mark as read menu item
 				UI.menuItemMarkAsRead.Text = Translation.markAsRead;
