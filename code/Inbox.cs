@@ -71,8 +71,9 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to synchronize the user inbox
 		/// </summary>
-		/// <param name="timertick">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
-		public async void Sync(bool timertick = false, bool token = false) {
+		/// <param name="manual">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
+		/// <param name="token">Indicates if the Gmail token need to be refreshed</param>
+		public async void Sync(bool manual = true, bool token = false) {
 
 			// prevents the application from syncing the inbox when updating
 			if (UI.UpdateService.IsUpdating()) {
@@ -84,7 +85,7 @@ namespace notifier {
 
 			// resets reconnection count and prevents the application from displaying continuous warning icon when a timertick synchronization occurs after a reconnection attempt
 			if (ReconnectionAttempts != 0) {
-				timertick = false;
+				manual = true;
 				ReconnectionAttempts = 0;
 			}
 
@@ -114,8 +115,8 @@ namespace notifier {
 			UI.menuItemTimout.Enabled = true;
 			UI.menuItemSettings.Enabled = true;
 
-			// displays the sync icon, but not on every tick of the timer
-			if (!timertick) {
+			// displays the sync icon, but only on manual synchronization
+			if (manual) {
 				UI.notifyIcon.Icon = Resources.sync;
 				UI.notifyIcon.Text = Translation.sync;
 			}
@@ -129,7 +130,7 @@ namespace notifier {
 				if (Settings.Default.SpamNotification) {
 
 					// exits if a spam is already detected
-					if (timertick && UI.NotificationService.Tag == "#spam") {
+					if (!manual && UI.NotificationService.Tag == "#spam") {
 						return;
 					}
 
@@ -165,7 +166,7 @@ namespace notifier {
 				UpdateStatistics();
 
 				// exits the sync if the number of unread threads is the same as before
-				if (timertick && (Box.ThreadsUnread == UnreadThreads)) {
+				if (!manual && (Box.ThreadsUnread == UnreadThreads)) {
 					return;
 				}
 

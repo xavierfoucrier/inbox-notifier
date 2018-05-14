@@ -472,7 +472,7 @@ namespace notifier {
 			}
 
 			// synchronizes the inbox
-			GmailService.Inbox.Sync(true);
+			GmailService.Inbox.Sync(false);
 		}
 
 		/// <summary>

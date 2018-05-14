@@ -79,7 +79,7 @@ namespace notifier {
 						return;
 					}
 
-					UI.GmailService.Inbox.Sync(false, true);
+					UI.GmailService.Inbox.Sync(true, true);
 				}
 			});
 		}
@@ -98,7 +98,7 @@ namespace notifier {
 						return;
 					}
 
-					UI.GmailService.Inbox.Sync(false, true);
+					UI.GmailService.Inbox.Sync(true, true);
 				}
 			});
 		}
