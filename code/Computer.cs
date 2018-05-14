@@ -36,10 +36,10 @@ namespace notifier {
 			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object source, NetworkAvailabilityEventArgs target) => {
 
 				// stops the reconnect process if it is running
-				if (UI.GmailService.Inbox.GetReconnect() != 0) {
+				if (UI.GmailService.Inbox.ReconnectionAttempts != 0) {
 					UI.timerReconnect.Enabled = false;
 					UI.timerReconnect.Interval = 100;
-					UI.GmailService.Inbox.SetReconnect(0);
+					UI.GmailService.Inbox.ReconnectionAttempts = 0;
 				}
 
 				// loops through all network interface to check network connectivity

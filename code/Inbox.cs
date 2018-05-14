@@ -21,6 +21,11 @@ namespace notifier {
 		public DateTime Time = DateTime.Now;
 
 		/// <summary>
+		/// Number of automatic reconnection attempts
+		/// </summary>
+		public uint ReconnectionAttempts = 0;
+
+		/// <summary>
 		/// Gmail api service
 		/// </summary>
 		private GmailService Api;
@@ -34,11 +39,6 @@ namespace notifier {
 		/// Main inbox label
 		/// </summary>
 		private Google.Apis.Gmail.v1.Data.Label Box;
-
-		/// <summary>
-		/// Number of automatic reconnection
-		/// </summary>
-		private uint Reconnect = 0;
 
 		/// <summary>
 		/// Unread threads
@@ -83,9 +83,9 @@ namespace notifier {
 			Time = DateTime.Now;
 
 			// resets reconnection count and prevents the application from displaying continuous warning icon when a timertick synchronization occurs after a reconnection attempt
-			if (Reconnect != 0) {
+			if (ReconnectionAttempts != 0) {
 				timertick = false;
-				Reconnect = 0;
+				ReconnectionAttempts = 0;
 			}
 
 			// disables the timeout when the user do a manual synchronization
@@ -366,10 +366,10 @@ namespace notifier {
 		public void Retry() {
 
 			// increases the number of reconnection attempt
-			Reconnect++;
+			ReconnectionAttempts++;
 
 			// bypass the first reconnection attempt because the last synchronization have already checked the internet connectivity
-			if (Reconnect == 1) {
+			if (ReconnectionAttempts == 1) {
 
 				// sets the reconnection interval
 				UI.timerReconnect.Interval = Settings.Default.INTERVAL_RECONNECT * 1000;
@@ -390,7 +390,7 @@ namespace notifier {
 			if (!UI.ComputerService.IsInternetAvailable()) {
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
-				if (Reconnect == Settings.Default.MAX_AUTO_RECONNECT) {
+				if (ReconnectionAttempts == Settings.Default.MAX_AUTO_RECONNECT) {
 					UI.timerReconnect.Enabled = false;
 					UI.timerReconnect.Interval = 100;
 					UI.timer.Enabled = true;
@@ -429,22 +429,6 @@ namespace notifier {
 		/// <returns>Gmail email address</returns>
 		public string GetEmailAddress() {
 			return EmailAddress;
-		}
-
-		/// <summary>
-		/// Gets the number of automatic reconnection to the network
-		/// </summary>
-		/// <returns>The number of automatic reconnection to the network</returns>
-		public uint GetReconnect() {
-			return Reconnect;
-		}
-
-		/// <summary>
-		/// Sets the number of automatic reconnection to the network
-		/// </summary>
-		/// <param name="reconnection">Number of automatic reconnection</param>
-		public void SetReconnect(uint reconnection) {
-			Reconnect = reconnection;
 		}
 
 		/// <summary>
