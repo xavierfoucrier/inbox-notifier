@@ -89,7 +89,7 @@ namespace notifier {
 			}
 
 			// disables the timeout when the user do a manual synchronization
-			if (UI.timer.Interval != Settings.Default.TimerInterval) {
+			if (UI.NotificationService.Paused) {
 				Timeout(UI.menuItemTimeoutDisabled, Settings.Default.TimerInterval);
 
 				// exits the method because the timeout function automatically restarts a synchronization once it has been disabled
@@ -129,7 +129,7 @@ namespace notifier {
 				if (Settings.Default.SpamNotification) {
 
 					// exits if a spam is already detected
-					if (timertick && UI.notifyIcon.Tag != null && UI.notifyIcon.Tag.ToString() == "#spam") {
+					if (timertick && UI.NotificationService.Tag == "#spam") {
 						return;
 					}
 
@@ -139,18 +139,20 @@ namespace notifier {
 					// manages unread spams
 					if (spam.ThreadsUnread > 0) {
 
-						// sets the notification icon and text
-						UI.notifyIcon.Icon = Resources.spam;
-
 						// plays a sound on unread spams
 						if (Settings.Default.AudioNotification) {
 							SystemSounds.Exclamation.Play();
 						}
 
 						// displays a balloon tip in the systray with the total of unread threads
-						UI.notifyIcon.ShowBalloonTip(450, spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam), Translation.newUnreadSpam, ToolTipIcon.Error);
+						UI.NotificationService.Tip(spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam), Translation.newUnreadSpam, Notification.Type.Error);
+
+						// sets the notification icon and text
+						UI.notifyIcon.Icon = Resources.spam;
 						UI.notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam);
-						UI.notifyIcon.Tag = "#spam";
+
+						// updates the tag
+						UI.NotificationService.Tag = "#spam";
 
 						return;
 					}
@@ -210,16 +212,17 @@ namespace notifier {
 							}
 
 							if (Settings.Default.PrivacyNotification == (int)Notification.Privacy.None) {
-								UI.notifyIcon.ShowBalloonTip(450, from, message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : Translation.newUnreadMessage, ToolTipIcon.Info);
+								UI.NotificationService.Tip(from, message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : Translation.newUnreadMessage);
+
 							} else if (Settings.Default.PrivacyNotification == (int)Notification.Privacy.Short) {
-								UI.notifyIcon.ShowBalloonTip(450, from, subject, ToolTipIcon.Info);
+								UI.NotificationService.Tip(from, subject);
 							}
 						} else {
-							UI.notifyIcon.ShowBalloonTip(450, Box.ThreadsUnread.ToString() + " " + (Box.ThreadsUnread > 1 ? Translation.unreadMessages : Translation.unreadMessage), Translation.newUnreadMessage, ToolTipIcon.Info);
+							UI.NotificationService.Tip(Box.ThreadsUnread.ToString() + " " + (Box.ThreadsUnread > 1 ? Translation.unreadMessages : Translation.unreadMessage), Translation.newUnreadMessage);
 						}
 
-						// manages the balloon tip click event handler: we store the "notification tag" to allow the user to directly display the specified view (inbox/message/spam) in a browser
-						UI.notifyIcon.Tag = "#inbox" + (Box.ThreadsUnread == 1 ? "/" + message.Id : "");
+						// updates the notification tag to allow the user to directly display the specified view (inbox/message/spam) in a browser
+						UI.NotificationService.Tag = "#inbox" + (Box.ThreadsUnread == 1 ? "/" + message.Id : "");
 					}
 
 					// displays the notification text
@@ -246,7 +249,7 @@ namespace notifier {
 				// displays a balloon tip in the systray with the detailed error message
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.syncError;
-				UI.notifyIcon.ShowBalloonTip(1500, Translation.error, Translation.syncErrorOccured + exception.Message, ToolTipIcon.Warning);
+				UI.NotificationService.Tip(Translation.error, Translation.syncErrorOccured + exception.Message, Notification.Type.Warning, 1500);
 			} finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", SyncTime.ToLongTimeString());
 			}
@@ -292,8 +295,8 @@ namespace notifier {
 				UI.notifyIcon.Icon = Resources.normal;
 				UI.notifyIcon.Text = Translation.noMessage;
 
-				// restores the default tag
-				UI.notifyIcon.Tag = null;
+				// cleans the tag
+				UI.NotificationService.Tag = null;
 
 				// disables the mark as read menu item
 				UI.menuItemMarkAsRead.Text = Translation.markAsRead;
@@ -307,7 +310,7 @@ namespace notifier {
 				// displays a balloon tip in the systray with the detailed error message
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.markAsReadError;
-				UI.notifyIcon.ShowBalloonTip(1500, Translation.error, Translation.markAsReadErrorOccured + exception.Message, ToolTipIcon.Warning);
+				UI.NotificationService.Tip(Translation.error, Translation.markAsReadErrorOccured + exception.Message, Notification.Type.Warning, 1500);
 			} finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", SyncTime.ToLongTimeString());
 			}
@@ -333,19 +336,25 @@ namespace notifier {
 			// displays the user choice
 			item.Checked = true;
 
+			// infinite variable
+			bool infinite = delay == 0;
+
 			// disables the timer if the delay is set to "infinite"
-			UI.timer.Enabled = delay != 0;
+			UI.timer.Enabled = !infinite;
 
-			// applies "1" if the delay is set to "infinite" because the timer delay attribute does not support "0"
-			UI.timer.Interval = delay != 0 ? delay : 1;
+			// applies "1" if the delay is set to "infinite" because the timer interval attribute does not support "0"
+			UI.timer.Interval = !infinite ? delay : 1;
 
-			// restores the default tag
-			UI.notifyIcon.Tag = null;
+			// indicates if the notification service is paused (delay different from the default user synchronization interval)
+			UI.NotificationService.Paused = delay != Settings.Default.TimerInterval;
+
+			// cleans the tag
+			UI.NotificationService.Tag = null;
 
 			// updates the systray icon and text
-			if (delay != Settings.Default.TimerInterval) {
+			if (UI.NotificationService.Paused) {
 				UI.notifyIcon.Icon = Resources.timeout;
-				UI.notifyIcon.Text = Translation.timeout + " - " + (delay != 0 ? DateTime.Now.AddMilliseconds(delay).ToShortTimeString() : "∞");
+				UI.notifyIcon.Text = Translation.timeout + " - " + (!infinite ? DateTime.Now.AddMilliseconds(delay).ToShortTimeString() : "∞");
 			} else {
 				Sync();
 			}

@@ -56,7 +56,7 @@ namespace notifier {
 					}
 
 					// syncs the inbox when a network interface is available and the timeout mode is disabled
-					if (UI.timer.Interval == Settings.Default.TimerInterval) {
+					if (!UI.NotificationService.Paused) {
 						UI.GmailService.Inbox.Sync();
 					}
 
@@ -75,7 +75,7 @@ namespace notifier {
 				} else if (target.Mode == PowerModes.Resume) {
 
 					// do nothing if the timeout mode is set to infinite
-					if (UI.timer.Interval != Settings.Default.TimerInterval && UI.menuItemTimeoutIndefinitely.Checked) {
+					if (UI.NotificationService.Paused && UI.menuItemTimeoutIndefinitely.Checked) {
 						return;
 					}
 
@@ -94,7 +94,7 @@ namespace notifier {
 				if (target.Reason == SessionSwitchReason.SessionUnlock) {
 
 					// do nothing if the timeout mode is set to infinite
-					if (UI.timer.Interval != Settings.Default.TimerInterval && UI.menuItemTimeoutIndefinitely.Checked) {
+					if (UI.NotificationService.Paused && UI.menuItemTimeoutIndefinitely.Checked) {
 						return;
 					}
 

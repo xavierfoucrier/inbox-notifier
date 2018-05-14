@@ -18,6 +18,9 @@ namespace notifier {
 		// gmail service class
 		internal Gmail GmailService;
 
+		// gmail service class
+		internal Notification NotificationService;
+
 		/// <summary>
 		/// Initializes the class
 		/// </summary>
@@ -31,6 +34,7 @@ namespace notifier {
 			UpdateService = new Update(ref ui);
 			ComputerService = new Computer(ref ui);
 			GmailService = new Gmail(ref ui);
+			NotificationService = new Notification(ref ui);
 		}
 
 		/// <summary>
@@ -55,7 +59,7 @@ namespace notifier {
 
 			// displays a systray notification on first load
 			if (Settings.Default.FirstLoad && !Directory.Exists(Core.GetApplicationDataFolder())) {
-				notifyIcon.ShowBalloonTip(7000, Translation.welcome, Translation.firstLoad, ToolTipIcon.Info);
+				NotificationService.Tip(Translation.welcome, Translation.firstLoad, Notification.Type.Info, 7000);
 
 				// switches the first load state
 				Settings.Default.FirstLoad = false;
@@ -440,13 +444,7 @@ namespace notifier {
 		/// </summary>
 		private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
 			if (e.Button == MouseButtons.Left) {
-
-				// by default, always open the gmail inbox in a browser
-				if (notifyIcon.Tag == null) {
-					Process.Start(Settings.Default.GMAIL_BASEURL + "/#inbox");
-				} else {
-					NotifyIconInteraction();
-				}
+				NotificationService.Interaction();
 			}
 		}
 
@@ -458,38 +456,7 @@ namespace notifier {
 				return;
 			}
 
-			NotifyIconInteraction(true);
-		}
-
-		/// <summary>
-		/// Do the gmail specified action (inbox/message/spam) in a browser
-		/// </summary>
-		/// <param name="systray">Defines if the interaction is provided by the balloon tip</param>
-		private void NotifyIconInteraction(bool balloon = false) {
-
-			// do nothing if there is no tag or if the notification behavior is set to "do nothing"
-			if (notifyIcon.Tag == null || (balloon && Settings.Default.NotificationBehavior == 0)) {
-				return;
-			}
-
-			// opens a browser
-			Process.Start(Settings.Default.GMAIL_BASEURL + "/" + notifyIcon.Tag);
-			notifyIcon.Tag = null;
-
-			// restores the default systray icon and text: pretends that the user had read all his mail, except if the timeout option is activated
-			if (timer.Interval == Settings.Default.TimerInterval) {
-
-				// updates the synchronization time
-				GmailService.Inbox.SetSyncTime(DateTime.Now);
-
-				// restores the default systray icon and text
-				notifyIcon.Icon = Resources.normal;
-				notifyIcon.Text = Translation.noMessage + "\n" + Translation.syncTime.Replace("{time}", GmailService.Inbox.GetSyncTime().ToLongTimeString());
-
-				// disables the mark as read menu item
-				menuItemMarkAsRead.Text = Translation.markAsRead;
-				menuItemMarkAsRead.Enabled = false;
-			}
+			NotificationService.Interaction(true);
 		}
 
 		/// <summary>
@@ -498,7 +465,7 @@ namespace notifier {
 		private void Timer_Tick(object sender, EventArgs e) {
 
 			// restores the timer interval when the timeout time has elapsed
-			if (timer.Interval != Settings.Default.TimerInterval) {
+			if (NotificationService.Paused) {
 				GmailService.Inbox.Timeout(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
 
 				return;
