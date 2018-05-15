@@ -379,42 +379,42 @@ namespace notifier {
 		/// Manages the context menu TimeoutDisabled item
 		/// </summary>
 		private void MenuItemTimeoutDisabled_Click(object sender, EventArgs e) {
-			GmailService.Inbox.Timeout((MenuItem)sender, Settings.Default.TimerInterval);
+			NotificationService.Resume((MenuItem)sender);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout30m item
 		/// </summary>
 		private void MenuItemTimeout30m_Click(object sender, EventArgs e) {
-			GmailService.Inbox.Timeout((MenuItem)sender, 1000 * 60 * 30);
+			NotificationService.Pause((MenuItem)sender, 1000 * 60 * 30);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout1h item
 		/// </summary>
 		private void MenuItemTimeout1h_Click(object sender, EventArgs e) {
-			GmailService.Inbox.Timeout((MenuItem)sender, 1000 * 60 * 60);
+			NotificationService.Pause((MenuItem)sender, 1000 * 60 * 60);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout2h item
 		/// </summary>
 		private void MenuItemTimeout2h_Click(object sender, EventArgs e) {
-			GmailService.Inbox.Timeout((MenuItem)sender, 1000 * 60 * 60 * 2);
+			NotificationService.Pause((MenuItem)sender, 1000 * 60 * 60 * 2);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout5h item
 		/// </summary>
 		private void MenuItemTimeout5h_Click(object sender, EventArgs e) {
-			GmailService.Inbox.Timeout((MenuItem)sender, 1000 * 60 * 60 * 5);
+			NotificationService.Pause((MenuItem)sender, 1000 * 60 * 60 * 5);
 		}
 
 		/// <summary>
 		/// Manages the context menu TimeoutIndefinitely item
 		/// </summary>
 		private void MenuItemTimeoutIndefinitely_Click(object sender, EventArgs e) {
-			GmailService.Inbox.Timeout((MenuItem)sender, 0);
+			NotificationService.Pause((MenuItem)sender, 0);
 		}
 
 		/// <summary>
@@ -466,7 +466,7 @@ namespace notifier {
 
 			// restores the timer interval when the timeout time has elapsed
 			if (NotificationService.Paused) {
-				GmailService.Inbox.Timeout(menuItemTimeoutDisabled, Settings.Default.TimerInterval);
+				NotificationService.Resume(menuItemTimeoutDisabled);
 
 				return;
 			}

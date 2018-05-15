@@ -91,7 +91,7 @@ namespace notifier {
 
 			// disables the timeout when the user do a manual synchronization
 			if (UI.NotificationService.Paused) {
-				Timeout(UI.menuItemTimeoutDisabled, Settings.Default.TimerInterval);
+				UI.NotificationService.Resume(UI.menuItemTimeoutDisabled);
 
 				// exits the method because the timeout function automatically restarts a synchronization once it has been disabled
 				return;
@@ -314,50 +314,6 @@ namespace notifier {
 				UI.NotificationService.Tip(Translation.error, Translation.markAsReadErrorOccured + exception.Message, Notification.Type.Warning, 1500);
 			} finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
-			}
-		}
-
-		/// <summary>
-		/// Delays the inbox sync during a certain time
-		/// </summary>
-		/// <param name="item">Item selected in the menu</param>
-		/// <param name="delay">Delay until the next inbox sync, 0 means "infinite" timeout</param>
-		public void Timeout(MenuItem item, int delay) {
-
-			// exits if the selected menu item is already checked
-			if (item.Checked) {
-				return;
-			}
-
-			// unchecks all menu items
-			foreach (MenuItem i in UI.menuItemTimout.MenuItems) {
-				i.Checked = false;
-			}
-
-			// displays the user choice
-			item.Checked = true;
-
-			// infinite variable
-			bool infinite = delay == 0;
-
-			// disables the timer if the delay is set to "infinite"
-			UI.timer.Enabled = !infinite;
-
-			// applies "1" if the delay is set to "infinite" because the timer interval attribute does not support "0"
-			UI.timer.Interval = infinite ? 1 : delay;
-
-			// indicates if the notification service is paused (delay different from the default user synchronization interval)
-			UI.NotificationService.Paused = delay != Settings.Default.TimerInterval;
-
-			// cleans the tag
-			UI.NotificationService.Tag = null;
-
-			// updates the systray icon and text
-			if (UI.NotificationService.Paused) {
-				UI.notifyIcon.Icon = Resources.timeout;
-				UI.notifyIcon.Text = Translation.timeout + " - " + (infinite ? "∞" : DateTime.Now.AddMilliseconds(delay).ToShortTimeString());
-			} else {
-				Sync();
 			}
 		}
 

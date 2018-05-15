@@ -101,6 +101,25 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Pauses the notifications during a certain time
+		/// </summary>
+		/// <param name="item">Selected item in the timeout menu</param>
+		/// <param name="delay">Delay until the next inbox sync, 0 means "infinite" timeout</param>
+		public void Pause(MenuItem item, int delay) {
+			Paused = true;
+			Timeout(ref item, delay);
+		}
+
+		/// <summary>
+		/// Resumes notifications
+		/// </summary>
+		/// <param name="item">Selected item in the timeout menu</param>
+		public void Resume(MenuItem item) {
+			Paused = false;
+			Timeout(ref item, Settings.Default.TimerInterval);
+		}
+
+		/// <summary>
 		/// Notification tag to allow the user to directly display the specified view (inbox/message/spam) in a browser
 		/// </summary>
 		/// <returns>The current notification tag</returns>
@@ -114,6 +133,47 @@ namespace notifier {
 		/// <returns>Indicates if the notification service is paused</returns>
 		public bool Paused {
 			get; set;
+		}
+
+		/// <summary>
+		/// Delays the notifications during a certain time
+		/// </summary>
+		/// <param name="item">Item selected in the menu</param>
+		/// <param name="delay">Delay until the next inbox sync, 0 means "infinite" timeout</param>
+		private void Timeout(ref MenuItem item, int delay) {
+
+			// exits if the selected menu item is already checked
+			if (item.Checked) {
+				return;
+			}
+
+			// unchecks all menu items
+			foreach (MenuItem i in UI.menuItemTimout.MenuItems) {
+				i.Checked = false;
+			}
+
+			// displays the user choice
+			item.Checked = true;
+
+			// infinite variable
+			bool infinite = delay == 0;
+
+			// disables the timer if the delay is set to "infinite"
+			UI.timer.Enabled = !infinite;
+
+			// applies "1" if the delay is set to "infinite" because the timer interval attribute does not support "0"
+			UI.timer.Interval = infinite ? 1 : delay;
+
+			// cleans the tag
+			Tag = null;
+
+			// updates the systray icon and text
+			if (Paused) {
+				UI.notifyIcon.Icon = Resources.timeout;
+				UI.notifyIcon.Text = Translation.timeout + " - " + (infinite ? "∞" : DateTime.Now.AddMilliseconds(delay).ToShortTimeString());
+			} else {
+				UI.GmailService.Inbox.Sync();
+			}
 		}
 	}
 }
