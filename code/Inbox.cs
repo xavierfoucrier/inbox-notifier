@@ -90,10 +90,9 @@ namespace notifier {
 			}
 
 			// disables the timeout when the user do a manual synchronization
-			if (UI.NotificationService.Paused) {
-				UI.NotificationService.Resume(UI.menuItemTimeoutDisabled);
+			if (manual && UI.NotificationService.Paused) {
+				UI.NotificationService.Resume();
 
-				// exits the method because the timeout function automatically restarts a synchronization once it has been disabled
 				return;
 			}
 

@@ -106,46 +106,17 @@ namespace notifier {
 		/// <param name="item">Selected item in the timeout menu</param>
 		/// <param name="delay">Delay until the next inbox sync, 0 means "infinite" timeout</param>
 		public void Pause(MenuItem item, int delay) {
-			Paused = true;
-			Timeout(ref item, delay);
-		}
-
-		/// <summary>
-		/// Resumes notifications
-		/// </summary>
-		/// <param name="item">Selected item in the timeout menu</param>
-		public void Resume(MenuItem item) {
-			Paused = false;
-			Timeout(ref item, Settings.Default.TimerInterval);
-		}
-
-		/// <summary>
-		/// Notification tag to allow the user to directly display the specified view (inbox/message/spam) in a browser
-		/// </summary>
-		/// <returns>The current notification tag</returns>
-		public string Tag {
-			get; set;
-		}
-
-		/// <summary>
-		/// Timeout mode
-		/// </summary>
-		/// <returns>Indicates if the notification service is paused</returns>
-		public bool Paused {
-			get; set;
-		}
-
-		/// <summary>
-		/// Delays the notifications during a certain time
-		/// </summary>
-		/// <param name="item">Item selected in the menu</param>
-		/// <param name="delay">Delay until the next inbox sync, 0 means "infinite" timeout</param>
-		private void Timeout(ref MenuItem item, int delay) {
 
 			// exits if the selected menu item is already checked
 			if (item.Checked) {
 				return;
 			}
+
+			// disables notifications
+			Paused = true;
+
+			// cleans the tag
+			Tag = null;
 
 			// unchecks all menu items
 			foreach (MenuItem i in UI.menuItemTimout.MenuItems) {
@@ -164,16 +135,56 @@ namespace notifier {
 			// applies "1" if the delay is set to "infinite" because the timer interval attribute does not support "0"
 			UI.timer.Interval = infinite ? 1 : delay;
 
-			// cleans the tag
-			Tag = null;
-
 			// updates the systray icon and text
-			if (Paused) {
-				UI.notifyIcon.Icon = Resources.timeout;
-				UI.notifyIcon.Text = Translation.timeout + " - " + (infinite ? "∞" : DateTime.Now.AddMilliseconds(delay).ToShortTimeString());
-			} else {
-				UI.GmailService.Inbox.Sync();
+			UI.notifyIcon.Icon = Resources.timeout;
+			UI.notifyIcon.Text = Translation.timeout + " - " + (infinite ? "∞" : DateTime.Now.AddMilliseconds(delay).ToShortTimeString());
+		}
+
+		/// <summary>
+		/// Resumes notifications
+		/// </summary>
+		public void Resume() {
+
+			// exits if the selected menu item is already checked
+			if (UI.menuItemTimeoutDisabled.Checked) {
+				return;
 			}
+
+			// enables notifications
+			Paused = false;
+
+			// unchecks all menu items
+			foreach (MenuItem i in UI.menuItemTimout.MenuItems) {
+				i.Checked = false;
+			}
+
+			// displays the user choice
+			UI.menuItemTimeoutDisabled.Checked = true;
+
+			// restores the timer interval
+			UI.timer.Interval = Settings.Default.TimerInterval;
+
+			// enables the timer: this will automatically trigger the inbox synchronization in the timer tick
+			UI.timer.Enabled = true;
+
+			// synchronizes the inbox
+			UI.GmailService.Inbox.Sync();
+		}
+
+		/// <summary>
+		/// Notification tag to allow the user to directly display the specified view (inbox/message/spam) in a browser
+		/// </summary>
+		/// <returns>The current notification tag</returns>
+		public string Tag {
+			get; set;
+		}
+
+		/// <summary>
+		/// Timeout mode
+		/// </summary>
+		/// <returns>Indicates if the notification service is paused</returns>
+		public bool Paused {
+			get; set;
 		}
 	}
 }

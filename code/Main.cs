@@ -379,7 +379,7 @@ namespace notifier {
 		/// Manages the context menu TimeoutDisabled item
 		/// </summary>
 		private void MenuItemTimeoutDisabled_Click(object sender, EventArgs e) {
-			NotificationService.Resume((MenuItem)sender);
+			NotificationService.Resume();
 		}
 
 		/// <summary>
@@ -466,7 +466,7 @@ namespace notifier {
 
 			// restores the timer interval when the timeout time has elapsed
 			if (NotificationService.Paused) {
-				NotificationService.Resume(menuItemTimeoutDisabled);
+				NotificationService.Resume();
 
 				return;
 			}
