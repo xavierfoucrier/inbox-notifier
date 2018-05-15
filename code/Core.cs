@@ -5,6 +5,8 @@ using System.Windows.Forms;
 namespace notifier {
 	static class Core {
 
+		#region #attributes
+
 		/// <summary>
 		/// Local application data folder name
 		/// </summary>
@@ -34,6 +36,10 @@ namespace notifier {
 		/// Build version number
 		/// </summary>
 		private static string VersionBuild = "";
+
+		#endregion
+
+		#region #methods
 
 		/// <summary>
 		/// Class constructor
@@ -83,5 +89,11 @@ namespace notifier {
 		public static string GetVersion() {
 			return Version;
 		}
+
+		#endregion
+
+		#region #accessors
+
+		#endregion
 	}
 }

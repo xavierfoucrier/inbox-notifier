@@ -9,10 +9,16 @@ using notifier.Properties;
 namespace notifier {
 	static class Program {
 
+		#region #attributes
+
 		/// <summary>
 		/// Mutex associated to the application instance
 		/// </summary>
 		static Mutex mutex = new Mutex(true, "gmailnotifier-115e363ecbfefd771e55c6874680bc0a");
+
+		#endregion
+
+		#region #methods
 
 		[STAThread]
 		static void Main(string[] args) {
@@ -79,5 +85,11 @@ namespace notifier {
 			// releases the mutex instance
 			mutex.ReleaseMutex();
 		}
+
+		#endregion
+
+		#region #accessors
+
+		#endregion
 	}
 }

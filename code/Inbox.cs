@@ -15,6 +15,8 @@ using notifier.Properties;
 namespace notifier {
 	class Inbox {
 
+		#region #attributes
+
 		/// <summary>
 		/// Last synchronization time
 		/// </summary>
@@ -49,6 +51,10 @@ namespace notifier {
 		/// Reference to the main interface
 		/// </summary>
 		private Main UI;
+
+		#endregion
+
+		#region #methods
 
 		/// <summary>
 		/// Class constructor
@@ -409,5 +415,11 @@ namespace notifier {
 				// nothing to catch
 			}
 		}
+
+		#endregion
+
+		#region #accessors
+
+		#endregion
 	}
 }

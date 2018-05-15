@@ -7,6 +7,8 @@ using notifier.Properties;
 namespace notifier {
 	class Notification {
 
+		#region #attributes
+
 		/// <summary>
 		/// Privacy possibilities
 		/// </summary>
@@ -39,6 +41,10 @@ namespace notifier {
 		/// </summary>
 		private Main UI;
 
+		#endregion
+
+		#region #methods
+
 		/// <summary>
 		/// Class constructor
 		/// </summary>
@@ -69,7 +75,7 @@ namespace notifier {
 				if (!balloon) {
 					Process.Start(Settings.Default.GMAIL_BASEURL + "/#inbox");
 				}
-				
+
 				return;
 			}
 
@@ -171,11 +177,16 @@ namespace notifier {
 			UI.GmailService.Inbox.Sync();
 		}
 
+		#endregion
+
+		#region #accessors
+
 		/// <summary>
 		/// Notification tag to allow the user to directly display the specified view (inbox/message/spam) in a browser
 		/// </summary>
 		/// <returns>The current notification tag</returns>
-		public string Tag {
+		public string Tag
+		{
 			get; set;
 		}
 
@@ -183,8 +194,11 @@ namespace notifier {
 		/// Timeout mode
 		/// </summary>
 		/// <returns>Indicates if the notification service is paused</returns>
-		public bool Paused {
+		public bool Paused
+		{
 			get; set;
 		}
+
+		#endregion
 	}
 }

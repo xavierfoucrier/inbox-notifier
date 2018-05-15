@@ -8,6 +8,8 @@ using notifier.Properties;
 namespace notifier {
 	class Computer {
 
+		#region #attributes
+
 		/// <summary>
 		/// Registration possibilities
 		/// </summary>
@@ -20,6 +22,10 @@ namespace notifier {
 		/// Reference to the main interface
 		/// </summary>
 		private Main UI;
+
+		#endregion
+
+		#region #methods
 
 		/// <summary>
 		/// Class constructor
@@ -132,5 +138,11 @@ namespace notifier {
 				}
 			}
 		}
+
+		#endregion
+
+		#region #accessors
+
+		#endregion
 	}
 }

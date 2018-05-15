@@ -14,6 +14,8 @@ using notifier.Properties;
 namespace notifier {
 	class Update {
 
+		#region #attributes
+
 		/// <summary>
 		/// Update period possibilities
 		/// </summary>
@@ -38,6 +40,10 @@ namespace notifier {
 		/// Reference to the main interface
 		/// </summary>
 		private Main UI;
+
+		#endregion
+
+		#region #methods
 
 		/// <summary>
 		/// Class constructor
@@ -236,5 +242,11 @@ namespace notifier {
 				UI.GmailService.Inbox.Sync();
 			}
 		}
+
+		#endregion
+
+		#region #accessors
+
+		#endregion
 	}
 }
