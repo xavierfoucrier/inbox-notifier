@@ -187,7 +187,7 @@ namespace notifier {
 		/// <returns>The current notification tag</returns>
 		public string Tag {
 			get; set;
-		}
+		} = null;
 
 		/// <summary>
 		/// Timeout mode
@@ -195,7 +195,7 @@ namespace notifier {
 		/// <returns>Indicates if the notification service is paused</returns>
 		public bool Paused {
 			get; set;
-		}
+		} = false;
 
 		#endregion
 	}
