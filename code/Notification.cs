@@ -184,15 +184,13 @@ namespace notifier {
 		/// <summary>
 		/// Notification tag to allow the user to directly display the specified view (inbox/message/spam) in a browser
 		/// </summary>
-		/// <returns>The current notification tag</returns>
 		public string Tag {
 			get; set;
 		} = null;
 
 		/// <summary>
-		/// Timeout mode
+		/// Timeout mode that indicates if the notification service is paused
 		/// </summary>
-		/// <returns>Indicates if the notification service is paused</returns>
 		public bool Paused {
 			get; set;
 		} = false;
