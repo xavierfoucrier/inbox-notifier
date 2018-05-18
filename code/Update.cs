@@ -27,11 +27,6 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Flag defining the update state
-		/// </summary>
-		private bool Updating = false;
-
-		/// <summary>
 		/// Http client used to check for updates
 		/// </summary>
 		private HttpClient Http = new HttpClient();
@@ -51,14 +46,6 @@ namespace notifier {
 		/// <param name="form">Reference to the application main window</param>
 		public Update(ref Main form) {
 			UI = form;
-		}
-
-		/// <summary>
-		/// Gets the updating state
-		/// </summary>
-		/// <returns>Indicates if the update service is currently updating</returns>
-		public bool IsUpdating() {
-			return Updating;
 		}
 
 		/// <summary>
@@ -246,6 +233,13 @@ namespace notifier {
 		#endregion
 
 		#region #accessors
+
+		/// <summary>
+		/// Flag defining if the update service is currently updating
+		/// </summary>
+		public bool Updating {
+			get; set;
+		} = false;
 
 		#endregion
 	}

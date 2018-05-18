@@ -82,7 +82,7 @@ namespace notifier {
 		public async void Sync(bool manual = true, bool token = false) {
 
 			// prevents the application from syncing the inbox when updating
-			if (UI.UpdateService.IsUpdating()) {
+			if (UI.UpdateService.Updating) {
 				return;
 			}
 
