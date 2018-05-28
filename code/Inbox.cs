@@ -396,24 +396,20 @@ namespace notifier {
 		/// Asynchronous method used to get account statistics
 		/// </summary>
 		private async void UpdateStatistics() {
-			try {
-				UI.labelTotalUnreadMails.Text = Box.ThreadsUnread.ToString();
-				UI.labelTotalMails.Text = Box.ThreadsTotal.ToString();
+			UI.labelTotalUnreadMails.Text = Box.ThreadsUnread.ToString();
+			UI.labelTotalMails.Text = Box.ThreadsTotal.ToString();
 
-				ListDraftsResponse drafts = await Api.Users.Drafts.List("me").ExecuteAsync();
-				ListLabelsResponse labels = await Api.Users.Labels.List("me").ExecuteAsync();
+			ListDraftsResponse drafts = await Api.Users.Drafts.List("me").ExecuteAsync();
+			ListLabelsResponse labels = await Api.Users.Labels.List("me").ExecuteAsync();
 
-				if (drafts.Drafts != null) {
-					UI.labelTotalDrafts.Text = drafts.Drafts.Count.ToString();
-				}
-
-				if (labels.Labels != null) {
-					UI.labelTotalLabels.Text = labels.Labels.Count.ToString();
-				}
-			} catch (Exception) {
-				// nothing to catch
+			if (drafts.Drafts != null) {
+				UI.labelTotalDrafts.Text = drafts.Drafts.Count.ToString();
 			}
-		}
+
+			if (labels.Labels != null) {
+				UI.labelTotalLabels.Text = labels.Labels.Count.ToString();
+			}
+	}
 
 		#endregion
 
