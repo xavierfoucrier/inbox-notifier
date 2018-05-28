@@ -17,24 +17,9 @@ namespace notifier {
 		#region #attributes
 
 		/// <summary>
-		/// Last synchronization time
-		/// </summary>
-		public DateTime Time = DateTime.Now;
-
-		/// <summary>
-		/// Number of automatic reconnection attempts
-		/// </summary>
-		public uint ReconnectionAttempts = 0;
-
-		/// <summary>
 		/// Gmail api service
 		/// </summary>
 		private GmailService Api;
-
-		/// <summary>
-		/// Gmail address
-		/// </summary>
-		private string EmailAddress;
 
 		/// <summary>
 		/// Main inbox label
@@ -385,14 +370,6 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Gets the gmail email address
-		/// </summary>
-		/// <returns>Gmail email address</returns>
-		public string GetEmailAddress() {
-			return EmailAddress;
-		}
-
-		/// <summary>
 		/// Asynchronous method used to get account statistics
 		/// </summary>
 		private async void UpdateStatistics() {
@@ -414,6 +391,27 @@ namespace notifier {
 		#endregion
 
 		#region #accessors
+
+		/// <summary>
+		/// Last synchronization time
+		/// </summary>
+		public DateTime Time {
+			get; set;
+		} = DateTime.Now;
+
+		/// <summary>
+		/// Gmail email address
+		/// </summary>
+		public string EmailAddress {
+			get; set;
+		}
+
+		/// <summary>
+		/// Number of automatic reconnection attempts
+		/// </summary>
+		public uint ReconnectionAttempts {
+			get; set;
+		} = 0;
 
 		#endregion
 	}

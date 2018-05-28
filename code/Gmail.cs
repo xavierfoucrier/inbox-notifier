@@ -55,7 +55,7 @@ namespace notifier {
 				Inbox = new Inbox(ref UI, ref Credential);
 
 				// displays the user email address
-				UI.labelEmailAddress.Text = Inbox.GetEmailAddress();
+				UI.labelEmailAddress.Text = Inbox.EmailAddress;
 				UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
 			} catch (Exception) {
 
