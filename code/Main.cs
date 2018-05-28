@@ -58,7 +58,7 @@ namespace notifier {
 			}
 
 			// displays a systray notification on first load
-			if (Settings.Default.FirstLoad && !Directory.Exists(Core.GetApplicationDataFolder())) {
+			if (Settings.Default.FirstLoad && !Directory.Exists(Core.ApplicationDataFolder)) {
 				NotificationService.Tip(Translation.welcome, Translation.firstLoad, Notification.Type.Info, 7000);
 
 				// switches the first load state
@@ -134,14 +134,14 @@ namespace notifier {
 			labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
 
 			// displays the product version
-			linkVersion.Text = Core.GetVersion().Substring(1);
+			linkVersion.Text = Core.Version.Substring(1);
 
 			// positioning the check for update link
 			linkCheckForUpdate.Left = linkVersion.Right + 2;
 
 			// displays a tooltip for the product version
 			ToolTip tipTag = new ToolTip();
-			tipTag.SetToolTip(linkVersion, Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.GetVersion());
+			tipTag.SetToolTip(linkVersion, Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.Version);
 			tipTag.ToolTipTitle = Translation.tipReleaseNotes;
 			tipTag.ToolTipIcon = ToolTipIcon.Info;
 			tipTag.IsBalloon = false;
@@ -289,7 +289,7 @@ namespace notifier {
 		/// Opens the Github release section of the current build
 		/// </summary>
 		private void LinkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.GetVersion());
+			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.Version);
 		}
 
 		/// <summary>
@@ -485,8 +485,8 @@ namespace notifier {
 			}
 
 			// deletes the local application data folder and the client token file
-			if (Directory.Exists(Core.GetApplicationDataFolder())) {
-				Directory.Delete(Core.GetApplicationDataFolder(), true);
+			if (Directory.Exists(Core.ApplicationDataFolder)) {
+				Directory.Delete(Core.ApplicationDataFolder, true);
 			}
 
 			// restarts the application

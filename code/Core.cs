@@ -8,16 +8,6 @@ namespace notifier {
 		#region #attributes
 
 		/// <summary>
-		/// Local application data folder name
-		/// </summary>
-		private static string ApplicationDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
-
-		/// <summary>
-		/// Version number
-		/// </summary>
-		private static string Version = "";
-
-		/// <summary>
 		/// Major version number
 		/// </summary>
 		private static string VersionMajor = "";
@@ -74,25 +64,23 @@ namespace notifier {
 			Application.Exit();
 		}
 
-		/// <summary>
-		/// Gets the application data folder path
-		/// </summary>
-		/// <returns>The application data folder path</returns>
-		public static string GetApplicationDataFolder() {
-			return ApplicationDataFolder;
-		}
-
-		/// <summary>
-		/// Gets the full application version number
-		/// </summary>
-		/// <returns>The full application version number, like v1.6.0.0</returns>
-		public static string GetVersion() {
-			return Version;
-		}
-
 		#endregion
 
 		#region #accessors
+
+		/// <summary>
+		/// Local application data folder name
+		/// </summary>
+		public static string ApplicationDataFolder {
+			get; set;
+		} = "";
+
+		/// <summary>
+		/// Full application version number
+		/// </summary>
+		public static string Version {
+			get; set;
+		} = "";
 
 		#endregion
 	}

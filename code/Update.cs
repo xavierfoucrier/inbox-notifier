@@ -60,11 +60,11 @@ namespace notifier {
 		/// Deletes the setup installer package from the local application data folder
 		/// </summary>
 		public void DeleteSetupPackage() {
-			if (!Directory.Exists(Core.GetApplicationDataFolder())) {
+			if (!Directory.Exists(Core.ApplicationDataFolder)) {
 				return;
 			}
 
-			IEnumerable<string> executables = Directory.EnumerateFiles(Core.GetApplicationDataFolder(), "*.exe", SearchOption.TopDirectoryOnly);
+			IEnumerable<string> executables = Directory.EnumerateFiles(Core.ApplicationDataFolder, "*.exe", SearchOption.TopDirectoryOnly);
 
 			foreach (string executable in executables) {
 				try {
@@ -133,7 +133,7 @@ namespace notifier {
 				string release = tags.First();
 
 				// the current version tag is not at the top of the list
-				if (release != Core.GetVersion()) {
+				if (release != Core.Version) {
 
 					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
 					if (verbose) {
@@ -185,7 +185,7 @@ namespace notifier {
 
 			// defines the new number version and temp path
 			string newversion = release.Split('-')[0].Substring(1);
-			string updatepath = Core.GetApplicationDataFolder() + "/gmnupdate-" + newversion + ".exe";
+			string updatepath = Core.ApplicationDataFolder + "/gmnupdate-" + newversion + ".exe";
 			string package = Settings.Default.GITHUB_REPOSITORY + "/releases/download/" + release + "/Gmail.Notifier." + newversion + ".exe";
 
 			try {

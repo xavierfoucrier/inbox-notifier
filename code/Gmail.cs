@@ -60,7 +60,7 @@ namespace notifier {
 			} catch (Exception) {
 
 				// exits the application if the google api token file doesn't exists
-				if (!Directory.Exists(Core.GetApplicationDataFolder()) || !Directory.EnumerateFiles(Core.GetApplicationDataFolder()).Any()) {
+				if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {
 
 					// displays the authentication icon and text
 					UI.notifyIcon.Icon = Resources.authentication;
@@ -121,7 +121,7 @@ namespace notifier {
 					new string[] { GmailService.Scope.GmailModify },
 					"user",
 					cancellation.Token,
-					new FileDataStore(Core.GetApplicationDataFolder(), true)
+					new FileDataStore(Core.ApplicationDataFolder, true)
 				);
 
 				// returns the user credential
