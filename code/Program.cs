@@ -14,7 +14,7 @@ namespace notifier {
 		/// <summary>
 		/// Mutex associated to the application instance
 		/// </summary>
-		static Mutex mutex = new Mutex(true, "gmailnotifier-115e363ecbfefd771e55c6874680bc0a");
+		static Mutex Mutex = new Mutex(true, "gmailnotifier-115e363ecbfefd771e55c6874680bc0a");
 
 		#endregion
 
@@ -64,7 +64,7 @@ namespace notifier {
 			}
 
 			// check if there is an instance running
-			if (!mutex.WaitOne(TimeSpan.Zero, true)) {
+			if (!Mutex.WaitOne(TimeSpan.Zero, true)) {
 				MessageBox.Show(Translation.mutexError, Translation.multipleInstances, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 				return;
@@ -83,7 +83,7 @@ namespace notifier {
 			Application.Run(new Main());
 
 			// releases the mutex instance
-			mutex.ReleaseMutex();
+			Mutex.ReleaseMutex();
 		}
 
 		#endregion
