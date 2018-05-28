@@ -9,16 +9,24 @@ using notifier.Properties;
 namespace notifier {
 	public partial class Main : Form {
 
-		// update service class
+		/// <summary>
+		/// Update service class
+		/// </summary>
 		internal Update UpdateService;
 
-		// computer service class
+		/// <summary>
+		/// Computer service class
+		/// </summary>
 		internal Computer ComputerService;
 
-		// gmail service class
+		/// <summary>
+		/// Gmail service class
+		/// </summary>
 		internal Gmail GmailService;
 
-		// gmail service class
+		/// <summary>
+		/// Gmail service class
+		/// </summary>
 		internal Notification NotificationService;
 
 		/// <summary>
