@@ -196,11 +196,7 @@ namespace notifier {
 		/// Manages the RunAtWindowsStartup user setting
 		/// </summary>
 		private void FieldRunAtWindowsStartup_CheckedChanged(object sender, EventArgs e) {
-			if (fieldRunAtWindowsStartup.Checked) {
-				ComputerService.SetApplicationStartup(Computer.Registration.On);
-			} else {
-				ComputerService.SetApplicationStartup(Computer.Registration.Off);
-			}
+			ComputerService.SetApplicationStartup(fieldRunAtWindowsStartup.Checked ? Computer.Registration.On : Computer.Registration.Off);
 		}
 
 		/// <summary>
@@ -345,13 +341,14 @@ namespace notifier {
 		/// Closes the preferences when the Escape key is pressed
 		/// </summary>
 		private void Main_KeyUp(object sender, KeyEventArgs e) {
-			if (e.KeyCode == Keys.Escape) {
-				labelSettingsSaved.Visible = false;
-				WindowState = FormWindowState.Minimized;
-				ShowInTaskbar = false;
-				Visible = false;
+			if (e.KeyCode != Keys.Escape) {
 				return;
 			}
+
+			labelSettingsSaved.Visible = false;
+			WindowState = FormWindowState.Minimized;
+			ShowInTaskbar = false;
+			Visible = false;
 		}
 
 		/// <summary>
