@@ -73,7 +73,7 @@ namespace notifier {
 		/// </summary>
 		public static string ApplicationDataFolder {
 			get; set;
-		} = "";
+		} = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
 
 		/// <summary>
 		/// Full application version number
