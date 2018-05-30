@@ -74,14 +74,15 @@
 			this.fieldPrivacyNotificationShort = new System.Windows.Forms.RadioButton();
 			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
 			this.tabPageUpdate = new System.Windows.Forms.TabPage();
+			this.groupBox9 = new System.Windows.Forms.GroupBox();
+			this.buttonCheckForUpdate = new System.Windows.Forms.Button();
+			this.label7 = new System.Windows.Forms.Label();
+			this.fieldUpdatePeriod = new System.Windows.Forms.ComboBox();
+			this.labelUpdateControl = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
 			this.fieldUpdateQuiet = new System.Windows.Forms.CheckBox();
 			this.fieldUpdateDownload = new System.Windows.Forms.CheckBox();
-			this.buttonCheckForUpdate = new System.Windows.Forms.Button();
-			this.labelUpdateControl = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.fieldUpdatePeriod = new System.Windows.Forms.ComboBox();
-			this.label7 = new System.Windows.Forms.Label();
 			this.fieldUpdateService = new System.Windows.Forms.CheckBox();
 			this.tabPageAbout = new System.Windows.Forms.TabPage();
 			this.linkSoftpedia = new System.Windows.Forms.LinkLabel();
@@ -130,6 +131,7 @@
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).BeginInit();
 			this.tabPageUpdate.SuspendLayout();
+			this.groupBox9.SuspendLayout();
 			this.groupBox7.SuspendLayout();
 			this.tabPageAbout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).BeginInit();
@@ -137,8 +139,8 @@
 			// 
 			// separator
 			// 
-			this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			resources.ApplyResources(this.separator, "separator");
+			this.separator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.separator.Name = "separator";
 			// 
 			// buttonOK
@@ -150,39 +152,39 @@
 			// 
 			// tabControl
 			// 
+			resources.ApplyResources(this.tabControl, "tabControl");
 			this.tabControl.Controls.Add(this.tabPageGeneral);
 			this.tabControl.Controls.Add(this.tabPageAccount);
 			this.tabControl.Controls.Add(this.tabPageNotification);
 			this.tabControl.Controls.Add(this.tabPagePrivacy);
 			this.tabControl.Controls.Add(this.tabPageUpdate);
 			this.tabControl.Controls.Add(this.tabPageAbout);
-			resources.ApplyResources(this.tabControl, "tabControl");
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
 			this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabControl_Selecting);
 			// 
 			// tabPageGeneral
 			// 
+			resources.ApplyResources(this.tabPageGeneral, "tabPageGeneral");
 			this.tabPageGeneral.Controls.Add(this.groupBox5);
 			this.tabPageGeneral.Controls.Add(this.groupBox1);
-			resources.ApplyResources(this.tabPageGeneral, "tabPageGeneral");
 			this.tabPageGeneral.Name = "tabPageGeneral";
 			this.tabPageGeneral.UseVisualStyleBackColor = true;
 			// 
 			// groupBox5
 			// 
+			resources.ApplyResources(this.groupBox5, "groupBox5");
 			this.groupBox5.Controls.Add(this.linkRestartToApply);
 			this.groupBox5.Controls.Add(this.labelRestartToApply);
 			this.groupBox5.Controls.Add(this.fieldLanguage);
 			this.groupBox5.Controls.Add(this.label3);
-			resources.ApplyResources(this.groupBox5, "groupBox5");
 			this.groupBox5.Name = "groupBox5";
 			this.groupBox5.TabStop = false;
 			// 
 			// linkRestartToApply
 			// 
-			this.linkRestartToApply.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
 			resources.ApplyResources(this.linkRestartToApply, "linkRestartToApply");
+			this.linkRestartToApply.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
 			this.linkRestartToApply.LinkColor = System.Drawing.Color.RoyalBlue;
 			this.linkRestartToApply.Name = "linkRestartToApply";
 			this.linkRestartToApply.TabStop = true;
@@ -198,13 +200,13 @@
 			// 
 			// fieldLanguage
 			// 
+			resources.ApplyResources(this.fieldLanguage, "fieldLanguage");
 			this.fieldLanguage.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::notifier.Properties.Settings.Default, "Language", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.fieldLanguage.Items.AddRange(new object[] {
             resources.GetString("fieldLanguage.Items"),
             resources.GetString("fieldLanguage.Items1"),
             resources.GetString("fieldLanguage.Items2")});
-			resources.ApplyResources(this.fieldLanguage, "fieldLanguage");
 			this.fieldLanguage.Name = "fieldLanguage";
 			this.fieldLanguage.Text = global::notifier.Properties.Settings.Default.Language;
 			this.fieldLanguage.SelectionChangeCommitted += new System.EventHandler(this.FieldLanguage_SelectionChangeCommitted);
@@ -216,10 +218,10 @@
 			// 
 			// groupBox1
 			// 
+			resources.ApplyResources(this.groupBox1, "groupBox1");
 			this.groupBox1.Controls.Add(this.fieldRunAtWindowsStartup);
 			this.groupBox1.Controls.Add(this.fieldMinimizeToSystray);
 			this.groupBox1.Controls.Add(this.fieldAskonExit);
-			resources.ApplyResources(this.groupBox1, "groupBox1");
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.TabStop = false;
 			// 
@@ -250,14 +252,15 @@
 			// 
 			// tabPageAccount
 			// 
+			resources.ApplyResources(this.tabPageAccount, "tabPageAccount");
 			this.tabPageAccount.Controls.Add(this.groupBox8);
 			this.tabPageAccount.Controls.Add(this.groupBox6);
-			resources.ApplyResources(this.tabPageAccount, "tabPageAccount");
 			this.tabPageAccount.Name = "tabPageAccount";
 			this.tabPageAccount.UseVisualStyleBackColor = true;
 			// 
 			// groupBox8
 			// 
+			resources.ApplyResources(this.groupBox8, "groupBox8");
 			this.groupBox8.Controls.Add(this.labelTotalLabels);
 			this.groupBox8.Controls.Add(this.label18);
 			this.groupBox8.Controls.Add(this.labelTotalDrafts);
@@ -266,7 +269,6 @@
 			this.groupBox8.Controls.Add(this.label10);
 			this.groupBox8.Controls.Add(this.labelTotalUnreadMails);
 			this.groupBox8.Controls.Add(this.label6);
-			resources.ApplyResources(this.groupBox8, "groupBox8");
 			this.groupBox8.Name = "groupBox8";
 			this.groupBox8.TabStop = false;
 			// 
@@ -312,12 +314,12 @@
 			// 
 			// groupBox6
 			// 
+			resources.ApplyResources(this.groupBox6, "groupBox6");
 			this.groupBox6.Controls.Add(this.labelTokenDelivery);
 			this.groupBox6.Controls.Add(this.labelEmailAddress);
 			this.groupBox6.Controls.Add(this.label5);
 			this.groupBox6.Controls.Add(this.label4);
 			this.groupBox6.Controls.Add(this.buttonGmailDisconnect);
-			resources.ApplyResources(this.groupBox6, "groupBox6");
 			this.groupBox6.Name = "groupBox6";
 			this.groupBox6.TabStop = false;
 			// 
@@ -352,18 +354,18 @@
 			// 
 			// tabPageNotification
 			// 
+			resources.ApplyResources(this.tabPageNotification, "tabPageNotification");
 			this.tabPageNotification.Controls.Add(this.groupBox3);
 			this.tabPageNotification.Controls.Add(this.groupBox2);
-			resources.ApplyResources(this.tabPageNotification, "tabPageNotification");
 			this.tabPageNotification.Name = "tabPageNotification";
 			this.tabPageNotification.UseVisualStyleBackColor = true;
 			// 
 			// groupBox3
 			// 
+			resources.ApplyResources(this.groupBox3, "groupBox3");
 			this.groupBox3.Controls.Add(this.label15);
 			this.groupBox3.Controls.Add(this.fieldNotificationBehavior);
 			this.groupBox3.Controls.Add(this.label9);
-			resources.ApplyResources(this.groupBox3, "groupBox3");
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
 			// 
@@ -376,6 +378,7 @@
 			// 
 			// fieldNotificationBehavior
 			// 
+			resources.ApplyResources(this.fieldNotificationBehavior, "fieldNotificationBehavior");
 			this.fieldNotificationBehavior.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldNotificationBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.fieldNotificationBehavior.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
@@ -383,7 +386,6 @@
 			this.fieldNotificationBehavior.Items.AddRange(new object[] {
             resources.GetString("fieldNotificationBehavior.Items"),
             resources.GetString("fieldNotificationBehavior.Items1")});
-			resources.ApplyResources(this.fieldNotificationBehavior, "fieldNotificationBehavior");
 			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
 			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.FieldNotificationBehavior_SelectionChangeCommitted);
 			// 
@@ -396,24 +398,24 @@
 			// 
 			// groupBox2
 			// 
+			resources.ApplyResources(this.groupBox2, "groupBox2");
 			this.groupBox2.Controls.Add(this.fieldStepDelay);
 			this.groupBox2.Controls.Add(this.fieldSpamNotification);
 			this.groupBox2.Controls.Add(this.label1);
 			this.groupBox2.Controls.Add(this.fieldNumericDelay);
 			this.groupBox2.Controls.Add(this.fieldMessageNotification);
 			this.groupBox2.Controls.Add(this.fieldAudioNotification);
-			resources.ApplyResources(this.groupBox2, "groupBox2");
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.TabStop = false;
 			// 
 			// fieldStepDelay
 			// 
+			resources.ApplyResources(this.fieldStepDelay, "fieldStepDelay");
 			this.fieldStepDelay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.fieldStepDelay.FormattingEnabled = true;
 			this.fieldStepDelay.Items.AddRange(new object[] {
             resources.GetString("fieldStepDelay.Items"),
             resources.GetString("fieldStepDelay.Items1")});
-			resources.ApplyResources(this.fieldStepDelay, "fieldStepDelay");
 			this.fieldStepDelay.Name = "fieldStepDelay";
 			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.FieldStepDelay_SelectionChangeCommitted);
 			// 
@@ -434,8 +436,8 @@
 			// 
 			// fieldNumericDelay
 			// 
-			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			resources.ApplyResources(this.fieldNumericDelay, "fieldNumericDelay");
+			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldNumericDelay.Minimum = new decimal(new int[] {
             1,
             0,
@@ -467,19 +469,19 @@
 			// 
 			// tabPagePrivacy
 			// 
-			this.tabPagePrivacy.Controls.Add(this.groupBox4);
 			resources.ApplyResources(this.tabPagePrivacy, "tabPagePrivacy");
+			this.tabPagePrivacy.Controls.Add(this.groupBox4);
 			this.tabPagePrivacy.Name = "tabPagePrivacy";
 			this.tabPagePrivacy.UseVisualStyleBackColor = true;
 			// 
 			// groupBox4
 			// 
+			resources.ApplyResources(this.groupBox4, "groupBox4");
 			this.groupBox4.Controls.Add(this.pictureBoxPrivacyPreview);
 			this.groupBox4.Controls.Add(this.label2);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationAll);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationShort);
 			this.groupBox4.Controls.Add(this.fieldPrivacyNotificationNone);
-			resources.ApplyResources(this.groupBox4, "groupBox4");
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.TabStop = false;
 			// 
@@ -519,22 +521,73 @@
 			// 
 			// tabPageUpdate
 			// 
-			this.tabPageUpdate.Controls.Add(this.groupBox7);
 			resources.ApplyResources(this.tabPageUpdate, "tabPageUpdate");
+			this.tabPageUpdate.Controls.Add(this.groupBox9);
+			this.tabPageUpdate.Controls.Add(this.groupBox7);
 			this.tabPageUpdate.Name = "tabPageUpdate";
 			this.tabPageUpdate.UseVisualStyleBackColor = true;
 			// 
+			// groupBox9
+			// 
+			resources.ApplyResources(this.groupBox9, "groupBox9");
+			this.groupBox9.Controls.Add(this.buttonCheckForUpdate);
+			this.groupBox9.Controls.Add(this.label7);
+			this.groupBox9.Controls.Add(this.fieldUpdatePeriod);
+			this.groupBox9.Controls.Add(this.labelUpdateControl);
+			this.groupBox9.Controls.Add(this.label8);
+			this.groupBox9.Name = "groupBox9";
+			this.groupBox9.TabStop = false;
+			// 
+			// buttonCheckForUpdate
+			// 
+			resources.ApplyResources(this.buttonCheckForUpdate, "buttonCheckForUpdate");
+			this.buttonCheckForUpdate.Name = "buttonCheckForUpdate";
+			this.buttonCheckForUpdate.UseVisualStyleBackColor = true;
+			this.buttonCheckForUpdate.Click += new System.EventHandler(this.ButtonCheckForUpdate_Click);
+			// 
+			// label7
+			// 
+			resources.ApplyResources(this.label7, "label7");
+			this.label7.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.label7.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
+			this.label7.Name = "label7";
+			// 
+			// fieldUpdatePeriod
+			// 
+			resources.ApplyResources(this.fieldUpdatePeriod, "fieldUpdatePeriod");
+			this.fieldUpdatePeriod.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldUpdatePeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldUpdatePeriod.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
+			this.fieldUpdatePeriod.FormattingEnabled = true;
+			this.fieldUpdatePeriod.Items.AddRange(new object[] {
+            resources.GetString("fieldUpdatePeriod.Items"),
+            resources.GetString("fieldUpdatePeriod.Items1"),
+            resources.GetString("fieldUpdatePeriod.Items2"),
+            resources.GetString("fieldUpdatePeriod.Items3")});
+			this.fieldUpdatePeriod.Name = "fieldUpdatePeriod";
+			this.fieldUpdatePeriod.SelectedIndexChanged += new System.EventHandler(this.FieldUpdatePeriod_SelectedIndexChanged);
+			// 
+			// labelUpdateControl
+			// 
+			resources.ApplyResources(this.labelUpdateControl, "labelUpdateControl");
+			this.labelUpdateControl.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.labelUpdateControl.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
+			this.labelUpdateControl.ForeColor = System.Drawing.Color.Gray;
+			this.labelUpdateControl.Name = "labelUpdateControl";
+			// 
+			// label8
+			// 
+			resources.ApplyResources(this.label8, "label8");
+			this.label8.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.label8.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
+			this.label8.Name = "label8";
+			// 
 			// groupBox7
 			// 
+			resources.ApplyResources(this.groupBox7, "groupBox7");
 			this.groupBox7.Controls.Add(this.fieldUpdateQuiet);
 			this.groupBox7.Controls.Add(this.fieldUpdateDownload);
-			this.groupBox7.Controls.Add(this.buttonCheckForUpdate);
-			this.groupBox7.Controls.Add(this.labelUpdateControl);
-			this.groupBox7.Controls.Add(this.label8);
-			this.groupBox7.Controls.Add(this.fieldUpdatePeriod);
-			this.groupBox7.Controls.Add(this.label7);
 			this.groupBox7.Controls.Add(this.fieldUpdateService);
-			resources.ApplyResources(this.groupBox7, "groupBox7");
 			this.groupBox7.Name = "groupBox7";
 			this.groupBox7.TabStop = false;
 			// 
@@ -559,50 +612,6 @@
 			this.fieldUpdateDownload.Name = "fieldUpdateDownload";
 			this.fieldUpdateDownload.UseVisualStyleBackColor = true;
 			// 
-			// buttonCheckForUpdate
-			// 
-			resources.ApplyResources(this.buttonCheckForUpdate, "buttonCheckForUpdate");
-			this.buttonCheckForUpdate.Name = "buttonCheckForUpdate";
-			this.buttonCheckForUpdate.UseVisualStyleBackColor = true;
-			this.buttonCheckForUpdate.Click += new System.EventHandler(this.ButtonCheckForUpdate_Click);
-			// 
-			// labelUpdateControl
-			// 
-			resources.ApplyResources(this.labelUpdateControl, "labelUpdateControl");
-			this.labelUpdateControl.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.labelUpdateControl.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
-			this.labelUpdateControl.ForeColor = System.Drawing.Color.Gray;
-			this.labelUpdateControl.Name = "labelUpdateControl";
-			// 
-			// label8
-			// 
-			resources.ApplyResources(this.label8, "label8");
-			this.label8.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label8.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
-			this.label8.Name = "label8";
-			// 
-			// fieldUpdatePeriod
-			// 
-			this.fieldUpdatePeriod.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldUpdatePeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldUpdatePeriod.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
-			this.fieldUpdatePeriod.FormattingEnabled = true;
-			this.fieldUpdatePeriod.Items.AddRange(new object[] {
-            resources.GetString("fieldUpdatePeriod.Items"),
-            resources.GetString("fieldUpdatePeriod.Items1"),
-            resources.GetString("fieldUpdatePeriod.Items2"),
-            resources.GetString("fieldUpdatePeriod.Items3")});
-			resources.ApplyResources(this.fieldUpdatePeriod, "fieldUpdatePeriod");
-			this.fieldUpdatePeriod.Name = "fieldUpdatePeriod";
-			this.fieldUpdatePeriod.SelectedIndexChanged += new System.EventHandler(this.FieldUpdatePeriod_SelectedIndexChanged);
-			// 
-			// label7
-			// 
-			resources.ApplyResources(this.label7, "label7");
-			this.label7.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label7.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
-			this.label7.Name = "label7";
-			// 
 			// fieldUpdateService
 			// 
 			resources.ApplyResources(this.fieldUpdateService, "fieldUpdateService");
@@ -614,6 +623,7 @@
 			// 
 			// tabPageAbout
 			// 
+			resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
 			this.tabPageAbout.Controls.Add(this.linkSoftpedia);
 			this.tabPageAbout.Controls.Add(this.linkCheckForUpdate);
 			this.tabPageAbout.Controls.Add(this.linkVersion);
@@ -624,30 +634,29 @@
 			this.tabPageAbout.Controls.Add(this.label12);
 			this.tabPageAbout.Controls.Add(this.label13);
 			this.tabPageAbout.Controls.Add(this.label14);
-			resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
 			this.tabPageAbout.Name = "tabPageAbout";
 			this.tabPageAbout.UseVisualStyleBackColor = true;
 			// 
 			// linkSoftpedia
 			// 
+			resources.ApplyResources(this.linkSoftpedia, "linkSoftpedia");
 			this.linkSoftpedia.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.linkSoftpedia.Image = global::notifier.Properties.Resources.softpedia;
-			resources.ApplyResources(this.linkSoftpedia, "linkSoftpedia");
 			this.linkSoftpedia.Name = "linkSoftpedia";
 			this.linkSoftpedia.Click += new System.EventHandler(this.LinkSoftpedia_Click);
 			// 
 			// linkCheckForUpdate
 			// 
+			resources.ApplyResources(this.linkCheckForUpdate, "linkCheckForUpdate");
 			this.linkCheckForUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.linkCheckForUpdate.Image = global::notifier.Properties.Resources.update_check;
-			resources.ApplyResources(this.linkCheckForUpdate, "linkCheckForUpdate");
 			this.linkCheckForUpdate.Name = "linkCheckForUpdate";
 			this.linkCheckForUpdate.Click += new System.EventHandler(this.LinkCheckForUpdate_Click);
 			// 
 			// linkVersion
 			// 
-			this.linkVersion.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			resources.ApplyResources(this.linkVersion, "linkVersion");
+			this.linkVersion.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkVersion.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkVersion.Name = "linkVersion";
 			this.linkVersion.TabStop = true;
@@ -656,8 +665,8 @@
 			// 
 			// linkLicense
 			// 
-			this.linkLicense.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			resources.ApplyResources(this.linkLicense, "linkLicense");
+			this.linkLicense.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkLicense.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkLicense.Name = "linkLicense";
 			this.linkLicense.TabStop = true;
@@ -667,8 +676,8 @@
 			// 
 			// linkWebsiteXavier
 			// 
-			this.linkWebsiteXavier.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			resources.ApplyResources(this.linkWebsiteXavier, "linkWebsiteXavier");
+			this.linkWebsiteXavier.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteXavier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteXavier.Name = "linkWebsiteXavier";
 			this.linkWebsiteXavier.TabStop = true;
@@ -678,8 +687,8 @@
 			// 
 			// linkWebsiteYusuke
 			// 
-			this.linkWebsiteYusuke.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			resources.ApplyResources(this.linkWebsiteYusuke, "linkWebsiteYusuke");
+			this.linkWebsiteYusuke.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteYusuke.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkWebsiteYusuke.Name = "linkWebsiteYusuke";
 			this.linkWebsiteYusuke.TabStop = true;
@@ -720,8 +729,8 @@
 			// 
 			// pictureBoxHeader
 			// 
-			this.pictureBoxHeader.Image = global::notifier.Properties.Resources.header;
 			resources.ApplyResources(this.pictureBoxHeader, "pictureBoxHeader");
+			this.pictureBoxHeader.Image = global::notifier.Properties.Resources.header;
 			this.pictureBoxHeader.Name = "pictureBoxHeader";
 			this.pictureBoxHeader.TabStop = false;
 			// 
@@ -736,17 +745,18 @@
             this.menuItemSettings,
             this.menuItem2,
             this.menuItemExit});
+			resources.ApplyResources(this.notifyMenu, "notifyMenu");
 			// 
 			// menuItemNewMessage
 			// 
-			this.menuItemNewMessage.Index = 0;
 			resources.ApplyResources(this.menuItemNewMessage, "menuItemNewMessage");
+			this.menuItemNewMessage.Index = 0;
 			this.menuItemNewMessage.Click += new System.EventHandler(this.MenuItemNewMessage_Click);
 			// 
 			// menuItem4
 			// 
-			this.menuItem4.Index = 1;
 			resources.ApplyResources(this.menuItem4, "menuItem4");
+			this.menuItem4.Index = 1;
 			// 
 			// menuItemSynchronize
 			// 
@@ -776,48 +786,48 @@
 			// menuItemTimeoutDisabled
 			// 
 			this.menuItemTimeoutDisabled.Checked = true;
+			resources.ApplyResources(this.menuItemTimeoutDisabled, "menuItemTimeoutDisabled");
 			this.menuItemTimeoutDisabled.Index = 0;
 			this.menuItemTimeoutDisabled.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeoutDisabled, "menuItemTimeoutDisabled");
 			this.menuItemTimeoutDisabled.Click += new System.EventHandler(this.MenuItemTimeoutDisabled_Click);
 			// 
 			// menuItem1
 			// 
-			this.menuItem1.Index = 1;
 			resources.ApplyResources(this.menuItem1, "menuItem1");
+			this.menuItem1.Index = 1;
 			// 
 			// menuItemTimeout30m
 			// 
+			resources.ApplyResources(this.menuItemTimeout30m, "menuItemTimeout30m");
 			this.menuItemTimeout30m.Index = 2;
 			this.menuItemTimeout30m.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout30m, "menuItemTimeout30m");
 			this.menuItemTimeout30m.Click += new System.EventHandler(this.MenuItemTimeout30m_Click);
 			// 
 			// menuItemTimeout1h
 			// 
+			resources.ApplyResources(this.menuItemTimeout1h, "menuItemTimeout1h");
 			this.menuItemTimeout1h.Index = 3;
 			this.menuItemTimeout1h.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout1h, "menuItemTimeout1h");
 			this.menuItemTimeout1h.Click += new System.EventHandler(this.MenuItemTimeout1h_Click);
 			// 
 			// menuItemTimeout2h
 			// 
+			resources.ApplyResources(this.menuItemTimeout2h, "menuItemTimeout2h");
 			this.menuItemTimeout2h.Index = 4;
 			this.menuItemTimeout2h.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout2h, "menuItemTimeout2h");
 			this.menuItemTimeout2h.Click += new System.EventHandler(this.MenuItemTimeout2h_Click);
 			// 
 			// menuItemTimeout5h
 			// 
+			resources.ApplyResources(this.menuItemTimeout5h, "menuItemTimeout5h");
 			this.menuItemTimeout5h.Index = 5;
 			this.menuItemTimeout5h.RadioCheck = true;
-			resources.ApplyResources(this.menuItemTimeout5h, "menuItemTimeout5h");
 			this.menuItemTimeout5h.Click += new System.EventHandler(this.MenuItemTimeout5h_Click);
 			// 
 			// menuItemTimeoutIndefinitely
 			// 
-			this.menuItemTimeoutIndefinitely.Index = 6;
 			resources.ApplyResources(this.menuItemTimeoutIndefinitely, "menuItemTimeoutIndefinitely");
+			this.menuItemTimeoutIndefinitely.Index = 6;
 			this.menuItemTimeoutIndefinitely.Click += new System.EventHandler(this.MenuItemTimeoutIndefinitely_Click);
 			// 
 			// menuItemSettings
@@ -829,13 +839,13 @@
 			// 
 			// menuItem2
 			// 
-			this.menuItem2.Index = 6;
 			resources.ApplyResources(this.menuItem2, "menuItem2");
+			this.menuItem2.Index = 6;
 			// 
 			// menuItemExit
 			// 
-			this.menuItemExit.Index = 7;
 			resources.ApplyResources(this.menuItemExit, "menuItemExit");
+			this.menuItemExit.Index = 7;
 			this.menuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
 			// 
 			// timerReconnect
@@ -890,6 +900,8 @@
 			this.groupBox4.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).EndInit();
 			this.tabPageUpdate.ResumeLayout(false);
+			this.groupBox9.ResumeLayout(false);
+			this.groupBox9.PerformLayout();
 			this.groupBox7.ResumeLayout(false);
 			this.groupBox7.PerformLayout();
 			this.tabPageAbout.ResumeLayout(false);
@@ -992,6 +1004,7 @@
 		internal System.Windows.Forms.MenuItem menuItemSynchronize;
 		internal System.Windows.Forms.MenuItem menuItemTimout;
 		internal System.Windows.Forms.MenuItem menuItemSettings;
+		private System.Windows.Forms.GroupBox groupBox9;
 	}
 }
 

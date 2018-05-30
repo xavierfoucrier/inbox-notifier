@@ -298,20 +298,8 @@ automatically open the inbox.</value>
   <data name="tabPagePrivacy.Text" xml:space="preserve">
     <value>Privacy</value>
   </data>
-  <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 17</value>
-  </data>
-  <data name="fieldUpdateQuiet.Text" xml:space="preserve">
-    <value>Silent installation</value>
-  </data>
-  <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 17</value>
-  </data>
-  <data name="fieldUpdateDownload.Text" xml:space="preserve">
-    <value>Download and start installing updates automatically</value>
-  </data>
   <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>421, 95</value>
+    <value>164, 99</value>
   </data>
   <data name="buttonCheckForUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 23</value>
@@ -319,14 +307,11 @@ automatically open the inbox.</value>
   <data name="buttonCheckForUpdate.Text" xml:space="preserve">
     <value>Check now</value>
   </data>
-  <data name="labelUpdateControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 52</value>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Last checked:</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Update period:</value>
   </data>
   <data name="fieldUpdatePeriod.Items" xml:space="preserve">
     <value>at startup</value>
@@ -340,17 +325,36 @@ automatically open the inbox.</value>
   <data name="fieldUpdatePeriod.Items3" xml:space="preserve">
     <value>once a month</value>
   </data>
-  <data name="fieldUpdatePeriod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 49</value>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
   </data>
-  <data name="fieldUpdatePeriod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 21</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Last checked:</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 13</value>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Availability</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Update period:</value>
+  <data name="fieldUpdateQuiet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 84</value>
+  </data>
+  <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 17</value>
+  </data>
+  <data name="fieldUpdateQuiet.Text" xml:space="preserve">
+    <value>Silent installation</value>
+  </data>
+  <data name="fieldUpdateDownload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 48</value>
+  </data>
+  <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 30</value>
+  </data>
+  <data name="fieldUpdateDownload.Text" xml:space="preserve">
+    <value>Download and start installing updates automatically</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fieldUpdateService.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="fieldUpdateService.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 17</value>

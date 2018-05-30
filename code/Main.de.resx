@@ -326,23 +326,11 @@ automatisch den Posteingang öffnen.</value>
   <data name="tabPageUpdate.Text" xml:space="preserve">
     <value>Updates</value>
   </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>Verhalten</value>
-  </data>
-  <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 17</value>
-  </data>
-  <data name="fieldUpdateQuiet.Text" xml:space="preserve">
-    <value>Unbeaufsichtigte Installation</value>
-  </data>
-  <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 17</value>
-  </data>
-  <data name="fieldUpdateDownload.Text" xml:space="preserve">
-    <value>Laden und starten Sie automatisch Updates</value>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Verfügbarkeit</value>
   </data>
   <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 95</value>
+    <value>168, 99</value>
   </data>
   <data name="buttonCheckForUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -350,14 +338,11 @@ automatisch den Posteingang öffnen.</value>
   <data name="buttonCheckForUpdate.Text" xml:space="preserve">
     <value>Jetzt prüfen</value>
   </data>
-  <data name="labelUpdateControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>380, 52</value>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 13</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Letzte Prüfung:</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Prüffrist:</value>
   </data>
   <data name="fieldUpdatePeriod.Items" xml:space="preserve">
     <value>beim Start der Anwendung</value>
@@ -371,20 +356,44 @@ automatisch den Posteingang öffnen.</value>
   <data name="fieldUpdatePeriod.Items3" xml:space="preserve">
     <value>einmal pro Monat</value>
   </data>
-  <data name="fieldUpdatePeriod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 49</value>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
   </data>
-  <data name="fieldUpdatePeriod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 21</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Letzte Prüfung:</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 13</value>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Verhalten</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Prüffrist:</value>
+  <data name="fieldUpdateQuiet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 96</value>
+  </data>
+  <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 17</value>
+  </data>
+  <data name="fieldUpdateQuiet.Text" xml:space="preserve">
+    <value>Unbeaufsichtigte Installation</value>
+  </data>
+  <data name="fieldUpdateDownload.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="fieldUpdateDownload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 60</value>
+  </data>
+  <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 30</value>
+  </data>
+  <data name="fieldUpdateDownload.Text" xml:space="preserve">
+    <value>Laden und starten Sie automatisch Updates</value>
+  </data>
+  <data name="fieldUpdateService.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="fieldUpdateService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 24</value>
   </data>
   <data name="fieldUpdateService.Size" type="System.Drawing.Size, System.Drawing">
-    <value>325, 17</value>
+    <value>227, 30</value>
   </data>
   <data name="fieldUpdateService.Text" xml:space="preserve">
     <value>Aktivieren Sie die automatische Überprüfung von Updates</value>
