@@ -122,16 +122,16 @@
     <value>186, 87</value>
   </data>
   <data name="linkRestartToApply.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 12</value>
+    <value>52, 12</value>
   </data>
   <data name="linkRestartToApply.Text" xml:space="preserve">
     <value>Restart now</value>
   </data>
   <data name="labelRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 48</value>
+    <value>84, 48</value>
   </data>
   <data name="labelRestartToApply.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 30</value>
+    <value>158, 30</value>
   </data>
   <data name="labelRestartToApply.Text" xml:space="preserve">
     <value>This parameter will be considered
@@ -144,28 +144,28 @@ at the next application startup.</value>
     <value>164, 21</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+    <value>61, 13</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Language:</value>
   </data>
   <data name="fieldRunAtWindowsStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 17</value>
+    <value>150, 17</value>
   </data>
   <data name="fieldRunAtWindowsStartup.Text" xml:space="preserve">
     <value>Run at windows startup</value>
   </data>
   <data name="fieldMinimizeToSystray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 17</value>
+    <value>145, 17</value>
   </data>
   <data name="fieldMinimizeToSystray.Text" xml:space="preserve">
     <value>Minimize to system tray</value>
   </data>
   <data name="fieldAskonExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 17</value>
+    <value>202, 17</value>
   </data>
   <data name="fieldAskonExit.Text" xml:space="preserve">
-    <value>Ask me before leaving the application</value>
+    <value>Ask before leaving the application</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Behavior</value>
@@ -174,19 +174,19 @@ at the next application startup.</value>
     <value>General</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
+    <value>43, 13</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>draft(s)</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 13</value>
+    <value>104, 13</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>mail(s) in the inbox</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
+    <value>79, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>unread mail(s)</value>
@@ -195,13 +195,13 @@ at the next application startup.</value>
     <value>Statistics</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 13</value>
+    <value>86, 13</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Token delivery :</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
+    <value>86, 13</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Gmail account :</value>
@@ -216,10 +216,10 @@ at the next application startup.</value>
     <value>Account</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 71</value>
+    <value>66, 71</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 51</value>
+    <value>181, 51</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Upon receipt of multiple messages, the
@@ -233,7 +233,7 @@ automatically open the inbox.</value>
     <value>open the message</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 13</value>
+    <value>173, 13</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>When the notification is clicked:</value>
@@ -245,25 +245,25 @@ automatically open the inbox.</value>
     <value>hour(s)</value>
   </data>
   <data name="fieldSpamNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 17</value>
+    <value>112, 17</value>
   </data>
   <data name="fieldSpamNotification.Text" xml:space="preserve">
     <value>Junk mail (SPAM)</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 13</value>
+    <value>99, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Verification delay:</value>
   </data>
   <data name="fieldMessageNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 17</value>
+    <value>96, 17</value>
   </data>
   <data name="fieldMessageNotification.Text" xml:space="preserve">
     <value>New message</value>
   </data>
   <data name="fieldAudioNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 17</value>
+    <value>123, 17</value>
   </data>
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Sound notification</value>
@@ -272,25 +272,25 @@ automatically open the inbox.</value>
     <value>Mail</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 13</value>
+    <value>172, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Upon receipt of a new message:</value>
   </data>
   <data name="fieldPrivacyNotificationAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 17</value>
+    <value>154, 17</value>
   </data>
   <data name="fieldPrivacyNotificationAll.Text" xml:space="preserve">
     <value>Hide all message content</value>
   </data>
   <data name="fieldPrivacyNotificationShort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 17</value>
+    <value>219, 17</value>
   </data>
   <data name="fieldPrivacyNotificationShort.Text" xml:space="preserve">
     <value>Display a part of the message content</value>
   </data>
   <data name="fieldPrivacyNotificationNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 17</value>
+    <value>167, 17</value>
   </data>
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Display all message content</value>
@@ -299,13 +299,13 @@ automatically open the inbox.</value>
     <value>Privacy</value>
   </data>
   <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
+    <value>116, 17</value>
   </data>
   <data name="fieldUpdateQuiet.Text" xml:space="preserve">
     <value>Silent installation</value>
   </data>
   <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 17</value>
+    <value>296, 17</value>
   </data>
   <data name="fieldUpdateDownload.Text" xml:space="preserve">
     <value>Download and start installing updates automatically</value>
@@ -347,13 +347,13 @@ automatically open the inbox.</value>
     <value>183, 21</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 13</value>
+    <value>85, 13</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Update period:</value>
   </data>
   <data name="fieldUpdateService.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 17</value>
+    <value>204, 17</value>
   </data>
   <data name="fieldUpdateService.Text" xml:space="preserve">
     <value>Enable automatic update checking</value>
@@ -369,7 +369,7 @@ automatically open the inbox.</value>
     <value>65, 11</value>
   </data>
   <data name="linkLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 30</value>
+    <value>223, 34</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
     <value>©2016-2018. All rights reserved.
@@ -379,7 +379,7 @@ Open Source, distributed under MIT License</value>
     <value>37, 15</value>
   </data>
   <data name="linkWebsiteXavier.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 30</value>
+    <value>150, 34</value>
   </data>
   <data name="linkWebsiteXavier.Text" xml:space="preserve">
     <value>Visual Studio 2013, C#
@@ -389,7 +389,7 @@ Developed by Xavier Foucrier</value>
     <value>Credits</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
+    <value>77, 13</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Development</value>
@@ -398,7 +398,7 @@ Developed by Xavier Foucrier</value>
     <value>About</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 13</value>
+    <value>220, 13</value>
   </data>
   <data name="labelSettingsSaved.Text" xml:space="preserve">
     <value>Application preferences have been saved.</value>
