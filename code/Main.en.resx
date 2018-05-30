@@ -398,7 +398,7 @@ Developed by Xavier Foucrier</value>
     <value>About</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 13</value>
+    <value>223, 13</value>
   </data>
   <data name="labelSettingsSaved.Text" xml:space="preserve">
     <value>Application preferences have been saved.</value>

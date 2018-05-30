@@ -260,6 +260,12 @@ automatisch den Posteingang öffnen.</value>
   <data name="fieldStepDelay.Items1" xml:space="preserve">
     <value>stunde (n)</value>
   </data>
+  <data name="fieldStepDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 100</value>
+  </data>
+  <data name="fieldStepDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 21</value>
+  </data>
   <data name="fieldSpamNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 17</value>
   </data>
@@ -271,6 +277,9 @@ automatisch den Posteingang öffnen.</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Prüffrist :</value>
+  </data>
+  <data name="fieldNumericDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 100</value>
   </data>
   <data name="fieldMessageNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 17</value>
@@ -414,7 +423,7 @@ Entwickelt von Xavier Foucrier</value>
     <value>Entwicklung</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 13</value>
+    <value>221, 13</value>
   </data>
   <data name="labelSettingsSaved.Text" xml:space="preserve">
     <value>Gespeicherte Anwendungseinstellungen.</value>
