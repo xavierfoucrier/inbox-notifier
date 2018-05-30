@@ -347,7 +347,7 @@ automatically open the inbox.</value>
     <value>116, 17</value>
   </data>
   <data name="fieldUpdateQuiet.Text" xml:space="preserve">
-    <value>Silent installation</value>
+    <value>Quiet installation</value>
   </data>
   <data name="fieldUpdateDownload.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 48</value>
