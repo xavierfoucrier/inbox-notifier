@@ -156,9 +156,7 @@ namespace notifier {
 				}
 			} finally {
 
-				// restores default check icon and check for update button state
-				UI.linkCheckForUpdate.Enabled = true;
-				UI.linkCheckForUpdate.Image = Resources.update_check;
+				// restores default update button state
 				UI.buttonCheckForUpdate.Enabled = true;
 
 				// stores the latest update datetime control

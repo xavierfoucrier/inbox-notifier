@@ -86,7 +86,6 @@
 			this.fieldUpdateService = new System.Windows.Forms.CheckBox();
 			this.tabPageAbout = new System.Windows.Forms.TabPage();
 			this.linkSoftpedia = new System.Windows.Forms.LinkLabel();
-			this.linkCheckForUpdate = new System.Windows.Forms.LinkLabel();
 			this.linkVersion = new System.Windows.Forms.LinkLabel();
 			this.linkLicense = new System.Windows.Forms.LinkLabel();
 			this.linkWebsiteXavier = new System.Windows.Forms.LinkLabel();
@@ -624,7 +623,6 @@
 			// tabPageAbout
 			// 
 			this.tabPageAbout.Controls.Add(this.linkSoftpedia);
-			this.tabPageAbout.Controls.Add(this.linkCheckForUpdate);
 			this.tabPageAbout.Controls.Add(this.linkVersion);
 			this.tabPageAbout.Controls.Add(this.linkLicense);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteXavier);
@@ -644,14 +642,6 @@
 			resources.ApplyResources(this.linkSoftpedia, "linkSoftpedia");
 			this.linkSoftpedia.Name = "linkSoftpedia";
 			this.linkSoftpedia.Click += new System.EventHandler(this.LinkSoftpedia_Click);
-			// 
-			// linkCheckForUpdate
-			// 
-			this.linkCheckForUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.linkCheckForUpdate.Image = global::notifier.Properties.Resources.update_check;
-			resources.ApplyResources(this.linkCheckForUpdate, "linkCheckForUpdate");
-			this.linkCheckForUpdate.Name = "linkCheckForUpdate";
-			this.linkCheckForUpdate.Click += new System.EventHandler(this.LinkCheckForUpdate_Click);
 			// 
 			// linkVersion
 			// 
@@ -986,7 +976,6 @@
 		private System.Windows.Forms.LinkLabel linkSoftpedia;
 		internal System.Windows.Forms.Label labelUpdateControl;
 		internal System.Windows.Forms.Button buttonCheckForUpdate;
-		internal System.Windows.Forms.LinkLabel linkCheckForUpdate;
 		internal System.Windows.Forms.MenuItem menuItemTimeoutIndefinitely;
 		internal System.Windows.Forms.Label labelEmailAddress;
 		internal System.Windows.Forms.Label labelTokenDelivery;

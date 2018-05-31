@@ -101,15 +101,6 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vérifier les mises à jour.
-        /// </summary>
-        internal static string checkForUpdate {
-            get {
-                return ResourceManager.GetString("checkForUpdate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur.
         /// </summary>
         internal static string error {

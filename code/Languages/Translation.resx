@@ -133,9 +133,6 @@ Voulez-vous vraiment quitter l'application ?</value>
 
 L'application va désormais quitter.</value>
   </data>
-  <data name="checkForUpdate" xml:space="preserve">
-    <value>Vérifier les mises à jour</value>
-  </data>
   <data name="error" xml:space="preserve">
     <value>Erreur</value>
   </data>

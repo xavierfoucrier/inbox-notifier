@@ -243,12 +243,6 @@
     <None Include="Resources\privacy\privacy-none.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\update\update-check.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\update\update-hourglass.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\systray\updating.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -144,20 +144,12 @@ namespace notifier {
 			// displays the product version
 			linkVersion.Text = Core.Version.Substring(1);
 
-			// positioning the check for update link
-			linkCheckForUpdate.Left = linkVersion.Right + 2;
-
 			// displays a tooltip for the product version
 			ToolTip tipTag = new ToolTip();
 			tipTag.SetToolTip(linkVersion, Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.Version);
 			tipTag.ToolTipTitle = Translation.tipReleaseNotes;
 			tipTag.ToolTipIcon = ToolTipIcon.Info;
 			tipTag.IsBalloon = false;
-
-			// displays a tooltip for the product version
-			ToolTip tipCheckForUpdate = new ToolTip();
-			tipCheckForUpdate.SetToolTip(linkCheckForUpdate, Translation.checkForUpdate);
-			tipCheckForUpdate.IsBalloon = false;
 
 			// displays a tooltip for the website link
 			ToolTip tipWebsiteYusuke = new ToolTip();
@@ -518,16 +510,6 @@ namespace notifier {
 		/// </summary>
 		private void ButtonCheckForUpdate_Click(object sender, EventArgs e) {
 			buttonCheckForUpdate.Enabled = false;
-			UpdateService.Check();
-		}
-
-		/// <summary>
-		/// Check for update
-		/// </summary>
-		private void LinkCheckForUpdate_Click(object sender, EventArgs e) {
-			linkCheckForUpdate.Image = Resources.update_hourglass;
-			linkCheckForUpdate.Enabled = false;
-			Cursor.Current = DefaultCursor;
 			UpdateService.Check();
 		}
 	}
