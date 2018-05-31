@@ -2004,33 +2004,6 @@ la boite de réception.</value>
   <data name="&gt;&gt;tabPageUpdate.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="linkSoftpedia.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkSoftpedia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>452, 8</value>
-  </data>
-  <data name="linkSoftpedia.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="linkSoftpedia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 63</value>
-  </data>
-  <data name="linkSoftpedia.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;linkSoftpedia.Name" xml:space="preserve">
-    <value>linkSoftpedia</value>
-  </data>
-  <data name="&gt;&gt;linkSoftpedia.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkSoftpedia.Parent" xml:space="preserve">
-    <value>tabPageAbout</value>
-  </data>
-  <data name="&gt;&gt;linkSoftpedia.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="linkVersion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2062,7 +2035,7 @@ la boite de réception.</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;linkVersion.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="linkLicense.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2099,7 +2072,7 @@ Open Source, distribué sous Licence MIT</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;linkLicense.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="linkWebsiteXavier.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2136,7 +2109,7 @@ Développé par Xavier Foucrier</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;linkWebsiteXavier.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="linkWebsiteYusuke.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2169,7 +2142,7 @@ Développé par Xavier Foucrier</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;linkWebsiteYusuke.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2205,7 +2178,7 @@ Développé par Xavier Foucrier</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2241,7 +2214,7 @@ Développé par Xavier Foucrier</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2277,7 +2250,7 @@ Développé par Xavier Foucrier</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2313,7 +2286,7 @@ Développé par Xavier Foucrier</value>
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="tabPageAbout.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>

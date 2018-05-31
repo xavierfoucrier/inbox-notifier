@@ -139,9 +139,6 @@ L'application va désormais quitter.</value>
   <data name="firstLoad" xml:space="preserve">
     <value>Gmail notifier s'exécute désormais en arrière plan sur votre ordinateur. Dans quelques secondes, vous serez invité à vous connecter sur votre compte Gmail afin d'autoriser l'application à accéder à votre boite de réception.</value>
   </data>
-  <data name="freeSoftware" xml:space="preserve">
-    <value>Certifié sans spyware, sans adware et sans virus</value>
-  </data>
   <data name="gmailDisconnect" xml:space="preserve">
     <value>Déconnexion de votre compte Gmail</value>
   </data>
@@ -256,9 +253,6 @@ Voulez-vous la télécharger maintenant ?</value>
   </data>
   <data name="tipReleaseNotes" xml:space="preserve">
     <value>Notes de version Github</value>
-  </data>
-  <data name="tipSoftpedia" xml:space="preserve">
-    <value>Softpedia, 100% gratuit</value>
   </data>
   <data name="unreadMessage" xml:space="preserve">
     <value>email non lu</value>

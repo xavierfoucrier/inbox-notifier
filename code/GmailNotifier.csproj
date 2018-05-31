@@ -249,9 +249,6 @@
     <None Include="Resources\systray\retry.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\softpedia.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\systray\starting.ico" />
   </ItemGroup>
   <ItemGroup>

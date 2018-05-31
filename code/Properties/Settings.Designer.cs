@@ -304,16 +304,6 @@ namespace notifier.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-" +
-            "notifier.shtml#status")]
-        public string SITE_SOFTPEDIA {
-            get {
-                return ((string)(this["SITE_SOFTPEDIA"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run")]
         public string REGISTRY_KEY {
             get {

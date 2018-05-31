@@ -165,13 +165,6 @@ namespace notifier {
 			ToolTip tipLicense = new ToolTip();
 			tipLicense.SetToolTip(linkLicense, Settings.Default.GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
 			tipLicense.IsBalloon = false;
-
-			// displays a tooltip for the website link
-			ToolTip tipSoftpedia = new ToolTip();
-			tipSoftpedia.SetToolTip(linkSoftpedia, Translation.freeSoftware);
-			tipSoftpedia.ToolTipTitle = Translation.tipSoftpedia;
-			tipSoftpedia.ToolTipIcon = ToolTipIcon.Info;
-			tipSoftpedia.IsBalloon = false;
 		}
 
 		/// <summary>
@@ -304,13 +297,6 @@ namespace notifier {
 		/// </summary>
 		private void LinkWebsiteXavier_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start(Settings.Default.SITE_AUTHOR);
-		}
-
-		/// <summary>
-		/// Opens the Softpedia website
-		/// </summary>
-		private void LinkSoftpedia_Click(object sender, EventArgs e) {
-			Process.Start(Settings.Default.SITE_SOFTPEDIA);
 		}
 
 		/// <summary>

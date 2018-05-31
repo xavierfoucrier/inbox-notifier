@@ -142,9 +142,6 @@ Die Anwendung wird nun beendet.</value>
   <data name="firstLoad" xml:space="preserve">
     <value>Gmail Notifier läuft jetzt im Hintergrund auf Ihrem Computer. In wenigen Sekunden werden Sie aufgefordert Konto für die Anmeldung bei Ihrem Google Mail, damit die Anwendung Ihren Posteingang zugreifen.</value>
   </data>
-  <data name="freeSoftware" xml:space="preserve">
-    <value>Zertifiziert keine Spyware, keine Adware, keine Viren</value>
-  </data>
   <data name="gmailDisconnect" xml:space="preserve">
     <value>Trennen Ihres Gmail Konto</value>
   </data>
@@ -259,9 +256,6 @@ Möchten Sie sie jetzt herunterladen?</value>
   </data>
   <data name="tipReleaseNotes" xml:space="preserve">
     <value>Github Release Notes</value>
-  </data>
-  <data name="tipSoftpedia" xml:space="preserve">
-    <value>Softpedia, 100% kostenlos</value>
   </data>
   <data name="unreadMessage" xml:space="preserve">
     <value>Ungelesene Nachrichten</value>

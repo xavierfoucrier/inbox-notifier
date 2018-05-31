@@ -119,15 +119,6 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Certifié sans spyware, sans adware et sans virus.
-        /// </summary>
-        internal static string freeSoftware {
-            get {
-                return ResourceManager.GetString("freeSoftware", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Déconnexion de votre compte Gmail.
         /// </summary>
         internal static string gmailDisconnect {
@@ -455,15 +446,6 @@ namespace notifier.Languages {
         internal static string tipReleaseNotes {
             get {
                 return ResourceManager.GetString("tipReleaseNotes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Softpedia, 100% gratuit.
-        /// </summary>
-        internal static string tipSoftpedia {
-            get {
-                return ResourceManager.GetString("tipSoftpedia", resourceCulture);
             }
         }
         

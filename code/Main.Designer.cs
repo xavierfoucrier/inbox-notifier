@@ -85,7 +85,6 @@
 			this.fieldUpdateDownload = new System.Windows.Forms.CheckBox();
 			this.fieldUpdateService = new System.Windows.Forms.CheckBox();
 			this.tabPageAbout = new System.Windows.Forms.TabPage();
-			this.linkSoftpedia = new System.Windows.Forms.LinkLabel();
 			this.linkVersion = new System.Windows.Forms.LinkLabel();
 			this.linkLicense = new System.Windows.Forms.LinkLabel();
 			this.linkWebsiteXavier = new System.Windows.Forms.LinkLabel();
@@ -622,7 +621,6 @@
 			// 
 			// tabPageAbout
 			// 
-			this.tabPageAbout.Controls.Add(this.linkSoftpedia);
 			this.tabPageAbout.Controls.Add(this.linkVersion);
 			this.tabPageAbout.Controls.Add(this.linkLicense);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteXavier);
@@ -634,14 +632,6 @@
 			resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
 			this.tabPageAbout.Name = "tabPageAbout";
 			this.tabPageAbout.UseVisualStyleBackColor = true;
-			// 
-			// linkSoftpedia
-			// 
-			this.linkSoftpedia.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.linkSoftpedia.Image = global::notifier.Properties.Resources.softpedia;
-			resources.ApplyResources(this.linkSoftpedia, "linkSoftpedia");
-			this.linkSoftpedia.Name = "linkSoftpedia";
-			this.linkSoftpedia.Click += new System.EventHandler(this.LinkSoftpedia_Click);
 			// 
 			// linkVersion
 			// 
@@ -973,7 +963,6 @@
 		private System.Windows.Forms.ComboBox fieldNotificationBehavior;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.CheckBox fieldUpdateQuiet;
-		private System.Windows.Forms.LinkLabel linkSoftpedia;
 		internal System.Windows.Forms.Label labelUpdateControl;
 		internal System.Windows.Forms.Button buttonCheckForUpdate;
 		internal System.Windows.Forms.MenuItem menuItemTimeoutIndefinitely;
