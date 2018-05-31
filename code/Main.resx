@@ -2047,7 +2047,7 @@ la boite de réception.</value>
     <value>63, 11</value>
   </data>
   <data name="linkLicense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 97</value>
+    <value>255, 97</value>
   </data>
   <data name="linkLicense.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -2121,7 +2121,7 @@ Développé par Xavier Foucrier</value>
     <value>21, 17</value>
   </data>
   <data name="linkWebsiteYusuke.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 35</value>
+    <value>255, 35</value>
   </data>
   <data name="linkWebsiteYusuke.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
