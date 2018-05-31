@@ -133,9 +133,6 @@ Do you really want to exit?</value>
 
 The application will now quit.</value>
   </data>
-  <data name="checkForUpdate" xml:space="preserve">
-    <value>Check for update</value>
-  </data>
   <data name="error" xml:space="preserve">
     <value>Error</value>
   </data>

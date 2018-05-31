@@ -133,9 +133,6 @@ Wollen Sie wirklich beenden wollen?</value>
 
 Die Anwendung wird nun beendet.</value>
   </data>
-  <data name="checkForUpdate" xml:space="preserve">
-    <value>Auf Update überprüfen</value>
-  </data>
   <data name="error" xml:space="preserve">
     <value>Fehler</value>
   </data>
