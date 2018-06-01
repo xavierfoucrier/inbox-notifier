@@ -189,6 +189,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   <data name="helpSpamNotification" xml:space="preserve">
     <value>Affiche une notification lors de la réception de courrier indésirable</value>
   </data>
+  <data name="helpStatistics" xml:space="preserve">
+    <value>Statistiques d'utilisation de votre boîte de réception</value>
+  </data>
   <data name="helpStepDelay" xml:space="preserve">
     <value>Échelle de temps pour la synchronisation de la boite de réception</value>
   </data>

@@ -189,6 +189,9 @@ Do you really want to disconnect your Gmail account and restart the application 
   <data name="helpSpamNotification" xml:space="preserve">
     <value>Displays a notification when receiving a junk message</value>
   </data>
+  <data name="helpStatistics" xml:space="preserve">
+    <value>Usage statistics of your inbox</value>
+  </data>
   <data name="helpStepDelay" xml:space="preserve">
     <value>Time scale for the inbox synchronization</value>
   </data>

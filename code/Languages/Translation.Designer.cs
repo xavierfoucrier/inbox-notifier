@@ -265,6 +265,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Statistiques d&apos;utilisation de votre boîte de réception.
+        /// </summary>
+        internal static string helpStatistics {
+            get {
+                return ResourceManager.GetString("helpStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Échelle de temps pour la synchronisation de la boite de réception.
         /// </summary>
         internal static string helpStepDelay {

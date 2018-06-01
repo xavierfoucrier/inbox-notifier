@@ -189,6 +189,9 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   <data name="helpSpamNotification" xml:space="preserve">
     <value>Zeigen Sie eine Benachrichtigung, wenn Junk-Mail-Empfang</value>
   </data>
+  <data name="helpStatistics" xml:space="preserve">
+    <value>Nutzungsstatistiken für Ihren Posteingang</value>
+  </data>
   <data name="helpStepDelay" xml:space="preserve">
     <value>Zeitskala für die Synchronisation des Posteingangs</value>
   </data>
