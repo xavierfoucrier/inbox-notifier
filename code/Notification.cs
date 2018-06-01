@@ -168,7 +168,7 @@ namespace notifier {
 			UI.menuItemTimeoutDisabled.Checked = true;
 
 			// restores the timer interval
-			UI.timer.Interval = Settings.Default.TimerInterval;
+			UI.timer.Interval = (int)Settings.Default.TimerInterval;
 
 			// enables the timer: this will automatically trigger the inbox synchronization in the timer tick
 			UI.timer.Enabled = true;

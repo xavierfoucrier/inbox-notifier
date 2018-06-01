@@ -12,7 +12,7 @@ namespace notifier.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -62,9 +62,9 @@ namespace notifier.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int StepDelay {
+        public uint StepDelay {
             get {
-                return ((int)(this["StepDelay"]));
+                return ((uint)(this["StepDelay"]));
             }
             set {
                 this["StepDelay"] = value;
@@ -86,9 +86,9 @@ namespace notifier.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("600000")]
-        public int TimerInterval {
+        public uint TimerInterval {
             get {
-                return ((int)(this["TimerInterval"]));
+                return ((uint)(this["TimerInterval"]));
             }
             set {
                 this["TimerInterval"] = value;
@@ -110,9 +110,9 @@ namespace notifier.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int PrivacyNotification {
+        public uint PrivacyNotification {
             get {
-                return ((int)(this["PrivacyNotification"]));
+                return ((uint)(this["PrivacyNotification"]));
             }
             set {
                 this["PrivacyNotification"] = value;
@@ -170,9 +170,9 @@ namespace notifier.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2")]
-        public int UpdatePeriod {
+        public uint UpdatePeriod {
             get {
-                return ((int)(this["UpdatePeriod"]));
+                return ((uint)(this["UpdatePeriod"]));
             }
             set {
                 this["UpdatePeriod"] = value;
@@ -218,9 +218,9 @@ namespace notifier.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int NotificationBehavior {
+        public uint NotificationBehavior {
             get {
-                return ((int)(this["NotificationBehavior"]));
+                return ((uint)(this["NotificationBehavior"]));
             }
             set {
                 this["NotificationBehavior"] = value;
@@ -260,27 +260,27 @@ namespace notifier.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("3")]
-        public int MAX_AUTO_RECONNECT {
+        public uint MAX_AUTO_RECONNECT {
             get {
-                return ((int)(this["MAX_AUTO_RECONNECT"]));
+                return ((uint)(this["MAX_AUTO_RECONNECT"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("10")]
-        public int INTERVAL_RECONNECT {
+        public uint INTERVAL_RECONNECT {
             get {
-                return ((int)(this["INTERVAL_RECONNECT"]));
+                return ((uint)(this["INTERVAL_RECONNECT"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int UNSTACK_BOUNDARY {
+        public uint UNSTACK_BOUNDARY {
             get {
-                return ((int)(this["UNSTACK_BOUNDARY"]));
+                return ((uint)(this["UNSTACK_BOUNDARY"]));
             }
         }
         

@@ -123,10 +123,10 @@ namespace notifier {
 			ComputerService.BindSessionSwitch();
 
 			// displays the step delay setting
-			fieldStepDelay.SelectedIndex = Settings.Default.StepDelay;
+			fieldStepDelay.SelectedIndex = (int)Settings.Default.StepDelay;
 
 			// displays the notification behavior setting
-			fieldNotificationBehavior.SelectedIndex = Settings.Default.NotificationBehavior;
+			fieldNotificationBehavior.SelectedIndex = (int)Settings.Default.NotificationBehavior;
 
 			// displays the privacy notification setting
 			switch (Settings.Default.PrivacyNotification) {
@@ -146,7 +146,7 @@ namespace notifier {
 			}
 
 			// displays the update period setting
-			fieldUpdatePeriod.SelectedIndex = Settings.Default.UpdatePeriod;
+			fieldUpdatePeriod.SelectedIndex = (int)Settings.Default.UpdatePeriod;
 
 			// displays the update control setting
 			labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
@@ -236,25 +236,25 @@ namespace notifier {
 		/// Manages the NumericDelay user setting
 		/// </summary>
 		private void FieldNumericDelay_ValueChanged(object sender, EventArgs e) {
-			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
+			Settings.Default.TimerInterval = (uint)(1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * fieldNumericDelay.Value);
 			Settings.Default.NumericDelay = fieldNumericDelay.Value;
-			timer.Interval = Settings.Default.TimerInterval;
+			timer.Interval = (int)Settings.Default.TimerInterval;
 		}
 
 		/// <summary>
 		/// Manages the StepDelay user setting
 		/// </summary>
 		private void FieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
-			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * Convert.ToInt32(fieldNumericDelay.Value);
-			Settings.Default.StepDelay = fieldStepDelay.SelectedIndex;
-			timer.Interval = Settings.Default.TimerInterval;
+			Settings.Default.TimerInterval = (uint)(1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * fieldNumericDelay.Value);
+			Settings.Default.StepDelay = (uint)fieldStepDelay.SelectedIndex;
+			timer.Interval = (int)Settings.Default.TimerInterval;
 		}
 
 		/// <summary>
 		/// Manages the NotificationBehavior user setting
 		/// </summary>
 		private void FieldNotificationBehavior_SelectionChangeCommitted(object sender, EventArgs e) {
-			Settings.Default.NotificationBehavior = fieldNotificationBehavior.SelectedIndex;
+			Settings.Default.NotificationBehavior = (uint)fieldNotificationBehavior.SelectedIndex;
 		}
 
 		/// <summary>
@@ -285,7 +285,7 @@ namespace notifier {
 		/// Manages the UpdatePeriod user setting
 		/// </summary>
 		private void FieldUpdatePeriod_SelectedIndexChanged(object sender, EventArgs e) {
-			Settings.Default.UpdatePeriod = fieldUpdatePeriod.SelectedIndex;
+			Settings.Default.UpdatePeriod = (uint)fieldUpdatePeriod.SelectedIndex;
 		}
 
 		/// <summary>

@@ -318,7 +318,7 @@ namespace notifier {
 			if (ReconnectionAttempts == 1) {
 
 				// sets the reconnection interval
-				UI.timerReconnect.Interval = Settings.Default.INTERVAL_RECONNECT * 1000;
+				UI.timerReconnect.Interval = (int)Settings.Default.INTERVAL_RECONNECT * 1000;
 
 				// disables the menu items
 				UI.menuItemSynchronize.Enabled = false;
