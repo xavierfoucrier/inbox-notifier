@@ -156,6 +156,9 @@ Do you really want to disconnect your Gmail account and restart the application 
   <data name="helpAudioNotification" xml:space="preserve">
     <value>Plays a sound when displaying a notification</value>
   </data>
+  <data name="helpCheckForUpdate" xml:space="preserve">
+    <value>Check availability of updates immediately</value>
+  </data>
   <data name="helpEmailAddress" xml:space="preserve">
     <value>Gmail account currently logged in to the application</value>
   </data>
@@ -197,6 +200,21 @@ Do you really want to disconnect your Gmail account and restart the application 
   </data>
   <data name="helpTokenDelivery" xml:space="preserve">
     <value>Latest update of the authentication token delivery</value>
+  </data>
+  <data name="helpUpdateControl" xml:space="preserve">
+    <value>Last check date of updates</value>
+  </data>
+  <data name="helpUpdateDownload" xml:space="preserve">
+    <value>When updates are available, the application downloads them and launches the installation automatically</value>
+  </data>
+  <data name="helpUpdatePeriod" xml:space="preserve">
+    <value>Update check period</value>
+  </data>
+  <data name="helpUpdateQuiet" xml:space="preserve">
+    <value>When updates are being installed, the application installs them silently in the background</value>
+  </data>
+  <data name="helpUpdateService" xml:space="preserve">
+    <value>Enables the automatic update check service</value>
   </data>
   <data name="latestVersion" xml:space="preserve">
     <value>You have the latest version of the application.</value>

@@ -166,6 +166,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vérifie la disponibilité de mises à jour immédiatement.
+        /// </summary>
+        internal static string helpCheckForUpdate {
+            get {
+                return ResourceManager.GetString("helpCheckForUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Compte Gmail actuellement connecté à l&apos;application.
         /// </summary>
         internal static string helpEmailAddress {
@@ -288,6 +297,51 @@ namespace notifier.Languages {
         internal static string helpTokenDelivery {
             get {
                 return ResourceManager.GetString("helpTokenDelivery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Date de dernière vérification des mises à jour.
+        /// </summary>
+        internal static string helpUpdateControl {
+            get {
+                return ResourceManager.GetString("helpUpdateControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lorsque des mises à jour sont disponibles, l&apos;application les téléchargent et lance l&apos;installation automatiquement.
+        /// </summary>
+        internal static string helpUpdateDownload {
+            get {
+                return ResourceManager.GetString("helpUpdateDownload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Délai de vérification des mises à jour.
+        /// </summary>
+        internal static string helpUpdatePeriod {
+            get {
+                return ResourceManager.GetString("helpUpdatePeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Lorsque des mises à jour sont en cours d&apos;installation, l&apos;application les installent de façon silencieuse en arrière plan.
+        /// </summary>
+        internal static string helpUpdateQuiet {
+            get {
+                return ResourceManager.GetString("helpUpdateQuiet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Active le service de vérification automatique des mises à jour.
+        /// </summary>
+        internal static string helpUpdateService {
+            get {
+                return ResourceManager.GetString("helpUpdateService", resourceCulture);
             }
         }
         

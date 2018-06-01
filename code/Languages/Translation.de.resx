@@ -156,6 +156,9 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   <data name="helpAudioNotification" xml:space="preserve">
     <value>Spielt einen Ton, wenn eine Benachrichtigung angezeigt werden</value>
   </data>
+  <data name="helpCheckForUpdate" xml:space="preserve">
+    <value>Überprüfen Sie sofort die Verfügbarkeit von Updates</value>
+  </data>
   <data name="helpEmailAddress" xml:space="preserve">
     <value>Gmail derzeit mit der Anwendung verbunden</value>
   </data>
@@ -197,6 +200,21 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   </data>
   <data name="helpTokenDelivery" xml:space="preserve">
     <value>Datum der letzten Aktualisierung der Gültigkeit der Authentifizierungstoken</value>
+  </data>
+  <data name="helpUpdateControl" xml:space="preserve">
+    <value>Datum der letzten Überprüfung der Aktualisierungen</value>
+  </data>
+  <data name="helpUpdateDownload" xml:space="preserve">
+    <value>Wenn Updates verfügbar sind, lädt die Anwendung sie herunter und startet die Installation automatisch</value>
+  </data>
+  <data name="helpUpdatePeriod" xml:space="preserve">
+    <value>Prüfzeitraum aktualisieren</value>
+  </data>
+  <data name="helpUpdateQuiet" xml:space="preserve">
+    <value>Wenn Updates installiert werden, installiert die Anwendung sie automatisch im Hintergrund</value>
+  </data>
+  <data name="helpUpdateService" xml:space="preserve">
+    <value>Aktiviert den automatischen Update-Prüfdienst</value>
   </data>
   <data name="latestVersion" xml:space="preserve">
     <value>Sie haben die neueste Version der Anwendung.</value>

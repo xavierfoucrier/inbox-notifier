@@ -98,6 +98,12 @@ namespace notifier {
 			help.SetHelpString(fieldPrivacyNotificationNone, Translation.helpPrivacyNotificationNone);
 			help.SetHelpString(fieldPrivacyNotificationShort, Translation.helpPrivacyNotificationShort);
 			help.SetHelpString(fieldPrivacyNotificationAll, Translation.helpPrivacyNotificationAll);
+			help.SetHelpString(fieldUpdateService, Translation.helpUpdateService);
+			help.SetHelpString(fieldUpdateDownload, Translation.helpUpdateDownload);
+			help.SetHelpString(fieldUpdateQuiet, Translation.helpUpdateQuiet);
+			help.SetHelpString(fieldUpdatePeriod, Translation.helpUpdatePeriod);
+			help.SetHelpString(labelUpdateControl, Translation.helpUpdateControl);
+			help.SetHelpString(buttonCheckForUpdate, Translation.helpCheckForUpdate);
 
 			// authenticates the user
 			GmailService.Authentication();
