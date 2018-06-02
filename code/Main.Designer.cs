@@ -498,6 +498,8 @@
 			// fieldPrivacyNotificationAll
 			// 
 			resources.ApplyResources(this.fieldPrivacyNotificationAll, "fieldPrivacyNotificationAll");
+			this.fieldPrivacyNotificationAll.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldPrivacyNotificationAll.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
 			this.fieldPrivacyNotificationAll.Name = "fieldPrivacyNotificationAll";
 			this.fieldPrivacyNotificationAll.UseVisualStyleBackColor = true;
 			this.fieldPrivacyNotificationAll.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationAll_CheckedChanged);
@@ -506,6 +508,8 @@
 			// 
 			resources.ApplyResources(this.fieldPrivacyNotificationShort, "fieldPrivacyNotificationShort");
 			this.fieldPrivacyNotificationShort.Checked = true;
+			this.fieldPrivacyNotificationShort.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldPrivacyNotificationShort.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
 			this.fieldPrivacyNotificationShort.Name = "fieldPrivacyNotificationShort";
 			this.fieldPrivacyNotificationShort.TabStop = true;
 			this.fieldPrivacyNotificationShort.UseVisualStyleBackColor = true;
@@ -514,6 +518,8 @@
 			// fieldPrivacyNotificationNone
 			// 
 			resources.ApplyResources(this.fieldPrivacyNotificationNone, "fieldPrivacyNotificationNone");
+			this.fieldPrivacyNotificationNone.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldPrivacyNotificationNone.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
 			this.fieldPrivacyNotificationNone.Name = "fieldPrivacyNotificationNone";
 			this.fieldPrivacyNotificationNone.UseVisualStyleBackColor = true;
 			this.fieldPrivacyNotificationNone.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationNone_CheckedChanged);
@@ -840,7 +846,7 @@
 			// timer
 			// 
 			this.timer.Enabled = true;
-			this.timer.Interval = (int)global::notifier.Properties.Settings.Default.TimerInterval;
+			this.timer.Interval = 600000;
 			this.timer.Tick += new System.EventHandler(this.Timer_Tick);
 			// 
 			// Main
