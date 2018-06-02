@@ -386,7 +386,7 @@ namespace notifier {
 			if (labels.Labels != null) {
 				UI.labelTotalLabels.Text = labels.Labels.Count.ToString();
 			}
-	}
+		}
 
 		#endregion
 
