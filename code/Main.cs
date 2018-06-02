@@ -114,7 +114,10 @@ namespace notifier {
 			// binds the "PropertyChanged" event of the settings to automatically save the user settings and display the setting label
 			Settings.Default.PropertyChanged += new PropertyChangedEventHandler((object source, PropertyChangedEventArgs target) => {
 				Settings.Default.Save();
-				labelSettingsSaved.Visible = true;
+
+				if (target.PropertyName != "UpdateControl") {
+					labelSettingsSaved.Visible = true;
+				}
 			});
 
 			// binds all computer services
