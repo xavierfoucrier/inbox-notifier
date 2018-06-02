@@ -16,7 +16,7 @@ Dependencies
 ------------
 To ensure a stable running of Gmail notifier, you need to have **some requirements** setted on your machine.
 
-1. Microsoft `.NET Framework 4.7` minimum required
+1. Microsoft `.NET Framework 4.7.1` minimum required
 
 
 Download
