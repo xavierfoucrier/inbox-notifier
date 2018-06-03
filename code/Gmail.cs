@@ -99,7 +99,9 @@ namespace notifier {
 		/// Disposes the service
 		/// </summary>
 		public void Dispose() {
-			Inbox.Dispose();
+			if (Inbox != null) {
+				Inbox.Dispose();
+			}
 		}
 
 		/// <summary>
