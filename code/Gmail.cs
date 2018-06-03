@@ -69,15 +69,15 @@ namespace notifier {
 					// exits the application
 					MessageBox.Show(Translation.authenticationWithGmailRefused, Translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					Application.Exit();
+					return;
 				}
-			} finally {
+			}
 
-				// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
-				if (Settings.Default.UpdateService && UI.UpdateService.IsPeriodSetToStartup()) {
-					UI.UpdateService.Check(!Settings.Default.UpdateDownload, true);
-				} else {
-					UI.GmailService.Inbox.Sync();
-				}
+			// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
+			if (Settings.Default.UpdateService && UI.UpdateService.IsPeriodSetToStartup()) {
+				UI.UpdateService.Check(!Settings.Default.UpdateDownload, true);
+			} else {
+				Inbox.Sync();
 			}
 		}
 
