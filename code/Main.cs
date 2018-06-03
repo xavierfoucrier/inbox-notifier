@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -421,6 +421,11 @@ namespace notifier {
 			// resets the settings label visibility
 			labelSettingsSaved.Visible = false;
 
+			// checks the start with Windows setting against the registry
+			if (tabControl.SelectedTab == tabPageGeneral) {
+				ComputerService.RegulatesRegistry();
+			}
+
 			// displays the form
 			Visible = true;
 			ShowInTaskbar = true;
@@ -510,6 +515,13 @@ namespace notifier {
 		private void ButtonCheckForUpdate_Click(object sender, EventArgs e) {
 			buttonCheckForUpdate.Enabled = false;
 			UpdateService.Check();
+		}
+
+		/// <summary>
+		/// Checks the start with Windows setting against the registry when entering the general tab page
+		/// </summary>
+		private void tabPageGeneral_Enter(object sender, EventArgs e) {
+			ComputerService.RegulatesRegistry();
 		}
 	}
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
@@ -122,6 +122,23 @@ namespace notifier {
 				}
 			} catch (Exception) {
 				return false;
+			}
+		}
+
+		/// <summary>
+		/// Regulates the start with Windows setting against the registry to prevent bad registry reflection
+		/// </summary>
+		public void RegulatesRegistry() {
+			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {
+				if (key.GetValue("Gmail notifier") != null) {
+					if (!Settings.Default.RunAtWindowsStartup) {
+						Settings.Default.RunAtWindowsStartup = true;
+					}
+				} else {
+					if (Settings.Default.RunAtWindowsStartup) {
+						Settings.Default.RunAtWindowsStartup = false;
+					}
+				}
 			}
 		}
 
