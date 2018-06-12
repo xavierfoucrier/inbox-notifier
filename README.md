@@ -2,7 +2,7 @@ Gmail notifier – [![Build Status](https://travis-ci.org/xavierfoucrier/gmail-n
 ======
 Gmail notifications instantly in the windows taskbar.
 
-[![Gmail Notifier](https://raw.github.com/xavierfoucrier/gmail-notifier/master/screenshots/main.png "Gmail Notifier - Image Gallery")](https://github.com/xavierfoucrier/gmail-notifier/blob/master/GALLERY.md)
+[![Gmail Notifier](https://raw.github.com/xavierfoucrier/gmail-notifier/master/gallery/main.png "Gmail Notifier - Image Gallery")](https://github.com/xavierfoucrier/gmail-notifier/blob/master/GALLERY.md)
 
 
 Compatibility
