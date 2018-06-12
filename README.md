@@ -36,7 +36,7 @@ You can grab an old version of the application in the [Github version history](h
 
 Gallery
 -------
-Discover the application running on Windows 7 in the [image gallery](https://github.com/xavierfoucrier/gmail-notifier/blob/master/GALLERY.md). The application interface is planned to be change in the next main version: [User interface 2.0 #30](https://github.com/xavierfoucrier/gmail-notifier/issues/30).
+Discover the application running on Windows 7 in the [image gallery](https://github.com/xavierfoucrier/gmail-notifier/blob/master/GALLERY.md).
 
 
 Updates
