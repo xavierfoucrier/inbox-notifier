@@ -218,13 +218,13 @@ at the next application startup.</value>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Behavior</value>
   </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labelNotificationOpenMessage.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 71</value>
   </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="labelNotificationOpenMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 51</value>
   </data>
-  <data name="label15.Text" xml:space="preserve">
+  <data name="labelNotificationOpenMessage.Text" xml:space="preserve">
     <value>Upon receipt of multiple messages, the
 "Open the message" option will
 automatically open the inbox.</value>
