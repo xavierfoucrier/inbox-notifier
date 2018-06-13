@@ -80,5 +80,8 @@
     <Setting Name="REGISTRY_KEY" Type="System.String" Scope="Application">
       <Value Profile="(Default)">SOFTWARE\Microsoft\Windows\CurrentVersion\Run</Value>
     </Setting>
+    <Setting Name="AUTH_TIMEOUT" Type="System.UInt32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

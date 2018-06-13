@@ -310,5 +310,14 @@ namespace notifier.Properties {
                 return ((string)(this["REGISTRY_KEY"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public uint AUTH_TIMEOUT {
+            get {
+                return ((uint)(this["AUTH_TIMEOUT"]));
+            }
+        }
     }
 }

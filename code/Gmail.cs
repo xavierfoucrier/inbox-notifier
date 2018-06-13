@@ -115,7 +115,7 @@ namespace notifier {
 
 				// defines a cancellation token source
 				CancellationTokenSource cancellation = new CancellationTokenSource();
-				cancellation.CancelAfter(TimeSpan.FromSeconds(20));
+				cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.AUTH_TIMEOUT));
 
 				// waits for the user validation, only if the user has not already authorized the application
 				UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
