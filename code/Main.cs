@@ -125,6 +125,9 @@ namespace notifier {
 			ComputerService.BindPowerMode();
 			ComputerService.BindSessionSwitch();
 
+			// displays the open message label
+			labelNotificationOpenMessage.Visible = Settings.Default.NotificationBehavior == 1;
+
 			// displays the step delay setting
 			fieldStepDelay.SelectedIndex = (int)Settings.Default.StepDelay;
 
@@ -258,6 +261,7 @@ namespace notifier {
 		/// </summary>
 		private void FieldNotificationBehavior_SelectionChangeCommitted(object sender, EventArgs e) {
 			Settings.Default.NotificationBehavior = (uint)fieldNotificationBehavior.SelectedIndex;
+			labelNotificationOpenMessage.Visible = Settings.Default.NotificationBehavior == 1;
 		}
 
 		/// <summary>
