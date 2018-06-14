@@ -128,6 +128,9 @@ Do you really want to exit?</value>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Authentification failed</value>
   </data>
+  <data name="authenticationNeeded" xml:space="preserve">
+    <value>Waiting for authentication with your Gmail account...</value>
+  </data>
   <data name="authenticationWithGmailRefused" xml:space="preserve">
     <value>You refused the application accesses your Gmail account. This step is required and will be asked again the next time.
 

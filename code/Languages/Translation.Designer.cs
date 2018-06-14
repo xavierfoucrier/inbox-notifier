@@ -90,6 +90,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à En attente d&apos;authentification avec votre compte Gmail ....
+        /// </summary>
+        internal static string authenticationNeeded {
+            get {
+                return ResourceManager.GetString("authenticationNeeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Vous avez refusé que l&apos;application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.
         ///
         ///L&apos;application va désormais quitter..

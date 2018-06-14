@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -46,6 +46,13 @@ namespace notifier {
 		/// Asynchronous method used to get user credential
 		/// </summary>
 		public async void Authentication() {
+
+			// displays the authentication icon and text if the google api token file doesn't exists
+			if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {
+				UI.notifyIcon.Icon = Resources.authentication;
+				UI.notifyIcon.Text = Translation.authenticationNeeded;
+			}
+
 			try {
 
 				// waits for the user authorization
@@ -62,8 +69,8 @@ namespace notifier {
 				// exits the application if the google api token file doesn't exists
 				if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {
 
-					// displays the authentication icon and text
-					UI.notifyIcon.Icon = Resources.authentication;
+					// displays the authentication failure icon and text
+					UI.notifyIcon.Icon = Resources.warning;
 					UI.notifyIcon.Text = Translation.authenticationFailed;
 
 					// exits the application

@@ -128,6 +128,9 @@ Wollen Sie wirklich beenden wollen?</value>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Fehler bei der Authentifizierung</value>
   </data>
+  <data name="authenticationNeeded" xml:space="preserve">
+    <value>Warten auf die Authentifizierung mit Ihrem Google Mail-Konto ...</value>
+  </data>
   <data name="authenticationWithGmailRefused" xml:space="preserve">
     <value>Sie verweigert die Anwendung greift Ihr Gmail Konto. Dieser Schritt ist erforderlich und wird das nächste Mal wieder gefragt.
 

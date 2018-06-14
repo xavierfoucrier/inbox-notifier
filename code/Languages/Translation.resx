@@ -128,6 +128,9 @@ Voulez-vous vraiment quitter l'application ?</value>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Erreur d'authentification</value>
   </data>
+  <data name="authenticationNeeded" xml:space="preserve">
+    <value>En attente d'authentification avec votre compte Gmail ...</value>
+  </data>
   <data name="authenticationWithGmailRefused" xml:space="preserve">
     <value>Vous avez refusé que l'application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.
 
