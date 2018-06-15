@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Media;
@@ -24,7 +24,7 @@ namespace notifier {
 		/// <summary>
 		/// Main inbox label
 		/// </summary>
-		private Google.Apis.Gmail.v1.Data.Label Box;
+		private Label Box;
 
 		/// <summary>
 		/// Unread threads
@@ -124,7 +124,7 @@ namespace notifier {
 					}
 
 					// gets the "spam" label
-					Google.Apis.Gmail.v1.Data.Label spam = await Api.Users.Labels.Get("me", "SPAM").ExecuteAsync();
+					Label spam = await Api.Users.Labels.Get("me", "SPAM").ExecuteAsync();
 
 					// manages unread spams
 					if (spam.ThreadsUnread > 0) {
@@ -177,7 +177,7 @@ namespace notifier {
 						UsersResource.MessagesResource.ListRequest messages = Api.Users.Messages.List("me");
 						messages.LabelIds = "UNREAD";
 						messages.MaxResults = 1;
-						Google.Apis.Gmail.v1.Data.Message message = await Api.Users.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
+						Message message = await Api.Users.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
 							return m.Result.Messages.First().Id;
 						})).ExecuteAsync();
 
