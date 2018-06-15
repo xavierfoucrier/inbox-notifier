@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Resources;
 
@@ -7,12 +7,17 @@ using System.Resources;
 // associées à un assembly.
 [assembly: AssemblyTitle("Gmail notifications for Windows")]
 [assembly: AssemblyDescription("Notifications of new Gmail messages for Windows platforms")]
-[assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Xavier Foucrier")]
 [assembly: AssemblyProduct("Gmail notifier for Windows")]
 [assembly: AssemblyCopyright("Copyright © Gmail notifier")]
 [assembly: AssemblyTrademark("Xavier Foucrier")]
 [assembly: AssemblyCulture("")]
+
+#if DEBUG
+	[assembly: AssemblyConfiguration("Debug")]
+#else
+	[assembly: AssemblyConfiguration("Release")]
+#endif
 
 // L'affectation de la valeur false à ComVisible rend les types invisibles dans cet assembly 
 // aux composants COM.  Si vous devez accéder à un type dans cet assembly à partir de 
