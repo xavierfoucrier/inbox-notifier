@@ -5,8 +5,8 @@ using System.Resources;
 // Les informations générales relatives à un assembly dépendent de 
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("Notifications Gmail pour Windows")]
-[assembly: AssemblyDescription("Notifications de nouveaux message en provenance de Gmail pour les plateformes Windows")]
+[assembly: AssemblyTitle("Gmail notifications for Windows")]
+[assembly: AssemblyDescription("Notifications of new Gmail messages for Windows platforms")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Xavier Foucrier")]
 [assembly: AssemblyProduct("Gmail notifier for Windows")]
