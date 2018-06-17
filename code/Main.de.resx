@@ -397,13 +397,13 @@ automatisch den Posteingang öffnen.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>61, 10</value>
+    <value>56, 10</value>
   </data>
   <data name="linkLicense.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 34</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
-    <value>©2016-2018. Alle Rechte vorbehalten.
+    <value>©2018. Alle Rechte vorbehalten.
 Open Source, unter der MIT-Lizenz vertrieben</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
