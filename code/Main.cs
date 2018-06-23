@@ -188,13 +188,15 @@ namespace notifier {
 		/// </summary>
 		private void Main_FormClosing(object sender, FormClosingEventArgs e) {
 
-			// asks the user for exit, depending on the application settings
-			if (e.CloseReason != CloseReason.ApplicationExitCall && e.CloseReason != CloseReason.WindowsShutDown && Settings.Default.AskonExit) {
-				DialogResult dialog = MessageBox.Show(Translation.applicationExitQuestion, Translation.applicationExit, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+			// hides the form to the systray if closed by the user
+			if (e.CloseReason == CloseReason.UserClosing) {
+				labelSettingsSaved.Visible = false;
+				WindowState = FormWindowState.Minimized;
+				ShowInTaskbar = false;
+				Visible = false;
+				e.Cancel = true;
 
-				if (dialog == DialogResult.No) {
-					e.Cancel = true;
-				}
+				return;
 			}
 
 			// disposes the gmail service
@@ -441,7 +443,17 @@ namespace notifier {
 		/// Manages the context menu exit item
 		/// </summary>
 		private void MenuItemExit_Click(object sender, EventArgs e) {
-			Close();
+
+			// asks the user for exit, depending on the application settings
+			if (Settings.Default.AskonExit) {
+				DialogResult dialog = MessageBox.Show(Translation.applicationExitQuestion, Translation.applicationExit, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+				if (dialog == DialogResult.No) {
+					return;
+				}
+			}
+
+			Application.Exit();
 		}
 
 		/// <summary>
