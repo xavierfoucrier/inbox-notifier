@@ -18,6 +18,8 @@ To ensure a stable running of Gmail notifier, you need to have **some requiremen
 
 1. Microsoft `.NET Framework 4.7.1` minimum required
 
+Note that this version of the .NET Framework **evolve in time**: the application cares about **system security** and having one of the latest .NET version is very important for the final user. By default, if you don't have the required version installed, the application will display a message and propose to download the specified version on the **Microsoft official site**.
+
 
 Download
 -------
