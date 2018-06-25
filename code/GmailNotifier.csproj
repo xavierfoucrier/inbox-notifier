@@ -239,8 +239,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>echo Cleaning bin directory by deleting *.xml and *.pdb files
-del "$(TargetDir)*.xml" /q
+    <PostBuildEvent>echo Cleaning bin directory by deleting *.pdb files
 del "$(TargetDir)*.pdb" /q</PostBuildEvent>
     <PostBuildEvent Condition=" '$(OS)' == 'Unix'">
     </PostBuildEvent>
