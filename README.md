@@ -7,7 +7,7 @@ Gmail notifications instantly in the windows taskbar.
 
 Compatibility
 -------------
-Gmail notifier is fully tested on **Windows 7** desktop *(SP1)* and on a **Windows 10** Virtual Machine.
+Gmail notifier is fully tested on **Windows 7** desktop *(SP1)* and on a **Windows 10** laptop.
 
 Many other windows operating systems may work, like Windows 8/8.1, XP or Vista, but are not extensively tested for the moment.
 
