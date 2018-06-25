@@ -7,7 +7,7 @@ Gmail notifications instantly in the windows taskbar.
 
 Compatibility
 -------------
-Gmail notifier is fully tested on **Windows 7** desktop *(SP1)* and on a **Windows 10** Virtual Machine.
+Gmail notifier is fully tested on **Windows 7** desktop *(SP1)* and on a **Windows 10** laptop.
 
 Many other windows operating systems may work, like Windows 8/8.1, XP or Vista, but are not extensively tested for the moment.
 
@@ -17,6 +17,8 @@ Dependencies
 To ensure a stable running of Gmail notifier, you need to have **some requirements** setted on your machine.
 
 1. Microsoft `.NET Framework 4.7.1` minimum required
+
+Note that this version of the .NET Framework **evolve in time**: the application cares about **system security** and having one of the latest .NET version is very important for the final user. By default, if you don't have the required version installed, the application will display a message and propose to download the specified version on the **Microsoft official site**.
 
 
 Download
@@ -56,7 +58,7 @@ Discover the [privacy practices](https://github.com/xavierfoucrier/gmail-notifie
 
 Softpedia award certification
 -------
-This product was last tested in the **Softpedia Labs** on **9th of November 2017** by *Anca Roman*.
+This product was last tested in the **Softpedia Labs** on **19th of June 2018** by *Teodor Nechita*.
 
 Softpedia guarantees that Gmail notifier is **100% Free**, which means it does not contain any form of malware, including but not limited to: spyware, viruses, trojans and backdoors.
 
