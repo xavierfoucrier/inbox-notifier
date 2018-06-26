@@ -288,6 +288,9 @@ namespace notifier {
 				// cleans the tag
 				UI.NotificationService.Tag = null;
 
+				// resets the number of unread threads
+				UnreadThreads = 0;
+
 				// disables the mark as read menu item
 				UI.menuItemMarkAsRead.Text = Translation.markAsRead;
 				UI.menuItemMarkAsRead.Enabled = false;
