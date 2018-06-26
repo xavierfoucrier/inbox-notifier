@@ -17,7 +17,7 @@
     <Setting Name="AudioNotification" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="TimerInterval" Type="System.UInt32" Scope="User">
+    <Setting Name="TimerInterval" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">600000</Value>
     </Setting>
     <Setting Name="SpamNotification" Type="System.Boolean" Scope="User">
