@@ -371,7 +371,7 @@ prochain démarrage de l'application.</value>
     <value>201, 17</value>
   </data>
   <data name="fieldAudioPop.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="fieldAudioPop.Text" xml:space="preserve">
     <value>Son à l'ouverture et à la fermeture</value>
@@ -473,7 +473,7 @@ prochain démarrage de l'application.</value>
     <value>231, 17</value>
   </data>
   <data name="fieldAskonExit.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>Demander avant de quitter l'application</value>
