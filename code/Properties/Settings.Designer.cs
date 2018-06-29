@@ -319,5 +319,17 @@ namespace notifier.Properties {
                 return ((uint)(this["AUTH_TIMEOUT"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AudioPop {
+            get {
+                return ((bool)(this["AudioPop"]));
+            }
+            set {
+                this["AudioPop"] = value;
+            }
+        }
     }
 }
