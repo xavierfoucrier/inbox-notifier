@@ -1885,7 +1885,7 @@ la boite de réception.</value>
     <value>NoControl</value>
   </data>
   <data name="fieldUpdateDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 61</value>
+    <value>13, 60</value>
   </data>
   <data name="fieldUpdateDownload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -1918,7 +1918,7 @@ la boite de réception.</value>
     <value>NoControl</value>
   </data>
   <data name="fieldUpdateService.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 25</value>
+    <value>13, 24</value>
   </data>
   <data name="fieldUpdateService.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
