@@ -35,6 +35,7 @@ namespace notifier {
 			this.fieldLanguage = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.fieldAudioPop = new System.Windows.Forms.CheckBox();
 			this.fieldRunAtWindowsStartup = new System.Windows.Forms.CheckBox();
 			this.fieldMinimizeToSystray = new System.Windows.Forms.CheckBox();
 			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
@@ -218,12 +219,22 @@ namespace notifier {
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.fieldAudioPop);
 			this.groupBox1.Controls.Add(this.fieldRunAtWindowsStartup);
 			this.groupBox1.Controls.Add(this.fieldMinimizeToSystray);
 			this.groupBox1.Controls.Add(this.fieldAskonExit);
 			resources.ApplyResources(this.groupBox1, "groupBox1");
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.TabStop = false;
+			// 
+			// fieldAudioPop
+			// 
+			resources.ApplyResources(this.fieldAudioPop, "fieldAudioPop");
+			this.fieldAudioPop.Checked = global::notifier.Properties.Settings.Default.AudioPop;
+			this.fieldAudioPop.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldAudioPop.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioPop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAudioPop.Name = "fieldAudioPop";
+			this.fieldAudioPop.UseVisualStyleBackColor = true;
 			// 
 			// fieldRunAtWindowsStartup
 			// 
@@ -995,6 +1006,7 @@ namespace notifier {
 		internal System.Windows.Forms.MenuItem menuItemTimout;
 		internal System.Windows.Forms.MenuItem menuItemSettings;
 		private System.Windows.Forms.GroupBox groupBox9;
+		private System.Windows.Forms.CheckBox fieldAudioPop;
 	}
 }
 

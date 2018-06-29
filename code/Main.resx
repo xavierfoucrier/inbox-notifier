@@ -355,6 +355,39 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="fieldAudioPop.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fieldAudioPop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="fieldAudioPop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 71</value>
+  </data>
+  <data name="fieldAudioPop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="fieldAudioPop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 17</value>
+  </data>
+  <data name="fieldAudioPop.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="fieldAudioPop.Text" xml:space="preserve">
+    <value>Son à l'ouverture et à la fermeture</value>
+  </data>
+  <data name="&gt;&gt;fieldAudioPop.Name" xml:space="preserve">
+    <value>fieldAudioPop</value>
+  </data>
+  <data name="&gt;&gt;fieldAudioPop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fieldAudioPop.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;fieldAudioPop.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="fieldRunAtWindowsStartup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -386,7 +419,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;fieldRunAtWindowsStartup.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="fieldMinimizeToSystray.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -422,7 +455,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;fieldMinimizeToSystray.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="fieldAskonExit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -431,7 +464,7 @@ prochain démarrage de l'application.</value>
     <value>NoControl</value>
   </data>
   <data name="fieldAskonExit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 71</value>
+    <value>13, 94</value>
   </data>
   <data name="fieldAskonExit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -455,7 +488,7 @@ prochain démarrage de l'application.</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;fieldAskonExit.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 7</value>
