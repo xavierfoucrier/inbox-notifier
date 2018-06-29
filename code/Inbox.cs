@@ -203,7 +203,6 @@ namespace notifier {
 
 							if (Settings.Default.PrivacyNotification == (int)Notification.Privacy.None) {
 								UI.NotificationService.Tip(from, message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : Translation.newUnreadMessage);
-
 							} else if (Settings.Default.PrivacyNotification == (int)Notification.Privacy.Short) {
 								UI.NotificationService.Tip(from, subject);
 							}
