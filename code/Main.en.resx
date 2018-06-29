@@ -155,6 +155,12 @@ at the next application startup.</value>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Behavior</value>
   </data>
+  <data name="fieldAudioPop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 17</value>
+  </data>
+  <data name="fieldAudioPop.Text" xml:space="preserve">
+    <value>Sound at startup and exit</value>
+  </data>
   <data name="fieldRunAtWindowsStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 17</value>
   </data>
