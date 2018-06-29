@@ -125,6 +125,12 @@
 
 Wollen Sie wirklich beenden wollen?</value>
   </data>
+  <data name="attachment" xml:space="preserve">
+    <value>anhang</value>
+  </data>
+  <data name="attachments" xml:space="preserve">
+    <value>anhänge</value>
+  </data>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Fehler bei der Authentifizierung</value>
   </data>

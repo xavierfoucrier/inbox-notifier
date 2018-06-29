@@ -81,6 +81,24 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à pièce jointe.
+        /// </summary>
+        internal static string attachment {
+            get {
+                return ResourceManager.GetString("attachment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à pièces jointes.
+        /// </summary>
+        internal static string attachments {
+            get {
+                return ResourceManager.GetString("attachments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur d&apos;authentification.
         /// </summary>
         internal static string authenticationFailed {

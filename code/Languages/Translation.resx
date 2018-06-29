@@ -125,6 +125,12 @@
 
 Voulez-vous vraiment quitter l'application ?</value>
   </data>
+  <data name="attachment" xml:space="preserve">
+    <value>pièce jointe</value>
+  </data>
+  <data name="attachments" xml:space="preserve">
+    <value>pièces jointes</value>
+  </data>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Erreur d'authentification</value>
   </data>

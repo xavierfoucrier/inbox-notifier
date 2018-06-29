@@ -125,6 +125,12 @@
 
 Do you really want to exit?</value>
   </data>
+  <data name="attachment" xml:space="preserve">
+    <value>attachment</value>
+  </data>
+  <data name="attachments" xml:space="preserve">
+    <value>attachments</value>
+  </data>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Authentification failed</value>
   </data>
