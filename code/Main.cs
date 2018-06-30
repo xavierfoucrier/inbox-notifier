@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Media;
 using System.Windows.Forms;
 using notifier.Languages;
 using notifier.Properties;
@@ -49,6 +50,13 @@ namespace notifier {
 		/// Loads the form
 		/// </summary>
 		private void Main_Load(object sender, EventArgs e) {
+
+			// plays a pop sound at application startup
+			if (Settings.Default.AudioPop) {
+				using (SoundPlayer player = new SoundPlayer(Resources.pop_open)) {
+					player.Play();
+				}
+			}
 
 			// hides the form by default
 			Visible = false;
@@ -201,6 +209,13 @@ namespace notifier {
 
 			// disposes the gmail service
 			GmailService.Dispose();
+
+			// plays a pop sound at application exit
+			if (Settings.Default.AudioPop) {
+				using (SoundPlayer player = new SoundPlayer(Resources.pop_exit)) {
+					player.PlaySync();
+				}
+			}
 		}
 
 		/// <summary>
