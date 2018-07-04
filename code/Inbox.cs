@@ -206,12 +206,14 @@ namespace notifier {
 							}
 
 							// detects if the message contains attachments
-							int attachments = message.Payload.Parts.Where(part => !String.IsNullOrEmpty(part.Filename)).Count();
-							
-							if (attachments > 0) {
-								from = (from.Length > 48 ? from.Substring(0, 48) : from) + " – " + attachments.ToString() + " " + (attachments > 1 ? Translation.attachments : Translation.attachment);
+							if (message.Payload.Parts != null) {
+								int attachments = message.Payload.Parts.Where(part => !String.IsNullOrEmpty(part.Filename)).Count();
+
+								if (attachments > 0) {
+									from = (from.Length > 48 ? from.Substring(0, 48) : from) + " – " + attachments.ToString() + " " + (attachments > 1 ? Translation.attachments : Translation.attachment);
+								}
 							}
-							
+
 							UI.NotificationService.Tip(from, subject);
 						} else {
 							UI.NotificationService.Tip(Box.ThreadsUnread.ToString() + " " + (Box.ThreadsUnread > 1 ? Translation.unreadMessages : Translation.unreadMessage), Translation.newUnreadMessage);
