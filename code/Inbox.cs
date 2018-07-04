@@ -206,7 +206,7 @@ namespace notifier {
 							}
 
 							// detects if the message contains attachments
-							if (message.Payload.Parts != null) {
+							if (message.Payload.Parts != null && message.Payload.MimeType == "multipart/mixed") {
 								int attachments = message.Payload.Parts.Where(part => !String.IsNullOrEmpty(part.Filename)).Count();
 
 								if (attachments > 0) {
