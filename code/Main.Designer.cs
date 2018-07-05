@@ -87,6 +87,7 @@ namespace notifier {
 			this.fieldUpdateService = new System.Windows.Forms.CheckBox();
 			this.tabPageAbout = new System.Windows.Forms.TabPage();
 			this.linkVersion = new System.Windows.Forms.LinkLabel();
+			this.linkPrivacy = new System.Windows.Forms.LinkLabel();
 			this.linkLicense = new System.Windows.Forms.LinkLabel();
 			this.linkWebsiteXavier = new System.Windows.Forms.LinkLabel();
 			this.linkWebsiteYusuke = new System.Windows.Forms.LinkLabel();
@@ -642,6 +643,7 @@ namespace notifier {
 			// 
 			resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
 			this.tabPageAbout.Controls.Add(this.linkVersion);
+			this.tabPageAbout.Controls.Add(this.linkPrivacy);
 			this.tabPageAbout.Controls.Add(this.linkLicense);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteXavier);
 			this.tabPageAbout.Controls.Add(this.linkWebsiteYusuke);
@@ -662,6 +664,18 @@ namespace notifier {
 			this.linkVersion.TabStop = true;
 			this.linkVersion.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkVersion_LinkClicked);
+			// 
+			// linkPrivacy
+			// 
+			resources.ApplyResources(this.linkPrivacy, "linkPrivacy");
+			this.linkPrivacy.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkPrivacy.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+			this.linkPrivacy.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkPrivacy.Name = "linkPrivacy";
+			this.linkPrivacy.TabStop = true;
+			this.linkPrivacy.UseCompatibleTextRendering = true;
+			this.linkPrivacy.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkPrivacy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPrivacy_LinkClicked);
 			// 
 			// linkLicense
 			// 
@@ -1008,6 +1022,7 @@ namespace notifier {
 		internal System.Windows.Forms.MenuItem menuItemSettings;
 		private System.Windows.Forms.GroupBox groupBox9;
 		private System.Windows.Forms.CheckBox fieldAudioPop;
+		private System.Windows.Forms.LinkLabel linkPrivacy;
 	}
 }
 

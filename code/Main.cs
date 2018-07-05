@@ -175,6 +175,11 @@ namespace notifier {
 			tipTag.ToolTipIcon = ToolTipIcon.Info;
 			tipTag.IsBalloon = false;
 
+			// displays a tooltip for the license link
+			ToolTip tipPrivacy = new ToolTip();
+			tipPrivacy.SetToolTip(linkPrivacy, Settings.Default.GITHUB_REPOSITORY + "/blob/master/PRIVACY.md");
+			tipPrivacy.IsBalloon = false;
+
 			// displays a tooltip for the website link
 			ToolTip tipWebsiteYusuke = new ToolTip();
 			tipWebsiteYusuke.SetToolTip(linkWebsiteYusuke, Settings.Default.SITE_YUSUKE);
@@ -317,6 +322,13 @@ namespace notifier {
 		/// </summary>
 		private void LinkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.Version);
+		}
+
+		/// <summary>
+		/// Opens the Github privacy notice file
+		/// </summary>
+		private void linkPrivacy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/blob/master/PRIVACY.md");
 		}
 
 		/// <summary>

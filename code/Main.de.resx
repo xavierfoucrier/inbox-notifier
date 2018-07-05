@@ -396,6 +396,15 @@ automatisch den Posteingang öffnen.</value>
     <value>Über</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="linkPrivacy.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>13, 21</value>
+  </data>
+  <data name="linkPrivacy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 20</value>
+  </data>
+  <data name="linkPrivacy.Text" xml:space="preserve">
+    <value>Siehe unsere Datenschutzrichtlinie</value>
+  </data>
   <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
     <value>56, 10</value>
   </data>
