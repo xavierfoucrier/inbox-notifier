@@ -86,5 +86,8 @@
     <Setting Name="AudioPop" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="APPLICATION_NAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Gmail notifier for Windows</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

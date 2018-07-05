@@ -331,5 +331,14 @@ namespace notifier.Properties {
                 this["AudioPop"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Gmail notifier for Windows")]
+        public string APPLICATION_NAME {
+            get {
+                return ((string)(this["APPLICATION_NAME"]));
+            }
+        }
     }
 }

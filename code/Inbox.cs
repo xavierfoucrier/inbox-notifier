@@ -51,7 +51,7 @@ namespace notifier {
 			// initializes the gmail service base client api
 			Api = new GmailService(new BaseClientService.Initializer() {
 				HttpClientInitializer = credential,
-				ApplicationName = "Gmail notifier for Windows"
+				ApplicationName = Settings.Default.APPLICATION_NAME
 			});
 
 			// retrieves the gmail address
