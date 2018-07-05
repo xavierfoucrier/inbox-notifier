@@ -266,21 +266,28 @@ namespace notifier {
 				UI.notifyIcon.Icon = Resources.sync;
 				UI.notifyIcon.Text = Translation.sync;
 
-				// gets all unread threads
-				UsersResource.ThreadsResource.ListRequest threads = Api.Users.Threads.List("me");
-				threads.LabelIds = "UNREAD";
-				ListThreadsResponse list = await threads.ExecuteAsync();
-				IList<Thread> unread = list.Threads;
+				// gets all unread messages
+				UsersResource.MessagesResource.ListRequest messages = Api.Users.Messages.List("me");
+				messages.LabelIds = "UNREAD";
+				ListMessagesResponse list = await messages.ExecuteAsync();
+				IList<Message> unread = list.Messages;
 
 				// loops through all unread threads and removes the "unread" label for each one
 				if (unread != null && unread.Count > 0) {
-					foreach (Thread thread in unread) {
-						ModifyThreadRequest request = new ModifyThreadRequest() {
-							RemoveLabelIds = new List<string>() { "UNREAD" }
-						};
 
-						await Api.Users.Threads.Modify(request, "me", thread.Id).ExecuteAsync();
-					}
+					// batch all mail ids to modify
+					IEnumerable<string> batch = unread.Select(
+						thread => thread.Id
+					);
+
+					// creates the batch request
+					BatchModifyMessagesRequest request = new BatchModifyMessagesRequest() {
+						Ids = batch.ToList(),
+						RemoveLabelIds = new List<string>() { "UNREAD" }
+					};
+
+					// executes the batch request to mark all mails as read
+					await Api.Users.Messages.BatchModify(request, "me").ExecuteAsync();
 
 					// gets the "inbox" label
 					Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
