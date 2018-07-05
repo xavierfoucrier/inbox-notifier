@@ -14,4 +14,4 @@ For more informations about Google terms, read the [Google Privacy Policies](htt
 
 Our Privacy Policy may change from time to time. We will not reduce your rights under this Privacy Policy without your explicit consent. We will post any privacy policy changes on this page and, if the changes are significant, we will provide a more prominent notice.
 
-*Last update: 14th February 2017*
+*Last update: 5th Juli 2018*
