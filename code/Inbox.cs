@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Media;
 using System.Net;
 using System.Text.RegularExpressions;
-using Google.Apis.Auth.OAuth2;
 using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
@@ -44,18 +43,8 @@ namespace notifier {
 		/// Class constructor
 		/// </summary>
 		/// <param name="form">Reference to the application main window</param>
-		/// <param name="credential">User credential given by the authorization broker</param>
-		public Inbox(ref Main form, ref UserCredential credential) {
+		public Inbox(ref Main form) {
 			UI = form;
-
-			// initializes the gmail service base client api
-			Api = new GmailService(new BaseClientService.Initializer() {
-				HttpClientInitializer = credential,
-				ApplicationName = Settings.Default.APPLICATION_NAME
-			});
-
-			// retrieves the gmail address
-			EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
 		}
 
 		/// <summary>
@@ -114,6 +103,17 @@ namespace notifier {
 			UI.UpdateService.Ping();
 
 			try {
+
+				// initializes the gmail service base client api
+				if (Api == null) {
+					Api = new GmailService(new BaseClientService.Initializer() {
+						HttpClientInitializer = UI.GmailService.Credential,
+						ApplicationName = Settings.Default.APPLICATION_NAME
+					});
+
+					// retrieves the gmail address
+					UI.labelEmailAddress.Text = EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
+				}
 
 				// manages the spam notification
 				if (Settings.Default.SpamNotification) {

@@ -21,11 +21,6 @@ namespace notifier {
 		internal Inbox Inbox;
 
 		/// <summary>
-		/// User credential for the gmail authentication
-		/// </summary>
-		private UserCredential Credential;
-
-		/// <summary>
 		/// Reference to the main interface
 		/// </summary>
 		private Main UI;
@@ -58,11 +53,10 @@ namespace notifier {
 				// waits for the user authorization
 				Credential = await AuthorizationBroker();
 
-				// instanciates a new inbox with the credential
-				Inbox = new Inbox(ref UI, ref Credential);
+				// instanciates a new inbox
+				Inbox = new Inbox(ref UI);
 
-				// displays the user email address
-				UI.labelEmailAddress.Text = Inbox.EmailAddress;
+				// gets the token delivery time
 				UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
 			} catch (Exception) {
 
@@ -141,6 +135,13 @@ namespace notifier {
 		#endregion
 
 		#region #accessors
+
+		/// <summary>
+		/// User credential for the gmail authentication
+		/// </summary>
+		public UserCredential Credential {
+			get; set;
+		}
 
 		#endregion
 	}
