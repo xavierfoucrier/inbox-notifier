@@ -201,16 +201,16 @@ at the next application startup.</value>
     <value>Authentication</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 13</value>
+    <value>83, 13</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Token delivery :</value>
+    <value>Token delivery:</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 13</value>
+    <value>83, 13</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Gmail account :</value>
+    <value>Gmail account:</value>
   </data>
   <data name="buttonGmailDisconnect.Text" xml:space="preserve">
     <value>Disconnect</value>
