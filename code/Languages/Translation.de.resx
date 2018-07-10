@@ -225,12 +225,6 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   <data name="helpUpdateService" xml:space="preserve">
     <value>Aktiviert den automatischen Update-Prüfdienst</value>
   </data>
-  <data name="inboxMessage" xml:space="preserve">
-    <value>E-Mail in Ihrem Posteingang</value>
-  </data>
-  <data name="inboxMessages" xml:space="preserve">
-    <value>E-Mails in Ihrem Posteingang</value>
-  </data>
   <data name="latestVersion" xml:space="preserve">
     <value>Sie haben die neueste Version der Anwendung.</value>
   </data>
@@ -242,6 +236,12 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   </data>
   <data name="markAsReadErrorOccured" xml:space="preserve">
     <value>Ein Fehler ist aufgetreten während der Operation "Als gelesen markieren":</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="messages" xml:space="preserve">
+    <value>E-Mails</value>
   </data>
   <data name="multipleInstances" xml:space="preserve">
     <value>Mehrere Instanzen</value>
