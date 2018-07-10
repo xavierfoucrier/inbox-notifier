@@ -192,10 +192,10 @@ at the next application startup.</value>
     <value>Drafts</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
+    <value>36, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Inbox :</value>
+    <value>Inbox</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>Authentication</value>
