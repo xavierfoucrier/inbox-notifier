@@ -187,28 +187,22 @@ nächsten Start der Anwendung.</value>
     <value>Statistiken</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>53, 13</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
-    <value>Etikett(en)</value>
+    <value>Etiketten</value>
   </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
   </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Entwürfe</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 13</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>mail(s) im Posteingang</value>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Dame</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
+    <value>77, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>ungelesene mail(s)</value>
+    <value>Empfangsbox</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>Beglaubigung</value>
