@@ -373,6 +373,24 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à email dans votre boite de réception.
+        /// </summary>
+        internal static string inboxMessage {
+            get {
+                return ResourceManager.GetString("inboxMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à emails dans votre boite de réception.
+        /// </summary>
+        internal static string inboxMessages {
+            get {
+                return ResourceManager.GetString("inboxMessages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Vous disposez de la dernière version de l&apos;application..
         /// </summary>
         internal static string latestVersion {

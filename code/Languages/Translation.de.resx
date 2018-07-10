@@ -225,6 +225,12 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   <data name="helpUpdateService" xml:space="preserve">
     <value>Aktiviert den automatischen Update-Prüfdienst</value>
   </data>
+  <data name="inboxMessage" xml:space="preserve">
+    <value>E-Mail in Ihrem Posteingang</value>
+  </data>
+  <data name="inboxMessages" xml:space="preserve">
+    <value>E-Mails in Ihrem Posteingang</value>
+  </data>
   <data name="latestVersion" xml:space="preserve">
     <value>Sie haben die neueste Version der Anwendung.</value>
   </data>

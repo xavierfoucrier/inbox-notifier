@@ -225,6 +225,12 @@ Do you really want to disconnect your Gmail account and restart the application 
   <data name="helpUpdateService" xml:space="preserve">
     <value>Enables the automatic update check service</value>
   </data>
+  <data name="inboxMessage" xml:space="preserve">
+    <value>message in your inbox</value>
+  </data>
+  <data name="inboxMessages" xml:space="preserve">
+    <value>messages in your inbox</value>
+  </data>
   <data name="latestVersion" xml:space="preserve">
     <value>You have the latest version of the application.</value>
   </data>
