@@ -93,8 +93,9 @@ namespace notifier {
 			help.SetHelpString(labelEmailAddress, Translation.helpEmailAddress);
 			help.SetHelpString(labelTokenDelivery, Translation.helpTokenDelivery);
 			help.SetHelpString(buttonGmailDisconnect, Translation.helpGmailDisconnect);
-			help.SetHelpString(labelTotalUnreadMails, Translation.helpStatistics);
-			help.SetHelpString(labelTotalMails, Translation.helpStatistics);
+			help.SetHelpString(chartUnreadMails, Translation.helpStatistics);
+			help.SetHelpString(chartTotalMails, Translation.helpStatistics);
+			help.SetHelpString(chartInbox, Translation.helpStatistics);
 			help.SetHelpString(labelTotalDrafts, Translation.helpStatistics);
 			help.SetHelpString(labelTotalLabels, Translation.helpStatistics);
 			help.SetHelpString(fieldMessageNotification, Translation.helpMessageNotification);
