@@ -9,6 +9,7 @@ using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using notifier.Languages;
 using notifier.Properties;
+using System.Windows.Forms;
 
 namespace notifier {
 	class Inbox {
@@ -23,7 +24,7 @@ namespace notifier {
 		/// <summary>
 		/// Main inbox label
 		/// </summary>
-		private Label Box;
+		private Google.Apis.Gmail.v1.Data.Label Box;
 
 		/// <summary>
 		/// Unread threads
@@ -124,7 +125,7 @@ namespace notifier {
 					}
 
 					// gets the "spam" label
-					Label spam = await Api.Users.Labels.Get("me", "SPAM").ExecuteAsync();
+					Google.Apis.Gmail.v1.Data.Label spam = await Api.Users.Labels.Get("me", "SPAM").ExecuteAsync();
 
 					// manages unread spams
 					if (spam.ThreadsUnread > 0) {
@@ -177,7 +178,7 @@ namespace notifier {
 						UsersResource.MessagesResource.ListRequest messages = Api.Users.Messages.List("me");
 						messages.LabelIds = "UNREAD";
 						messages.MaxResults = 1;
-						Message message = await Api.Users.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
+						Google.Apis.Gmail.v1.Data.Message message = await Api.Users.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
 							return m.Result.Messages.First().Id;
 						})).ExecuteAsync();
 
@@ -270,7 +271,7 @@ namespace notifier {
 				UsersResource.MessagesResource.ListRequest messages = Api.Users.Messages.List("me");
 				messages.LabelIds = "UNREAD";
 				ListMessagesResponse list = await messages.ExecuteAsync();
-				IList<Message> unread = list.Messages;
+				IList<Google.Apis.Gmail.v1.Data.Message> unread = list.Messages;
 
 				// loops through all unread threads and removes the "unread" label for each one
 				if (unread != null && unread.Count > 0) {
@@ -391,15 +392,40 @@ namespace notifier {
 		/// Asynchronous method used to get account statistics
 		/// </summary>
 		private async void UpdateStatistics() {
-			UI.labelTotalUnreadMails.Text = Box.ThreadsUnread.ToString();
-			UI.labelTotalMails.Text = Box.ThreadsTotal.ToString();
 
+			// gets inbox message count
+			int unread = (int)Box.ThreadsUnread;
+			int total = (int)Box.ThreadsTotal;
+
+			// builds the chart
+			if (total == 0) {
+				UI.chartUnreadMails.Width = 0;
+				UI.chartTotalMails.Width = 0;
+			} else {
+				const int MAXIMUM_SCALE = 100;
+				bool INBOX_FULL = total > MAXIMUM_SCALE;
+				int scale = INBOX_FULL ? total : MAXIMUM_SCALE;
+
+				UI.chartUnreadMails.Width = INBOX_FULL && unread == 1 ? 1 : (unread * UI.chartInbox.Width) / scale;
+				UI.chartTotalMails.Width = (total * UI.chartInbox.Width) / scale;
+			}
+
+			// updates the tooltip informations
+			ToolTip tipChartUnreadMails = new ToolTip();
+			tipChartUnreadMails.SetToolTip(UI.chartUnreadMails, unread + " " + (unread > 1 ? Translation.unreadMessages : Translation.unreadMessage));
+
+			ToolTip tipChartTotalMails = new ToolTip();
+			tipChartTotalMails.SetToolTip(UI.chartTotalMails, total + " " + (total > 1 ? Translation.messages : Translation.message));
+
+			// updates the draft informations
 			ListDraftsResponse drafts = await Api.Users.Drafts.List("me").ExecuteAsync();
-			ListLabelsResponse labels = await Api.Users.Labels.List("me").ExecuteAsync();
 
 			if (drafts.Drafts != null) {
 				UI.labelTotalDrafts.Text = drafts.Drafts.Count.ToString();
 			}
+
+			// updates the label informations
+			ListLabelsResponse labels = await Api.Users.Labels.List("me").ExecuteAsync();
 
 			if (labels.Labels != null) {
 				UI.labelTotalLabels.Text = labels.Labels.Count.ToString();
