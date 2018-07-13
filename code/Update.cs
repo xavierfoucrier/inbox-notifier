@@ -159,7 +159,7 @@ namespace notifier {
 
 				// indicates to the user that the update service is not reachable for the moment
 				if (verbose) {
-					MessageBox.Show(Translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					UI.NotificationService.Tip("Gmail Notifier Update", Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
 				}
 			} finally {
 
@@ -223,7 +223,7 @@ namespace notifier {
 			} catch (Exception) {
 
 				// indicates to the user that the update service is not reachable for the moment
-				MessageBox.Show(Translation.updateServiceUnreachable, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				UI.NotificationService.Tip("Gmail Notifier Update", Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
 
 				// defines that the application has exited the updating state
 				Updating = false;
