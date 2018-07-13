@@ -258,10 +258,7 @@ Cette option n'est pas activée sur ce type d'application.</value>
     <value>Double-cliquez sur l'icône pour accéder à votre boîte de réception. Tant que vous n'aurez pas vérifié le dossier spam, votre boite de réception ne sera pas synchronisée et vous ne serez pas informé de l'arrivée de nouveaux messages.</value>
   </data>
   <data name="newVersion" xml:space="preserve">
-    <value>Une version plus récente de l'application est disponible sur Github :
-Gmail Notifier {version}.
-
-Voulez-vous la télécharger maintenant ?</value>
+    <value>Une version plus récente de l'application est disponible sur Github : {version}</value>
   </data>
   <data name="noMessage" xml:space="preserve">
     <value>Pas de nouveau message</value>

@@ -465,10 +465,7 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Une version plus récente de l&apos;application est disponible sur Github :
-        ///Gmail Notifier {version}.
-        ///
-        ///Voulez-vous la télécharger maintenant ?.
+        ///   Recherche une chaîne localisée semblable à Une version plus récente de l&apos;application est disponible sur Github : {version}.
         /// </summary>
         internal static string newVersion {
             get {

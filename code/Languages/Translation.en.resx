@@ -258,10 +258,7 @@ This option is not enabled on this type of application.</value>
     <value>Double-click the icon to access your inbox. Until you have not checked the spam folder, your inbox will not be synchronized and you will not be notified of new messages.</value>
   </data>
   <data name="newVersion" xml:space="preserve">
-    <value>A newer version of the application is available on Github:
-Gmail Notifier {version}.
-
-Do you want to download it now?</value>
+    <value>A newer version of the application is available on Github: {version}</value>
   </data>
   <data name="noMessage" xml:space="preserve">
     <value>No new message</value>

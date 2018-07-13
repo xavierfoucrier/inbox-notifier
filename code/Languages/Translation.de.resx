@@ -258,10 +258,7 @@ Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
     <value>Doppelklicken Sie auf das Symbol Posteingang zugreifen. Da Sie nicht den Spam-Ordner überprüft haben, werden nicht Ihrem Posteingang synchronisiert werden und Sie werden nicht über neue Nachrichten informiert werden.</value>
   </data>
   <data name="newVersion" xml:space="preserve">
-    <value>Eine neuere Version der Anwendung ist auf Github:
-Gmail Notifier {version}.
-
-Möchten Sie sie jetzt herunterladen?</value>
+    <value>Eine neuere Version der Anwendung ist auf Github: {version}</value>
   </data>
   <data name="noMessage" xml:space="preserve">
     <value>Keine neuen Beiträge</value>
