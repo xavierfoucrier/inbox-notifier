@@ -934,7 +934,6 @@ namespace notifier {
 
 		private System.Windows.Forms.Label separator;
 		private System.Windows.Forms.Button buttonOK;
-		private System.Windows.Forms.TabControl tabControl;
 		private System.Windows.Forms.TabPage tabPageGeneral;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.CheckBox fieldRunAtWindowsStartup;
@@ -983,7 +982,6 @@ namespace notifier {
 		private System.Windows.Forms.LinkLabel linkRestartToApply;
 		private System.Windows.Forms.LinkLabel linkLicense;
 		private System.Windows.Forms.PictureBox pictureBoxPrivacyPreview;
-		private System.Windows.Forms.TabPage tabPageUpdate;
 		private System.Windows.Forms.GroupBox groupBox7;
 		private System.Windows.Forms.CheckBox fieldUpdateService;
 		private System.Windows.Forms.ComboBox fieldUpdatePeriod;
@@ -1023,6 +1021,8 @@ namespace notifier {
 		internal System.Windows.Forms.Label chartTotalMails;
 		internal System.Windows.Forms.Label chartUnreadMails;
 		internal System.Windows.Forms.Label chartInbox;
+		internal System.Windows.Forms.TabControl tabControl;
+		private System.Windows.Forms.TabPage tabPageUpdate;
 	}
 }
 

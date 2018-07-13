@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 using notifier.Languages;
@@ -75,6 +75,18 @@ namespace notifier {
 				if (!balloon) {
 					Process.Start(Settings.Default.GMAIL_BASEURL + "/#inbox");
 				}
+
+				return;
+			}
+
+			// displays the form and focus the update tab
+			if (balloon && Tag == "update") {
+				UI.Visible = true;
+				UI.ShowInTaskbar = true;
+				UI.WindowState = FormWindowState.Normal;
+				UI.Focus();
+				UI.tabControl.SelectTab("tabPageUpdate");
+				Tag = null;
 
 				return;
 			}

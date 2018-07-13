@@ -151,16 +151,15 @@ namespace notifier {
 					UpdateAvailable = true;
 					ReleaseAvailable = release;
 
+					// updates the notification service tag
+					UI.NotificationService.Tag = "update";
+
 					// updates the check for update button text
 					UI.buttonCheckForUpdate.Text = Translation.updateNow;
 
 					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
 					if (verbose) {
-						DialogResult dialog = MessageBox.Show(Translation.newVersion.Replace("{version}", ReleaseAvailable), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-
-						if (dialog == DialogResult.Yes) {
-							Download();
-						}
+						UI.NotificationService.Tip("Gmail Notifier Update", Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
 					} else if (Settings.Default.UpdateDownload) {
 						Download();
 					}
