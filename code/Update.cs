@@ -234,6 +234,9 @@ namespace notifier {
 				// defines that the application has exited the updating state
 				Updating = false;
 
+				// restores default update button state
+				UI.buttonCheckForUpdate.Enabled = true;
+
 				// restores the context menu to the systray icon and start a synchronization
 				UI.notifyIcon.ContextMenu = UI.notifyMenu;
 				UI.GmailService.Inbox.Sync();
