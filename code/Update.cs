@@ -112,13 +112,6 @@ namespace notifier {
 		/// <param name="verbose">Indicates if the process displays a message when a new update package is available</param>
 		/// <param name="startup">Indicates if the update check process has been started at startup</param>
 		public async void Check(bool verbose = true, bool startup = false) {
-
-			// stores the latest update datetime control
-			Settings.Default.UpdateControl = DateTime.Now;
-
-			// updates the update control label
-			UI.labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
-
 			try {
 
 				// using tls 1.2 as security protocol to contact Github.com
@@ -172,6 +165,12 @@ namespace notifier {
 
 				// restores default update button state
 				UI.buttonCheckForUpdate.Enabled = true;
+
+				// stores the latest update datetime control
+				Settings.Default.UpdateControl = DateTime.Now;
+
+				// updates the update control label
+				UI.labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
 
 				// synchronizes the inbox if the updates has been checked at startup after asynchronous authentication
 				if (startup) {
