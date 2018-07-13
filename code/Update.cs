@@ -126,6 +126,12 @@ namespace notifier {
 				HtmlNodeCollection collection = document.DocumentNode.SelectNodes("//span[@class='tag-name']");
 
 				if (collection == null || collection.Count == 0) {
+
+					// indicates to the user that the update service is not reachable for the moment
+					if (verbose) {
+						UI.NotificationService.Tip("Gmail Notifier Update", Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
+					}
+
 					return;
 				}
 
