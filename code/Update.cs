@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -134,6 +134,7 @@ namespace notifier {
 
 				// the current version tag is not at the top of the list
 				if (release != Core.Version) {
+					UpdateAvailable = true;
 
 					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
 					if (verbose) {
@@ -231,6 +232,13 @@ namespace notifier {
 		#endregion
 
 		#region #accessors
+
+		/// <summary>
+		/// Flag defining if an update is available
+		/// </summary>
+		public bool UpdateAvailable {
+			get; set;
+		} = false;
 
 		/// <summary>
 		/// Flag defining if the update service is currently updating
