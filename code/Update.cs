@@ -144,10 +144,10 @@ namespace notifier {
 						DialogResult dialog = MessageBox.Show(Translation.newVersion.Replace("{version}", ReleaseAvailable), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
 						if (dialog == DialogResult.Yes) {
-							Download(release);
+							Download();
 						}
 					} else if (Settings.Default.UpdateDownload) {
-						Download(release);
+						Download();
 					}
 				} else if (verbose && !startup) {
 					MessageBox.Show(Translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -179,16 +179,15 @@ namespace notifier {
 		/// <summary>
 		/// Downloads and launch the setup installer
 		/// </summary>
-		/// <param name="release">Version number package to download</param>
-		private void Download(string release) {
+		public void Download() {
 
 			// defines that the application is currently updating
 			Updating = true;
 
 			// defines the new number version and temp path
-			string newversion = release.Split('-')[0].Substring(1);
+			string newversion = ReleaseAvailable.Split('-')[0].Substring(1);
 			string updatepath = Core.ApplicationDataFolder + "/gmnupdate-" + newversion + ".exe";
-			string package = Settings.Default.GITHUB_REPOSITORY + "/releases/download/" + release + "/Gmail.Notifier." + newversion + ".exe";
+			string package = Settings.Default.GITHUB_REPOSITORY + "/releases/download/" + ReleaseAvailable + "/Gmail.Notifier." + newversion + ".exe";
 
 			try {
 
