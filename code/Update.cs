@@ -134,11 +134,14 @@ namespace notifier {
 
 				// the current version tag is not at the top of the list
 				if (release != Core.Version) {
+
+					// stores the update state
 					UpdateAvailable = true;
+					ReleaseAvailable = release;
 
 					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
 					if (verbose) {
-						DialogResult dialog = MessageBox.Show(Translation.newVersion.Replace("{version}", release), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+						DialogResult dialog = MessageBox.Show(Translation.newVersion.Replace("{version}", ReleaseAvailable), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
 						if (dialog == DialogResult.Yes) {
 							Download(release);
@@ -239,6 +242,13 @@ namespace notifier {
 		public bool UpdateAvailable {
 			get; set;
 		} = false;
+
+		/// <summary>
+		/// Latest release version available
+		/// </summary>
+		public string ReleaseAvailable {
+			get; set;
+		} = "";
 
 		/// <summary>
 		/// Flag defining if the update service is currently updating
