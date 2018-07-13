@@ -139,6 +139,9 @@ namespace notifier {
 					UpdateAvailable = true;
 					ReleaseAvailable = release;
 
+					// updates the check for update button text
+					UI.buttonCheckForUpdate.Text = Translation.updateNow;
+
 					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
 					if (verbose) {
 						DialogResult dialog = MessageBox.Show(Translation.newVersion.Replace("{version}", ReleaseAvailable), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);

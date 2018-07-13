@@ -558,7 +558,15 @@ namespace notifier {
 		/// </summary>
 		private void ButtonCheckForUpdate_Click(object sender, EventArgs e) {
 			buttonCheckForUpdate.Enabled = false;
-			UpdateService.Check();
+
+			if (UpdateService.UpdateAvailable) {
+				WindowState = FormWindowState.Minimized;
+				ShowInTaskbar = false;
+				Visible = false;
+				UpdateService.Download();
+			} else {
+				UpdateService.Check();
+			}
 		}
 
 		/// <summary>
