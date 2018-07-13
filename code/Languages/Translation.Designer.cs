@@ -594,6 +594,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mettre à jour.
+        /// </summary>
+        internal static string updateNow {
+            get {
+                return ResourceManager.GetString("updateNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Le service de mise à jour est inaccessible pour le moment..
         /// </summary>
         internal static string updateServiceUnreachable {

@@ -302,6 +302,9 @@ Voulez-vous la télécharger maintenant ?</value>
   <data name="unreadSpams" xml:space="preserve">
     <value>spams non lus</value>
   </data>
+  <data name="updateNow" xml:space="preserve">
+    <value>Mettre à jour</value>
+  </data>
   <data name="updateServiceUnreachable" xml:space="preserve">
     <value>Le service de mise à jour est inaccessible pour le moment.</value>
   </data>
