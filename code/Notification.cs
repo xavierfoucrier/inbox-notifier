@@ -79,7 +79,7 @@ namespace notifier {
 				return;
 			}
 
-			// do nothing if there is no tag or if the notification behavior is set to "do nothing"
+			// do nothing if the notification behavior is set to "do nothing"
 			if (balloon && Settings.Default.NotificationBehavior == (int)Behavior.DoNothing) {
 				return;
 			}
