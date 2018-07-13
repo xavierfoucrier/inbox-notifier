@@ -132,6 +132,12 @@ namespace notifier {
 				List<string> tags = collection.Select(p => p.InnerText).ToList();
 				string release = tags.First();
 
+				// stores the latest update datetime control
+				Settings.Default.UpdateControl = DateTime.Now;
+
+				// updates the update control label
+				UI.labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
+
 				// the current version tag is not at the top of the list
 				if (release != Core.Version) {
 
@@ -165,12 +171,6 @@ namespace notifier {
 
 				// restores default update button state
 				UI.buttonCheckForUpdate.Enabled = true;
-
-				// stores the latest update datetime control
-				Settings.Default.UpdateControl = DateTime.Now;
-
-				// updates the update control label
-				UI.labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
 
 				// synchronizes the inbox if the updates has been checked at startup after asynchronous authentication
 				if (startup) {
