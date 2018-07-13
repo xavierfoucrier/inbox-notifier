@@ -89,5 +89,8 @@
     <Setting Name="APPLICATION_NAME" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Gmail notifier for Windows</Value>
     </Setting>
+    <Setting Name="UPDATE_SERVICE_NAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Gmail Notifier Update</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

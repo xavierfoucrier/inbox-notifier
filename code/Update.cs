@@ -129,7 +129,7 @@ namespace notifier {
 
 					// indicates to the user that the update service is not reachable for the moment
 					if (verbose) {
-						UI.NotificationService.Tip("Gmail Notifier Update", Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
+						UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
 					}
 
 					return;
@@ -159,18 +159,18 @@ namespace notifier {
 
 					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
 					if (verbose) {
-						UI.NotificationService.Tip("Gmail Notifier Update", Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
+						UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
 					} else if (Settings.Default.UpdateDownload) {
 						Download();
 					}
 				} else if (verbose && !startup) {
-					MessageBox.Show(Translation.latestVersion, "Gmail Notifier Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show(Translation.latestVersion, Settings.Default.UPDATE_SERVICE_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 			} catch (Exception) {
 
 				// indicates to the user that the update service is not reachable for the moment
 				if (verbose) {
-					UI.NotificationService.Tip("Gmail Notifier Update", Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
+					UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
 				}
 			} finally {
 
@@ -228,7 +228,7 @@ namespace notifier {
 			} catch (Exception) {
 
 				// indicates to the user that the update service is not reachable for the moment
-				UI.NotificationService.Tip("Gmail Notifier Update", Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
+				UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
 
 				// defines that the application has exited the updating state
 				Updating = false;

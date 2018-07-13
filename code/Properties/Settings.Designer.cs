@@ -340,5 +340,14 @@ namespace notifier.Properties {
                 return ((string)(this["APPLICATION_NAME"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Gmail Notifier Update")]
+        public string UPDATE_SERVICE_NAME {
+            get {
+                return ((string)(this["UPDATE_SERVICE_NAME"]));
+            }
+        }
     }
 }
