@@ -137,7 +137,7 @@ namespace notifier {
 
 					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
 					if (verbose) {
-						DialogResult dialog = MessageBox.Show(Translation.newVersion.Replace("{version}", tags[0]), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+						DialogResult dialog = MessageBox.Show(Translation.newVersion.Replace("{version}", release), "Gmail Notifier Update", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
 
 						if (dialog == DialogResult.Yes) {
 							Download(release);
