@@ -593,16 +593,12 @@ namespace notifier {
 			// labelUpdateControl
 			// 
 			resources.ApplyResources(this.labelUpdateControl, "labelUpdateControl");
-			this.labelUpdateControl.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.labelUpdateControl.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
 			this.labelUpdateControl.ForeColor = System.Drawing.Color.Gray;
 			this.labelUpdateControl.Name = "labelUpdateControl";
 			// 
 			// label8
 			// 
 			resources.ApplyResources(this.label8, "label8");
-			this.label8.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label8.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
 			this.label8.Name = "label8";
 			// 
 			// groupBox7
