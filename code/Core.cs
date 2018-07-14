@@ -53,12 +53,10 @@ namespace notifier {
 		public static void RestartApplication() {
 
 			// starts a new process
-			ProcessStartInfo command = new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"") {
+			Process.Start(new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"") {
 				WindowStyle = ProcessWindowStyle.Hidden,
 				CreateNoWindow = true
-			};
-
-			Process.Start(command);
+			});
 
 			// exits the application
 			Application.Exit();
