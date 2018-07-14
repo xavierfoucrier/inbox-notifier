@@ -216,7 +216,11 @@ namespace notifier {
 
 				// starts the setup installer when the download has complete and exits the current application
 				client.DownloadFileCompleted += new AsyncCompletedEventHandler((object source, AsyncCompletedEventArgs target) => {
-					Process.Start(new ProcessStartInfo(updatepath, Settings.Default.UpdateQuiet ? "/verysilent" : ""));
+					Process.Start(new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + updatepath + "\" " + (Settings.Default.UpdateQuiet ? "/verysilent" : "")) {
+						WindowStyle = ProcessWindowStyle.Hidden,
+						CreateNoWindow = true
+					});
+
 					Application.Exit();
 				});
 
