@@ -350,7 +350,7 @@ automatically open the inbox.</value>
     <value>Quiet installation</value>
   </data>
   <data name="fieldUpdateDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 48</value>
+    <value>13, 47</value>
   </data>
   <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 30</value>
