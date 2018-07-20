@@ -411,11 +411,8 @@ namespace notifier {
 			}
 
 			// updates the tooltip informations
-			ToolTip tipChartUnreadMails = new ToolTip();
-			tipChartUnreadMails.SetToolTip(UI.chartUnreadMails, unread + " " + (unread > 1 ? Translation.unreadMessages : Translation.unreadMessage));
-
-			ToolTip tipChartTotalMails = new ToolTip();
-			tipChartTotalMails.SetToolTip(UI.chartTotalMails, total + " " + (total > 1 ? Translation.messages : Translation.message));
+			UI.tip.SetToolTip(UI.chartUnreadMails, unread + " " + (unread > 1 ? Translation.unreadMessages : Translation.unreadMessage));
+			UI.tip.SetToolTip(UI.chartTotalMails, total + " " + (total > 1 ? Translation.messages : Translation.message));
 
 			// updates the draft informations
 			ListDraftsResponse drafts = await Api.Users.Drafts.List("me").ExecuteAsync();

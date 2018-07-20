@@ -284,9 +284,6 @@ This option is not enabled on this type of application.</value>
   <data name="timeout" xml:space="preserve">
     <value>Do not disturb</value>
   </data>
-  <data name="tipReleaseNotes" xml:space="preserve">
-    <value>Github release notes</value>
-  </data>
   <data name="unreadMessage" xml:space="preserve">
     <value>unread message</value>
   </data>

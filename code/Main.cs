@@ -31,6 +31,11 @@ namespace notifier {
 		internal Notification NotificationService;
 
 		/// <summary>
+		/// Global UI tooltip
+		/// </summary>
+		internal ToolTip tip = new ToolTip();
+
+		/// <summary>
 		/// Initializes the class
 		/// </summary>
 		public Main() {
@@ -170,31 +175,19 @@ namespace notifier {
 			linkVersion.Text = Core.Version.Substring(1);
 
 			// displays a tooltip for the product version
-			ToolTip tipTag = new ToolTip();
-			tipTag.SetToolTip(linkVersion, Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.Version);
-			tipTag.ToolTipTitle = Translation.tipReleaseNotes;
-			tipTag.ToolTipIcon = ToolTipIcon.Info;
-			tipTag.IsBalloon = false;
+			tip.SetToolTip(linkVersion, Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.Version);
 
 			// displays a tooltip for the license link
-			ToolTip tipPrivacy = new ToolTip();
-			tipPrivacy.SetToolTip(linkPrivacy, Settings.Default.GITHUB_REPOSITORY + "/blob/master/PRIVACY.md");
-			tipPrivacy.IsBalloon = false;
+			tip.SetToolTip(linkPrivacy, Settings.Default.GITHUB_REPOSITORY + "/blob/master/PRIVACY.md");
 
 			// displays a tooltip for the website link
-			ToolTip tipWebsiteYusuke = new ToolTip();
-			tipWebsiteYusuke.SetToolTip(linkWebsiteYusuke, Settings.Default.SITE_YUSUKE);
-			tipWebsiteYusuke.IsBalloon = false;
+			tip.SetToolTip(linkWebsiteYusuke, Settings.Default.SITE_YUSUKE);
 
 			// displays a tooltip for the website link
-			ToolTip tipWebsiteXavier = new ToolTip();
-			tipWebsiteXavier.SetToolTip(linkWebsiteXavier, Settings.Default.SITE_AUTHOR);
-			tipWebsiteXavier.IsBalloon = false;
+			tip.SetToolTip(linkWebsiteXavier, Settings.Default.SITE_AUTHOR);
 
 			// displays a tooltip for the license link
-			ToolTip tipLicense = new ToolTip();
-			tipLicense.SetToolTip(linkLicense, Settings.Default.GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
-			tipLicense.IsBalloon = false;
+			tip.SetToolTip(linkLicense, Settings.Default.GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
 		}
 
 		/// <summary>

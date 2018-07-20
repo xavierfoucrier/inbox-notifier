@@ -546,15 +546,6 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Notes de version Github.
-        /// </summary>
-        internal static string tipReleaseNotes {
-            get {
-                return ResourceManager.GetString("tipReleaseNotes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à email non lu.
         /// </summary>
         internal static string unreadMessage {
