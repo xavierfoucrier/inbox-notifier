@@ -9,7 +9,6 @@ using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using notifier.Languages;
 using notifier.Properties;
-using System.Windows.Forms;
 
 namespace notifier {
 	class Inbox {
