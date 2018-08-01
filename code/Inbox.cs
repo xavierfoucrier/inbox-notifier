@@ -23,7 +23,7 @@ namespace notifier {
 		/// <summary>
 		/// Main inbox label
 		/// </summary>
-		private Google.Apis.Gmail.v1.Data.Label Box;
+		private Label Box;
 
 		/// <summary>
 		/// Unread threads
@@ -124,7 +124,7 @@ namespace notifier {
 					}
 
 					// gets the "spam" label
-					Google.Apis.Gmail.v1.Data.Label spam = await Api.Users.Labels.Get("me", "SPAM").ExecuteAsync();
+					Label spam = await Api.Users.Labels.Get("me", "SPAM").ExecuteAsync();
 
 					// manages unread spams
 					if (spam.ThreadsUnread > 0) {
@@ -270,7 +270,7 @@ namespace notifier {
 				UsersResource.MessagesResource.ListRequest messages = Api.Users.Messages.List("me");
 				messages.LabelIds = "UNREAD";
 				ListMessagesResponse list = await messages.ExecuteAsync();
-				IList<Google.Apis.Gmail.v1.Data.Message> unread = list.Messages;
+				IList<Message> unread = list.Messages;
 
 				// loops through all unread threads and removes the "unread" label for each one
 				if (unread != null && unread.Count > 0) {
