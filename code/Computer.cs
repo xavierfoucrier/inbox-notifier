@@ -19,6 +19,11 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Power resume state of the computer
+		/// </summary>
+		private bool PowerResume = false;
+
+		/// <summary>
 		/// Reference to the main interface
 		/// </summary>
 		private Main UI;
@@ -77,8 +82,13 @@ namespace notifier {
 		public void BindPowerMode() {
 			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler((object source, PowerModeChangedEventArgs target) => {
 				if (target.Mode == PowerModes.Suspend) {
+
+					// suspends the main timer
 					UI.timer.Enabled = false;
 				} else if (target.Mode == PowerModes.Resume) {
+
+					// stores the power resume state
+					PowerResume = true;
 
 					// do nothing if the timeout mode is set to infinite
 					if (UI.NotificationService.Paused && UI.menuItemTimeoutIndefinitely.Checked) {
@@ -108,6 +118,12 @@ namespace notifier {
 						return;
 					}
 
+					// do nothing if the computer power mode is resumed
+					if (PowerResume) {
+						PowerResume = false;
+						return;
+					}
+	
 					// synchronizes the inbox and renew the token
 					UI.GmailService.Inbox.Sync(true, true);
 				}
