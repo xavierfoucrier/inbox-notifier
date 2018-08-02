@@ -105,6 +105,9 @@ namespace notifier {
 			// restores the default systray icon and text: pretends that the user had read all his mail, except if the timeout option is activated
 			if (!Paused) {
 
+				// resets the number of unread threads
+				UI.GmailService.Inbox.UnreadThreads = 0;
+
 				// updates the synchronization time
 				UI.GmailService.Inbox.Time = DateTime.Now;
 

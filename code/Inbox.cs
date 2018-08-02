@@ -26,11 +26,6 @@ namespace notifier {
 		private Label Box;
 
 		/// <summary>
-		/// Unread threads
-		/// </summary>
-		private int? UnreadThreads = 0;
-
-		/// <summary>
 		/// Reference to the main interface
 		/// </summary>
 		private Main UI;
@@ -438,6 +433,13 @@ namespace notifier {
 		public DateTime Time {
 			get; set;
 		} = DateTime.Now;
+
+		/// <summary>
+		/// Unread threads
+		/// </summary>
+		public int? UnreadThreads {
+			get; set;
+		} = 0;
 
 		/// <summary>
 		/// Gmail email address
