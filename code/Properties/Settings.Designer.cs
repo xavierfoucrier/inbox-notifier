@@ -25,7 +25,7 @@ namespace notifier.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool RunAtWindowsStartup {
             get {
                 return ((bool)(this["RunAtWindowsStartup"]));
