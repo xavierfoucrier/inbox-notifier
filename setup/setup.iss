@@ -1,6 +1,6 @@
 #define MyAppName "Gmail Notifier"
-#define MyAppVersion "2.1.3.0"
-#define MyAppShortVersion "2.1"
+#define MyAppVersion "2.1.3.4"
+#define MyAppShortVersion "2.1.4"
 #define MyAppPublisher "Xavier Foucrier"
 #define MyAppURL "https://github.com/xavierfoucrier/gmail-notifier"
 #define MyAppExeName "Gmail notifier.exe"
