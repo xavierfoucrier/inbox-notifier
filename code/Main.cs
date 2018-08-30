@@ -42,7 +42,7 @@ namespace notifier {
 			InitializeComponent();
 
 			// main application instance
-			var ui = this;
+			Main ui = this;
 
 			// initializes services
 			UpdateService = new Update(ref ui);

@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
@@ -136,8 +137,8 @@ namespace notifier {
 		/// <returns>Indicates if the user is connected to the internet, false means that the request to the Google server has failed</returns>
 		public bool IsInternetAvailable() {
 			try {
-				using (var client = new WebClient()) {
-					using (var stream = client.OpenRead("http://www.google.com")) {
+				using (WebClient client = new WebClient()) {
+					using (Stream stream = client.OpenRead("http://www.google.com")) {
 						return true;
 					}
 				}

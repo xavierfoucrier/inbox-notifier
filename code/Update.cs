@@ -120,7 +120,7 @@ namespace notifier {
 				// gets the list of tags in the Github repository tags webpage
 				HttpResponseMessage response = await Http.GetAsync(Settings.Default.GITHUB_REPOSITORY + "/tags");
 
-				var document = new HtmlAgilityPack.HtmlDocument();
+				HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
 				document.LoadHtml(await response.Content.ReadAsStringAsync());
 
 				HtmlNodeCollection collection = document.DocumentNode.SelectNodes("//span[@class='tag-name']");
