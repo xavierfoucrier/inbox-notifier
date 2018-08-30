@@ -410,17 +410,11 @@ namespace notifier {
 
 			// updates the draft informations
 			ListDraftsResponse drafts = await Api.Users.Drafts.List("me").ExecuteAsync();
-
-			if (drafts.Drafts != null) {
-				UI.labelTotalDrafts.Text = drafts.Drafts.Count.ToString();
-			}
+			UI.labelTotalDrafts.Text = drafts.Drafts != null ? drafts.Drafts.Count.ToString() : "0";
 
 			// updates the label informations
 			ListLabelsResponse labels = await Api.Users.Labels.List("me").ExecuteAsync();
-
-			if (labels.Labels != null) {
-				UI.labelTotalLabels.Text = labels.Labels.Count.ToString();
-			}
+			UI.labelTotalLabels.Text = labels.Labels != null ? labels.Labels.Count.ToString() : "0";
 		}
 
 		#endregion
