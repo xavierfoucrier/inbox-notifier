@@ -20,16 +20,16 @@ Note that this version of the .NET Framework **evolve in time**: the application
 
 ## Download
 #### Setup installer
-The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions. Its the better way to install Windows application and allows you to **cleanly install/uninstall** the application with ease. Note that you will need **administrators rights** to properly complete the installation. Recommanded for all users.
+The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions. Its the better way to install Windows application and allows you to **cleanly install/uninstall** the application with ease. Note that you will need **administrators rights** to properly complete the installation. Recommended for all users.
 
 * :package: [Gmail Notifier 2.1.4](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v2.1.4-release/Gmail.Notifier.2.1.4.exe)
 
 #### Portable version
-The portable version is made for users who want to install the application on a **USB key**, or **removable drive**. In the uninstall process, you will need to manually remove some files from the *%AppData%* folder or edit the registry to completely remove the application from your computer. Portable versions are **no longer available since official 1.0 release**. Recommanded for beta-tester users.
+The portable version is made for users who want to install the application on a **USB key**, or **removable drive**. In the uninstall process, you will need to manually remove some files from the *%AppData%* folder or edit the registry to completely remove the application from your computer. Portable versions are **no longer available since official 1.0 release**. Recommended for beta-tester users.
 
 #### Old versions
 
-You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/gmail-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and are not "production environment" ready. Recommanded for power users.
+You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/gmail-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and are not "production environment" ready. Recommended for power users.
 
 
 ## Gallery
