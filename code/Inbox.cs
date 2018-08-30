@@ -359,7 +359,7 @@ namespace notifier {
 
 					// displays the last reconnection message on the icon
 					UI.notifyIcon.Icon = Resources.warning;
-					UI.notifyIcon.Text = Translation.reconnectFailed;
+					UI.notifyIcon.Text = Translation.reconnectFailed + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
 				}
 			} else {
 
