@@ -117,15 +117,15 @@ namespace notifier {
 				// using tls 1.2 as security protocol to contact Github.com
 				ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-				// gets the list of tags in the Github repository tags webpage
+				// gets the latest tag in the Github repository tags webpage
 				HttpResponseMessage response = await Http.GetAsync(Settings.Default.GITHUB_REPOSITORY + "/tags");
 
 				HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
 				document.LoadHtml(await response.Content.ReadAsStringAsync());
 
-				HtmlNodeCollection collection = document.DocumentNode.SelectNodes("//span[@class='tag-name']");
+				HtmlNode node = document.DocumentNode.SelectSingleNode("//a[contains(@href, 'releases/tag/v')]");
 
-				if (collection == null || collection.Count == 0) {
+				if (node == null) {
 
 					// indicates to the user that the update service is not reachable for the moment
 					if (verbose) {
@@ -135,8 +135,7 @@ namespace notifier {
 					return;
 				}
 
-				List<string> tags = collection.Select(p => p.InnerText).ToList();
-				string release = tags.First();
+				string release = node.InnerText.Trim();
 
 				// stores the latest update datetime control
 				Settings.Default.UpdateControl = DateTime.Now;
