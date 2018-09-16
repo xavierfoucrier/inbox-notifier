@@ -1,7 +1,7 @@
-# Gmail notifier – [![Build Status](https://travis-ci.org/xavierfoucrier/gmail-notifier.svg?branch=master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier) [![Softpedia](badge/softpedia.png "Softpedia - Awarded")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
+# Gmail notifier – [![Build Status](https://travis-ci.org/xavierfoucrier/gmail-notifier.svg?branch=master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier) [![Softpedia](https://raw.githubusercontent.com/xavierfoucrier/gmail-notifier/master/badge/softpedia.png "Softpedia - Awarded")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
 Gmail notifications instantly in the windows taskbar.
 
-[![Gmail Notifier](gallery/main.png "Gmail Notifier - Image Gallery")](GALLERY.md)
+[![Gmail Notifier](https://raw.github.com/xavierfoucrier/gmail-notifier/master/gallery/main.png "Gmail Notifier - Image Gallery")](https://github.com/xavierfoucrier/gmail-notifier/blob/master/GALLERY.md)
 
 
 ## Compatibility
@@ -22,18 +22,18 @@ Note that this version of the .NET Framework **evolve in time**: the application
 #### Setup installer
 The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions. Its the better way to install Windows application and allows you to **cleanly install/uninstall** the application with ease. Note that you will need **administrators rights** to properly complete the installation. Recommended for all users.
 
-* :package: [Gmail Notifier 2.1.7](releases/download/v2.1.7-release/Gmail.Notifier.2.1.7.exe)
+* :package: [Gmail Notifier 2.1.7](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v2.1.7-release/Gmail.Notifier.2.1.7.exe)
 
 #### Portable version
 The portable version is made for users who want to install the application on a **USB key**, or **removable drive**. In the uninstall process, you will need to manually remove some files from the *%AppData%* folder or edit the registry to completely remove the application from your computer. Portable versions are **no longer available since official 1.0 release**. Recommended for beta-tester users.
 
 #### Old versions
 
-You can grab an old version of the application in the [Github version history](tags): keep in mind that the alpha/beta versions are just "pre-releases" and are not "production environment" ready. Recommended for power users.
+You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/gmail-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and are not "production environment" ready. Recommended for power users.
 
 
 ## Gallery
-Discover the application running on Windows 7 in the [image gallery](GALLERY.md).
+Discover the application running on Windows 7 in the [image gallery](https://github.com/xavierfoucrier/gmail-notifier/blob/master/GALLERY.md).
 
 
 ## Updates
@@ -41,11 +41,11 @@ You can **track the project** on [Github](https://github.com/xavierfoucrier) and
 
 
 ## Contribute
-If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](CONTRIBUTING.md) before**. Thanks for taking time to contribute to Gmail Notifier.
+If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](https://github.com/xavierfoucrier/gmail-notifier/blob/master/CONTRIBUTING.md) before**. Thanks for taking time to contribute to Gmail Notifier.
 
 
 ## Privacy Policy
-Discover the [privacy practices](PRIVACY.md) of the application and how we collect, use or share your data.
+Discover the [privacy practices](https://github.com/xavierfoucrier/gmail-notifier/blob/master/PRIVACY.md) of the application and how we collect, use or share your data.
 
 
 ## Softpedia award certification
@@ -64,7 +64,7 @@ The project is developed under the **MIT** license:
 - **Conditions**: Include a copy of the license and copyright notice with the code.
 - **Limitations**: Software is provided without warranty and the software author/license owner cannot be held liable for damages.
 
-Read the [full license](LICENSE.md) for more information about your rights.
+Read the [full license](https://github.com/xavierfoucrier/gmail-notifier/blob/master/LICENSE.md) for more information about your rights.
 
 
 ## Questions?
