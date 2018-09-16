@@ -1,7 +1,7 @@
 # Gmail notifier – [![Build Status](https://travis-ci.org/xavierfoucrier/gmail-notifier.svg?branch=master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier) [![Softpedia](https://raw.githubusercontent.com/xavierfoucrier/gmail-notifier/master/badge/softpedia.png "Softpedia - Awarded")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
 Gmail notifications instantly in the windows taskbar.
 
-[![Gmail Notifier](https://raw.github.com/xavierfoucrier/gmail-notifier/master/gallery/main.png "Gmail Notifier - Image Gallery")](https://github.com/xavierfoucrier/gmail-notifier/blob/master/GALLERY.md)
+[![Gmail Notifier](https://raw.github.com/xavierfoucrier/gmail-notifier/master/gallery/main.png "Gmail Notifier - Image Gallery")](GALLERY.md)
 
 
 ## Compatibility
@@ -33,7 +33,7 @@ You can grab an old version of the application in the [Github version history](h
 
 
 ## Gallery
-Discover the application running on Windows 7 in the [image gallery](https://github.com/xavierfoucrier/gmail-notifier/blob/master/GALLERY.md).
+Discover the application running on Windows 7 in the [image gallery](GALLERY.md).
 
 
 ## Updates
@@ -41,11 +41,11 @@ You can **track the project** on [Github](https://github.com/xavierfoucrier) and
 
 
 ## Contribute
-If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](https://github.com/xavierfoucrier/gmail-notifier/blob/master/CONTRIBUTING.md) before**. Thanks for taking time to contribute to Gmail Notifier.
+If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](CONTRIBUTING.md) before**. Thanks for taking time to contribute to Gmail Notifier.
 
 
 ## Privacy Policy
-Discover the [privacy practices](https://github.com/xavierfoucrier/gmail-notifier/blob/master/PRIVACY.md) of the application and how we collect, use or share your data.
+Discover the [privacy practices](PRIVACY.md) of the application and how we collect, use or share your data.
 
 
 ## Softpedia award certification
@@ -64,7 +64,7 @@ The project is developed under the **MIT** license:
 - **Conditions**: Include a copy of the license and copyright notice with the code.
 - **Limitations**: Software is provided without warranty and the software author/license owner cannot be held liable for damages.
 
-Read the [full license](https://github.com/xavierfoucrier/gmail-notifier/blob/master/LICENSE.md) for more information about your rights.
+Read the [full license](LICENSE.md) for more information about your rights.
 
 
 ## Questions?
