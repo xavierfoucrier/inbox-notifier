@@ -36,10 +36,6 @@ You can grab an old version of the application in the [Github version history](h
 Discover the application running on Windows 7 in the [image gallery](GALLERY.md).
 
 
-## Updates
-You can **track the project** on [Github](https://github.com/xavierfoucrier) and/or **follow me** on [Twitter](https://twitter.com/xavierfoucrier).
-
-
 ## Contribute
 If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](CONTRIBUTING.md) before**. Thanks for taking time to contribute to Gmail Notifier.
 
