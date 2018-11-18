@@ -36,10 +36,6 @@ You can grab an old version of the application in the [Github version history](h
 If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](CONTRIBUTING.md) before**. Thanks for taking time to contribute to Gmail Notifier.
 
 
-## Privacy Policy
-Discover the [privacy practices](PRIVACY.md) of the application and how we collect, use or share your data.
-
-
 ## Softpedia award certification
 This product was last tested in the **Softpedia Labs** on **5th of November 2018** by *Alexandra Sava*.
 
