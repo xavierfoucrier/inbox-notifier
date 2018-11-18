@@ -29,7 +29,7 @@ The portable version is made for users who want to install the application on a 
 
 #### Old versions
 
-You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/gmail-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and are not "production environment" ready. Recommended for power users.
+You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/gmail-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and **are not** "production environment" ready. Recommended for power users.
 
 
 ## Contribute
