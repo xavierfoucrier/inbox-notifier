@@ -1,7 +1,7 @@
 # Gmail notifier – [![Build Status](https://travis-ci.org/xavierfoucrier/gmail-notifier.svg?branch=master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier) [![Softpedia](https://raw.githubusercontent.com/xavierfoucrier/gmail-notifier/master/badge/softpedia.png "Softpedia - Awarded")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
 Gmail notifications instantly in the Windows taskbar.
 
-[![Gmail Notifier](https://raw.github.com/xavierfoucrier/gmail-notifier/master/gallery/main.png "Gmail Notifier - Image Gallery")](GALLERY.md)
+[![Gmail Notifier](https://raw.github.com/xavierfoucrier/gmail-notifier/master/gallery/main.png "Gmail Notifier - Discover the application running on Windows 7")](GALLERY.md)
 
 
 ## Compatibility
@@ -30,10 +30,6 @@ The portable version is made for users who want to install the application on a 
 #### Old versions
 
 You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/gmail-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and are not "production environment" ready. Recommended for power users.
-
-
-## Gallery
-Discover the application running on Windows 7 in the [image gallery](GALLERY.md).
 
 
 ## Contribute
