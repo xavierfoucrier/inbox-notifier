@@ -97,7 +97,15 @@ namespace notifier {
 					}
 
 					// synchronizes the inbox and renew the token
-					UI.GmailService.Inbox.Sync(true, true);
+					try {
+						UI.GmailService.Inbox.Sync(true, true);
+					} catch(Exception exception) {
+
+						// catch the exception
+						using (System.IO.StreamWriter writer = new System.IO.StreamWriter("application.log")) {
+							writer.Write(exception.Message);
+						}
+					}
 
 					// enables the timer properly
 					UI.timer.Enabled = true;
