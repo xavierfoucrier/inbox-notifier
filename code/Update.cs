@@ -165,12 +165,15 @@ namespace notifier {
 				} else if (verbose && !startup) {
 					MessageBox.Show(Translation.latestVersion, Settings.Default.UPDATE_SERVICE_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
-			} catch (Exception) {
+			} catch (Exception exception) {
 
 				// indicates to the user that the update service is not reachable for the moment
 				if (verbose) {
 					UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
 				}
+
+				// logs the error
+				Core.Log(exception.Message);
 			} finally {
 
 				// restores default update button state
@@ -228,7 +231,7 @@ namespace notifier {
 
 				// starts the download of the new version from the Github repository
 				client.DownloadFileAsync(new Uri(package), updatepath);
-			} catch (Exception) {
+			} catch (Exception exception) {
 
 				// indicates to the user that the update service is not reachable for the moment
 				UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
@@ -242,6 +245,9 @@ namespace notifier {
 				// restores the context menu to the systray icon and start a synchronization
 				UI.notifyIcon.ContextMenu = UI.notifyMenu;
 				UI.GmailService.Inbox.Sync();
+
+				// logs the error
+				Core.Log(exception.Message);
 			}
 		}
 

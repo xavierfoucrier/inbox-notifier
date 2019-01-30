@@ -58,7 +58,10 @@ namespace notifier {
 
 				// gets the token delivery time
 				UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
-			} catch (Exception) {
+			} catch (Exception exception) {
+
+				// logs the error
+				Core.Log(exception.Message);
 
 				// exits the application if the google api token file doesn't exists
 				if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {

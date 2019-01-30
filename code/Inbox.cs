@@ -243,6 +243,9 @@ namespace notifier {
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.syncError;
 				UI.NotificationService.Tip(Translation.error, Translation.syncErrorOccured + exception.Message, Notification.Type.Warning, 1500);
+
+				// logs the error
+				Core.Log(exception.Message);
 			} finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
 			}
@@ -314,6 +317,9 @@ namespace notifier {
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.markAsReadError;
 				UI.NotificationService.Tip(Translation.error, Translation.markAsReadErrorOccured + exception.Message, Notification.Type.Warning, 1500);
+
+				// logs the error
+				Core.Log(exception.Message);
 			} finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
 			}
