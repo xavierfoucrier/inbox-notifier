@@ -241,6 +241,7 @@ namespace notifier {
 			// 
 			resources.ApplyResources(this.fieldRunAtWindowsStartup, "fieldRunAtWindowsStartup");
 			this.fieldRunAtWindowsStartup.Checked = global::notifier.Properties.Settings.Default.RunAtWindowsStartup;
+			this.fieldRunAtWindowsStartup.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.fieldRunAtWindowsStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "RunAtWindowsStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldRunAtWindowsStartup.Name = "fieldRunAtWindowsStartup";
 			this.fieldRunAtWindowsStartup.UseVisualStyleBackColor = true;
@@ -402,7 +403,8 @@ namespace notifier {
 			this.fieldNotificationBehavior.FormattingEnabled = true;
 			this.fieldNotificationBehavior.Items.AddRange(new object[] {
             resources.GetString("fieldNotificationBehavior.Items"),
-            resources.GetString("fieldNotificationBehavior.Items1")});
+            resources.GetString("fieldNotificationBehavior.Items1"),
+            resources.GetString("fieldNotificationBehavior.Items2")});
 			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
 			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.FieldNotificationBehavior_SelectionChangeCommitted);
 			// 
