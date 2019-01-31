@@ -67,7 +67,7 @@ namespace notifier {
 		/// <summary>
 		/// Do the gmail specified action (inbox/message/spam) in a browser
 		/// </summary>
-		/// <param name="systray">Defines if the interaction is provided by the balloon tip</param>
+		/// <param name="balloon">Defines if the interaction is provided by the balloon tip</param>
 		public void Interaction(bool balloon = false) {
 
 			// by default, always open the gmail inbox in a browser if the interaction is provided by a double click on the systray icon
