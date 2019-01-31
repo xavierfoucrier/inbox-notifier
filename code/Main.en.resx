@@ -229,15 +229,14 @@ at the next application startup.</value>
 will mark all inbox messages as read.</value>
   </data>
   <data name="labelNotificationOpenMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 71</value>
+    <value>41, 71</value>
   </data>
   <data name="labelNotificationOpenMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 51</value>
+    <value>206, 39</value>
   </data>
   <data name="labelNotificationOpenMessage.Text" xml:space="preserve">
-    <value>Upon receipt of multiple messages, the
-"Open the message" option will
-automatically open the inbox.</value>
+    <value>Upon receipt of multiple messages, this option
+will automatically open the inbox.</value>
   </data>
   <data name="fieldNotificationBehavior.Items" xml:space="preserve">
     <value>do nothing</value>
