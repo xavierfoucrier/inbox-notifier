@@ -345,7 +345,7 @@ de réception comme lus.</value>
     <value>7</value>
   </data>
   <data name="labelNotificationOpenMessage.Text" xml:space="preserve">
-    <value>À la réception de plusieurs message, l'option
+    <value>À la réception de plusieurs messages, l'option
 "ouvrir le message" ouvrira automatiquement
 la boite de réception.</value>
   </data>

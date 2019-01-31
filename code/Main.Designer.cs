@@ -57,6 +57,7 @@ namespace notifier {
 			this.buttonGmailDisconnect = new System.Windows.Forms.Button();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.labelNotificationMarkMessageAsRead = new System.Windows.Forms.Label();
 			this.labelNotificationOpenMessage = new System.Windows.Forms.Label();
 			this.fieldNotificationBehavior = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
@@ -116,7 +117,6 @@ namespace notifier {
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.labelNotificationMarkMessageAsRead = new System.Windows.Forms.Label();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -388,6 +388,13 @@ namespace notifier {
 			resources.ApplyResources(this.groupBox3, "groupBox3");
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
+			// 
+			// labelNotificationMarkMessageAsRead
+			// 
+			resources.ApplyResources(this.labelNotificationMarkMessageAsRead, "labelNotificationMarkMessageAsRead");
+			this.labelNotificationMarkMessageAsRead.ForeColor = System.Drawing.Color.RoyalBlue;
+			this.labelNotificationMarkMessageAsRead.Image = global::notifier.Properties.Resources.information;
+			this.labelNotificationMarkMessageAsRead.Name = "labelNotificationMarkMessageAsRead";
 			// 
 			// labelNotificationOpenMessage
 			// 
@@ -880,13 +887,6 @@ namespace notifier {
 			this.timer.Enabled = true;
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.Timer_Tick);
-			// 
-			// labelNotificationMarkMessageAsRead
-			// 
-			resources.ApplyResources(this.labelNotificationMarkMessageAsRead, "labelNotificationMarkMessageAsRead");
-			this.labelNotificationMarkMessageAsRead.ForeColor = System.Drawing.Color.RoyalBlue;
-			this.labelNotificationMarkMessageAsRead.Image = global::notifier.Properties.Resources.information;
-			this.labelNotificationMarkMessageAsRead.Name = "labelNotificationMarkMessageAsRead";
 			// 
 			// Main
 			// 
