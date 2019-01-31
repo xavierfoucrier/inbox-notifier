@@ -97,8 +97,12 @@ namespace notifier {
 				return;
 			}
 
-			// opens a browser
-			Process.Start(Settings.Default.GMAIL_BASEURL + "/" + Tag);
+			// marks the message as read if the notification behavior is set to "mark as read"
+			if (balloon && Settings.Default.NotificationBehavior == (int)Behavior.MarkAsRead) {
+				UI.GmailService.Inbox.MarkAsRead();
+			} else {
+				Process.Start(Settings.Default.GMAIL_BASEURL + "/" + Tag);
+			}
 
 			// cleans the tag
 			Tag = null;
