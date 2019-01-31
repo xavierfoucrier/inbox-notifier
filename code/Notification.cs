@@ -33,7 +33,8 @@ namespace notifier {
 		/// </summary>
 		public enum Behavior : uint {
 			DoNothing = 0,
-			Open = 1
+			Open = 1,
+			MarkAsRead = 2
 		}
 
 		/// <summary>
