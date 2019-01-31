@@ -218,6 +218,16 @@ at the next application startup.</value>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Behavior</value>
   </data>
+  <data name="labelNotificationMarkMessageAsRead.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 71</value>
+  </data>
+  <data name="labelNotificationMarkMessageAsRead.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 38</value>
+  </data>
+  <data name="labelNotificationMarkMessageAsRead.Text" xml:space="preserve">
+    <value>Upon receipt of multiple messages, this option
+will mark all inbox messages as read.</value>
+  </data>
   <data name="labelNotificationOpenMessage.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 71</value>
   </data>
