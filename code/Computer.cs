@@ -89,7 +89,7 @@ namespace notifier {
 				} else if (target.Mode == PowerModes.Resume) {
 
 					// test
-					Core.Log("Waking up");
+					Core.Log("BindPowerMode: Waking up");
 
 					// stores the power resume state
 					PowerResume = true;
@@ -98,19 +98,19 @@ namespace notifier {
 					if (UI.NotificationService.Paused && UI.menuItemTimeoutIndefinitely.Checked) {
 
 						// test
-						Core.Log("Timeout is set to infinite: do nothing");
+						Core.Log("BindPowerMode: Timeout is set to infinite: do nothing");
 
 						return;
 					}
 
 					// test
-					Core.Log("Starts a full synchronization with token refresh");
+					Core.Log("BindPowerMode: Starts a full synchronization with token refresh");
 
 					// synchronizes the inbox and renew the token
 					UI.GmailService.Inbox.Sync(true, true);
 
 					// test
-					Core.Log("Enables the synchronization timer");
+					Core.Log("BindPowerMode: Enables the synchronization timer");
 
 					// enables the timer properly
 					UI.timer.Enabled = true;

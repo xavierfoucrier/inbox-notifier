@@ -173,7 +173,7 @@ namespace notifier {
 				}
 
 				// logs the error
-				Core.Log(exception.Message);
+				Core.Log("UpdateCheck: " + exception.Message);
 			} finally {
 
 				// restores default update button state
@@ -247,7 +247,7 @@ namespace notifier {
 				UI.GmailService.Inbox.Sync();
 
 				// logs the error
-				Core.Log(exception.Message);
+				Core.Log("UpdateDownload: " + exception.Message);
 			}
 		}
 

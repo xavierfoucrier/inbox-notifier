@@ -61,7 +61,7 @@ namespace notifier {
 			} catch (Exception exception) {
 
 				// logs the error
-				Core.Log(exception.Message);
+				Core.Log("Authentication: " + exception.Message);
 
 				// exits the application if the google api token file doesn't exists
 				if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {
@@ -117,23 +117,28 @@ namespace notifier {
 		private async Task<UserCredential> AuthorizationBroker() {
 
 			// uses the client secret file for the context
-			using (FileStream stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
+			try {
+				using (FileStream stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
 
-				// defines a cancellation token source
-				CancellationTokenSource cancellation = new CancellationTokenSource();
-				cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.AUTH_TIMEOUT));
+					// defines a cancellation token source
+					CancellationTokenSource cancellation = new CancellationTokenSource();
+					cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.AUTH_TIMEOUT));
 
-				// waits for the user validation, only if the user has not already authorized the application
-				UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
-					GoogleClientSecrets.Load(stream).Secrets,
-					new string[] { GmailService.Scope.GmailModify },
-					"user",
-					cancellation.Token,
-					new FileDataStore(Core.ApplicationDataFolder, true)
-				);
+					// waits for the user validation, only if the user has not already authorized the application
+					UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+						GoogleClientSecrets.Load(stream).Secrets,
+						new string[] { GmailService.Scope.GmailModify },
+						"user",
+						cancellation.Token,
+						new FileDataStore(Core.ApplicationDataFolder, true)
+					);
 
-				// returns the user credential
-				return credential;
+					// returns the user credential
+					return credential;
+				}
+			} catch(Exception exception) {
+				Core.Log("AuthorizationBroker: " + exception.Message);
+				return null;
 			}
 		}
 
