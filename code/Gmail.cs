@@ -92,10 +92,14 @@ namespace notifier {
 		public async Task<bool> RefreshToken() {
 
 			// refreshes the token and updates the token delivery date and time on the interface
-			if (Credential.Token.IsExpired(Credential.Flow.Clock)) {
-				if (await Credential.RefreshTokenAsync(new CancellationToken())) {
-					UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
+			try {
+				if (Credential.Token.IsExpired(Credential.Flow.Clock)) {
+					if (await Credential.RefreshTokenAsync(new CancellationToken())) {
+						UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
+					}
 				}
+			} catch(Exception exception) {
+				Core.Log("RefreshToken: " + exception.Message);
 			}
 
 			return true;

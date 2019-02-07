@@ -513,7 +513,11 @@ namespace notifier {
 			}
 
 			// synchronizes the inbox
-			GmailService.Inbox.Sync(false);
+			try {
+				GmailService.Inbox.Sync(false);
+			} catch(Exception exception) {
+				Core.Log("Timer_Tick: " + exception.Message);
+			}
 		}
 
 		/// <summary>
