@@ -310,6 +310,9 @@ will automatically open the inbox.</value>
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Display all message content</value>
   </data>
+  <data name="tabPagePlanning.Text" xml:space="preserve">
+    <value>Planning</value>
+  </data>
   <data name="tabPageUpdate.Text" xml:space="preserve">
     <value>Updates</value>
   </data>
