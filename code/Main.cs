@@ -56,9 +56,6 @@ namespace notifier {
 		/// </summary>
 		private void Main_Load(object sender, EventArgs e) {
 
-			// test
-			Core.Log("Main: load");
-
 			// plays a pop sound at application startup
 			if (Settings.Default.AudioPop) {
 				using (SoundPlayer player = new SoundPlayer(Resources.pop_open)) {
