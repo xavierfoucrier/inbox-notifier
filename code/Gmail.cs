@@ -99,7 +99,7 @@ namespace notifier {
 					}
 				}
 			} catch(Exception exception) {
-				Core.Log("RefreshToken: " + exception.Message);
+				Core.Log("RefreshToken: " + exception.GetType().ToString() + " " + exception.Message);
 			}
 
 			return true;
