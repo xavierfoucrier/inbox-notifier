@@ -264,7 +264,8 @@ Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
     <value>Keine neuen Beiträge</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
-    <value>Der Versuch, die Verbindung wiederherzustellen ...</value>
+    <value>Offline
+Der Versuch, die Verbindung wiederherzustellen ...</value>
   </data>
   <data name="reconnectFailed" xml:space="preserve">
     <value>Wiederverbindung möglich</value>
