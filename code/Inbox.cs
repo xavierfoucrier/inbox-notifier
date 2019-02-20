@@ -257,7 +257,7 @@ namespace notifier {
 
 				// logs the error
 				Core.Log("Sync: " + exception.GetType().ToString() + " " + exception.Message);
-			finally {
+			} finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
 			}
 		}
