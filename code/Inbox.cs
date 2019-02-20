@@ -9,6 +9,7 @@ using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using notifier.Languages;
 using notifier.Properties;
+using System.IO;
 
 namespace notifier {
 	class Inbox {
@@ -101,10 +102,16 @@ namespace notifier {
 
 				// initializes the gmail service base client api
 				if (Api == null) {
-					Api = new GmailService(new BaseClientService.Initializer() {
-						HttpClientInitializer = UI.GmailService.Credential,
-						ApplicationName = Settings.Default.APPLICATION_NAME
-					});
+					try {
+						Api = new GmailService(new BaseClientService.Initializer() {
+							HttpClientInitializer = UI.GmailService.Credential,
+							ApplicationName = Settings.Default.APPLICATION_NAME
+						});
+					} catch (Exception exception) {
+
+						// logs the error
+						Core.Log("Sync::Api : " + exception.GetType().ToString() + " " + exception.Message);
+					}
 
 					// retrieves the gmail address
 					UI.labelEmailAddress.Text = EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
@@ -237,6 +244,10 @@ namespace notifier {
 
 				// saves the number of unread threads
 				UnreadThreads = Box.ThreadsUnread;
+			} catch (IOException exception) {
+
+				// logs the error
+				Core.Log("IOException: " + " " + exception.Message + " in::" + exception.Source + "\n\n" + exception.StackTrace);
 			} catch (Exception exception) {
 
 				// displays a balloon tip in the systray with the detailed error message
@@ -246,7 +257,7 @@ namespace notifier {
 
 				// logs the error
 				Core.Log("Sync: " + exception.GetType().ToString() + " " + exception.Message);
-			} finally {
+			finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
 			}
 		}
