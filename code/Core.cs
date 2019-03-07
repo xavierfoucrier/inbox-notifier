@@ -69,7 +69,7 @@ namespace notifier {
 		/// </summary>
 		/// <param name="message">Message to log</param>
 		public static void Log(string message) {
-			using (StreamWriter writer = new StreamWriter(Settings.Default.LOG_FILE, true)) {
+			using (StreamWriter writer = new StreamWriter(ApplicationDataFolder + "/" + Settings.Default.LOG_FILE, true)) {
 				writer.Write(DateTime.Now + " - " + message + Environment.NewLine);
 			}
 		}
