@@ -349,5 +349,14 @@ namespace notifier.Properties {
                 return ((string)(this["UPDATE_SERVICE_NAME"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("gmn.log")]
+        public string LOG_FILE {
+            get {
+                return ((string)(this["LOG_FILE"]));
+            }
+        }
     }
 }

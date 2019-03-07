@@ -1,6 +1,8 @@
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
+using notifier.Properties;
 
 namespace notifier {
 	static class Core {
@@ -60,6 +62,16 @@ namespace notifier {
 
 			// exits the application
 			Application.Exit();
+		}
+
+		/// <summary>
+		/// Logs a message to the application log file
+		/// </summary>
+		/// <param name="message">Message to log</param>
+		public static void Log(string message) {
+			using (StreamWriter writer = new StreamWriter(ApplicationDataFolder + "/" + Settings.Default.LOG_FILE, true)) {
+				writer.Write(DateTime.Now + " - " + message + Environment.NewLine);
+			}
 		}
 
 		#endregion
