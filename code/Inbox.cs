@@ -102,16 +102,10 @@ namespace notifier {
 
 				// initializes the gmail service base client api
 				if (Api == null) {
-					try {
-						Api = new GmailService(new BaseClientService.Initializer() {
-							HttpClientInitializer = UI.GmailService.Credential,
-							ApplicationName = Settings.Default.APPLICATION_NAME
-						});
-					} catch (Exception exception) {
-
-						// logs the error
-						Core.Log("Sync::Api : " + exception.GetType().ToString() + " " + exception.Message);
-					}
+					Api = new GmailService(new BaseClientService.Initializer() {
+						HttpClientInitializer = UI.GmailService.Credential,
+						ApplicationName = Settings.Default.APPLICATION_NAME
+					});
 
 					// retrieves the gmail address
 					UI.labelEmailAddress.Text = EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
@@ -256,7 +250,7 @@ namespace notifier {
 				UI.NotificationService.Tip(Translation.error, Translation.syncErrorOccured + exception.Message, Notification.Type.Warning, 1500);
 
 				// logs the error
-				Core.Log("Sync: " + exception.GetType().ToString() + " " + exception.Message);
+				Core.Log("Sync: " + exception.Message);
 			} finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
 			}
