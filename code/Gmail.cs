@@ -98,8 +98,9 @@ namespace notifier {
 						UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
 					}
 				}
-			} catch(Exception exception) {
-				Core.Log("RefreshToken: " + exception.GetType().ToString() + " " + exception.Message);
+			} catch(IOException) {
+				// nothing to catch: IOException from mscorlib
+				// sometimes the process can not access the token response file because it is used by another process
 			}
 
 			return true;
