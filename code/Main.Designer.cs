@@ -119,6 +119,33 @@ namespace notifier {
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.label10 = new System.Windows.Forms.Label();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.label15 = new System.Windows.Forms.Label();
+			this.label16 = new System.Windows.Forms.Label();
+			this.label20 = new System.Windows.Forms.Label();
+			this.label21 = new System.Windows.Forms.Label();
+			this.label22 = new System.Windows.Forms.Label();
+			this.label23 = new System.Windows.Forms.Label();
+			this.label24 = new System.Windows.Forms.Label();
+			this.label25 = new System.Windows.Forms.Label();
+			this.label26 = new System.Windows.Forms.Label();
+			this.label27 = new System.Windows.Forms.Label();
+			this.label28 = new System.Windows.Forms.Label();
+			this.label29 = new System.Windows.Forms.Label();
+			this.label30 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
+			this.label31 = new System.Windows.Forms.Label();
+			this.label32 = new System.Windows.Forms.Label();
+			this.label33 = new System.Windows.Forms.Label();
+			this.label34 = new System.Windows.Forms.Label();
+			this.label35 = new System.Windows.Forms.Label();
+			this.label36 = new System.Windows.Forms.Label();
+			this.label37 = new System.Windows.Forms.Label();
+			this.label38 = new System.Windows.Forms.Label();
+			this.label39 = new System.Windows.Forms.Label();
+			this.label40 = new System.Windows.Forms.Label();
+			this.label41 = new System.Windows.Forms.Label();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -134,6 +161,7 @@ namespace notifier {
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).BeginInit();
 			this.tabPagePlanning.SuspendLayout();
+			this.groupBox10.SuspendLayout();
 			this.tabPageUpdate.SuspendLayout();
 			this.groupBox9.SuspendLayout();
 			this.groupBox7.SuspendLayout();
@@ -566,6 +594,33 @@ namespace notifier {
 			// 
 			// groupBox10
 			// 
+			this.groupBox10.Controls.Add(this.label17);
+			this.groupBox10.Controls.Add(this.label31);
+			this.groupBox10.Controls.Add(this.label32);
+			this.groupBox10.Controls.Add(this.label33);
+			this.groupBox10.Controls.Add(this.label34);
+			this.groupBox10.Controls.Add(this.label35);
+			this.groupBox10.Controls.Add(this.label36);
+			this.groupBox10.Controls.Add(this.label37);
+			this.groupBox10.Controls.Add(this.label38);
+			this.groupBox10.Controls.Add(this.label39);
+			this.groupBox10.Controls.Add(this.label40);
+			this.groupBox10.Controls.Add(this.label41);
+			this.groupBox10.Controls.Add(this.label30);
+			this.groupBox10.Controls.Add(this.label29);
+			this.groupBox10.Controls.Add(this.label28);
+			this.groupBox10.Controls.Add(this.label27);
+			this.groupBox10.Controls.Add(this.label26);
+			this.groupBox10.Controls.Add(this.label25);
+			this.groupBox10.Controls.Add(this.label24);
+			this.groupBox10.Controls.Add(this.label23);
+			this.groupBox10.Controls.Add(this.label22);
+			this.groupBox10.Controls.Add(this.label21);
+			this.groupBox10.Controls.Add(this.label20);
+			this.groupBox10.Controls.Add(this.label16);
+			this.groupBox10.Controls.Add(this.label15);
+			this.groupBox10.Controls.Add(this.comboBox1);
+			this.groupBox10.Controls.Add(this.label10);
 			resources.ApplyResources(this.groupBox10, "groupBox10");
 			this.groupBox10.Name = "groupBox10";
 			this.groupBox10.TabStop = false;
@@ -905,6 +960,199 @@ namespace notifier {
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.Timer_Tick);
 			// 
+			// label10
+			// 
+			resources.ApplyResources(this.label10, "label10");
+			this.label10.Name = "label10";
+			// 
+			// comboBox1
+			// 
+			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1"),
+            resources.GetString("comboBox1.Items2"),
+            resources.GetString("comboBox1.Items3"),
+            resources.GetString("comboBox1.Items4"),
+            resources.GetString("comboBox1.Items5"),
+            resources.GetString("comboBox1.Items6")});
+			resources.ApplyResources(this.comboBox1, "comboBox1");
+			this.comboBox1.Name = "comboBox1";
+			// 
+			// label15
+			// 
+			resources.ApplyResources(this.label15, "label15");
+			this.label15.Name = "label15";
+			// 
+			// label16
+			// 
+			this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+			this.label16.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label16, "label16");
+			this.label16.Name = "label16";
+			// 
+			// label20
+			// 
+			this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+			this.label20.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label20, "label20");
+			this.label20.Name = "label20";
+			// 
+			// label21
+			// 
+			this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+			this.label21.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label21, "label21");
+			this.label21.Name = "label21";
+			// 
+			// label22
+			// 
+			this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+			this.label22.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label22, "label22");
+			this.label22.Name = "label22";
+			// 
+			// label23
+			// 
+			this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+			this.label23.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label23, "label23");
+			this.label23.Name = "label23";
+			// 
+			// label24
+			// 
+			this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+			this.label24.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label24, "label24");
+			this.label24.Name = "label24";
+			// 
+			// label25
+			// 
+			this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label25.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label25, "label25");
+			this.label25.Name = "label25";
+			// 
+			// label26
+			// 
+			this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label26.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label26, "label26");
+			this.label26.Name = "label26";
+			// 
+			// label27
+			// 
+			this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label27.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label27, "label27");
+			this.label27.Name = "label27";
+			// 
+			// label28
+			// 
+			this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label28.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label28, "label28");
+			this.label28.Name = "label28";
+			// 
+			// label29
+			// 
+			this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label29.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label29, "label29");
+			this.label29.Name = "label29";
+			// 
+			// label30
+			// 
+			this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label30.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label30, "label30");
+			this.label30.Name = "label30";
+			// 
+			// label17
+			// 
+			this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+			this.label17.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label17, "label17");
+			this.label17.Name = "label17";
+			// 
+			// label31
+			// 
+			this.label31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+			this.label31.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label31, "label31");
+			this.label31.Name = "label31";
+			// 
+			// label32
+			// 
+			this.label32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+			this.label32.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label32, "label32");
+			this.label32.Name = "label32";
+			// 
+			// label33
+			// 
+			this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+			this.label33.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label33, "label33");
+			this.label33.Name = "label33";
+			// 
+			// label34
+			// 
+			this.label34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+			this.label34.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label34, "label34");
+			this.label34.Name = "label34";
+			// 
+			// label35
+			// 
+			this.label35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label35.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label35, "label35");
+			this.label35.Name = "label35";
+			// 
+			// label36
+			// 
+			this.label36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label36.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label36, "label36");
+			this.label36.Name = "label36";
+			// 
+			// label37
+			// 
+			this.label37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label37.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label37, "label37");
+			this.label37.Name = "label37";
+			// 
+			// label38
+			// 
+			this.label38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label38.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label38, "label38");
+			this.label38.Name = "label38";
+			// 
+			// label39
+			// 
+			this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label39.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label39, "label39");
+			this.label39.Name = "label39";
+			// 
+			// label40
+			// 
+			this.label40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label40.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label40, "label40");
+			this.label40.Name = "label40";
+			// 
+			// label41
+			// 
+			this.label41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.label41.Cursor = System.Windows.Forms.Cursors.Help;
+			resources.ApplyResources(this.label41, "label41");
+			this.label41.Name = "label41";
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -947,6 +1195,8 @@ namespace notifier {
 			this.groupBox4.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).EndInit();
 			this.tabPagePlanning.ResumeLayout(false);
+			this.groupBox10.ResumeLayout(false);
+			this.groupBox10.PerformLayout();
 			this.tabPageUpdate.ResumeLayout(false);
 			this.groupBox9.ResumeLayout(false);
 			this.groupBox9.PerformLayout();
@@ -1056,6 +1306,33 @@ namespace notifier {
 		private System.Windows.Forms.Label labelNotificationMarkMessageAsRead;
 		private System.Windows.Forms.TabPage tabPagePlanning;
 		private System.Windows.Forms.GroupBox groupBox10;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.Label label15;
+		internal System.Windows.Forms.Label label30;
+		internal System.Windows.Forms.Label label29;
+		internal System.Windows.Forms.Label label28;
+		internal System.Windows.Forms.Label label27;
+		internal System.Windows.Forms.Label label26;
+		internal System.Windows.Forms.Label label25;
+		internal System.Windows.Forms.Label label24;
+		internal System.Windows.Forms.Label label23;
+		internal System.Windows.Forms.Label label22;
+		internal System.Windows.Forms.Label label21;
+		internal System.Windows.Forms.Label label20;
+		internal System.Windows.Forms.Label label16;
+		internal System.Windows.Forms.Label label17;
+		internal System.Windows.Forms.Label label31;
+		internal System.Windows.Forms.Label label32;
+		internal System.Windows.Forms.Label label33;
+		internal System.Windows.Forms.Label label34;
+		internal System.Windows.Forms.Label label35;
+		internal System.Windows.Forms.Label label36;
+		internal System.Windows.Forms.Label label37;
+		internal System.Windows.Forms.Label label38;
+		internal System.Windows.Forms.Label label39;
+		internal System.Windows.Forms.Label label40;
+		internal System.Windows.Forms.Label label41;
 	}
 }
 
