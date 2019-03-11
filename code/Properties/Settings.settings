@@ -92,5 +92,8 @@
     <Setting Name="UPDATE_SERVICE_NAME" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Gmail Notifier Update</Value>
     </Setting>
+    <Setting Name="Scheduler" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
