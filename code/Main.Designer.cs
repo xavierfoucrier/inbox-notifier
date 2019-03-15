@@ -63,6 +63,8 @@ namespace notifier {
 			this.pictureBoxPrivacyPreview = new System.Windows.Forms.PictureBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.tabPagePlanning = new System.Windows.Forms.TabPage();
+			this.groupBox11 = new System.Windows.Forms.GroupBox();
+			this.labelDuration = new System.Windows.Forms.Label();
 			this.groupBox10 = new System.Windows.Forms.GroupBox();
 			this.tabPageUpdate = new System.Windows.Forms.TabPage();
 			this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -100,18 +102,6 @@ namespace notifier {
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
-			this.label15 = new System.Windows.Forms.Label();
-			this.fieldSyncExclusive = new System.Windows.Forms.RadioButton();
-			this.fieldSyncInclusive = new System.Windows.Forms.RadioButton();
-			this.groupBox11 = new System.Windows.Forms.GroupBox();
-			this.label10 = new System.Windows.Forms.Label();
-			this.fieldDayOfWeek = new System.Windows.Forms.ComboBox();
-			this.label16 = new System.Windows.Forms.Label();
-			this.fieldStartTime = new System.Windows.Forms.ComboBox();
-			this.label17 = new System.Windows.Forms.Label();
-			this.label20 = new System.Windows.Forms.Label();
-			this.fieldEndTime = new System.Windows.Forms.ComboBox();
-			this.labelDuration = new System.Windows.Forms.Label();
 			this.fieldLanguage = new System.Windows.Forms.ComboBox();
 			this.fieldAudioPop = new System.Windows.Forms.CheckBox();
 			this.fieldRunAtWindowsStartup = new System.Windows.Forms.CheckBox();
@@ -125,6 +115,16 @@ namespace notifier {
 			this.fieldPrivacyNotificationAll = new System.Windows.Forms.RadioButton();
 			this.fieldPrivacyNotificationShort = new System.Windows.Forms.RadioButton();
 			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
+			this.label20 = new System.Windows.Forms.Label();
+			this.label17 = new System.Windows.Forms.Label();
+			this.label16 = new System.Windows.Forms.Label();
+			this.fieldEndTime = new System.Windows.Forms.ComboBox();
+			this.fieldStartTime = new System.Windows.Forms.ComboBox();
+			this.label10 = new System.Windows.Forms.Label();
+			this.fieldDayOfWeek = new System.Windows.Forms.ComboBox();
+			this.label15 = new System.Windows.Forms.Label();
+			this.fieldSyncExclusive = new System.Windows.Forms.RadioButton();
+			this.fieldSyncInclusive = new System.Windows.Forms.RadioButton();
 			this.fieldScheduler = new System.Windows.Forms.CheckBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.fieldUpdatePeriod = new System.Windows.Forms.ComboBox();
@@ -146,13 +146,13 @@ namespace notifier {
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).BeginInit();
 			this.tabPagePlanning.SuspendLayout();
+			this.groupBox11.SuspendLayout();
 			this.groupBox10.SuspendLayout();
 			this.tabPageUpdate.SuspendLayout();
 			this.groupBox9.SuspendLayout();
 			this.groupBox7.SuspendLayout();
 			this.tabPageAbout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).BeginInit();
-			this.groupBox11.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -447,6 +447,26 @@ namespace notifier {
 			this.tabPagePlanning.Name = "tabPagePlanning";
 			this.tabPagePlanning.UseVisualStyleBackColor = true;
 			// 
+			// groupBox11
+			// 
+			this.groupBox11.Controls.Add(this.labelDuration);
+			this.groupBox11.Controls.Add(this.label20);
+			this.groupBox11.Controls.Add(this.label17);
+			this.groupBox11.Controls.Add(this.label16);
+			this.groupBox11.Controls.Add(this.fieldEndTime);
+			this.groupBox11.Controls.Add(this.fieldStartTime);
+			this.groupBox11.Controls.Add(this.label10);
+			this.groupBox11.Controls.Add(this.fieldDayOfWeek);
+			resources.ApplyResources(this.groupBox11, "groupBox11");
+			this.groupBox11.Name = "groupBox11";
+			this.groupBox11.TabStop = false;
+			// 
+			// labelDuration
+			// 
+			resources.ApplyResources(this.labelDuration, "labelDuration");
+			this.labelDuration.ForeColor = System.Drawing.Color.Gray;
+			this.labelDuration.Name = "labelDuration";
+			// 
 			// groupBox10
 			// 
 			this.groupBox10.Controls.Add(this.label15);
@@ -733,143 +753,6 @@ namespace notifier {
 			// 
 			this.timerReconnect.Tick += new System.EventHandler(this.TimerReconnect_Tick);
 			// 
-			// label15
-			// 
-			resources.ApplyResources(this.label15, "label15");
-			this.label15.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label15.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.label15.Name = "label15";
-			// 
-			// fieldSyncExclusive
-			// 
-			resources.ApplyResources(this.fieldSyncExclusive, "fieldSyncExclusive");
-			this.fieldSyncExclusive.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldSyncExclusive.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.fieldSyncExclusive.Name = "fieldSyncExclusive";
-			this.fieldSyncExclusive.UseVisualStyleBackColor = true;
-			// 
-			// fieldSyncInclusive
-			// 
-			resources.ApplyResources(this.fieldSyncInclusive, "fieldSyncInclusive");
-			this.fieldSyncInclusive.Checked = true;
-			this.fieldSyncInclusive.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldSyncInclusive.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.fieldSyncInclusive.Name = "fieldSyncInclusive";
-			this.fieldSyncInclusive.TabStop = true;
-			this.fieldSyncInclusive.UseVisualStyleBackColor = true;
-			// 
-			// groupBox11
-			// 
-			this.groupBox11.Controls.Add(this.labelDuration);
-			this.groupBox11.Controls.Add(this.label20);
-			this.groupBox11.Controls.Add(this.label17);
-			this.groupBox11.Controls.Add(this.label16);
-			this.groupBox11.Controls.Add(this.fieldEndTime);
-			this.groupBox11.Controls.Add(this.fieldStartTime);
-			this.groupBox11.Controls.Add(this.label10);
-			this.groupBox11.Controls.Add(this.fieldDayOfWeek);
-			resources.ApplyResources(this.groupBox11, "groupBox11");
-			this.groupBox11.Name = "groupBox11";
-			this.groupBox11.TabStop = false;
-			// 
-			// label10
-			// 
-			resources.ApplyResources(this.label10, "label10");
-			this.label10.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label10.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.label10.Name = "label10";
-			// 
-			// fieldDayOfWeek
-			// 
-			this.fieldDayOfWeek.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldDayOfWeek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldDayOfWeek.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.fieldDayOfWeek.FormattingEnabled = true;
-			this.fieldDayOfWeek.Items.AddRange(new object[] {
-            resources.GetString("fieldDayOfWeek.Items"),
-            resources.GetString("fieldDayOfWeek.Items1"),
-            resources.GetString("fieldDayOfWeek.Items2"),
-            resources.GetString("fieldDayOfWeek.Items3"),
-            resources.GetString("fieldDayOfWeek.Items4"),
-            resources.GetString("fieldDayOfWeek.Items5"),
-            resources.GetString("fieldDayOfWeek.Items6")});
-			resources.ApplyResources(this.fieldDayOfWeek, "fieldDayOfWeek");
-			this.fieldDayOfWeek.Name = "fieldDayOfWeek";
-			// 
-			// label16
-			// 
-			resources.ApplyResources(this.label16, "label16");
-			this.label16.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label16.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.label16.Name = "label16";
-			// 
-			// fieldStartTime
-			// 
-			this.fieldStartTime.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldStartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldStartTime.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.fieldStartTime.FormattingEnabled = true;
-			this.fieldStartTime.Items.AddRange(new object[] {
-            resources.GetString("fieldStartTime.Items"),
-            resources.GetString("fieldStartTime.Items1"),
-            resources.GetString("fieldStartTime.Items2"),
-            resources.GetString("fieldStartTime.Items3"),
-            resources.GetString("fieldStartTime.Items4"),
-            resources.GetString("fieldStartTime.Items5"),
-            resources.GetString("fieldStartTime.Items6"),
-            resources.GetString("fieldStartTime.Items7"),
-            resources.GetString("fieldStartTime.Items8"),
-            resources.GetString("fieldStartTime.Items9"),
-            resources.GetString("fieldStartTime.Items10"),
-            resources.GetString("fieldStartTime.Items11"),
-            resources.GetString("fieldStartTime.Items12"),
-            resources.GetString("fieldStartTime.Items13")});
-			resources.ApplyResources(this.fieldStartTime, "fieldStartTime");
-			this.fieldStartTime.Name = "fieldStartTime";
-			// 
-			// label17
-			// 
-			resources.ApplyResources(this.label17, "label17");
-			this.label17.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label17.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.label17.Name = "label17";
-			// 
-			// label20
-			// 
-			resources.ApplyResources(this.label20, "label20");
-			this.label20.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label20.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.label20.Name = "label20";
-			// 
-			// fieldEndTime
-			// 
-			this.fieldEndTime.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldEndTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldEndTime.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.fieldEndTime.FormattingEnabled = true;
-			this.fieldEndTime.Items.AddRange(new object[] {
-            resources.GetString("fieldEndTime.Items"),
-            resources.GetString("fieldEndTime.Items1"),
-            resources.GetString("fieldEndTime.Items2"),
-            resources.GetString("fieldEndTime.Items3"),
-            resources.GetString("fieldEndTime.Items4"),
-            resources.GetString("fieldEndTime.Items5"),
-            resources.GetString("fieldEndTime.Items6"),
-            resources.GetString("fieldEndTime.Items7"),
-            resources.GetString("fieldEndTime.Items8"),
-            resources.GetString("fieldEndTime.Items9"),
-            resources.GetString("fieldEndTime.Items10"),
-            resources.GetString("fieldEndTime.Items11"),
-            resources.GetString("fieldEndTime.Items12")});
-			resources.ApplyResources(this.fieldEndTime, "fieldEndTime");
-			this.fieldEndTime.Name = "fieldEndTime";
-			// 
-			// labelDuration
-			// 
-			resources.ApplyResources(this.labelDuration, "labelDuration");
-			this.labelDuration.ForeColor = System.Drawing.Color.Gray;
-			this.labelDuration.Name = "labelDuration";
-			// 
 			// fieldLanguage
 			// 
 			this.fieldLanguage.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::notifier.Properties.Settings.Default, "Language", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -1003,6 +886,123 @@ namespace notifier {
 			this.fieldPrivacyNotificationNone.UseVisualStyleBackColor = true;
 			this.fieldPrivacyNotificationNone.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationNone_CheckedChanged);
 			// 
+			// label20
+			// 
+			resources.ApplyResources(this.label20, "label20");
+			this.label20.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.label20.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
+			this.label20.Name = "label20";
+			// 
+			// label17
+			// 
+			resources.ApplyResources(this.label17, "label17");
+			this.label17.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.label17.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
+			this.label17.Name = "label17";
+			// 
+			// label16
+			// 
+			resources.ApplyResources(this.label16, "label16");
+			this.label16.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.label16.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
+			this.label16.Name = "label16";
+			// 
+			// fieldEndTime
+			// 
+			this.fieldEndTime.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldEndTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldEndTime.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
+			this.fieldEndTime.FormattingEnabled = true;
+			this.fieldEndTime.Items.AddRange(new object[] {
+            resources.GetString("fieldEndTime.Items"),
+            resources.GetString("fieldEndTime.Items1"),
+            resources.GetString("fieldEndTime.Items2"),
+            resources.GetString("fieldEndTime.Items3"),
+            resources.GetString("fieldEndTime.Items4"),
+            resources.GetString("fieldEndTime.Items5"),
+            resources.GetString("fieldEndTime.Items6"),
+            resources.GetString("fieldEndTime.Items7"),
+            resources.GetString("fieldEndTime.Items8"),
+            resources.GetString("fieldEndTime.Items9"),
+            resources.GetString("fieldEndTime.Items10"),
+            resources.GetString("fieldEndTime.Items11"),
+            resources.GetString("fieldEndTime.Items12")});
+			resources.ApplyResources(this.fieldEndTime, "fieldEndTime");
+			this.fieldEndTime.Name = "fieldEndTime";
+			// 
+			// fieldStartTime
+			// 
+			this.fieldStartTime.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldStartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldStartTime.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
+			this.fieldStartTime.FormattingEnabled = true;
+			this.fieldStartTime.Items.AddRange(new object[] {
+            resources.GetString("fieldStartTime.Items"),
+            resources.GetString("fieldStartTime.Items1"),
+            resources.GetString("fieldStartTime.Items2"),
+            resources.GetString("fieldStartTime.Items3"),
+            resources.GetString("fieldStartTime.Items4"),
+            resources.GetString("fieldStartTime.Items5"),
+            resources.GetString("fieldStartTime.Items6"),
+            resources.GetString("fieldStartTime.Items7"),
+            resources.GetString("fieldStartTime.Items8"),
+            resources.GetString("fieldStartTime.Items9"),
+            resources.GetString("fieldStartTime.Items10"),
+            resources.GetString("fieldStartTime.Items11"),
+            resources.GetString("fieldStartTime.Items12"),
+            resources.GetString("fieldStartTime.Items13")});
+			resources.ApplyResources(this.fieldStartTime, "fieldStartTime");
+			this.fieldStartTime.Name = "fieldStartTime";
+			// 
+			// label10
+			// 
+			resources.ApplyResources(this.label10, "label10");
+			this.label10.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.label10.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
+			this.label10.Name = "label10";
+			// 
+			// fieldDayOfWeek
+			// 
+			this.fieldDayOfWeek.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldDayOfWeek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldDayOfWeek.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
+			this.fieldDayOfWeek.FormattingEnabled = true;
+			this.fieldDayOfWeek.Items.AddRange(new object[] {
+            resources.GetString("fieldDayOfWeek.Items"),
+            resources.GetString("fieldDayOfWeek.Items1"),
+            resources.GetString("fieldDayOfWeek.Items2"),
+            resources.GetString("fieldDayOfWeek.Items3"),
+            resources.GetString("fieldDayOfWeek.Items4"),
+            resources.GetString("fieldDayOfWeek.Items5"),
+            resources.GetString("fieldDayOfWeek.Items6")});
+			resources.ApplyResources(this.fieldDayOfWeek, "fieldDayOfWeek");
+			this.fieldDayOfWeek.Name = "fieldDayOfWeek";
+			// 
+			// label15
+			// 
+			resources.ApplyResources(this.label15, "label15");
+			this.label15.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.label15.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
+			this.label15.Name = "label15";
+			// 
+			// fieldSyncExclusive
+			// 
+			resources.ApplyResources(this.fieldSyncExclusive, "fieldSyncExclusive");
+			this.fieldSyncExclusive.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldSyncExclusive.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
+			this.fieldSyncExclusive.Name = "fieldSyncExclusive";
+			this.fieldSyncExclusive.UseVisualStyleBackColor = true;
+			// 
+			// fieldSyncInclusive
+			// 
+			resources.ApplyResources(this.fieldSyncInclusive, "fieldSyncInclusive");
+			this.fieldSyncInclusive.Checked = true;
+			this.fieldSyncInclusive.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldSyncInclusive.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
+			this.fieldSyncInclusive.Name = "fieldSyncInclusive";
+			this.fieldSyncInclusive.TabStop = true;
+			this.fieldSyncInclusive.UseVisualStyleBackColor = true;
+			// 
 			// fieldScheduler
 			// 
 			resources.ApplyResources(this.fieldScheduler, "fieldScheduler");
@@ -1111,6 +1111,8 @@ namespace notifier {
 			this.groupBox4.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).EndInit();
 			this.tabPagePlanning.ResumeLayout(false);
+			this.groupBox11.ResumeLayout(false);
+			this.groupBox11.PerformLayout();
 			this.groupBox10.ResumeLayout(false);
 			this.groupBox10.PerformLayout();
 			this.tabPageUpdate.ResumeLayout(false);
@@ -1121,8 +1123,6 @@ namespace notifier {
 			this.tabPageAbout.ResumeLayout(false);
 			this.tabPageAbout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).EndInit();
-			this.groupBox11.ResumeLayout(false);
-			this.groupBox11.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
