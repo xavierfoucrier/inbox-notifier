@@ -77,7 +77,7 @@ namespace notifier {
 			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
 			this.tabPagePlanning = new System.Windows.Forms.TabPage();
 			this.groupBox10 = new System.Windows.Forms.GroupBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.fieldScheduler = new System.Windows.Forms.CheckBox();
 			this.tabPageUpdate = new System.Windows.Forms.TabPage();
 			this.groupBox9 = new System.Windows.Forms.GroupBox();
 			this.buttonCheckForUpdate = new System.Windows.Forms.Button();
@@ -585,18 +585,18 @@ namespace notifier {
 			this.groupBox10.Controls.Add(this.label15);
 			this.groupBox10.Controls.Add(this.radioButton1);
 			this.groupBox10.Controls.Add(this.radioButton2);
-			this.groupBox10.Controls.Add(this.checkBox1);
+			this.groupBox10.Controls.Add(this.fieldScheduler);
 			resources.ApplyResources(this.groupBox10, "groupBox10");
 			this.groupBox10.Name = "groupBox10";
 			this.groupBox10.TabStop = false;
 			// 
-			// checkBox1
+			// fieldScheduler
 			// 
-			resources.ApplyResources(this.checkBox1, "checkBox1");
-			this.checkBox1.Checked = global::notifier.Properties.Settings.Default.Scheduler;
-			this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.fieldScheduler, "fieldScheduler");
+			this.fieldScheduler.Checked = global::notifier.Properties.Settings.Default.Scheduler;
+			this.fieldScheduler.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldScheduler.Name = "fieldScheduler";
+			this.fieldScheduler.UseVisualStyleBackColor = true;
 			// 
 			// tabPageUpdate
 			// 
@@ -1205,7 +1205,7 @@ namespace notifier {
 		private System.Windows.Forms.Label labelNotificationMarkMessageAsRead;
 		private System.Windows.Forms.TabPage tabPagePlanning;
 		private System.Windows.Forms.GroupBox groupBox10;
-		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.CheckBox fieldScheduler;
 		private System.Windows.Forms.GroupBox groupBox11;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.ComboBox comboBox1;
