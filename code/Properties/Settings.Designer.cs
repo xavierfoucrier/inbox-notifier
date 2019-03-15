@@ -361,5 +361,17 @@ namespace notifier.Properties {
                 this["Scheduler"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SchedulerTimeSlot {
+            get {
+                return ((string)(this["SchedulerTimeSlot"]));
+            }
+            set {
+                this["SchedulerTimeSlot"] = value;
+            }
+        }
     }
 }
