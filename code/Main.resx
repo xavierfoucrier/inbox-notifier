@@ -2111,7 +2111,7 @@ ouvrira automatiquement la boite de réception.</value>
     <value>NoControl</value>
   </data>
   <data name="fieldSyncExclusive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 101</value>
+    <value>13, 101</value>
   </data>
   <data name="fieldSyncExclusive.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -2144,7 +2144,7 @@ ouvrira automatiquement la boite de réception.</value>
     <value>NoControl</value>
   </data>
   <data name="fieldSyncInclusive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 78</value>
+    <value>13, 78</value>
   </data>
   <data name="fieldSyncInclusive.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
