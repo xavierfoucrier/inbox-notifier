@@ -32,9 +32,13 @@ namespace notifier {
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
 			this.linkRestartToApply = new System.Windows.Forms.LinkLabel();
 			this.labelRestartToApply = new System.Windows.Forms.Label();
+			this.fieldLanguage = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.fieldAudioPop = new System.Windows.Forms.CheckBox();
+			this.fieldRunAtWindowsStartup = new System.Windows.Forms.CheckBox();
 			this.fieldMinimizeToSystray = new System.Windows.Forms.CheckBox();
+			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
 			this.tabPageAccount = new System.Windows.Forms.TabPage();
 			this.groupBox8 = new System.Windows.Forms.GroupBox();
 			this.chartUnreadMails = new System.Windows.Forms.Label();
@@ -55,21 +59,36 @@ namespace notifier {
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.labelNotificationMarkMessageAsRead = new System.Windows.Forms.Label();
 			this.labelNotificationOpenMessage = new System.Windows.Forms.Label();
+			this.fieldNotificationBehavior = new System.Windows.Forms.ComboBox();
+			this.label9 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
+			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.fieldNumericDelay = new System.Windows.Forms.NumericUpDown();
+			this.fieldMessageNotification = new System.Windows.Forms.CheckBox();
+			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
 			this.tabPagePrivacy = new System.Windows.Forms.TabPage();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.pictureBoxPrivacyPreview = new System.Windows.Forms.PictureBox();
 			this.label2 = new System.Windows.Forms.Label();
+			this.fieldPrivacyNotificationAll = new System.Windows.Forms.RadioButton();
+			this.fieldPrivacyNotificationShort = new System.Windows.Forms.RadioButton();
+			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
 			this.tabPagePlanning = new System.Windows.Forms.TabPage();
 			this.groupBox10 = new System.Windows.Forms.GroupBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.tabPageUpdate = new System.Windows.Forms.TabPage();
 			this.groupBox9 = new System.Windows.Forms.GroupBox();
 			this.buttonCheckForUpdate = new System.Windows.Forms.Button();
+			this.label7 = new System.Windows.Forms.Label();
+			this.fieldUpdatePeriod = new System.Windows.Forms.ComboBox();
 			this.labelUpdateControl = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
+			this.fieldUpdateQuiet = new System.Windows.Forms.CheckBox();
+			this.fieldUpdateDownload = new System.Windows.Forms.CheckBox();
+			this.fieldUpdateService = new System.Windows.Forms.CheckBox();
 			this.tabPageAbout = new System.Windows.Forms.TabPage();
 			this.linkVersion = new System.Windows.Forms.LinkLabel();
 			this.linkPrivacy = new System.Windows.Forms.LinkLabel();
@@ -100,55 +119,19 @@ namespace notifier {
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
-			this.fieldLanguage = new System.Windows.Forms.ComboBox();
-			this.fieldAudioPop = new System.Windows.Forms.CheckBox();
-			this.fieldRunAtWindowsStartup = new System.Windows.Forms.CheckBox();
-			this.fieldAskonExit = new System.Windows.Forms.CheckBox();
-			this.fieldNotificationBehavior = new System.Windows.Forms.ComboBox();
-			this.label9 = new System.Windows.Forms.Label();
-			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
-			this.fieldNumericDelay = new System.Windows.Forms.NumericUpDown();
-			this.fieldMessageNotification = new System.Windows.Forms.CheckBox();
-			this.fieldAudioNotification = new System.Windows.Forms.CheckBox();
-			this.fieldPrivacyNotificationAll = new System.Windows.Forms.RadioButton();
-			this.fieldPrivacyNotificationShort = new System.Windows.Forms.RadioButton();
-			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
-			this.label7 = new System.Windows.Forms.Label();
-			this.fieldUpdatePeriod = new System.Windows.Forms.ComboBox();
-			this.fieldUpdateQuiet = new System.Windows.Forms.CheckBox();
-			this.fieldUpdateDownload = new System.Windows.Forms.CheckBox();
-			this.fieldUpdateService = new System.Windows.Forms.CheckBox();
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.groupBox11 = new System.Windows.Forms.GroupBox();
-			this.label42 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.label17 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
-			this.label31 = new System.Windows.Forms.Label();
+			this.radioButton1 = new System.Windows.Forms.RadioButton();
+			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.groupBox11 = new System.Windows.Forms.GroupBox();
+			this.label10 = new System.Windows.Forms.Label();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.label16 = new System.Windows.Forms.Label();
-			this.label32 = new System.Windows.Forms.Label();
+			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.label17 = new System.Windows.Forms.Label();
 			this.label20 = new System.Windows.Forms.Label();
-			this.label33 = new System.Windows.Forms.Label();
+			this.comboBox3 = new System.Windows.Forms.ComboBox();
 			this.label21 = new System.Windows.Forms.Label();
-			this.label34 = new System.Windows.Forms.Label();
-			this.label22 = new System.Windows.Forms.Label();
-			this.label35 = new System.Windows.Forms.Label();
-			this.label23 = new System.Windows.Forms.Label();
-			this.label36 = new System.Windows.Forms.Label();
-			this.label24 = new System.Windows.Forms.Label();
-			this.label37 = new System.Windows.Forms.Label();
-			this.label25 = new System.Windows.Forms.Label();
-			this.label38 = new System.Windows.Forms.Label();
-			this.label26 = new System.Windows.Forms.Label();
-			this.label39 = new System.Windows.Forms.Label();
-			this.label27 = new System.Windows.Forms.Label();
-			this.label40 = new System.Windows.Forms.Label();
-			this.label28 = new System.Windows.Forms.Label();
-			this.label41 = new System.Windows.Forms.Label();
-			this.label29 = new System.Windows.Forms.Label();
-			this.label30 = new System.Windows.Forms.Label();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -159,6 +142,7 @@ namespace notifier {
 			this.tabPageNotification.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.tabPagePrivacy.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).BeginInit();
@@ -169,7 +153,6 @@ namespace notifier {
 			this.groupBox7.SuspendLayout();
 			this.tabPageAbout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).BeginInit();
 			this.groupBox11.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -237,6 +220,19 @@ namespace notifier {
 			this.labelRestartToApply.Image = global::notifier.Properties.Resources.information;
 			this.labelRestartToApply.Name = "labelRestartToApply";
 			// 
+			// fieldLanguage
+			// 
+			this.fieldLanguage.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::notifier.Properties.Settings.Default, "Language", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldLanguage.Items.AddRange(new object[] {
+            resources.GetString("fieldLanguage.Items"),
+            resources.GetString("fieldLanguage.Items1"),
+            resources.GetString("fieldLanguage.Items2")});
+			resources.ApplyResources(this.fieldLanguage, "fieldLanguage");
+			this.fieldLanguage.Name = "fieldLanguage";
+			this.fieldLanguage.Text = global::notifier.Properties.Settings.Default.Language;
+			this.fieldLanguage.SelectionChangeCommitted += new System.EventHandler(this.FieldLanguage_SelectionChangeCommitted);
+			// 
 			// label3
 			// 
 			resources.ApplyResources(this.label3, "label3");
@@ -252,6 +248,25 @@ namespace notifier {
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.TabStop = false;
 			// 
+			// fieldAudioPop
+			// 
+			resources.ApplyResources(this.fieldAudioPop, "fieldAudioPop");
+			this.fieldAudioPop.Checked = global::notifier.Properties.Settings.Default.AudioPop;
+			this.fieldAudioPop.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldAudioPop.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioPop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAudioPop.Name = "fieldAudioPop";
+			this.fieldAudioPop.UseVisualStyleBackColor = true;
+			// 
+			// fieldRunAtWindowsStartup
+			// 
+			resources.ApplyResources(this.fieldRunAtWindowsStartup, "fieldRunAtWindowsStartup");
+			this.fieldRunAtWindowsStartup.Checked = global::notifier.Properties.Settings.Default.RunAtWindowsStartup;
+			this.fieldRunAtWindowsStartup.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldRunAtWindowsStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "RunAtWindowsStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldRunAtWindowsStartup.Name = "fieldRunAtWindowsStartup";
+			this.fieldRunAtWindowsStartup.UseVisualStyleBackColor = true;
+			this.fieldRunAtWindowsStartup.CheckedChanged += new System.EventHandler(this.FieldRunAtWindowsStartup_CheckedChanged);
+			// 
 			// fieldMinimizeToSystray
 			// 
 			resources.ApplyResources(this.fieldMinimizeToSystray, "fieldMinimizeToSystray");
@@ -259,6 +274,14 @@ namespace notifier {
 			this.fieldMinimizeToSystray.CheckState = System.Windows.Forms.CheckState.Indeterminate;
 			this.fieldMinimizeToSystray.Name = "fieldMinimizeToSystray";
 			this.fieldMinimizeToSystray.UseVisualStyleBackColor = true;
+			// 
+			// fieldAskonExit
+			// 
+			resources.ApplyResources(this.fieldAskonExit, "fieldAskonExit");
+			this.fieldAskonExit.Checked = global::notifier.Properties.Settings.Default.AskonExit;
+			this.fieldAskonExit.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AskonExit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAskonExit.Name = "fieldAskonExit";
+			this.fieldAskonExit.UseVisualStyleBackColor = true;
 			// 
 			// tabPageAccount
 			// 
@@ -399,6 +422,27 @@ namespace notifier {
 			this.labelNotificationOpenMessage.Image = global::notifier.Properties.Resources.information;
 			this.labelNotificationOpenMessage.Name = "labelNotificationOpenMessage";
 			// 
+			// fieldNotificationBehavior
+			// 
+			this.fieldNotificationBehavior.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldNotificationBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldNotificationBehavior.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
+			this.fieldNotificationBehavior.FormattingEnabled = true;
+			this.fieldNotificationBehavior.Items.AddRange(new object[] {
+            resources.GetString("fieldNotificationBehavior.Items"),
+            resources.GetString("fieldNotificationBehavior.Items1"),
+            resources.GetString("fieldNotificationBehavior.Items2")});
+			resources.ApplyResources(this.fieldNotificationBehavior, "fieldNotificationBehavior");
+			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
+			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.FieldNotificationBehavior_SelectionChangeCommitted);
+			// 
+			// label9
+			// 
+			resources.ApplyResources(this.label9, "label9");
+			this.label9.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.label9.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
+			this.label9.Name = "label9";
+			// 
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.fieldStepDelay);
@@ -422,10 +466,53 @@ namespace notifier {
 			this.fieldStepDelay.Name = "fieldStepDelay";
 			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.FieldStepDelay_SelectionChangeCommitted);
 			// 
+			// fieldSpamNotification
+			// 
+			resources.ApplyResources(this.fieldSpamNotification, "fieldSpamNotification");
+			this.fieldSpamNotification.Checked = global::notifier.Properties.Settings.Default.SpamNotification;
+			this.fieldSpamNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldSpamNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "SpamNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldSpamNotification.Name = "fieldSpamNotification";
+			this.fieldSpamNotification.UseVisualStyleBackColor = true;
+			this.fieldSpamNotification.Click += new System.EventHandler(this.FieldSpamNotification_Click);
+			// 
 			// label1
 			// 
 			resources.ApplyResources(this.label1, "label1");
 			this.label1.Name = "label1";
+			// 
+			// fieldNumericDelay
+			// 
+			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			resources.ApplyResources(this.fieldNumericDelay, "fieldNumericDelay");
+			this.fieldNumericDelay.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.fieldNumericDelay.Name = "fieldNumericDelay";
+			this.fieldNumericDelay.Value = global::notifier.Properties.Settings.Default.NumericDelay;
+			this.fieldNumericDelay.ValueChanged += new System.EventHandler(this.FieldNumericDelay_ValueChanged);
+			// 
+			// fieldMessageNotification
+			// 
+			resources.ApplyResources(this.fieldMessageNotification, "fieldMessageNotification");
+			this.fieldMessageNotification.Checked = global::notifier.Properties.Settings.Default.MessageNotification;
+			this.fieldMessageNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldMessageNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldMessageNotification.Name = "fieldMessageNotification";
+			this.fieldMessageNotification.UseVisualStyleBackColor = true;
+			// 
+			// fieldAudioNotification
+			// 
+			resources.ApplyResources(this.fieldAudioNotification, "fieldAudioNotification");
+			this.fieldAudioNotification.Checked = global::notifier.Properties.Settings.Default.AudioNotification;
+			this.fieldAudioNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldAudioNotification.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
+			this.fieldAudioNotification.Name = "fieldAudioNotification";
+			this.fieldAudioNotification.UseVisualStyleBackColor = true;
 			// 
 			// tabPagePrivacy
 			// 
@@ -456,6 +543,35 @@ namespace notifier {
 			resources.ApplyResources(this.label2, "label2");
 			this.label2.Name = "label2";
 			// 
+			// fieldPrivacyNotificationAll
+			// 
+			resources.ApplyResources(this.fieldPrivacyNotificationAll, "fieldPrivacyNotificationAll");
+			this.fieldPrivacyNotificationAll.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldPrivacyNotificationAll.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
+			this.fieldPrivacyNotificationAll.Name = "fieldPrivacyNotificationAll";
+			this.fieldPrivacyNotificationAll.UseVisualStyleBackColor = true;
+			this.fieldPrivacyNotificationAll.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationAll_CheckedChanged);
+			// 
+			// fieldPrivacyNotificationShort
+			// 
+			resources.ApplyResources(this.fieldPrivacyNotificationShort, "fieldPrivacyNotificationShort");
+			this.fieldPrivacyNotificationShort.Checked = true;
+			this.fieldPrivacyNotificationShort.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldPrivacyNotificationShort.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
+			this.fieldPrivacyNotificationShort.Name = "fieldPrivacyNotificationShort";
+			this.fieldPrivacyNotificationShort.TabStop = true;
+			this.fieldPrivacyNotificationShort.UseVisualStyleBackColor = true;
+			this.fieldPrivacyNotificationShort.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationShort_CheckedChanged);
+			// 
+			// fieldPrivacyNotificationNone
+			// 
+			resources.ApplyResources(this.fieldPrivacyNotificationNone, "fieldPrivacyNotificationNone");
+			this.fieldPrivacyNotificationNone.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldPrivacyNotificationNone.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
+			this.fieldPrivacyNotificationNone.Name = "fieldPrivacyNotificationNone";
+			this.fieldPrivacyNotificationNone.UseVisualStyleBackColor = true;
+			this.fieldPrivacyNotificationNone.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationNone_CheckedChanged);
+			// 
 			// tabPagePlanning
 			// 
 			this.tabPagePlanning.Controls.Add(this.groupBox11);
@@ -466,11 +582,21 @@ namespace notifier {
 			// 
 			// groupBox10
 			// 
-			this.groupBox10.Controls.Add(this.label42);
+			this.groupBox10.Controls.Add(this.label15);
+			this.groupBox10.Controls.Add(this.radioButton1);
+			this.groupBox10.Controls.Add(this.radioButton2);
 			this.groupBox10.Controls.Add(this.checkBox1);
 			resources.ApplyResources(this.groupBox10, "groupBox10");
 			this.groupBox10.Name = "groupBox10";
 			this.groupBox10.TabStop = false;
+			// 
+			// checkBox1
+			// 
+			resources.ApplyResources(this.checkBox1, "checkBox1");
+			this.checkBox1.Checked = global::notifier.Properties.Settings.Default.Scheduler;
+			this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.UseVisualStyleBackColor = true;
 			// 
 			// tabPageUpdate
 			// 
@@ -498,6 +624,28 @@ namespace notifier {
 			this.buttonCheckForUpdate.UseVisualStyleBackColor = true;
 			this.buttonCheckForUpdate.Click += new System.EventHandler(this.ButtonCheckForUpdate_Click);
 			// 
+			// label7
+			// 
+			resources.ApplyResources(this.label7, "label7");
+			this.label7.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.label7.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
+			this.label7.Name = "label7";
+			// 
+			// fieldUpdatePeriod
+			// 
+			this.fieldUpdatePeriod.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldUpdatePeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldUpdatePeriod.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
+			this.fieldUpdatePeriod.FormattingEnabled = true;
+			this.fieldUpdatePeriod.Items.AddRange(new object[] {
+            resources.GetString("fieldUpdatePeriod.Items"),
+            resources.GetString("fieldUpdatePeriod.Items1"),
+            resources.GetString("fieldUpdatePeriod.Items2"),
+            resources.GetString("fieldUpdatePeriod.Items3")});
+			resources.ApplyResources(this.fieldUpdatePeriod, "fieldUpdatePeriod");
+			this.fieldUpdatePeriod.Name = "fieldUpdatePeriod";
+			this.fieldUpdatePeriod.SelectedIndexChanged += new System.EventHandler(this.FieldUpdatePeriod_SelectedIndexChanged);
+			// 
 			// labelUpdateControl
 			// 
 			resources.ApplyResources(this.labelUpdateControl, "labelUpdateControl");
@@ -517,6 +665,37 @@ namespace notifier {
 			resources.ApplyResources(this.groupBox7, "groupBox7");
 			this.groupBox7.Name = "groupBox7";
 			this.groupBox7.TabStop = false;
+			// 
+			// fieldUpdateQuiet
+			// 
+			resources.ApplyResources(this.fieldUpdateQuiet, "fieldUpdateQuiet");
+			this.fieldUpdateQuiet.Checked = global::notifier.Properties.Settings.Default.UpdateQuiet;
+			this.fieldUpdateQuiet.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldUpdateQuiet.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldUpdateQuiet.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "UpdateQuiet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldUpdateQuiet.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
+			this.fieldUpdateQuiet.Name = "fieldUpdateQuiet";
+			this.fieldUpdateQuiet.UseVisualStyleBackColor = true;
+			// 
+			// fieldUpdateDownload
+			// 
+			resources.ApplyResources(this.fieldUpdateDownload, "fieldUpdateDownload");
+			this.fieldUpdateDownload.Checked = global::notifier.Properties.Settings.Default.UpdateDownload;
+			this.fieldUpdateDownload.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldUpdateDownload.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "UpdateDownload", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldUpdateDownload.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldUpdateDownload.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
+			this.fieldUpdateDownload.Name = "fieldUpdateDownload";
+			this.fieldUpdateDownload.UseVisualStyleBackColor = true;
+			// 
+			// fieldUpdateService
+			// 
+			resources.ApplyResources(this.fieldUpdateService, "fieldUpdateService");
+			this.fieldUpdateService.Checked = global::notifier.Properties.Settings.Default.UpdateService;
+			this.fieldUpdateService.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.fieldUpdateService.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.fieldUpdateService.Name = "fieldUpdateService";
+			this.fieldUpdateService.UseVisualStyleBackColor = true;
 			// 
 			// tabPageAbout
 			// 
@@ -748,245 +927,49 @@ namespace notifier {
 			// 
 			this.timerReconnect.Tick += new System.EventHandler(this.TimerReconnect_Tick);
 			// 
-			// fieldLanguage
-			// 
-			this.fieldLanguage.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::notifier.Properties.Settings.Default, "Language", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldLanguage.Items.AddRange(new object[] {
-            resources.GetString("fieldLanguage.Items"),
-            resources.GetString("fieldLanguage.Items1"),
-            resources.GetString("fieldLanguage.Items2")});
-			resources.ApplyResources(this.fieldLanguage, "fieldLanguage");
-			this.fieldLanguage.Name = "fieldLanguage";
-			this.fieldLanguage.Text = global::notifier.Properties.Settings.Default.Language;
-			this.fieldLanguage.SelectionChangeCommitted += new System.EventHandler(this.FieldLanguage_SelectionChangeCommitted);
-			// 
-			// fieldAudioPop
-			// 
-			resources.ApplyResources(this.fieldAudioPop, "fieldAudioPop");
-			this.fieldAudioPop.Checked = global::notifier.Properties.Settings.Default.AudioPop;
-			this.fieldAudioPop.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldAudioPop.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioPop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAudioPop.Name = "fieldAudioPop";
-			this.fieldAudioPop.UseVisualStyleBackColor = true;
-			// 
-			// fieldRunAtWindowsStartup
-			// 
-			resources.ApplyResources(this.fieldRunAtWindowsStartup, "fieldRunAtWindowsStartup");
-			this.fieldRunAtWindowsStartup.Checked = global::notifier.Properties.Settings.Default.RunAtWindowsStartup;
-			this.fieldRunAtWindowsStartup.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldRunAtWindowsStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "RunAtWindowsStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldRunAtWindowsStartup.Name = "fieldRunAtWindowsStartup";
-			this.fieldRunAtWindowsStartup.UseVisualStyleBackColor = true;
-			this.fieldRunAtWindowsStartup.CheckedChanged += new System.EventHandler(this.FieldRunAtWindowsStartup_CheckedChanged);
-			// 
-			// fieldAskonExit
-			// 
-			resources.ApplyResources(this.fieldAskonExit, "fieldAskonExit");
-			this.fieldAskonExit.Checked = global::notifier.Properties.Settings.Default.AskonExit;
-			this.fieldAskonExit.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AskonExit", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAskonExit.Name = "fieldAskonExit";
-			this.fieldAskonExit.UseVisualStyleBackColor = true;
-			// 
-			// fieldNotificationBehavior
-			// 
-			this.fieldNotificationBehavior.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldNotificationBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldNotificationBehavior.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
-			this.fieldNotificationBehavior.FormattingEnabled = true;
-			this.fieldNotificationBehavior.Items.AddRange(new object[] {
-            resources.GetString("fieldNotificationBehavior.Items"),
-            resources.GetString("fieldNotificationBehavior.Items1"),
-            resources.GetString("fieldNotificationBehavior.Items2")});
-			resources.ApplyResources(this.fieldNotificationBehavior, "fieldNotificationBehavior");
-			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
-			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.FieldNotificationBehavior_SelectionChangeCommitted);
-			// 
-			// label9
-			// 
-			resources.ApplyResources(this.label9, "label9");
-			this.label9.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label9.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
-			this.label9.Name = "label9";
-			// 
-			// fieldSpamNotification
-			// 
-			resources.ApplyResources(this.fieldSpamNotification, "fieldSpamNotification");
-			this.fieldSpamNotification.Checked = global::notifier.Properties.Settings.Default.SpamNotification;
-			this.fieldSpamNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldSpamNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "SpamNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldSpamNotification.Name = "fieldSpamNotification";
-			this.fieldSpamNotification.UseVisualStyleBackColor = true;
-			this.fieldSpamNotification.Click += new System.EventHandler(this.FieldSpamNotification_Click);
-			// 
-			// fieldNumericDelay
-			// 
-			this.fieldNumericDelay.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::notifier.Properties.Settings.Default, "NumericDelay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			resources.ApplyResources(this.fieldNumericDelay, "fieldNumericDelay");
-			this.fieldNumericDelay.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-			this.fieldNumericDelay.Name = "fieldNumericDelay";
-			this.fieldNumericDelay.Value = global::notifier.Properties.Settings.Default.NumericDelay;
-			this.fieldNumericDelay.ValueChanged += new System.EventHandler(this.FieldNumericDelay_ValueChanged);
-			// 
-			// fieldMessageNotification
-			// 
-			resources.ApplyResources(this.fieldMessageNotification, "fieldMessageNotification");
-			this.fieldMessageNotification.Checked = global::notifier.Properties.Settings.Default.MessageNotification;
-			this.fieldMessageNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldMessageNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldMessageNotification.Name = "fieldMessageNotification";
-			this.fieldMessageNotification.UseVisualStyleBackColor = true;
-			// 
-			// fieldAudioNotification
-			// 
-			resources.ApplyResources(this.fieldAudioNotification, "fieldAudioNotification");
-			this.fieldAudioNotification.Checked = global::notifier.Properties.Settings.Default.AudioNotification;
-			this.fieldAudioNotification.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAudioNotification.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
-			this.fieldAudioNotification.Name = "fieldAudioNotification";
-			this.fieldAudioNotification.UseVisualStyleBackColor = true;
-			// 
-			// fieldPrivacyNotificationAll
-			// 
-			resources.ApplyResources(this.fieldPrivacyNotificationAll, "fieldPrivacyNotificationAll");
-			this.fieldPrivacyNotificationAll.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldPrivacyNotificationAll.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
-			this.fieldPrivacyNotificationAll.Name = "fieldPrivacyNotificationAll";
-			this.fieldPrivacyNotificationAll.UseVisualStyleBackColor = true;
-			this.fieldPrivacyNotificationAll.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationAll_CheckedChanged);
-			// 
-			// fieldPrivacyNotificationShort
-			// 
-			resources.ApplyResources(this.fieldPrivacyNotificationShort, "fieldPrivacyNotificationShort");
-			this.fieldPrivacyNotificationShort.Checked = true;
-			this.fieldPrivacyNotificationShort.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldPrivacyNotificationShort.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
-			this.fieldPrivacyNotificationShort.Name = "fieldPrivacyNotificationShort";
-			this.fieldPrivacyNotificationShort.TabStop = true;
-			this.fieldPrivacyNotificationShort.UseVisualStyleBackColor = true;
-			this.fieldPrivacyNotificationShort.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationShort_CheckedChanged);
-			// 
-			// fieldPrivacyNotificationNone
-			// 
-			resources.ApplyResources(this.fieldPrivacyNotificationNone, "fieldPrivacyNotificationNone");
-			this.fieldPrivacyNotificationNone.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldPrivacyNotificationNone.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
-			this.fieldPrivacyNotificationNone.Name = "fieldPrivacyNotificationNone";
-			this.fieldPrivacyNotificationNone.UseVisualStyleBackColor = true;
-			this.fieldPrivacyNotificationNone.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationNone_CheckedChanged);
-			// 
-			// label7
-			// 
-			resources.ApplyResources(this.label7, "label7");
-			this.label7.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label7.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
-			this.label7.Name = "label7";
-			// 
-			// fieldUpdatePeriod
-			// 
-			this.fieldUpdatePeriod.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldUpdatePeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldUpdatePeriod.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
-			this.fieldUpdatePeriod.FormattingEnabled = true;
-			this.fieldUpdatePeriod.Items.AddRange(new object[] {
-            resources.GetString("fieldUpdatePeriod.Items"),
-            resources.GetString("fieldUpdatePeriod.Items1"),
-            resources.GetString("fieldUpdatePeriod.Items2"),
-            resources.GetString("fieldUpdatePeriod.Items3")});
-			resources.ApplyResources(this.fieldUpdatePeriod, "fieldUpdatePeriod");
-			this.fieldUpdatePeriod.Name = "fieldUpdatePeriod";
-			this.fieldUpdatePeriod.SelectedIndexChanged += new System.EventHandler(this.FieldUpdatePeriod_SelectedIndexChanged);
-			// 
-			// fieldUpdateQuiet
-			// 
-			resources.ApplyResources(this.fieldUpdateQuiet, "fieldUpdateQuiet");
-			this.fieldUpdateQuiet.Checked = global::notifier.Properties.Settings.Default.UpdateQuiet;
-			this.fieldUpdateQuiet.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldUpdateQuiet.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldUpdateQuiet.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "UpdateQuiet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldUpdateQuiet.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
-			this.fieldUpdateQuiet.Name = "fieldUpdateQuiet";
-			this.fieldUpdateQuiet.UseVisualStyleBackColor = true;
-			// 
-			// fieldUpdateDownload
-			// 
-			resources.ApplyResources(this.fieldUpdateDownload, "fieldUpdateDownload");
-			this.fieldUpdateDownload.Checked = global::notifier.Properties.Settings.Default.UpdateDownload;
-			this.fieldUpdateDownload.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldUpdateDownload.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "UpdateDownload", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldUpdateDownload.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldUpdateDownload.Enabled = global::notifier.Properties.Settings.Default.UpdateService;
-			this.fieldUpdateDownload.Name = "fieldUpdateDownload";
-			this.fieldUpdateDownload.UseVisualStyleBackColor = true;
-			// 
-			// fieldUpdateService
-			// 
-			resources.ApplyResources(this.fieldUpdateService, "fieldUpdateService");
-			this.fieldUpdateService.Checked = global::notifier.Properties.Settings.Default.UpdateService;
-			this.fieldUpdateService.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.fieldUpdateService.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "UpdateService", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldUpdateService.Name = "fieldUpdateService";
-			this.fieldUpdateService.UseVisualStyleBackColor = true;
-			// 
 			// timer
 			// 
 			this.timer.Enabled = true;
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.Timer_Tick);
 			// 
-			// checkBox1
+			// label15
 			// 
-			resources.ApplyResources(this.checkBox1, "checkBox1");
-			this.checkBox1.Checked = global::notifier.Properties.Settings.Default.Scheduler;
-			this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.label15, "label15");
+			this.label15.Name = "label15";
+			// 
+			// radioButton1
+			// 
+			resources.ApplyResources(this.radioButton1, "radioButton1");
+			this.radioButton1.Name = "radioButton1";
+			this.radioButton1.UseVisualStyleBackColor = true;
+			// 
+			// radioButton2
+			// 
+			resources.ApplyResources(this.radioButton2, "radioButton2");
+			this.radioButton2.Checked = true;
+			this.radioButton2.Name = "radioButton2";
+			this.radioButton2.TabStop = true;
+			this.radioButton2.UseVisualStyleBackColor = true;
 			// 
 			// groupBox11
 			// 
-			this.groupBox11.Controls.Add(this.comboBox1);
-			this.groupBox11.Controls.Add(this.label17);
-			this.groupBox11.Controls.Add(this.label10);
-			this.groupBox11.Controls.Add(this.label15);
-			this.groupBox11.Controls.Add(this.label31);
-			this.groupBox11.Controls.Add(this.label16);
-			this.groupBox11.Controls.Add(this.label32);
-			this.groupBox11.Controls.Add(this.label20);
-			this.groupBox11.Controls.Add(this.label33);
 			this.groupBox11.Controls.Add(this.label21);
-			this.groupBox11.Controls.Add(this.label34);
-			this.groupBox11.Controls.Add(this.label22);
-			this.groupBox11.Controls.Add(this.label35);
-			this.groupBox11.Controls.Add(this.label23);
-			this.groupBox11.Controls.Add(this.label36);
-			this.groupBox11.Controls.Add(this.label24);
-			this.groupBox11.Controls.Add(this.label37);
-			this.groupBox11.Controls.Add(this.label25);
-			this.groupBox11.Controls.Add(this.label38);
-			this.groupBox11.Controls.Add(this.label26);
-			this.groupBox11.Controls.Add(this.label39);
-			this.groupBox11.Controls.Add(this.label27);
-			this.groupBox11.Controls.Add(this.label40);
-			this.groupBox11.Controls.Add(this.label28);
-			this.groupBox11.Controls.Add(this.label41);
-			this.groupBox11.Controls.Add(this.label29);
-			this.groupBox11.Controls.Add(this.label30);
+			this.groupBox11.Controls.Add(this.label20);
+			this.groupBox11.Controls.Add(this.label17);
+			this.groupBox11.Controls.Add(this.label16);
+			this.groupBox11.Controls.Add(this.comboBox3);
+			this.groupBox11.Controls.Add(this.comboBox2);
+			this.groupBox11.Controls.Add(this.label10);
+			this.groupBox11.Controls.Add(this.comboBox1);
 			resources.ApplyResources(this.groupBox11, "groupBox11");
 			this.groupBox11.Name = "groupBox11";
 			this.groupBox11.TabStop = false;
 			// 
-			// label42
+			// label10
 			// 
-			resources.ApplyResources(this.label42, "label42");
-			this.label42.ForeColor = System.Drawing.Color.RoyalBlue;
-			this.label42.Image = global::notifier.Properties.Resources.information;
-			this.label42.Name = "label42";
+			resources.ApplyResources(this.label10, "label10");
+			this.label10.Name = "label10";
 			// 
 			// comboBox1
 			// 
@@ -1003,183 +986,69 @@ namespace notifier {
 			resources.ApplyResources(this.comboBox1, "comboBox1");
 			this.comboBox1.Name = "comboBox1";
 			// 
-			// label17
-			// 
-			this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-			this.label17.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label17, "label17");
-			this.label17.Name = "label17";
-			// 
-			// label10
-			// 
-			resources.ApplyResources(this.label10, "label10");
-			this.label10.Name = "label10";
-			// 
-			// label15
-			// 
-			resources.ApplyResources(this.label15, "label15");
-			this.label15.Name = "label15";
-			// 
-			// label31
-			// 
-			this.label31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-			this.label31.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label31, "label31");
-			this.label31.Name = "label31";
-			// 
 			// label16
 			// 
-			this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-			this.label16.Cursor = System.Windows.Forms.Cursors.Help;
 			resources.ApplyResources(this.label16, "label16");
 			this.label16.Name = "label16";
 			// 
-			// label32
+			// comboBox2
 			// 
-			this.label32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-			this.label32.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label32, "label32");
-			this.label32.Name = "label32";
+			this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox2.FormattingEnabled = true;
+			this.comboBox2.Items.AddRange(new object[] {
+            resources.GetString("comboBox2.Items"),
+            resources.GetString("comboBox2.Items1"),
+            resources.GetString("comboBox2.Items2"),
+            resources.GetString("comboBox2.Items3"),
+            resources.GetString("comboBox2.Items4"),
+            resources.GetString("comboBox2.Items5"),
+            resources.GetString("comboBox2.Items6"),
+            resources.GetString("comboBox2.Items7"),
+            resources.GetString("comboBox2.Items8"),
+            resources.GetString("comboBox2.Items9"),
+            resources.GetString("comboBox2.Items10"),
+            resources.GetString("comboBox2.Items11"),
+            resources.GetString("comboBox2.Items12"),
+            resources.GetString("comboBox2.Items13")});
+			resources.ApplyResources(this.comboBox2, "comboBox2");
+			this.comboBox2.Name = "comboBox2";
+			// 
+			// label17
+			// 
+			resources.ApplyResources(this.label17, "label17");
+			this.label17.Name = "label17";
 			// 
 			// label20
 			// 
-			this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-			this.label20.Cursor = System.Windows.Forms.Cursors.Help;
 			resources.ApplyResources(this.label20, "label20");
 			this.label20.Name = "label20";
 			// 
-			// label33
+			// comboBox3
 			// 
-			this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-			this.label33.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label33, "label33");
-			this.label33.Name = "label33";
+			this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox3.FormattingEnabled = true;
+			this.comboBox3.Items.AddRange(new object[] {
+            resources.GetString("comboBox3.Items"),
+            resources.GetString("comboBox3.Items1"),
+            resources.GetString("comboBox3.Items2"),
+            resources.GetString("comboBox3.Items3"),
+            resources.GetString("comboBox3.Items4"),
+            resources.GetString("comboBox3.Items5"),
+            resources.GetString("comboBox3.Items6"),
+            resources.GetString("comboBox3.Items7"),
+            resources.GetString("comboBox3.Items8"),
+            resources.GetString("comboBox3.Items9"),
+            resources.GetString("comboBox3.Items10"),
+            resources.GetString("comboBox3.Items11"),
+            resources.GetString("comboBox3.Items12")});
+			resources.ApplyResources(this.comboBox3, "comboBox3");
+			this.comboBox3.Name = "comboBox3";
 			// 
 			// label21
 			// 
-			this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-			this.label21.Cursor = System.Windows.Forms.Cursors.Help;
 			resources.ApplyResources(this.label21, "label21");
+			this.label21.ForeColor = System.Drawing.Color.Gray;
 			this.label21.Name = "label21";
-			// 
-			// label34
-			// 
-			this.label34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-			this.label34.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label34, "label34");
-			this.label34.Name = "label34";
-			// 
-			// label22
-			// 
-			this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-			this.label22.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label22, "label22");
-			this.label22.Name = "label22";
-			// 
-			// label35
-			// 
-			this.label35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label35.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label35, "label35");
-			this.label35.Name = "label35";
-			// 
-			// label23
-			// 
-			this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-			this.label23.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label23, "label23");
-			this.label23.Name = "label23";
-			// 
-			// label36
-			// 
-			this.label36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label36.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label36, "label36");
-			this.label36.Name = "label36";
-			// 
-			// label24
-			// 
-			this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-			this.label24.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label24, "label24");
-			this.label24.Name = "label24";
-			// 
-			// label37
-			// 
-			this.label37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label37.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label37, "label37");
-			this.label37.Name = "label37";
-			// 
-			// label25
-			// 
-			this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label25.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label25, "label25");
-			this.label25.Name = "label25";
-			// 
-			// label38
-			// 
-			this.label38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label38.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label38, "label38");
-			this.label38.Name = "label38";
-			// 
-			// label26
-			// 
-			this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label26.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label26, "label26");
-			this.label26.Name = "label26";
-			// 
-			// label39
-			// 
-			this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label39.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label39, "label39");
-			this.label39.Name = "label39";
-			// 
-			// label27
-			// 
-			this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label27.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label27, "label27");
-			this.label27.Name = "label27";
-			// 
-			// label40
-			// 
-			this.label40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label40.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label40, "label40");
-			this.label40.Name = "label40";
-			// 
-			// label28
-			// 
-			this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label28.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label28, "label28");
-			this.label28.Name = "label28";
-			// 
-			// label41
-			// 
-			this.label41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label41.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label41, "label41");
-			this.label41.Name = "label41";
-			// 
-			// label29
-			// 
-			this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label29.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label29, "label29");
-			this.label29.Name = "label29";
-			// 
-			// label30
-			// 
-			this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
-			this.label30.Cursor = System.Windows.Forms.Cursors.Help;
-			resources.ApplyResources(this.label30, "label30");
-			this.label30.Name = "label30";
 			// 
 			// Main
 			// 
@@ -1217,6 +1086,7 @@ namespace notifier {
 			this.groupBox3.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).EndInit();
 			this.tabPagePrivacy.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
@@ -1232,7 +1102,6 @@ namespace notifier {
 			this.tabPageAbout.ResumeLayout(false);
 			this.tabPageAbout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeader)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.fieldNumericDelay)).EndInit();
 			this.groupBox11.ResumeLayout(false);
 			this.groupBox11.PerformLayout();
 			this.ResumeLayout(false);
@@ -1338,34 +1207,17 @@ namespace notifier {
 		private System.Windows.Forms.GroupBox groupBox10;
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.GroupBox groupBox11;
-		private System.Windows.Forms.Label label42;
-		private System.Windows.Forms.ComboBox comboBox1;
-		internal System.Windows.Forms.Label label17;
 		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.Label label15;
-		internal System.Windows.Forms.Label label31;
-		internal System.Windows.Forms.Label label16;
-		internal System.Windows.Forms.Label label32;
-		internal System.Windows.Forms.Label label20;
-		internal System.Windows.Forms.Label label33;
+		private System.Windows.Forms.RadioButton radioButton1;
+		private System.Windows.Forms.RadioButton radioButton2;
+		private System.Windows.Forms.Label label16;
+		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.Label label20;
+		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.ComboBox comboBox3;
 		internal System.Windows.Forms.Label label21;
-		internal System.Windows.Forms.Label label34;
-		internal System.Windows.Forms.Label label22;
-		internal System.Windows.Forms.Label label35;
-		internal System.Windows.Forms.Label label23;
-		internal System.Windows.Forms.Label label36;
-		internal System.Windows.Forms.Label label24;
-		internal System.Windows.Forms.Label label37;
-		internal System.Windows.Forms.Label label25;
-		internal System.Windows.Forms.Label label38;
-		internal System.Windows.Forms.Label label26;
-		internal System.Windows.Forms.Label label39;
-		internal System.Windows.Forms.Label label27;
-		internal System.Windows.Forms.Label label40;
-		internal System.Windows.Forms.Label label28;
-		internal System.Windows.Forms.Label label41;
-		internal System.Windows.Forms.Label label29;
-		internal System.Windows.Forms.Label label30;
 	}
 }
 
