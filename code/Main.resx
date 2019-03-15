@@ -1936,9 +1936,6 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="fieldStartTime.Items12" xml:space="preserve">
     <value>20h</value>
   </data>
-  <data name="fieldStartTime.Items13" xml:space="preserve">
-    <value>-</value>
-  </data>
   <data name="fieldStartTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>138, 100</value>
   </data>
