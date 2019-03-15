@@ -1699,40 +1699,40 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;tabPagePrivacy.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="label21.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labelDuration.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label21.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="labelDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labelDuration.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 104</value>
   </data>
-  <data name="label21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="labelDuration.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 13</value>
   </data>
-  <data name="label21.TabIndex" type="System.Int32, mscorlib">
+  <data name="labelDuration.TabIndex" type="System.Int32, mscorlib">
     <value>106</value>
   </data>
-  <data name="label21.Text" xml:space="preserve">
+  <data name="labelDuration.Text" xml:space="preserve">
     <value>3h</value>
   </data>
-  <data name="label21.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="labelDuration.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;label21.Name" xml:space="preserve">
-    <value>label21</value>
+  <data name="&gt;&gt;labelDuration.Name" xml:space="preserve">
+    <value>labelDuration</value>
   </data>
-  <data name="&gt;&gt;label21.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelDuration.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelDuration.Parent" xml:space="preserve">
     <value>groupBox11</value>
   </data>
-  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelDuration.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label20.AutoSize" type="System.Boolean, mscorlib">
@@ -1834,133 +1834,133 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="comboBox3.Items" xml:space="preserve">
+  <data name="fieldEndTime.Items" xml:space="preserve">
     <value>8h</value>
   </data>
-  <data name="comboBox3.Items1" xml:space="preserve">
+  <data name="fieldEndTime.Items1" xml:space="preserve">
     <value>9h</value>
   </data>
-  <data name="comboBox3.Items2" xml:space="preserve">
+  <data name="fieldEndTime.Items2" xml:space="preserve">
     <value>10h</value>
   </data>
-  <data name="comboBox3.Items3" xml:space="preserve">
+  <data name="fieldEndTime.Items3" xml:space="preserve">
     <value>11h</value>
   </data>
-  <data name="comboBox3.Items4" xml:space="preserve">
+  <data name="fieldEndTime.Items4" xml:space="preserve">
     <value>12h</value>
   </data>
-  <data name="comboBox3.Items5" xml:space="preserve">
+  <data name="fieldEndTime.Items5" xml:space="preserve">
     <value>13h</value>
   </data>
-  <data name="comboBox3.Items6" xml:space="preserve">
+  <data name="fieldEndTime.Items6" xml:space="preserve">
     <value>14h</value>
   </data>
-  <data name="comboBox3.Items7" xml:space="preserve">
+  <data name="fieldEndTime.Items7" xml:space="preserve">
     <value>15h</value>
   </data>
-  <data name="comboBox3.Items8" xml:space="preserve">
+  <data name="fieldEndTime.Items8" xml:space="preserve">
     <value>16h</value>
   </data>
-  <data name="comboBox3.Items9" xml:space="preserve">
+  <data name="fieldEndTime.Items9" xml:space="preserve">
     <value>17h</value>
   </data>
-  <data name="comboBox3.Items10" xml:space="preserve">
+  <data name="fieldEndTime.Items10" xml:space="preserve">
     <value>18h</value>
   </data>
-  <data name="comboBox3.Items11" xml:space="preserve">
+  <data name="fieldEndTime.Items11" xml:space="preserve">
     <value>19h</value>
   </data>
-  <data name="comboBox3.Items12" xml:space="preserve">
+  <data name="fieldEndTime.Items12" xml:space="preserve">
     <value>20h</value>
   </data>
-  <data name="comboBox3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="fieldEndTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 100</value>
   </data>
-  <data name="comboBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="fieldEndTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
-  <data name="comboBox3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="fieldEndTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 21</value>
   </data>
-  <data name="comboBox3.TabIndex" type="System.Int32, mscorlib">
+  <data name="fieldEndTime.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
   </data>
-  <data name="&gt;&gt;comboBox3.Name" xml:space="preserve">
-    <value>comboBox3</value>
+  <data name="&gt;&gt;fieldEndTime.Name" xml:space="preserve">
+    <value>fieldEndTime</value>
   </data>
-  <data name="&gt;&gt;comboBox3.Type" xml:space="preserve">
+  <data name="&gt;&gt;fieldEndTime.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;fieldEndTime.Parent" xml:space="preserve">
     <value>groupBox11</value>
   </data>
-  <data name="&gt;&gt;comboBox3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;fieldEndTime.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="comboBox2.Items" xml:space="preserve">
+  <data name="fieldStartTime.Items" xml:space="preserve">
     <value>8h</value>
   </data>
-  <data name="comboBox2.Items1" xml:space="preserve">
+  <data name="fieldStartTime.Items1" xml:space="preserve">
     <value>9h</value>
   </data>
-  <data name="comboBox2.Items2" xml:space="preserve">
+  <data name="fieldStartTime.Items2" xml:space="preserve">
     <value>10h</value>
   </data>
-  <data name="comboBox2.Items3" xml:space="preserve">
+  <data name="fieldStartTime.Items3" xml:space="preserve">
     <value>11h</value>
   </data>
-  <data name="comboBox2.Items4" xml:space="preserve">
+  <data name="fieldStartTime.Items4" xml:space="preserve">
     <value>12h</value>
   </data>
-  <data name="comboBox2.Items5" xml:space="preserve">
+  <data name="fieldStartTime.Items5" xml:space="preserve">
     <value>13h</value>
   </data>
-  <data name="comboBox2.Items6" xml:space="preserve">
+  <data name="fieldStartTime.Items6" xml:space="preserve">
     <value>14h</value>
   </data>
-  <data name="comboBox2.Items7" xml:space="preserve">
+  <data name="fieldStartTime.Items7" xml:space="preserve">
     <value>15h</value>
   </data>
-  <data name="comboBox2.Items8" xml:space="preserve">
+  <data name="fieldStartTime.Items8" xml:space="preserve">
     <value>16h</value>
   </data>
-  <data name="comboBox2.Items9" xml:space="preserve">
+  <data name="fieldStartTime.Items9" xml:space="preserve">
     <value>17h</value>
   </data>
-  <data name="comboBox2.Items10" xml:space="preserve">
+  <data name="fieldStartTime.Items10" xml:space="preserve">
     <value>18h</value>
   </data>
-  <data name="comboBox2.Items11" xml:space="preserve">
+  <data name="fieldStartTime.Items11" xml:space="preserve">
     <value>19h</value>
   </data>
-  <data name="comboBox2.Items12" xml:space="preserve">
+  <data name="fieldStartTime.Items12" xml:space="preserve">
     <value>20h</value>
   </data>
-  <data name="comboBox2.Items13" xml:space="preserve">
+  <data name="fieldStartTime.Items13" xml:space="preserve">
     <value>-</value>
   </data>
-  <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="fieldStartTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>138, 100</value>
   </data>
-  <data name="comboBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="fieldStartTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
-  <data name="comboBox2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="fieldStartTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 21</value>
   </data>
-  <data name="comboBox2.TabIndex" type="System.Int32, mscorlib">
+  <data name="fieldStartTime.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
   </data>
-  <data name="&gt;&gt;comboBox2.Name" xml:space="preserve">
-    <value>comboBox2</value>
+  <data name="&gt;&gt;fieldStartTime.Name" xml:space="preserve">
+    <value>fieldStartTime</value>
   </data>
-  <data name="&gt;&gt;comboBox2.Type" xml:space="preserve">
+  <data name="&gt;&gt;fieldStartTime.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;fieldStartTime.Parent" xml:space="preserve">
     <value>groupBox11</value>
   </data>
-  <data name="&gt;&gt;comboBox2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;fieldStartTime.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
@@ -1996,49 +1996,49 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="comboBox1.Items" xml:space="preserve">
+  <data name="fieldDayOfWeek.Items" xml:space="preserve">
     <value>lundi</value>
   </data>
-  <data name="comboBox1.Items1" xml:space="preserve">
+  <data name="fieldDayOfWeek.Items1" xml:space="preserve">
     <value>mardi</value>
   </data>
-  <data name="comboBox1.Items2" xml:space="preserve">
+  <data name="fieldDayOfWeek.Items2" xml:space="preserve">
     <value>mercredi</value>
   </data>
-  <data name="comboBox1.Items3" xml:space="preserve">
+  <data name="fieldDayOfWeek.Items3" xml:space="preserve">
     <value>jeudi</value>
   </data>
-  <data name="comboBox1.Items4" xml:space="preserve">
+  <data name="fieldDayOfWeek.Items4" xml:space="preserve">
     <value>vendredi</value>
   </data>
-  <data name="comboBox1.Items5" xml:space="preserve">
+  <data name="fieldDayOfWeek.Items5" xml:space="preserve">
     <value>samedi</value>
   </data>
-  <data name="comboBox1.Items6" xml:space="preserve">
+  <data name="fieldDayOfWeek.Items6" xml:space="preserve">
     <value>dimanche</value>
   </data>
-  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="fieldDayOfWeek.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 46</value>
   </data>
-  <data name="comboBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="fieldDayOfWeek.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
-  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="fieldDayOfWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 21</value>
   </data>
-  <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="fieldDayOfWeek.TabIndex" type="System.Int32, mscorlib">
     <value>102</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
-    <value>comboBox1</value>
+  <data name="&gt;&gt;fieldDayOfWeek.Name" xml:space="preserve">
+    <value>fieldDayOfWeek</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;fieldDayOfWeek.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;fieldDayOfWeek.Parent" xml:space="preserve">
     <value>groupBox11</value>
   </data>
-  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;fieldDayOfWeek.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="groupBox11.Location" type="System.Drawing.Point, System.Drawing">
@@ -2104,70 +2104,70 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="radioButton1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="fieldSyncExclusive.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="fieldSyncExclusive.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="radioButton1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="fieldSyncExclusive.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 101</value>
   </data>
-  <data name="radioButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="fieldSyncExclusive.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
-  <data name="radioButton1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="fieldSyncExclusive.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 17</value>
   </data>
-  <data name="radioButton1.TabIndex" type="System.Int32, mscorlib">
+  <data name="fieldSyncExclusive.TabIndex" type="System.Int32, mscorlib">
     <value>102</value>
   </data>
-  <data name="radioButton1.Text" xml:space="preserve">
+  <data name="fieldSyncExclusive.Text" xml:space="preserve">
     <value>En dehors de la plage horaire</value>
   </data>
-  <data name="&gt;&gt;radioButton1.Name" xml:space="preserve">
-    <value>radioButton1</value>
+  <data name="&gt;&gt;fieldSyncExclusive.Name" xml:space="preserve">
+    <value>fieldSyncExclusive</value>
   </data>
-  <data name="&gt;&gt;radioButton1.Type" xml:space="preserve">
+  <data name="&gt;&gt;fieldSyncExclusive.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;fieldSyncExclusive.Parent" xml:space="preserve">
     <value>groupBox10</value>
   </data>
-  <data name="&gt;&gt;radioButton1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;fieldSyncExclusive.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="radioButton2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="fieldSyncInclusive.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="fieldSyncInclusive.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="radioButton2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="fieldSyncInclusive.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 78</value>
   </data>
-  <data name="radioButton2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="fieldSyncInclusive.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
-  <data name="radioButton2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="fieldSyncInclusive.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
   </data>
-  <data name="radioButton2.TabIndex" type="System.Int32, mscorlib">
+  <data name="fieldSyncInclusive.TabIndex" type="System.Int32, mscorlib">
     <value>101</value>
   </data>
-  <data name="radioButton2.Text" xml:space="preserve">
+  <data name="fieldSyncInclusive.Text" xml:space="preserve">
     <value>Dans la plage horaire</value>
   </data>
-  <data name="&gt;&gt;radioButton2.Name" xml:space="preserve">
-    <value>radioButton2</value>
+  <data name="&gt;&gt;fieldSyncInclusive.Name" xml:space="preserve">
+    <value>fieldSyncInclusive</value>
   </data>
-  <data name="&gt;&gt;radioButton2.Type" xml:space="preserve">
+  <data name="&gt;&gt;fieldSyncInclusive.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;fieldSyncInclusive.Parent" xml:space="preserve">
     <value>groupBox10</value>
   </data>
-  <data name="&gt;&gt;radioButton2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;fieldSyncInclusive.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="fieldScheduler.AutoSize" type="System.Boolean, mscorlib">

@@ -121,17 +121,17 @@ namespace notifier {
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.label15 = new System.Windows.Forms.Label();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.fieldSyncExclusive = new System.Windows.Forms.RadioButton();
+			this.fieldSyncInclusive = new System.Windows.Forms.RadioButton();
 			this.groupBox11 = new System.Windows.Forms.GroupBox();
 			this.label10 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.fieldDayOfWeek = new System.Windows.Forms.ComboBox();
 			this.label16 = new System.Windows.Forms.Label();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.fieldStartTime = new System.Windows.Forms.ComboBox();
 			this.label17 = new System.Windows.Forms.Label();
 			this.label20 = new System.Windows.Forms.Label();
-			this.comboBox3 = new System.Windows.Forms.ComboBox();
-			this.label21 = new System.Windows.Forms.Label();
+			this.fieldEndTime = new System.Windows.Forms.ComboBox();
+			this.labelDuration = new System.Windows.Forms.Label();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -583,8 +583,8 @@ namespace notifier {
 			// groupBox10
 			// 
 			this.groupBox10.Controls.Add(this.label15);
-			this.groupBox10.Controls.Add(this.radioButton1);
-			this.groupBox10.Controls.Add(this.radioButton2);
+			this.groupBox10.Controls.Add(this.fieldSyncExclusive);
+			this.groupBox10.Controls.Add(this.fieldSyncInclusive);
 			this.groupBox10.Controls.Add(this.fieldScheduler);
 			resources.ApplyResources(this.groupBox10, "groupBox10");
 			this.groupBox10.Name = "groupBox10";
@@ -938,30 +938,30 @@ namespace notifier {
 			resources.ApplyResources(this.label15, "label15");
 			this.label15.Name = "label15";
 			// 
-			// radioButton1
+			// fieldSyncExclusive
 			// 
-			resources.ApplyResources(this.radioButton1, "radioButton1");
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.fieldSyncExclusive, "fieldSyncExclusive");
+			this.fieldSyncExclusive.Name = "fieldSyncExclusive";
+			this.fieldSyncExclusive.UseVisualStyleBackColor = true;
 			// 
-			// radioButton2
+			// fieldSyncInclusive
 			// 
-			resources.ApplyResources(this.radioButton2, "radioButton2");
-			this.radioButton2.Checked = true;
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.TabStop = true;
-			this.radioButton2.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.fieldSyncInclusive, "fieldSyncInclusive");
+			this.fieldSyncInclusive.Checked = true;
+			this.fieldSyncInclusive.Name = "fieldSyncInclusive";
+			this.fieldSyncInclusive.TabStop = true;
+			this.fieldSyncInclusive.UseVisualStyleBackColor = true;
 			// 
 			// groupBox11
 			// 
-			this.groupBox11.Controls.Add(this.label21);
+			this.groupBox11.Controls.Add(this.labelDuration);
 			this.groupBox11.Controls.Add(this.label20);
 			this.groupBox11.Controls.Add(this.label17);
 			this.groupBox11.Controls.Add(this.label16);
-			this.groupBox11.Controls.Add(this.comboBox3);
-			this.groupBox11.Controls.Add(this.comboBox2);
+			this.groupBox11.Controls.Add(this.fieldEndTime);
+			this.groupBox11.Controls.Add(this.fieldStartTime);
 			this.groupBox11.Controls.Add(this.label10);
-			this.groupBox11.Controls.Add(this.comboBox1);
+			this.groupBox11.Controls.Add(this.fieldDayOfWeek);
 			resources.ApplyResources(this.groupBox11, "groupBox11");
 			this.groupBox11.Name = "groupBox11";
 			this.groupBox11.TabStop = false;
@@ -971,47 +971,47 @@ namespace notifier {
 			resources.ApplyResources(this.label10, "label10");
 			this.label10.Name = "label10";
 			// 
-			// comboBox1
+			// fieldDayOfWeek
 			// 
-			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items"),
-            resources.GetString("comboBox1.Items1"),
-            resources.GetString("comboBox1.Items2"),
-            resources.GetString("comboBox1.Items3"),
-            resources.GetString("comboBox1.Items4"),
-            resources.GetString("comboBox1.Items5"),
-            resources.GetString("comboBox1.Items6")});
-			resources.ApplyResources(this.comboBox1, "comboBox1");
-			this.comboBox1.Name = "comboBox1";
+			this.fieldDayOfWeek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldDayOfWeek.FormattingEnabled = true;
+			this.fieldDayOfWeek.Items.AddRange(new object[] {
+            resources.GetString("fieldDayOfWeek.Items"),
+            resources.GetString("fieldDayOfWeek.Items1"),
+            resources.GetString("fieldDayOfWeek.Items2"),
+            resources.GetString("fieldDayOfWeek.Items3"),
+            resources.GetString("fieldDayOfWeek.Items4"),
+            resources.GetString("fieldDayOfWeek.Items5"),
+            resources.GetString("fieldDayOfWeek.Items6")});
+			resources.ApplyResources(this.fieldDayOfWeek, "fieldDayOfWeek");
+			this.fieldDayOfWeek.Name = "fieldDayOfWeek";
 			// 
 			// label16
 			// 
 			resources.ApplyResources(this.label16, "label16");
 			this.label16.Name = "label16";
 			// 
-			// comboBox2
+			// fieldStartTime
 			// 
-			this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Items.AddRange(new object[] {
-            resources.GetString("comboBox2.Items"),
-            resources.GetString("comboBox2.Items1"),
-            resources.GetString("comboBox2.Items2"),
-            resources.GetString("comboBox2.Items3"),
-            resources.GetString("comboBox2.Items4"),
-            resources.GetString("comboBox2.Items5"),
-            resources.GetString("comboBox2.Items6"),
-            resources.GetString("comboBox2.Items7"),
-            resources.GetString("comboBox2.Items8"),
-            resources.GetString("comboBox2.Items9"),
-            resources.GetString("comboBox2.Items10"),
-            resources.GetString("comboBox2.Items11"),
-            resources.GetString("comboBox2.Items12"),
-            resources.GetString("comboBox2.Items13")});
-			resources.ApplyResources(this.comboBox2, "comboBox2");
-			this.comboBox2.Name = "comboBox2";
+			this.fieldStartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldStartTime.FormattingEnabled = true;
+			this.fieldStartTime.Items.AddRange(new object[] {
+            resources.GetString("fieldStartTime.Items"),
+            resources.GetString("fieldStartTime.Items1"),
+            resources.GetString("fieldStartTime.Items2"),
+            resources.GetString("fieldStartTime.Items3"),
+            resources.GetString("fieldStartTime.Items4"),
+            resources.GetString("fieldStartTime.Items5"),
+            resources.GetString("fieldStartTime.Items6"),
+            resources.GetString("fieldStartTime.Items7"),
+            resources.GetString("fieldStartTime.Items8"),
+            resources.GetString("fieldStartTime.Items9"),
+            resources.GetString("fieldStartTime.Items10"),
+            resources.GetString("fieldStartTime.Items11"),
+            resources.GetString("fieldStartTime.Items12"),
+            resources.GetString("fieldStartTime.Items13")});
+			resources.ApplyResources(this.fieldStartTime, "fieldStartTime");
+			this.fieldStartTime.Name = "fieldStartTime";
 			// 
 			// label17
 			// 
@@ -1023,32 +1023,32 @@ namespace notifier {
 			resources.ApplyResources(this.label20, "label20");
 			this.label20.Name = "label20";
 			// 
-			// comboBox3
+			// fieldEndTime
 			// 
-			this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox3.FormattingEnabled = true;
-			this.comboBox3.Items.AddRange(new object[] {
-            resources.GetString("comboBox3.Items"),
-            resources.GetString("comboBox3.Items1"),
-            resources.GetString("comboBox3.Items2"),
-            resources.GetString("comboBox3.Items3"),
-            resources.GetString("comboBox3.Items4"),
-            resources.GetString("comboBox3.Items5"),
-            resources.GetString("comboBox3.Items6"),
-            resources.GetString("comboBox3.Items7"),
-            resources.GetString("comboBox3.Items8"),
-            resources.GetString("comboBox3.Items9"),
-            resources.GetString("comboBox3.Items10"),
-            resources.GetString("comboBox3.Items11"),
-            resources.GetString("comboBox3.Items12")});
-			resources.ApplyResources(this.comboBox3, "comboBox3");
-			this.comboBox3.Name = "comboBox3";
+			this.fieldEndTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldEndTime.FormattingEnabled = true;
+			this.fieldEndTime.Items.AddRange(new object[] {
+            resources.GetString("fieldEndTime.Items"),
+            resources.GetString("fieldEndTime.Items1"),
+            resources.GetString("fieldEndTime.Items2"),
+            resources.GetString("fieldEndTime.Items3"),
+            resources.GetString("fieldEndTime.Items4"),
+            resources.GetString("fieldEndTime.Items5"),
+            resources.GetString("fieldEndTime.Items6"),
+            resources.GetString("fieldEndTime.Items7"),
+            resources.GetString("fieldEndTime.Items8"),
+            resources.GetString("fieldEndTime.Items9"),
+            resources.GetString("fieldEndTime.Items10"),
+            resources.GetString("fieldEndTime.Items11"),
+            resources.GetString("fieldEndTime.Items12")});
+			resources.ApplyResources(this.fieldEndTime, "fieldEndTime");
+			this.fieldEndTime.Name = "fieldEndTime";
 			// 
-			// label21
+			// labelDuration
 			// 
-			resources.ApplyResources(this.label21, "label21");
-			this.label21.ForeColor = System.Drawing.Color.Gray;
-			this.label21.Name = "label21";
+			resources.ApplyResources(this.labelDuration, "labelDuration");
+			this.labelDuration.ForeColor = System.Drawing.Color.Gray;
+			this.labelDuration.Name = "labelDuration";
 			// 
 			// Main
 			// 
@@ -1208,16 +1208,16 @@ namespace notifier {
 		private System.Windows.Forms.CheckBox fieldScheduler;
 		private System.Windows.Forms.GroupBox groupBox11;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox fieldDayOfWeek;
 		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.RadioButton radioButton1;
-		private System.Windows.Forms.RadioButton radioButton2;
+		private System.Windows.Forms.RadioButton fieldSyncExclusive;
+		private System.Windows.Forms.RadioButton fieldSyncInclusive;
 		private System.Windows.Forms.Label label16;
-		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.ComboBox fieldStartTime;
 		private System.Windows.Forms.Label label20;
 		private System.Windows.Forms.Label label17;
-		private System.Windows.Forms.ComboBox comboBox3;
-		internal System.Windows.Forms.Label label21;
+		private System.Windows.Forms.ComboBox fieldEndTime;
+		internal System.Windows.Forms.Label labelDuration;
 	}
 }
 
