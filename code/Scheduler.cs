@@ -36,8 +36,8 @@ namespace notifier {
 			});
 
 			if (Monday != null) {
-				UI.fieldStartTime.Text = Monday.Start.Hours.ToString() + " " + Translation.hours;
-				UI.fieldEndTime.Text = Monday.End.Hours.ToString() + " " + Translation.hours;
+				UI.fieldStartTime.Text = Monday.Start.Hours.ToString() + Translation.hours.ToString().Substring(0, 1);
+				UI.fieldEndTime.Text = Monday.End.Hours.ToString() + Translation.hours.ToString().Substring(0, 1);
 				UI.labelDuration.Text = Monday.Start.Subtract(Monday.End).Duration().Hours.ToString() + " " + Translation.hours;
 			}
 		}
