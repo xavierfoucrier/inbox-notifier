@@ -105,6 +105,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Scheduler.cs" />
     <Compile Include="Timeslot.cs" />
     <Compile Include="Update.cs" />
     <EmbeddedResource Include="Languages\Translation.de.resx" />
