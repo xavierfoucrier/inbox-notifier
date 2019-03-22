@@ -12,6 +12,9 @@ namespace notifier {
 		/// <summary>
 		/// Class constructor
 		/// </summary>
+		/// <param name="Day">Day of the week</param>
+		/// <param name="Start">Start time of the timeslot</param>
+		/// <param name="End">End time of the timeslot</param>
 		public Timeslot(DayOfWeek Day, TimeSpan Start, TimeSpan End) {
 			this.Day = Day;
 			this.Start = Start;
