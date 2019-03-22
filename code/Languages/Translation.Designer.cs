@@ -373,6 +373,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à heure(s).
+        /// </summary>
+        internal static string hours {
+            get {
+                return ResourceManager.GetString("hours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Vous disposez de la dernière version de l&apos;application..
         /// </summary>
         internal static string latestVersion {

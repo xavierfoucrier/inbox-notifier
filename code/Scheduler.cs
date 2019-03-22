@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using notifier.Languages;
 using notifier.Properties;
 
 namespace notifier {
@@ -35,9 +36,9 @@ namespace notifier {
 			});
 
 			if (Monday != null) {
-				UI.fieldStartTime.Text = Monday.Start.Hours.ToString() + "h";
-				UI.fieldEndTime.Text = Monday.End.Hours.ToString() + "h";
-				UI.labelDuration.Text = Monday.Start.Subtract(Monday.End).Duration().Hours.ToString() + "h";
+				UI.fieldStartTime.Text = Monday.Start.Hours.ToString() + " " + Translation.hours;
+				UI.fieldEndTime.Text = Monday.End.Hours.ToString() + " " + Translation.hours;
+				UI.labelDuration.Text = Monday.Start.Subtract(Monday.End).Duration().Hours.ToString() + " " + Translation.hours;
 			}
 		}
 

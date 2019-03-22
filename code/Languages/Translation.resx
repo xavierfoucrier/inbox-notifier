@@ -225,6 +225,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   <data name="helpUpdateService" xml:space="preserve">
     <value>Active le service de vérification automatique des mises à jour</value>
   </data>
+  <data name="hours" xml:space="preserve">
+    <value>heure(s)</value>
+  </data>
   <data name="latestVersion" xml:space="preserve">
     <value>Vous disposez de la dernière version de l'application.</value>
   </data>
