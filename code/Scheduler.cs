@@ -1,8 +1,15 @@
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace notifier {
 	class Scheduler {
 
 		#region #attributes
+
+		/// <summary>
+		/// List of slots for the scheduler
+		/// </summary>
+		private List<Timeslot> Slots;
 
 		/// <summary>
 		/// Reference to the main interface
