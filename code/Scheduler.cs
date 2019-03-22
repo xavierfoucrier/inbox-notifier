@@ -9,7 +9,7 @@ namespace notifier {
 		/// <summary>
 		/// List of slots for the scheduler
 		/// </summary>
-		private List<Timeslot> Slots;
+		private List<Timeslot> Slots = JsonConvert.DeserializeObject<List<Timeslot>>(Settings.Default.SchedulerTimeSlot);
 
 		/// <summary>
 		/// Reference to the main interface
