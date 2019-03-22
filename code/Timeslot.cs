@@ -1,7 +1,7 @@
 using System;
 
 namespace notifier {
-	class Timeslot {
+	class TimeSlot {
 
 		#region #attributes
 
@@ -13,9 +13,9 @@ namespace notifier {
 		/// Class constructor
 		/// </summary>
 		/// <param name="Day">Day of the week</param>
-		/// <param name="Start">Start time of the timeslot</param>
-		/// <param name="End">End time of the timeslot</param>
-		public Timeslot(DayOfWeek Day, TimeSpan Start, TimeSpan End) {
+		/// <param name="Start">Start time of the time slot</param>
+		/// <param name="End">End time of the time slot</param>
+		public TimeSlot(DayOfWeek Day, TimeSpan Start, TimeSpan End) {
 			this.Day = Day;
 			this.Start = Start;
 			this.End = End;
@@ -26,21 +26,21 @@ namespace notifier {
 		#region #accessors
 
 		/// <summary>
-		/// Day of the timeslot
+		/// Day of the time slot
 		/// </summary>
 		public DayOfWeek Day {
 			get; set;
 		}
 
 		/// <summary>
-		/// Starting time of the timeslot
+		/// Starting time of the time slot
 		/// </summary>
 		public TimeSpan Start {
 			get; set;
 		}
 
 		/// <summary>
-		/// Ending time of the timeslot
+		/// Ending time of the time slot
 		/// </summary>
 		public TimeSpan End {
 			get; set;

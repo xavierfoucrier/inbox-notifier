@@ -12,7 +12,7 @@ namespace notifier {
 		/// <summary>
 		/// List of slots for the scheduler
 		/// </summary>
-		private List<Timeslot> Slots = JsonConvert.DeserializeObject<List<Timeslot>>(Settings.Default.SchedulerTimeSlot);
+		private List<TimeSlot> Slots = JsonConvert.DeserializeObject<List<TimeSlot>>(Settings.Default.SchedulerTimeSlot);
 
 		/// <summary>
 		/// Reference to the main interface
@@ -31,7 +31,7 @@ namespace notifier {
 			UI = form;
 
 			// displays the start time and end time for monday
-			Timeslot Monday = Slots.Find((match) => {
+			TimeSlot Monday = Slots.Find((match) => {
 				return match.Day == DayOfWeek.Monday;
 			});
 
