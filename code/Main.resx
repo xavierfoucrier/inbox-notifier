@@ -1712,13 +1712,13 @@ ouvrira automatiquement la boite de réception.</value>
     <value>2, 0, 2, 0</value>
   </data>
   <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 13</value>
+    <value>11, 13</value>
   </data>
   <data name="labelDuration.TabIndex" type="System.Int32, mscorlib">
     <value>106</value>
   </data>
   <data name="labelDuration.Text" xml:space="preserve">
-    <value>3h</value>
+    <value>-</value>
   </data>
   <data name="labelDuration.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
