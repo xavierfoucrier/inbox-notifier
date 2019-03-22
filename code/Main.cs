@@ -31,6 +31,11 @@ namespace notifier {
 		internal Notification NotificationService;
 
 		/// <summary>
+		/// Scheduler service class
+		/// </summary>
+		internal Scheduler SchedulerService;
+
+		/// <summary>
 		/// Global UI tooltip
 		/// </summary>
 		internal ToolTip tip = new ToolTip();
@@ -49,6 +54,7 @@ namespace notifier {
 			ComputerService = new Computer(ref ui);
 			GmailService = new Gmail(ref ui);
 			NotificationService = new Notification(ref ui);
+			SchedulerService = new Scheduler(ref ui);
 		}
 
 		/// <summary>
