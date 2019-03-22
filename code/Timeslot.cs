@@ -12,7 +12,10 @@ namespace notifier {
 		/// <summary>
 		/// Class constructor
 		/// </summary>
-		public Timeslot() {
+		public Timeslot(DayOfWeek Day, TimeSpan Start, TimeSpan End) {
+			this.Day = Day;
+			this.Start = Start;
+			this.End = End;
 		}
 
 		#endregion
