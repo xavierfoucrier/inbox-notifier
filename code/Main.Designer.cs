@@ -1232,11 +1232,11 @@ namespace notifier {
 		private System.Windows.Forms.RadioButton fieldSyncExclusive;
 		private System.Windows.Forms.RadioButton fieldSyncInclusive;
 		private System.Windows.Forms.Label label16;
-		private System.Windows.Forms.ComboBox fieldStartTime;
 		private System.Windows.Forms.Label label20;
 		private System.Windows.Forms.Label label17;
-		private System.Windows.Forms.ComboBox fieldEndTime;
 		internal System.Windows.Forms.Label labelDuration;
+		internal System.Windows.Forms.ComboBox fieldStartTime;
+		internal System.Windows.Forms.ComboBox fieldEndTime;
 	}
 }
 
