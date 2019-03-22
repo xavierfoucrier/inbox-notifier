@@ -9,21 +9,6 @@ namespace notifier {
 
 		#region #attributes
 
-		/// <summary>
-		/// Day of the timeslot
-		/// </summary>
-		private DayOfWeek Day;
-
-		/// <summary>
-		/// Starting time of the timeslot
-		/// </summary>
-		private TimeSpan Start;
-
-		/// <summary>
-		/// Ending time of the timeslot
-		/// </summary>
-		private TimeSpan End;
-
 		#endregion
 
 		#region #methods
@@ -37,6 +22,27 @@ namespace notifier {
 		#endregion
 
 		#region #accessors
+
+		/// <summary>
+		/// Day of the timeslot
+		/// </summary>
+		public DayOfWeek Day {
+			get; set;
+		}
+
+		/// <summary>
+		/// Starting time of the timeslot
+		/// </summary>
+		public TimeSpan Start {
+			get; set;
+		}
+
+		/// <summary>
+		/// Ending time of the timeslot
+		/// </summary>
+		public TimeSpan End {
+			get; set;
+		}
 
 		#endregion
 	}
