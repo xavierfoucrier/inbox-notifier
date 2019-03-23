@@ -508,43 +508,43 @@
     <value>3</value>
   </data>
   <data name="fieldEndTime.Items" xml:space="preserve">
-    <value>8h</value>
+    <value>8:00</value>
   </data>
   <data name="fieldEndTime.Items1" xml:space="preserve">
-    <value>9h</value>
+    <value>9:00</value>
   </data>
   <data name="fieldEndTime.Items2" xml:space="preserve">
-    <value>10h</value>
+    <value>10:00</value>
   </data>
   <data name="fieldEndTime.Items3" xml:space="preserve">
-    <value>11h</value>
+    <value>11:00</value>
   </data>
   <data name="fieldEndTime.Items4" xml:space="preserve">
-    <value>12h</value>
+    <value>12:00</value>
   </data>
   <data name="fieldEndTime.Items5" xml:space="preserve">
-    <value>13h</value>
+    <value>13:00</value>
   </data>
   <data name="fieldEndTime.Items6" xml:space="preserve">
-    <value>14h</value>
+    <value>14:00</value>
   </data>
   <data name="fieldEndTime.Items7" xml:space="preserve">
-    <value>15h</value>
+    <value>15:00</value>
   </data>
   <data name="fieldEndTime.Items8" xml:space="preserve">
-    <value>16h</value>
+    <value>16:00</value>
   </data>
   <data name="fieldEndTime.Items9" xml:space="preserve">
-    <value>17h</value>
+    <value>17:00</value>
   </data>
   <data name="fieldEndTime.Items10" xml:space="preserve">
-    <value>18h</value>
+    <value>18:00</value>
   </data>
   <data name="fieldEndTime.Items11" xml:space="preserve">
-    <value>19h</value>
+    <value>19:00</value>
   </data>
   <data name="fieldEndTime.Items12" xml:space="preserve">
-    <value>20h</value>
+    <value>20:00</value>
   </data>
   <data name="fieldEndTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 100</value>
@@ -571,43 +571,43 @@
     <value>4</value>
   </data>
   <data name="fieldStartTime.Items" xml:space="preserve">
-    <value>8h</value>
+    <value>8:00</value>
   </data>
   <data name="fieldStartTime.Items1" xml:space="preserve">
-    <value>9h</value>
+    <value>9:00</value>
   </data>
   <data name="fieldStartTime.Items2" xml:space="preserve">
-    <value>10h</value>
+    <value>10:00</value>
   </data>
   <data name="fieldStartTime.Items3" xml:space="preserve">
-    <value>11h</value>
+    <value>11:00</value>
   </data>
   <data name="fieldStartTime.Items4" xml:space="preserve">
-    <value>12h</value>
+    <value>12:00</value>
   </data>
   <data name="fieldStartTime.Items5" xml:space="preserve">
-    <value>13h</value>
+    <value>13:00</value>
   </data>
   <data name="fieldStartTime.Items6" xml:space="preserve">
-    <value>14h</value>
+    <value>14:00</value>
   </data>
   <data name="fieldStartTime.Items7" xml:space="preserve">
-    <value>15h</value>
+    <value>15:00</value>
   </data>
   <data name="fieldStartTime.Items8" xml:space="preserve">
-    <value>16h</value>
+    <value>16:00</value>
   </data>
   <data name="fieldStartTime.Items9" xml:space="preserve">
-    <value>17h</value>
+    <value>17:00</value>
   </data>
   <data name="fieldStartTime.Items10" xml:space="preserve">
-    <value>18h</value>
+    <value>18:00</value>
   </data>
   <data name="fieldStartTime.Items11" xml:space="preserve">
-    <value>19h</value>
+    <value>19:00</value>
   </data>
   <data name="fieldStartTime.Items12" xml:space="preserve">
-    <value>20h</value>
+    <value>20:00</value>
   </data>
   <data name="fieldStartTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>138, 100</value>

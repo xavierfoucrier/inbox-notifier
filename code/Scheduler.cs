@@ -35,8 +35,8 @@ namespace notifier {
 				TimeSlot Monday = GetTimeSlot(DayOfWeek.Monday);
 
 				if (Monday != null) {
-					UI.fieldStartTime.Text = Monday.Start.Hours.ToString() + Translation.hours.ToString().Substring(0, 1);
-					UI.fieldEndTime.Text = Monday.End.Hours.ToString() + Translation.hours.ToString().Substring(0, 1);
+					UI.fieldStartTime.Text = Monday.Start.Hours.ToString() + ":00";
+					UI.fieldEndTime.Text = Monday.End.Hours.ToString() + ":00";
 					UI.labelDuration.Text = Monday.Start.Subtract(Monday.End).Duration().Hours.ToString() + " " + Translation.hours;
 				}
 			}
