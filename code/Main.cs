@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Media;
 using System.Threading;
 using System.Windows.Forms;
@@ -579,6 +580,30 @@ namespace notifier {
 		/// </summary>
 		private void tabPageGeneral_Enter(object sender, EventArgs e) {
 			ComputerService.RegulatesRegistry();
+		}
+
+		/// <summary>
+		/// Manages the DayOfWeek user setting
+		/// </summary>
+		private void fieldDayOfWeek_SelectionChangeCommitted(object sender, EventArgs e) {
+
+			// defines day of week in a specific order
+			IOrderedEnumerable<DayOfWeek> week = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(day => {
+				return (day - DayOfWeek.Monday + 7) % 7;
+			});
+
+			// checks if there is already a defined slot for this day
+			TimeSlot slot = SchedulerService.GetTimeSlot(week.ElementAt(fieldDayOfWeek.SelectedIndex));
+
+			if (slot != null) {
+				fieldStartTime.Text = slot.Start.Hours.ToString() + ":00";
+				fieldEndTime.Text = slot.End.Hours.ToString() + ":00";
+				labelDuration.Text = slot.Start.Subtract(slot.End).Duration().Hours.ToString() + " " + Translation.hours;
+			} else {
+				fieldStartTime.Text = "-";
+				fieldEndTime.Text = "-";
+				labelDuration.Text = "0 " + Translation.hours;
+			}
 		}
 	}
 }
