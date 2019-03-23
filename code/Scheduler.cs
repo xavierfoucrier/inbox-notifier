@@ -31,14 +31,16 @@ namespace notifier {
 			UI = form;
 
 			// displays the start time and end time for monday
-			TimeSlot Monday = Slots.Find((match) => {
-				return match.Day == DayOfWeek.Monday;
-			});
+			if (Slots != null) {
+				TimeSlot Monday = Slots.Find((match) => {
+					return match.Day == DayOfWeek.Monday;
+				});
 
-			if (Monday != null) {
-				UI.fieldStartTime.Text = Monday.Start.Hours.ToString() + Translation.hours.ToString().Substring(0, 1);
-				UI.fieldEndTime.Text = Monday.End.Hours.ToString() + Translation.hours.ToString().Substring(0, 1);
-				UI.labelDuration.Text = Monday.Start.Subtract(Monday.End).Duration().Hours.ToString() + " " + Translation.hours;
+				if (Monday != null) {
+					UI.fieldStartTime.Text = Monday.Start.Hours.ToString() + Translation.hours.ToString().Substring(0, 1);
+					UI.fieldEndTime.Text = Monday.End.Hours.ToString() + Translation.hours.ToString().Substring(0, 1);
+					UI.labelDuration.Text = Monday.Start.Subtract(Monday.End).Duration().Hours.ToString() + " " + Translation.hours;
+				}
 			}
 		}
 
