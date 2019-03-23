@@ -605,5 +605,37 @@ namespace notifier {
 				labelDuration.Text = "0 " + Translation.hours;
 			}
 		}
+
+		private void fieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
+			if (fieldStartTime.SelectedIndex == 0) {
+				fieldEndTime.SelectedIndex = 0;
+				labelDuration.Text = "0 " + Translation.hours;
+				return;
+			}
+
+			if (fieldEndTime.Text == "-") {
+				fieldEndTime.Text = fieldStartTime.Text;
+			}
+
+			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
+			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
+			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;
+		}
+
+		private void fieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
+			if (fieldEndTime.SelectedIndex == 0) {
+				fieldStartTime.SelectedIndex = 0;
+				labelDuration.Text = "0 " + Translation.hours;
+				return;
+			}
+
+			if (fieldStartTime.Text == "-") {
+				fieldStartTime.Text = fieldEndTime.Text;
+			}
+
+			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
+			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
+			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;
+		}
 	}
 }

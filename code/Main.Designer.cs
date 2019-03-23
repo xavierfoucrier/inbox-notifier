@@ -644,6 +644,7 @@ namespace notifier {
             resources.GetString("fieldEndTime.Items13")});
 			resources.ApplyResources(this.fieldEndTime, "fieldEndTime");
 			this.fieldEndTime.Name = "fieldEndTime";
+			this.fieldEndTime.SelectionChangeCommitted += new System.EventHandler(this.fieldEndTime_SelectionChangeCommitted);
 			// 
 			// fieldStartTime
 			// 
@@ -668,6 +669,7 @@ namespace notifier {
             resources.GetString("fieldStartTime.Items13")});
 			resources.ApplyResources(this.fieldStartTime, "fieldStartTime");
 			this.fieldStartTime.Name = "fieldStartTime";
+			this.fieldStartTime.SelectionChangeCommitted += new System.EventHandler(this.fieldStartTime_SelectionChangeCommitted);
 			// 
 			// label10
 			// 
