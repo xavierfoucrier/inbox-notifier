@@ -53,13 +53,13 @@ namespace notifier {
 			switch (Settings.Default.Language) {
 				default:
 				case "English":
-					Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+					CultureInfo.CurrentUICulture = new CultureInfo("en-US");
 					break;
 				case "Français":
-					Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
+					CultureInfo.CurrentUICulture = new CultureInfo("fr-FR");
 					break;
 				case "Deutsch":
-					Thread.CurrentThread.CurrentUICulture = new CultureInfo("de-DE");
+					CultureInfo.CurrentUICulture = new CultureInfo("de-DE");
 					break;
 			}
 
