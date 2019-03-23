@@ -32,9 +32,7 @@ namespace notifier {
 
 			// displays the start time and end time for monday
 			if (Slots != null) {
-				TimeSlot Monday = Slots.Find((match) => {
-					return match.Day == DayOfWeek.Monday;
-				});
+				TimeSlot Monday = GetTimeSlot(DayOfWeek.Monday);
 
 				if (Monday != null) {
 					UI.fieldStartTime.Text = Monday.Start.Hours.ToString() + Translation.hours.ToString().Substring(0, 1);
@@ -42,6 +40,21 @@ namespace notifier {
 					UI.labelDuration.Text = Monday.Start.Subtract(Monday.End).Duration().Hours.ToString() + " " + Translation.hours;
 				}
 			}
+		}
+
+		/// <summary>
+		/// Searches for a time slot for a specific day
+		/// </summary>
+		/// <param name="day">The day for which to find a time slot</param>
+		/// <returns>The time slot of the day</returns>
+		public TimeSlot GetTimeSlot(DayOfWeek day) {
+			if (Slots == null) {
+				return null;
+			}
+
+			return Slots.Find((match) => {
+				return match.Day == day;
+			});
 		}
 
 		#endregion
