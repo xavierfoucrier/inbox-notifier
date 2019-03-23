@@ -640,7 +640,8 @@ namespace notifier {
             resources.GetString("fieldEndTime.Items9"),
             resources.GetString("fieldEndTime.Items10"),
             resources.GetString("fieldEndTime.Items11"),
-            resources.GetString("fieldEndTime.Items12")});
+            resources.GetString("fieldEndTime.Items12"),
+            resources.GetString("fieldEndTime.Items13")});
 			resources.ApplyResources(this.fieldEndTime, "fieldEndTime");
 			this.fieldEndTime.Name = "fieldEndTime";
 			// 
@@ -663,7 +664,8 @@ namespace notifier {
             resources.GetString("fieldStartTime.Items9"),
             resources.GetString("fieldStartTime.Items10"),
             resources.GetString("fieldStartTime.Items11"),
-            resources.GetString("fieldStartTime.Items12")});
+            resources.GetString("fieldStartTime.Items12"),
+            resources.GetString("fieldStartTime.Items13")});
 			resources.ApplyResources(this.fieldStartTime, "fieldStartTime");
 			this.fieldStartTime.Name = "fieldStartTime";
 			// 
