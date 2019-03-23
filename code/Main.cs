@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Media;
+using System.Threading;
 using System.Windows.Forms;
 using notifier.Languages;
 using notifier.Properties;
@@ -247,8 +248,8 @@ namespace notifier {
 			// sets the new application language
 			Settings.Default.Language = fieldLanguage.Text;
 
-			// gets the current systemthreading culture
-			string culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+			// gets the current system threading culture
+			string culture = Thread.CurrentThread.CurrentUICulture.Name;
 
 			// indicates to the user that to apply the new language on the interface, the application must be restarted
 			bool changes = !((culture == "en-US" && fieldLanguage.Text == "English") || (culture == "fr-FR" && fieldLanguage.Text == "Français") || (culture == "de-DE" && fieldLanguage.Text == "Deutsch"));
