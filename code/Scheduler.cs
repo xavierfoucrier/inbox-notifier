@@ -61,7 +61,7 @@ namespace notifier {
 		/// Sets or add a time slot to the scheduler
 		/// </summary>
 		/// <param name="slot">Slot to add to the scheduler</param>
-		public void SetSlot(TimeSlot slot) {
+		public void SetTimeSlot(TimeSlot slot) {
 			int index = Slots.FindIndex((match) => {
 				return match.Day == slot.Day;
 			});

@@ -631,7 +631,7 @@ namespace notifier {
 				return (day - DayOfWeek.Monday + 7) % 7;
 			});
 
-			SchedulerService.SetSlot(new TimeSlot(week.ElementAt(fieldDayOfWeek.SelectedIndex), start, end));
+			SchedulerService.SetTimeSlot(new TimeSlot(week.ElementAt(fieldDayOfWeek.SelectedIndex), start, end));
 		}
 
 		/// <summary>
@@ -659,7 +659,7 @@ namespace notifier {
 				return (day - DayOfWeek.Monday + 7) % 7;
 			});
 
-			SchedulerService.SetSlot(new TimeSlot(week.ElementAt(fieldDayOfWeek.SelectedIndex), start, end));
+			SchedulerService.SetTimeSlot(new TimeSlot(week.ElementAt(fieldDayOfWeek.SelectedIndex), start, end));
 		}
 	}
 }
