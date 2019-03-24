@@ -623,6 +623,15 @@ namespace notifier {
 			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
 			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
 			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;
+
+
+
+			// defines day of week in a specific order
+			IOrderedEnumerable<DayOfWeek> week = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(day => {
+				return (day - DayOfWeek.Monday + 7) % 7;
+			});
+
+			SchedulerService.SetSlot(new TimeSlot(week.ElementAt(fieldDayOfWeek.SelectedIndex), start, end));
 		}
 
 		/// <summary>
@@ -642,6 +651,15 @@ namespace notifier {
 			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
 			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
 			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;
+
+
+
+			// defines day of week in a specific order
+			IOrderedEnumerable<DayOfWeek> week = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(day => {
+				return (day - DayOfWeek.Monday + 7) % 7;
+			});
+
+			SchedulerService.SetSlot(new TimeSlot(week.ElementAt(fieldDayOfWeek.SelectedIndex), start, end));
 		}
 	}
 }
