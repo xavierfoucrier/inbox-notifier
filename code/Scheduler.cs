@@ -91,6 +91,23 @@ namespace notifier {
 			Settings.Default.SchedulerTimeSlot = JsonConvert.SerializeObject(Slots);
 		}
 
+		/// <summary>
+		/// Removes a time slot from the list
+		/// </summary>
+		/// <param name="Day"></param>
+		public void RemoveTimeSlot(DayOfWeek Day) {
+			TimeSlot slot = GetTimeSlot(Day);
+
+			if (slot == null) {
+				return;
+			}
+
+			Slots.Remove(slot);
+
+			// saves all slots
+			Settings.Default.SchedulerTimeSlot = JsonConvert.SerializeObject(Slots);
+		}
+
 		#endregion
 
 		#region #accessors

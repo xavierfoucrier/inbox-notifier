@@ -606,19 +606,24 @@ namespace notifier {
 		/// </summary>
 		private void fieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
 
-			// updates the end time depending on the start time
+			// gets the current day of week
+			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
+
+			// removes the time slot for the selected day
 			if (fieldStartTime.SelectedIndex == 0) {
+				SchedulerService.RemoveTimeSlot(day);
 				fieldEndTime.SelectedIndex = 0;
 				labelDuration.Text = "0 " + Translation.hours;
 				return;
 			}
 
+			// updates the end time depending on the start time
 			if (fieldEndTime.Text == "-") {
 				fieldEndTime.Text = fieldStartTime.Text;
+				return;
 			}
 
-			// defines time slot properties
-			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
+			// defines the start and end time of the time slot
 			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
 			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
 
@@ -634,19 +639,24 @@ namespace notifier {
 		/// </summary>
 		private void fieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
 
-			// updates the start time depending on the end time
+			// gets the current day of week
+			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
+
+			// removes the time slot for the selected day
 			if (fieldEndTime.SelectedIndex == 0) {
+				SchedulerService.RemoveTimeSlot(day);
 				fieldStartTime.SelectedIndex = 0;
 				labelDuration.Text = "0 " + Translation.hours;
 				return;
 			}
 
+			// updates the start time depending on the end time
 			if (fieldStartTime.Text == "-") {
 				fieldStartTime.Text = fieldEndTime.Text;
+				return;
 			}
 
-			// defines time slot properties
-			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
+			// defines the start and end time of the time slot
 			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
 			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
 
