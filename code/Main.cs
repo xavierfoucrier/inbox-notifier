@@ -628,7 +628,7 @@ namespace notifier {
 			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
 
 			// adds or updates the time slot
-			SchedulerService.SetTimeSlot(new TimeSlot(day, start, end));
+			SchedulerService.SetTimeSlot(day, start, end);
 
 			// updates the duration label
 			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;
@@ -656,7 +656,7 @@ namespace notifier {
 			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
 
 			// adds or updates the time slot
-			SchedulerService.SetTimeSlot(new TimeSlot(day, start, end));
+			SchedulerService.SetTimeSlot(day, start, end);
 
 			// updates the duration label
 			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;

@@ -60,17 +60,19 @@ namespace notifier {
 		/// <summary>
 		/// Adds or updates a time slot to the scheduler
 		/// </summary>
-		/// <param name="slot">Slot to add to the scheduler</param>
-		public void SetTimeSlot(TimeSlot slot) {
+		/// <param name="Day">Day of week</param>
+		/// <param name="Start">Start time of the time slot</param>
+		/// <param name="End">End time of the time slot</param>
+		public void SetTimeSlot(DayOfWeek Day, TimeSpan Start, TimeSpan End) {
 			int index = Slots.FindIndex((match) => {
-				return match.Day == slot.Day;
+				return match.Day == Day;
 			});
 
 			if (index != -1) {
-				Slots[index].Start = slot.Start;
-				Slots[index].End = slot.End;
+				Slots[index].Start = Start;
+				Slots[index].End = End;
 			} else {
-				Slots.Add(slot);
+				Slots.Add(new TimeSlot(Day, Start, End));
 			}
 
 			// saves all slots
