@@ -12,22 +12,22 @@ namespace notifier {
 		/// <summary>
 		/// Major version number
 		/// </summary>
-		private static string VersionMajor = "";
+		private static readonly string VersionMajor = "";
 
 		/// <summary>
 		/// Minor version number
 		/// </summary>
-		private static string VersionMinor = "";
+		private static readonly string VersionMinor = "";
 
 		/// <summary>
 		/// Release version number
 		/// </summary>
-		private static string VersionRelease = "";
+		private static readonly string VersionRelease = "";
 
 		/// <summary>
 		/// Build version number
 		/// </summary>
-		private static string VersionBuild = "";
+		private static readonly string VersionBuild = "";
 
 		#endregion
 
