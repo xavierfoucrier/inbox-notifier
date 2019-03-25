@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 
 namespace notifier {
 	class TimeSlot {
@@ -28,6 +29,7 @@ namespace notifier {
 		/// <summary>
 		/// Day of the time slot
 		/// </summary>
+		[JsonConverter(typeof(DayConverter))]
 		public DayOfWeek Day {
 			get; set;
 		}
@@ -47,5 +49,19 @@ namespace notifier {
 		}
 
 		#endregion
+	}
+
+	class DayConverter : JsonConverter {
+		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) {
+			writer.WriteValue(value.ToString());
+		}
+
+		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) {
+			return (DayOfWeek)Enum.Parse(typeof(DayOfWeek), reader.Value.ToString());
+		}
+
+		public override bool CanConvert(Type objectType) {
+			return objectType == typeof(DayOfWeek);
+		}
 	}
 }
