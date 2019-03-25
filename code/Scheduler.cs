@@ -58,7 +58,7 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Sets or add a time slot to the scheduler
+		/// Adds or updates a time slot to the scheduler
 		/// </summary>
 		/// <param name="slot">Slot to add to the scheduler</param>
 		public void SetTimeSlot(TimeSlot slot) {
