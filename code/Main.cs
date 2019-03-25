@@ -622,18 +622,16 @@ namespace notifier {
 				fieldEndTime.Text = fieldStartTime.Text;
 			}
 
+			// defines time slot properties
+			DayOfWeek day = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(d => { return (d - DayOfWeek.Monday + 7) % 7; }).ElementAt(fieldDayOfWeek.SelectedIndex);
 			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
 			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
+
+			// adds or updates the time slot
+			SchedulerService.SetTimeSlot(new TimeSlot(day, start, end));
+
+			// updates the duration label
 			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;
-
-
-
-			// defines day of week in a specific order
-			IOrderedEnumerable<DayOfWeek> week = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(day => {
-				return (day - DayOfWeek.Monday + 7) % 7;
-			});
-
-			SchedulerService.SetTimeSlot(new TimeSlot(week.ElementAt(fieldDayOfWeek.SelectedIndex), start, end));
 		}
 
 		/// <summary>
@@ -652,18 +650,16 @@ namespace notifier {
 				fieldStartTime.Text = fieldEndTime.Text;
 			}
 
+			// defines time slot properties
+			DayOfWeek day = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(d => { return (d - DayOfWeek.Monday + 7) % 7; }).ElementAt(fieldDayOfWeek.SelectedIndex);
 			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
 			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
+
+			// adds or updates the time slot
+			SchedulerService.SetTimeSlot(new TimeSlot(day, start, end));
+
+			// updates the duration label
 			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;
-
-
-
-			// defines day of week in a specific order
-			IOrderedEnumerable<DayOfWeek> week = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(day => {
-				return (day - DayOfWeek.Monday + 7) % 7;
-			});
-
-			SchedulerService.SetTimeSlot(new TimeSlot(week.ElementAt(fieldDayOfWeek.SelectedIndex), start, end));
 		}
 	}
 }
