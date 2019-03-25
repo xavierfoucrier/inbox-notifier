@@ -644,7 +644,7 @@ namespace notifier {
             resources.GetString("fieldEndTime.Items13")});
 			resources.ApplyResources(this.fieldEndTime, "fieldEndTime");
 			this.fieldEndTime.Name = "fieldEndTime";
-			this.fieldEndTime.SelectionChangeCommitted += new System.EventHandler(this.fieldEndTime_SelectionChangeCommitted);
+			this.fieldEndTime.SelectionChangeCommitted += new System.EventHandler(this.FieldEndTime_SelectionChangeCommitted);
 			// 
 			// fieldStartTime
 			// 
@@ -669,7 +669,7 @@ namespace notifier {
             resources.GetString("fieldStartTime.Items13")});
 			resources.ApplyResources(this.fieldStartTime, "fieldStartTime");
 			this.fieldStartTime.Name = "fieldStartTime";
-			this.fieldStartTime.SelectionChangeCommitted += new System.EventHandler(this.fieldStartTime_SelectionChangeCommitted);
+			this.fieldStartTime.SelectionChangeCommitted += new System.EventHandler(this.FieldStartTime_SelectionChangeCommitted);
 			// 
 			// label10
 			// 
@@ -694,7 +694,7 @@ namespace notifier {
             resources.GetString("fieldDayOfWeek.Items6")});
 			resources.ApplyResources(this.fieldDayOfWeek, "fieldDayOfWeek");
 			this.fieldDayOfWeek.Name = "fieldDayOfWeek";
-			this.fieldDayOfWeek.SelectionChangeCommitted += new System.EventHandler(this.fieldDayOfWeek_SelectionChangeCommitted);
+			this.fieldDayOfWeek.SelectionChangeCommitted += new System.EventHandler(this.FieldDayOfWeek_SelectionChangeCommitted);
 			// 
 			// groupBox10
 			// 
@@ -874,7 +874,7 @@ namespace notifier {
 			this.linkPrivacy.TabStop = true;
 			this.linkPrivacy.UseCompatibleTextRendering = true;
 			this.linkPrivacy.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
-			this.linkPrivacy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPrivacy_LinkClicked);
+			this.linkPrivacy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkPrivacy_LinkClicked);
 			// 
 			// linkLicense
 			// 

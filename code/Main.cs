@@ -334,7 +334,7 @@ namespace notifier {
 		/// <summary>
 		/// Opens the Github privacy notice file
 		/// </summary>
-		private void linkPrivacy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void LinkPrivacy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/blob/master/PRIVACY.md");
 		}
 
@@ -585,7 +585,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the DayOfWeek user setting
 		/// </summary>
-		private void fieldDayOfWeek_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void FieldDayOfWeek_SelectionChangeCommitted(object sender, EventArgs e) {
 
 			// checks if there is already a defined slot for this day
 			TimeSlot slot = SchedulerService.GetTimeSlot(SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex));
@@ -604,7 +604,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the fieldStartTime user setting
 		/// </summary>
-		private void fieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void FieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
 
 			// gets the current day of week
 			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
@@ -637,7 +637,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the fieldEndTime user setting
 		/// </summary>
-		private void fieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void FieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
 
 			// gets the current day of week
 			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
