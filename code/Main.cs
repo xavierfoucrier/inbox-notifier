@@ -587,13 +587,8 @@ namespace notifier {
 		/// </summary>
 		private void fieldDayOfWeek_SelectionChangeCommitted(object sender, EventArgs e) {
 
-			// defines day of week in a specific order
-			IOrderedEnumerable<DayOfWeek> week = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(day => {
-				return (day - DayOfWeek.Monday + 7) % 7;
-			});
-
 			// checks if there is already a defined slot for this day
-			TimeSlot slot = SchedulerService.GetTimeSlot(week.ElementAt(fieldDayOfWeek.SelectedIndex));
+			TimeSlot slot = SchedulerService.GetTimeSlot(SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex));
 
 			if (slot != null) {
 				fieldStartTime.Text = slot.Start.Hours.ToString() + ":00";
@@ -623,7 +618,7 @@ namespace notifier {
 			}
 
 			// defines time slot properties
-			DayOfWeek day = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(d => { return (d - DayOfWeek.Monday + 7) % 7; }).ElementAt(fieldDayOfWeek.SelectedIndex);
+			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
 			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
 			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
 
@@ -651,7 +646,7 @@ namespace notifier {
 			}
 
 			// defines time slot properties
-			DayOfWeek day = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(d => { return (d - DayOfWeek.Monday + 7) % 7; }).ElementAt(fieldDayOfWeek.SelectedIndex);
+			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
 			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
 			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
 

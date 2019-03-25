@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using notifier.Languages;
 using notifier.Properties;
@@ -40,6 +41,17 @@ namespace notifier {
 					UI.labelDuration.Text = Monday.Start.Subtract(Monday.End).Duration().Hours.ToString() + " " + Translation.hours;
 				}
 			}
+		}
+
+		/// <summary>
+		/// Gets a specific day of week by index using Monday as reference for the starting day of week
+		/// </summary>
+		/// <param name="index">Index of the day in the list</param>
+		/// <returns>The day of week at the specific index</returns>
+		public DayOfWeek GetDayOfWeek(int index) {
+			return Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(day => {
+				return (day - DayOfWeek.Monday + 7) % 7;
+			}).ElementAt(index);
 		}
 
 		/// <summary>
