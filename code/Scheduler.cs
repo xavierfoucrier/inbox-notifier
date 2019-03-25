@@ -72,6 +72,9 @@ namespace notifier {
 			} else {
 				Slots.Add(slot);
 			}
+
+			// saves all slots
+			Settings.Default.SchedulerTimeSlot = JsonConvert.SerializeObject(Slots);
 		}
 
 		#endregion
