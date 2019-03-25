@@ -610,6 +610,8 @@ namespace notifier {
 		/// Manages the fieldStartTime user setting
 		/// </summary>
 		private void fieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
+
+			// updates the end time depending on the start time
 			if (fieldStartTime.SelectedIndex == 0) {
 				fieldEndTime.SelectedIndex = 0;
 				labelDuration.Text = "0 " + Translation.hours;
@@ -638,6 +640,8 @@ namespace notifier {
 		/// Manages the fieldEndTime user setting
 		/// </summary>
 		private void fieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
+
+			// updates the start time depending on the end time
 			if (fieldEndTime.SelectedIndex == 0) {
 				fieldStartTime.SelectedIndex = 0;
 				labelDuration.Text = "0 " + Translation.hours;
