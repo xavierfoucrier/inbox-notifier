@@ -114,9 +114,24 @@ namespace notifier {
 		/// </summary>
 		/// <returns>A flag that tells if the inbox can be synched</returns>
 		public bool ScheduledSync() {
+
+			// gets the current time slot for today
 			TimeSlot slot = GetTimeSlot(DateTime.Now.DayOfWeek);
 
-			return DateTime.Now.Hour >= slot.Start.Hours && DateTime.Now.Hour <= slot.End.Hours;
+			// allows inbox syncing if there is no slot defined for today
+			if (slot == null) {
+				return true;
+			}
+
+			// checks if the current time is inside the time slot
+			DateTime now = DateTime.Now;
+			bool end = now.Hour <= slot.End.Hours;
+
+			if (now.Hour == slot.End.Hours) {
+				end = end && now.Minute == 0;
+			}
+
+			return now.Hour >= slot.Start.Hours && end;
 		}
 
 		#endregion
