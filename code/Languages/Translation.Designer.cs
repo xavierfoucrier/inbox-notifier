@@ -537,6 +537,16 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Synchronisation planifiée
+        ///de {start} à {end}.
+        /// </summary>
+        internal static string syncScheduled {
+            get {
+                return ResourceManager.GetString("syncScheduled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Mis à jour à {time}.
         /// </summary>
         internal static string syncTime {
