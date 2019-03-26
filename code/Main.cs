@@ -606,7 +606,7 @@ namespace notifier {
 		/// </summary>
 		private void FieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
 
-			// gets the current day of week
+			// gets the selected day of week
 			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
 
 			// removes the time slot for the selected day
@@ -639,7 +639,7 @@ namespace notifier {
 		/// </summary>
 		private void FieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
 
-			// gets the current day of week
+			// gets the selected day of week
 			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
 
 			// removes the time slot for the selected day
