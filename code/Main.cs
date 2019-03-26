@@ -619,7 +619,6 @@ namespace notifier {
 			// updates the end time depending on the start time
 			if (fieldEndTime.Text == "-") {
 				fieldEndTime.Text = fieldStartTime.Text;
-				return;
 			}
 
 			// defines the start and end time of the time slot
@@ -652,7 +651,6 @@ namespace notifier {
 			// updates the start time depending on the end time
 			if (fieldStartTime.Text == "-") {
 				fieldStartTime.Text = fieldEndTime.Text;
-				return;
 			}
 
 			// defines the start and end time of the time slot
