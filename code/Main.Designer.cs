@@ -741,6 +741,7 @@ namespace notifier {
 			this.fieldScheduler.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldScheduler.Name = "fieldScheduler";
 			this.fieldScheduler.UseVisualStyleBackColor = true;
+			this.fieldScheduler.Click += new System.EventHandler(this.FieldScheduler_Click);
 			// 
 			// tabPageUpdate
 			// 

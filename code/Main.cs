@@ -685,5 +685,12 @@ namespace notifier {
 				GmailService.Inbox.Sync();
 			}
 		}
+
+		/// <summary>
+		/// Synchronizes the inbox if the scheduler is enable or disable
+		/// </summary>
+		private void FieldScheduler_Click(object sender, EventArgs e) {
+			GmailService.Inbox.Sync();
+		}
 	}
 }
