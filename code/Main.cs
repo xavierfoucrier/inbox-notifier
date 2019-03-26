@@ -634,11 +634,6 @@ namespace notifier {
 
 			// updates the duration label
 			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;
-
-			// synchronizes the inbox if the selected day of week is today
-			if (day == DateTime.Now.DayOfWeek) {
-				GmailService.Inbox.Sync();
-			}
 		}
 
 		/// <summary>
@@ -671,9 +666,22 @@ namespace notifier {
 
 			// updates the duration label
 			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;
+		}
 
-			// synchronizes the inbox if the selected day of week is today
-			if (day == DateTime.Now.DayOfWeek) {
+		/// <summary>
+		/// Synchronizes the inbox if the selected day of week is today
+		/// </summary>
+		private void FieldEndTime_TextChanged(object sender, EventArgs e) {
+			if (SchedulerService != null && SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
+				GmailService.Inbox.Sync();
+			}
+		}
+
+		/// <summary>
+		/// Synchronizes the inbox if the selected day of week is today
+		/// </summary>
+		private void FieldStartTime_TextChanged(object sender, EventArgs e) {
+			if (SchedulerService != null && SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
 				GmailService.Inbox.Sync();
 			}
 		}
