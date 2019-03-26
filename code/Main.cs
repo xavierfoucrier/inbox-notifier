@@ -173,9 +173,6 @@ namespace notifier {
 					break;
 			}
 
-			// displays the default day of week
-			fieldDayOfWeek.SelectedIndex = 0;
-
 			// displays the update period setting
 			fieldUpdatePeriod.SelectedIndex = (int)Settings.Default.UpdatePeriod;
 

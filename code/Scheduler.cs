@@ -11,6 +11,11 @@ namespace notifier {
 		#region #attributes
 
 		/// <summary>
+		/// Days list using Monday as first day of week
+		/// </summary>
+		public readonly List<DayOfWeek> Days = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(day => { return (day - DayOfWeek.Monday + 7) % 7; }).ToList();
+
+		/// <summary>
 		/// List of slots for the scheduler
 		/// </summary>
 		private List<TimeSlot> Slots;
@@ -34,17 +39,20 @@ namespace notifier {
 			// inits the slots depending on the user settings
 			Slots = Settings.Default.SchedulerTimeSlot != "" ? JsonConvert.DeserializeObject<List<TimeSlot>>(Settings.Default.SchedulerTimeSlot) : new List<TimeSlot>();
 
-			// inits the interface
-			UI.fieldStartTime.Text = "-";
-			UI.fieldEndTime.Text = "-";
+			// displays the default day of week based on today
+			UI.fieldDayOfWeek.SelectedIndex = Days.IndexOf(DateTime.Now.DayOfWeek);
 
-			// displays the start time and end time for monday
-			TimeSlot Monday = GetTimeSlot(DayOfWeek.Monday);
+			// displays the start time and end time for today
+			TimeSlot Today = GetTimeSlot(DateTime.Now.DayOfWeek);
 
-			if (Monday != null) {
-				UI.fieldStartTime.Text = Monday.Start.Hours.ToString() + ":00";
-				UI.fieldEndTime.Text = Monday.End.Hours.ToString() + ":00";
-				UI.labelDuration.Text = Monday.Start.Subtract(Monday.End).Duration().Hours.ToString() + " " + Translation.hours;
+			if (Today != null) {
+				UI.fieldStartTime.Text = Today.Start.Hours.ToString() + ":00";
+				UI.fieldEndTime.Text = Today.End.Hours.ToString() + ":00";
+				UI.labelDuration.Text = Today.Start.Subtract(Today.End).Duration().Hours.ToString() + " " + Translation.hours;
+			} else {
+				UI.fieldStartTime.Text = "-";
+				UI.fieldEndTime.Text = "-";
+				UI.labelDuration.Text = "0 " + Translation.hours;
 			}
 		}
 
@@ -54,9 +62,7 @@ namespace notifier {
 		/// <param name="index">Index of the day in the list</param>
 		/// <returns>The day of week at the specific index</returns>
 		public DayOfWeek GetDayOfWeek(int index) {
-			return Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(day => {
-				return (day - DayOfWeek.Monday + 7) % 7;
-			}).ElementAt(index);
+			return Days.ElementAt(index);
 		}
 
 		/// <summary>

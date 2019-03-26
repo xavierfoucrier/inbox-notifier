@@ -1233,7 +1233,6 @@ namespace notifier {
 		private System.Windows.Forms.CheckBox fieldScheduler;
 		private System.Windows.Forms.GroupBox groupBox11;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.ComboBox fieldDayOfWeek;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.RadioButton fieldSyncExclusive;
 		private System.Windows.Forms.RadioButton fieldSyncInclusive;
@@ -1243,6 +1242,7 @@ namespace notifier {
 		internal System.Windows.Forms.Label labelDuration;
 		internal System.Windows.Forms.ComboBox fieldStartTime;
 		internal System.Windows.Forms.ComboBox fieldEndTime;
+		internal System.Windows.Forms.ComboBox fieldDayOfWeek;
 	}
 }
 
