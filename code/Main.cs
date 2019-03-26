@@ -578,7 +578,7 @@ namespace notifier {
 		/// <summary>
 		/// Checks the start with Windows setting against the registry when entering the general tab page
 		/// </summary>
-		private void tabPageGeneral_Enter(object sender, EventArgs e) {
+		private void TabPageGeneral_Enter(object sender, EventArgs e) {
 			ComputerService.RegulatesRegistry();
 		}
 

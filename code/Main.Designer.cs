@@ -190,7 +190,7 @@ namespace notifier {
 			resources.ApplyResources(this.tabPageGeneral, "tabPageGeneral");
 			this.tabPageGeneral.Name = "tabPageGeneral";
 			this.tabPageGeneral.UseVisualStyleBackColor = true;
-			this.tabPageGeneral.Enter += new System.EventHandler(this.tabPageGeneral_Enter);
+			this.tabPageGeneral.Enter += new System.EventHandler(this.TabPageGeneral_Enter);
 			// 
 			// groupBox5
 			// 
