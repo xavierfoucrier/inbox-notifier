@@ -587,8 +587,8 @@ namespace notifier {
 			TimeSlot slot = SchedulerService.GetTimeSlot(SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex));
 
 			if (slot != null) {
-				fieldStartTime.Text = slot.Start.Hours.ToString() + ":00";
-				fieldEndTime.Text = slot.End.Hours.ToString() + ":00";
+				fieldStartTime.Text = slot.Start.ToString(@"h\:mm");
+				fieldEndTime.Text = slot.End.ToString(@"h\:mm");
 				labelDuration.Text = slot.Start.Subtract(slot.End).Duration().Hours.ToString() + " " + Translation.hours;
 			} else {
 				fieldStartTime.Text = "-";

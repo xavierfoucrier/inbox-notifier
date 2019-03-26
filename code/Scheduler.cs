@@ -46,8 +46,8 @@ namespace notifier {
 			TimeSlot slot = GetTimeSlot();
 
 			if (slot != null) {
-				UI.fieldStartTime.Text = slot.Start.Hours.ToString() + ":00";
-				UI.fieldEndTime.Text = slot.End.Hours.ToString() + ":00";
+				UI.fieldStartTime.Text = slot.Start.ToString(@"h\:mm");
+				UI.fieldEndTime.Text = slot.End.ToString(@"h\:mm");
 				UI.labelDuration.Text = slot.Start.Subtract(slot.End).Duration().Hours.ToString() + " " + Translation.hours;
 			} else {
 				UI.fieldStartTime.Text = "-";
