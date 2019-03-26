@@ -43,12 +43,12 @@ namespace notifier {
 			UI.fieldDayOfWeek.SelectedIndex = Days.IndexOf(DateTime.Now.DayOfWeek);
 
 			// displays the start time and end time for today
-			TimeSlot Today = GetTimeSlot(DateTime.Now.DayOfWeek);
+			TimeSlot slot = GetTimeSlot();
 
-			if (Today != null) {
-				UI.fieldStartTime.Text = Today.Start.Hours.ToString() + ":00";
-				UI.fieldEndTime.Text = Today.End.Hours.ToString() + ":00";
-				UI.labelDuration.Text = Today.Start.Subtract(Today.End).Duration().Hours.ToString() + " " + Translation.hours;
+			if (slot != null) {
+				UI.fieldStartTime.Text = slot.Start.Hours.ToString() + ":00";
+				UI.fieldEndTime.Text = slot.End.Hours.ToString() + ":00";
+				UI.labelDuration.Text = slot.Start.Subtract(slot.End).Duration().Hours.ToString() + " " + Translation.hours;
 			} else {
 				UI.fieldStartTime.Text = "-";
 				UI.fieldEndTime.Text = "-";
@@ -66,7 +66,17 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Searches for a time slot for a specific day
+		/// Searches a time slot for today
+		/// </summary>
+		/// <returns>The time slot of today</returns>
+		public TimeSlot GetTimeSlot() {
+			return Slots.Find((match) => {
+				return match.Day == DateTime.Now.DayOfWeek;
+			});
+		}
+
+		/// <summary>
+		/// Searches a time slot for a specific day
 		/// </summary>
 		/// <param name="day">The day for which to find a time slot</param>
 		/// <returns>The time slot of the day</returns>
@@ -121,8 +131,8 @@ namespace notifier {
 		/// <returns>A flag that tells if the inbox can be synched</returns>
 		public bool ScheduledSync() {
 
-			// gets the current time slot for today
-			TimeSlot slot = GetTimeSlot(DateTime.Now.DayOfWeek);
+			// gets the time slot of today
+			TimeSlot slot = GetTimeSlot();
 
 			// allows inbox syncing if there is no slot defined for today
 			if (slot == null) {
