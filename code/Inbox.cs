@@ -49,6 +49,25 @@ namespace notifier {
 		/// <param name="token">Indicates if the Gmail token need to be refreshed</param>
 		public async void Sync(bool manual = true, bool token = false) {
 
+			// prevents the application from syncing the inbox when the scheduler is enabled and the sync is not scheduled
+			if (Settings.Default.Scheduler && !UI.SchedulerService.ScheduledSync()) {
+
+				// gets the time slot of today
+				TimeSlot slot = UI.SchedulerService.GetTimeSlot();
+
+				// displays the timeout icon
+				UI.notifyIcon.Icon = Resources.timeout;
+				UI.notifyIcon.Text = Translation.syncScheduled.Replace("{start}", slot.Start.ToString(@"h\:mm")).Replace("{end}", slot.End.ToString(@"h\:mm"));
+
+				// disables some menu items
+				UI.menuItemSynchronize.Enabled = false;
+				UI.menuItemMarkAsRead.Enabled = false;
+				UI.menuItemTimout.Enabled = false;
+				UI.menuItemSettings.Enabled = true;
+
+				return;
+			}
+
 			// prevents the application from syncing the inbox when updating
 			if (UI.UpdateService.Updating) {
 				return;
