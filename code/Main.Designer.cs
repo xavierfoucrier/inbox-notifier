@@ -694,6 +694,7 @@ namespace notifier {
             resources.GetString("fieldDayOfWeek.Items6")});
 			resources.ApplyResources(this.fieldDayOfWeek, "fieldDayOfWeek");
 			this.fieldDayOfWeek.Name = "fieldDayOfWeek";
+			this.fieldDayOfWeek.SelectedIndexChanged += new System.EventHandler(this.FieldDayOfWeek_SelectedIndexChanged);
 			this.fieldDayOfWeek.SelectionChangeCommitted += new System.EventHandler(this.FieldDayOfWeek_SelectionChangeCommitted);
 			// 
 			// groupBox10

@@ -601,6 +601,13 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Hides the settings saved label
+		/// </summary>
+		private void FieldDayOfWeek_SelectedIndexChanged(object sender, EventArgs e) {
+			labelSettingsSaved.Visible = false;
+		}
+
+		/// <summary>
 		/// Manages the fieldStartTime user setting
 		/// </summary>
 		private void FieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
