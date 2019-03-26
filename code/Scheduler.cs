@@ -109,6 +109,16 @@ namespace notifier {
 			Settings.Default.SchedulerTimeSlot = JsonConvert.SerializeObject(Slots);
 		}
 
+		/// <summary>
+		/// Detects if the synchronization is scheduled
+		/// </summary>
+		/// <returns>A flag that tells if the inbox can be synched</returns>
+		public bool ScheduledSync() {
+			TimeSlot slot = GetTimeSlot(DateTime.Now.DayOfWeek);
+
+			return DateTime.Now.Hour >= slot.Start.Hours && DateTime.Now.Hour <= slot.End.Hours;
+		}
+
 		#endregion
 
 		#region #accessors
