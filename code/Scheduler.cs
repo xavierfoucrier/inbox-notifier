@@ -140,14 +140,7 @@ namespace notifier {
 			}
 
 			// checks if the current time is inside the time slot
-			DateTime now = DateTime.Now;
-			bool end = now.Hour <= slot.End.Hours;
-
-			if (now.Hour == slot.End.Hours) {
-				end = end && now.Minute == 0;
-			}
-
-			return now.Hour >= slot.Start.Hours && end;
+			return DateTime.Now >= Convert.ToDateTime(slot.Start.ToString()) && DateTime.Now <= Convert.ToDateTime(slot.End.ToString());
 		}
 
 		#endregion
