@@ -538,7 +538,6 @@ namespace notifier.Languages {
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Synchronisation planifiée
-        ///
         ///de {start} à {end}.
         /// </summary>
         internal static string syncScheduled {

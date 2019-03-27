@@ -283,7 +283,6 @@ Cette option n'est pas activée sur ce type d'application.</value>
   </data>
   <data name="syncScheduled" xml:space="preserve">
     <value>Synchronisation planifiée
-
 de {start} à {end}</value>
   </data>
   <data name="syncTime" xml:space="preserve">
