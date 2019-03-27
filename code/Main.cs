@@ -591,9 +591,9 @@ namespace notifier {
 				fieldEndTime.Text = slot.End.ToString(@"h\:mm");
 				labelDuration.Text = slot.Start.Subtract(slot.End).Duration().Hours.ToString() + " " + Translation.hours;
 			} else {
-				labelDuration.Text = "0 " + Translation.hours;
 				fieldStartTime.SelectedIndex = 0;
 				fieldEndTime.SelectedIndex = 0;
+				labelDuration.Text = Translation.theday;
 			}
 		}
 
@@ -616,7 +616,7 @@ namespace notifier {
 			if (fieldStartTime.SelectedIndex == 0) {
 				SchedulerService.RemoveTimeSlot(day);
 				fieldEndTime.SelectedIndex = 0;
-				labelDuration.Text = "0 " + Translation.hours;
+				labelDuration.Text = Translation.theday;
 				return;
 			}
 
@@ -648,7 +648,7 @@ namespace notifier {
 			if (fieldEndTime.SelectedIndex == 0) {
 				SchedulerService.RemoveTimeSlot(day);
 				fieldStartTime.SelectedIndex = 0;
-				labelDuration.Text = "0 " + Translation.hours;
+				labelDuration.Text = Translation.theday;
 				return;
 			}
 

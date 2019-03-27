@@ -556,6 +556,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La journée.
+        /// </summary>
+        internal static string theday {
+            get {
+                return ResourceManager.GetString("theday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Ne pas déranger.
         /// </summary>
         internal static string timeout {

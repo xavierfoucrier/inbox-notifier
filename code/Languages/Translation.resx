@@ -288,6 +288,9 @@ le {day} de {start} à {end}</value>
   <data name="syncTime" xml:space="preserve">
     <value>Mis à jour à {time}</value>
   </data>
+  <data name="theday" xml:space="preserve">
+    <value>La journée</value>
+  </data>
   <data name="timeout" xml:space="preserve">
     <value>Ne pas déranger</value>
   </data>

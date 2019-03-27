@@ -50,9 +50,9 @@ namespace notifier {
 				UI.fieldEndTime.Text = slot.End.ToString(@"h\:mm");
 				UI.labelDuration.Text = slot.Start.Subtract(slot.End).Duration().TotalHours.ToString() + " " + Translation.hours;
 			} else {
-				UI.labelDuration.Text = "0 " + Translation.hours;
 				UI.fieldStartTime.SelectedIndex = 0;
 				UI.fieldEndTime.SelectedIndex = 0;
+				UI.labelDuration.Text = Translation.theday;
 			}
 		}
 
