@@ -9,6 +9,7 @@ using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using notifier.Languages;
 using notifier.Properties;
+using System.Globalization;
 
 namespace notifier {
 	class Inbox {
@@ -57,7 +58,7 @@ namespace notifier {
 
 				// displays the timeout icon
 				UI.notifyIcon.Icon = Resources.timeout;
-				UI.notifyIcon.Text = Translation.syncScheduled.Replace("{start}", slot.Start.ToString(@"h\:mm")).Replace("{end}", slot.End.ToString(@"h\:mm"));
+				UI.notifyIcon.Text = Translation.syncScheduled.Replace("{day}", CultureInfo.CurrentUICulture.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek)).Replace("{start}", slot.Start.ToString(@"h\:mm")).Replace("{end}", slot.End.ToString(@"h\:mm"));
 
 				// disables some menu items
 				UI.menuItemSynchronize.Enabled = false;
