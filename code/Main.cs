@@ -633,7 +633,7 @@ namespace notifier {
 			SchedulerService.SetTimeSlot(day, start, end);
 
 			// updates the duration label
-			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;
+			labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString() + " " + Translation.hours;
 		}
 
 		/// <summary>
@@ -665,7 +665,7 @@ namespace notifier {
 			SchedulerService.SetTimeSlot(day, start, end);
 
 			// updates the duration label
-			labelDuration.Text = start.Subtract(end).Duration().Hours.ToString() + " " + Translation.hours;
+			labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString() + " " + Translation.hours;
 		}
 
 		/// <summary>
