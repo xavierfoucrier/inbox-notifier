@@ -591,9 +591,9 @@ namespace notifier {
 				fieldEndTime.Text = slot.End.ToString(@"h\:mm");
 				labelDuration.Text = slot.Start.Subtract(slot.End).Duration().Hours.ToString() + " " + Translation.hours;
 			} else {
-				fieldStartTime.Text = "-";
-				fieldEndTime.Text = "-";
 				labelDuration.Text = "0 " + Translation.hours;
+				fieldStartTime.SelectedIndex = 0;
+				fieldEndTime.SelectedIndex = 0;
 			}
 		}
 
