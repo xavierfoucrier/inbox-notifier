@@ -641,7 +641,9 @@ namespace notifier {
             resources.GetString("fieldEndTime.Items10"),
             resources.GetString("fieldEndTime.Items11"),
             resources.GetString("fieldEndTime.Items12"),
-            resources.GetString("fieldEndTime.Items13")});
+            resources.GetString("fieldEndTime.Items13"),
+            resources.GetString("fieldEndTime.Items14"),
+            resources.GetString("fieldEndTime.Items15")});
 			resources.ApplyResources(this.fieldEndTime, "fieldEndTime");
 			this.fieldEndTime.Name = "fieldEndTime";
 			this.fieldEndTime.SelectionChangeCommitted += new System.EventHandler(this.FieldEndTime_SelectionChangeCommitted);
@@ -667,7 +669,9 @@ namespace notifier {
             resources.GetString("fieldStartTime.Items10"),
             resources.GetString("fieldStartTime.Items11"),
             resources.GetString("fieldStartTime.Items12"),
-            resources.GetString("fieldStartTime.Items13")});
+            resources.GetString("fieldStartTime.Items13"),
+            resources.GetString("fieldStartTime.Items14"),
+            resources.GetString("fieldStartTime.Items15")});
 			resources.ApplyResources(this.fieldStartTime, "fieldStartTime");
 			this.fieldStartTime.Name = "fieldStartTime";
 			this.fieldStartTime.SelectionChangeCommitted += new System.EventHandler(this.FieldStartTime_SelectionChangeCommitted);
