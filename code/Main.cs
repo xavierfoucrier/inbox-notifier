@@ -621,8 +621,8 @@ namespace notifier {
 			}
 
 			// updates the end time depending on the start time
-			if (fieldEndTime.Text == "-") {
-				fieldEndTime.Text = fieldStartTime.Text;
+			if (fieldStartTime.SelectedIndex > fieldEndTime.SelectedIndex || fieldEndTime.SelectedIndex == 0) {
+				fieldEndTime.SelectedIndex = fieldStartTime.SelectedIndex;
 			}
 
 			// defines the start and end time of the time slot
@@ -653,8 +653,8 @@ namespace notifier {
 			}
 
 			// updates the start time depending on the end time
-			if (fieldStartTime.Text == "-") {
-				fieldStartTime.Text = fieldEndTime.Text;
+			if (fieldEndTime.SelectedIndex < fieldStartTime.SelectedIndex || fieldStartTime.SelectedIndex == 0) {
+				fieldStartTime.SelectedIndex = fieldEndTime.SelectedIndex;
 			}
 
 			// defines the start and end time of the time slot
