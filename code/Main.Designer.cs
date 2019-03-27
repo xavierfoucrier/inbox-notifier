@@ -86,9 +86,6 @@ namespace notifier {
 			this.label10 = new System.Windows.Forms.Label();
 			this.fieldDayOfWeek = new System.Windows.Forms.ComboBox();
 			this.groupBox10 = new System.Windows.Forms.GroupBox();
-			this.label15 = new System.Windows.Forms.Label();
-			this.fieldSyncExclusive = new System.Windows.Forms.RadioButton();
-			this.fieldSyncInclusive = new System.Windows.Forms.RadioButton();
 			this.fieldScheduler = new System.Windows.Forms.CheckBox();
 			this.tabPageUpdate = new System.Windows.Forms.TabPage();
 			this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -705,38 +702,10 @@ namespace notifier {
 			// 
 			// groupBox10
 			// 
-			this.groupBox10.Controls.Add(this.label15);
-			this.groupBox10.Controls.Add(this.fieldSyncExclusive);
-			this.groupBox10.Controls.Add(this.fieldSyncInclusive);
 			this.groupBox10.Controls.Add(this.fieldScheduler);
 			resources.ApplyResources(this.groupBox10, "groupBox10");
 			this.groupBox10.Name = "groupBox10";
 			this.groupBox10.TabStop = false;
-			// 
-			// label15
-			// 
-			resources.ApplyResources(this.label15, "label15");
-			this.label15.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label15.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.label15.Name = "label15";
-			// 
-			// fieldSyncExclusive
-			// 
-			resources.ApplyResources(this.fieldSyncExclusive, "fieldSyncExclusive");
-			this.fieldSyncExclusive.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldSyncExclusive.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.fieldSyncExclusive.Name = "fieldSyncExclusive";
-			this.fieldSyncExclusive.UseVisualStyleBackColor = true;
-			// 
-			// fieldSyncInclusive
-			// 
-			resources.ApplyResources(this.fieldSyncInclusive, "fieldSyncInclusive");
-			this.fieldSyncInclusive.Checked = true;
-			this.fieldSyncInclusive.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldSyncInclusive.Enabled = global::notifier.Properties.Settings.Default.Scheduler;
-			this.fieldSyncInclusive.Name = "fieldSyncInclusive";
-			this.fieldSyncInclusive.TabStop = true;
-			this.fieldSyncInclusive.UseVisualStyleBackColor = true;
 			// 
 			// fieldScheduler
 			// 
@@ -1240,9 +1209,6 @@ namespace notifier {
 		private System.Windows.Forms.CheckBox fieldScheduler;
 		private System.Windows.Forms.GroupBox groupBox11;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.RadioButton fieldSyncExclusive;
-		private System.Windows.Forms.RadioButton fieldSyncInclusive;
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Label label20;
 		private System.Windows.Forms.Label label17;
