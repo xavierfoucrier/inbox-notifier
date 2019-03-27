@@ -128,7 +128,7 @@ namespace notifier {
 		/// <summary>
 		/// Detects if the synchronization is scheduled
 		/// </summary>
-		/// <returns>A flag that tells if the inbox can be synched</returns>
+		/// <returns>A flag that tells if the inbox can be synced</returns>
 		public bool ScheduledSync() {
 
 			// gets the time slot of today
