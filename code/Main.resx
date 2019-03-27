@@ -508,7 +508,7 @@
     <value>3</value>
   </data>
   <data name="fieldEndTime.Items" xml:space="preserve">
-    <value>*</value>
+    <value>∞</value>
   </data>
   <data name="fieldEndTime.Items1" xml:space="preserve">
     <value>8:30</value>
@@ -574,7 +574,7 @@
     <value>4</value>
   </data>
   <data name="fieldStartTime.Items" xml:space="preserve">
-    <value>*</value>
+    <value>∞</value>
   </data>
   <data name="fieldStartTime.Items1" xml:space="preserve">
     <value>8:00</value>
