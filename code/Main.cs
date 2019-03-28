@@ -617,6 +617,12 @@ namespace notifier {
 				SchedulerService.RemoveTimeSlot(day);
 				fieldEndTime.SelectedIndex = 0;
 				labelDuration.Text = Translation.theday;
+
+				// synchronizes the inbox if the selected day of week is today
+				if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
+					GmailService.Inbox.Sync();
+				}
+
 				return;
 			}
 
@@ -634,6 +640,11 @@ namespace notifier {
 
 			// updates the duration label
 			labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString() + " " + Translation.hours;
+
+			// synchronizes the inbox if the selected day of week is today
+			if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
+				GmailService.Inbox.Sync();
+			}
 		}
 
 		/// <summary>
@@ -649,6 +660,12 @@ namespace notifier {
 				SchedulerService.RemoveTimeSlot(day);
 				fieldStartTime.SelectedIndex = 0;
 				labelDuration.Text = Translation.theday;
+
+				// synchronizes the inbox if the selected day of week is today
+				if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
+					GmailService.Inbox.Sync();
+				}
+
 				return;
 			}
 
@@ -666,22 +683,9 @@ namespace notifier {
 
 			// updates the duration label
 			labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString() + " " + Translation.hours;
-		}
 
-		/// <summary>
-		/// Synchronizes the inbox if the selected day of week is today
-		/// </summary>
-		private void FieldStartTime_TextChanged(object sender, EventArgs e) {
-			if (SchedulerService != null && SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
-				GmailService.Inbox.Sync();
-			}
-		}
-
-		/// <summary>
-		/// Synchronizes the inbox if the selected day of week is today
-		/// </summary>
-		private void FieldEndTime_TextChanged(object sender, EventArgs e) {
-			if (SchedulerService != null && SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
+			// synchronizes the inbox if the selected day of week is today
+			if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
 				GmailService.Inbox.Sync();
 			}
 		}
