@@ -129,6 +129,8 @@ namespace notifier {
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -702,6 +704,8 @@ namespace notifier {
 			// 
 			// groupBox10
 			// 
+			this.groupBox10.Controls.Add(this.checkBox2);
+			this.groupBox10.Controls.Add(this.checkBox1);
 			this.groupBox10.Controls.Add(this.fieldScheduler);
 			resources.ApplyResources(this.groupBox10, "groupBox10");
 			this.groupBox10.Name = "groupBox10";
@@ -1051,6 +1055,22 @@ namespace notifier {
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.Timer_Tick);
 			// 
+			// checkBox1
+			// 
+			resources.ApplyResources(this.checkBox1, "checkBox1");
+			this.checkBox1.Checked = true;
+			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
+			// checkBox2
+			// 
+			resources.ApplyResources(this.checkBox2, "checkBox2");
+			this.checkBox2.Checked = true;
+			this.checkBox2.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+			this.checkBox2.Name = "checkBox2";
+			this.checkBox2.UseVisualStyleBackColor = true;
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -1216,6 +1236,8 @@ namespace notifier {
 		internal System.Windows.Forms.ComboBox fieldStartTime;
 		internal System.Windows.Forms.ComboBox fieldEndTime;
 		internal System.Windows.Forms.ComboBox fieldDayOfWeek;
+		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.CheckBox checkBox2;
 	}
 }
 
