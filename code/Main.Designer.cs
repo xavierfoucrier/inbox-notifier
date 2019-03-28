@@ -86,6 +86,8 @@ namespace notifier {
 			this.label10 = new System.Windows.Forms.Label();
 			this.fieldDayOfWeek = new System.Windows.Forms.ComboBox();
 			this.groupBox10 = new System.Windows.Forms.GroupBox();
+			this.checkBox2 = new System.Windows.Forms.CheckBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.fieldScheduler = new System.Windows.Forms.CheckBox();
 			this.tabPageUpdate = new System.Windows.Forms.TabPage();
 			this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -129,8 +131,6 @@ namespace notifier {
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -711,6 +711,22 @@ namespace notifier {
 			this.groupBox10.Name = "groupBox10";
 			this.groupBox10.TabStop = false;
 			// 
+			// checkBox2
+			// 
+			resources.ApplyResources(this.checkBox2, "checkBox2");
+			this.checkBox2.Checked = true;
+			this.checkBox2.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+			this.checkBox2.Name = "checkBox2";
+			this.checkBox2.UseVisualStyleBackColor = true;
+			// 
+			// checkBox1
+			// 
+			resources.ApplyResources(this.checkBox1, "checkBox1");
+			this.checkBox1.Checked = true;
+			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
 			// fieldScheduler
 			// 
 			resources.ApplyResources(this.fieldScheduler, "fieldScheduler");
@@ -1054,22 +1070,6 @@ namespace notifier {
 			this.timer.Enabled = true;
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.Timer_Tick);
-			// 
-			// checkBox1
-			// 
-			resources.ApplyResources(this.checkBox1, "checkBox1");
-			this.checkBox1.Checked = true;
-			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			// 
-			// checkBox2
-			// 
-			resources.ApplyResources(this.checkBox2, "checkBox2");
-			this.checkBox2.Checked = true;
-			this.checkBox2.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.UseVisualStyleBackColor = true;
 			// 
 			// Main
 			// 

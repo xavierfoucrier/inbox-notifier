@@ -52,7 +52,6 @@ namespace notifier {
 			} else {
 				UI.fieldStartTime.SelectedIndex = 0;
 				UI.fieldEndTime.SelectedIndex = 0;
-				UI.labelDuration.Text = Translation.theday;
 			}
 		}
 
