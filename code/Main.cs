@@ -596,86 +596,14 @@ namespace notifier {
 		/// Manages the fieldStartTime user setting
 		/// </summary>
 		private void FieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
-
-			// gets the selected day of week
-			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
-
-			// removes the time slot for the selected day
-			if (fieldStartTime.SelectedIndex == 0) {
-				SchedulerService.RemoveTimeSlot(day);
-				fieldEndTime.SelectedIndex = 0;
-				labelDuration.Text = Translation.theday;
-
-				// synchronizes the inbox if the selected day of week is today
-				if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
-					GmailService.Inbox.Sync();
-				}
-
-				return;
-			}
-
-			// updates the end time depending on the start time
-			if (fieldStartTime.SelectedIndex > fieldEndTime.SelectedIndex || fieldEndTime.SelectedIndex == 0) {
-				fieldEndTime.SelectedIndex = fieldStartTime.SelectedIndex;
-			}
-
-			// defines the start and end time of the time slot
-			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
-			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
-
-			// adds or updates the time slot
-			SchedulerService.SetTimeSlot(day, start, end);
-
-			// updates the duration label
-			labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString() + " " + Translation.hours;
-
-			// synchronizes the inbox if the selected day of week is today
-			if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
-				GmailService.Inbox.Sync();
-			}
+			SchedulerService.Update(Scheduler.TimeType.Start);
 		}
 
 		/// <summary>
 		/// Manages the fieldEndTime user setting
 		/// </summary>
 		private void FieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
-
-			// gets the selected day of week
-			DayOfWeek day = SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex);
-
-			// removes the time slot for the selected day
-			if (fieldEndTime.SelectedIndex == 0) {
-				SchedulerService.RemoveTimeSlot(day);
-				fieldStartTime.SelectedIndex = 0;
-				labelDuration.Text = Translation.theday;
-
-				// synchronizes the inbox if the selected day of week is today
-				if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
-					GmailService.Inbox.Sync();
-				}
-
-				return;
-			}
-
-			// updates the start time depending on the end time
-			if (fieldEndTime.SelectedIndex < fieldStartTime.SelectedIndex || fieldStartTime.SelectedIndex == 0) {
-				fieldStartTime.SelectedIndex = fieldEndTime.SelectedIndex;
-			}
-
-			// defines the start and end time of the time slot
-			TimeSpan start = TimeSpan.Parse(fieldStartTime.Text);
-			TimeSpan end = TimeSpan.Parse(fieldEndTime.Text);
-
-			// adds or updates the time slot
-			SchedulerService.SetTimeSlot(day, start, end);
-
-			// updates the duration label
-			labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString() + " " + Translation.hours;
-
-			// synchronizes the inbox if the selected day of week is today
-			if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
-				GmailService.Inbox.Sync();
-			}
+			SchedulerService.Update(Scheduler.TimeType.End);
 		}
 
 		/// <summary>

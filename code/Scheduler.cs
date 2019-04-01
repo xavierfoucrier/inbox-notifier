@@ -16,6 +16,14 @@ namespace notifier {
 		public readonly List<DayOfWeek> Days = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(day => { return (day - DayOfWeek.Monday + 7) % 7; }).ToList();
 
 		/// <summary>
+		/// Time type possibilities
+		/// </summary>
+		public enum TimeType : uint {
+			Start = 0,
+			End = 1
+		}
+
+		/// <summary>
 		/// List of slots for the scheduler
 		/// </summary>
 		private List<TimeSlot> Slots;
@@ -61,6 +69,63 @@ namespace notifier {
 			UI.fieldStartTime.Text = slot.Start.ToString(@"h\:mm");
 			UI.fieldEndTime.Text = slot.End.ToString(@"h\:mm");
 			UI.labelDuration.Text = slot.Start.Subtract(slot.End).Duration().Hours.ToString() + " " + Translation.hours;
+		}
+
+		/// <summary>
+		/// Updates the scheduler properties depending on the type of time
+		/// </summary>
+		/// <param name="type">Type of time</param>
+		public void Update(TimeType type) {
+
+			// gets the selected day of week
+			DayOfWeek day = GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex);
+
+			// removes the time slot for the selected day
+			if ((type == TimeType.Start && UI.fieldStartTime.SelectedIndex == 0) || (type == TimeType.End && UI.fieldEndTime.SelectedIndex == 0)) {
+
+				// removes the time slot from the scheduler
+				RemoveTimeSlot(day);
+
+				// udpates the interface
+				UI.fieldStartTime.SelectedIndex = 0;
+				UI.fieldEndTime.SelectedIndex = 0;
+				UI.labelDuration.Text = Translation.theday;
+
+				// synchronizes the inbox if the selected day of week is today
+				if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
+					UI.GmailService.Inbox.Sync();
+				}
+
+				return;
+			}
+
+			// updates the end time depending on the start time
+			if (type == TimeType.Start) {
+				if (UI.fieldStartTime.SelectedIndex > UI.fieldEndTime.SelectedIndex || UI.fieldEndTime.SelectedIndex == 0) {
+					UI.fieldEndTime.SelectedIndex = UI.fieldStartTime.SelectedIndex;
+				}
+			}
+
+			// updates the start time depending on the end time
+			if (type == TimeType.End) {
+				if (UI.fieldEndTime.SelectedIndex < UI.fieldStartTime.SelectedIndex || UI.fieldStartTime.SelectedIndex == 0) {
+					UI.fieldStartTime.SelectedIndex = UI.fieldEndTime.SelectedIndex;
+				}
+			}
+
+			// defines the start and end time of the time slot
+			TimeSpan start = TimeSpan.Parse(UI.fieldStartTime.Text);
+			TimeSpan end = TimeSpan.Parse(UI.fieldEndTime.Text);
+
+			// adds or updates the time slot
+			SetTimeSlot(day, start, end);
+
+			// updates the duration label
+			UI.labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString() + " " + Translation.hours;
+
+			// synchronizes the inbox if the selected day of week is today
+			if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
+				UI.GmailService.Inbox.Sync();
 			}
 		}
 
