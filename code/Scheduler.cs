@@ -43,15 +43,21 @@ namespace notifier {
 			UI.fieldDayOfWeek.SelectedIndex = Days.IndexOf(DateTime.Now.DayOfWeek);
 
 			// displays the start time and end time for today
-			TimeSlot slot = GetTimeSlot();
+			DisplaySlot(GetTimeSlot());
+		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		public void DisplaySlot(TimeSlot slot) {
 			if (slot != null) {
 				UI.fieldStartTime.Text = slot.Start.ToString(@"h\:mm");
 				UI.fieldEndTime.Text = slot.End.ToString(@"h\:mm");
-				UI.labelDuration.Text = slot.Start.Subtract(slot.End).Duration().TotalHours.ToString() + " " + Translation.hours;
+				UI.labelDuration.Text = slot.Start.Subtract(slot.End).Duration().Hours.ToString() + " " + Translation.hours;
 			} else {
 				UI.fieldStartTime.SelectedIndex = 0;
 				UI.fieldEndTime.SelectedIndex = 0;
+				UI.labelDuration.Text = Translation.theday;
 			}
 		}
 

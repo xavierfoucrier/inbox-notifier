@@ -582,19 +582,7 @@ namespace notifier {
 		/// Manages the DayOfWeek user setting
 		/// </summary>
 		private void FieldDayOfWeek_SelectionChangeCommitted(object sender, EventArgs e) {
-
-			// checks if there is already a defined slot for this day
-			TimeSlot slot = SchedulerService.GetTimeSlot(SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex));
-
-			if (slot != null) {
-				fieldStartTime.Text = slot.Start.ToString(@"h\:mm");
-				fieldEndTime.Text = slot.End.ToString(@"h\:mm");
-				labelDuration.Text = slot.Start.Subtract(slot.End).Duration().Hours.ToString() + " " + Translation.hours;
-			} else {
-				fieldStartTime.SelectedIndex = 0;
-				fieldEndTime.SelectedIndex = 0;
-				labelDuration.Text = Translation.theday;
-			}
+			SchedulerService.DisplaySlot(SchedulerService.GetTimeSlot(SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex)));
 		}
 
 		/// <summary>
