@@ -147,6 +147,9 @@ namespace notifier {
 			UI.menuItemMarkAsRead.Enabled = false;
 			UI.menuItemTimout.Enabled = false;
 			UI.menuItemSettings.Enabled = true;
+
+			// updates some text items
+			UI.menuItemMarkAsRead.Text = Translation.markAsRead;
 		}
 
 		/// <summary>
