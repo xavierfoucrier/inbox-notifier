@@ -281,8 +281,15 @@ Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>Ein Fehler ist aufgetreten während der Synchronisation des Posteingangs :</value>
   </data>
+  <data name="syncScheduled" xml:space="preserve">
+    <value>Geplante Synchronisation
+am {day} von {start} bis {end}</value>
+  </data>
   <data name="syncTime" xml:space="preserve">
     <value>Aktualisiert um {time}</value>
+  </data>
+  <data name="theday" xml:space="preserve">
+    <value>Der Tag</value>
   </data>
   <data name="timeout" xml:space="preserve">
     <value>Bitte nicht stören</value>
