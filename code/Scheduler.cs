@@ -47,7 +47,7 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// 
+		/// Displays the time slot properties on the interface
 		/// </summary>
 		public void DisplaySlot(TimeSlot slot) {
 			if (slot != null) {
