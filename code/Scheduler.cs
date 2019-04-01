@@ -116,7 +116,7 @@ namespace notifier {
 		/// <summary>
 		/// Removes a time slot from the list
 		/// </summary>
-		/// <param name="Day"></param>
+		/// <param name="Day">The day for which the time slot is defined</param>
 		public void RemoveTimeSlot(DayOfWeek Day) {
 			TimeSlot slot = GetTimeSlot(Day);
 
