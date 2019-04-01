@@ -443,7 +443,7 @@ will automatically open the inbox.</value>
     <value>13, 47</value>
   </data>
   <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 30</value>
+    <value>204, 32</value>
   </data>
   <data name="fieldUpdateDownload.Text" xml:space="preserve">
     <value>Download and start installing updates automatically</value>
@@ -451,6 +451,12 @@ will automatically open the inbox.</value>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="fieldUpdateService.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="fieldUpdateService.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="fieldUpdateService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 25</value>
   </data>
   <data name="fieldUpdateService.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 17</value>
