@@ -75,7 +75,7 @@ namespace notifier {
 			this.fieldPrivacyNotificationAll = new System.Windows.Forms.RadioButton();
 			this.fieldPrivacyNotificationShort = new System.Windows.Forms.RadioButton();
 			this.fieldPrivacyNotificationNone = new System.Windows.Forms.RadioButton();
-			this.tabPagePlanning = new System.Windows.Forms.TabPage();
+			this.tabPageSchedule = new System.Windows.Forms.TabPage();
 			this.groupBox11 = new System.Windows.Forms.GroupBox();
 			this.labelDuration = new System.Windows.Forms.Label();
 			this.label20 = new System.Windows.Forms.Label();
@@ -145,7 +145,7 @@ namespace notifier {
 			this.tabPagePrivacy.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).BeginInit();
-			this.tabPagePlanning.SuspendLayout();
+			this.tabPageSchedule.SuspendLayout();
 			this.groupBox11.SuspendLayout();
 			this.groupBox10.SuspendLayout();
 			this.tabPageUpdate.SuspendLayout();
@@ -175,7 +175,7 @@ namespace notifier {
 			this.tabControl.Controls.Add(this.tabPageAccount);
 			this.tabControl.Controls.Add(this.tabPageNotification);
 			this.tabControl.Controls.Add(this.tabPagePrivacy);
-			this.tabControl.Controls.Add(this.tabPagePlanning);
+			this.tabControl.Controls.Add(this.tabPageSchedule);
 			this.tabControl.Controls.Add(this.tabPageUpdate);
 			this.tabControl.Controls.Add(this.tabPageAbout);
 			this.tabControl.Name = "tabControl";
@@ -571,13 +571,13 @@ namespace notifier {
 			this.fieldPrivacyNotificationNone.UseVisualStyleBackColor = true;
 			this.fieldPrivacyNotificationNone.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationNone_CheckedChanged);
 			// 
-			// tabPagePlanning
+			// tabPageSchedule
 			// 
-			resources.ApplyResources(this.tabPagePlanning, "tabPagePlanning");
-			this.tabPagePlanning.Controls.Add(this.groupBox11);
-			this.tabPagePlanning.Controls.Add(this.groupBox10);
-			this.tabPagePlanning.Name = "tabPagePlanning";
-			this.tabPagePlanning.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.tabPageSchedule, "tabPageSchedule");
+			this.tabPageSchedule.Controls.Add(this.groupBox11);
+			this.tabPageSchedule.Controls.Add(this.groupBox10);
+			this.tabPageSchedule.Name = "tabPageSchedule";
+			this.tabPageSchedule.UseVisualStyleBackColor = true;
 			// 
 			// groupBox11
 			// 
@@ -1111,7 +1111,7 @@ namespace notifier {
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrivacyPreview)).EndInit();
-			this.tabPagePlanning.ResumeLayout(false);
+			this.tabPageSchedule.ResumeLayout(false);
 			this.groupBox11.ResumeLayout(false);
 			this.groupBox11.PerformLayout();
 			this.groupBox10.ResumeLayout(false);
@@ -1223,7 +1223,7 @@ namespace notifier {
 		internal System.Windows.Forms.TabControl tabControl;
 		private System.Windows.Forms.TabPage tabPageUpdate;
 		private System.Windows.Forms.Label labelNotificationMarkMessageAsRead;
-		private System.Windows.Forms.TabPage tabPagePlanning;
+		private System.Windows.Forms.TabPage tabPageSchedule;
 		private System.Windows.Forms.GroupBox groupBox10;
 		private System.Windows.Forms.CheckBox fieldScheduler;
 		private System.Windows.Forms.GroupBox groupBox11;
