@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Newtonsoft.Json;
 using notifier.Languages;
@@ -127,6 +128,25 @@ namespace notifier {
 			if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
 				UI.GmailService.Inbox.Sync();
 			}
+		}
+
+		/// <summary>
+		/// Pause the synchronization
+		/// </summary>
+		public void PauseSync() {
+
+			// gets the time slot of today
+			TimeSlot slot = GetTimeSlot();
+
+			// displays the timeout icon
+			UI.notifyIcon.Icon = Resources.timeout;
+			UI.notifyIcon.Text = Translation.syncScheduled.Replace("{day}", CultureInfo.CurrentUICulture.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek)).Replace("{start}", slot.Start.ToString(@"h\:mm")).Replace("{end}", slot.End.ToString(@"h\:mm"));
+
+			// disables some menu items
+			UI.menuItemSynchronize.Enabled = false;
+			UI.menuItemMarkAsRead.Enabled = false;
+			UI.menuItemTimout.Enabled = false;
+			UI.menuItemSettings.Enabled = true;
 		}
 
 		/// <summary>

@@ -9,7 +9,6 @@ using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using notifier.Languages;
 using notifier.Properties;
-using System.Globalization;
 
 namespace notifier {
 	class Inbox {
@@ -52,19 +51,7 @@ namespace notifier {
 
 			// prevents the application from syncing the inbox when the scheduler is enabled and the sync is not scheduled
 			if (Settings.Default.Scheduler && !UI.SchedulerService.ScheduledSync()) {
-
-				// gets the time slot of today
-				TimeSlot slot = UI.SchedulerService.GetTimeSlot();
-
-				// displays the timeout icon
-				UI.notifyIcon.Icon = Resources.timeout;
-				UI.notifyIcon.Text = Translation.syncScheduled.Replace("{day}", CultureInfo.CurrentUICulture.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek)).Replace("{start}", slot.Start.ToString(@"h\:mm")).Replace("{end}", slot.End.ToString(@"h\:mm"));
-
-				// disables some menu items
-				UI.menuItemSynchronize.Enabled = false;
-				UI.menuItemMarkAsRead.Enabled = false;
-				UI.menuItemTimout.Enabled = false;
-				UI.menuItemSettings.Enabled = true;
+				UI.SchedulerService.PauseSync();
 
 				return;
 			}
