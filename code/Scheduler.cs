@@ -43,13 +43,13 @@ namespace notifier {
 			UI.fieldDayOfWeek.SelectedIndex = Days.IndexOf(DateTime.Now.DayOfWeek);
 
 			// displays the start time and end time for today
-			DisplaySlot(GetTimeSlot());
+			DisplayProperties(GetTimeSlot());
 		}
 
 		/// <summary>
 		/// Displays the time slot properties on the interface
 		/// </summary>
-		public void DisplaySlot(TimeSlot slot) {
+		public void DisplayProperties(TimeSlot slot) {
 			if (slot != null) {
 				UI.fieldStartTime.Text = slot.Start.ToString(@"h\:mm");
 				UI.fieldEndTime.Text = slot.End.ToString(@"h\:mm");

@@ -582,7 +582,7 @@ namespace notifier {
 		/// Manages the DayOfWeek user setting
 		/// </summary>
 		private void FieldDayOfWeek_SelectionChangeCommitted(object sender, EventArgs e) {
-			SchedulerService.DisplaySlot(SchedulerService.GetTimeSlot(SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex)));
+			SchedulerService.DisplayProperties(SchedulerService.GetTimeSlot(SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex)));
 		}
 
 		/// <summary>
