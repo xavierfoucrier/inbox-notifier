@@ -120,7 +120,43 @@
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>General</value>
   </data>
+  <data name="tabPageAccount.Text" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="tabPagePrivacy.Text" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Time slot</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 17</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>Disable automatic updates check</value>
+  </data>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Disable manual synchronization</value>
+  </data>
+  <data name="fieldScheduler.Text" xml:space="preserve">
+    <value>Enable scheduled synchronization</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
+  <data name="tabPagePlanning.Text" xml:space="preserve">
+    <value>Planning</value>
+  </data>
+  <data name="tabPageUpdate.Text" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>186, 87</value>
   </data>
@@ -178,9 +214,6 @@ at the next application startup.</value>
   </data>
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>Ask before leaving the application</value>
-  </data>
-  <data name="tabPageAccount.Text" xml:space="preserve">
-    <value>Account</value>
   </data>
   <data name="groupBox8.Text" xml:space="preserve">
     <value>Statistics</value>
@@ -283,9 +316,6 @@ will automatically open the inbox.</value>
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Sound notification</value>
   </data>
-  <data name="tabPagePrivacy.Text" xml:space="preserve">
-    <value>Privacy</value>
-  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 13</value>
   </data>
@@ -310,11 +340,65 @@ will automatically open the inbox.</value>
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Display all message content</value>
   </data>
-  <data name="tabPagePlanning.Text" xml:space="preserve">
-    <value>Planning</value>
+  <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
   </data>
-  <data name="tabPageUpdate.Text" xml:space="preserve">
-    <value>Updates</value>
+  <data name="labelDuration.Text" xml:space="preserve">
+    <value>The day</value>
+  </data>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 105</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 13</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 105</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Duration:</value>
+  </data>
+  <data name="fieldStartTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 100</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Day of week:</value>
+  </data>
+  <data name="fieldDayOfWeek.Items" xml:space="preserve">
+    <value>monday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items1" xml:space="preserve">
+    <value>tuesday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items2" xml:space="preserve">
+    <value>wednesday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items3" xml:space="preserve">
+    <value>thursday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items4" xml:space="preserve">
+    <value>friday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items5" xml:space="preserve">
+    <value>saturday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items6" xml:space="preserve">
+    <value>sunday</value>
   </data>
   <data name="groupBox9.Text" xml:space="preserve">
     <value>Availability</value>
@@ -382,9 +466,6 @@ will automatically open the inbox.</value>
   </data>
   <data name="fieldUpdateService.Text" xml:space="preserve">
     <value>Enable automatic update checking</value>
-  </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>About</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="linkPrivacy.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">

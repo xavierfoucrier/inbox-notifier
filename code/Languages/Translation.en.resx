@@ -281,8 +281,15 @@ This option is not enabled on this type of application.</value>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>An error occurred during the synchronization of the inbox:</value>
   </data>
+  <data name="syncScheduled" xml:space="preserve">
+    <value>Scheduled synchronization
+on {day} from {start} to {end}</value>
+  </data>
   <data name="syncTime" xml:space="preserve">
     <value>Updated at {time}</value>
+  </data>
+  <data name="theday" xml:space="preserve">
+    <value>The day</value>
   </data>
   <data name="timeout" xml:space="preserve">
     <value>Do not disturb</value>
