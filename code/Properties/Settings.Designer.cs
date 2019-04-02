@@ -350,6 +350,30 @@ namespace notifier.Properties {
             }
         }
         
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Scheduler {
+            get {
+                return ((bool)(this["Scheduler"]));
+            }
+            set {
+                this["Scheduler"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SchedulerTimeSlot {
+            get {
+                return ((string)(this["SchedulerTimeSlot"]));
+            }
+            set {
+                this["SchedulerTimeSlot"] = value;
+            }
+        }
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("gmn.log")]

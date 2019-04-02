@@ -373,6 +373,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à heure(s).
+        /// </summary>
+        internal static string hours {
+            get {
+                return ResourceManager.GetString("hours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Vous disposez de la dernière version de l&apos;application..
         /// </summary>
         internal static string latestVersion {
@@ -529,11 +538,30 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Synchronisation planifiée
+        ///le {day} de {start} à {end}.
+        /// </summary>
+        internal static string syncScheduled {
+            get {
+                return ResourceManager.GetString("syncScheduled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Mis à jour à {time}.
         /// </summary>
         internal static string syncTime {
             get {
                 return ResourceManager.GetString("syncTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à La journée.
+        /// </summary>
+        internal static string theday {
+            get {
+                return ResourceManager.GetString("theday", resourceCulture);
             }
         }
         

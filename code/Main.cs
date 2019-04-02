@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Media;
+using System.Threading;
 using System.Windows.Forms;
 using notifier.Languages;
 using notifier.Properties;
@@ -31,6 +32,11 @@ namespace notifier {
 		internal Notification NotificationService;
 
 		/// <summary>
+		/// Scheduler service class
+		/// </summary>
+		internal Scheduler SchedulerService;
+
+		/// <summary>
 		/// Global UI tooltip
 		/// </summary>
 		internal ToolTip tip = new ToolTip();
@@ -49,6 +55,7 @@ namespace notifier {
 			ComputerService = new Computer(ref ui);
 			GmailService = new Gmail(ref ui);
 			NotificationService = new Notification(ref ui);
+			SchedulerService = new Scheduler(ref ui);
 		}
 
 		/// <summary>
@@ -238,8 +245,8 @@ namespace notifier {
 			// sets the new application language
 			Settings.Default.Language = fieldLanguage.Text;
 
-			// gets the current systemthreading culture
-			string culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+			// gets the current system threading culture
+			string culture = Thread.CurrentThread.CurrentUICulture.Name;
 
 			// indicates to the user that to apply the new language on the interface, the application must be restarted
 			bool changes = !((culture == "en-US" && fieldLanguage.Text == "English") || (culture == "fr-FR" && fieldLanguage.Text == "Français") || (culture == "de-DE" && fieldLanguage.Text == "Deutsch"));
@@ -323,7 +330,7 @@ namespace notifier {
 		/// <summary>
 		/// Opens the Github privacy notice file
 		/// </summary>
-		private void linkPrivacy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void LinkPrivacy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/blob/master/PRIVACY.md");
 		}
 
@@ -567,8 +574,45 @@ namespace notifier {
 		/// <summary>
 		/// Checks the start with Windows setting against the registry when entering the general tab page
 		/// </summary>
-		private void tabPageGeneral_Enter(object sender, EventArgs e) {
+		private void TabPageGeneral_Enter(object sender, EventArgs e) {
 			ComputerService.RegulatesRegistry();
+		}
+
+		/// <summary>
+		/// Manages the DayOfWeek user setting
+		/// </summary>
+		private void FieldDayOfWeek_SelectionChangeCommitted(object sender, EventArgs e) {
+			SchedulerService.DisplayTimeSlotProperties(SchedulerService.GetTimeSlot(SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex)));
+		}
+
+		/// <summary>
+		/// Hides the settings saved label
+		/// </summary>
+		private void FieldDayOfWeek_SelectedIndexChanged(object sender, EventArgs e) {
+			labelSettingsSaved.Visible = false;
+		}
+
+		/// <summary>
+		/// Manages the fieldStartTime user setting
+		/// </summary>
+		private void FieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
+			SchedulerService.Update(Scheduler.TimeType.Start);
+		}
+
+		/// <summary>
+		/// Manages the fieldEndTime user setting
+		/// </summary>
+		private void FieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
+			SchedulerService.Update(Scheduler.TimeType.End);
+		}
+
+		/// <summary>
+		/// Synchronizes the inbox if the scheduler is enable or disable and if the selected day of week is today
+		/// </summary>
+		private void FieldScheduler_Click(object sender, EventArgs e) {
+			if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
+				GmailService.Inbox.Sync();
+			}
 		}
 	}
 }

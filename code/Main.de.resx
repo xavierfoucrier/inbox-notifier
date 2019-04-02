@@ -251,13 +251,13 @@ Nachrichtenoptionen „Öffnen Sie die Nachricht“
 automatisch den Posteingang öffnen.</value>
   </data>
   <data name="fieldNotificationBehavior.Items" xml:space="preserve">
-    <value>nichts tun</value>
+    <value>Nichts tun</value>
   </data>
   <data name="fieldNotificationBehavior.Items1" xml:space="preserve">
-    <value>öffnen Sie die Nachricht</value>
+    <value>Öffnen Sie die Nachricht</value>
   </data>
   <data name="fieldNotificationBehavior.Items2" xml:space="preserve">
-    <value>kennzeichnen Sie die Nachricht als gelesen</value>
+    <value>Kennzeichnen Sie die Nachricht als gelesen</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 13</value>
@@ -269,10 +269,10 @@ automatisch den Posteingang öffnen.</value>
     <value>Post</value>
   </data>
   <data name="fieldStepDelay.Items" xml:space="preserve">
-    <value>minute (n)</value>
+    <value>Minute(n)</value>
   </data>
   <data name="fieldStepDelay.Items1" xml:space="preserve">
-    <value>stunde (n)</value>
+    <value>Stunde(n)</value>
   </data>
   <data name="fieldStepDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 100</value>
@@ -337,6 +337,90 @@ automatisch den Posteingang öffnen.</value>
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Alle anzeigen Inhalt der Nachricht</value>
   </data>
+  <data name="tabPageSchedule.Text" xml:space="preserve">
+    <value>Planung</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Zeitplan</value>
+  </data>
+  <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="labelDuration.Text" xml:space="preserve">
+    <value>Der Tag</value>
+  </data>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 105</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 13</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>bis</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 105</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>von</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Dauer:</value>
+  </data>
+  <data name="fieldStartTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 100</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Wochentag:</value>
+  </data>
+  <data name="fieldDayOfWeek.Items" xml:space="preserve">
+    <value>Montag</value>
+  </data>
+  <data name="fieldDayOfWeek.Items1" xml:space="preserve">
+    <value>Dienstag</value>
+  </data>
+  <data name="fieldDayOfWeek.Items2" xml:space="preserve">
+    <value>Mittwoch</value>
+  </data>
+  <data name="fieldDayOfWeek.Items3" xml:space="preserve">
+    <value>Donnerstag</value>
+  </data>
+  <data name="fieldDayOfWeek.Items4" xml:space="preserve">
+    <value>Freitag</value>
+  </data>
+  <data name="fieldDayOfWeek.Items5" xml:space="preserve">
+    <value>Samstag</value>
+  </data>
+  <data name="fieldDayOfWeek.Items6" xml:space="preserve">
+    <value>Sonntag</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Verhalten</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>Deaktivieren Sie die Suche nach Updates</value>
+  </data>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 17</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Deaktivieren manuelle Synchronisierung</value>
+  </data>
+  <data name="fieldScheduler.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 17</value>
+  </data>
+  <data name="fieldScheduler.Text" xml:space="preserve">
+    <value>Geplante Synchronisierung aktivieren</value>
+  </data>
   <data name="tabPageUpdate.Text" xml:space="preserve">
     <value>Updates</value>
   </data>
@@ -359,16 +443,16 @@ automatisch den Posteingang öffnen.</value>
     <value>Prüffrist:</value>
   </data>
   <data name="fieldUpdatePeriod.Items" xml:space="preserve">
-    <value>beim Start der Anwendung</value>
+    <value>Beim Start der Anwendung</value>
   </data>
   <data name="fieldUpdatePeriod.Items1" xml:space="preserve">
-    <value>einmal pro Tag</value>
+    <value>Einmal pro Tag</value>
   </data>
   <data name="fieldUpdatePeriod.Items2" xml:space="preserve">
-    <value>einmal pro Woche</value>
+    <value>Einmal pro Woche</value>
   </data>
   <data name="fieldUpdatePeriod.Items3" xml:space="preserve">
-    <value>einmal pro Monat</value>
+    <value>Einmal pro Monat</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 13</value>

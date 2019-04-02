@@ -50,6 +50,13 @@ namespace notifier {
 		/// <param name="token">Indicates if the Gmail token need to be refreshed</param>
 		public async void Sync(bool manual = true, bool token = false) {
 
+			// prevents the application from syncing the inbox when the scheduler is enabled and the sync is not scheduled
+			if (Settings.Default.Scheduler && !UI.SchedulerService.ScheduledSync()) {
+				UI.SchedulerService.PauseSync();
+
+				return;
+			}
+
 			// prevents the application from syncing the inbox when updating
 			if (UI.UpdateService.Updating) {
 				return;
