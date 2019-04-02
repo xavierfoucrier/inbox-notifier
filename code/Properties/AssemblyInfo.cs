@@ -9,7 +9,7 @@ using System.Resources;
 [assembly: AssemblyDescription("Notifications of new Gmail messages for Windows platforms")]
 [assembly: AssemblyCompany("Xavier Foucrier")]
 [assembly: AssemblyProduct("Gmail notifier for Windows")]
-[assembly: AssemblyCopyright("Copyright © 2018 Gmail notifier")]
+[assembly: AssemblyCopyright("Copyright © 2019 Gmail notifier")]
 [assembly: AssemblyTrademark("Xavier Foucrier")]
 [assembly: AssemblyCulture("")]
 

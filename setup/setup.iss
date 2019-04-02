@@ -9,7 +9,7 @@
 AppId={{7E60E047-C79B-49A4-8CF6-B33D5565B2E8}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppCopyright=Copyright 2018 Gmail notifier
+AppCopyright=Copyright 2019 Gmail notifier
 AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
