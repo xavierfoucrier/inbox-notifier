@@ -1,4 +1,4 @@
-# Gmail notifier – [![Build Status](https://travis-ci.org/xavierfoucrier/gmail-notifier.svg?branch=master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/gmail-notifier/total.svg "Downloads - All releases")](https://github.com/xavierfoucrier/gmail-notifier/releases) [![Softpedia](https://raw.githubusercontent.com/xavierfoucrier/gmail-notifier/master/badge/softpedia.png "Softpedia - Awarded")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
+# Gmail notifier – [![Build Status](https://travis-ci.org/xavierfoucrier/gmail-notifier.svg?branch=master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/gmail-notifier/total.svg "Downloads - All releases")](https://github.com/xavierfoucrier/gmail-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-awarded-%230E7FC0.svg "Softpedia - Awarded")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
 Gmail notifications instantly in the Windows taskbar.
 
 [![Gmail Notifier](https://raw.github.com/xavierfoucrier/gmail-notifier/master/gallery/main.png "Gmail Notifier - Discover the application running on Windows 7")](GALLERY.md)
@@ -7,13 +7,13 @@ Gmail notifications instantly in the Windows taskbar.
 ## Compatibility
 Gmail notifier is fully tested on **Windows 7** desktop *(SP1)* and on a **Windows 10** laptop.
 
-Many other Windows operating systems may work, like Windows 8/8.1, XP or Vista, but are not extensively tested for the moment.
+Many other Windows operating systems may work, like Windows 8/8.1/Server, but are not extensively tested for the moment. Regarding the .NET Framework version, some operating systems like Windows Vista/XP are no longer supported.
 
 
 ## Dependencies
 To ensure a stable running of Gmail notifier, you need to have **some requirements** setted on your machine.
 
-1. Microsoft `.NET Framework 4.7.1` minimum required
+1. Microsoft `.NET Framework 4.7.2` minimum required
 
 Note that this version of the .NET Framework **evolve in time**: the application cares about **system security** and having one of the latest .NET version is very important for the final user. By default, if you don't have the required version installed, the application will display a message and propose to download the specified version on the **Microsoft official site**.
 
@@ -37,7 +37,7 @@ If you want to report a bug or if you just want to request for a new feature/imp
 
 
 ## Softpedia award certification
-This product was last tested in the **Softpedia Labs** on **5th of November 2018** by *Alexandra Sava*.
+This product was last tested in the **Softpedia Labs** on **November 5, 2018** by *Alexandra Sava*.
 
 Softpedia guarantees that Gmail notifier is **100% Free**, which means it does not contain any form of malware, including but not limited to: spyware, viruses, trojans and backdoors. This software product was tested thoroughly and was found **absolutely clean**; therefore, it can be installed with no concern by any computer user. However, it should be noted that this product will be retested periodically and the award may be withdrawn, so you should check back occasionally and pay attention to the date of testing shown above.
 

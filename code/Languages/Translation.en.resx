@@ -267,7 +267,8 @@ This option is not enabled on this type of application.</value>
     <value>No new message</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
-    <value>Attempting to reconnect...</value>
+    <value>Offline
+Attempting to reconnect...</value>
   </data>
   <data name="reconnectFailed" xml:space="preserve">
     <value>Reconnection failed</value>

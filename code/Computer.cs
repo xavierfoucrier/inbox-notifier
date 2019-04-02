@@ -137,9 +137,19 @@ namespace notifier {
 		/// <returns>Indicates if the user is connected to the internet, false means that the request to the Google server has failed</returns>
 		public bool IsInternetAvailable() {
 			try {
-				using (WebClient client = new WebClient()) {
-					using (Stream stream = client.OpenRead("http://www.google.com")) {
-						return true;
+
+				// sends a ping to the 1.1.1.1 DNS registry
+				IPStatus status = new Ping().Send("1.1.1.1", 1000, new byte[32]).Status;
+
+				if (status == IPStatus.Success) {
+					return true;
+				} else {
+
+					// uses Google secured homepage as alternative to the DNS ping
+					using (WebClient client = new WebClient()) {
+						using (Stream stream = client.OpenRead("https://www.google.com")) {
+							return true;
+						}
 					}
 				}
 			} catch (Exception) {

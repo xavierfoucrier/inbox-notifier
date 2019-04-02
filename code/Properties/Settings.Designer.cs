@@ -313,7 +313,7 @@ namespace notifier.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        [global::System.Configuration.DefaultSettingValueAttribute("40")]
         public uint AUTH_TIMEOUT {
             get {
                 return ((uint)(this["AUTH_TIMEOUT"]));
@@ -371,6 +371,15 @@ namespace notifier.Properties {
             }
             set {
                 this["SchedulerTimeSlot"] = value;
+            }
+        }
+
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("gmn.log")]
+        public string LOG_FILE {
+            get {
+                return ((string)(this["LOG_FILE"]));
             }
         }
     }
