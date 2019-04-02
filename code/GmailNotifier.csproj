@@ -219,10 +219,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Google.Apis.Gmail.v1">
-      <Version>1.38.0.1495</Version>
+      <Version>1.38.0.1543</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
-      <Version>1.9.2</Version>
+      <Version>1.11.1</Version>
     </PackageReference>
     <PackageReference Include="log4net">
       <Version>2.0.8</Version>
