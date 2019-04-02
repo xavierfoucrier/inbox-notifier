@@ -607,10 +607,12 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Synchronizes the inbox if the scheduler is enable or disable
+		/// Synchronizes the inbox if the scheduler is enable or disable and if the selected day of week is today
 		/// </summary>
 		private void FieldScheduler_Click(object sender, EventArgs e) {
-			GmailService.Inbox.Sync();
+			if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
+				GmailService.Inbox.Sync();
+			}
 		}
 	}
 }
