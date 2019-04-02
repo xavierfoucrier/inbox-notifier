@@ -120,10 +120,67 @@
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>General</value>
   </data>
+  <data name="tabPageAccount.Text" xml:space="preserve">
+    <value>Konto</value>
+  </data>
+  <data name="tabPageNotification.Text" xml:space="preserve">
+    <value>Benachrichtigung</value>
+  </data>
+  <data name="tabPagePrivacy.Text" xml:space="preserve">
+    <value>Vertraulichkeit</value>
+  </data>
+  <data name="tabPageSchedule.Text" xml:space="preserve">
+    <value>Planung</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 99</value>
+  </data>
+  <data name="buttonCheckForUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 23</value>
+  </data>
+  <data name="buttonCheckForUpdate.Text" xml:space="preserve">
+    <value>Jetzt prüfen</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Prüffrist:</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items" xml:space="preserve">
+    <value>Beim Start der Anwendung</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items1" xml:space="preserve">
+    <value>Einmal pro Tag</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items2" xml:space="preserve">
+    <value>Einmal pro Woche</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items3" xml:space="preserve">
+    <value>Einmal pro Monat</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Letzte Prüfung:</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Verfügbarkeit</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Verhalten</value>
+  </data>
+  <data name="tabPageUpdate.Text" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>Über</value>
+  </data>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>Schnittstelle</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 87</value>
   </data>
@@ -180,9 +237,6 @@ nächsten Start der Anwendung.</value>
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>Fragen Sie mich bitte, bevor sie die Anwendung zu verlassen</value>
   </data>
-  <data name="tabPageAccount.Text" xml:space="preserve">
-    <value>Konto</value>
-  </data>
   <data name="groupBox8.Text" xml:space="preserve">
     <value>Statistiken</value>
   </data>
@@ -222,9 +276,6 @@ nächsten Start der Anwendung.</value>
   <data name="buttonGmailDisconnect.Text" xml:space="preserve">
     <value>Austragen</value>
   </data>
-  <data name="tabPageNotification.Text" xml:space="preserve">
-    <value>Benachrichtigung</value>
-  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Verhalten</value>
   </data>
@@ -251,13 +302,13 @@ Nachrichtenoptionen „Öffnen Sie die Nachricht“
 automatisch den Posteingang öffnen.</value>
   </data>
   <data name="fieldNotificationBehavior.Items" xml:space="preserve">
-    <value>nichts tun</value>
+    <value>Nichts tun</value>
   </data>
   <data name="fieldNotificationBehavior.Items1" xml:space="preserve">
-    <value>öffnen Sie die Nachricht</value>
+    <value>Öffnen Sie die Nachricht</value>
   </data>
   <data name="fieldNotificationBehavior.Items2" xml:space="preserve">
-    <value>kennzeichnen Sie die Nachricht als gelesen</value>
+    <value>Kennzeichnen Sie die Nachricht als gelesen</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 13</value>
@@ -269,10 +320,10 @@ automatisch den Posteingang öffnen.</value>
     <value>Post</value>
   </data>
   <data name="fieldStepDelay.Items" xml:space="preserve">
-    <value>minute (n)</value>
+    <value>Minute (n)</value>
   </data>
   <data name="fieldStepDelay.Items1" xml:space="preserve">
-    <value>stunde (n)</value>
+    <value>Stunde (n)</value>
   </data>
   <data name="fieldStepDelay.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 100</value>
@@ -307,9 +358,6 @@ automatisch den Posteingang öffnen.</value>
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Sound-Benachrichtigung</value>
   </data>
-  <data name="tabPagePrivacy.Text" xml:space="preserve">
-    <value>Vertraulichkeit</value>
-  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Benachrichtigung</value>
   </data>
@@ -336,9 +384,6 @@ automatisch den Posteingang öffnen.</value>
   </data>
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Alle anzeigen Inhalt der Nachricht</value>
-  </data>
-  <data name="tabPageSchedule.Text" xml:space="preserve">
-    <value>Planung</value>
   </data>
   <data name="groupBox11.Text" xml:space="preserve">
     <value>Zeitplan</value>
@@ -383,25 +428,25 @@ automatisch den Posteingang öffnen.</value>
     <value>Wochentag:</value>
   </data>
   <data name="fieldDayOfWeek.Items" xml:space="preserve">
-    <value>montag</value>
+    <value>Montag</value>
   </data>
   <data name="fieldDayOfWeek.Items1" xml:space="preserve">
-    <value>dienstag</value>
+    <value>Dienstag</value>
   </data>
   <data name="fieldDayOfWeek.Items2" xml:space="preserve">
-    <value>mittwoch</value>
+    <value>Mittwoch</value>
   </data>
   <data name="fieldDayOfWeek.Items3" xml:space="preserve">
-    <value>donnerstag</value>
+    <value>Donnerstag</value>
   </data>
   <data name="fieldDayOfWeek.Items4" xml:space="preserve">
-    <value>freitag</value>
+    <value>Freitag</value>
   </data>
   <data name="fieldDayOfWeek.Items5" xml:space="preserve">
-    <value>samstag</value>
+    <value>Samstag</value>
   </data>
   <data name="fieldDayOfWeek.Items6" xml:space="preserve">
-    <value>sonntag</value>
+    <value>Sonntag</value>
   </data>
   <data name="groupBox10.Text" xml:space="preserve">
     <value>Verhalten</value>
@@ -420,48 +465,6 @@ automatisch den Posteingang öffnen.</value>
   </data>
   <data name="fieldScheduler.Text" xml:space="preserve">
     <value>Geplante Synchronisierung aktivieren</value>
-  </data>
-  <data name="tabPageUpdate.Text" xml:space="preserve">
-    <value>Updates</value>
-  </data>
-  <data name="groupBox9.Text" xml:space="preserve">
-    <value>Verfügbarkeit</value>
-  </data>
-  <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 99</value>
-  </data>
-  <data name="buttonCheckForUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 23</value>
-  </data>
-  <data name="buttonCheckForUpdate.Text" xml:space="preserve">
-    <value>Jetzt prüfen</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 13</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Prüffrist:</value>
-  </data>
-  <data name="fieldUpdatePeriod.Items" xml:space="preserve">
-    <value>beim Start der Anwendung</value>
-  </data>
-  <data name="fieldUpdatePeriod.Items1" xml:space="preserve">
-    <value>einmal pro Tag</value>
-  </data>
-  <data name="fieldUpdatePeriod.Items2" xml:space="preserve">
-    <value>einmal pro Woche</value>
-  </data>
-  <data name="fieldUpdatePeriod.Items3" xml:space="preserve">
-    <value>einmal pro Monat</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 13</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Letzte Prüfung:</value>
-  </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>Verhalten</value>
   </data>
   <data name="fieldUpdateQuiet.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 96</value>
@@ -483,9 +486,6 @@ automatisch den Posteingang öffnen.</value>
   </data>
   <data name="fieldUpdateService.Text" xml:space="preserve">
     <value>Aktivieren Sie die automatische Überprüfung von Updates</value>
-  </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>Über</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="linkPrivacy.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
