@@ -119,6 +119,11 @@ namespace notifier {
 			help.SetHelpString(fieldPrivacyNotificationNone, Translation.helpPrivacyNotificationNone);
 			help.SetHelpString(fieldPrivacyNotificationShort, Translation.helpPrivacyNotificationShort);
 			help.SetHelpString(fieldPrivacyNotificationAll, Translation.helpPrivacyNotificationAll);
+			help.SetHelpString(fieldScheduler, Translation.helpScheduleService);
+			help.SetHelpString(fieldDayOfWeek, Translation.helpScheduleDayOfWeek);
+			help.SetHelpString(labelDuration, Translation.helpScheduleDuration);
+			help.SetHelpString(fieldStartTime, Translation.helpScheduleStartTime);
+			help.SetHelpString(fieldEndTime, Translation.helpScheduleEndTime);
 			help.SetHelpString(fieldUpdateService, Translation.helpUpdateService);
 			help.SetHelpString(fieldUpdateDownload, Translation.helpUpdateDownload);
 			help.SetHelpString(fieldUpdateQuiet, Translation.helpUpdateQuiet);

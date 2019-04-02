@@ -292,6 +292,51 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Jour de la synchronisation.
+        /// </summary>
+        internal static string helpScheduleDayOfWeek {
+            get {
+                return ResourceManager.GetString("helpScheduleDayOfWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Durée de la synchronisation.
+        /// </summary>
+        internal static string helpScheduleDuration {
+            get {
+                return ResourceManager.GetString("helpScheduleDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Heure de fin de la synchronisation.
+        /// </summary>
+        internal static string helpScheduleEndTime {
+            get {
+                return ResourceManager.GetString("helpScheduleEndTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Active le service de synchronisation planifiée.
+        /// </summary>
+        internal static string helpScheduleService {
+            get {
+                return ResourceManager.GetString("helpScheduleService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Heure de début de la synchronisation.
+        /// </summary>
+        internal static string helpScheduleStartTime {
+            get {
+                return ResourceManager.GetString("helpScheduleStartTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Affiche une notification lors de la réception de courrier indésirable.
         /// </summary>
         internal static string helpSpamNotification {
