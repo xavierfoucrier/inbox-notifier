@@ -17,9 +17,9 @@ namespace notifier {
 		/// <param name="start">Start time of the time slot</param>
 		/// <param name="end">End time of the time slot</param>
 		public TimeSlot(DayOfWeek day, TimeSpan start, TimeSpan end) {
-			this.Day = day;
-			this.Start = start;
-			this.End = end;
+			Day = day;
+			Start = start;
+			End = end;
 		}
 
 		#endregion
