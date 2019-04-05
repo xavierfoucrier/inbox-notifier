@@ -13,13 +13,13 @@ namespace notifier {
 		/// <summary>
 		/// Class constructor
 		/// </summary>
-		/// <param name="Day">Day of the week</param>
-		/// <param name="Start">Start time of the time slot</param>
-		/// <param name="End">End time of the time slot</param>
-		public TimeSlot(DayOfWeek Day, TimeSpan Start, TimeSpan End) {
-			this.Day = Day;
-			this.Start = Start;
-			this.End = End;
+		/// <param name="day">Day of the week</param>
+		/// <param name="start">Start time of the time slot</param>
+		/// <param name="end">End time of the time slot</param>
+		public TimeSlot(DayOfWeek day, TimeSpan start, TimeSpan end) {
+			this.Day = day;
+			this.Start = start;
+			this.End = end;
 		}
 
 		#endregion

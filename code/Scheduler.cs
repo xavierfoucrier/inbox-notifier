@@ -185,19 +185,19 @@ namespace notifier {
 		/// <summary>
 		/// Adds or updates a time slot to the scheduler
 		/// </summary>
-		/// <param name="Day">Day of week</param>
-		/// <param name="Start">Start time of the time slot</param>
-		/// <param name="End">End time of the time slot</param>
-		public void SetTimeSlot(DayOfWeek Day, TimeSpan Start, TimeSpan End) {
+		/// <param name="day">Day of week</param>
+		/// <param name="start">Start time of the time slot</param>
+		/// <param name="end">End time of the time slot</param>
+		public void SetTimeSlot(DayOfWeek day, TimeSpan start, TimeSpan end) {
 			int index = Slots.FindIndex((match) => {
-				return match.Day == Day;
+				return match.Day == day;
 			});
 
 			if (index != -1) {
-				Slots[index].Start = Start;
-				Slots[index].End = End;
+				Slots[index].Start = start;
+				Slots[index].End = end;
 			} else {
-				Slots.Add(new TimeSlot(Day, Start, End));
+				Slots.Add(new TimeSlot(day, start, end));
 			}
 
 			// saves all slots
@@ -207,9 +207,9 @@ namespace notifier {
 		/// <summary>
 		/// Removes a time slot from the list
 		/// </summary>
-		/// <param name="Day">The day for which the time slot is defined</param>
-		public void RemoveTimeSlot(DayOfWeek Day) {
-			TimeSlot slot = GetTimeSlot(Day);
+		/// <param name="day">The day for which the time slot is defined</param>
+		public void RemoveTimeSlot(DayOfWeek day) {
+			TimeSlot slot = GetTimeSlot(day);
 
 			if (slot == null) {
 				return;
