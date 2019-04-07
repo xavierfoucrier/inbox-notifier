@@ -1,6 +1,6 @@
 #define MyAppName "Gmail Notifier"
-#define MyAppVersion "2.1.3.8"
-#define MyAppShortVersion "2.1.8"
+#define MyAppVersion "2.4.3.0"
+#define MyAppShortVersion "2.4"
 #define MyAppPublisher "Xavier Foucrier"
 #define MyAppURL "https://github.com/xavierfoucrier/gmail-notifier"
 #define MyAppExeName "Gmail notifier.exe"
@@ -9,7 +9,7 @@
 AppId={{7E60E047-C79B-49A4-8CF6-B33D5565B2E8}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppCopyright=Copyright 2018 Gmail notifier
+AppCopyright=Copyright 2019 Gmail notifier
 AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}

@@ -9,7 +9,7 @@ using System.Resources;
 [assembly: AssemblyDescription("Notifications of new Gmail messages for Windows platforms")]
 [assembly: AssemblyCompany("Xavier Foucrier")]
 [assembly: AssemblyProduct("Gmail notifier for Windows")]
-[assembly: AssemblyCopyright("Copyright © 2018 Gmail notifier")]
+[assembly: AssemblyCopyright("Copyright © 2019 Gmail notifier")]
 [assembly: AssemblyTrademark("Xavier Foucrier")]
 [assembly: AssemblyCulture("")]
 
@@ -37,6 +37,6 @@ using System.Resources;
 // Vous pouvez spécifier toutes les valeurs ou indiquer les numéros de build et de révision par défaut 
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.1.3.8")]
-[assembly: AssemblyFileVersion("2.1.3.8")]
+[assembly: AssemblyVersion("2.4.3.0")]
+[assembly: AssemblyFileVersion("2.4.3.0")]
 [assembly: NeutralResourcesLanguageAttribute("fr-FR")]

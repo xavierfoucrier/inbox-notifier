@@ -9,6 +9,7 @@ using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using notifier.Languages;
 using notifier.Properties;
+using System.IO;
 
 namespace notifier {
 	class Inbox {
@@ -48,6 +49,13 @@ namespace notifier {
 		/// <param name="manual">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
 		/// <param name="token">Indicates if the Gmail token need to be refreshed</param>
 		public async void Sync(bool manual = true, bool token = false) {
+
+			// prevents the application from syncing the inbox when the scheduler is enabled and the sync is not scheduled
+			if (Settings.Default.Scheduler && !UI.SchedulerService.ScheduledSync()) {
+				UI.SchedulerService.PauseSync();
+
+				return;
+			}
 
 			// prevents the application from syncing the inbox when updating
 			if (UI.UpdateService.Updating) {
@@ -237,12 +245,18 @@ namespace notifier {
 
 				// saves the number of unread threads
 				UnreadThreads = Box.ThreadsUnread;
+			} catch (IOException) {
+				// nothing to catch: IOException from mscorlib
+				// sometimes the process can not access the token response file because it is used by another process
 			} catch (Exception exception) {
 
 				// displays a balloon tip in the systray with the detailed error message
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.syncError;
 				UI.NotificationService.Tip(Translation.error, Translation.syncErrorOccured + exception.Message, Notification.Type.Warning, 1500);
+
+				// logs the error
+				Core.Log("Sync: " + exception.Message);
 			} finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
 			}
@@ -314,6 +328,9 @@ namespace notifier {
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.markAsReadError;
 				UI.NotificationService.Tip(Translation.error, Translation.markAsReadErrorOccured + exception.Message, Notification.Type.Warning, 1500);
+
+				// logs the error
+				Core.Log("MarkAsRead: " + exception.Message);
 			} finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
 			}

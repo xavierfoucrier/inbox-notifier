@@ -33,7 +33,8 @@ namespace notifier {
 		/// </summary>
 		public enum Behavior : uint {
 			DoNothing = 0,
-			Open = 1
+			Open = 1,
+			MarkAsRead = 2
 		}
 
 		/// <summary>
@@ -66,7 +67,7 @@ namespace notifier {
 		/// <summary>
 		/// Do the gmail specified action (inbox/message/spam) in a browser
 		/// </summary>
-		/// <param name="systray">Defines if the interaction is provided by the balloon tip</param>
+		/// <param name="balloon">Defines if the interaction is provided by the balloon tip</param>
 		public void Interaction(bool balloon = false) {
 
 			// by default, always open the gmail inbox in a browser if the interaction is provided by a double click on the systray icon
@@ -96,8 +97,12 @@ namespace notifier {
 				return;
 			}
 
-			// opens a browser
-			Process.Start(Settings.Default.GMAIL_BASEURL + "/" + Tag);
+			// marks the message as read if the notification behavior is set to "mark as read"
+			if (balloon && Settings.Default.NotificationBehavior == (int)Behavior.MarkAsRead) {
+				UI.GmailService.Inbox.MarkAsRead();
+			} else {
+				Process.Start(Settings.Default.GMAIL_BASEURL + "/" + Tag);
+			}
 
 			// cleans the tag
 			Tag = null;

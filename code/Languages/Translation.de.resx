@@ -198,6 +198,21 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   <data name="helpRunAtWindowsStartup" xml:space="preserve">
     <value>Lance Windows starten Sie die Anwendung</value>
   </data>
+  <data name="helpScheduleDayOfWeek" xml:space="preserve">
+    <value>Tag der Synchronisation</value>
+  </data>
+  <data name="helpScheduleDuration" xml:space="preserve">
+    <value>Dauer der Synchronisation</value>
+  </data>
+  <data name="helpScheduleEndTime" xml:space="preserve">
+    <value>Endzeit der Synchronisation</value>
+  </data>
+  <data name="helpScheduleService" xml:space="preserve">
+    <value>Aktiviert den geplanten Synchronisierungsdienst</value>
+  </data>
+  <data name="helpScheduleStartTime" xml:space="preserve">
+    <value>Startzeit der Synchronisation</value>
+  </data>
   <data name="helpSpamNotification" xml:space="preserve">
     <value>Zeigen Sie eine Benachrichtigung, wenn Junk-Mail-Empfang</value>
   </data>
@@ -224,6 +239,9 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   </data>
   <data name="helpUpdateService" xml:space="preserve">
     <value>Aktiviert den automatischen Update-Prüfdienst</value>
+  </data>
+  <data name="hours" xml:space="preserve">
+    <value>Stunde(n)</value>
   </data>
   <data name="latestVersion" xml:space="preserve">
     <value>Sie haben die neueste Version der Anwendung.</value>
@@ -264,7 +282,8 @@ Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
     <value>Keine neuen Beiträge</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
-    <value>Der Versuch, die Verbindung wiederherzustellen ...</value>
+    <value>Offline
+Der Versuch, die Verbindung wiederherzustellen ...</value>
   </data>
   <data name="reconnectFailed" xml:space="preserve">
     <value>Wiederverbindung möglich</value>
@@ -278,8 +297,15 @@ Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>Ein Fehler ist aufgetreten während der Synchronisation des Posteingangs :</value>
   </data>
+  <data name="syncScheduled" xml:space="preserve">
+    <value>Geplante Synchronisation
+am {day} von {start} bis {end}</value>
+  </data>
   <data name="syncTime" xml:space="preserve">
     <value>Aktualisiert um {time}</value>
+  </data>
+  <data name="theday" xml:space="preserve">
+    <value>Der Tag</value>
   </data>
   <data name="timeout" xml:space="preserve">
     <value>Bitte nicht stören</value>

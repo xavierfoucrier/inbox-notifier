@@ -1,6 +1,8 @@
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
+using notifier.Properties;
 
 namespace notifier {
 	static class Core {
@@ -10,22 +12,22 @@ namespace notifier {
 		/// <summary>
 		/// Major version number
 		/// </summary>
-		private static string VersionMajor = "";
+		private static readonly string VersionMajor = "";
 
 		/// <summary>
 		/// Minor version number
 		/// </summary>
-		private static string VersionMinor = "";
+		private static readonly string VersionMinor = "";
 
 		/// <summary>
 		/// Release version number
 		/// </summary>
-		private static string VersionRelease = "";
+		private static readonly string VersionRelease = "";
 
 		/// <summary>
 		/// Build version number
 		/// </summary>
-		private static string VersionBuild = "";
+		private static readonly string VersionBuild = "";
 
 		#endregion
 
@@ -60,6 +62,16 @@ namespace notifier {
 
 			// exits the application
 			Application.Exit();
+		}
+
+		/// <summary>
+		/// Logs a message to the application log file
+		/// </summary>
+		/// <param name="message">Message to log</param>
+		public static void Log(string message) {
+			using (StreamWriter writer = new StreamWriter(ApplicationDataFolder + "/" + Settings.Default.LOG_FILE, true)) {
+				writer.Write(DateTime.Now + " - " + message + Environment.NewLine);
+			}
 		}
 
 		#endregion

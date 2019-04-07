@@ -122,7 +122,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 87</value>
+    <value>194, 108</value>
   </data>
   <data name="linkRestartToApply.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 12</value>
@@ -131,7 +131,7 @@
     <value>Restart now</value>
   </data>
   <data name="labelRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 48</value>
+    <value>90, 74</value>
   </data>
   <data name="labelRestartToApply.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 30</value>
@@ -139,12 +139,6 @@
   <data name="labelRestartToApply.Text" xml:space="preserve">
     <value>This parameter will be considered
 at the next application startup.</value>
-  </data>
-  <data name="fieldLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 22</value>
-  </data>
-  <data name="fieldLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 21</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -218,22 +212,34 @@ at the next application startup.</value>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Behavior</value>
   </data>
+  <data name="labelNotificationMarkMessageAsRead.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 71</value>
+  </data>
+  <data name="labelNotificationMarkMessageAsRead.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 38</value>
+  </data>
+  <data name="labelNotificationMarkMessageAsRead.Text" xml:space="preserve">
+    <value>Upon receipt of multiple messages, this option
+will mark all inbox messages as read.</value>
+  </data>
   <data name="labelNotificationOpenMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 71</value>
+    <value>41, 71</value>
   </data>
   <data name="labelNotificationOpenMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 51</value>
+    <value>206, 39</value>
   </data>
   <data name="labelNotificationOpenMessage.Text" xml:space="preserve">
-    <value>Upon receipt of multiple messages, the
-"Open the message" option will
-automatically open the inbox.</value>
+    <value>Upon receipt of multiple messages, this option
+will automatically open the inbox.</value>
   </data>
   <data name="fieldNotificationBehavior.Items" xml:space="preserve">
     <value>do nothing</value>
   </data>
   <data name="fieldNotificationBehavior.Items1" xml:space="preserve">
     <value>open the message</value>
+  </data>
+  <data name="fieldNotificationBehavior.Items2" xml:space="preserve">
+    <value>mark the message as read</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 13</value>
@@ -298,6 +304,90 @@ automatically open the inbox.</value>
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Display all message content</value>
   </data>
+  <data name="tabPageSchedule.Text" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Time slot</value>
+  </data>
+  <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="labelDuration.Text" xml:space="preserve">
+    <value>The day</value>
+  </data>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 105</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 13</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 105</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Duration:</value>
+  </data>
+  <data name="fieldStartTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 100</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 13</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Day of week:</value>
+  </data>
+  <data name="fieldDayOfWeek.Items" xml:space="preserve">
+    <value>monday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items1" xml:space="preserve">
+    <value>tuesday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items2" xml:space="preserve">
+    <value>wednesday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items3" xml:space="preserve">
+    <value>thursday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items4" xml:space="preserve">
+    <value>friday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items5" xml:space="preserve">
+    <value>saturday</value>
+  </data>
+  <data name="fieldDayOfWeek.Items6" xml:space="preserve">
+    <value>sunday</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
+  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 17</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>Disable automatic updates check</value>
+  </data>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Disable manual synchronization</value>
+  </data>
+  <data name="fieldScheduler.Text" xml:space="preserve">
+    <value>Enable scheduled synchronization</value>
+  </data>
   <data name="tabPageUpdate.Text" xml:space="preserve">
     <value>Updates</value>
   </data>
@@ -353,7 +443,7 @@ automatically open the inbox.</value>
     <value>13, 47</value>
   </data>
   <data name="fieldUpdateDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 30</value>
+    <value>204, 32</value>
   </data>
   <data name="fieldUpdateDownload.Text" xml:space="preserve">
     <value>Download and start installing updates automatically</value>
@@ -361,6 +451,12 @@ automatically open the inbox.</value>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="fieldUpdateService.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="fieldUpdateService.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="fieldUpdateService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 25</value>
   </data>
   <data name="fieldUpdateService.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 17</value>
@@ -388,7 +484,7 @@ automatically open the inbox.</value>
     <value>223, 34</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
-    <value>©2018. All rights reserved.
+    <value>©2019. All rights reserved.
 Open Source, distributed under MIT License</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">

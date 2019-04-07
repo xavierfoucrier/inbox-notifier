@@ -198,6 +198,21 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   <data name="helpRunAtWindowsStartup" xml:space="preserve">
     <value>Lance l'application au démarrage de Windows</value>
   </data>
+  <data name="helpScheduleDayOfWeek" xml:space="preserve">
+    <value>Jour de la synchronisation</value>
+  </data>
+  <data name="helpScheduleDuration" xml:space="preserve">
+    <value>Durée de la synchronisation</value>
+  </data>
+  <data name="helpScheduleEndTime" xml:space="preserve">
+    <value>Heure de fin de la synchronisation</value>
+  </data>
+  <data name="helpScheduleService" xml:space="preserve">
+    <value>Active le service de synchronisation planifiée</value>
+  </data>
+  <data name="helpScheduleStartTime" xml:space="preserve">
+    <value>Heure de début de la synchronisation</value>
+  </data>
   <data name="helpSpamNotification" xml:space="preserve">
     <value>Affiche une notification lors de la réception de courrier indésirable</value>
   </data>
@@ -224,6 +239,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   </data>
   <data name="helpUpdateService" xml:space="preserve">
     <value>Active le service de vérification automatique des mises à jour</value>
+  </data>
+  <data name="hours" xml:space="preserve">
+    <value>heure(s)</value>
   </data>
   <data name="latestVersion" xml:space="preserve">
     <value>Vous disposez de la dernière version de l'application.</value>
@@ -264,7 +282,8 @@ Cette option n'est pas activée sur ce type d'application.</value>
     <value>Pas de nouveau message</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
-    <value>Tentative de reconnexion ...</value>
+    <value>Hors ligne
+Tentative de reconnexion ...</value>
   </data>
   <data name="reconnectFailed" xml:space="preserve">
     <value>La reconnexion a échoué</value>
@@ -278,8 +297,15 @@ Cette option n'est pas activée sur ce type d'application.</value>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>Une erreur est survenue lors de la synchronisation de la boite de réception :</value>
   </data>
+  <data name="syncScheduled" xml:space="preserve">
+    <value>Synchronisation planifiée
+le {day} de {start} à {end}</value>
+  </data>
   <data name="syncTime" xml:space="preserve">
     <value>Mis à jour à {time}</value>
+  </data>
+  <data name="theday" xml:space="preserve">
+    <value>La journée</value>
   </data>
   <data name="timeout" xml:space="preserve">
     <value>Ne pas déranger</value>

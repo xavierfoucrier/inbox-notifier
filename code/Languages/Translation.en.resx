@@ -198,6 +198,21 @@ Do you really want to disconnect your Gmail account and restart the application 
   <data name="helpRunAtWindowsStartup" xml:space="preserve">
     <value>Launch the application on Windows startup</value>
   </data>
+  <data name="helpScheduleDayOfWeek" xml:space="preserve">
+    <value>Synchronization day</value>
+  </data>
+  <data name="helpScheduleDuration" xml:space="preserve">
+    <value>Duration of synchronization</value>
+  </data>
+  <data name="helpScheduleEndTime" xml:space="preserve">
+    <value>End time of synchronization</value>
+  </data>
+  <data name="helpScheduleService" xml:space="preserve">
+    <value>Enables the scheduled synchronization service</value>
+  </data>
+  <data name="helpScheduleStartTime" xml:space="preserve">
+    <value>Start time of synchronization</value>
+  </data>
   <data name="helpSpamNotification" xml:space="preserve">
     <value>Displays a notification when receiving a junk message</value>
   </data>
@@ -224,6 +239,9 @@ Do you really want to disconnect your Gmail account and restart the application 
   </data>
   <data name="helpUpdateService" xml:space="preserve">
     <value>Enables the automatic update check service</value>
+  </data>
+  <data name="hours" xml:space="preserve">
+    <value>hour(s)</value>
   </data>
   <data name="latestVersion" xml:space="preserve">
     <value>You have the latest version of the application.</value>
@@ -264,7 +282,8 @@ This option is not enabled on this type of application.</value>
     <value>No new message</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
-    <value>Attempting to reconnect...</value>
+    <value>Offline
+Attempting to reconnect...</value>
   </data>
   <data name="reconnectFailed" xml:space="preserve">
     <value>Reconnection failed</value>
@@ -278,8 +297,15 @@ This option is not enabled on this type of application.</value>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>An error occurred during the synchronization of the inbox:</value>
   </data>
+  <data name="syncScheduled" xml:space="preserve">
+    <value>Scheduled synchronization
+on {day} from {start} to {end}</value>
+  </data>
   <data name="syncTime" xml:space="preserve">
     <value>Updated at {time}</value>
+  </data>
+  <data name="theday" xml:space="preserve">
+    <value>The day</value>
   </data>
   <data name="timeout" xml:space="preserve">
     <value>Do not disturb</value>
