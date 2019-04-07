@@ -124,7 +124,7 @@ namespace notifier {
 						PowerResume = false;
 						return;
 					}
-	
+
 					// synchronizes the inbox and renew the token
 					UI.GmailService.Inbox.Sync(true, true);
 				}

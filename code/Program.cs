@@ -73,7 +73,7 @@ namespace notifier {
 			// sets some default properties
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			
+
 			// sets the process priority to "low"
 			Process process = Process.GetCurrentProcess();
 			process.PriorityClass = ProcessPriorityClass.BelowNormal;

@@ -98,7 +98,7 @@ namespace notifier {
 						UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
 					}
 				}
-			} catch(IOException) {
+			} catch (IOException) {
 				// nothing to catch: IOException from mscorlib
 				// sometimes the process can not access the token response file because it is used by another process
 			}
@@ -141,7 +141,7 @@ namespace notifier {
 					// returns the user credential
 					return credential;
 				}
-			} catch(Exception exception) {
+			} catch (Exception exception) {
 				Core.Log("AuthorizationBroker: " + exception.Message);
 				return null;
 			}
