@@ -166,7 +166,7 @@ namespace notifier {
 			resources.ApplyResources(this.buttonOK, "buttonOK");
 			this.buttonOK.Name = "buttonOK";
 			this.buttonOK.UseVisualStyleBackColor = true;
-			this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
+			this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
 			// 
 			// tabControl
 			// 
@@ -180,7 +180,7 @@ namespace notifier {
 			resources.ApplyResources(this.tabControl, "tabControl");
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
-			this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabControl_Selecting);
+			this.tabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_Selecting);
 			// 
 			// tabPageGeneral
 			// 
@@ -189,7 +189,7 @@ namespace notifier {
 			resources.ApplyResources(this.tabPageGeneral, "tabPageGeneral");
 			this.tabPageGeneral.Name = "tabPageGeneral";
 			this.tabPageGeneral.UseVisualStyleBackColor = true;
-			this.tabPageGeneral.Enter += new System.EventHandler(this.TabPageGeneral_Enter);
+			this.tabPageGeneral.Enter += new System.EventHandler(this.tabPageGeneral_Enter);
 			// 
 			// groupBox5
 			// 
@@ -211,7 +211,7 @@ namespace notifier {
 			this.linkRestartToApply.Name = "linkRestartToApply";
 			this.linkRestartToApply.TabStop = true;
 			this.linkRestartToApply.VisitedLinkColor = System.Drawing.Color.RoyalBlue;
-			this.linkRestartToApply.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkRestartToApply_LinkClicked);
+			this.linkRestartToApply.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRestartToApply_LinkClicked);
 			// 
 			// labelRestartToApply
 			// 
@@ -231,7 +231,7 @@ namespace notifier {
 			resources.ApplyResources(this.fieldLanguage, "fieldLanguage");
 			this.fieldLanguage.Name = "fieldLanguage";
 			this.fieldLanguage.Text = global::notifier.Properties.Settings.Default.Language;
-			this.fieldLanguage.SelectionChangeCommitted += new System.EventHandler(this.FieldLanguage_SelectionChangeCommitted);
+			this.fieldLanguage.SelectionChangeCommitted += new System.EventHandler(this.fieldLanguage_SelectionChangeCommitted);
 			// 
 			// label3
 			// 
@@ -265,7 +265,7 @@ namespace notifier {
 			this.fieldRunAtWindowsStartup.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "RunAtWindowsStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldRunAtWindowsStartup.Name = "fieldRunAtWindowsStartup";
 			this.fieldRunAtWindowsStartup.UseVisualStyleBackColor = true;
-			this.fieldRunAtWindowsStartup.CheckedChanged += new System.EventHandler(this.FieldRunAtWindowsStartup_CheckedChanged);
+			this.fieldRunAtWindowsStartup.CheckedChanged += new System.EventHandler(this.fieldRunAtWindowsStartup_CheckedChanged);
 			// 
 			// fieldMinimizeToSystray
 			// 
@@ -388,7 +388,7 @@ namespace notifier {
 			resources.ApplyResources(this.buttonGmailDisconnect, "buttonGmailDisconnect");
 			this.buttonGmailDisconnect.Name = "buttonGmailDisconnect";
 			this.buttonGmailDisconnect.UseVisualStyleBackColor = true;
-			this.buttonGmailDisconnect.Click += new System.EventHandler(this.ButtonGmailDisconnect_Click);
+			this.buttonGmailDisconnect.Click += new System.EventHandler(this.buttonGmailDisconnect_Click);
 			// 
 			// tabPageNotification
 			// 
@@ -434,7 +434,7 @@ namespace notifier {
             resources.GetString("fieldNotificationBehavior.Items2")});
 			resources.ApplyResources(this.fieldNotificationBehavior, "fieldNotificationBehavior");
 			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
-			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.FieldNotificationBehavior_SelectionChangeCommitted);
+			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.fieldNotificationBehavior_SelectionChangeCommitted);
 			// 
 			// label9
 			// 
@@ -464,7 +464,7 @@ namespace notifier {
             resources.GetString("fieldStepDelay.Items1")});
 			resources.ApplyResources(this.fieldStepDelay, "fieldStepDelay");
 			this.fieldStepDelay.Name = "fieldStepDelay";
-			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.FieldStepDelay_SelectionChangeCommitted);
+			this.fieldStepDelay.SelectionChangeCommitted += new System.EventHandler(this.fieldStepDelay_SelectionChangeCommitted);
 			// 
 			// fieldSpamNotification
 			// 
@@ -474,7 +474,7 @@ namespace notifier {
 			this.fieldSpamNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "SpamNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldSpamNotification.Name = "fieldSpamNotification";
 			this.fieldSpamNotification.UseVisualStyleBackColor = true;
-			this.fieldSpamNotification.Click += new System.EventHandler(this.FieldSpamNotification_Click);
+			this.fieldSpamNotification.Click += new System.EventHandler(this.fieldSpamNotification_Click);
 			// 
 			// label1
 			// 
@@ -492,7 +492,7 @@ namespace notifier {
             0});
 			this.fieldNumericDelay.Name = "fieldNumericDelay";
 			this.fieldNumericDelay.Value = global::notifier.Properties.Settings.Default.NumericDelay;
-			this.fieldNumericDelay.ValueChanged += new System.EventHandler(this.FieldNumericDelay_ValueChanged);
+			this.fieldNumericDelay.ValueChanged += new System.EventHandler(this.fieldNumericDelay_ValueChanged);
 			// 
 			// fieldMessageNotification
 			// 
@@ -550,7 +550,7 @@ namespace notifier {
 			this.fieldPrivacyNotificationAll.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
 			this.fieldPrivacyNotificationAll.Name = "fieldPrivacyNotificationAll";
 			this.fieldPrivacyNotificationAll.UseVisualStyleBackColor = true;
-			this.fieldPrivacyNotificationAll.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationAll_CheckedChanged);
+			this.fieldPrivacyNotificationAll.CheckedChanged += new System.EventHandler(this.fieldPrivacyNotificationAll_CheckedChanged);
 			// 
 			// fieldPrivacyNotificationShort
 			// 
@@ -561,7 +561,7 @@ namespace notifier {
 			this.fieldPrivacyNotificationShort.Name = "fieldPrivacyNotificationShort";
 			this.fieldPrivacyNotificationShort.TabStop = true;
 			this.fieldPrivacyNotificationShort.UseVisualStyleBackColor = true;
-			this.fieldPrivacyNotificationShort.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationShort_CheckedChanged);
+			this.fieldPrivacyNotificationShort.CheckedChanged += new System.EventHandler(this.fieldPrivacyNotificationShort_CheckedChanged);
 			// 
 			// fieldPrivacyNotificationNone
 			// 
@@ -570,7 +570,7 @@ namespace notifier {
 			this.fieldPrivacyNotificationNone.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
 			this.fieldPrivacyNotificationNone.Name = "fieldPrivacyNotificationNone";
 			this.fieldPrivacyNotificationNone.UseVisualStyleBackColor = true;
-			this.fieldPrivacyNotificationNone.CheckedChanged += new System.EventHandler(this.FieldPrivacyNotificationNone_CheckedChanged);
+			this.fieldPrivacyNotificationNone.CheckedChanged += new System.EventHandler(this.fieldPrivacyNotificationNone_CheckedChanged);
 			// 
 			// tabPageSchedule
 			// 
@@ -646,7 +646,7 @@ namespace notifier {
             resources.GetString("fieldEndTime.Items15")});
 			resources.ApplyResources(this.fieldEndTime, "fieldEndTime");
 			this.fieldEndTime.Name = "fieldEndTime";
-			this.fieldEndTime.SelectionChangeCommitted += new System.EventHandler(this.FieldEndTime_SelectionChangeCommitted);
+			this.fieldEndTime.SelectionChangeCommitted += new System.EventHandler(this.fieldEndTime_SelectionChangeCommitted);
 			// 
 			// fieldStartTime
 			// 
@@ -673,7 +673,7 @@ namespace notifier {
             resources.GetString("fieldStartTime.Items15")});
 			resources.ApplyResources(this.fieldStartTime, "fieldStartTime");
 			this.fieldStartTime.Name = "fieldStartTime";
-			this.fieldStartTime.SelectionChangeCommitted += new System.EventHandler(this.FieldStartTime_SelectionChangeCommitted);
+			this.fieldStartTime.SelectionChangeCommitted += new System.EventHandler(this.fieldStartTime_SelectionChangeCommitted);
 			// 
 			// label10
 			// 
@@ -698,8 +698,8 @@ namespace notifier {
             resources.GetString("fieldDayOfWeek.Items6")});
 			resources.ApplyResources(this.fieldDayOfWeek, "fieldDayOfWeek");
 			this.fieldDayOfWeek.Name = "fieldDayOfWeek";
-			this.fieldDayOfWeek.SelectedIndexChanged += new System.EventHandler(this.FieldDayOfWeek_SelectedIndexChanged);
-			this.fieldDayOfWeek.SelectionChangeCommitted += new System.EventHandler(this.FieldDayOfWeek_SelectionChangeCommitted);
+			this.fieldDayOfWeek.SelectedIndexChanged += new System.EventHandler(this.fieldDayOfWeek_SelectedIndexChanged);
+			this.fieldDayOfWeek.SelectionChangeCommitted += new System.EventHandler(this.fieldDayOfWeek_SelectionChangeCommitted);
 			// 
 			// groupBox10
 			// 
@@ -733,7 +733,7 @@ namespace notifier {
 			this.fieldScheduler.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "Scheduler", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldScheduler.Name = "fieldScheduler";
 			this.fieldScheduler.UseVisualStyleBackColor = true;
-			this.fieldScheduler.Click += new System.EventHandler(this.FieldScheduler_Click);
+			this.fieldScheduler.Click += new System.EventHandler(this.fieldScheduler_Click);
 			// 
 			// tabPageUpdate
 			// 
@@ -759,7 +759,7 @@ namespace notifier {
 			resources.ApplyResources(this.buttonCheckForUpdate, "buttonCheckForUpdate");
 			this.buttonCheckForUpdate.Name = "buttonCheckForUpdate";
 			this.buttonCheckForUpdate.UseVisualStyleBackColor = true;
-			this.buttonCheckForUpdate.Click += new System.EventHandler(this.ButtonCheckForUpdate_Click);
+			this.buttonCheckForUpdate.Click += new System.EventHandler(this.buttonCheckForUpdate_Click);
 			// 
 			// label7
 			// 
@@ -781,7 +781,7 @@ namespace notifier {
             resources.GetString("fieldUpdatePeriod.Items3")});
 			resources.ApplyResources(this.fieldUpdatePeriod, "fieldUpdatePeriod");
 			this.fieldUpdatePeriod.Name = "fieldUpdatePeriod";
-			this.fieldUpdatePeriod.SelectedIndexChanged += new System.EventHandler(this.FieldUpdatePeriod_SelectedIndexChanged);
+			this.fieldUpdatePeriod.SelectedIndexChanged += new System.EventHandler(this.fieldUpdatePeriod_SelectedIndexChanged);
 			// 
 			// labelUpdateControl
 			// 
@@ -858,7 +858,7 @@ namespace notifier {
 			this.linkVersion.Name = "linkVersion";
 			this.linkVersion.TabStop = true;
 			this.linkVersion.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
-			this.linkVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkVersion_LinkClicked);
+			this.linkVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkVersion_LinkClicked);
 			// 
 			// linkPrivacy
 			// 
@@ -870,7 +870,7 @@ namespace notifier {
 			this.linkPrivacy.TabStop = true;
 			this.linkPrivacy.UseCompatibleTextRendering = true;
 			this.linkPrivacy.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
-			this.linkPrivacy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkPrivacy_LinkClicked);
+			this.linkPrivacy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPrivacy_LinkClicked);
 			// 
 			// linkLicense
 			// 
@@ -882,7 +882,7 @@ namespace notifier {
 			this.linkLicense.TabStop = true;
 			this.linkLicense.UseCompatibleTextRendering = true;
 			this.linkLicense.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
-			this.linkLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLicense_LinkClicked);
+			this.linkLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLicense_LinkClicked);
 			// 
 			// linkWebsiteXavier
 			// 
@@ -894,7 +894,7 @@ namespace notifier {
 			this.linkWebsiteXavier.TabStop = true;
 			this.linkWebsiteXavier.UseCompatibleTextRendering = true;
 			this.linkWebsiteXavier.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
-			this.linkWebsiteXavier.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkWebsiteXavier_LinkClicked);
+			this.linkWebsiteXavier.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsiteXavier_LinkClicked);
 			// 
 			// linkWebsiteYusuke
 			// 
@@ -906,7 +906,7 @@ namespace notifier {
 			this.linkWebsiteYusuke.TabStop = true;
 			this.linkWebsiteYusuke.UseCompatibleTextRendering = true;
 			this.linkWebsiteYusuke.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
-			this.linkWebsiteYusuke.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkWebsiteYusuke_LinkClicked);
+			this.linkWebsiteYusuke.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsiteYusuke_LinkClicked);
 			// 
 			// label11
 			// 
@@ -937,8 +937,8 @@ namespace notifier {
 			// notifyIcon
 			// 
 			resources.ApplyResources(this.notifyIcon, "notifyIcon");
-			this.notifyIcon.BalloonTipClicked += new System.EventHandler(this.NotifyIcon_BalloonTipClicked);
-			this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseDoubleClick);
+			this.notifyIcon.BalloonTipClicked += new System.EventHandler(this.notifyIcon_BalloonTipClicked);
+			this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
 			// 
 			// pictureBoxHeader
 			// 
@@ -963,7 +963,7 @@ namespace notifier {
 			// 
 			this.menuItemNewMessage.Index = 0;
 			resources.ApplyResources(this.menuItemNewMessage, "menuItemNewMessage");
-			this.menuItemNewMessage.Click += new System.EventHandler(this.MenuItemNewMessage_Click);
+			this.menuItemNewMessage.Click += new System.EventHandler(this.menuItemNewMessage_Click);
 			// 
 			// menuItem4
 			// 
@@ -974,13 +974,13 @@ namespace notifier {
 			// 
 			resources.ApplyResources(this.menuItemSynchronize, "menuItemSynchronize");
 			this.menuItemSynchronize.Index = 2;
-			this.menuItemSynchronize.Click += new System.EventHandler(this.MenuItemSynchronize_Click);
+			this.menuItemSynchronize.Click += new System.EventHandler(this.menuItemSynchronize_Click);
 			// 
 			// menuItemMarkAsRead
 			// 
 			resources.ApplyResources(this.menuItemMarkAsRead, "menuItemMarkAsRead");
 			this.menuItemMarkAsRead.Index = 3;
-			this.menuItemMarkAsRead.Click += new System.EventHandler(this.MenuItemMarkAsRead_Click);
+			this.menuItemMarkAsRead.Click += new System.EventHandler(this.menuItemMarkAsRead_Click);
 			// 
 			// menuItemTimout
 			// 
@@ -1001,7 +1001,7 @@ namespace notifier {
 			this.menuItemTimeoutDisabled.Index = 0;
 			this.menuItemTimeoutDisabled.RadioCheck = true;
 			resources.ApplyResources(this.menuItemTimeoutDisabled, "menuItemTimeoutDisabled");
-			this.menuItemTimeoutDisabled.Click += new System.EventHandler(this.MenuItemTimeoutDisabled_Click);
+			this.menuItemTimeoutDisabled.Click += new System.EventHandler(this.menuItemTimeoutDisabled_Click);
 			// 
 			// menuItem1
 			// 
@@ -1013,41 +1013,41 @@ namespace notifier {
 			this.menuItemTimeout30m.Index = 2;
 			this.menuItemTimeout30m.RadioCheck = true;
 			resources.ApplyResources(this.menuItemTimeout30m, "menuItemTimeout30m");
-			this.menuItemTimeout30m.Click += new System.EventHandler(this.MenuItemTimeout30m_Click);
+			this.menuItemTimeout30m.Click += new System.EventHandler(this.menuItemTimeout30m_Click);
 			// 
 			// menuItemTimeout1h
 			// 
 			this.menuItemTimeout1h.Index = 3;
 			this.menuItemTimeout1h.RadioCheck = true;
 			resources.ApplyResources(this.menuItemTimeout1h, "menuItemTimeout1h");
-			this.menuItemTimeout1h.Click += new System.EventHandler(this.MenuItemTimeout1h_Click);
+			this.menuItemTimeout1h.Click += new System.EventHandler(this.menuItemTimeout1h_Click);
 			// 
 			// menuItemTimeout2h
 			// 
 			this.menuItemTimeout2h.Index = 4;
 			this.menuItemTimeout2h.RadioCheck = true;
 			resources.ApplyResources(this.menuItemTimeout2h, "menuItemTimeout2h");
-			this.menuItemTimeout2h.Click += new System.EventHandler(this.MenuItemTimeout2h_Click);
+			this.menuItemTimeout2h.Click += new System.EventHandler(this.menuItemTimeout2h_Click);
 			// 
 			// menuItemTimeout5h
 			// 
 			this.menuItemTimeout5h.Index = 5;
 			this.menuItemTimeout5h.RadioCheck = true;
 			resources.ApplyResources(this.menuItemTimeout5h, "menuItemTimeout5h");
-			this.menuItemTimeout5h.Click += new System.EventHandler(this.MenuItemTimeout5h_Click);
+			this.menuItemTimeout5h.Click += new System.EventHandler(this.menuItemTimeout5h_Click);
 			// 
 			// menuItemTimeoutIndefinitely
 			// 
 			this.menuItemTimeoutIndefinitely.Index = 6;
 			resources.ApplyResources(this.menuItemTimeoutIndefinitely, "menuItemTimeoutIndefinitely");
-			this.menuItemTimeoutIndefinitely.Click += new System.EventHandler(this.MenuItemTimeoutIndefinitely_Click);
+			this.menuItemTimeoutIndefinitely.Click += new System.EventHandler(this.menuItemTimeoutIndefinitely_Click);
 			// 
 			// menuItemSettings
 			// 
 			this.menuItemSettings.DefaultItem = true;
 			resources.ApplyResources(this.menuItemSettings, "menuItemSettings");
 			this.menuItemSettings.Index = 5;
-			this.menuItemSettings.Click += new System.EventHandler(this.MenuItemSettings_Click);
+			this.menuItemSettings.Click += new System.EventHandler(this.menuItemSettings_Click);
 			// 
 			// menuItem2
 			// 
@@ -1058,17 +1058,17 @@ namespace notifier {
 			// 
 			this.menuItemExit.Index = 7;
 			resources.ApplyResources(this.menuItemExit, "menuItemExit");
-			this.menuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
+			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
 			// 
 			// timerReconnect
 			// 
-			this.timerReconnect.Tick += new System.EventHandler(this.TimerReconnect_Tick);
+			this.timerReconnect.Tick += new System.EventHandler(this.timerReconnect_Tick);
 			// 
 			// timer
 			// 
 			this.timer.Enabled = true;
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
-			this.timer.Tick += new System.EventHandler(this.Timer_Tick);
+			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
 			// Main
 			// 
@@ -1089,7 +1089,7 @@ namespace notifier {
 			this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
 			this.Load += new System.EventHandler(this.Main_Load);
-			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Main_KeyUp);
+			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.main_KeyUp);
 			this.tabControl.ResumeLayout(false);
 			this.tabPageGeneral.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);

@@ -233,14 +233,14 @@ namespace notifier {
 		/// <summary>
 		/// Manages the RunAtWindowsStartup user setting
 		/// </summary>
-		private void FieldRunAtWindowsStartup_CheckedChanged(object sender, EventArgs e) {
+		private void fieldRunAtWindowsStartup_CheckedChanged(object sender, EventArgs e) {
 			ComputerService.SetApplicationStartup(fieldRunAtWindowsStartup.Checked ? Computer.Registration.On : Computer.Registration.Off);
 		}
 
 		/// <summary>
 		/// Manages the Language user setting
 		/// </summary>
-		private void FieldLanguage_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void fieldLanguage_SelectionChangeCommitted(object sender, EventArgs e) {
 
 			// discard changes if the user select the current application language
 			if (fieldLanguage.Text == Settings.Default.Language) {
@@ -263,14 +263,14 @@ namespace notifier {
 		/// <summary>
 		/// Manages the SpamNotification user setting
 		/// </summary>
-		private void FieldSpamNotification_Click(object sender, EventArgs e) {
+		private void fieldSpamNotification_Click(object sender, EventArgs e) {
 			GmailService.Inbox.Sync();
 		}
 
 		/// <summary>
 		/// Manages the NumericDelay user setting
 		/// </summary>
-		private void FieldNumericDelay_ValueChanged(object sender, EventArgs e) {
+		private void fieldNumericDelay_ValueChanged(object sender, EventArgs e) {
 			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * (int)fieldNumericDelay.Value;
 			Settings.Default.NumericDelay = fieldNumericDelay.Value;
 			timer.Interval = (int)Settings.Default.TimerInterval;
@@ -279,7 +279,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the StepDelay user setting
 		/// </summary>
-		private void FieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void fieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
 			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * (int)fieldNumericDelay.Value;
 			Settings.Default.StepDelay = (uint)fieldStepDelay.SelectedIndex;
 			timer.Interval = (int)Settings.Default.TimerInterval;
@@ -288,7 +288,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the NotificationBehavior user setting
 		/// </summary>
-		private void FieldNotificationBehavior_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void fieldNotificationBehavior_SelectionChangeCommitted(object sender, EventArgs e) {
 			Settings.Default.NotificationBehavior = (uint)fieldNotificationBehavior.SelectedIndex;
 			labelNotificationOpenMessage.Visible = Settings.Default.NotificationBehavior == 1;
 			labelNotificationMarkMessageAsRead.Visible = Settings.Default.NotificationBehavior == 2;
@@ -297,7 +297,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the PrivacyNotificationNone user setting
 		/// </summary>
-		private void FieldPrivacyNotificationNone_CheckedChanged(object sender, EventArgs e) {
+		private void fieldPrivacyNotificationNone_CheckedChanged(object sender, EventArgs e) {
 			Settings.Default.PrivacyNotification = (int)Notification.Privacy.None;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_none;
 		}
@@ -305,7 +305,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the PrivacyNotificationShort user setting
 		/// </summary>
-		private void FieldPrivacyNotificationShort_CheckedChanged(object sender, EventArgs e) {
+		private void fieldPrivacyNotificationShort_CheckedChanged(object sender, EventArgs e) {
 			Settings.Default.PrivacyNotification = (int)Notification.Privacy.Short;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_short;
 		}
@@ -313,7 +313,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the PrivacyNotificationAll user setting
 		/// </summary>
-		private void FieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
+		private void fieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
 			Settings.Default.PrivacyNotification = (int)Notification.Privacy.All;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_all;
 		}
@@ -321,56 +321,56 @@ namespace notifier {
 		/// <summary>
 		/// Manages the UpdatePeriod user setting
 		/// </summary>
-		private void FieldUpdatePeriod_SelectedIndexChanged(object sender, EventArgs e) {
+		private void fieldUpdatePeriod_SelectedIndexChanged(object sender, EventArgs e) {
 			Settings.Default.UpdatePeriod = (uint)fieldUpdatePeriod.SelectedIndex;
 		}
 
 		/// <summary>
 		/// Opens the Github release section of the current build
 		/// </summary>
-		private void LinkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void linkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.Version);
 		}
 
 		/// <summary>
 		/// Opens the Github privacy notice file
 		/// </summary>
-		private void LinkPrivacy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void linkPrivacy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/blob/master/PRIVACY.md");
 		}
 
 		/// <summary>
 		/// Opens the Yusuke website
 		/// </summary>
-		private void LinkWebsiteYusuke_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void linkWebsiteYusuke_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start(Settings.Default.SITE_YUSUKE);
 		}
 
 		/// <summary>
 		/// Opens the Xavier website
 		/// </summary>
-		private void LinkWebsiteXavier_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void linkWebsiteXavier_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start(Settings.Default.SITE_AUTHOR);
 		}
 
 		/// <summary>
 		/// Opens the Github license file
 		/// </summary>
-		private void LinkLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void linkLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
 		}
 
 		/// <summary>
 		/// Hides the settings saved label
 		/// </summary>
-		private void TabControl_Selecting(object sender, TabControlCancelEventArgs e) {
+		private void tabControl_Selecting(object sender, TabControlCancelEventArgs e) {
 			labelSettingsSaved.Visible = false;
 		}
 
 		/// <summary>
 		/// Closes the preferences when the OK button is clicked
 		/// </summary>
-		private void ButtonOK_Click(object sender, EventArgs e) {
+		private void buttonOK_Click(object sender, EventArgs e) {
 			labelSettingsSaved.Visible = false;
 			WindowState = FormWindowState.Minimized;
 			ShowInTaskbar = false;
@@ -380,7 +380,7 @@ namespace notifier {
 		/// <summary>
 		/// Closes the preferences when the Escape key is pressed
 		/// </summary>
-		private void Main_KeyUp(object sender, KeyEventArgs e) {
+		private void main_KeyUp(object sender, KeyEventArgs e) {
 			if (e.KeyCode != Keys.Escape) {
 				return;
 			}
@@ -394,70 +394,70 @@ namespace notifier {
 		/// <summary>
 		/// Manages the context menu New message item
 		/// </summary>
-		private void MenuItemNewMessage_Click(object sender, EventArgs e) {
+		private void menuItemNewMessage_Click(object sender, EventArgs e) {
 			Process.Start(Settings.Default.GMAIL_BASEURL + "/#inbox?compose=new");
 		}
 
 		/// <summary>
 		/// Manages the context menu Synchronize item
 		/// </summary>
-		private void MenuItemSynchronize_Click(object sender, EventArgs e) {
+		private void menuItemSynchronize_Click(object sender, EventArgs e) {
 			GmailService.Inbox.Sync();
 		}
 
 		/// <summary>
 		/// Manages the context menu MarkAsRead item
 		/// </summary>
-		private void MenuItemMarkAsRead_Click(object sender, EventArgs e) {
+		private void menuItemMarkAsRead_Click(object sender, EventArgs e) {
 			GmailService.Inbox.MarkAsRead();
 		}
 
 		/// <summary>
 		/// Manages the context menu TimeoutDisabled item
 		/// </summary>
-		private void MenuItemTimeoutDisabled_Click(object sender, EventArgs e) {
+		private void menuItemTimeoutDisabled_Click(object sender, EventArgs e) {
 			NotificationService.Resume();
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout30m item
 		/// </summary>
-		private void MenuItemTimeout30m_Click(object sender, EventArgs e) {
+		private void menuItemTimeout30m_Click(object sender, EventArgs e) {
 			NotificationService.Pause((MenuItem)sender, 1000 * 60 * 30);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout1h item
 		/// </summary>
-		private void MenuItemTimeout1h_Click(object sender, EventArgs e) {
+		private void menuItemTimeout1h_Click(object sender, EventArgs e) {
 			NotificationService.Pause((MenuItem)sender, 1000 * 60 * 60);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout2h item
 		/// </summary>
-		private void MenuItemTimeout2h_Click(object sender, EventArgs e) {
+		private void menuItemTimeout2h_Click(object sender, EventArgs e) {
 			NotificationService.Pause((MenuItem)sender, 1000 * 60 * 60 * 2);
 		}
 
 		/// <summary>
 		/// Manages the context menu Timeout5h item
 		/// </summary>
-		private void MenuItemTimeout5h_Click(object sender, EventArgs e) {
+		private void menuItemTimeout5h_Click(object sender, EventArgs e) {
 			NotificationService.Pause((MenuItem)sender, 1000 * 60 * 60 * 5);
 		}
 
 		/// <summary>
 		/// Manages the context menu TimeoutIndefinitely item
 		/// </summary>
-		private void MenuItemTimeoutIndefinitely_Click(object sender, EventArgs e) {
+		private void menuItemTimeoutIndefinitely_Click(object sender, EventArgs e) {
 			NotificationService.Pause((MenuItem)sender, 0);
 		}
 
 		/// <summary>
 		/// Manages the context menu Settings item
 		/// </summary>
-		private void MenuItemSettings_Click(object sender, EventArgs e) {
+		private void menuItemSettings_Click(object sender, EventArgs e) {
 
 			// resets the settings label visibility
 			labelSettingsSaved.Visible = false;
@@ -477,7 +477,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the context menu exit item
 		/// </summary>
-		private void MenuItemExit_Click(object sender, EventArgs e) {
+		private void menuItemExit_Click(object sender, EventArgs e) {
 
 			// asks the user for exit, depending on the application settings
 			if (Settings.Default.AskonExit) {
@@ -494,7 +494,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the systray icon double click
 		/// </summary>
-		private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
+		private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
 			if (e.Button == MouseButtons.Left) {
 				NotificationService.Interaction();
 			}
@@ -503,7 +503,7 @@ namespace notifier {
 		/// <summary>
 		/// Manages the systray icon balloon click
 		/// </summary>
-		private void NotifyIcon_BalloonTipClicked(object sender, EventArgs e) {
+		private void notifyIcon_BalloonTipClicked(object sender, EventArgs e) {
 			if ((Control.MouseButtons & MouseButtons.Right) == MouseButtons.Right) {
 				return;
 			}
@@ -514,7 +514,7 @@ namespace notifier {
 		/// <summary>
 		/// Synchronizes the user mailbox on every timer tick
 		/// </summary>
-		private void Timer_Tick(object sender, EventArgs e) {
+		private void timer_Tick(object sender, EventArgs e) {
 
 			// restores the timer interval when the timeout time has elapsed
 			if (NotificationService.Paused) {
@@ -530,7 +530,7 @@ namespace notifier {
 		/// <summary>
 		/// Disconnects the Gmail account from the application
 		/// </summary>
-		private void ButtonGmailDisconnect_Click(object sender, EventArgs e) {
+		private void buttonGmailDisconnect_Click(object sender, EventArgs e) {
 
 			// asks the user for disconnect
 			DialogResult dialog = MessageBox.Show(Translation.gmailDisconnectQuestion.Replace("{account_name}", labelEmailAddress.Text), Translation.gmailDisconnect, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -551,19 +551,19 @@ namespace notifier {
 		/// <summary>
 		/// Restarts the application to apply new user settings
 		/// </summary>
-		private void LinkRestartToApply_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+		private void linkRestartToApply_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			Core.RestartApplication();
 		}
 
 		// attempts to reconnect the user mailbox
-		private void TimerReconnect_Tick(object sender, EventArgs e) {
+		private void timerReconnect_Tick(object sender, EventArgs e) {
 			GmailService.Inbox.Retry();
 		}
 
 		/// <summary>
 		/// Check for update
 		/// </summary>
-		private void ButtonCheckForUpdate_Click(object sender, EventArgs e) {
+		private void buttonCheckForUpdate_Click(object sender, EventArgs e) {
 			buttonCheckForUpdate.Enabled = false;
 
 			if (UpdateService.UpdateAvailable) {
@@ -579,42 +579,42 @@ namespace notifier {
 		/// <summary>
 		/// Checks the start with Windows setting against the registry when entering the general tab page
 		/// </summary>
-		private void TabPageGeneral_Enter(object sender, EventArgs e) {
+		private void tabPageGeneral_Enter(object sender, EventArgs e) {
 			ComputerService.RegulatesRegistry();
 		}
 
 		/// <summary>
 		/// Manages the DayOfWeek user setting
 		/// </summary>
-		private void FieldDayOfWeek_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void fieldDayOfWeek_SelectionChangeCommitted(object sender, EventArgs e) {
 			SchedulerService.DisplayTimeSlotProperties(SchedulerService.GetTimeSlot(SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex)));
 		}
 
 		/// <summary>
 		/// Hides the settings saved label
 		/// </summary>
-		private void FieldDayOfWeek_SelectedIndexChanged(object sender, EventArgs e) {
+		private void fieldDayOfWeek_SelectedIndexChanged(object sender, EventArgs e) {
 			labelSettingsSaved.Visible = false;
 		}
 
 		/// <summary>
 		/// Manages the fieldStartTime user setting
 		/// </summary>
-		private void FieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void fieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
 			SchedulerService.Update(Scheduler.TimeType.Start);
 		}
 
 		/// <summary>
 		/// Manages the fieldEndTime user setting
 		/// </summary>
-		private void FieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
+		private void fieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
 			SchedulerService.Update(Scheduler.TimeType.End);
 		}
 
 		/// <summary>
 		/// Synchronizes the inbox if the scheduler is enable or disable and if the selected day of week is today
 		/// </summary>
-		private void FieldScheduler_Click(object sender, EventArgs e) {
+		private void fieldScheduler_Click(object sender, EventArgs e) {
 			if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
 				GmailService.Inbox.Sync();
 			}
