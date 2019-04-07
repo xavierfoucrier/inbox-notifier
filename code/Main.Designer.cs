@@ -203,20 +203,20 @@ namespace notifier {
 			// 
 			// linkRestartToApply
 			// 
-			this.linkRestartToApply.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
+			this.linkRestartToApply.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			resources.ApplyResources(this.linkRestartToApply, "linkRestartToApply");
 			this.linkRestartToApply.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkRestartToApply.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
 			this.linkRestartToApply.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkRestartToApply.Name = "linkRestartToApply";
 			this.linkRestartToApply.TabStop = true;
-			this.linkRestartToApply.VisitedLinkColor = System.Drawing.Color.RoyalBlue;
+			this.linkRestartToApply.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
 			this.linkRestartToApply.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRestartToApply_LinkClicked);
 			// 
 			// labelRestartToApply
 			// 
 			resources.ApplyResources(this.labelRestartToApply, "labelRestartToApply");
-			this.labelRestartToApply.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.labelRestartToApply.ForeColor = System.Drawing.Color.SlateGray;
 			this.labelRestartToApply.Image = global::notifier.Properties.Resources.information;
 			this.labelRestartToApply.Name = "labelRestartToApply";
 			// 
@@ -411,14 +411,14 @@ namespace notifier {
 			// labelNotificationMarkMessageAsRead
 			// 
 			resources.ApplyResources(this.labelNotificationMarkMessageAsRead, "labelNotificationMarkMessageAsRead");
-			this.labelNotificationMarkMessageAsRead.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.labelNotificationMarkMessageAsRead.ForeColor = System.Drawing.Color.SlateGray;
 			this.labelNotificationMarkMessageAsRead.Image = global::notifier.Properties.Resources.information;
 			this.labelNotificationMarkMessageAsRead.Name = "labelNotificationMarkMessageAsRead";
 			// 
 			// labelNotificationOpenMessage
 			// 
 			resources.ApplyResources(this.labelNotificationOpenMessage, "labelNotificationOpenMessage");
-			this.labelNotificationOpenMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.labelNotificationOpenMessage.ForeColor = System.Drawing.Color.SlateGray;
 			this.labelNotificationOpenMessage.Image = global::notifier.Properties.Resources.information;
 			this.labelNotificationOpenMessage.Name = "labelNotificationOpenMessage";
 			// 
