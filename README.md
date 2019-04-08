@@ -37,7 +37,7 @@ If you want to report a bug or if you just want to request for a new feature/imp
 
 
 ## Softpedia award certification
-This product was last tested in the **Softpedia Labs** on **November 5, 2018** by *Alexandra Sava*.
+This product was last tested in the **Softpedia Labs** on **April 7th, 2019** by *Mihaela Teodorovici*.
 
 Softpedia guarantees that Gmail notifier is **100% Free**, which means it does not contain any form of malware, including but not limited to: spyware, viruses, trojans and backdoors. This software product was tested thoroughly and was found **absolutely clean**; therefore, it can be installed with no concern by any computer user. However, it should be noted that this product will be retested periodically and the award may be withdrawn, so you should check back occasionally and pay attention to the date of testing shown above.
 
