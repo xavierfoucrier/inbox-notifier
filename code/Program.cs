@@ -23,7 +23,7 @@ namespace notifier {
 		[STAThread]
 		static void Main(string[] args) {
 
-			// initializes the configuration file with setup installer settings
+			// initialize the configuration file with setup installer settings
 			if (args.Length == 3 && args[0] == "install") {
 
 				// language application setting
@@ -43,13 +43,13 @@ namespace notifier {
 				// start with Windows setting
 				Settings.Default.RunAtWindowsStartup = args[2] == "auto";
 
-				// commits changes to the configuration file
+				// commit changes to the configuration file
 				Settings.Default.Save();
 
 				return;
 			}
 
-			// initializes the interface with the specified culture, depending on the user settings
+			// initialize the interface with the specified culture, depending on the user settings
 			switch (Settings.Default.Language) {
 				default:
 				case "English":
@@ -70,18 +70,18 @@ namespace notifier {
 				return;
 			}
 
-			// sets some default properties
+			// set some default properties
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
-			// sets the process priority to "low"
+			// set the process priority to "low"
 			Process process = Process.GetCurrentProcess();
 			process.PriorityClass = ProcessPriorityClass.BelowNormal;
 
 			// run the main window
 			Application.Run(new Main());
 
-			// releases the mutex instance
+			// release the mutex instance
 			Mutex.ReleaseMutex();
 		}
 

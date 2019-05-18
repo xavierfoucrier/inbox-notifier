@@ -42,7 +42,7 @@ namespace notifier {
 		/// </summary>
 		public async void Authentication() {
 
-			// displays the authentication icon and text if the google api token file doesn't exists
+			// display the authentication icon and text if the google api token file doesn't exists
 			if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {
 				UI.notifyIcon.Icon = Resources.authentication;
 				UI.notifyIcon.Text = Translation.authenticationNeeded;
@@ -50,34 +50,34 @@ namespace notifier {
 
 			try {
 
-				// waits for the user authorization
+				// wait for the user authorization
 				Credential = await AuthorizationBroker();
 
-				// instanciates a new inbox
+				// instanciate a new inbox
 				Inbox = new Inbox(ref UI);
 
-				// gets the token delivery time
+				// get the token delivery time
 				UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
 			} catch (Exception exception) {
 
-				// logs the error
+				// log the error
 				Core.Log("Authentication: " + exception.Message);
 
-				// exits the application if the google api token file doesn't exists
+				// exit the application if the google api token file doesn't exists
 				if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {
 
-					// displays the authentication failure icon and text
+					// display the authentication failure icon and text
 					UI.notifyIcon.Icon = Resources.warning;
 					UI.notifyIcon.Text = Translation.authenticationFailed;
 
-					// exits the application
+					// exit the application
 					MessageBox.Show(Translation.authenticationWithGmailRefused, Translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					Application.Exit();
 					return;
 				}
 			}
 
-			// synchronizes the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
+			// synchronize the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
 			if (Settings.Default.UpdateService && UI.UpdateService.IsPeriodSetToStartup()) {
 				UI.UpdateService.Check(!Settings.Default.UpdateDownload, true);
 			} else {
@@ -88,10 +88,10 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to refresh the authentication token
 		/// </summary>
-		/// <returns>Indicates if the token has been properly refreshed</returns>
+		/// <returns>Indicate if the token has been properly refreshed</returns>
 		public async Task<bool> RefreshToken() {
 
-			// refreshes the token and updates the token delivery date and time on the interface
+			// refresh the token and update the token delivery date and time on the interface
 			try {
 				if (Credential.Token.IsExpired(Credential.Flow.Clock)) {
 					if (await Credential.RefreshTokenAsync(new CancellationToken())) {
@@ -107,7 +107,7 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Disposes the service
+		/// Dispose the service
 		/// </summary>
 		public void Dispose() {
 			if (Inbox != null) {
@@ -121,15 +121,15 @@ namespace notifier {
 		/// <returns>OAuth 2.0 user credential</returns>
 		private async Task<UserCredential> AuthorizationBroker() {
 
-			// uses the client secret file for the context
+			// use the client secret file for the context
 			try {
 				using (FileStream stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
 
-					// defines a cancellation token source
+					// define a cancellation token source
 					CancellationTokenSource cancellation = new CancellationTokenSource();
 					cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.AUTH_TIMEOUT));
 
-					// waits for the user validation, only if the user has not already authorized the application
+					// wait for the user validation, only if the user has not already authorized the application
 					UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
 						GoogleClientSecrets.Load(stream).Secrets,
 						new string[] { GmailService.Scope.GmailModify },
@@ -138,7 +138,7 @@ namespace notifier {
 						new FileDataStore(Core.ApplicationDataFolder, true)
 					);
 
-					// returns the user credential
+					// return the user credential
 					return credential;
 				}
 			} catch (Exception exception) {

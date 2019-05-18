@@ -12,7 +12,7 @@ namespace notifier {
 		#region #attributes
 
 		/// <summary>
-		/// Days list using Monday as first day of week
+		/// Day list using Monday as first day of week
 		/// </summary>
 		public readonly List<DayOfWeek> Days = Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().OrderBy(day => { return (day - DayOfWeek.Monday + 7) % 7; }).ToList();
 
@@ -45,18 +45,18 @@ namespace notifier {
 		public Scheduler(ref Main form) {
 			UI = form;
 
-			// inits the slots depending on the user settings
+			// init the slots depending on the user settings
 			Slots = Settings.Default.SchedulerTimeSlot != "" ? JsonConvert.DeserializeObject<List<TimeSlot>>(Settings.Default.SchedulerTimeSlot) : new List<TimeSlot>();
 
-			// displays the default day of week based on today
+			// display the default day of week based on today
 			UI.fieldDayOfWeek.SelectedIndex = Days.IndexOf(DateTime.Now.DayOfWeek);
 
-			// displays the start time and end time for today
+			// display the start time and end time for today
 			DisplayTimeSlotProperties(GetTimeSlot());
 		}
 
 		/// <summary>
-		/// Displays the time slot properties on the interface
+		/// Display the time slot properties on the interface
 		/// </summary>
 		public void DisplayTimeSlotProperties(TimeSlot slot) {
 			if (slot == null) {
@@ -73,26 +73,26 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Updates the scheduler properties depending on the type of time
+		/// Update the scheduler properties depending on the type of time
 		/// </summary>
 		/// <param name="type">Type of time</param>
 		public void Update(TimeType type) {
 
-			// gets the selected day of week
+			// get the selected day of week
 			DayOfWeek day = GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex);
 
-			// removes the time slot for the selected day
+			// remove the time slot for the selected day
 			if ((type == TimeType.Start && UI.fieldStartTime.SelectedIndex == 0) || (type == TimeType.End && UI.fieldEndTime.SelectedIndex == 0)) {
 
-				// removes the time slot from the scheduler
+				// remove the time slot from the scheduler
 				RemoveTimeSlot(day);
 
-				// udpates the interface
+				// udpate the interface
 				UI.fieldStartTime.SelectedIndex = 0;
 				UI.fieldEndTime.SelectedIndex = 0;
 				UI.labelDuration.Text = Translation.theday;
 
-				// synchronizes the inbox if the selected day of week is today
+				// synchronize the inbox if the selected day of week is today
 				if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
 					UI.GmailService.Inbox.Sync();
 				}
@@ -100,31 +100,31 @@ namespace notifier {
 				return;
 			}
 
-			// updates the end time depending on the start time
+			// update the end time depending on the start time
 			if (type == TimeType.Start) {
 				if (UI.fieldStartTime.SelectedIndex > UI.fieldEndTime.SelectedIndex || UI.fieldEndTime.SelectedIndex == 0) {
 					UI.fieldEndTime.SelectedIndex = UI.fieldStartTime.SelectedIndex;
 				}
 			}
 
-			// updates the start time depending on the end time
+			// update the start time depending on the end time
 			if (type == TimeType.End) {
 				if (UI.fieldEndTime.SelectedIndex < UI.fieldStartTime.SelectedIndex || UI.fieldStartTime.SelectedIndex == 0) {
 					UI.fieldStartTime.SelectedIndex = UI.fieldEndTime.SelectedIndex;
 				}
 			}
 
-			// defines the start and end time of the time slot
+			// define the start and end time of the time slot
 			TimeSpan start = TimeSpan.Parse(UI.fieldStartTime.Text);
 			TimeSpan end = TimeSpan.Parse(UI.fieldEndTime.Text);
 
-			// adds or updates the time slot
+			// add or update the time slot
 			SetTimeSlot(day, start, end);
 
-			// updates the duration label
+			// update the duration label
 			UI.labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString() + " " + Translation.hours;
 
-			// synchronizes the inbox if the selected day of week is today
+			// synchronize the inbox if the selected day of week is today
 			if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
 				UI.GmailService.Inbox.Sync();
 			}
@@ -135,25 +135,25 @@ namespace notifier {
 		/// </summary>
 		public void PauseSync() {
 
-			// gets the time slot of today
+			// get the time slot of today
 			TimeSlot slot = GetTimeSlot();
 
-			// displays the timeout icon
+			// display the timeout icon
 			UI.notifyIcon.Icon = Resources.timeout;
 			UI.notifyIcon.Text = Translation.syncScheduled.Replace("{day}", CultureInfo.CurrentUICulture.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek)).Replace("{start}", slot.Start.ToString(@"h\:mm")).Replace("{end}", slot.End.ToString(@"h\:mm"));
 
-			// disables some menu items
+			// disable some menu items
 			UI.menuItemSynchronize.Enabled = false;
 			UI.menuItemMarkAsRead.Enabled = false;
 			UI.menuItemTimout.Enabled = false;
 			UI.menuItemSettings.Enabled = true;
 
-			// updates some text items
+			// update some text items
 			UI.menuItemMarkAsRead.Text = Translation.markAsRead;
 		}
 
 		/// <summary>
-		/// Gets a specific day of week by index using Monday as reference for the starting day of week
+		/// Get a specific day of week by index using Monday as reference for the starting day of week
 		/// </summary>
 		/// <param name="index">Index of the day in the list</param>
 		/// <returns>The day of week at the specific index</returns>
@@ -162,7 +162,7 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Searches a time slot for today
+		/// Search a time slot for today
 		/// </summary>
 		/// <returns>The time slot of today</returns>
 		public TimeSlot GetTimeSlot() {
@@ -172,7 +172,7 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Searches a time slot for a specific day
+		/// Search a time slot for a specific day
 		/// </summary>
 		/// <param name="day">The day for which to find a time slot</param>
 		/// <returns>The time slot of the day</returns>
@@ -183,7 +183,7 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Adds or updates a time slot to the scheduler
+		/// Add or update a time slot to the scheduler
 		/// </summary>
 		/// <param name="day">Day of week</param>
 		/// <param name="start">Start time of the time slot</param>
@@ -200,12 +200,12 @@ namespace notifier {
 				Slots.Add(new TimeSlot(day, start, end));
 			}
 
-			// saves all slots
+			// save all slots
 			Settings.Default.SchedulerTimeSlot = JsonConvert.SerializeObject(Slots);
 		}
 
 		/// <summary>
-		/// Removes a time slot from the list
+		/// Remove a time slot from the list
 		/// </summary>
 		/// <param name="day">The day for which the time slot is defined</param>
 		public void RemoveTimeSlot(DayOfWeek day) {
@@ -217,25 +217,25 @@ namespace notifier {
 
 			Slots.Remove(slot);
 
-			// saves all slots
+			// save all slots
 			Settings.Default.SchedulerTimeSlot = JsonConvert.SerializeObject(Slots);
 		}
 
 		/// <summary>
-		/// Detects if the synchronization is scheduled
+		/// Detect if the synchronization is scheduled
 		/// </summary>
 		/// <returns>A flag that tells if the inbox can be synced</returns>
 		public bool ScheduledSync() {
 
-			// gets the time slot of today
+			// get the time slot of today
 			TimeSlot slot = GetTimeSlot();
 
-			// allows inbox syncing if there is no slot defined for today
+			// allow inbox syncing if there is no slot defined for today
 			if (slot == null) {
 				return true;
 			}
 
-			// checks if the current time is inside the time slot
+			// check if the current time is inside the time slot
 			return DateTime.Now >= Convert.ToDateTime(slot.Start.ToString()) && DateTime.Now <= Convert.ToDateTime(slot.End.ToString());
 		}
 

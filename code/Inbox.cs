@@ -46,39 +46,39 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to synchronize the user inbox
 		/// </summary>
-		/// <param name="manual">Indicates if the synchronization come's from the timer tick or has been manually triggered</param>
-		/// <param name="token">Indicates if the Gmail token need to be refreshed</param>
+		/// <param name="manual">Indicate if the synchronization come's from the timer tick or has been manually triggered</param>
+		/// <param name="token">Indicate if the Gmail token need to be refreshed</param>
 		public async void Sync(bool manual = true, bool token = false) {
 
-			// prevents the application from syncing the inbox when the scheduler is enabled and the sync is not scheduled
+			// prevent the application from syncing the inbox when the scheduler is enabled and the sync is not scheduled
 			if (Settings.Default.Scheduler && !UI.SchedulerService.ScheduledSync()) {
 				UI.SchedulerService.PauseSync();
 
 				return;
 			}
 
-			// prevents the application from syncing the inbox when updating
+			// prevent the application from syncing the inbox when updating
 			if (UI.UpdateService.Updating) {
 				return;
 			}
 
-			// updates the synchronization time
+			// update the synchronization time
 			Time = DateTime.Now;
 
-			// resets reconnection count and prevents the application from displaying continuous warning icon when a timertick synchronization occurs after a reconnection attempt
+			// reset reconnection count and prevent the application from displaying continuous warning icon when a timertick synchronization occurs after a reconnection attempt
 			if (ReconnectionAttempts != 0) {
 				manual = true;
 				ReconnectionAttempts = 0;
 			}
 
-			// disables the timeout when the user do a manual synchronization
+			// disable the timeout when the user do a manual synchronization
 			if (manual && UI.NotificationService.Paused) {
 				UI.NotificationService.Resume();
 
 				return;
 			}
 
-			// if internet is down, attempts to reconnect the user mailbox
+			// if internet is down, attempt to reconnect the user mailbox
 			if (!UI.ComputerService.IsInternetAvailable()) {
 				UI.timerReconnect.Enabled = true;
 				UI.timer.Enabled = false;
@@ -86,17 +86,17 @@ namespace notifier {
 				return;
 			}
 
-			// refreshes the token if needed
+			// refresh the token if needed
 			if (token) {
 				await UI.GmailService.RefreshToken();
 			}
 
-			// activates the necessary menu items
+			// activate the necessary menu items
 			UI.menuItemSynchronize.Enabled = true;
 			UI.menuItemTimout.Enabled = true;
 			UI.menuItemSettings.Enabled = true;
 
-			// displays the sync icon, but only on manual synchronization
+			// display the sync icon, but only on manual synchronization
 			if (manual) {
 				UI.notifyIcon.Icon = Resources.sync;
 				UI.notifyIcon.Text = Translation.sync;
@@ -107,76 +107,76 @@ namespace notifier {
 
 			try {
 
-				// initializes the gmail service base client api
+				// initialize the gmail service base client api
 				if (Api == null) {
 					Api = new GmailService(new BaseClientService.Initializer() {
 						HttpClientInitializer = UI.GmailService.Credential,
 						ApplicationName = Settings.Default.APPLICATION_NAME
 					});
 
-					// retrieves the gmail address
+					// retrieve the gmail address
 					UI.labelEmailAddress.Text = EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
 				}
 
-				// manages the spam notification
+				// manage the spam notification
 				if (Settings.Default.SpamNotification) {
 
-					// exits if a spam is already detected
+					// exit if a spam is already detected
 					if (!manual && UI.NotificationService.Tag == "#spam") {
 						return;
 					}
 
-					// gets the "spam" label
+					// get the "spam" label
 					Label spam = await Api.Users.Labels.Get("me", "SPAM").ExecuteAsync();
 
-					// manages unread spams
+					// manage unread spams
 					if (spam.ThreadsUnread > 0) {
 
-						// plays a sound on unread spams
+						// play a sound on unread spams
 						if (Settings.Default.AudioNotification) {
 							SystemSounds.Exclamation.Play();
 						}
 
-						// displays a balloon tip in the systray with the total of unread threads
+						// display a balloon tip in the systray with the total of unread threads
 						UI.NotificationService.Tip(spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam), Translation.newUnreadSpam, Notification.Type.Error);
 
-						// sets the notification icon and text
+						// set the notification icon and text
 						UI.notifyIcon.Icon = Resources.spam;
 						UI.notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam);
 
-						// updates the tag
+						// update the tag
 						UI.NotificationService.Tag = "#spam";
 
 						return;
 					}
 				}
 
-				// gets the "inbox" label
+				// get the "inbox" label
 				Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
-				// updates the statistics
+				// update the statistics
 				UpdateStatistics();
 
-				// exits the sync if the number of unread threads is the same as before
+				// exit the sync if the number of unread threads is the same as before
 				if (!manual && (Box.ThreadsUnread == UnreadThreads)) {
 					return;
 				}
 
-				// manages unread threads
+				// manage unread threads
 				if (Box.ThreadsUnread > 0) {
 
-					// sets the notification icon
+					// set the notification icon
 					UI.notifyIcon.Icon = Box.ThreadsUnread <= Settings.Default.UNSTACK_BOUNDARY ? Resources.mails : Resources.stack;
 
-					// manages message notification
+					// manage message notification
 					if (Settings.Default.MessageNotification) {
 
-						// plays a sound on unread threads
+						// play a sound on unread threads
 						if (Settings.Default.AudioNotification) {
 							SystemSounds.Asterisk.Play();
 						}
 
-						// gets the message details
+						// get the message details
 						UsersResource.MessagesResource.ListRequest messages = Api.Users.Messages.List("me");
 						messages.LabelIds = "UNREAD";
 						messages.MaxResults = 1;
@@ -184,7 +184,7 @@ namespace notifier {
 							return m.Result.Messages.First().Id;
 						})).ExecuteAsync();
 
-						//  displays a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
+						//  display a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
 						if (Box.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != (int)Notification.Privacy.All) {
 							string subject = "";
 							string from = "";
@@ -208,7 +208,7 @@ namespace notifier {
 								subject = message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : Translation.newUnreadMessage;
 							}
 
-							// detects if the message contains attachments
+							// detect if the message contains attachments
 							if (message.Payload.Parts != null && message.Payload.MimeType == "multipart/mixed") {
 								int attachments = message.Payload.Parts.Where(part => !String.IsNullOrEmpty(part.Filename)).Count();
 
@@ -222,40 +222,40 @@ namespace notifier {
 							UI.NotificationService.Tip(Box.ThreadsUnread.ToString() + " " + (Box.ThreadsUnread > 1 ? Translation.unreadMessages : Translation.unreadMessage), Translation.newUnreadMessage);
 						}
 
-						// updates the notification tag to allow the user to directly display the specified view (inbox/message/spam) in a browser
+						// update the notification tag to allow the user to directly display the specified view (inbox/message/spam) in a browser
 						UI.NotificationService.Tag = "#inbox" + (Box.ThreadsUnread == 1 ? "/" + message.Id : "");
 					}
 
-					// displays the notification text
+					// display the notification text
 					UI.notifyIcon.Text = Box.ThreadsUnread.ToString() + " " + (Box.ThreadsUnread > 1 ? Translation.unreadMessages : Translation.unreadMessage);
 
-					// enables the mark as read menu item
+					// enable the mark as read menu item
 					UI.menuItemMarkAsRead.Text = Translation.markAsRead + " (" + Box.ThreadsUnread + ")";
 					UI.menuItemMarkAsRead.Enabled = true;
 				} else {
 
-					// restores the default systray icon and text
+					// restore the default systray icon and text
 					UI.notifyIcon.Icon = Resources.normal;
 					UI.notifyIcon.Text = Translation.noMessage;
 
-					// disables the mark as read menu item
+					// disable the mark as read menu item
 					UI.menuItemMarkAsRead.Text = Translation.markAsRead;
 					UI.menuItemMarkAsRead.Enabled = false;
 				}
 
-				// saves the number of unread threads
+				// save the number of unread threads
 				UnreadThreads = Box.ThreadsUnread;
 			} catch (IOException) {
 				// nothing to catch: IOException from mscorlib
 				// sometimes the process can not access the token response file because it is used by another process
 			} catch (Exception exception) {
 
-				// displays a balloon tip in the systray with the detailed error message
+				// display a balloon tip in the systray with the detailed error message
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.syncError;
 				UI.NotificationService.Tip(Translation.error, Translation.syncErrorOccured + exception.Message, Notification.Type.Warning, 1500);
 
-				// logs the error
+				// log the error
 				Core.Log("Sync: " + exception.Message);
 			} finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
@@ -268,20 +268,20 @@ namespace notifier {
 		public async void MarkAsRead() {
 			try {
 
-				// updates the synchronization time
+				// update the synchronization time
 				Time = DateTime.Now;
 
-				// displays the sync icon
+				// display the sync icon
 				UI.notifyIcon.Icon = Resources.sync;
 				UI.notifyIcon.Text = Translation.sync;
 
-				// gets all unread messages
+				// get all unread messages
 				UsersResource.MessagesResource.ListRequest messages = Api.Users.Messages.List("me");
 				messages.LabelIds = "UNREAD";
 				ListMessagesResponse list = await messages.ExecuteAsync();
 				IList<Message> unread = list.Messages;
 
-				// loops through all unread threads and removes the "unread" label for each one
+				// loop through all unread threads and remove the "unread" label for each one
 				if (unread != null && unread.Count > 0) {
 
 					// batch all mail ids to modify
@@ -289,33 +289,33 @@ namespace notifier {
 						thread => thread.Id
 					);
 
-					// creates the batch request
+					// create the batch request
 					BatchModifyMessagesRequest request = new BatchModifyMessagesRequest() {
 						Ids = batch.ToList(),
 						RemoveLabelIds = new List<string>() { "UNREAD" }
 					};
 
-					// executes the batch request to mark all mails as read
+					// execute the batch request to mark all mails as read
 					await Api.Users.Messages.BatchModify(request, "me").ExecuteAsync();
 
-					// gets the "inbox" label
+					// get the "inbox" label
 					Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
-					// updates the statistics
+					// update the statistics
 					UpdateStatistics();
 				}
 
-				// restores the default systray icon and text
+				// restore the default systray icon and text
 				UI.notifyIcon.Icon = Resources.normal;
 				UI.notifyIcon.Text = Translation.noMessage;
 
-				// cleans the tag
+				// clean the tag
 				UI.NotificationService.Tag = null;
 
-				// resets the number of unread threads
+				// reset the number of unread threads
 				UnreadThreads = 0;
 
-				// disables the mark as read menu item
+				// disable the mark as read menu item
 				UI.menuItemMarkAsRead.Text = Translation.markAsRead;
 				UI.menuItemMarkAsRead.Enabled = false;
 			} catch (Exception exception) {
@@ -324,12 +324,12 @@ namespace notifier {
 				UI.menuItemMarkAsRead.Text = Translation.markAsRead + " (" + Box.ThreadsUnread + ")";
 				UI.menuItemMarkAsRead.Enabled = true;
 
-				// displays a balloon tip in the systray with the detailed error message
+				// display a balloon tip in the systray with the detailed error message
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.markAsReadError;
 				UI.NotificationService.Tip(Translation.error, Translation.markAsReadErrorOccured + exception.Message, Notification.Type.Warning, 1500);
 
-				// logs the error
+				// log the error
 				Core.Log("MarkAsRead: " + exception.Message);
 			} finally {
 				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
@@ -337,32 +337,32 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Retries to reconnect the inbox
+		/// Retry to reconnect the inbox
 		/// </summary>
 		public void Retry() {
 
-			// increases the number of reconnection attempt
+			// increase the number of reconnection attempt
 			ReconnectionAttempts++;
 
 			// bypass the first reconnection attempt because the last synchronization have already checked the internet connectivity
 			if (ReconnectionAttempts == 1) {
 
-				// sets the reconnection interval
+				// set the reconnection interval
 				UI.timerReconnect.Interval = (int)Settings.Default.INTERVAL_RECONNECT * 1000;
 
-				// disables the menu items
+				// disable the menu items
 				UI.menuItemSynchronize.Enabled = false;
 				UI.menuItemTimout.Enabled = false;
 				UI.menuItemSettings.Enabled = false;
 
-				// displays the reconnection attempt message on the icon
+				// display the reconnection attempt message on the icon
 				UI.notifyIcon.Icon = Resources.retry;
 				UI.notifyIcon.Text = Translation.reconnectAttempt;
 
 				return;
 			}
 
-			// if internet is down, waits for INTERVAL_RECONNECT seconds before next attempt
+			// if internet is down, wait for INTERVAL_RECONNECT seconds before next attempt
 			if (!UI.ComputerService.IsInternetAvailable()) {
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
@@ -371,27 +371,27 @@ namespace notifier {
 					UI.timerReconnect.Interval = 100;
 					UI.timer.Enabled = true;
 
-					// activates the necessary menu items to allow the user to manually sync the inbox
+					// activate the necessary menu items to allow the user to manually sync the inbox
 					UI.menuItemSynchronize.Enabled = true;
 
-					// displays the last reconnection message on the icon
+					// display the last reconnection message on the icon
 					UI.notifyIcon.Icon = Resources.warning;
 					UI.notifyIcon.Text = Translation.reconnectFailed + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
 				}
 			} else {
 
-				// restores default operation when internet is available
+				// restore default operation when internet is available
 				UI.timerReconnect.Enabled = false;
 				UI.timerReconnect.Interval = 100;
 				UI.timer.Enabled = true;
 
-				// syncs the user mailbox
+				// sync the user mailbox
 				Sync();
 			}
 		}
 
 		/// <summary>
-		/// Disposes the gmail api
+		/// Dispose the gmail api
 		/// </summary>
 		public void Dispose() {
 			if (Api != null) {
@@ -404,11 +404,11 @@ namespace notifier {
 		/// </summary>
 		private async void UpdateStatistics() {
 
-			// gets inbox message count
+			// get inbox message count
 			int unread = (int)Box.ThreadsUnread;
 			int total = (int)Box.ThreadsTotal;
 
-			// builds the chart
+			// build the chart
 			if (total == 0) {
 				UI.chartUnreadMails.Width = 0;
 				UI.chartTotalMails.Width = 0;
@@ -421,15 +421,15 @@ namespace notifier {
 				UI.chartTotalMails.Width = (total * UI.chartInbox.Width) / scale;
 			}
 
-			// updates the tooltip informations
+			// update the tooltip informations
 			UI.tip.SetToolTip(UI.chartUnreadMails, unread + " " + (unread > 1 ? Translation.unreadMessages : Translation.unreadMessage));
 			UI.tip.SetToolTip(UI.chartTotalMails, total + " " + (total > 1 ? Translation.messages : Translation.message));
 
-			// updates the draft informations
+			// update the draft informations
 			ListDraftsResponse drafts = await Api.Users.Drafts.List("me").ExecuteAsync();
 			UI.labelTotalDrafts.Text = drafts.Drafts != null ? drafts.Drafts.Count.ToString() : "0";
 
-			// updates the label informations
+			// update the label informations
 			ListLabelsResponse labels = await Api.Users.Labels.List("me").ExecuteAsync();
 			UI.labelTotalLabels.Text = labels.Labels != null ? labels.Labels.Count.ToString() : "0";
 		}

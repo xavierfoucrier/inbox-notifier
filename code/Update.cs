@@ -48,15 +48,15 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Checks the update period user setting
+		/// Check the update period user setting
 		/// </summary>
-		/// <returns>Indicates if the update period is currently set to startup</returns>
+		/// <returns>Indicate if the update period is currently set to startup</returns>
 		public bool IsPeriodSetToStartup() {
 			return Settings.Default.UpdatePeriod == (int)Period.Startup;
 		}
 
 		/// <summary>
-		/// Deletes the setup installer package from the local application data folder
+		/// Delete the setup installer package from the local application data folder
 		/// </summary>
 		public void DeleteSetupPackage() {
 			if (!Directory.Exists(Core.ApplicationDataFolder)) {
@@ -76,7 +76,7 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Checks for update depending on the user settings
+		/// Check for update depending on the user settings
 		/// </summary>
 		public void Ping() {
 			if (!Settings.Default.UpdateService) {
@@ -108,15 +108,15 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method to connect to the repository and check if there is an update available
 		/// </summary>
-		/// <param name="verbose">Indicates if the process displays a message when a new update package is available</param>
-		/// <param name="startup">Indicates if the update check process has been started at startup</param>
+		/// <param name="verbose">Indicate if the process display a message when a new update package is available</param>
+		/// <param name="startup">Indicate if the update check process has been started at startup</param>
 		public async void Check(bool verbose = true, bool startup = false) {
 			try {
 
 				// using tls 1.2 as security protocol to contact Github.com
 				ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-				// gets the latest tag in the Github repository tags webpage
+				// get the latest tag in the Github repository tags webpage
 				HttpResponseMessage response = await Http.GetAsync(Settings.Default.GITHUB_REPOSITORY + "/tags");
 
 				HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
@@ -126,7 +126,7 @@ namespace notifier {
 
 				if (node == null) {
 
-					// indicates to the user that the update service is not reachable for the moment
+					// indicate to the user that the update service is not reachable for the moment
 					if (verbose) {
 						UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
 					}
@@ -136,26 +136,26 @@ namespace notifier {
 
 				string release = node.InnerText.Trim();
 
-				// stores the latest update datetime control
+				// store the latest update datetime control
 				Settings.Default.UpdateControl = DateTime.Now;
 
-				// updates the update control label
+				// update the update control label
 				UI.labelUpdateControl.Text = Settings.Default.UpdateControl.ToString();
 
 				// the current version tag is not at the top of the list
 				if (release != Core.Version) {
 
-					// stores the update state
+					// store the update state
 					UpdateAvailable = true;
 					ReleaseAvailable = release;
 
-					// updates the notification service tag
+					// update the notification service tag
 					UI.NotificationService.Tag = "update";
 
-					// updates the check for update button text
+					// update the check for update button text
 					UI.buttonCheckForUpdate.Text = Translation.updateNow;
 
-					// downloads the update package automatically or asks the user, depending on the user setting and verbosity
+					// download the update package automatically or ask the user, depending on the user setting and verbosity
 					if (verbose) {
 						UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
 					} else if (Settings.Default.UpdateDownload) {
@@ -166,19 +166,19 @@ namespace notifier {
 				}
 			} catch (Exception exception) {
 
-				// indicates to the user that the update service is not reachable for the moment
+				// indicate to the user that the update service is not reachable for the moment
 				if (verbose) {
 					UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
 				}
 
-				// logs the error
+				// log the error
 				Core.Log("UpdateCheck: " + exception.Message);
 			} finally {
 
-				// restores default update button state
+				// restore default update button state
 				UI.buttonCheckForUpdate.Enabled = true;
 
-				// synchronizes the inbox if the updates has been checked at startup after asynchronous authentication
+				// synchronize the inbox if the updates has been checked at startup after asynchronous authentication
 				if (startup) {
 					UI.GmailService.Inbox.Sync();
 				}
@@ -186,36 +186,36 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Downloads and launch the setup installer
+		/// Download and launch the setup installer
 		/// </summary>
 		public void Download() {
 
-			// defines that the application is currently updating
+			// define that the application is currently updating
 			Updating = true;
 
-			// defines the new number version and temp path
+			// define the new number version and temp path
 			string newversion = ReleaseAvailable.Split('-')[0].Substring(1);
 			string updatepath = Core.ApplicationDataFolder + "/gmnupdate-" + newversion + ".exe";
 			string package = Settings.Default.GITHUB_REPOSITORY + "/releases/download/" + ReleaseAvailable + "/Gmail.Notifier." + newversion + ".exe";
 
 			try {
 
-				// disables the context menu and displays the update icon in the systray
+				// disable the context menu and display the update icon in the systray
 				UI.notifyIcon.ContextMenu = null;
 				UI.notifyIcon.Icon = Resources.updating;
 				UI.notifyIcon.Text = Translation.updating;
 
-				// creates a new web client instance
+				// create a new web client instance
 				WebClient client = new WebClient();
 
-				// displays the download progression on the systray icon, and prevents the application from restoring the context menu and systray icon at startup
+				// display the download progression on the systray icon, and prevent the application from restoring the context menu and systray icon at startup
 				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object source, DownloadProgressChangedEventArgs target) => {
 					UI.notifyIcon.ContextMenu = null;
 					UI.notifyIcon.Icon = Resources.updating;
 					UI.notifyIcon.Text = Translation.updating + " " + target.ProgressPercentage.ToString() + "%";
 				});
 
-				// starts the setup installer when the download has complete and exits the current application
+				// start the setup installer when the download has complete and exit the current application
 				client.DownloadFileCompleted += new AsyncCompletedEventHandler((object source, AsyncCompletedEventArgs target) => {
 					Process.Start(new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + updatepath + "\" " + (Settings.Default.UpdateQuiet ? "/verysilent" : "")) {
 						WindowStyle = ProcessWindowStyle.Hidden,
@@ -225,27 +225,27 @@ namespace notifier {
 					Application.Exit();
 				});
 
-				// ensures that the Github package URI is callable
+				// ensure that the Github package URI is callable
 				client.OpenRead(package).Close();
 
-				// starts the download of the new version from the Github repository
+				// start the download of the new version from the Github repository
 				client.DownloadFileAsync(new Uri(package), updatepath);
 			} catch (Exception exception) {
 
-				// indicates to the user that the update service is not reachable for the moment
+				// indicate to the user that the update service is not reachable for the moment
 				UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
 
-				// defines that the application has exited the updating state
+				// define that the application has exited the updating state
 				Updating = false;
 
-				// restores default update button state
+				// restore default update button state
 				UI.buttonCheckForUpdate.Enabled = true;
 
-				// restores the context menu to the systray icon and start a synchronization
+				// restore the context menu to the systray icon and start a synchronization
 				UI.notifyIcon.ContextMenu = UI.notifyMenu;
 				UI.GmailService.Inbox.Sync();
 
-				// logs the error
+				// log the error
 				Core.Log("UpdateDownload: " + exception.Message);
 			}
 		}

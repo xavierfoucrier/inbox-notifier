@@ -42,32 +42,32 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Binds the "NetworkAvailabilityChanged" event to automatically sync the inbox when a network is available
+		/// Bind the "NetworkAvailabilityChanged" event to automatically sync the inbox when a network is available
 		/// </summary>
 		public void BindNetwork() {
 			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object source, NetworkAvailabilityEventArgs target) => {
 
-				// stops the reconnect process if it is running
+				// stop the reconnect process if it is running
 				if (UI.GmailService.Inbox.ReconnectionAttempts != 0) {
 					UI.timerReconnect.Enabled = false;
 					UI.timerReconnect.Interval = 100;
 					UI.GmailService.Inbox.ReconnectionAttempts = 0;
 				}
 
-				// loops through all network interface to check network connectivity
+				// loop through all network interface to check network connectivity
 				foreach (NetworkInterface network in NetworkInterface.GetAllNetworkInterfaces()) {
 
-					// discards "non-up" status, modem, serial, loopback and tunnel
+					// discard "non-up" status, modem, serial, loopback and tunnel
 					if (network.OperationalStatus != OperationalStatus.Up || network.Speed < 0 || network.NetworkInterfaceType == NetworkInterfaceType.Loopback || network.NetworkInterfaceType == NetworkInterfaceType.Tunnel) {
 						continue;
 					}
 
-					// discards virtual cards (like virtual box, virtual pc, etc.) and microsoft loopback adapter (showing as ethernet card)
+					// discard virtual cards (like virtual box, virtual pc, etc.) and microsoft loopback adapter (showing as ethernet card)
 					if (network.Name.ToLower().Contains("virtual") || network.Description.ToLower().Contains("virtual") || network.Description.ToLower() == ("microsoft loopback adapter")) {
 						continue;
 					}
 
-					// syncs the inbox when a network interface is available and the timeout mode is disabled
+					// sync the inbox when a network interface is available and the timeout mode is disabled
 					if (!UI.NotificationService.Paused) {
 						UI.GmailService.Inbox.Sync();
 					}
@@ -78,17 +78,17 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Binds the "PowerModeChanged" event to automatically pause/resume the application synchronization
+		/// Bind the "PowerModeChanged" event to automatically pause/resume the application synchronization
 		/// </summary>
 		public void BindPowerMode() {
 			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler((object source, PowerModeChangedEventArgs target) => {
 				if (target.Mode == PowerModes.Suspend) {
 
-					// suspends the main timer
+					// suspend the main timer
 					UI.timer.Enabled = false;
 				} else if (target.Mode == PowerModes.Resume) {
 
-					// stores the power resume state
+					// store the power resume state
 					PowerResume = true;
 
 					// do nothing if the timeout mode is set to infinite
@@ -96,22 +96,22 @@ namespace notifier {
 						return;
 					}
 
-					// synchronizes the inbox and renew the token
+					// synchronize the inbox and renew the token
 					UI.GmailService.Inbox.Sync(true, true);
 
-					// enables the timer properly
+					// enable the timer properly
 					UI.timer.Enabled = true;
 				}
 			});
 		}
 
 		/// <summary>
-		/// Binds the "SessionSwitch" event to automatically sync the inbox on session unlocking
+		/// Bind the "SessionSwitch" event to automatically sync the inbox on session unlocking
 		/// </summary>
 		public void BindSessionSwitch() {
 			SystemEvents.SessionSwitch += new SessionSwitchEventHandler((object source, SessionSwitchEventArgs target) => {
 
-				// syncs the inbox when the user is unlocking the Windows session
+				// sync the inbox when the user is unlocking the Windows session
 				if (target.Reason == SessionSwitchReason.SessionUnlock) {
 
 					// do nothing if the timeout mode is set to infinite
@@ -125,27 +125,27 @@ namespace notifier {
 						return;
 					}
 
-					// synchronizes the inbox and renew the token
+					// synchronize the inbox and renew the token
 					UI.GmailService.Inbox.Sync(true, true);
 				}
 			});
 		}
 
 		/// <summary>
-		/// Opens the Google website to checks the internet connectivity
+		/// Open the Google website to check the internet connectivity
 		/// </summary>
-		/// <returns>Indicates if the user is connected to the internet, false means that the request to the Google server has failed</returns>
+		/// <returns>Indicate if the user is connected to the internet, false means that the request to the Google server has failed</returns>
 		public bool IsInternetAvailable() {
 			try {
 
-				// sends a ping to the 1.1.1.1 DNS registry
+				// send a ping to the 1.1.1.1 DNS registry
 				IPStatus status = new Ping().Send("1.1.1.1", 1000, new byte[32]).Status;
 
 				if (status == IPStatus.Success) {
 					return true;
 				} else {
 
-					// uses Google secured homepage as alternative to the DNS ping
+					// use Google secured homepage as alternative to the DNS ping
 					using (WebClient client = new WebClient()) {
 						using (Stream stream = client.OpenRead("https://www.google.com")) {
 							return true;
@@ -158,7 +158,7 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Regulates the start with Windows setting against the registry to prevent bad registry reflection
+		/// Regulate the start with Windows setting against the registry to prevent bad registry reflection
 		/// </summary>
 		public void RegulatesRegistry() {
 			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {

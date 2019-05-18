@@ -38,7 +38,7 @@ namespace notifier {
 		/// </summary>
 		static Core() {
 
-			// initializes the application version number, based on scheme Major.Minor.Build-Release
+			// initialize the application version number, based on scheme Major.Minor.Build-Release
 			string[] ProductVersion = Application.ProductVersion.Split('.');
 
 			VersionMajor = ProductVersion[0];
@@ -50,22 +50,22 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Restarts the application
+		/// Restart the application
 		/// </summary>
 		public static void RestartApplication() {
 
-			// starts a new process
+			// start a new process
 			Process.Start(new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"") {
 				WindowStyle = ProcessWindowStyle.Hidden,
 				CreateNoWindow = true
 			});
 
-			// exits the application
+			// exit the application
 			Application.Exit();
 		}
 
 		/// <summary>
-		/// Logs a message to the application log file
+		/// Log a message to the application log file
 		/// </summary>
 		/// <param name="message">Message to log</param>
 		public static void Log(string message) {

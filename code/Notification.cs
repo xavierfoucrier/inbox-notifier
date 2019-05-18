@@ -54,7 +54,7 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Displays a notification balloon tip
+		/// Display a notification balloon tip
 		/// </summary>
 		/// <param name="title">Title of the tip</param>
 		/// <param name="text">Text contained in the balloon tip</param>
@@ -67,7 +67,7 @@ namespace notifier {
 		/// <summary>
 		/// Do the gmail specified action (inbox/message/spam) in a browser
 		/// </summary>
-		/// <param name="balloon">Defines if the interaction is provided by the balloon tip</param>
+		/// <param name="balloon">Define if the interaction is provided by the balloon tip</param>
 		public void Interaction(bool balloon = false) {
 
 			// by default, always open the gmail inbox in a browser if the interaction is provided by a double click on the systray icon
@@ -80,7 +80,7 @@ namespace notifier {
 				return;
 			}
 
-			// displays the form and focus the update tab
+			// display the form and focus the update tab
 			if (balloon && Tag == "update") {
 				UI.Visible = true;
 				UI.ShowInTaskbar = true;
@@ -97,103 +97,103 @@ namespace notifier {
 				return;
 			}
 
-			// marks the message as read if the notification behavior is set to "mark as read"
+			// mark the message as read if the notification behavior is set to "mark as read"
 			if (balloon && Settings.Default.NotificationBehavior == (int)Behavior.MarkAsRead) {
 				UI.GmailService.Inbox.MarkAsRead();
 			} else {
 				Process.Start(Settings.Default.GMAIL_BASEURL + "/" + Tag);
 			}
 
-			// cleans the tag
+			// clean the tag
 			Tag = null;
 
-			// restores the default systray icon and text: pretends that the user had read all his mail, except if the timeout option is activated
+			// restore the default systray icon and text: pretend that the user had read all his mail, except if the timeout option is activated
 			if (!Paused) {
 
-				// resets the number of unread threads
+				// reset the number of unread threads
 				UI.GmailService.Inbox.UnreadThreads = 0;
 
-				// updates the synchronization time
+				// update the synchronization time
 				UI.GmailService.Inbox.Time = DateTime.Now;
 
-				// restores the default systray icon and text
+				// restore the default systray icon and text
 				UI.notifyIcon.Icon = Resources.normal;
 				UI.notifyIcon.Text = Translation.noMessage + "\n" + Translation.syncTime.Replace("{time}", DateTime.Now.ToLongTimeString());
 
-				// disables the mark as read menu item
+				// disable the mark as read menu item
 				UI.menuItemMarkAsRead.Text = Translation.markAsRead;
 				UI.menuItemMarkAsRead.Enabled = false;
 			}
 		}
 
 		/// <summary>
-		/// Pauses the notifications during a certain time
+		/// Pause the notifications during a certain time
 		/// </summary>
 		/// <param name="item">Selected item in the timeout menu</param>
 		/// <param name="delay">Delay until the next inbox sync, 0 means "infinite" timeout</param>
 		public void Pause(MenuItem item, int delay) {
 
-			// exits if the selected menu item is already checked
+			// exit if the selected menu item is already checked
 			if (item.Checked) {
 				return;
 			}
 
-			// disables notifications
+			// disable notifications
 			Paused = true;
 
-			// cleans the tag
+			// clean the tag
 			Tag = null;
 
-			// unchecks all menu items
+			// uncheck all menu items
 			foreach (MenuItem i in UI.menuItemTimout.MenuItems) {
 				i.Checked = false;
 			}
 
-			// displays the user choice
+			// display the user choice
 			item.Checked = true;
 
 			// infinite variable
 			bool infinite = delay == 0;
 
-			// disables the timer if the delay is set to "infinite"
+			// disable the timer if the delay is set to "infinite"
 			UI.timer.Enabled = !infinite;
 
-			// applies "1" if the delay is set to "infinite" because the timer interval attribute does not support "0"
+			// applie "1" if the delay is set to "infinite" because the timer interval attribute does not support "0"
 			UI.timer.Interval = infinite ? 1 : delay;
 
-			// updates the systray icon and text
+			// update the systray icon and text
 			UI.notifyIcon.Icon = Resources.timeout;
 			UI.notifyIcon.Text = Translation.timeout + " - " + (infinite ? "∞" : DateTime.Now.AddMilliseconds(delay).ToShortTimeString());
 		}
 
 		/// <summary>
-		/// Resumes notifications
+		/// Resume notifications
 		/// </summary>
 		public void Resume() {
 
-			// exits if the selected menu item is already checked
+			// exit if the selected menu item is already checked
 			if (UI.menuItemTimeoutDisabled.Checked) {
 				return;
 			}
 
-			// enables notifications
+			// enable notifications
 			Paused = false;
 
-			// unchecks all menu items
+			// uncheck all menu items
 			foreach (MenuItem i in UI.menuItemTimout.MenuItems) {
 				i.Checked = false;
 			}
 
-			// displays the user choice
+			// display the user choice
 			UI.menuItemTimeoutDisabled.Checked = true;
 
-			// restores the timer interval
+			// restore the timer interval
 			UI.timer.Interval = (int)Settings.Default.TimerInterval;
 
-			// enables the timer: this will automatically trigger the inbox synchronization in the timer tick
+			// enable the timer: this will automatically trigger the inbox synchronization in the timer tick
 			UI.timer.Enabled = true;
 
-			// synchronizes the inbox
+			// synchronize the inbox
 			UI.GmailService.Inbox.Sync();
 		}
 
