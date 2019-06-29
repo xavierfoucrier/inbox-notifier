@@ -121,6 +121,33 @@ namespace notifier.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///  &lt;head&gt;
+        ///    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+        ///    &lt;title&gt;OAuth 2.0 Authentication Token Received&lt;/title&gt;
+        ///    &lt;link href=&quot;https://fonts.googleapis.com/css?family=Noto+Sans&quot; rel=&quot;stylesheet&quot; /&gt;
+        ///  &lt;/head&gt;
+        ///  &lt;body&gt;
+        ///    &lt;style media=&quot;screen&quot;&gt;
+        ///      :root {
+        ///        --base-color: #2d5bdc;
+        ///        --contrast-color: #fff;
+        ///        --font: &apos;Noto Sans&apos;;
+        ///      }
+        ///
+        ///      body {
+        ///        display: flex;
+        ///        flex-direction: column;
+        ///    [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string oauth_message {
+            get {
+                return ResourceManager.GetString("oauth_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.IO.UnmanagedMemoryStream semblable à System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream pop_exit {
