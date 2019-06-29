@@ -228,16 +228,6 @@ nächsten Start der Anwendung.</value>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Verhalten</value>
   </data>
-  <data name="labelNotificationOpenSimplifiedHTML.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 71</value>
-  </data>
-  <data name="labelNotificationOpenSimplifiedHTML.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 51</value>
-  </data>
-  <data name="labelNotificationOpenSimplifiedHTML.Text" xml:space="preserve">
-    <value>Diese Option öffnet die vereinfachte HTML-Version
-von Google Mail. Einige neuere Funktionen sind möglicherweise nicht verfügbar.</value>
-  </data>
   <data name="labelNotificationMarkMessageAsRead.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 71</value>
   </data>
@@ -268,9 +258,6 @@ automatisch den Posteingang öffnen.</value>
   </data>
   <data name="fieldNotificationBehavior.Items2" xml:space="preserve">
     <value>Kennzeichnen Sie die Nachricht als gelesen</value>
-  </data>
-  <data name="fieldNotificationBehavior.Items3" xml:space="preserve">
-    <value>Öffnen Sie die vereinfachte Nachricht</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 13</value>
