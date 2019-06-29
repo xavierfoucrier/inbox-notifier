@@ -241,6 +241,9 @@ will automatically open the inbox.</value>
   <data name="fieldNotificationBehavior.Items2" xml:space="preserve">
     <value>mark the message as read</value>
   </data>
+  <data name="fieldNotificationBehavior.Items3" xml:space="preserve">
+    <value>open the message in simplified version</value>
+  </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 13</value>
   </data>
