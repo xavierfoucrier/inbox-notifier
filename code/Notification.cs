@@ -34,7 +34,8 @@ namespace notifier {
 		public enum Behavior : uint {
 			DoNothing = 0,
 			Open = 1,
-			MarkAsRead = 2
+			MarkAsRead = 2,
+			OpenSimplifiedHTML = 3
 		}
 
 		/// <summary>
@@ -74,7 +75,7 @@ namespace notifier {
 			if (Tag == null) {
 
 				if (!balloon) {
-					Process.Start(Settings.Default.GMAIL_BASEURL + "/#inbox");
+					Process.Start(GetBaseURL() + "/#inbox");
 				}
 
 				return;
@@ -101,7 +102,7 @@ namespace notifier {
 			if (balloon && Settings.Default.NotificationBehavior == (int)Behavior.MarkAsRead) {
 				UI.GmailService.Inbox.MarkAsRead();
 			} else {
-				Process.Start(Settings.Default.GMAIL_BASEURL + "/" + Tag);
+				Process.Start(GetBaseURL() + "/" + Tag);
 			}
 
 			// clean the tag
@@ -195,6 +196,14 @@ namespace notifier {
 
 			// synchronize the inbox
 			UI.GmailService.Inbox.Sync();
+		}
+
+		/// <summary>
+		/// Return the Gmail base URL depending on the notification behavior
+		/// </summary>
+		/// <returns></returns>
+		public string GetBaseURL() {
+			return Settings.Default.NotificationBehavior == (int)Behavior.OpenSimplifiedHTML ? Settings.Default.GMAIL_BASEURL + "/h" : Settings.Default.GMAIL_BASEURL;
 		}
 
 		#endregion
