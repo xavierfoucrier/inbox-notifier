@@ -57,6 +57,7 @@ namespace notifier {
 			this.buttonGmailDisconnect = new System.Windows.Forms.Button();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.labelNotificationOpenSimplifiedHTML = new System.Windows.Forms.Label();
 			this.labelNotificationMarkMessageAsRead = new System.Windows.Forms.Label();
 			this.labelNotificationOpenMessage = new System.Windows.Forms.Label();
 			this.fieldNotificationBehavior = new System.Windows.Forms.ComboBox();
@@ -401,12 +402,20 @@ namespace notifier {
 			// groupBox3
 			// 
 			resources.ApplyResources(this.groupBox3, "groupBox3");
+			this.groupBox3.Controls.Add(this.labelNotificationOpenSimplifiedHTML);
 			this.groupBox3.Controls.Add(this.labelNotificationMarkMessageAsRead);
 			this.groupBox3.Controls.Add(this.labelNotificationOpenMessage);
 			this.groupBox3.Controls.Add(this.fieldNotificationBehavior);
 			this.groupBox3.Controls.Add(this.label9);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
+			// 
+			// labelNotificationOpenSimplifiedHTML
+			// 
+			resources.ApplyResources(this.labelNotificationOpenSimplifiedHTML, "labelNotificationOpenSimplifiedHTML");
+			this.labelNotificationOpenSimplifiedHTML.ForeColor = System.Drawing.Color.SlateGray;
+			this.labelNotificationOpenSimplifiedHTML.Image = global::notifier.Properties.Resources.information;
+			this.labelNotificationOpenSimplifiedHTML.Name = "labelNotificationOpenSimplifiedHTML";
 			// 
 			// labelNotificationMarkMessageAsRead
 			// 
@@ -1239,6 +1248,7 @@ namespace notifier {
 		internal System.Windows.Forms.ComboBox fieldDayOfWeek;
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.CheckBox checkBox2;
+		private System.Windows.Forms.Label labelNotificationOpenSimplifiedHTML;
 	}
 }
 

@@ -292,6 +292,7 @@ namespace notifier {
 			Settings.Default.NotificationBehavior = (uint)fieldNotificationBehavior.SelectedIndex;
 			labelNotificationOpenMessage.Visible = Settings.Default.NotificationBehavior == 1;
 			labelNotificationMarkMessageAsRead.Visible = Settings.Default.NotificationBehavior == 2;
+			labelNotificationOpenSimplifiedHTML.Visible = Settings.Default.NotificationBehavior == 3;
 		}
 
 		/// <summary>

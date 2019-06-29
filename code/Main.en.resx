@@ -212,6 +212,17 @@ at the next application startup.</value>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Behavior</value>
   </data>
+  <data name="labelNotificationOpenSimplifiedHTML.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 72</value>
+  </data>
+  <data name="labelNotificationOpenSimplifiedHTML.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 51</value>
+  </data>
+  <data name="labelNotificationOpenSimplifiedHTML.Text" xml:space="preserve">
+    <value>This option will open the simplified HTML version
+of Gmail. Some recent features may not
+be available.</value>
+  </data>
   <data name="labelNotificationMarkMessageAsRead.Location" type="System.Drawing.Point, System.Drawing">
     <value>40, 71</value>
   </data>
