@@ -34,7 +34,8 @@ namespace notifier {
 		public enum Behavior : uint {
 			DoNothing = 0,
 			Open = 1,
-			MarkAsRead = 2
+			MarkAsRead = 2,
+			OpenSimplifiedHTML = 3
 		}
 
 		/// <summary>
