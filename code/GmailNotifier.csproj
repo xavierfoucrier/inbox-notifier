@@ -249,6 +249,10 @@
   <ItemGroup>
     <None Include="Resources\audio\pop-exit.wav" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\oauth\message.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>echo Cleaning bin directory by deleting *.pdb files
