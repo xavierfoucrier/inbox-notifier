@@ -203,14 +203,14 @@ namespace notifier {
 			// 
 			// linkRestartToApply
 			// 
-			this.linkRestartToApply.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkRestartToApply.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			resources.ApplyResources(this.linkRestartToApply, "linkRestartToApply");
-			this.linkRestartToApply.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkRestartToApply.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkRestartToApply.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-			this.linkRestartToApply.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkRestartToApply.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkRestartToApply.Name = "linkRestartToApply";
 			this.linkRestartToApply.TabStop = true;
-			this.linkRestartToApply.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkRestartToApply.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkRestartToApply.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRestartToApply_LinkClicked);
 			// 
 			// labelRestartToApply
@@ -307,14 +307,14 @@ namespace notifier {
 			// 
 			// chartUnreadMails
 			// 
-			this.chartUnreadMails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(82)))), ((int)(((byte)(70)))));
+			this.chartUnreadMails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.chartUnreadMails.Cursor = System.Windows.Forms.Cursors.Help;
 			resources.ApplyResources(this.chartUnreadMails, "chartUnreadMails");
 			this.chartUnreadMails.Name = "chartUnreadMails";
 			// 
 			// chartTotalMails
 			// 
-			this.chartTotalMails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.chartTotalMails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(135)))), ((int)(((byte)(255)))));
 			this.chartTotalMails.Cursor = System.Windows.Forms.Cursors.Help;
 			resources.ApplyResources(this.chartTotalMails, "chartTotalMails");
 			this.chartTotalMails.Name = "chartTotalMails";
@@ -851,61 +851,61 @@ namespace notifier {
 			// 
 			// linkVersion
 			// 
-			this.linkVersion.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkVersion.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			resources.ApplyResources(this.linkVersion, "linkVersion");
 			this.linkVersion.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-			this.linkVersion.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkVersion.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkVersion.Name = "linkVersion";
 			this.linkVersion.TabStop = true;
-			this.linkVersion.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkVersion.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkVersion_LinkClicked);
 			// 
 			// linkPrivacy
 			// 
-			this.linkPrivacy.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkPrivacy.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			resources.ApplyResources(this.linkPrivacy, "linkPrivacy");
 			this.linkPrivacy.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-			this.linkPrivacy.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkPrivacy.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkPrivacy.Name = "linkPrivacy";
 			this.linkPrivacy.TabStop = true;
 			this.linkPrivacy.UseCompatibleTextRendering = true;
-			this.linkPrivacy.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkPrivacy.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkPrivacy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPrivacy_LinkClicked);
 			// 
 			// linkLicense
 			// 
-			this.linkLicense.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkLicense.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			resources.ApplyResources(this.linkLicense, "linkLicense");
 			this.linkLicense.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-			this.linkLicense.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkLicense.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkLicense.Name = "linkLicense";
 			this.linkLicense.TabStop = true;
 			this.linkLicense.UseCompatibleTextRendering = true;
-			this.linkLicense.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkLicense.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLicense_LinkClicked);
 			// 
 			// linkWebsiteXavier
 			// 
-			this.linkWebsiteXavier.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteXavier.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			resources.ApplyResources(this.linkWebsiteXavier, "linkWebsiteXavier");
 			this.linkWebsiteXavier.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-			this.linkWebsiteXavier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteXavier.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkWebsiteXavier.Name = "linkWebsiteXavier";
 			this.linkWebsiteXavier.TabStop = true;
 			this.linkWebsiteXavier.UseCompatibleTextRendering = true;
-			this.linkWebsiteXavier.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteXavier.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkWebsiteXavier.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsiteXavier_LinkClicked);
 			// 
 			// linkWebsiteYusuke
 			// 
-			this.linkWebsiteYusuke.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteYusuke.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			resources.ApplyResources(this.linkWebsiteYusuke, "linkWebsiteYusuke");
 			this.linkWebsiteYusuke.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-			this.linkWebsiteYusuke.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteYusuke.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkWebsiteYusuke.Name = "linkWebsiteYusuke";
 			this.linkWebsiteYusuke.TabStop = true;
 			this.linkWebsiteYusuke.UseCompatibleTextRendering = true;
-			this.linkWebsiteYusuke.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.linkWebsiteYusuke.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.linkWebsiteYusuke.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebsiteYusuke_LinkClicked);
 			// 
 			// label11
@@ -931,7 +931,7 @@ namespace notifier {
 			// labelSettingsSaved
 			// 
 			resources.ApplyResources(this.labelSettingsSaved, "labelSettingsSaved");
-			this.labelSettingsSaved.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(50)))), ((int)(((byte)(33)))));
+			this.labelSettingsSaved.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(91)))), ((int)(((byte)(220)))));
 			this.labelSettingsSaved.Name = "labelSettingsSaved";
 			// 
 			// notifyIcon
