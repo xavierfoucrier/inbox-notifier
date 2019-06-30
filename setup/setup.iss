@@ -5,6 +5,7 @@
 #define MyAppPublisher "Xavier Foucrier"
 #define MyAppURL "https://github.com/xavierfoucrier/gmail-notifier"
 #define MyAppExeName "Gmail notifier.exe"
+#define MyAppRegistryKeyName "Gmail notifier"
 
 [Setup]
 AppId={{7E60E047-C79B-49A4-8CF6-B33D5565B2E8}
@@ -59,12 +60,12 @@ Filename: "{app}\{#MyAppExeName}"; Parameters: "install {language} {code:autorun
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall
 
 [Registry]
-Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: "Gmail notifier"; ValueData: "{app}\{#MyAppExeName}"; Tasks: startup; Flags: uninsdeletevalue;
+Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: "{#MyAppRegistryKeyName}"; ValueData: "{app}\{#MyAppExeName}"; Tasks: startup; Flags: uninsdeletevalue;
 
 [Code]
 function autorun(Value: string): string;
 begin
-	if RegValueExists(HKCU, 'Software\Microsoft\Windows\CurrentVersion\Run', 'Gmail notifier') then begin
+	if RegValueExists(HKCU, 'Software\Microsoft\Windows\CurrentVersion\Run', '{#MyAppRegistryKeyName}') then begin
 		Result := 'auto';
 	end	else begin
 		Result := 'none';
