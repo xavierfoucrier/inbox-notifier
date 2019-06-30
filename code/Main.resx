@@ -2716,7 +2716,7 @@ ouvrira automatiquement la boite de réception.</value>
     <value>NoControl</value>
   </data>
   <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>58, 11</value>
+    <value>59, 11</value>
   </data>
   <data name="linkLicense.Location" type="System.Drawing.Point, System.Drawing">
     <value>255, 97</value>
@@ -2731,7 +2731,7 @@ ouvrira automatiquement la boite de réception.</value>
     <value>3</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
-    <value>©2019. Tous droits réservés.
+    <value>© 2019. Tous droits réservés.
 Open Source, distribué sous Licence MIT</value>
   </data>
   <data name="&gt;&gt;linkLicense.Name" xml:space="preserve">
