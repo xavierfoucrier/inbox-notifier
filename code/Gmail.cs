@@ -135,7 +135,8 @@ namespace notifier {
 						new string[] { GmailService.Scope.GmailModify },
 						"user",
 						cancellation.Token,
-						new FileDataStore(Core.ApplicationDataFolder, true)
+						new FileDataStore(Core.ApplicationDataFolder, true),
+						new LocalServerCodeReceiver(Resources.oauth_message)
 					);
 
 					// return the user credential
