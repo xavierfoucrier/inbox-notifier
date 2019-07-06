@@ -12,7 +12,7 @@ using notifier.Properties;
 using System.IO;
 
 namespace notifier {
-	class Inbox {
+	class Inbox : IDisposable {
 
 		#region #attributes
 

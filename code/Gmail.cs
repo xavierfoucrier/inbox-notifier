@@ -11,7 +11,7 @@ using notifier.Languages;
 using notifier.Properties;
 
 namespace notifier {
-	class Gmail {
+	class Gmail : IDisposable {
 
 		#region #attributes
 
