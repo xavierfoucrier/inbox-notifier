@@ -28,7 +28,7 @@ namespace notifier {
 		/// <summary>
 		/// Http client used to check for updates
 		/// </summary>
-		private HttpClient Http = new HttpClient();
+		private readonly HttpClient Http = new HttpClient();
 
 		/// <summary>
 		/// Reference to the main interface
