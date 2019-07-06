@@ -466,7 +466,7 @@ namespace notifier {
 
 			// check the start with Windows setting against the registry
 			if (tabControl.SelectedTab == tabPageGeneral) {
-				ComputerService.RegulatesRegistry();
+				Computer.RegulatesRegistry();
 			}
 
 			// display the form
@@ -582,7 +582,7 @@ namespace notifier {
 		/// Check the start with Windows setting against the registry when entering the general tab page
 		/// </summary>
 		private void tabPageGeneral_Enter(object sender, EventArgs e) {
-			ComputerService.RegulatesRegistry();
+			Computer.RegulatesRegistry();
 		}
 
 		/// <summary>

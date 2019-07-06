@@ -160,7 +160,7 @@ namespace notifier {
 		/// <summary>
 		/// Regulate the start with Windows setting against the registry to prevent bad registry reflection
 		/// </summary>
-		public void RegulatesRegistry() {
+		public static void RegulatesRegistry() {
 			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {
 				if (key.GetValue("Gmail notifier") != null) {
 					if (!Settings.Default.RunAtWindowsStartup) {
