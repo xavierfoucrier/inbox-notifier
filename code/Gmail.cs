@@ -78,7 +78,7 @@ namespace notifier {
 			}
 
 			// synchronize the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
-			if (Settings.Default.UpdateService && UI.UpdateService.IsPeriodSetToStartup()) {
+			if (Settings.Default.UpdateService && Update.IsPeriodSetToStartup()) {
 				UI.UpdateService.Check(!Settings.Default.UpdateDownload, true);
 			} else {
 				Inbox.Sync();

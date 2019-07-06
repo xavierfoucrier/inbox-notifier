@@ -51,7 +51,7 @@ namespace notifier {
 		/// Check the update period user setting
 		/// </summary>
 		/// <returns>Indicate if the update period is currently set to startup</returns>
-		public bool IsPeriodSetToStartup() {
+		public static bool IsPeriodSetToStartup() {
 			return Settings.Default.UpdatePeriod == (int)Period.Startup;
 		}
 
