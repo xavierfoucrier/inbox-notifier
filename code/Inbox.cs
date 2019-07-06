@@ -115,7 +115,8 @@ namespace notifier {
 					});
 
 					// retrieve the gmail address
-					UI.labelEmailAddress.Text = EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
+					EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
+					UI.labelEmailAddress.Text = EmailAddress;
 				}
 
 				// manage the spam notification
