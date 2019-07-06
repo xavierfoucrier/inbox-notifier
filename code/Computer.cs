@@ -138,8 +138,8 @@ namespace notifier {
 		public bool IsInternetAvailable() {
 			try {
 
-				// send a ping to the 1.1.1.1 DNS registry
-				IPStatus status = new Ping().Send("1.1.1.1", 1000, new byte[32]).Status;
+				// send a ping to the DNS registry
+				IPStatus status = new Ping().Send(Settings.Default.DNS_REGISTRY_IP, 1000, new byte[32]).Status;
 
 				if (status == IPStatus.Success) {
 					return true;
