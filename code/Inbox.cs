@@ -292,7 +292,7 @@ namespace notifier {
 					);
 
 					// create the batch request
-					BatchModifyMessagesRequest request = new BatchModifyMessagesRequest() {
+					BatchModifyMessagesRequest request = new BatchModifyMessagesRequest {
 						Ids = batch.ToList(),
 						RemoveLabelIds = new List<string> { "UNREAD" }
 					};
