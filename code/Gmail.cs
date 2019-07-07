@@ -40,7 +40,7 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to get user credential
 		/// </summary>
-		public async void Authentication() {
+		public async Task Authentication() {
 
 			// display the authentication icon and text if the google api token file doesn't exists
 			if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {

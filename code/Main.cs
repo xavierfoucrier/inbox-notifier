@@ -61,7 +61,7 @@ namespace notifier {
 		/// <summary>
 		/// Load the form
 		/// </summary>
-		private void Main_Load(object sender, EventArgs e) {
+		private async void Main_Load(object sender, EventArgs e) {
 
 			// play a pop sound at application startup
 			if (Settings.Default.AudioPop) {
@@ -132,7 +132,7 @@ namespace notifier {
 			help.SetHelpString(buttonCheckForUpdate, Translation.helpCheckForUpdate);
 
 			// authenticate the user
-			GmailService.Authentication();
+			await GmailService.Authentication();
 
 			// attach the context menu to the systray icon
 			notifyIcon.ContextMenu = notifyMenu;
