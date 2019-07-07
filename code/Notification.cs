@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using notifier.Languages;
 using notifier.Properties;
@@ -69,7 +70,7 @@ namespace notifier {
 		/// Do the gmail specified action (inbox/message/spam) in a browser
 		/// </summary>
 		/// <param name="balloon">Define if the interaction is provided by the balloon tip</param>
-		public async void Interaction(bool balloon = false) {
+		public async Task Interaction(bool balloon = false) {
 
 			// by default, always open the gmail inbox in a browser if the interaction is provided by a double click on the systray icon
 			if (Tag == null) {

@@ -495,21 +495,21 @@ namespace notifier {
 		/// <summary>
 		/// Manage the systray icon double click
 		/// </summary>
-		private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
+		private async void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
 			if (e.Button == MouseButtons.Left) {
-				NotificationService.Interaction();
+				await NotificationService.Interaction();
 			}
 		}
 
 		/// <summary>
 		/// Manage the systray icon balloon click
 		/// </summary>
-		private void notifyIcon_BalloonTipClicked(object sender, EventArgs e) {
+		private async void notifyIcon_BalloonTipClicked(object sender, EventArgs e) {
 			if ((Control.MouseButtons & MouseButtons.Right) == MouseButtons.Right) {
 				return;
 			}
 
-			NotificationService.Interaction(true);
+			await NotificationService.Interaction(true);
 		}
 
 		/// <summary>
