@@ -222,7 +222,7 @@ namespace notifier {
 		/// </summary>
 		public bool Paused {
 			get; set;
-		} = false;
+		}
 
 		#endregion
 	}
