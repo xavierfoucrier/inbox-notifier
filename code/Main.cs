@@ -82,7 +82,7 @@ namespace notifier {
 				Settings.Default.Save();
 
 				// delete the setup installer package from the previous upgrade
-				UpdateService.DeleteSetupPackage();
+				notifier.Update.DeleteSetupPackage();
 			}
 
 			// display a systray notification on first load

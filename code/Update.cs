@@ -59,7 +59,7 @@ namespace notifier {
 		/// <summary>
 		/// Delete the setup installer package from the local application data folder
 		/// </summary>
-		public void DeleteSetupPackage() {
+		public static void DeleteSetupPackage() {
 			if (!Directory.Exists(Core.ApplicationDataFolder)) {
 				return;
 			}
