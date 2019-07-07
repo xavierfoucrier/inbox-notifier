@@ -304,7 +304,7 @@ namespace notifier {
 					Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
 					// update the statistics
-					await UpdateStatistics();
+					await UpdateStatistics().ConfigureAwait(false);
 				}
 
 				// restore the default systray icon and text
