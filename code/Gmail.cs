@@ -119,7 +119,7 @@ namespace notifier {
 		/// Asynchronous task used to get the user authorization
 		/// </summary>
 		/// <returns>OAuth 2.0 user credential</returns>
-		private async Task<UserCredential> AuthorizationBroker() {
+		private static async Task<UserCredential> AuthorizationBroker() {
 
 			// use the client secret file for the context
 			try {
