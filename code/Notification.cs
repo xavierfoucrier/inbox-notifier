@@ -202,7 +202,7 @@ namespace notifier {
 		/// Return the Gmail base URL depending on the notification behavior
 		/// </summary>
 		/// <returns></returns>
-		public string GetBaseURL() {
+		public static string GetBaseURL() {
 			return Settings.Default.NotificationBehavior == (int)Behavior.OpenSimplifiedHTML ? Settings.Default.GMAIL_BASEURL + "/h" : Settings.Default.GMAIL_BASEURL;
 		}
 
