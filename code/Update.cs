@@ -260,7 +260,7 @@ namespace notifier {
 		/// </summary>
 		public bool UpdateAvailable {
 			get; set;
-		} = false;
+		}
 
 		/// <summary>
 		/// Latest release version available
@@ -274,7 +274,7 @@ namespace notifier {
 		/// </summary>
 		public bool Updating {
 			get; set;
-		} = false;
+		}
 
 		#endregion
 	}
