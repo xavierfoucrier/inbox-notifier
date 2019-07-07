@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using notifier.Languages;
@@ -76,9 +77,9 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Check for update depending on the user settings
+		/// Asynchronous method to check for update depending on the user settings
 		/// </summary>
-		public void Ping() {
+		public async Task Ping() {
 			if (!Settings.Default.UpdateService) {
 				return;
 			}
@@ -86,20 +87,20 @@ namespace notifier {
 			switch (Settings.Default.UpdatePeriod) {
 				case (int)Period.Day:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(1)) {
-						Check(false);
+						await Check(false);
 					}
 
 					break;
 				default:
 				case (int)Period.Week:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(7)) {
-						Check(false);
+						await Check(false);
 					}
 
 					break;
 				case (int)Period.Month:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddMonths(1)) {
-						Check(false);
+						await Check(false);
 					}
 
 					break;
@@ -111,7 +112,7 @@ namespace notifier {
 		/// </summary>
 		/// <param name="verbose">Indicate if the process display a message when a new update package is available</param>
 		/// <param name="startup">Indicate if the update check process has been started at startup</param>
-		public async void Check(bool verbose = true, bool startup = false) {
+		public async Task Check(bool verbose = true, bool startup = false) {
 			try {
 
 				// using tls 1.2 as security protocol to contact Github.com

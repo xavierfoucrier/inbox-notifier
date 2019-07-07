@@ -564,7 +564,7 @@ namespace notifier {
 		/// <summary>
 		/// Check for update
 		/// </summary>
-		private void buttonCheckForUpdate_Click(object sender, EventArgs e) {
+		private async void buttonCheckForUpdate_Click(object sender, EventArgs e) {
 			buttonCheckForUpdate.Enabled = false;
 
 			if (UpdateService.UpdateAvailable) {
@@ -573,7 +573,7 @@ namespace notifier {
 				Visible = false;
 				UpdateService.Download();
 			} else {
-				UpdateService.Check();
+				await UpdateService.Check();
 			}
 		}
 

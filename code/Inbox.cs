@@ -103,7 +103,7 @@ namespace notifier {
 			}
 
 			// do a small ping on the update service
-			UI.UpdateService.Ping();
+			await UI.UpdateService.Ping();
 
 			try {
 
