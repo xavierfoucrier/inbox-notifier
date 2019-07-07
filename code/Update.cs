@@ -92,7 +92,6 @@ namespace notifier {
 
 					break;
 				default:
-				case (int)Period.Week:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(7)) {
 						await Check(false);
 					}
