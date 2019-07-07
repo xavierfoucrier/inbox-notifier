@@ -215,7 +215,7 @@ namespace notifier {
 		/// </summary>
 		public string Tag {
 			get; set;
-		} = null;
+		}
 
 		/// <summary>
 		/// Timeout mode that indicates if the notification service is paused

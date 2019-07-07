@@ -465,7 +465,7 @@ namespace notifier {
 		/// </summary>
 		public uint ReconnectionAttempts {
 			get; set;
-		} = 0;
+		}
 
 		#endregion
 	}

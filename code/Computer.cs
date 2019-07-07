@@ -22,7 +22,7 @@ namespace notifier {
 		/// <summary>
 		/// Power resume state of the computer
 		/// </summary>
-		private bool PowerResume = false;
+		private bool PowerResume;
 
 		/// <summary>
 		/// Reference to the main interface
