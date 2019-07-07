@@ -51,7 +51,7 @@ namespace notifier {
 			try {
 
 				// wait for the user authorization
-				Credential = await AuthorizationBroker();
+				Credential = await AuthorizationBroker().ConfigureAwait(false);
 
 				// instanciate a new inbox
 				Inbox = new Inbox(ref UI);
