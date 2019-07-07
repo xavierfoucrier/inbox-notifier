@@ -409,8 +409,8 @@ namespace notifier {
 		/// <summary>
 		/// Manage the context menu MarkAsRead item
 		/// </summary>
-		private void menuItemMarkAsRead_Click(object sender, EventArgs e) {
-			GmailService.Inbox.MarkAsRead();
+		private async void menuItemMarkAsRead_Click(object sender, EventArgs e) {
+			await GmailService.Inbox.MarkAsRead();
 		}
 
 		/// <summary>

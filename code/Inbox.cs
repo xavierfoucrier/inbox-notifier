@@ -10,6 +10,7 @@ using Google.Apis.Services;
 using notifier.Languages;
 using notifier.Properties;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace notifier {
 	class Inbox : IDisposable {
@@ -156,7 +157,7 @@ namespace notifier {
 				Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
 				// update the statistics
-				UpdateStatistics();
+				await UpdateStatistics();
 
 				// exit the sync if the number of unread threads is the same as before
 				if (!manual && (Box.ThreadsUnread == UnreadThreads)) {
@@ -266,7 +267,7 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to mark as read the user inbox
 		/// </summary>
-		public async void MarkAsRead() {
+		public async Task MarkAsRead() {
 			try {
 
 				// update the synchronization time
@@ -303,7 +304,7 @@ namespace notifier {
 					Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
 					// update the statistics
-					UpdateStatistics();
+					await UpdateStatistics();
 				}
 
 				// restore the default systray icon and text
@@ -403,7 +404,7 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to get account statistics
 		/// </summary>
-		private async void UpdateStatistics() {
+		private async Task UpdateStatistics() {
 
 			// get inbox message count
 			int unread = (int)Box.ThreadsUnread;
