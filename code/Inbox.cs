@@ -157,7 +157,7 @@ namespace notifier {
 				Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
 				// update the statistics
-				await UpdateStatistics();
+				await UpdateStatistics().ConfigureAwait(false);
 
 				// exit the sync if the number of unread threads is the same as before
 				if (!manual && (Box.ThreadsUnread == UnreadThreads)) {
