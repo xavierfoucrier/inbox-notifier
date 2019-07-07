@@ -87,19 +87,19 @@ namespace notifier {
 			switch (Settings.Default.UpdatePeriod) {
 				case (int)Period.Day:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(1)) {
-						await Check(false);
+						await Check(false).ConfigureAwait(false);
 					}
 
 					break;
 				default:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(7)) {
-						await Check(false);
+						await Check(false).ConfigureAwait(false);
 					}
 
 					break;
 				case (int)Period.Month:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddMonths(1)) {
-						await Check(false);
+						await Check(false).ConfigureAwait(false);
 					}
 
 					break;
