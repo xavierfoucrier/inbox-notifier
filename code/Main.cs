@@ -169,7 +169,6 @@ namespace notifier {
 					pictureBoxPrivacyPreview.Image = Resources.privacy_none;
 					break;
 				default:
-				case (int)Notification.Privacy.Short:
 					fieldPrivacyNotificationShort.Checked = true;
 					pictureBoxPrivacyPreview.Image = Resources.privacy_short;
 					break;
