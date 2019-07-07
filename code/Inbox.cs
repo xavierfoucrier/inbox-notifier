@@ -110,7 +110,7 @@ namespace notifier {
 
 				// initialize the gmail service base client api
 				if (Api == null) {
-					Api = new GmailService(new BaseClientService.Initializer() {
+					Api = new GmailService(new BaseClientService.Initializer {
 						HttpClientInitializer = UI.GmailService.Credential,
 						ApplicationName = Settings.Default.APPLICATION_NAME
 					});
