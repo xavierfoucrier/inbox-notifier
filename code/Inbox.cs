@@ -29,7 +29,7 @@ namespace notifier {
 		/// <summary>
 		/// Reference to the main interface
 		/// </summary>
-		private Main UI;
+		private readonly Main UI;
 
 		#endregion
 
