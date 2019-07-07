@@ -29,7 +29,6 @@ namespace notifier {
 				// language application setting
 				switch (args[1]) {
 					default:
-					case "en":
 						Settings.Default.Language = "English";
 						break;
 					case "fr":
