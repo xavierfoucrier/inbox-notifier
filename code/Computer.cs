@@ -135,7 +135,7 @@ namespace notifier {
 		/// Open the Google website to check the internet connectivity
 		/// </summary>
 		/// <returns>Indicate if the user is connected to the internet, false means that the request to the Google server has failed</returns>
-		public bool IsInternetAvailable() {
+		public static bool IsInternetAvailable() {
 			try {
 
 				// send a ping to the DNS registry
@@ -160,7 +160,7 @@ namespace notifier {
 		/// <summary>
 		/// Regulate the start with Windows setting against the registry to prevent bad registry reflection
 		/// </summary>
-		public void RegulatesRegistry() {
+		public static void RegulatesRegistry() {
 			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {
 				if (key.GetValue("Gmail notifier") != null) {
 					if (!Settings.Default.RunAtWindowsStartup) {
@@ -178,7 +178,7 @@ namespace notifier {
 		/// Register or unregister the application from Windows startup program list
 		/// </summary>
 		/// <param name="mode">The registration mode for the application, Off means that the application will no longer be started at Windows startup</param>
-		public void SetApplicationStartup(Registration mode) {
+		public static void SetApplicationStartup(Registration mode) {
 			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {
 				if (mode == Registration.On) {
 					key.SetValue("Gmail notifier", '"' + Application.ExecutablePath + '"');

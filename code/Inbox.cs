@@ -79,7 +79,7 @@ namespace notifier {
 			}
 
 			// if internet is down, attempt to reconnect the user mailbox
-			if (!UI.ComputerService.IsInternetAvailable()) {
+			if (!Computer.IsInternetAvailable()) {
 				UI.timerReconnect.Enabled = true;
 				UI.timer.Enabled = false;
 
@@ -364,7 +364,7 @@ namespace notifier {
 			}
 
 			// if internet is down, wait for INTERVAL_RECONNECT seconds before next attempt
-			if (!UI.ComputerService.IsInternetAvailable()) {
+			if (!Computer.IsInternetAvailable()) {
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
 				if (ReconnectionAttempts == Settings.Default.MAX_AUTO_RECONNECT) {
