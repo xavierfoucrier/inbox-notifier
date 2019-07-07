@@ -27,7 +27,7 @@ namespace notifier {
 		/// <summary>
 		/// List of slots for the scheduler
 		/// </summary>
-		private List<TimeSlot> Slots;
+		private readonly List<TimeSlot> Slots;
 
 		/// <summary>
 		/// Reference to the main interface
