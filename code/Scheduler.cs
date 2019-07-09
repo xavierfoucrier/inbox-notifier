@@ -69,7 +69,7 @@ namespace notifier {
 
 			UI.fieldStartTime.Text = slot.Start.ToString(@"h\:mm");
 			UI.fieldEndTime.Text = slot.End.ToString(@"h\:mm");
-			UI.labelDuration.Text = slot.Start.Subtract(slot.End).Duration().TotalHours.ToString() + " " + Translation.hours;
+			UI.labelDuration.Text = slot.Start.Subtract(slot.End).Duration().TotalHours.ToString(CultureInfo.CurrentCulture) + " " + Translation.hours;
 		}
 
 		/// <summary>
@@ -122,7 +122,7 @@ namespace notifier {
 			SetTimeSlot(day, start, end);
 
 			// update the duration label
-			UI.labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString() + " " + Translation.hours;
+			UI.labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString(CultureInfo.CurrentCulture) + " " + Translation.hours;
 
 			// synchronize the inbox if the selected day of week is today
 			if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
