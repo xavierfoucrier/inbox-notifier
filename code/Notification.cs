@@ -171,7 +171,7 @@ namespace notifier {
 		/// <summary>
 		/// Resume notifications
 		/// </summary>
-		public async void Resume() {
+		public async Task Resume() {
 
 			// exit if the selected menu item is already checked
 			if (UI.menuItemTimeoutDisabled.Checked) {

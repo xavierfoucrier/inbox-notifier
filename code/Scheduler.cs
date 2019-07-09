@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using notifier.Languages;
 using notifier.Properties;
@@ -76,7 +77,7 @@ namespace notifier {
 		/// Update the scheduler properties depending on the type of time
 		/// </summary>
 		/// <param name="type">Type of time</param>
-		public async void Update(TimeType type) {
+		public async Task Update(TimeType type) {
 
 			// get the selected day of week
 			DayOfWeek day = GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex);

@@ -416,8 +416,8 @@ namespace notifier {
 		/// <summary>
 		/// Manage the context menu TimeoutDisabled item
 		/// </summary>
-		private void menuItemTimeoutDisabled_Click(object sender, EventArgs e) {
-			NotificationService.Resume();
+		private async void menuItemTimeoutDisabled_Click(object sender, EventArgs e) {
+			await NotificationService.Resume();
 		}
 
 		/// <summary>
@@ -519,7 +519,7 @@ namespace notifier {
 
 			// restore the timer interval when the timeout time has elapsed
 			if (NotificationService.Paused) {
-				NotificationService.Resume();
+				await NotificationService.Resume();
 
 				return;
 			}
@@ -557,8 +557,8 @@ namespace notifier {
 		}
 
 		// attempt to reconnect the user mailbox
-		private void timerReconnect_Tick(object sender, EventArgs e) {
-			GmailService.Inbox.Retry();
+		private async void timerReconnect_Tick(object sender, EventArgs e) {
+			await GmailService.Inbox.Retry();
 		}
 
 		/// <summary>
@@ -571,7 +571,7 @@ namespace notifier {
 				WindowState = FormWindowState.Minimized;
 				ShowInTaskbar = false;
 				Visible = false;
-				UpdateService.Download();
+				await UpdateService.Download();
 			} else {
 				await UpdateService.Check();
 			}
@@ -601,15 +601,15 @@ namespace notifier {
 		/// <summary>
 		/// Manage the fieldStartTime user setting
 		/// </summary>
-		private void fieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
-			SchedulerService.Update(Scheduler.TimeType.Start);
+		private async void fieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
+			await SchedulerService.Update(Scheduler.TimeType.Start);
 		}
 
 		/// <summary>
 		/// Manage the fieldEndTime user setting
 		/// </summary>
-		private void fieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
-			SchedulerService.Update(Scheduler.TimeType.End);
+		private async void fieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
+			await SchedulerService.Update(Scheduler.TimeType.End);
 		}
 
 		/// <summary>

@@ -160,7 +160,7 @@ namespace notifier {
 					if (verbose) {
 						UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
 					} else if (Settings.Default.UpdateDownload) {
-						Download();
+						await Download();
 					}
 				} else if (verbose && !startup) {
 					MessageBox.Show(Translation.latestVersion, Settings.Default.UPDATE_SERVICE_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -189,7 +189,7 @@ namespace notifier {
 		/// <summary>
 		/// Download and launch the setup installer
 		/// </summary>
-		public async void Download() {
+		public async Task Download() {
 
 			// define that the application is currently updating
 			Updating = true;

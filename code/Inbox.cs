@@ -77,7 +77,7 @@ namespace notifier {
 
 			// disable the timeout when the user do a manual synchronization
 			if (userAction && UI.NotificationService.Paused) {
-				UI.NotificationService.Resume();
+				await UI.NotificationService.Resume();
 
 				return;
 			}
@@ -344,7 +344,7 @@ namespace notifier {
 		/// <summary>
 		/// Retry to reconnect the inbox
 		/// </summary>
-		public async void Retry() {
+		public async Task Retry() {
 
 			// increase the number of reconnection attempt
 			ReconnectionAttempts++;
