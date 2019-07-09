@@ -391,7 +391,7 @@ namespace notifier {
 				UI.timer.Enabled = true;
 
 				// sync the user mailbox
-				await Sync();
+				await Sync().ConfigureAwait(false);
 			}
 		}
 
