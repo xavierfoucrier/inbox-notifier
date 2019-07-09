@@ -160,7 +160,7 @@ namespace notifier {
 					if (verbose) {
 						UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
 					} else if (Settings.Default.UpdateDownload) {
-						await Download();
+						await Download().ConfigureAwait(false);
 					}
 				} else if (verbose && !startup) {
 					MessageBox.Show(Translation.latestVersion, Settings.Default.UPDATE_SERVICE_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
