@@ -45,7 +45,7 @@ namespace notifier {
 		/// Bind the "NetworkAvailabilityChanged" event to automatically sync the inbox when a network is available
 		/// </summary>
 		public void BindNetwork() {
-			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object source, NetworkAvailabilityEventArgs target) => {
+			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(async (object source, NetworkAvailabilityEventArgs target) => {
 
 				// stop the reconnect process if it is running
 				if (UI.GmailService.Inbox.ReconnectionAttempts != 0) {
@@ -69,7 +69,7 @@ namespace notifier {
 
 					// sync the inbox when a network interface is available and the timeout mode is disabled
 					if (!UI.NotificationService.Paused) {
-						UI.GmailService.Inbox.Sync();
+						await UI.GmailService.Inbox.Sync();
 					}
 
 					break;
@@ -81,7 +81,7 @@ namespace notifier {
 		/// Bind the "PowerModeChanged" event to automatically pause/resume the application synchronization
 		/// </summary>
 		public void BindPowerMode() {
-			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler((object source, PowerModeChangedEventArgs target) => {
+			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler(async (object source, PowerModeChangedEventArgs target) => {
 				if (target.Mode == PowerModes.Suspend) {
 
 					// suspend the main timer
@@ -97,7 +97,7 @@ namespace notifier {
 					}
 
 					// synchronize the inbox and renew the token
-					UI.GmailService.Inbox.Sync(true, true);
+					await UI.GmailService.Inbox.Sync(true, true);
 
 					// enable the timer properly
 					UI.timer.Enabled = true;
@@ -109,7 +109,7 @@ namespace notifier {
 		/// Bind the "SessionSwitch" event to automatically sync the inbox on session unlocking
 		/// </summary>
 		public void BindSessionSwitch() {
-			SystemEvents.SessionSwitch += new SessionSwitchEventHandler((object source, SessionSwitchEventArgs target) => {
+			SystemEvents.SessionSwitch += new SessionSwitchEventHandler(async (object source, SessionSwitchEventArgs target) => {
 
 				// sync the inbox when the user is unlocking the Windows session
 				if (target.Reason == SessionSwitchReason.SessionUnlock) {
@@ -126,7 +126,7 @@ namespace notifier {
 					}
 
 					// synchronize the inbox and renew the token
-					UI.GmailService.Inbox.Sync(true, true);
+					await UI.GmailService.Inbox.Sync(true, true);
 				}
 			});
 		}

@@ -263,8 +263,8 @@ namespace notifier {
 		/// <summary>
 		/// Manage the SpamNotification user setting
 		/// </summary>
-		private void fieldSpamNotification_Click(object sender, EventArgs e) {
-			GmailService.Inbox.Sync();
+		private async void fieldSpamNotification_Click(object sender, EventArgs e) {
+			await GmailService.Inbox.Sync();
 		}
 
 		/// <summary>
@@ -402,8 +402,8 @@ namespace notifier {
 		/// <summary>
 		/// Manage the context menu Synchronize item
 		/// </summary>
-		private void menuItemSynchronize_Click(object sender, EventArgs e) {
-			GmailService.Inbox.Sync();
+		private async void menuItemSynchronize_Click(object sender, EventArgs e) {
+			await GmailService.Inbox.Sync();
 		}
 
 		/// <summary>
@@ -515,7 +515,7 @@ namespace notifier {
 		/// <summary>
 		/// Synchronize the user mailbox on every timer tick
 		/// </summary>
-		private void timer_Tick(object sender, EventArgs e) {
+		private async void timer_Tick(object sender, EventArgs e) {
 
 			// restore the timer interval when the timeout time has elapsed
 			if (NotificationService.Paused) {
@@ -525,7 +525,7 @@ namespace notifier {
 			}
 
 			// synchronize the inbox
-			GmailService.Inbox.Sync(false);
+			await GmailService.Inbox.Sync(false);
 		}
 
 		/// <summary>
@@ -615,9 +615,9 @@ namespace notifier {
 		/// <summary>
 		/// Synchronize the inbox if the scheduler is enable or disable and if the selected day of week is today
 		/// </summary>
-		private void fieldScheduler_Click(object sender, EventArgs e) {
+		private async void fieldScheduler_Click(object sender, EventArgs e) {
 			if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
-				GmailService.Inbox.Sync();
+				await GmailService.Inbox.Sync();
 			}
 		}
 	}

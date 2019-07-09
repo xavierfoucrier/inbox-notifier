@@ -81,7 +81,7 @@ namespace notifier {
 			if (Settings.Default.UpdateService && Update.IsPeriodSetToStartup()) {
 				await UI.UpdateService.Check(!Settings.Default.UpdateDownload, true);
 			} else {
-				Inbox.Sync();
+				await Inbox.Sync();
 			}
 		}
 

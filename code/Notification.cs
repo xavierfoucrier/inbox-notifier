@@ -171,7 +171,7 @@ namespace notifier {
 		/// <summary>
 		/// Resume notifications
 		/// </summary>
-		public void Resume() {
+		public async void Resume() {
 
 			// exit if the selected menu item is already checked
 			if (UI.menuItemTimeoutDisabled.Checked) {
@@ -196,7 +196,7 @@ namespace notifier {
 			UI.timer.Enabled = true;
 
 			// synchronize the inbox
-			UI.GmailService.Inbox.Sync();
+			await UI.GmailService.Inbox.Sync();
 		}
 
 		/// <summary>

@@ -49,7 +49,7 @@ namespace notifier {
 		/// </summary>
 		/// <param name="manual">Indicate if the synchronization come's from the timer tick or has been manually triggered</param>
 		/// <param name="token">Indicate if the Gmail token need to be refreshed</param>
-		public async void Sync(bool manual = true, bool token = false) {
+		public async Task Sync(bool manual = true, bool token = false) {
 
 			// temp variable
 			bool userAction = manual;
@@ -344,7 +344,7 @@ namespace notifier {
 		/// <summary>
 		/// Retry to reconnect the inbox
 		/// </summary>
-		public void Retry() {
+		public async void Retry() {
 
 			// increase the number of reconnection attempt
 			ReconnectionAttempts++;
@@ -391,7 +391,7 @@ namespace notifier {
 				UI.timer.Enabled = true;
 
 				// sync the user mailbox
-				Sync();
+				await Sync();
 			}
 		}
 

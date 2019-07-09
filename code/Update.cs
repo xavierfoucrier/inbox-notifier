@@ -181,7 +181,7 @@ namespace notifier {
 
 				// synchronize the inbox if the updates has been checked at startup after asynchronous authentication
 				if (startup) {
-					UI.GmailService.Inbox.Sync();
+					await UI.GmailService.Inbox.Sync();
 				}
 			}
 		}
@@ -189,7 +189,7 @@ namespace notifier {
 		/// <summary>
 		/// Download and launch the setup installer
 		/// </summary>
-		public void Download() {
+		public async void Download() {
 
 			// define that the application is currently updating
 			Updating = true;
@@ -244,7 +244,7 @@ namespace notifier {
 
 				// restore the context menu to the systray icon and start a synchronization
 				UI.notifyIcon.ContextMenu = UI.notifyMenu;
-				UI.GmailService.Inbox.Sync();
+				await UI.GmailService.Inbox.Sync();
 
 				// log the error
 				Core.Log("UpdateDownload: " + exception.Message);

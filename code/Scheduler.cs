@@ -76,7 +76,7 @@ namespace notifier {
 		/// Update the scheduler properties depending on the type of time
 		/// </summary>
 		/// <param name="type">Type of time</param>
-		public void Update(TimeType type) {
+		public async void Update(TimeType type) {
 
 			// get the selected day of week
 			DayOfWeek day = GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex);
@@ -94,7 +94,7 @@ namespace notifier {
 
 				// synchronize the inbox if the selected day of week is today
 				if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
-					UI.GmailService.Inbox.Sync();
+					await UI.GmailService.Inbox.Sync();
 				}
 
 				return;
@@ -126,7 +126,7 @@ namespace notifier {
 
 			// synchronize the inbox if the selected day of week is today
 			if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
-				UI.GmailService.Inbox.Sync();
+				await UI.GmailService.Inbox.Sync();
 			}
 		}
 
