@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using notifier.Languages;
 using notifier.Properties;
@@ -27,12 +28,12 @@ namespace notifier {
 		/// <summary>
 		/// List of slots for the scheduler
 		/// </summary>
-		private List<TimeSlot> Slots;
+		private readonly List<TimeSlot> Slots;
 
 		/// <summary>
 		/// Reference to the main interface
 		/// </summary>
-		private Main UI;
+		private readonly Main UI;
 
 		#endregion
 
@@ -69,14 +70,14 @@ namespace notifier {
 
 			UI.fieldStartTime.Text = slot.Start.ToString(@"h\:mm");
 			UI.fieldEndTime.Text = slot.End.ToString(@"h\:mm");
-			UI.labelDuration.Text = slot.Start.Subtract(slot.End).Duration().TotalHours.ToString() + " " + Translation.hours;
+			UI.labelDuration.Text = slot.Start.Subtract(slot.End).Duration().TotalHours.ToString(CultureInfo.CurrentCulture) + " " + Translation.hours;
 		}
 
 		/// <summary>
 		/// Update the scheduler properties depending on the type of time
 		/// </summary>
 		/// <param name="type">Type of time</param>
-		public void Update(TimeType type) {
+		public async Task Update(TimeType type) {
 
 			// get the selected day of week
 			DayOfWeek day = GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex);
@@ -94,7 +95,7 @@ namespace notifier {
 
 				// synchronize the inbox if the selected day of week is today
 				if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
-					UI.GmailService.Inbox.Sync();
+					await UI.GmailService.Inbox.Sync();
 				}
 
 				return;
@@ -122,11 +123,11 @@ namespace notifier {
 			SetTimeSlot(day, start, end);
 
 			// update the duration label
-			UI.labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString() + " " + Translation.hours;
+			UI.labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString(CultureInfo.CurrentCulture) + " " + Translation.hours;
 
 			// synchronize the inbox if the selected day of week is today
 			if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
-				UI.GmailService.Inbox.Sync();
+				await UI.GmailService.Inbox.Sync();
 			}
 		}
 

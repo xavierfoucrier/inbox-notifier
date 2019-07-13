@@ -11,7 +11,7 @@ using notifier.Languages;
 using notifier.Properties;
 
 namespace notifier {
-	class Gmail {
+	class Gmail : IDisposable {
 
 		#region #attributes
 
@@ -40,7 +40,7 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to get user credential
 		/// </summary>
-		public async void Authentication() {
+		public async Task Authentication() {
 
 			// display the authentication icon and text if the google api token file doesn't exists
 			if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {
@@ -51,7 +51,7 @@ namespace notifier {
 			try {
 
 				// wait for the user authorization
-				Credential = await AuthorizationBroker();
+				Credential = await AuthorizationBroker().ConfigureAwait(false);
 
 				// instanciate a new inbox
 				Inbox = new Inbox(ref UI);
@@ -78,10 +78,10 @@ namespace notifier {
 			}
 
 			// synchronize the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
-			if (Settings.Default.UpdateService && UI.UpdateService.IsPeriodSetToStartup()) {
-				UI.UpdateService.Check(!Settings.Default.UpdateDownload, true);
+			if (Settings.Default.UpdateService && Update.IsPeriodSetToStartup()) {
+				await UI.UpdateService.Check(!Settings.Default.UpdateDownload, true);
 			} else {
-				Inbox.Sync();
+				await Inbox.Sync();
 			}
 		}
 
@@ -119,7 +119,7 @@ namespace notifier {
 		/// Asynchronous task used to get the user authorization
 		/// </summary>
 		/// <returns>OAuth 2.0 user credential</returns>
-		private async Task<UserCredential> AuthorizationBroker() {
+		private static async Task<UserCredential> AuthorizationBroker() {
 
 			// use the client secret file for the context
 			try {

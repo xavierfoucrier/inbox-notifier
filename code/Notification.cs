@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using notifier.Languages;
 using notifier.Properties;
@@ -41,7 +42,7 @@ namespace notifier {
 		/// <summary>
 		/// Reference to the main interface
 		/// </summary>
-		private Main UI;
+		private readonly Main UI;
 
 		#endregion
 
@@ -69,7 +70,7 @@ namespace notifier {
 		/// Do the gmail specified action (inbox/message/spam) in a browser
 		/// </summary>
 		/// <param name="balloon">Define if the interaction is provided by the balloon tip</param>
-		public void Interaction(bool balloon = false) {
+		public async Task Interaction(bool balloon = false) {
 
 			// by default, always open the gmail inbox in a browser if the interaction is provided by a double click on the systray icon
 			if (Tag == null) {
@@ -100,7 +101,7 @@ namespace notifier {
 
 			// mark the message as read if the notification behavior is set to "mark as read"
 			if (balloon && Settings.Default.NotificationBehavior == (int)Behavior.MarkAsRead) {
-				UI.GmailService.Inbox.MarkAsRead();
+				await UI.GmailService.Inbox.MarkAsRead();
 			} else {
 				Process.Start(GetBaseURL() + "/" + Tag);
 			}
@@ -170,7 +171,7 @@ namespace notifier {
 		/// <summary>
 		/// Resume notifications
 		/// </summary>
-		public void Resume() {
+		public async Task Resume() {
 
 			// exit if the selected menu item is already checked
 			if (UI.menuItemTimeoutDisabled.Checked) {
@@ -195,14 +196,14 @@ namespace notifier {
 			UI.timer.Enabled = true;
 
 			// synchronize the inbox
-			UI.GmailService.Inbox.Sync();
+			await UI.GmailService.Inbox.Sync();
 		}
 
 		/// <summary>
 		/// Return the Gmail base URL depending on the notification behavior
 		/// </summary>
 		/// <returns></returns>
-		public string GetBaseURL() {
+		public static string GetBaseURL() {
 			return Settings.Default.NotificationBehavior == (int)Behavior.OpenSimplifiedHTML ? Settings.Default.GMAIL_BASEURL + "/h" : Settings.Default.GMAIL_BASEURL;
 		}
 
@@ -215,14 +216,14 @@ namespace notifier {
 		/// </summary>
 		public string Tag {
 			get; set;
-		} = null;
+		}
 
 		/// <summary>
 		/// Timeout mode that indicates if the notification service is paused
 		/// </summary>
 		public bool Paused {
 			get; set;
-		} = false;
+		}
 
 		#endregion
 	}

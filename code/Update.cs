@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using notifier.Languages;
@@ -28,12 +29,12 @@ namespace notifier {
 		/// <summary>
 		/// Http client used to check for updates
 		/// </summary>
-		private HttpClient Http = new HttpClient();
+		private readonly HttpClient Http = new HttpClient();
 
 		/// <summary>
 		/// Reference to the main interface
 		/// </summary>
-		private Main UI;
+		private readonly Main UI;
 
 		#endregion
 
@@ -51,14 +52,14 @@ namespace notifier {
 		/// Check the update period user setting
 		/// </summary>
 		/// <returns>Indicate if the update period is currently set to startup</returns>
-		public bool IsPeriodSetToStartup() {
+		public static bool IsPeriodSetToStartup() {
 			return Settings.Default.UpdatePeriod == (int)Period.Startup;
 		}
 
 		/// <summary>
 		/// Delete the setup installer package from the local application data folder
 		/// </summary>
-		public void DeleteSetupPackage() {
+		public static void DeleteSetupPackage() {
 			if (!Directory.Exists(Core.ApplicationDataFolder)) {
 				return;
 			}
@@ -76,9 +77,9 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Check for update depending on the user settings
+		/// Asynchronous method to check for update depending on the user settings
 		/// </summary>
-		public void Ping() {
+		public async Task Ping() {
 			if (!Settings.Default.UpdateService) {
 				return;
 			}
@@ -86,19 +87,19 @@ namespace notifier {
 			switch (Settings.Default.UpdatePeriod) {
 				case (int)Period.Day:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(1)) {
-						Check(false);
+						await Check(false).ConfigureAwait(false);
 					}
 
 					break;
-				case (int)Period.Week:
+				default:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(7)) {
-						Check(false);
+						await Check(false).ConfigureAwait(false);
 					}
 
 					break;
 				case (int)Period.Month:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddMonths(1)) {
-						Check(false);
+						await Check(false).ConfigureAwait(false);
 					}
 
 					break;
@@ -110,7 +111,7 @@ namespace notifier {
 		/// </summary>
 		/// <param name="verbose">Indicate if the process display a message when a new update package is available</param>
 		/// <param name="startup">Indicate if the update check process has been started at startup</param>
-		public async void Check(bool verbose = true, bool startup = false) {
+		public async Task Check(bool verbose = true, bool startup = false) {
 			try {
 
 				// using tls 1.2 as security protocol to contact Github.com
@@ -159,7 +160,7 @@ namespace notifier {
 					if (verbose) {
 						UI.NotificationService.Tip(Settings.Default.UPDATE_SERVICE_NAME, Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
 					} else if (Settings.Default.UpdateDownload) {
-						Download();
+						await Download().ConfigureAwait(false);
 					}
 				} else if (verbose && !startup) {
 					MessageBox.Show(Translation.latestVersion, Settings.Default.UPDATE_SERVICE_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -180,7 +181,7 @@ namespace notifier {
 
 				// synchronize the inbox if the updates has been checked at startup after asynchronous authentication
 				if (startup) {
-					UI.GmailService.Inbox.Sync();
+					await UI.GmailService.Inbox.Sync();
 				}
 			}
 		}
@@ -188,7 +189,7 @@ namespace notifier {
 		/// <summary>
 		/// Download and launch the setup installer
 		/// </summary>
-		public void Download() {
+		public async Task Download() {
 
 			// define that the application is currently updating
 			Updating = true;
@@ -243,7 +244,7 @@ namespace notifier {
 
 				// restore the context menu to the systray icon and start a synchronization
 				UI.notifyIcon.ContextMenu = UI.notifyMenu;
-				UI.GmailService.Inbox.Sync();
+				await UI.GmailService.Inbox.Sync();
 
 				// log the error
 				Core.Log("UpdateDownload: " + exception.Message);
@@ -259,7 +260,7 @@ namespace notifier {
 		/// </summary>
 		public bool UpdateAvailable {
 			get; set;
-		} = false;
+		}
 
 		/// <summary>
 		/// Latest release version available
@@ -273,7 +274,7 @@ namespace notifier {
 		/// </summary>
 		public bool Updating {
 			get; set;
-		} = false;
+		}
 
 		#endregion
 	}

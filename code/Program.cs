@@ -29,7 +29,6 @@ namespace notifier {
 				// language application setting
 				switch (args[1]) {
 					default:
-					case "en":
 						Settings.Default.Language = "English";
 						break;
 					case "fr":
@@ -52,7 +51,6 @@ namespace notifier {
 			// initialize the interface with the specified culture, depending on the user settings
 			switch (Settings.Default.Language) {
 				default:
-				case "English":
 					CultureInfo.CurrentUICulture = new CultureInfo("en-US");
 					break;
 				case "Français":

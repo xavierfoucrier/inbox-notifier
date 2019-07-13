@@ -10,9 +10,10 @@ using Google.Apis.Services;
 using notifier.Languages;
 using notifier.Properties;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace notifier {
-	class Inbox {
+	class Inbox : IDisposable {
 
 		#region #attributes
 
@@ -29,7 +30,7 @@ namespace notifier {
 		/// <summary>
 		/// Reference to the main interface
 		/// </summary>
-		private Main UI;
+		private readonly Main UI;
 
 		#endregion
 
@@ -48,7 +49,10 @@ namespace notifier {
 		/// </summary>
 		/// <param name="manual">Indicate if the synchronization come's from the timer tick or has been manually triggered</param>
 		/// <param name="token">Indicate if the Gmail token need to be refreshed</param>
-		public async void Sync(bool manual = true, bool token = false) {
+		public async Task Sync(bool manual = true, bool token = false) {
+
+			// temp variable
+			bool userAction = manual;
 
 			// prevent the application from syncing the inbox when the scheduler is enabled and the sync is not scheduled
 			if (Settings.Default.Scheduler && !UI.SchedulerService.ScheduledSync()) {
@@ -67,19 +71,19 @@ namespace notifier {
 
 			// reset reconnection count and prevent the application from displaying continuous warning icon when a timertick synchronization occurs after a reconnection attempt
 			if (ReconnectionAttempts != 0) {
-				manual = true;
+				userAction = true;
 				ReconnectionAttempts = 0;
 			}
 
 			// disable the timeout when the user do a manual synchronization
-			if (manual && UI.NotificationService.Paused) {
-				UI.NotificationService.Resume();
+			if (userAction && UI.NotificationService.Paused) {
+				await UI.NotificationService.Resume();
 
 				return;
 			}
 
 			// if internet is down, attempt to reconnect the user mailbox
-			if (!UI.ComputerService.IsInternetAvailable()) {
+			if (!Computer.IsInternetAvailable()) {
 				UI.timerReconnect.Enabled = true;
 				UI.timer.Enabled = false;
 
@@ -97,32 +101,33 @@ namespace notifier {
 			UI.menuItemSettings.Enabled = true;
 
 			// display the sync icon, but only on manual synchronization
-			if (manual) {
+			if (userAction) {
 				UI.notifyIcon.Icon = Resources.sync;
 				UI.notifyIcon.Text = Translation.sync;
 			}
 
 			// do a small ping on the update service
-			UI.UpdateService.Ping();
+			await UI.UpdateService.Ping();
 
 			try {
 
 				// initialize the gmail service base client api
 				if (Api == null) {
-					Api = new GmailService(new BaseClientService.Initializer() {
+					Api = new GmailService(new BaseClientService.Initializer {
 						HttpClientInitializer = UI.GmailService.Credential,
 						ApplicationName = Settings.Default.APPLICATION_NAME
 					});
 
 					// retrieve the gmail address
-					UI.labelEmailAddress.Text = EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
+					EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
+					UI.labelEmailAddress.Text = EmailAddress;
 				}
 
 				// manage the spam notification
 				if (Settings.Default.SpamNotification) {
 
 					// exit if a spam is already detected
-					if (!manual && UI.NotificationService.Tag == "#spam") {
+					if (!userAction && UI.NotificationService.Tag == "#spam") {
 						return;
 					}
 
@@ -155,10 +160,10 @@ namespace notifier {
 				Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
 				// update the statistics
-				UpdateStatistics();
+				await UpdateStatistics().ConfigureAwait(false);
 
 				// exit the sync if the number of unread threads is the same as before
-				if (!manual && (Box.ThreadsUnread == UnreadThreads)) {
+				if (!userAction && (Box.ThreadsUnread == UnreadThreads)) {
 					return;
 				}
 
@@ -265,7 +270,7 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to mark as read the user inbox
 		/// </summary>
-		public async void MarkAsRead() {
+		public async Task MarkAsRead() {
 			try {
 
 				// update the synchronization time
@@ -290,9 +295,9 @@ namespace notifier {
 					);
 
 					// create the batch request
-					BatchModifyMessagesRequest request = new BatchModifyMessagesRequest() {
+					BatchModifyMessagesRequest request = new BatchModifyMessagesRequest {
 						Ids = batch.ToList(),
-						RemoveLabelIds = new List<string>() { "UNREAD" }
+						RemoveLabelIds = new List<string> { "UNREAD" }
 					};
 
 					// execute the batch request to mark all mails as read
@@ -302,7 +307,7 @@ namespace notifier {
 					Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
 					// update the statistics
-					UpdateStatistics();
+					await UpdateStatistics().ConfigureAwait(false);
 				}
 
 				// restore the default systray icon and text
@@ -339,7 +344,7 @@ namespace notifier {
 		/// <summary>
 		/// Retry to reconnect the inbox
 		/// </summary>
-		public void Retry() {
+		public async Task Retry() {
 
 			// increase the number of reconnection attempt
 			ReconnectionAttempts++;
@@ -363,7 +368,7 @@ namespace notifier {
 			}
 
 			// if internet is down, wait for INTERVAL_RECONNECT seconds before next attempt
-			if (!UI.ComputerService.IsInternetAvailable()) {
+			if (!Computer.IsInternetAvailable()) {
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
 				if (ReconnectionAttempts == Settings.Default.MAX_AUTO_RECONNECT) {
@@ -386,7 +391,7 @@ namespace notifier {
 				UI.timer.Enabled = true;
 
 				// sync the user mailbox
-				Sync();
+				await Sync().ConfigureAwait(false);
 			}
 		}
 
@@ -402,7 +407,7 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to get account statistics
 		/// </summary>
-		private async void UpdateStatistics() {
+		private async Task UpdateStatistics() {
 
 			// get inbox message count
 			int unread = (int)Box.ThreadsUnread;
@@ -464,7 +469,7 @@ namespace notifier {
 		/// </summary>
 		public uint ReconnectionAttempts {
 			get; set;
-		} = 0;
+		}
 
 		#endregion
 	}
