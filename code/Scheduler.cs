@@ -60,6 +60,8 @@ namespace notifier {
 		/// Display the time slot properties on the interface
 		/// </summary>
 		public void DisplayTimeSlotProperties(TimeSlot slot) {
+
+			// if no time slot is defined, the synchronization will work all the day
 			if (slot == null) {
 				UI.fieldStartTime.SelectedIndex = 0;
 				UI.fieldEndTime.SelectedIndex = 0;
@@ -68,9 +70,19 @@ namespace notifier {
 				return;
 			}
 
+			// if time slot of 0 hours is defined, the synchronization will be paused all the day
+			if (slot.TotalHours == 0) {
+				UI.fieldStartTime.SelectedIndex = 1;
+				UI.fieldEndTime.SelectedIndex = 1;
+				UI.labelDuration.Text = Translation.off;
+
+				return;
+			}
+
+			// display the time slot properties
 			UI.fieldStartTime.Text = slot.Start.ToString(@"h\:mm");
 			UI.fieldEndTime.Text = slot.End.ToString(@"h\:mm");
-			UI.labelDuration.Text = slot.Start.Subtract(slot.End).Duration().TotalHours.ToString(CultureInfo.CurrentCulture) + " " + Translation.hours;
+			UI.labelDuration.Text = slot.TotalHours.ToString(CultureInfo.CurrentCulture) + " " + Translation.hours;
 		}
 
 		/// <summary>
@@ -137,10 +149,10 @@ namespace notifier {
 			TimeSpan end = TimeSpan.Parse(UI.fieldEndTime.Text);
 
 			// add or update the time slot
-			SetTimeSlot(day, start, end);
+			TimeSlot slot = SetTimeSlot(day, start, end);
 
 			// update the duration label
-			UI.labelDuration.Text = start.Subtract(end).Duration().TotalHours.ToString(CultureInfo.CurrentCulture) + " " + Translation.hours;
+			UI.labelDuration.Text = slot.TotalHours.ToString(CultureInfo.CurrentCulture) + " " + Translation.hours;
 
 			// synchronize the inbox if the selected day of week is today
 			if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
@@ -221,6 +233,9 @@ namespace notifier {
 
 			// save all slots
 			Settings.Default.SchedulerTimeSlot = JsonConvert.SerializeObject(Slots);
+
+			// return the added or updated time slot
+			return GetTimeSlot(day);
 		}
 
 		/// <summary>
@@ -238,9 +253,6 @@ namespace notifier {
 
 			// save all slots
 			Settings.Default.SchedulerTimeSlot = JsonConvert.SerializeObject(Slots);
-
-			// return the added or updated time slot
-			return GetTimeSlot(day);
 		}
 
 		/// <summary>
