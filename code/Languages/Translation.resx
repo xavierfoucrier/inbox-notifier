@@ -281,6 +281,9 @@ Cette option n'est pas activée sur ce type d'application.</value>
   <data name="noMessage" xml:space="preserve">
     <value>Pas de nouveau message</value>
   </data>
+  <data name="off" xml:space="preserve">
+    <value>Désactivé</value>
+  </data>
   <data name="reconnectAttempt" xml:space="preserve">
     <value>Hors ligne
 Tentative de reconnexion ...</value>

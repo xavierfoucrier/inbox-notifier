@@ -537,6 +537,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Désactivé.
+        /// </summary>
+        internal static string off {
+            get {
+                return ResourceManager.GetString("off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Hors ligne
         ///Tentative de reconnexion ....
         /// </summary>
