@@ -82,16 +82,33 @@ namespace notifier {
 			// get the selected day of week
 			DayOfWeek day = GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex);
 
+			// check for the infinite or off time options
+			bool durationInfinite = (type == TimeType.Start && UI.fieldStartTime.SelectedIndex == 0) || (type == TimeType.End && UI.fieldEndTime.SelectedIndex == 0);
+			bool durationOff = (type == TimeType.Start && UI.fieldStartTime.SelectedIndex == 1) || (type == TimeType.End && UI.fieldEndTime.SelectedIndex == 1);
+
 			// remove the time slot for the selected day
-			if ((type == TimeType.Start && UI.fieldStartTime.SelectedIndex == 0) || (type == TimeType.End && UI.fieldEndTime.SelectedIndex == 0)) {
+			if (durationInfinite || durationOff) {
 
 				// remove the time slot from the scheduler
-				RemoveTimeSlot(day);
+				if (durationInfinite) {
 
-				// udpate the interface
-				UI.fieldStartTime.SelectedIndex = 0;
-				UI.fieldEndTime.SelectedIndex = 0;
-				UI.labelDuration.Text = Translation.theday;
+					// remove the time slot from the scheduler
+					RemoveTimeSlot(day);
+
+					// udpate the interface
+					UI.fieldStartTime.SelectedIndex = 0;
+					UI.fieldEndTime.SelectedIndex = 0;
+					UI.labelDuration.Text = Translation.theday;
+				} else {
+
+					// set the time slot to 0 in the scheduler (mean no synchronization)
+					SetTimeSlot(day, new TimeSpan(0, 0, 0), new TimeSpan(0, 0, 0));
+
+					// udpate the interface
+					UI.fieldStartTime.SelectedIndex = 1;
+					UI.fieldEndTime.SelectedIndex = 1;
+					UI.labelDuration.Text = Translation.off;
+				}
 
 				// synchronize the inbox if the selected day of week is today
 				if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
