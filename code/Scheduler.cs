@@ -206,7 +206,8 @@ namespace notifier {
 		/// <param name="day">Day of week</param>
 		/// <param name="start">Start time of the time slot</param>
 		/// <param name="end">End time of the time slot</param>
-		public void SetTimeSlot(DayOfWeek day, TimeSpan start, TimeSpan end) {
+		/// <returns>The time slot that was added or updated</returns>
+		public TimeSlot SetTimeSlot(DayOfWeek day, TimeSpan start, TimeSpan end) {
 			int index = Slots.FindIndex((match) => {
 				return match.Day == day;
 			});
@@ -237,6 +238,9 @@ namespace notifier {
 
 			// save all slots
 			Settings.Default.SchedulerTimeSlot = JsonConvert.SerializeObject(Slots);
+
+			// return the added or updated time slot
+			return GetTimeSlot(day);
 		}
 
 		/// <summary>
