@@ -132,14 +132,14 @@ namespace notifier {
 
 			// update the end time depending on the start time
 			if (type == TimeType.Start) {
-				if (UI.fieldStartTime.SelectedIndex > UI.fieldEndTime.SelectedIndex || UI.fieldEndTime.SelectedIndex == 0) {
+				if (UI.fieldStartTime.SelectedIndex > UI.fieldEndTime.SelectedIndex || UI.fieldEndTime.SelectedIndex == 0 || UI.fieldEndTime.SelectedIndex == 1) {
 					UI.fieldEndTime.SelectedIndex = UI.fieldStartTime.SelectedIndex;
 				}
 			}
 
 			// update the start time depending on the end time
 			if (type == TimeType.End) {
-				if (UI.fieldEndTime.SelectedIndex < UI.fieldStartTime.SelectedIndex || UI.fieldStartTime.SelectedIndex == 0) {
+				if (UI.fieldEndTime.SelectedIndex < UI.fieldStartTime.SelectedIndex || UI.fieldStartTime.SelectedIndex == 0 || UI.fieldStartTime.SelectedIndex == 1) {
 					UI.fieldStartTime.SelectedIndex = UI.fieldEndTime.SelectedIndex;
 				}
 			}
