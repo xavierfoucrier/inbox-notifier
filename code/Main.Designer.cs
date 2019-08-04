@@ -433,9 +433,7 @@ namespace notifier {
 			// 
 			// fieldNotificationBehavior
 			// 
-			this.fieldNotificationBehavior.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.fieldNotificationBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldNotificationBehavior.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
 			this.fieldNotificationBehavior.FormattingEnabled = true;
 			this.fieldNotificationBehavior.Items.AddRange(new object[] {
             resources.GetString("fieldNotificationBehavior.Items"),
@@ -449,8 +447,6 @@ namespace notifier {
 			// label9
 			// 
 			resources.ApplyResources(this.label9, "label9");
-			this.label9.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.label9.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
 			this.label9.Name = "label9";
 			// 
 			// groupBox2
@@ -519,8 +515,6 @@ namespace notifier {
 			this.fieldAudioNotification.Checked = global::notifier.Properties.Settings.Default.AudioNotification;
 			this.fieldAudioNotification.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAudioNotification.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "MessageNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.fieldAudioNotification.Enabled = global::notifier.Properties.Settings.Default.MessageNotification;
 			this.fieldAudioNotification.Name = "fieldAudioNotification";
 			this.fieldAudioNotification.UseVisualStyleBackColor = true;
 			// 

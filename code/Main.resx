@@ -1315,7 +1315,7 @@ ouvrira automatiquement la boite de réception.</value>
     <value>NoControl</value>
   </data>
   <data name="fieldSpamNotification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 71</value>
+    <value>13, 48</value>
   </data>
   <data name="fieldSpamNotification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -1441,7 +1441,7 @@ ouvrira automatiquement la boite de réception.</value>
     <value>NoControl</value>
   </data>
   <data name="fieldAudioNotification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 48</value>
+    <value>13, 71</value>
   </data>
   <data name="fieldAudioNotification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
