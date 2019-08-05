@@ -94,15 +94,19 @@ namespace notifier {
 			// get the selected day of week
 			DayOfWeek day = GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex);
 
+			// get the selected indexes
+			int start = UI.fieldStartTime.SelectedIndex;
+			int end = UI.fieldEndTime.SelectedIndex;
+
 			// check for the infinite or off time options
-			bool durationInfinite = (type == TimeType.Start && UI.fieldStartTime.SelectedIndex == 0) || (type == TimeType.End && UI.fieldEndTime.SelectedIndex == 0);
-			bool durationOff = (type == TimeType.Start && UI.fieldStartTime.SelectedIndex == 1) || (type == TimeType.End && UI.fieldEndTime.SelectedIndex == 1);
+			bool infiniteOption = (type == TimeType.Start && start == 0) || (type == TimeType.End && end == 0);
+			bool offOption = (type == TimeType.Start && start == 1) || (type == TimeType.End && end == 1);
 
 			// remove the time slot for the selected day
-			if (durationInfinite || durationOff) {
+			if (infiniteOption || offOption) {
 
 				// remove the time slot from the scheduler
-				if (durationInfinite) {
+				if (infiniteOption) {
 
 					// remove the time slot from the scheduler
 					RemoveTimeSlot(day);
@@ -131,25 +135,17 @@ namespace notifier {
 			}
 
 			// update the end time depending on the start time
-			if (type == TimeType.Start) {
-				if (UI.fieldStartTime.SelectedIndex > UI.fieldEndTime.SelectedIndex || UI.fieldEndTime.SelectedIndex == 0 || UI.fieldEndTime.SelectedIndex == 1) {
-					UI.fieldEndTime.SelectedIndex = UI.fieldStartTime.SelectedIndex;
-				}
+			if (type == TimeType.Start && (start > end || end == 0 || end == 1)) {
+				UI.fieldEndTime.SelectedIndex = start;
 			}
 
 			// update the start time depending on the end time
-			if (type == TimeType.End) {
-				if (UI.fieldEndTime.SelectedIndex < UI.fieldStartTime.SelectedIndex || UI.fieldStartTime.SelectedIndex == 0 || UI.fieldStartTime.SelectedIndex == 1) {
-					UI.fieldStartTime.SelectedIndex = UI.fieldEndTime.SelectedIndex;
-				}
+			if (type == TimeType.End && (end < start || start == 0 || start == 1)) {
+				UI.fieldStartTime.SelectedIndex = end;
 			}
 
-			// define the start and end time of the time slot
-			TimeSpan start = TimeSpan.Parse(UI.fieldStartTime.Text);
-			TimeSpan end = TimeSpan.Parse(UI.fieldEndTime.Text);
-
-			// add or update the time slot
-			TimeSlot slot = SetTimeSlot(day, start, end);
+			// add or update the time slot based on selected start/end time
+			TimeSlot slot = SetTimeSlot(day, TimeSpan.Parse(UI.fieldStartTime.Text), TimeSpan.Parse(UI.fieldEndTime.Text));
 
 			// update the duration label
 			UI.labelDuration.Text = slot.TotalHours.ToString(CultureInfo.CurrentCulture) + " " + Translation.hours;
