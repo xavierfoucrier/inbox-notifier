@@ -281,6 +281,9 @@ Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
   <data name="noMessage" xml:space="preserve">
     <value>Keine neuen Beiträge</value>
   </data>
+  <data name="off" xml:space="preserve">
+    <value>Untauglich</value>
+  </data>
   <data name="reconnectAttempt" xml:space="preserve">
     <value>Offline
 Der Versuch, die Verbindung wiederherzustellen ...</value>
