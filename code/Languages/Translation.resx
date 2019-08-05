@@ -282,7 +282,7 @@ Cette option n'est pas activée sur ce type d'application.</value>
     <value>Pas de nouveau message</value>
   </data>
   <data name="off" xml:space="preserve">
-    <value>Désactivé</value>
+    <value>Désactivée</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
     <value>Hors ligne

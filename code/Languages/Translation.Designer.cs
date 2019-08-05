@@ -537,7 +537,7 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Désactivé.
+        ///   Recherche une chaîne localisée semblable à Désactivée.
         /// </summary>
         internal static string off {
             get {
