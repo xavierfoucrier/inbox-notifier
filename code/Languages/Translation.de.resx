@@ -300,6 +300,9 @@ Der Versuch, die Verbindung wiederherzustellen ...</value>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>Ein Fehler ist aufgetreten während der Synchronisation des Posteingangs :</value>
   </data>
+  <data name="syncOff" xml:space="preserve">
+    <value>Synchronisation deaktiviert am {day}</value>
+  </data>
   <data name="syncScheduled" xml:space="preserve">
     <value>Geplante Synchronisation
 am {day} von {start} bis {end}</value>

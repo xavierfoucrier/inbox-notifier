@@ -592,6 +592,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Synchronisation désactivée le {day}.
+        /// </summary>
+        internal static string syncOff {
+            get {
+                return ResourceManager.GetString("syncOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Synchronisation planifiée
         ///le {day} de {start} à {end}.
         /// </summary>

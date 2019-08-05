@@ -300,6 +300,9 @@ Attempting to reconnect...</value>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>An error occurred during the synchronization of the inbox:</value>
   </data>
+  <data name="syncOff" xml:space="preserve">
+    <value>Synchronization disabled on {day}</value>
+  </data>
   <data name="syncScheduled" xml:space="preserve">
     <value>Scheduled synchronization
 on {day} from {start} to {end}</value>

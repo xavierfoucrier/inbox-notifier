@@ -166,7 +166,15 @@ namespace notifier {
 
 			// display the timeout icon
 			UI.notifyIcon.Icon = Resources.timeout;
-			UI.notifyIcon.Text = Translation.syncScheduled.Replace("{day}", CultureInfo.CurrentUICulture.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek)).Replace("{start}", slot.Start.ToString(@"h\:mm")).Replace("{end}", slot.End.ToString(@"h\:mm"));
+
+			// add icon text depending on the slot duration
+			string day = CultureInfo.CurrentUICulture.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek);
+
+			if (slot.TotalHours != 0) {
+				UI.notifyIcon.Text = Translation.syncScheduled.Replace("{day}", day).Replace("{start}", slot.Start.ToString(@"h\:mm")).Replace("{end}", slot.End.ToString(@"h\:mm"));
+			} else {
+				UI.notifyIcon.Text = Translation.syncOff.Replace("{day}", day);
+			}
 
 			// disable some menu items
 			UI.menuItemSynchronize.Enabled = false;
