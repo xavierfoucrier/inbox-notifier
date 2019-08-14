@@ -1,15 +1,17 @@
-#define MyAppName "Gmail Notifier"
+﻿#define MyAppName "Gmail Notifier"
 #define MyAppVersion "2.4.3.0"
 #define MyAppShortVersion "2.4"
+#define MyAppYear GetDateTimeString('yyyy', '', '');
 #define MyAppPublisher "Xavier Foucrier"
 #define MyAppURL "https://github.com/xavierfoucrier/gmail-notifier"
 #define MyAppExeName "Gmail notifier.exe"
+#define MyAppRegistryKeyName "Gmail notifier"
 
 [Setup]
 AppId={{7E60E047-C79B-49A4-8CF6-B33D5565B2E8}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppCopyright=Copyright (c) 2019 {#MyAppPublisher}
+AppCopyright=Copyright (c) {#MyAppYear} {#MyAppPublisher}
 AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
@@ -41,9 +43,9 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 Name: "startup"; Description: "{cm:AutoStartProgram,{#MyAppName}}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkablealone;
 
 [Files]
-Source: "..\code\bin\Release 32 bits (x86)\Gmail notifier.exe"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: "..\code\bin\Release 32 bits (x86)\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode
 Source: "..\code\bin\Release 32 bits (x86)\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Check: not Is64BitInstallMode
-Source: "..\code\bin\Release 64 bits (x64)\Gmail notifier.exe"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: "..\code\bin\Release 64 bits (x64)\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode
 Source: "..\code\bin\Release 64 bits (x64)\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Check: Is64BitInstallMode
 
 [Icons]
@@ -58,12 +60,12 @@ Filename: "{app}\{#MyAppExeName}"; Parameters: "install {language} {code:autorun
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall
 
 [Registry]
-Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: "Gmail notifier"; ValueData: "{app}\{#MyAppExeName}"; Tasks: startup; Flags: uninsdeletevalue;
+Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: "{#MyAppRegistryKeyName}"; ValueData: "{app}\{#MyAppExeName}"; Tasks: startup; Flags: uninsdeletevalue;
 
 [Code]
 function autorun(Value: string): string;
 begin
-	if RegValueExists(HKCU, 'Software\Microsoft\Windows\CurrentVersion\Run', 'Gmail notifier') then begin
+	if RegValueExists(HKCU, 'Software\Microsoft\Windows\CurrentVersion\Run', '{#MyAppRegistryKeyName}') then begin
 		Result := 'auto';
 	end	else begin
 		Result := 'none';
@@ -71,4 +73,4 @@ begin
 end;
 
 [UninstallDelete]
-Type: filesandordirs; Name: "{localappdata}\Gmail Notifier"
+Type: filesandordirs; Name: "{localappdata}\{#MyAppName}"
