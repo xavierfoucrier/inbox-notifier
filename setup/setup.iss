@@ -80,10 +80,8 @@ begin
 	Notifications := CreateInputOptionPage(wpInfoBefore, 'Configuration de l''aplication', 'Notifications de l''application', 'Quel comportement souhaitez vous adopter pour les notifications ?', False, False);
 	Notifications.Add('&Nouveau message');
 	Notifications.Values[0] := True;
-	
 	Notifications.Add('&Courriers indésirables (SPAM)');
 	Notifications.Values[1] := True;
-	 
 	Notifications.Add('&Notification sonore');
 	Notifications.Values[2] := True;
 	
