@@ -87,7 +87,7 @@ begin
 	Notifications.Add('&Notification sonore');
 	Notifications.Values[2] := True;
 	
-	Privacy := CreateInputOptionPage(Notifications.ID, 'Configuration de l''aplication', 'Confidentialité des notifications', 'À la réception d''un nouveau message :', True, False);
+	Privacy := CreateInputOptionPage(Notifications.ID, 'Configuration de l''aplication', 'Confidentialité des notifications', 'Quel contenu souhaitez vous afficher dans les notifications ?', True, False);
   Privacy.Add('Afficher tout le contenu du message');
   Privacy.Add('Afficher une partie du contenu du message');
   Privacy.Add('Masquer tout le contenu du message');
