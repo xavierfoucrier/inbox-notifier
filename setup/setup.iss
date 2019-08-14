@@ -72,28 +72,5 @@ begin
 	end;
 end;
 
-var
-  Notifications: TInputOptionWizardPage;
-	
-procedure InitializeWizard;
-begin	
-
-	// setup page for notifications behavior
-	Notifications := CreateInputOptionPage(wpInfoBefore, 'Configuration de l''aplication', 'Notifications de l''application', 'Quel comportement souhaitez vous adopter pour les notifications ?', False, False);
-	Notifications.Add('&Nouveau message');
-	Notifications.Values[0] := True;
-	Notifications.Add('&Courriers indésirables (SPAM)');
-	Notifications.Values[1] := True;
-	Notifications.Add('&Notification sonore');
-	Notifications.Values[2] := True;
-	
-	// setup page for privacy behavior
-	Privacy := CreateInputOptionPage(Notifications.ID, 'Configuration de l''aplication', 'Confidentialité des notifications', 'Quel contenu souhaitez vous afficher dans les notifications ?', True, False);
-  Privacy.Add('Afficher tout le contenu du message');
-  Privacy.Add('Afficher une partie du contenu du message');
-  Privacy.Add('Masquer tout le contenu du message');
-	Privacy.Values[1] := True;
-end;
-
 [UninstallDelete]
 Type: filesandordirs; Name: "{localappdata}\{#MyAppName}"
