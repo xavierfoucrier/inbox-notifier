@@ -537,6 +537,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Désactivée.
+        /// </summary>
+        internal static string off {
+            get {
+                return ResourceManager.GetString("off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Hors ligne
         ///Tentative de reconnexion ....
         /// </summary>
@@ -579,6 +588,15 @@ namespace notifier.Languages {
         internal static string syncErrorOccured {
             get {
                 return ResourceManager.GetString("syncErrorOccured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Synchronisation désactivée le {day}.
+        /// </summary>
+        internal static string syncOff {
+            get {
+                return ResourceManager.GetString("syncOff", resourceCulture);
             }
         }
         

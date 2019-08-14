@@ -48,6 +48,15 @@ namespace notifier {
 			get; set;
 		}
 
+		/// <summary>
+		/// Total hours of the time slot
+		/// </summary>
+		public double TotalHours {
+			get {
+				return Start.Subtract(End).Duration().TotalHours;
+			}
+		}
+
 		#endregion
 	}
 
