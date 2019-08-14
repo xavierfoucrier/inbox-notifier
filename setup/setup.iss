@@ -1,4 +1,4 @@
-#define MyAppName "Gmail Notifier"
+﻿#define MyAppName "Gmail Notifier"
 #define MyAppVersion "2.4.3.0"
 #define MyAppShortVersion "2.4"
 #define MyAppYear GetDateTimeString('yyyy', '', '');
@@ -81,13 +81,13 @@ begin
 	Notifications.Add('&Nouveau message');
 	Notifications.Values[0] := True;
 	
-	Notifications.Add('&Courriers ind�sirables (SPAM)');
+	Notifications.Add('&Courriers indésirables (SPAM)');
 	Notifications.Values[1] := True;
 	 
 	Notifications.Add('&Notification sonore');
 	Notifications.Values[2] := True;
 	
-	Privacy := CreateInputOptionPage(Notifications.ID, 'Configuration de l''aplication', 'Confidentialit� des notifications', '� la r�ception d''un nouveau message :', True, False);
+	Privacy := CreateInputOptionPage(Notifications.ID, 'Configuration de l''aplication', 'Confidentialité des notifications', 'À la réception d''un nouveau message :', True, False);
   Privacy.Add('Afficher tout le contenu du message');
   Privacy.Add('Afficher une partie du contenu du message');
   Privacy.Add('Masquer tout le contenu du message');
