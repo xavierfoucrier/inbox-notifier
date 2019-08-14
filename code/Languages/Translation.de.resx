@@ -250,9 +250,6 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
     <value>Als gelesen markieren</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>Fehlerbetrieb "Als gelesen markieren"</value>
-  </data>
-  <data name="markAsReadErrorOccured" xml:space="preserve">
     <value>Ein Fehler ist aufgetreten während der Operation "Als gelesen markieren":</value>
   </data>
   <data name="message" xml:space="preserve">
@@ -283,6 +280,9 @@ Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
   </data>
   <data name="off" xml:space="preserve">
     <value>Untauglich</value>
+  </data>
+  <data name="operationError" xml:space="preserve">
+    <value>Fehler während der letzten Operation</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
     <value>Offline

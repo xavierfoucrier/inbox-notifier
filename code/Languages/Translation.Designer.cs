@@ -445,20 +445,11 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur lors de l&apos;opération &quot;Marquer comme lu&quot;.
+        ///   Recherche une chaîne localisée semblable à Une erreur est survenue lors de l&apos;opération &quot;Marquer comme lu&quot; :.
         /// </summary>
         internal static string markAsReadError {
             get {
                 return ResourceManager.GetString("markAsReadError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Une erreur est survenue lors de l&apos;opération &quot;Marquer comme lu&quot; :.
-        /// </summary>
-        internal static string markAsReadErrorOccured {
-            get {
-                return ResourceManager.GetString("markAsReadErrorOccured", resourceCulture);
             }
         }
         
@@ -542,6 +533,15 @@ namespace notifier.Languages {
         internal static string off {
             get {
                 return ResourceManager.GetString("off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur lors de la dernière opération.
+        /// </summary>
+        internal static string operationError {
+            get {
+                return ResourceManager.GetString("operationError", resourceCulture);
             }
         }
         

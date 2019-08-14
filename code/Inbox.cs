@@ -331,8 +331,8 @@ namespace notifier {
 
 				// display a balloon tip in the systray with the detailed error message
 				UI.notifyIcon.Icon = Resources.warning;
-				UI.notifyIcon.Text = Translation.markAsReadError;
-				UI.NotificationService.Tip(Translation.error, Translation.markAsReadErrorOccured + exception.Message, Notification.Type.Warning, 1500);
+				UI.notifyIcon.Text = Translation.operationError;
+				UI.NotificationService.Tip(Translation.error, Translation.markAsReadError + exception.Message, Notification.Type.Warning, 1500);
 
 				// log the error
 				Core.Log("MarkAsRead: " + exception.Message);

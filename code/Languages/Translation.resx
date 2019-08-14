@@ -250,9 +250,6 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
     <value>Marquer comme lu</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>Erreur lors de l'opération "Marquer comme lu"</value>
-  </data>
-  <data name="markAsReadErrorOccured" xml:space="preserve">
     <value>Une erreur est survenue lors de l'opération "Marquer comme lu" :</value>
   </data>
   <data name="message" xml:space="preserve">
@@ -283,6 +280,9 @@ Cette option n'est pas activée sur ce type d'application.</value>
   </data>
   <data name="off" xml:space="preserve">
     <value>Désactivée</value>
+  </data>
+  <data name="operationError" xml:space="preserve">
+    <value>Erreur lors de la dernière opération</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
     <value>Hors ligne

@@ -250,9 +250,6 @@ Do you really want to disconnect your Gmail account and restart the application 
     <value>Mark as read</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>Error with the "Mark as read" operation</value>
-  </data>
-  <data name="markAsReadErrorOccured" xml:space="preserve">
     <value>An error occurred during the "Mark Read" operation:</value>
   </data>
   <data name="message" xml:space="preserve">
@@ -283,6 +280,9 @@ This option is not enabled on this type of application.</value>
   </data>
   <data name="off" xml:space="preserve">
     <value>Disabled</value>
+  </data>
+  <data name="operationError" xml:space="preserve">
+    <value>Error with the last operation</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
     <value>Offline
