@@ -149,6 +149,10 @@ namespace notifier {
 						UI.notifyIcon.Icon = Resources.spam;
 						UI.notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam);
 
+						// enable the mark as read menu item
+						UI.menuItemMarkAsRead.Text = Translation.markAsRead + " (" + spam.ThreadsUnread + ")";
+						UI.menuItemMarkAsRead.Enabled = true;
+
 						// update the tag
 						UI.NotificationService.Tag = "#spam";
 
@@ -280,9 +284,21 @@ namespace notifier {
 				UI.notifyIcon.Icon = Resources.sync;
 				UI.notifyIcon.Text = Translation.sync;
 
+				// create the request filter
+				List<string> filter = new List<string> {
+					"UNREAD"
+				};
+
+				// check for unread spams
+				bool unreadSpams = UI.NotificationService.Tag == "#spam";
+
+				if (unreadSpams) {
+					filter.Add("SPAM");
+				}
+
 				// get all unread messages
 				UsersResource.MessagesResource.ListRequest messages = Api.Users.Messages.List("me");
-				messages.LabelIds = "UNREAD";
+				messages.LabelIds = filter;
 				ListMessagesResponse list = await messages.ExecuteAsync();
 				IList<Message> unread = list.Messages;
 
@@ -310,19 +326,25 @@ namespace notifier {
 					await UpdateStatistics().ConfigureAwait(false);
 				}
 
-				// restore the default systray icon and text
-				UI.notifyIcon.Icon = Resources.normal;
-				UI.notifyIcon.Text = Translation.noMessage;
+				// sync the inbox again if the user has just mark spams as read
+				if (unreadSpams) {
+					await Sync();
+				} else {
+					
+					// restore the default systray icon and text
+					UI.notifyIcon.Icon = Resources.normal;
+					UI.notifyIcon.Text = Translation.noMessage;
 
-				// clean the tag
-				UI.NotificationService.Tag = null;
+					// clean the tag
+					UI.NotificationService.Tag = null;
 
-				// reset the number of unread threads
-				UnreadThreads = 0;
+					// reset the number of unread threads
+					UnreadThreads = 0;
 
-				// disable the mark as read menu item
-				UI.menuItemMarkAsRead.Text = Translation.markAsRead;
-				UI.menuItemMarkAsRead.Enabled = false;
+					// disable the mark as read menu item
+					UI.menuItemMarkAsRead.Text = Translation.markAsRead;
+					UI.menuItemMarkAsRead.Enabled = false;
+				}
 			} catch (Exception exception) {
 
 				// enabled the mark as read menu item
