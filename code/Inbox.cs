@@ -289,7 +289,10 @@ namespace notifier {
 					"UNREAD"
 				};
 
-				if (UI.NotificationService.Tag == "#spam") {
+				// check for unread spams
+				bool unreadSpams = UI.NotificationService.Tag == "#spam";
+
+				if (unreadSpams) {
 					filter.Add("SPAM");
 				}
 
@@ -323,19 +326,25 @@ namespace notifier {
 					await UpdateStatistics().ConfigureAwait(false);
 				}
 
-				// restore the default systray icon and text
-				UI.notifyIcon.Icon = Resources.normal;
-				UI.notifyIcon.Text = Translation.noMessage;
+				// sync the inbox again if the user has just mark spams as read
+				if (unreadSpams) {
+					await Sync();
+				} else {
+					
+					// restore the default systray icon and text
+					UI.notifyIcon.Icon = Resources.normal;
+					UI.notifyIcon.Text = Translation.noMessage;
 
-				// clean the tag
-				UI.NotificationService.Tag = null;
+					// clean the tag
+					UI.NotificationService.Tag = null;
 
-				// reset the number of unread threads
-				UnreadThreads = 0;
+					// reset the number of unread threads
+					UnreadThreads = 0;
 
-				// disable the mark as read menu item
-				UI.menuItemMarkAsRead.Text = Translation.markAsRead;
-				UI.menuItemMarkAsRead.Enabled = false;
+					// disable the mark as read menu item
+					UI.menuItemMarkAsRead.Text = Translation.markAsRead;
+					UI.menuItemMarkAsRead.Enabled = false;
+				}
 			} catch (Exception exception) {
 
 				// enabled the mark as read menu item
