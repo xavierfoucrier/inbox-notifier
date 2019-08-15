@@ -149,6 +149,10 @@ namespace notifier {
 						UI.notifyIcon.Icon = Resources.spam;
 						UI.notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam);
 
+						// enable the mark as read menu item
+						UI.menuItemMarkAsRead.Text = Translation.markAsRead + " (" + spam.ThreadsUnread + ")";
+						UI.menuItemMarkAsRead.Enabled = true;
+
 						// update the tag
 						UI.NotificationService.Tag = "#spam";
 
