@@ -280,9 +280,18 @@ namespace notifier {
 				UI.notifyIcon.Icon = Resources.sync;
 				UI.notifyIcon.Text = Translation.sync;
 
+				// create the request filter
+				List<string> filter = new List<string> {
+					"UNREAD"
+				};
+
+				if (UI.NotificationService.Tag == "#spam") {
+					filter.Add("SPAM");
+				}
+
 				// get all unread messages
 				UsersResource.MessagesResource.ListRequest messages = Api.Users.Messages.List("me");
-				messages.LabelIds = "UNREAD";
+				messages.LabelIds = filter;
 				ListMessagesResponse list = await messages.ExecuteAsync();
 				IList<Message> unread = list.Messages;
 
