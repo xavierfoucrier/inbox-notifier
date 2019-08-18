@@ -10,6 +10,7 @@
       :root {
         --base-color: #fff;
         --contrast-color: #0366d6;
+        --darken-color: #024287;
         --font: 'Noto Sans';
       }
 
@@ -21,7 +22,7 @@
         width: 100vw;
         height: 100vh;
         margin: 0;
-        background: var(--contrast-color);
+        background: var(--contrast-color) linear-gradient(to bottom right, var(--contrast-color), var(--darken-color));
         font-family: 'Noto Sans', sans-serif;
         font-size: 15px;
         color: var(--base-color);
