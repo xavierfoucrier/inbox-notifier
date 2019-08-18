@@ -254,9 +254,10 @@ namespace notifier {
 
 				// save the number of unread threads
 				UnreadThreads = Box.ThreadsUnread;
-			} catch (IOException) {
-				// nothing to catch: IOException from mscorlib
-				// sometimes the process can not access the token response file because it is used by another process
+			} catch (IOException exception) {
+
+				// log the exception from mscorlib: sometimes the process can not access the token response file because it is used by another process
+				Core.Log("IOException: " + exception.Message);
 			} catch (Exception exception) {
 
 				// display a balloon tip in the systray with the detailed error message
