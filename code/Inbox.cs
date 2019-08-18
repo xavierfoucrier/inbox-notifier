@@ -455,10 +455,12 @@ namespace notifier {
 
 			// update the draft informations
 			ListDraftsResponse drafts = await Api.Users.Drafts.List("me").ExecuteAsync();
+			UI.labelTotalDrafts.Enabled = true;
 			UI.labelTotalDrafts.Text = drafts.Drafts != null ? drafts.Drafts.Count.ToString() : "0";
 
 			// update the label informations
 			ListLabelsResponse labels = await Api.Users.Labels.List("me").ExecuteAsync();
+			UI.labelTotalLabels.Enabled = true;
 			UI.labelTotalLabels.Text = labels.Labels != null ? labels.Labels.Count.ToString() : "0";
 		}
 
