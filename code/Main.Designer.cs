@@ -371,8 +371,10 @@ namespace notifier {
 			// labelEmailAddress
 			// 
 			resources.ApplyResources(this.labelEmailAddress, "labelEmailAddress");
+			this.labelEmailAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::notifier.Properties.Settings.Default, "EmailAddress", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.labelEmailAddress.ForeColor = System.Drawing.SystemColors.ControlDark;
 			this.labelEmailAddress.Name = "labelEmailAddress";
+			this.labelEmailAddress.Text = global::notifier.Properties.Settings.Default.EmailAddress;
 			// 
 			// label5
 			// 

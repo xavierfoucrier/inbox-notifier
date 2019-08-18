@@ -889,9 +889,6 @@ prochain démarrage de l'application.</value>
   <data name="labelEmailAddress.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
-  <data name="labelEmailAddress.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
   <data name="labelEmailAddress.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -2180,6 +2177,9 @@ ouvrira automatiquement la boite de réception.</value>
   </data>
   <data name="checkBox1.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="checkBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 48</value>
