@@ -25,7 +25,7 @@ namespace notifier {
 			string VersionMinor = ProductVersion[1];
 			string VersionPatch = ProductVersion[2];
 
-			Version = "v" + VersionMajor + "." + VersionMinor + (VersionPatch != "0" ? "." + VersionPatch : "");
+			Version = "v" + VersionMajor + "." + VersionMinor + "." + VersionPatch;
 		}
 
 		/// <summary>
