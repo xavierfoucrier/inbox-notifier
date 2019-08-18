@@ -61,14 +61,14 @@ namespace notifier {
 		/// Local application data folder name
 		/// </summary>
 		public static string ApplicationDataFolder {
-			get; set;
+			get;
 		} = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
 
 		/// <summary>
 		/// Full application version number
 		/// </summary>
 		public static string Version {
-			get; set;
+			get;
 		} = "";
 
 		#endregion
