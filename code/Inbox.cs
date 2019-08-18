@@ -123,6 +123,12 @@ namespace notifier {
 					UI.labelEmailAddress.Text = EmailAddress;
 				}
 
+				// get the "inbox" label
+				Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
+
+				// update the statistics
+				await UpdateStatistics().ConfigureAwait(false);
+
 				// manage the spam notification
 				if (Settings.Default.SpamNotification) {
 
@@ -159,12 +165,6 @@ namespace notifier {
 						return;
 					}
 				}
-
-				// get the "inbox" label
-				Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
-
-				// update the statistics
-				await UpdateStatistics().ConfigureAwait(false);
 
 				// exit the sync if the number of unread threads is the same as before
 				if (!userAction && (Box.ThreadsUnread == UnreadThreads)) {
