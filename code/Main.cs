@@ -545,6 +545,9 @@ namespace notifier {
 				Directory.Delete(Core.ApplicationDataFolder, true);
 			}
 
+			// reset the user email address
+			Settings.Default.EmailAddress = "-";
+
 			// restart the application
 			Core.RestartApplication();
 		}

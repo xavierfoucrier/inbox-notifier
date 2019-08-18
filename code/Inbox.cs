@@ -118,9 +118,12 @@ namespace notifier {
 						ApplicationName = Settings.Default.APPLICATION_NAME
 					});
 
-					// retrieve the gmail address
-					EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
-					UI.labelEmailAddress.Text = EmailAddress;
+					// retrieve the gmail address and store it in an application cache setting
+					if (Settings.Default.EmailAddress == "-") {
+						EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
+						UI.labelEmailAddress.Text = EmailAddress;
+						Settings.Default.EmailAddress = EmailAddress;
+					}
 				}
 
 				// get the "inbox" label
