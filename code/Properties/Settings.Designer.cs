@@ -391,5 +391,17 @@ namespace notifier.Properties {
                 return ((string)(this["DNS_REGISTRY_IP"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-")]
+        public string EmailAddress {
+            get {
+                return ((string)(this["EmailAddress"]));
+            }
+            set {
+                this["EmailAddress"] = value;
+            }
+        }
     }
 }

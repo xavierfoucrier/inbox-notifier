@@ -118,10 +118,19 @@ namespace notifier {
 						ApplicationName = Settings.Default.APPLICATION_NAME
 					});
 
-					// retrieve the gmail address
-					EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
-					UI.labelEmailAddress.Text = EmailAddress;
+					// retrieve the gmail address and store it in an application cache setting
+					if (Settings.Default.EmailAddress == "-") {
+						EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
+						UI.labelEmailAddress.Text = EmailAddress;
+						Settings.Default.EmailAddress = EmailAddress;
+					}
 				}
+
+				// get the "inbox" label
+				Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
+
+				// update the statistics
+				await UpdateStatistics().ConfigureAwait(false);
 
 				// manage the spam notification
 				if (Settings.Default.SpamNotification) {
@@ -159,12 +168,6 @@ namespace notifier {
 						return;
 					}
 				}
-
-				// get the "inbox" label
-				Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
-
-				// update the statistics
-				await UpdateStatistics().ConfigureAwait(false);
 
 				// exit the sync if the number of unread threads is the same as before
 				if (!userAction && (Box.ThreadsUnread == UnreadThreads)) {
@@ -254,9 +257,10 @@ namespace notifier {
 
 				// save the number of unread threads
 				UnreadThreads = Box.ThreadsUnread;
-			} catch (IOException) {
-				// nothing to catch: IOException from mscorlib
-				// sometimes the process can not access the token response file because it is used by another process
+			} catch (IOException exception) {
+
+				// log the exception from mscorlib: sometimes the process can not access the token response file because it is used by another process
+				Core.Log("IOException: " + exception.Message);
 			} catch (Exception exception) {
 
 				// display a balloon tip in the systray with the detailed error message
@@ -454,10 +458,12 @@ namespace notifier {
 
 			// update the draft informations
 			ListDraftsResponse drafts = await Api.Users.Drafts.List("me").ExecuteAsync();
+			UI.labelTotalDrafts.Enabled = true;
 			UI.labelTotalDrafts.Text = drafts.Drafts != null ? drafts.Drafts.Count.ToString() : "0";
 
 			// update the label informations
 			ListLabelsResponse labels = await Api.Users.Labels.List("me").ExecuteAsync();
+			UI.labelTotalLabels.Enabled = true;
 			UI.labelTotalLabels.Text = labels.Labels != null ? labels.Labels.Count.ToString() : "0";
 		}
 

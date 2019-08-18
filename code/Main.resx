@@ -557,7 +557,7 @@ prochain démarrage de l'application.</value>
     <value>14, 45</value>
   </data>
   <data name="chartUnreadMails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 10</value>
+    <value>0, 10</value>
   </data>
   <data name="chartUnreadMails.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -581,7 +581,7 @@ prochain démarrage de l'application.</value>
     <value>14, 45</value>
   </data>
   <data name="chartTotalMails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 10</value>
+    <value>0, 10</value>
   </data>
   <data name="chartTotalMails.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -600,6 +600,9 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="labelTotalLabels.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="labelTotalLabels.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="labelTotalLabels.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt, style=Bold</value>
@@ -738,6 +741,9 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="labelTotalDrafts.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="labelTotalDrafts.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="labelTotalDrafts.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt, style=Bold</value>
@@ -882,9 +888,6 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="labelEmailAddress.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
-  </data>
-  <data name="labelEmailAddress.Text" xml:space="preserve">
-    <value>-</value>
   </data>
   <data name="labelEmailAddress.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -1881,7 +1884,7 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="fieldEndTime.Items" xml:space="preserve">
     <value>∞</value>
   </data>
-	<data name="fieldEndTime.Items1" xml:space="preserve">
+  <data name="fieldEndTime.Items1" xml:space="preserve">
     <value>×</value>
   </data>
   <data name="fieldEndTime.Items2" xml:space="preserve">
@@ -1953,10 +1956,10 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;fieldEndTime.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-	<data name="fieldStartTime.Items" xml:space="preserve">
+  <data name="fieldStartTime.Items" xml:space="preserve">
     <value>∞</value>
   </data>
-	<data name="fieldStartTime.Items1" xml:space="preserve">
+  <data name="fieldStartTime.Items1" xml:space="preserve">
     <value>×</value>
   </data>
   <data name="fieldStartTime.Items2" xml:space="preserve">
@@ -2174,6 +2177,9 @@ ouvrira automatiquement la boite de réception.</value>
   </data>
   <data name="checkBox1.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="checkBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 48</value>
