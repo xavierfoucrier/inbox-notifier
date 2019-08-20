@@ -1,7 +1,24 @@
 # Gmail notifier – [![Version](https://img.shields.io/github/release/xavierfoucrier/gmail-notifier.svg)](https://github.com/xavierfoucrier/gmail-notifier/releases/latest) [![Code quality](https://img.shields.io/codacy/grade/d7aa291a80e64385a1566810df971ad5.svg)](https://app.codacy.com/project/xavier.foucrier/gmail-notifier/dashboard?bid=13272204) [![Build Status](https://travis-ci.org/xavierfoucrier/gmail-notifier.svg?branch=master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/gmail-notifier/total.svg "Downloads - All releases")](https://github.com/xavierfoucrier/gmail-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-awarded-%230E7FC0.svg "Softpedia - Awarded")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
 Gmail notifications instantly in the Windows taskbar.
 
-[![Gmail Notifier](gallery/main.png "Gmail Notifier - Discover the application running on Windows 7")](GALLERY.md)
+[![Gmail Notifier](logo.jpg "Gmail Notifier")](logo.jpg?raw=true)
+
+
+## Features
+Gmail notifier is provided with **a bunch of useful features that bring your inbox always up to date** and keep you focus on your work:
+
+* Synchronization - *automatic sync that keep you up to date every time*
+* Email notifications - *display concise notifications when needed*
+* SPAM checking - *enforce user to clean SPAMs regularly*
+* Do not disturb mode - *keep focus at work*
+* Pricay settings - *choose the privacy level for notifications*
+* Credential managment - *login and logout with ease*
+* Multilingual support - *french/english/german*
+* Inbox statistics preview - *display drafts/labels/unreads/totals messages from the inbox*
+* Attachment information - *notice when a message have one or more attachments*
+* Network reconnection - *try to reconnect to the network when the internet connection is lost*
+* Scheduled synchronization - *disable the synchronization to have a peaceful weekend*
+* Update service - *keep the application up to date*
 
 
 ## Compatibility
