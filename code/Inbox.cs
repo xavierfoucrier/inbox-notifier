@@ -326,8 +326,10 @@ namespace notifier {
 					// get the "inbox" label
 					Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
 
-					// update the statistics
-					await UpdateStatistics().ConfigureAwait(false);
+					// update the statistics only when there is no unread spams
+					if (!unreadSpams) {
+						await UpdateStatistics().ConfigureAwait(false);
+					}
 				}
 
 				// sync the inbox again if the user has just mark spams as read
