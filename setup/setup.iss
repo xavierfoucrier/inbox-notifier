@@ -1,6 +1,5 @@
 ﻿#define MyAppName "Gmail Notifier"
-#define MyAppVersion "2.4.3.0"
-#define MyAppShortVersion "2.4"
+#define MyAppVersion "3.0.0"
 #define MyAppYear GetDateTimeString('yyyy', '', '');
 #define MyAppPublisher "Xavier Foucrier"
 #define MyAppURL "https://github.com/xavierfoucrier/gmail-notifier"
@@ -24,7 +23,7 @@ AllowNoIcons=yes
 LicenseFile=..\LICENSE.md
 OutputDir=..\setup
 ArchitecturesInstallIn64BitMode=x64
-OutputBaseFilename={#MyAppName} {#MyAppShortVersion}
+OutputBaseFilename={#MyAppName} {#MyAppVersion}
 SetupIconFile=setup.ico
 Compression=lzma
 SolidCompression=yes
