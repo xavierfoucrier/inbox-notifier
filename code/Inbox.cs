@@ -332,7 +332,7 @@ namespace notifier {
 
 				// sync the inbox again if the user has just mark spams as read
 				if (unreadSpams) {
-					await Sync();
+					await Sync().ConfigureAwait(false);
 				} else {
 					
 					// restore the default systray icon and text
