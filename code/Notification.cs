@@ -102,6 +102,11 @@ namespace notifier {
 			// mark the message as read if the notification behavior is set to "mark as read"
 			if (balloon && Settings.Default.NotificationBehavior == (int)Behavior.MarkAsRead) {
 				await UI.GmailService.Inbox.MarkAsRead();
+
+				// prevent systray icon restoration when spams are marked as read and there is other messages in the inbox
+				if (UI.GmailService.Inbox.UnreadThreads != 0) {
+					return;
+				}
 			} else {
 				Process.Start(GetBaseURL() + "/" + Tag);
 			}
