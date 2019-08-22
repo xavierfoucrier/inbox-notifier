@@ -3,6 +3,14 @@ Gmail notifications instantly in the Windows taskbar.
 
 [![Gmail Notifier](logo.jpg "Gmail Notifier")](logo.jpg?raw=true)
 
+> **Disclaimer:** the current Gmail Notifier application **is being certified by Google** in the few weeks, so you may probably encouter warning messages from Google stating that the app is not certified.
+>
+> For now, everything should work the same way as before, instead that you need to explicitely authorize the application to access your account on the OAuth screen as **the app is not certified for the moment**. Read more about [what happens to rejected apps](https://support.google.com/cloud/answer/9110914#rejected).
+>
+> Users that have already signed up may encouter a warning message when the application will try to refresh the token, please sign out and sign up from your account to fix that.
+>
+> Don't hesitate to **contact me if you have any question about the v3**  
+> [xavier.foucrier [at] gmail.com](mailto:xavier.foucrier@gmail.com) :v:
 
 ## Features
 Gmail notifier is provided with **a bunch of useful features that bring your inbox always up to date** and keep you focus on your work:
