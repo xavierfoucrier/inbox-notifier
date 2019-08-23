@@ -250,9 +250,6 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
     <value>Als gelesen markieren</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>Fehlerbetrieb "Als gelesen markieren"</value>
-  </data>
-  <data name="markAsReadErrorOccured" xml:space="preserve">
     <value>Ein Fehler ist aufgetreten während der Operation "Als gelesen markieren":</value>
   </data>
   <data name="message" xml:space="preserve">
@@ -281,6 +278,12 @@ Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
   <data name="noMessage" xml:space="preserve">
     <value>Keine neuen Beiträge</value>
   </data>
+  <data name="off" xml:space="preserve">
+    <value>Untauglich</value>
+  </data>
+  <data name="operationError" xml:space="preserve">
+    <value>Fehler während der letzten Operation</value>
+  </data>
   <data name="reconnectAttempt" xml:space="preserve">
     <value>Offline
 Der Versuch, die Verbindung wiederherzustellen ...</value>
@@ -296,6 +299,9 @@ Der Versuch, die Verbindung wiederherzustellen ...</value>
   </data>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>Ein Fehler ist aufgetreten während der Synchronisation des Posteingangs :</value>
+  </data>
+  <data name="syncOff" xml:space="preserve">
+    <value>Synchronisation deaktiviert am {day}</value>
   </data>
   <data name="syncScheduled" xml:space="preserve">
     <value>Geplante Synchronisation

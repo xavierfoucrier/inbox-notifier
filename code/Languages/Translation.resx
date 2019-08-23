@@ -250,9 +250,6 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
     <value>Marquer comme lu</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>Erreur lors de l'opération "Marquer comme lu"</value>
-  </data>
-  <data name="markAsReadErrorOccured" xml:space="preserve">
     <value>Une erreur est survenue lors de l'opération "Marquer comme lu" :</value>
   </data>
   <data name="message" xml:space="preserve">
@@ -281,6 +278,12 @@ Cette option n'est pas activée sur ce type d'application.</value>
   <data name="noMessage" xml:space="preserve">
     <value>Pas de nouveau message</value>
   </data>
+  <data name="off" xml:space="preserve">
+    <value>Désactivée</value>
+  </data>
+  <data name="operationError" xml:space="preserve">
+    <value>Erreur lors de la dernière opération</value>
+  </data>
   <data name="reconnectAttempt" xml:space="preserve">
     <value>Hors ligne
 Tentative de reconnexion ...</value>
@@ -296,6 +299,9 @@ Tentative de reconnexion ...</value>
   </data>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>Une erreur est survenue lors de la synchronisation de la boite de réception :</value>
+  </data>
+  <data name="syncOff" xml:space="preserve">
+    <value>Synchronisation désactivée le {day}</value>
   </data>
   <data name="syncScheduled" xml:space="preserve">
     <value>Synchronisation planifiée

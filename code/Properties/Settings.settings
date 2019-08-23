@@ -101,5 +101,11 @@
     <Setting Name="LOG_FILE" Type="System.String" Scope="Application">
       <Value Profile="(Default)">gmn.log</Value>
     </Setting>
+    <Setting Name="DNS_REGISTRY_IP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1.1.1.1</Value>
+    </Setting>
+    <Setting Name="EmailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">-</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

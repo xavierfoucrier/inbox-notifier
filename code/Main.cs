@@ -61,7 +61,7 @@ namespace notifier {
 		/// <summary>
 		/// Load the form
 		/// </summary>
-		private void Main_Load(object sender, EventArgs e) {
+		private async void Main_Load(object sender, EventArgs e) {
 
 			// play a pop sound at application startup
 			if (Settings.Default.AudioPop) {
@@ -82,7 +82,7 @@ namespace notifier {
 				Settings.Default.Save();
 
 				// delete the setup installer package from the previous upgrade
-				UpdateService.DeleteSetupPackage();
+				notifier.Update.DeleteSetupPackage();
 			}
 
 			// display a systray notification on first load
@@ -132,7 +132,7 @@ namespace notifier {
 			help.SetHelpString(buttonCheckForUpdate, Translation.helpCheckForUpdate);
 
 			// authenticate the user
-			GmailService.Authentication();
+			await GmailService.Authentication();
 
 			// attach the context menu to the systray icon
 			notifyIcon.ContextMenu = notifyMenu;
@@ -154,6 +154,7 @@ namespace notifier {
 			// display the notification labels
 			labelNotificationOpenMessage.Visible = Settings.Default.NotificationBehavior == 1;
 			labelNotificationMarkMessageAsRead.Visible = Settings.Default.NotificationBehavior == 2;
+			labelNotificationOpenSimplifiedHTML.Visible = Settings.Default.NotificationBehavior == 3;
 
 			// display the step delay setting
 			fieldStepDelay.SelectedIndex = (int)Settings.Default.StepDelay;
@@ -168,7 +169,6 @@ namespace notifier {
 					pictureBoxPrivacyPreview.Image = Resources.privacy_none;
 					break;
 				default:
-				case (int)Notification.Privacy.Short:
 					fieldPrivacyNotificationShort.Checked = true;
 					pictureBoxPrivacyPreview.Image = Resources.privacy_short;
 					break;
@@ -234,7 +234,7 @@ namespace notifier {
 		/// Manage the RunAtWindowsStartup user setting
 		/// </summary>
 		private void fieldRunAtWindowsStartup_CheckedChanged(object sender, EventArgs e) {
-			ComputerService.SetApplicationStartup(fieldRunAtWindowsStartup.Checked ? Computer.Registration.On : Computer.Registration.Off);
+			Computer.SetApplicationStartup(fieldRunAtWindowsStartup.Checked ? Computer.Registration.On : Computer.Registration.Off);
 		}
 
 		/// <summary>
@@ -263,8 +263,8 @@ namespace notifier {
 		/// <summary>
 		/// Manage the SpamNotification user setting
 		/// </summary>
-		private void fieldSpamNotification_Click(object sender, EventArgs e) {
-			GmailService.Inbox.Sync();
+		private async void fieldSpamNotification_Click(object sender, EventArgs e) {
+			await GmailService.Inbox.Sync();
 		}
 
 		/// <summary>
@@ -292,6 +292,7 @@ namespace notifier {
 			Settings.Default.NotificationBehavior = (uint)fieldNotificationBehavior.SelectedIndex;
 			labelNotificationOpenMessage.Visible = Settings.Default.NotificationBehavior == 1;
 			labelNotificationMarkMessageAsRead.Visible = Settings.Default.NotificationBehavior == 2;
+			labelNotificationOpenSimplifiedHTML.Visible = Settings.Default.NotificationBehavior == 3;
 		}
 
 		/// <summary>
@@ -401,22 +402,22 @@ namespace notifier {
 		/// <summary>
 		/// Manage the context menu Synchronize item
 		/// </summary>
-		private void menuItemSynchronize_Click(object sender, EventArgs e) {
-			GmailService.Inbox.Sync();
+		private async void menuItemSynchronize_Click(object sender, EventArgs e) {
+			await GmailService.Inbox.Sync();
 		}
 
 		/// <summary>
 		/// Manage the context menu MarkAsRead item
 		/// </summary>
-		private void menuItemMarkAsRead_Click(object sender, EventArgs e) {
-			GmailService.Inbox.MarkAsRead();
+		private async void menuItemMarkAsRead_Click(object sender, EventArgs e) {
+			await GmailService.Inbox.MarkAsRead();
 		}
 
 		/// <summary>
 		/// Manage the context menu TimeoutDisabled item
 		/// </summary>
-		private void menuItemTimeoutDisabled_Click(object sender, EventArgs e) {
-			NotificationService.Resume();
+		private async void menuItemTimeoutDisabled_Click(object sender, EventArgs e) {
+			await NotificationService.Resume();
 		}
 
 		/// <summary>
@@ -464,7 +465,7 @@ namespace notifier {
 
 			// check the start with Windows setting against the registry
 			if (tabControl.SelectedTab == tabPageGeneral) {
-				ComputerService.RegulatesRegistry();
+				Computer.RegulatesRegistry();
 			}
 
 			// display the form
@@ -494,37 +495,37 @@ namespace notifier {
 		/// <summary>
 		/// Manage the systray icon double click
 		/// </summary>
-		private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
+		private async void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e) {
 			if (e.Button == MouseButtons.Left) {
-				NotificationService.Interaction();
+				await NotificationService.Interaction();
 			}
 		}
 
 		/// <summary>
 		/// Manage the systray icon balloon click
 		/// </summary>
-		private void notifyIcon_BalloonTipClicked(object sender, EventArgs e) {
+		private async void notifyIcon_BalloonTipClicked(object sender, EventArgs e) {
 			if ((Control.MouseButtons & MouseButtons.Right) == MouseButtons.Right) {
 				return;
 			}
 
-			NotificationService.Interaction(true);
+			await NotificationService.Interaction(true);
 		}
 
 		/// <summary>
 		/// Synchronize the user mailbox on every timer tick
 		/// </summary>
-		private void timer_Tick(object sender, EventArgs e) {
+		private async void timer_Tick(object sender, EventArgs e) {
 
 			// restore the timer interval when the timeout time has elapsed
 			if (NotificationService.Paused) {
-				NotificationService.Resume();
+				await NotificationService.Resume();
 
 				return;
 			}
 
 			// synchronize the inbox
-			GmailService.Inbox.Sync(false);
+			await GmailService.Inbox.Sync(false);
 		}
 
 		/// <summary>
@@ -544,6 +545,9 @@ namespace notifier {
 				Directory.Delete(Core.ApplicationDataFolder, true);
 			}
 
+			// reset the user email address
+			Settings.Default.EmailAddress = "-";
+
 			// restart the application
 			Core.RestartApplication();
 		}
@@ -556,23 +560,23 @@ namespace notifier {
 		}
 
 		// attempt to reconnect the user mailbox
-		private void timerReconnect_Tick(object sender, EventArgs e) {
-			GmailService.Inbox.Retry();
+		private async void timerReconnect_Tick(object sender, EventArgs e) {
+			await GmailService.Inbox.Retry();
 		}
 
 		/// <summary>
 		/// Check for update
 		/// </summary>
-		private void buttonCheckForUpdate_Click(object sender, EventArgs e) {
+		private async void buttonCheckForUpdate_Click(object sender, EventArgs e) {
 			buttonCheckForUpdate.Enabled = false;
 
 			if (UpdateService.UpdateAvailable) {
 				WindowState = FormWindowState.Minimized;
 				ShowInTaskbar = false;
 				Visible = false;
-				UpdateService.Download();
+				await UpdateService.Download();
 			} else {
-				UpdateService.Check();
+				await UpdateService.Check();
 			}
 		}
 
@@ -580,7 +584,7 @@ namespace notifier {
 		/// Check the start with Windows setting against the registry when entering the general tab page
 		/// </summary>
 		private void tabPageGeneral_Enter(object sender, EventArgs e) {
-			ComputerService.RegulatesRegistry();
+			Computer.RegulatesRegistry();
 		}
 
 		/// <summary>
@@ -600,23 +604,23 @@ namespace notifier {
 		/// <summary>
 		/// Manage the fieldStartTime user setting
 		/// </summary>
-		private void fieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
-			SchedulerService.Update(Scheduler.TimeType.Start);
+		private async void fieldStartTime_SelectionChangeCommitted(object sender, EventArgs e) {
+			await SchedulerService.Update(Scheduler.TimeType.Start);
 		}
 
 		/// <summary>
 		/// Manage the fieldEndTime user setting
 		/// </summary>
-		private void fieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
-			SchedulerService.Update(Scheduler.TimeType.End);
+		private async void fieldEndTime_SelectionChangeCommitted(object sender, EventArgs e) {
+			await SchedulerService.Update(Scheduler.TimeType.End);
 		}
 
 		/// <summary>
 		/// Synchronize the inbox if the scheduler is enable or disable and if the selected day of week is today
 		/// </summary>
-		private void fieldScheduler_Click(object sender, EventArgs e) {
+		private async void fieldScheduler_Click(object sender, EventArgs e) {
 			if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
-				GmailService.Inbox.Sync();
+				await GmailService.Inbox.Sync();
 			}
 		}
 	}

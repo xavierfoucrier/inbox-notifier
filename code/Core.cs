@@ -9,26 +9,6 @@ namespace notifier {
 
 		#region #attributes
 
-		/// <summary>
-		/// Major version number
-		/// </summary>
-		private static readonly string VersionMajor = "";
-
-		/// <summary>
-		/// Minor version number
-		/// </summary>
-		private static readonly string VersionMinor = "";
-
-		/// <summary>
-		/// Release version number
-		/// </summary>
-		private static readonly string VersionRelease = "";
-
-		/// <summary>
-		/// Build version number
-		/// </summary>
-		private static readonly string VersionBuild = "";
-
 		#endregion
 
 		#region #methods
@@ -38,15 +18,14 @@ namespace notifier {
 		/// </summary>
 		static Core() {
 
-			// initialize the application version number, based on scheme Major.Minor.Build-Release
+			// initialize the application version number, based on scheme Semantic Versioning - https://semver.org
 			string[] ProductVersion = Application.ProductVersion.Split('.');
 
-			VersionMajor = ProductVersion[0];
-			VersionMinor = ProductVersion[1];
-			VersionRelease = ProductVersion[2];
-			VersionBuild = ProductVersion[3];
+			string VersionMajor = ProductVersion[0];
+			string VersionMinor = ProductVersion[1];
+			string VersionPatch = ProductVersion[2];
 
-			Version = "v" + VersionMajor + "." + VersionMinor + (VersionBuild != "0" ? "." + VersionBuild : "") + "-" + (VersionRelease == "0" ? "alpha" : VersionRelease == "1" ? "beta" : VersionRelease == "2" ? "rc" : VersionRelease == "3" ? "release" : "");
+			Version = "v" + VersionMajor + "." + VersionMinor + "." + VersionPatch;
 		}
 
 		/// <summary>
@@ -82,14 +61,14 @@ namespace notifier {
 		/// Local application data folder name
 		/// </summary>
 		public static string ApplicationDataFolder {
-			get; set;
+			get;
 		} = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
 
 		/// <summary>
 		/// Full application version number
 		/// </summary>
 		public static string Version {
-			get; set;
+			get;
 		} = "";
 
 		#endregion

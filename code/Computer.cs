@@ -22,12 +22,12 @@ namespace notifier {
 		/// <summary>
 		/// Power resume state of the computer
 		/// </summary>
-		private bool PowerResume = false;
+		private bool PowerResume;
 
 		/// <summary>
 		/// Reference to the main interface
 		/// </summary>
-		private Main UI;
+		private readonly Main UI;
 
 		#endregion
 
@@ -45,7 +45,7 @@ namespace notifier {
 		/// Bind the "NetworkAvailabilityChanged" event to automatically sync the inbox when a network is available
 		/// </summary>
 		public void BindNetwork() {
-			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler((object source, NetworkAvailabilityEventArgs target) => {
+			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(async (object source, NetworkAvailabilityEventArgs target) => {
 
 				// stop the reconnect process if it is running
 				if (UI.GmailService.Inbox.ReconnectionAttempts != 0) {
@@ -69,7 +69,7 @@ namespace notifier {
 
 					// sync the inbox when a network interface is available and the timeout mode is disabled
 					if (!UI.NotificationService.Paused) {
-						UI.GmailService.Inbox.Sync();
+						await UI.GmailService.Inbox.Sync();
 					}
 
 					break;
@@ -81,7 +81,7 @@ namespace notifier {
 		/// Bind the "PowerModeChanged" event to automatically pause/resume the application synchronization
 		/// </summary>
 		public void BindPowerMode() {
-			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler((object source, PowerModeChangedEventArgs target) => {
+			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler(async (object source, PowerModeChangedEventArgs target) => {
 				if (target.Mode == PowerModes.Suspend) {
 
 					// suspend the main timer
@@ -97,7 +97,7 @@ namespace notifier {
 					}
 
 					// synchronize the inbox and renew the token
-					UI.GmailService.Inbox.Sync(true, true);
+					await UI.GmailService.Inbox.Sync(true, true);
 
 					// enable the timer properly
 					UI.timer.Enabled = true;
@@ -109,7 +109,7 @@ namespace notifier {
 		/// Bind the "SessionSwitch" event to automatically sync the inbox on session unlocking
 		/// </summary>
 		public void BindSessionSwitch() {
-			SystemEvents.SessionSwitch += new SessionSwitchEventHandler((object source, SessionSwitchEventArgs target) => {
+			SystemEvents.SessionSwitch += new SessionSwitchEventHandler(async (object source, SessionSwitchEventArgs target) => {
 
 				// sync the inbox when the user is unlocking the Windows session
 				if (target.Reason == SessionSwitchReason.SessionUnlock) {
@@ -126,7 +126,7 @@ namespace notifier {
 					}
 
 					// synchronize the inbox and renew the token
-					UI.GmailService.Inbox.Sync(true, true);
+					await UI.GmailService.Inbox.Sync(true, true);
 				}
 			});
 		}
@@ -135,11 +135,11 @@ namespace notifier {
 		/// Open the Google website to check the internet connectivity
 		/// </summary>
 		/// <returns>Indicate if the user is connected to the internet, false means that the request to the Google server has failed</returns>
-		public bool IsInternetAvailable() {
+		public static bool IsInternetAvailable() {
 			try {
 
-				// send a ping to the 1.1.1.1 DNS registry
-				IPStatus status = new Ping().Send("1.1.1.1", 1000, new byte[32]).Status;
+				// send a ping to the DNS registry
+				IPStatus status = new Ping().Send(Settings.Default.DNS_REGISTRY_IP, 1000, new byte[32]).Status;
 
 				if (status == IPStatus.Success) {
 					return true;
@@ -160,7 +160,7 @@ namespace notifier {
 		/// <summary>
 		/// Regulate the start with Windows setting against the registry to prevent bad registry reflection
 		/// </summary>
-		public void RegulatesRegistry() {
+		public static void RegulatesRegistry() {
 			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {
 				if (key.GetValue("Gmail notifier") != null) {
 					if (!Settings.Default.RunAtWindowsStartup) {
@@ -178,7 +178,7 @@ namespace notifier {
 		/// Register or unregister the application from Windows startup program list
 		/// </summary>
 		/// <param name="mode">The registration mode for the application, Off means that the application will no longer be started at Windows startup</param>
-		public void SetApplicationStartup(Registration mode) {
+		public static void SetApplicationStartup(Registration mode) {
 			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {
 				if (mode == Registration.On) {
 					key.SetValue("Gmail notifier", '"' + Application.ExecutablePath + '"');

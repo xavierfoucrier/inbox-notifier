@@ -250,9 +250,6 @@ Do you really want to disconnect your Gmail account and restart the application 
     <value>Mark as read</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>Error with the "Mark as read" operation</value>
-  </data>
-  <data name="markAsReadErrorOccured" xml:space="preserve">
     <value>An error occurred during the "Mark Read" operation:</value>
   </data>
   <data name="message" xml:space="preserve">
@@ -281,6 +278,12 @@ This option is not enabled on this type of application.</value>
   <data name="noMessage" xml:space="preserve">
     <value>No new message</value>
   </data>
+  <data name="off" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="operationError" xml:space="preserve">
+    <value>Error with the last operation</value>
+  </data>
   <data name="reconnectAttempt" xml:space="preserve">
     <value>Offline
 Attempting to reconnect...</value>
@@ -296,6 +299,9 @@ Attempting to reconnect...</value>
   </data>
   <data name="syncErrorOccured" xml:space="preserve">
     <value>An error occurred during the synchronization of the inbox:</value>
+  </data>
+  <data name="syncOff" xml:space="preserve">
+    <value>Synchronization disabled on {day}</value>
   </data>
   <data name="syncScheduled" xml:space="preserve">
     <value>Scheduled synchronization

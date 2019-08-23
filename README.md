@@ -1,9 +1,9 @@
-# Gmail notifier – [![Build Status](https://travis-ci.org/xavierfoucrier/gmail-notifier.svg?branch=master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/gmail-notifier/total.svg "Downloads - All releases")](https://github.com/xavierfoucrier/gmail-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-awarded-%230E7FC0.svg "Softpedia - Awarded")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
+# Gmail notifier – [![Version](https://img.shields.io/github/release/xavierfoucrier/gmail-notifier.svg)](https://github.com/xavierfoucrier/gmail-notifier/releases/latest) [![Code quality](https://img.shields.io/codacy/grade/d7aa291a80e64385a1566810df971ad5.svg)](https://app.codacy.com/project/xavier.foucrier/gmail-notifier/dashboard?bid=13272204) [![Build Status](https://travis-ci.org/xavierfoucrier/gmail-notifier.svg?branch=master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/gmail-notifier/total.svg "Downloads - All releases")](https://github.com/xavierfoucrier/gmail-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-awarded-%230E7FC0.svg "Softpedia - Awarded")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
 Gmail notifications instantly in the Windows taskbar.
 
-[![Gmail Notifier](gallery/main.png "Gmail Notifier - Discover the application running on Windows 7")](GALLERY.md)
+[![Gmail Notifier](logo.jpg "Gmail Notifier")](logo.jpg?raw=true)
 
-> **Disclaimer:** as the current Gmail Notifier application does not meet the Google Certified Application Audit Criteria, **the v3 is currently [under construction](https://github.com/xavierfoucrier/gmail-notifier/milestone/12)**. So you may probably encouter warning messages from Google stating that the app is not certified.
+> **Disclaimer:** the current Gmail Notifier application **is being certified by Google** in the few weeks, so you may probably encouter warning messages from Google stating that the app is not certified.
 >
 > For now, everything should work the same way as before, instead that you need to explicitely authorize the application to access your account on the OAuth screen as **the app is not certified for the moment**. Read more about [what happens to rejected apps](https://support.google.com/cloud/answer/9110914#rejected).
 >
@@ -11,6 +11,22 @@ Gmail notifications instantly in the Windows taskbar.
 >
 > Don't hesitate to **contact me if you have any question about the v3**  
 > [xavier.foucrier [at] gmail.com](mailto:xavier.foucrier@gmail.com) :v:
+
+## Features
+Gmail notifier is provided with **a bunch of useful features that bring your inbox always up to date** and keep you focus on your work:
+
+* Synchronization - *automatic sync that keep you up to date every time*
+* Email notifications - *display concise notifications when needed*
+* SPAM checking - *enforce user to clean SPAMs regularly*
+* Do not disturb mode - *keep focus at work*
+* Pricay settings - *choose the privacy level for notifications*
+* Credential managment - *login and logout with ease*
+* Multilingual support - *french/english/german*
+* Inbox statistics preview - *display drafts/labels/unreads/totals messages from the inbox*
+* Attachment information - *notice when a message have one or more attachments*
+* Network reconnection - *try to reconnect to the network when the internet connection is lost*
+* Scheduled synchronization - *disable the synchronization to have a peaceful weekend*
+* Update service - *keep the application up to date*
 
 
 ## Compatibility
@@ -31,7 +47,7 @@ Note that this version of the .NET Framework **evolve in time**: the application
 #### Setup installer
 The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions. Its the better way to install Windows application and allows you to **cleanly install/uninstall** the application with ease. Note that you will need **administrators rights** to properly complete the installation. Recommended for all users.
 
-* :package: [Gmail Notifier 2.4](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v2.4-release/Gmail.Notifier.2.4.exe)
+* :package: [Gmail Notifier 3.0.0](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v3.0.0/Gmail.Notifier.3.0.0.exe)
 
 #### Portable version
 The portable version is made for users who want to install the application on a **USB key**, or **removable drive**. In the uninstall process, you will need to manually remove some files from the *%AppData%* folder or edit the registry to completely remove the application from your computer. Portable versions are **no longer available since official 1.0 release**. Recommended for beta-tester users.
