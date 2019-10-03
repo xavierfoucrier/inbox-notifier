@@ -19,7 +19,7 @@ Gmail notifier is provided with **a bunch of useful features that bring your inb
 * Email notifications - *display concise notifications when needed*
 * SPAM checking - *enforce user to clean SPAMs regularly*
 * Do not disturb mode - *keep focus at work*
-* Pricay settings - *choose the privacy level for notifications*
+* Privacy setting - *choose the privacy level for notifications*
 * Credential managment - *login and logout with ease*
 * Multilingual support - *french/english/german*
 * Inbox statistics preview - *display drafts/labels/unreads/totals messages from the inbox*
