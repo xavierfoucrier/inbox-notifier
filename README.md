@@ -3,11 +3,17 @@ Gmail notifications instantly in the Windows taskbar.
 
 [![Gmail Notifier](logo.jpg "Gmail Notifier")](logo.jpg?raw=true)
 
-> **Disclaimer:** the current Gmail Notifier application **is being certified by Google** in the few weeks, so you may probably encouter warning messages from Google stating that the app is not certified.
+## Disclaimer :hand:
+> The current Gmail Notifier application **is not certified by Google** and all OAuth authentication are blocked since August 31, 2019.
 >
-> For now, everything should work the same way as before, instead that you need to explicitely authorize the application to access your account on the OAuth screen as **the app is not certified for the moment**. Read more about [what happens to rejected apps](https://support.google.com/cloud/answer/9110914#rejected).
+> Until the **appropriate changes on the brand** to follow the new Google OAuth user data policy are made, you won't be able to connect your Gmail account and get notifications. It is no more possible to explicitely authorize the application to access your account on the OAuth screen as **every free tokens are now exhausted**.
 >
-> Users that have already signed up may encouter a warning message when the application will try to refresh the token, please sign out and sign up from your account to fix that.
+> For users already logged in, and having a valid token, everything should work the same way as before. Read more about [what happens to rejected apps](https://support.google.com/cloud/answer/9110914#rejected).
+>
+> I am currently working on a **new v3.0.0** as you can see, so please be patient:  
+> https://github.com/xavierfoucrier/gmail-notifier/milestone/12
+>
+> **Star the repo to show your interest** and watch/subscribe to get notified!
 >
 > Don't hesitate to **contact me if you have any question about the v3**  
 > [xavier.foucrier [at] gmail.com](mailto:xavier.foucrier@gmail.com) :v:
@@ -47,7 +53,7 @@ Note that this version of the .NET Framework **evolve in time**: the application
 #### Setup installer
 The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions. Its the better way to install Windows application and allows you to **cleanly install/uninstall** the application with ease. Note that you will need **administrators rights** to properly complete the installation. Recommended for all users.
 
-* :package: [Gmail Notifier 3.0.0](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v3.0.0/Gmail.Notifier.3.0.0.exe)
+* :package: [Gmail Notifier 2.4-release](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v2.4-release/Gmail.Notifier.2.4.exe)
 
 #### Portable version
 The portable version is made for users who want to install the application on a **USB key**, or **removable drive**. In the uninstall process, you will need to manually remove some files from the *%AppData%* folder or edit the registry to completely remove the application from your computer. Portable versions are **no longer available since official 1.0 release**. Recommended for beta-tester users.
