@@ -1,7 +1,7 @@
 # Gmail notifier – [![Version](https://img.shields.io/github/release/xavierfoucrier/gmail-notifier)](https://github.com/xavierfoucrier/gmail-notifier/releases/latest) [![Code quality](https://img.shields.io/codacy/grade/d7aa291a80e64385a1566810df971ad5)](https://app.codacy.com/project/xavier.foucrier/gmail-notifier/dashboard?bid=13272204) [![Build Status](https://img.shields.io/travis/xavierfoucrier/gmail-notifier/master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/gmail-notifier/total "Downloads - All releases")](https://github.com/xavierfoucrier/gmail-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-award-%230E7FC0 "Softpedia - Award")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
 Gmail notifications instantly in the Windows taskbar.
 
-[![Gmail Notifier](logo.jpg "Gmail Notifier")](logo.jpg?raw=true)
+[![Gmail Notifier](logo.png "Gmail Notifier")](logo.png?raw=true)
 
 ## Disclaimer :hand:
 > The current Gmail Notifier application **is not certified by Google** and all OAuth authentication are blocked since August 31, 2019.
