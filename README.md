@@ -37,7 +37,7 @@ Many other Windows operating systems may work, like Windows 8/8.1/Server, but ar
 ## Dependencies
 To ensure a stable running of Inbox Notifier, you need to have **some requirements** setted on your machine.
 
-1. Microsoft `.NET Framework 4.7.2` minimum required
+1. Microsoft `.NET Framework 4.8` minimum required
 
 Note that this version of the .NET Framework **evolve in time**: the application cares about **system security** and having one of the latest .NET version is very important for the final user. By default, if you don't have the required version installed, the application will display a message and propose to download the specified version on the **Microsoft official site**.
 
