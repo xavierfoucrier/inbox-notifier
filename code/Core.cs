@@ -62,7 +62,7 @@ namespace notifier {
 		/// </summary>
 		public static string ApplicationDataFolder {
 			get;
-		} = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Gmail Notifier";
+		} = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Inbox Notifier";
 
 		/// <summary>
 		/// Full application version number

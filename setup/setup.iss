@@ -1,10 +1,10 @@
-﻿#define MyAppName "Gmail Notifier"
+﻿#define MyAppName "Inbox Notifier"
 #define MyAppVersion "3.0.0"
 #define MyAppYear GetDateTimeString('yyyy', '', '');
 #define MyAppPublisher "Xavier Foucrier"
-#define MyAppURL "https://github.com/xavierfoucrier/gmail-notifier"
-#define MyAppExeName "Gmail notifier.exe"
-#define MyAppRegistryKeyName "Gmail notifier"
+#define MyAppURL "https://github.com/xavierfoucrier/inbox-notifier"
+#define MyAppExeName "Inbox Notifier.exe"
+#define MyAppRegistryKeyName "Inbox Notifier"
 
 [Setup]
 AppId={{7E60E047-C79B-49A4-8CF6-B33D5565B2E8}
@@ -16,7 +16,7 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-AppMutex=gmailnotifier-115e363ecbfefd771e55c6874680bc0a
+AppMutex=inboxnotifier-115e363ecbfefd771e55c6874680bc0a
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes

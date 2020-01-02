@@ -1,6 +1,6 @@
 # Privacy Notice
 
-This privacy notice discloses the privacy practices of Gmail Notifier for Windows. The goal of this software is to provide the end user with a simple and effective way to check the receipt of new emails from a Gmail account automatically.
+This privacy notice discloses the privacy practices of Inbox Notifier for Windows. The goal of this software is to provide the end user with a simple and effective way to check the receipt of new emails from a Gmail account automatically.
 
 ## Information collected, used, shared and security
 

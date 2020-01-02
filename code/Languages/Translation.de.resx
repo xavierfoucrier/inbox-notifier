@@ -146,7 +146,7 @@ Die Anwendung wird nun beendet.</value>
     <value>Fehler</value>
   </data>
   <data name="firstLoad" xml:space="preserve">
-    <value>Gmail Notifier läuft jetzt im Hintergrund auf Ihrem Computer. In wenigen Sekunden werden Sie aufgefordert Konto für die Anmeldung bei Ihrem Google Mail, damit die Anwendung Ihren Posteingang zugreifen.</value>
+    <value>Inbox Notifier läuft jetzt im Hintergrund auf Ihrem Computer. In wenigen Sekunden werden Sie aufgefordert Konto für die Anmeldung bei Ihrem Google Mail, damit die Anwendung Ihren Posteingang zugreifen.</value>
   </data>
   <data name="gmailDisconnect" xml:space="preserve">
     <value>Trennen Ihres Gmail Konto</value>
@@ -262,7 +262,7 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
     <value>Mehrere Instanzen</value>
   </data>
   <data name="mutexError" xml:space="preserve">
-    <value>Die "Gmail Notifier" wird bereits ausgeführt: Sie können nicht mehrere Instanzen der Anwendung auf demselben Computer ausgeführt werden.
+    <value>Die "Inbox Notifier" wird bereits ausgeführt: Sie können nicht mehrere Instanzen der Anwendung auf demselben Computer ausgeführt werden.
 
 Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
   </data>

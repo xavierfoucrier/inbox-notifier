@@ -1,8 +1,8 @@
 language: csharp
-solution: code/GmailNotifier.sln
+solution: code/InboxNotifier.sln
 
 script:
-  - msbuild /p:Configuration=Debug code/GmailNotifier.sln
+  - msbuild /p:Configuration=Debug code/InboxNotifier.sln
 
 notifications:
   - email: false

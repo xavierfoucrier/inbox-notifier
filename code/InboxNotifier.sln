@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GmailNotifier", "GmailNotifier.csproj", "{2EC604FA-414A-431E-8397-8E070523D99B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InboxNotifier", "InboxNotifier.csproj", "{2EC604FA-414A-431E-8397-8E070523D99B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,5 +21,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8CD62E2-E311-4442-B23B-B974228C183D}
 	EndGlobalSection
 EndGlobal

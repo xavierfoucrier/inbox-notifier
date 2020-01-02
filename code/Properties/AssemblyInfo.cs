@@ -8,8 +8,8 @@ using System.Resources;
 [assembly: AssemblyTitle("Gmail notifications for Windows")]
 [assembly: AssemblyDescription("Notifications of new Gmail messages for Windows platforms")]
 [assembly: AssemblyCompany("Xavier Foucrier")]
-[assembly: AssemblyProduct("Gmail notifier for Windows")]
-[assembly: AssemblyCopyright("Copyright © 2019 Gmail notifier")]
+[assembly: AssemblyProduct("Inbox Notifier")]
+[assembly: AssemblyCopyright("Copyright © 2019 Inbox Notifier")]
 [assembly: AssemblyTrademark("Xavier Foucrier")]
 [assembly: AssemblyCulture("")]
 
