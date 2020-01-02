@@ -197,7 +197,7 @@ namespace notifier {
 			// define the new number version and temp path
 			string newversion = ReleaseAvailable.Split('-')[0].Substring(1);
 			string updatepath = Core.ApplicationDataFolder + "/gmnupdate-" + newversion + ".exe";
-			string package = Settings.Default.GITHUB_REPOSITORY + "/releases/download/" + ReleaseAvailable + "/Gmail.Notifier." + newversion + ".exe";
+			string package = Settings.Default.GITHUB_REPOSITORY + "/releases/download/" + ReleaseAvailable + "/Inbox.Notifier." + newversion + ".exe";
 
 			try {
 
