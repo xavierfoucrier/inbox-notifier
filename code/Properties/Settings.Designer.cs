@@ -334,7 +334,7 @@ namespace notifier.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Gmail notifier for Windows")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Inbox Notifier")]
         public string APPLICATION_NAME {
             get {
                 return ((string)(this["APPLICATION_NAME"]));
@@ -343,7 +343,7 @@ namespace notifier.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Gmail Notifier Update")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Inbox Notifier Update")]
         public string UPDATE_SERVICE_NAME {
             get {
                 return ((string)(this["UPDATE_SERVICE_NAME"]));
@@ -376,7 +376,7 @@ namespace notifier.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("gmn.log")]
+        [global::System.Configuration.DefaultSettingValueAttribute("app.log")]
         public string LOG_FILE {
             get {
                 return ((string)(this["LOG_FILE"]));
