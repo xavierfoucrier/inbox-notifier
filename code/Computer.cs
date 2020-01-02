@@ -162,7 +162,7 @@ namespace notifier {
 		/// </summary>
 		public static void RegulatesRegistry() {
 			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {
-				if (key.GetValue("Gmail notifier") != null) {
+				if (key.GetValue("Inbox Notifier") != null) {
 					if (!Settings.Default.RunAtWindowsStartup) {
 						Settings.Default.RunAtWindowsStartup = true;
 					}
@@ -181,9 +181,9 @@ namespace notifier {
 		public static void SetApplicationStartup(Registration mode) {
 			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {
 				if (mode == Registration.On) {
-					key.SetValue("Gmail notifier", '"' + Application.ExecutablePath + '"');
+					key.SetValue("Inbox Notifier", '"' + Application.ExecutablePath + '"');
 				} else {
-					key.DeleteValue("Gmail notifier", false);
+					key.DeleteValue("Inbox Notifier", false);
 				}
 			}
 		}
