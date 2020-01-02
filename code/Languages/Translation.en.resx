@@ -146,7 +146,7 @@ The application will now quit.</value>
     <value>Error</value>
   </data>
   <data name="firstLoad" xml:space="preserve">
-    <value>Gmail notifier now runs in background on your computer. In a few seconds you will be prompted to sign in to your Gmail account to allow the application to access your inbox.</value>
+    <value>Inbox Notifier now runs in background on your computer. In a few seconds you will be prompted to sign in to your Gmail account to allow the application to access your inbox.</value>
   </data>
   <data name="gmailDisconnect" xml:space="preserve">
     <value>Disconnecting your Gmail account</value>
@@ -262,7 +262,7 @@ Do you really want to disconnect your Gmail account and restart the application 
     <value>Multiple instances</value>
   </data>
   <data name="mutexError" xml:space="preserve">
-    <value>The "Gmail notifier" application is already running: you can not run multiple instances of the application on the same computer.
+    <value>The "Inbox Notifier" application is already running: you can not run multiple instances of the application on the same computer.
 
 This option is not enabled on this type of application.</value>
   </data>

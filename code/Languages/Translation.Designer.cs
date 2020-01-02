@@ -19,7 +19,7 @@ namespace notifier.Languages {
     // à l'aide d'un outil, tel que ResGen ou Visual Studio.
     // Pour ajouter ou supprimer un membre, modifiez votre fichier .ResX, puis réexécutez ResGen
     // avec l'option /str ou régénérez votre projet VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Translation {
@@ -137,7 +137,7 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Gmail notifier s&apos;exécute désormais en arrière plan sur votre ordinateur. Dans quelques secondes, vous serez invité à vous connecter sur votre compte Gmail afin d&apos;autoriser l&apos;application à accéder à votre boite de réception..
+        ///   Recherche une chaîne localisée semblable à Inbox Notifier s&apos;exécute désormais en arrière plan sur votre ordinateur. Dans quelques secondes, vous serez invité à vous connecter sur votre compte Gmail afin d&apos;autoriser l&apos;application à accéder à votre boite de réception..
         /// </summary>
         internal static string firstLoad {
             get {
@@ -481,7 +481,7 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à L&apos;application &quot;Gmail notifier&quot; est déjà en cours d&apos;exécution : vous ne pouvez pas lancer plusieurs instances de l&apos;application sur un même ordinateur.
+        ///   Recherche une chaîne localisée semblable à L&apos;application &quot;Inbox Notifier&quot; est déjà en cours d&apos;exécution : vous ne pouvez pas lancer plusieurs instances de l&apos;application sur un même ordinateur.
         ///
         ///Cette option n&apos;est pas activée sur ce type d&apos;application..
         /// </summary>

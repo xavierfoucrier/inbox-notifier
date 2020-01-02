@@ -146,7 +146,7 @@ L'application va désormais quitter.</value>
     <value>Erreur</value>
   </data>
   <data name="firstLoad" xml:space="preserve">
-    <value>Gmail notifier s'exécute désormais en arrière plan sur votre ordinateur. Dans quelques secondes, vous serez invité à vous connecter sur votre compte Gmail afin d'autoriser l'application à accéder à votre boite de réception.</value>
+    <value>Inbox Notifier s'exécute désormais en arrière plan sur votre ordinateur. Dans quelques secondes, vous serez invité à vous connecter sur votre compte Gmail afin d'autoriser l'application à accéder à votre boite de réception.</value>
   </data>
   <data name="gmailDisconnect" xml:space="preserve">
     <value>Déconnexion de votre compte Gmail</value>
@@ -262,7 +262,7 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
     <value>Instances multiples</value>
   </data>
   <data name="mutexError" xml:space="preserve">
-    <value>L'application "Gmail notifier" est déjà en cours d'exécution : vous ne pouvez pas lancer plusieurs instances de l'application sur un même ordinateur.
+    <value>L'application "Inbox Notifier" est déjà en cours d'exécution : vous ne pouvez pas lancer plusieurs instances de l'application sur un même ordinateur.
 
 Cette option n'est pas activée sur ce type d'application.</value>
   </data>
