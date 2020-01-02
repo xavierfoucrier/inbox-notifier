@@ -4,7 +4,7 @@ Gmail notifications instantly in the Windows taskbar.
 [![Inbox Notifier](logo.png "Inbox Notifier")](logo.png?raw=true)
 
 ## Disclaimer :hand:
-> The current Gmail Notifier application **is being certified by Google** in the few weeks, so you may probably encouter warning messages from Google stating that the app is not certified.
+> The current Inbox Notifier application **is being certified by Google** in the few weeks, so you may probably encouter warning messages from Google stating that the app is not certified.
 >
 > **Star the repo to show your interest** and watch/subscribe to get notified!
 >
