@@ -4,14 +4,7 @@ Gmail notifications instantly in the Windows taskbar.
 [![Inbox Notifier](logo.png "Inbox Notifier")](logo.png?raw=true)
 
 ## Disclaimer :hand:
-> The current Inbox Notifier application **is not certified by Google** and all OAuth authentication are blocked since August 31, 2019.
->
-> Until the **appropriate changes on the brand** to follow the new Google OAuth user data policy are made, you won't be able to connect your Gmail account and get notifications. It is no more possible to explicitely authorize the application to access your account on the OAuth screen as **every free tokens are now exhausted**.
->
-> For users already logged in, and having a valid token, everything should work the same way as before. Read more about [what happens to rejected apps](https://support.google.com/cloud/answer/9110914#rejected).
->
-> I am currently working on a **new v3.0.0** as you can see, so please be patient:  
-> https://github.com/xavierfoucrier/gmail-notifier/milestone/12
+> The current Gmail Notifier application **is being certified by Google** in the few weeks, so you may probably encouter warning messages from Google stating that the app is not certified.
 >
 > **Star the repo to show your interest** and watch/subscribe to get notified!
 >
