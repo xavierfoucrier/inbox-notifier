@@ -46,7 +46,9 @@ Note that this version of the .NET Framework **evolve in time**: the application
 #### Setup installer
 The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions. Its the better way to install Windows application and allows you to **cleanly install/uninstall** the application with ease. Note that you will need **administrators rights** to properly complete the installation. Recommended for all users.
 
-* :package: [Inbox Notifier 2.4-release](https://github.com/xavierfoucrier/inbox-notifier/releases/download/v2.4-release/Gmail.Notifier.2.4.exe)
+* :package: Inbox Notifier 3.0.0
+
+> The release will be available when the application will be certified by Google
 
 #### Portable version
 The portable version is made for users who want to install the application on a **USB key**, or **removable drive**. In the uninstall process, you will need to manually remove some files from the *%AppData%* folder or edit the registry to completely remove the application from your computer. Portable versions are **no longer available since official 1.0 release**. Recommended for beta-tester users.
