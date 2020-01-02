@@ -21,11 +21,11 @@ This project and everyone participating in it is governed by the [Inbox Notifier
 
 This section guides you through submitting a bug report for Inbox Notifier. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
 
-Before creating bug reports, please check the [issues list](https://github.com/xavierfoucrier/gmail-notifier/issues) as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible.
+Before creating bug reports, please check the [issues list](https://github.com/xavierfoucrier/inbox-notifier/issues) as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible.
 
 ### Before submitting a bug report
 
-* **Perform a [cursory search](https://github.com/xavierfoucrier/gmail-notifier/issues)** to see if the problem has already been reported. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one.
+* **Perform a [cursory search](https://github.com/xavierfoucrier/inbox-notifier/issues)** to see if the problem has already been reported. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one.
 
 ### How do I submit a (good) bug report?
 

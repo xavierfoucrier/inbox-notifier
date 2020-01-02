@@ -241,7 +241,7 @@ namespace notifier.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/xavierfoucrier/gmail-notifier")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/xavierfoucrier/inbox-notifier")]
         public string GITHUB_REPOSITORY {
             get {
                 return ((string)(this["GITHUB_REPOSITORY"]));

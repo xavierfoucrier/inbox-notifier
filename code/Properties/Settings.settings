@@ -57,7 +57,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="GITHUB_REPOSITORY" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://github.com/xavierfoucrier/gmail-notifier</Value>
+      <Value Profile="(Default)">https://github.com/xavierfoucrier/inbox-notifier</Value>
     </Setting>
     <Setting Name="GMAIL_BASEURL" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://mail.google.com/mail/u/0</Value>

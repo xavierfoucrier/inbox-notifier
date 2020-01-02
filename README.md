@@ -1,4 +1,4 @@
-# Inbox Notifier – [![Version](https://img.shields.io/github/release/xavierfoucrier/gmail-notifier)](https://github.com/xavierfoucrier/gmail-notifier/releases/latest) [![Code quality](https://img.shields.io/codacy/grade/d7aa291a80e64385a1566810df971ad5)](https://app.codacy.com/project/xavier.foucrier/gmail-notifier/dashboard?bid=13272204) [![Build Status](https://img.shields.io/travis/xavierfoucrier/gmail-notifier/master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/gmail-notifier) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/gmail-notifier/total "Downloads - All releases")](https://github.com/xavierfoucrier/gmail-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-award-%230E7FC0 "Softpedia - Award")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
+# Inbox Notifier – [![Version](https://img.shields.io/github/release/xavierfoucrier/inbox-notifier)](https://github.com/xavierfoucrier/inbox-notifier/releases/latest) [![Code quality](https://img.shields.io/codacy/grade/d7aa291a80e64385a1566810df971ad5)](https://app.codacy.com/project/xavier.foucrier/inbox-notifier/dashboard?bid=13272204) [![Build Status](https://img.shields.io/travis/xavierfoucrier/inbox-notifier/master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/inbox-notifier) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/inbox-notifier/total "Downloads - All releases")](https://github.com/xavierfoucrier/inbox-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-award-%230E7FC0 "Softpedia - Award")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
 Gmail notifications instantly in the Windows taskbar.
 
 [![Inbox Notifier](logo.png "Inbox Notifier")](logo.png?raw=true)
@@ -46,14 +46,14 @@ Note that this version of the .NET Framework **evolve in time**: the application
 #### Setup installer
 The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions. Its the better way to install Windows application and allows you to **cleanly install/uninstall** the application with ease. Note that you will need **administrators rights** to properly complete the installation. Recommended for all users.
 
-* :package: [Inbox Notifier 2.4-release](https://github.com/xavierfoucrier/gmail-notifier/releases/download/v2.4-release/Gmail.Notifier.2.4.exe)
+* :package: [Inbox Notifier 2.4-release](https://github.com/xavierfoucrier/inbox-notifier/releases/download/v2.4-release/Gmail.Notifier.2.4.exe)
 
 #### Portable version
 The portable version is made for users who want to install the application on a **USB key**, or **removable drive**. In the uninstall process, you will need to manually remove some files from the *%AppData%* folder or edit the registry to completely remove the application from your computer. Portable versions are **no longer available since official 1.0 release**. Recommended for beta-tester users.
 
 #### Old versions
 
-You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/gmail-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and **are not** "production environment" ready. Recommended for power users.
+You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/inbox-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and **are not** "production environment" ready. Recommended for power users.
 
 
 ## Contribute
