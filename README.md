@@ -62,7 +62,7 @@ You can grab an old version of the application in the [Github version history](h
 
 Inbox Notifier respect user privacy.
 
-You can **read the [privacy notice](https://github.com/xavierfoucrier/inbox-notifier/PRIVACY.md)** to see how the application clearly expose the manner in which it accesses, uses, stores, or shares user data.
+You can **read the [privacy notice](PRIVACY.md)** to see how the application clearly expose the manner in which it accesses, uses, stores, or shares user data.
 
 
 ## Softpedia award certification
