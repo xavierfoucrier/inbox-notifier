@@ -27,6 +27,7 @@ OutputBaseFilename={#MyAppName} {#MyAppVersion}
 SetupIconFile=setup.ico
 Compression=lzma
 SolidCompression=yes
+WizardStyle=modern
 PrivilegesRequired=admin
 VersionInfoVersion={#MyAppVersion}
 UninstallDisplayIcon={app}\{#MyAppExeName}
