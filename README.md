@@ -55,11 +55,14 @@ The portable version is made for users who want to install the application on a 
 
 #### Old versions
 
-You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/inbox-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and **are not** "production environment" ready. Recommended for power users.
+You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/inbox-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and **are not** "production environment" ready. Some old versions are **no longer working** due to the OAuth client secret key revocation. Recommended for power users.
 
 
-## Contribute
-If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](CONTRIBUTING.md) before**. Thanks for taking time to contribute to Inbox Notifier.
+## Privacy policy
+
+Inbox Notifier respect user privacy.
+
+You can **read the [privacy notice](https://github.com/xavierfoucrier/inbox-notifier/PRIVACY.md)** to see how the application clearly expose the manner in which it accesses, uses, stores, or shares user data.
 
 
 ## Softpedia award certification
@@ -68,6 +71,12 @@ This product was last tested in the **Softpedia Labs** on **August 24th, 2019** 
 Softpedia guarantees that Inbox Notifier is **100% Free**, which means it does not contain any form of malware, including but not limited to: spyware, viruses, trojans and backdoors. This software product was tested thoroughly and was found **absolutely clean**; therefore, it can be installed with no concern by any computer user. However, it should be noted that this product will be retested periodically and the award may be withdrawn, so you should check back occasionally and pay attention to the date of testing shown above.
 
 Read the [Softpedia Labs review](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml) for more informations.
+
+> The release will be reviewed when the application will be certified by Google
+
+
+## Contribute
+If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](CONTRIBUTING.md) before**. Thanks for taking time to contribute to Inbox Notifier.
 
 
 ## License
