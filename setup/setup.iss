@@ -29,6 +29,7 @@ Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
 PrivilegesRequired=admin
+UsedUserAreasWarning=no
 VersionInfoVersion={#MyAppVersion}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 
