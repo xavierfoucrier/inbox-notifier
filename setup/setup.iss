@@ -7,7 +7,7 @@
 #define MyAppRegistryKeyName "Inbox Notifier"
 
 [Setup]
-AppId={{7E60E047-C79B-49A4-8CF6-B33D5565B2E8}
+AppId={{D5D279BC-098C-4CBE-BC2C-FBA3F75F773F}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppCopyright=Copyright (c) {#MyAppYear} {#MyAppPublisher}
