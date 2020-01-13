@@ -43,7 +43,7 @@ namespace notifier {
 		public async Task Authentication() {
 
 			// display the authentication icon and text if the google api token file doesn't exists
-			if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {
+			if (!OAuth2TokenResponse) {
 				UI.notifyIcon.Icon = Resources.authentication;
 				UI.notifyIcon.Text = Translation.authenticationNeeded;
 			}
@@ -64,7 +64,7 @@ namespace notifier {
 				Core.Log("Authentication: " + exception.Message);
 
 				// exit the application if the google api token file doesn't exists
-				if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {
+				if (!OAuth2TokenResponse) {
 
 					// display the authentication failure icon and text
 					UI.notifyIcon.Icon = Resources.warning;
@@ -158,6 +158,13 @@ namespace notifier {
 		public UserCredential Credential {
 			get; set;
 		}
+
+		/// <summary>
+		/// Flag defining if the OAuth2 token response file is present in the application data folder
+		/// </summary>
+		public bool OAuth2TokenResponse {
+			get;
+		} = Directory.EnumerateFiles(Core.ApplicationDataFolder, "*.TokenResponse-user").Any();
 
 		#endregion
 	}
