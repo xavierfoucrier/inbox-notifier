@@ -42,6 +42,9 @@ namespace notifier {
 		/// <param name="form">Reference to the application main window</param>
 		public Inbox(ref Main form) {
 			UI = form;
+
+			// initialize the gmail service base client api
+			InitGmailServiceApi();
 		}
 
 		/// <summary>
@@ -112,19 +115,7 @@ namespace notifier {
 			try {
 
 				// initialize the gmail service base client api
-				if (Api == null) {
-					Api = new GmailService(new BaseClientService.Initializer {
-						HttpClientInitializer = UI.GmailService.Credential,
-						ApplicationName = Settings.Default.APPLICATION_NAME
-					});
-
-					// retrieve the gmail address and store it in an application cache setting
-					if (Settings.Default.EmailAddress == "-") {
-						EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
-						UI.labelEmailAddress.Text = EmailAddress;
-						Settings.Default.EmailAddress = EmailAddress;
-					}
-				}
+				InitGmailServiceApi();
 
 				// get the "inbox" label
 				Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
@@ -336,7 +327,7 @@ namespace notifier {
 				if (unreadSpams) {
 					await Sync().ConfigureAwait(false);
 				} else {
-					
+
 					// restore the default systray icon and text
 					UI.notifyIcon.Icon = Resources.normal;
 					UI.notifyIcon.Text = Translation.noMessage;
@@ -429,6 +420,28 @@ namespace notifier {
 		public void Dispose() {
 			if (Api != null) {
 				Api.Dispose();
+			}
+		}
+
+		/// <summary>
+		/// Initialize the gmail service base client api
+		/// </summary>
+		private void InitGmailServiceApi() {
+			if (Api != null) {
+				return;
+			}
+
+			// initialize the gmail service base client api
+			Api = new GmailService(new BaseClientService.Initializer {
+				HttpClientInitializer = UI.GmailService.Credential,
+				ApplicationName = Settings.Default.APPLICATION_NAME
+			});
+
+			// retrieve the gmail address and store it in an application cache setting
+			if (Settings.Default.EmailAddress == "-") {
+				EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
+				UI.labelEmailAddress.Text = EmailAddress;
+				Settings.Default.EmailAddress = EmailAddress;
 			}
 		}
 
