@@ -1,16 +1,16 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Media;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 using notifier.Languages;
 using notifier.Properties;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace notifier {
 	class Inbox : IDisposable {
