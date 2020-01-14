@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Gmail.v1;
+using Google.Apis.Gmail.v1.Data;
+using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using notifier.Languages;
 using notifier.Properties;
@@ -19,6 +21,16 @@ namespace notifier {
 		/// Reference to the gmail inbox
 		/// </summary>
 		internal Inbox Inbox;
+
+		/// <summary>
+		/// Gmail base client service
+		/// </summary>
+		private GmailService Service;
+
+		/// <summary>
+		/// User credential for the gmail authentication
+		/// </summary>
+		private UserCredential Credential;
 
 		/// <summary>
 		/// Reference to the main interface
@@ -107,11 +119,30 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Asynchronous method used to connect the gmail base client service
+		/// </summary>
+		/// <returns>Users resource</returns>
+		public async Task<UsersResource> Connect() {
+			Service = new GmailService(new BaseClientService.Initializer {
+				HttpClientInitializer = UI.GmailService.Credential,
+				ApplicationName = Settings.Default.APPLICATION_NAME
+			});
+
+			// retrieve the gmail address and store it in an application cache setting
+			if (Settings.Default.EmailAddress == "-") {
+				Profile UserProfile = await Service.Users.GetProfile("me").ExecuteAsync();
+				Settings.Default.EmailAddress = UserProfile.EmailAddress;
+			}
+
+			return Service.Users;
+		}
+
+		/// <summary>
 		/// Dispose the service
 		/// </summary>
 		public void Dispose() {
-			if (Inbox != null) {
-				Inbox.Dispose();
+			if (Service != null) {
+				Service.Dispose();
 			}
 		}
 
@@ -151,13 +182,6 @@ namespace notifier {
 		#endregion
 
 		#region #accessors
-
-		/// <summary>
-		/// User credential for the gmail authentication
-		/// </summary>
-		public UserCredential Credential {
-			get; set;
-		}
 
 		/// <summary>
 		/// Flag defining if the OAuth2 token response file is present in the application data folder

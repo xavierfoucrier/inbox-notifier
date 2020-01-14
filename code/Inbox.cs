@@ -8,19 +8,18 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
-using Google.Apis.Services;
 using notifier.Languages;
 using notifier.Properties;
 
 namespace notifier {
-	class Inbox : IDisposable {
+	class Inbox {
 
 		#region #attributes
 
 		/// <summary>
-		/// Gmail api service
+		/// Main user resource
 		/// </summary>
-		private GmailService Api;
+		private UsersResource User;
 
 		/// <summary>
 		/// Main inbox label
@@ -42,9 +41,6 @@ namespace notifier {
 		/// <param name="form">Reference to the application main window</param>
 		public Inbox(ref Main form) {
 			UI = form;
-
-			// initialize the gmail service base client api
-			InitGmailServiceApi();
 		}
 
 		/// <summary>
@@ -114,11 +110,13 @@ namespace notifier {
 
 			try {
 
-				// initialize the gmail service base client api
-				InitGmailServiceApi();
+				// connect the gmail service base client api
+				if (User == null) {
+					User = await UI.GmailService.Connect();
+				}
 
 				// get the "inbox" label
-				Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
+				Box = await User.Labels.Get("me", "INBOX").ExecuteAsync();
 
 				// update the statistics
 				await UpdateStatistics().ConfigureAwait(false);
@@ -132,7 +130,7 @@ namespace notifier {
 					}
 
 					// get the "spam" label
-					Label spam = await Api.Users.Labels.Get("me", "SPAM").ExecuteAsync();
+					Label spam = await User.Labels.Get("me", "SPAM").ExecuteAsync();
 
 					// manage unread spams
 					if (spam.ThreadsUnread > 0) {
@@ -180,10 +178,10 @@ namespace notifier {
 						}
 
 						// get the message details
-						UsersResource.MessagesResource.ListRequest messages = Api.Users.Messages.List("me");
+						UsersResource.MessagesResource.ListRequest messages = User.Messages.List("me");
 						messages.LabelIds = "UNREAD";
 						messages.MaxResults = 1;
-						Google.Apis.Gmail.v1.Data.Message message = await Api.Users.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
+						Google.Apis.Gmail.v1.Data.Message message = await User.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
 							return m.Result.Messages.First().Id;
 						})).ExecuteAsync();
 
@@ -292,7 +290,7 @@ namespace notifier {
 				}
 
 				// get all unread messages
-				UsersResource.MessagesResource.ListRequest messages = Api.Users.Messages.List("me");
+				UsersResource.MessagesResource.ListRequest messages = User.Messages.List("me");
 				messages.LabelIds = filter;
 				ListMessagesResponse list = await messages.ExecuteAsync();
 				IList<Message> unread = list.Messages;
@@ -312,10 +310,10 @@ namespace notifier {
 					};
 
 					// execute the batch request to mark all mails as read
-					await Api.Users.Messages.BatchModify(request, "me").ExecuteAsync();
+					await User.Messages.BatchModify(request, "me").ExecuteAsync();
 
 					// get the "inbox" label
-					Box = await Api.Users.Labels.Get("me", "INBOX").ExecuteAsync();
+					Box = await User.Labels.Get("me", "INBOX").ExecuteAsync();
 
 					// update the statistics only when there is no unread spams
 					if (!unreadSpams) {
@@ -415,37 +413,6 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Dispose the gmail api
-		/// </summary>
-		public void Dispose() {
-			if (Api != null) {
-				Api.Dispose();
-			}
-		}
-
-		/// <summary>
-		/// Initialize the gmail service base client api
-		/// </summary>
-		private void InitGmailServiceApi() {
-			if (Api != null) {
-				return;
-			}
-
-			// initialize the gmail service base client api
-			Api = new GmailService(new BaseClientService.Initializer {
-				HttpClientInitializer = UI.GmailService.Credential,
-				ApplicationName = Settings.Default.APPLICATION_NAME
-			});
-
-			// retrieve the gmail address and store it in an application cache setting
-			if (Settings.Default.EmailAddress == "-") {
-				EmailAddress = Api.Users.GetProfile("me").Execute().EmailAddress;
-				UI.labelEmailAddress.Text = EmailAddress;
-				Settings.Default.EmailAddress = EmailAddress;
-			}
-		}
-
-		/// <summary>
 		/// Asynchronous method used to get account statistics
 		/// </summary>
 		private async Task UpdateStatistics() {
@@ -472,12 +439,12 @@ namespace notifier {
 			UI.tip.SetToolTip(UI.chartTotalMails, total + " " + (total > 1 ? Translation.messages : Translation.message));
 
 			// update the draft informations
-			ListDraftsResponse drafts = await Api.Users.Drafts.List("me").ExecuteAsync();
+			ListDraftsResponse drafts = await User.Drafts.List("me").ExecuteAsync();
 			UI.labelTotalDrafts.Enabled = true;
 			UI.labelTotalDrafts.Text = drafts.Drafts != null ? drafts.Drafts.Count.ToString() : "0";
 
 			// update the label informations
-			ListLabelsResponse labels = await Api.Users.Labels.List("me").ExecuteAsync();
+			ListLabelsResponse labels = await User.Labels.List("me").ExecuteAsync();
 			UI.labelTotalLabels.Enabled = true;
 			UI.labelTotalLabels.Text = labels.Labels != null ? labels.Labels.Count.ToString() : "0";
 		}
@@ -499,13 +466,6 @@ namespace notifier {
 		public int? UnreadThreads {
 			get; set;
 		} = 0;
-
-		/// <summary>
-		/// Gmail email address
-		/// </summary>
-		public string EmailAddress {
-			get; set;
-		}
 
 		/// <summary>
 		/// Number of automatic reconnection attempts
