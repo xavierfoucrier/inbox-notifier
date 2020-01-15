@@ -115,6 +115,17 @@ namespace notifier {
 					User = await UI.GmailService.Connect();
 				}
 
+				// prevent the application from syncing the inbox when an automatic reply is enabled
+				VacationSettings responder = await User.Settings.GetVacation("me").ExecuteAsync();
+
+				if (responder.EnableAutoReply.Value) {
+					if (responder.StartTime != null && DateTime.Now >= DateTimeOffset.FromUnixTimeMilliseconds(responder.StartTime.Value).DateTime) {
+						if (responder.EndTime == null || DateTime.Now <= DateTimeOffset.FromUnixTimeMilliseconds(responder.EndTime.Value).DateTime) {
+							return;
+						}
+					}
+				}
+
 				// get the "inbox" label
 				Box = await User.Labels.Get("me", "INBOX").ExecuteAsync();
 
