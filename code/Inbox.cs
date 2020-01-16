@@ -121,6 +121,11 @@ namespace notifier {
 				if (responder.EnableAutoReply.Value) {
 					if (responder.StartTime != null && DateTime.Now >= DateTimeOffset.FromUnixTimeMilliseconds(responder.StartTime.Value).DateTime) {
 						if (responder.EndTime == null || DateTime.Now <= DateTimeOffset.FromUnixTimeMilliseconds(responder.EndTime.Value).DateTime) {
+
+							// display the timeout icon and associated text
+							UI.notifyIcon.Icon = Resources.timeout;
+							UI.notifyIcon.Text = Translation.syncAutomaticReply;
+
 							return;
 						}
 					}

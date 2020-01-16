@@ -294,6 +294,9 @@ Der Versuch, die Verbindung wiederherzustellen ...</value>
   <data name="sync" xml:space="preserve">
     <value>Synchronisierung läuft ...</value>
   </data>
+  <data name="syncAutomaticReply" xml:space="preserve">
+    <value>Automatische antwort</value>
+  </data>
   <data name="syncError" xml:space="preserve">
     <value>Fehler bei der Synchronisierung</value>
   </data>

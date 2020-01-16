@@ -574,6 +574,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Réponse automatique.
+        /// </summary>
+        internal static string syncAutomaticReply {
+            get {
+                return ResourceManager.GetString("syncAutomaticReply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur lors de la synchronisation.
         /// </summary>
         internal static string syncError {

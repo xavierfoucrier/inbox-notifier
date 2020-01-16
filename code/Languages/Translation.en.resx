@@ -294,6 +294,9 @@ Attempting to reconnect...</value>
   <data name="sync" xml:space="preserve">
     <value>Syncing...</value>
   </data>
+  <data name="syncAutomaticReply" xml:space="preserve">
+    <value>Automatic reply</value>
+  </data>
   <data name="syncError" xml:space="preserve">
     <value>Error when syncing</value>
   </data>
