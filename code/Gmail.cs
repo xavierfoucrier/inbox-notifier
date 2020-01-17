@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Gmail.v1;
+using Google.Apis.Gmail.v1.Data;
+using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using notifier.Languages;
 using notifier.Properties;
@@ -19,6 +21,16 @@ namespace notifier {
 		/// Reference to the gmail inbox
 		/// </summary>
 		internal Inbox Inbox;
+
+		/// <summary>
+		/// Gmail base client service
+		/// </summary>
+		private GmailService Service;
+
+		/// <summary>
+		/// User credential for the gmail authentication
+		/// </summary>
+		private UserCredential Credential;
 
 		/// <summary>
 		/// Reference to the main interface
@@ -43,7 +55,7 @@ namespace notifier {
 		public async Task Authentication() {
 
 			// display the authentication icon and text if the google api token file doesn't exists
-			if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {
+			if (!OAuth2TokenResponse) {
 				UI.notifyIcon.Icon = Resources.authentication;
 				UI.notifyIcon.Text = Translation.authenticationNeeded;
 			}
@@ -64,7 +76,7 @@ namespace notifier {
 				Core.Log("Authentication: " + exception.Message);
 
 				// exit the application if the google api token file doesn't exists
-				if (!Directory.Exists(Core.ApplicationDataFolder) || !Directory.EnumerateFiles(Core.ApplicationDataFolder).Any()) {
+				if (!OAuth2TokenResponse) {
 
 					// display the authentication failure icon and text
 					UI.notifyIcon.Icon = Resources.warning;
@@ -107,11 +119,30 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Asynchronous method used to connect the gmail base client service
+		/// </summary>
+		/// <returns>Users resource</returns>
+		public async Task<UsersResource> Connect() {
+			Service = new GmailService(new BaseClientService.Initializer {
+				HttpClientInitializer = UI.GmailService.Credential,
+				ApplicationName = Settings.Default.APPLICATION_NAME
+			});
+
+			// retrieve the gmail address and store it in an application cache setting
+			if (Settings.Default.EmailAddress == "-") {
+				Profile UserProfile = await Service.Users.GetProfile("me").ExecuteAsync();
+				Settings.Default.EmailAddress = UserProfile.EmailAddress;
+			}
+
+			return Service.Users;
+		}
+
+		/// <summary>
 		/// Dispose the service
 		/// </summary>
 		public void Dispose() {
-			if (Inbox != null) {
-				Inbox.Dispose();
+			if (Service != null) {
+				Service.Dispose();
 			}
 		}
 
@@ -153,11 +184,11 @@ namespace notifier {
 		#region #accessors
 
 		/// <summary>
-		/// User credential for the gmail authentication
+		/// Flag defining if the OAuth2 token response file is present in the application data folder
 		/// </summary>
-		public UserCredential Credential {
-			get; set;
-		}
+		public bool OAuth2TokenResponse {
+			get;
+		} = Directory.EnumerateFiles(Core.ApplicationDataFolder, "*.TokenResponse-user").Any();
 
 		#endregion
 	}
