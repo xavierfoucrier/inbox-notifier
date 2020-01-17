@@ -7,7 +7,7 @@
 #define MyAppRegistryKeyName "Inbox Notifier"
 
 [Setup]
-AppId={{7E60E047-C79B-49A4-8CF6-B33D5565B2E8}
+AppId={{D5D279BC-098C-4CBE-BC2C-FBA3F75F773F}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppCopyright=Copyright (c) {#MyAppYear} {#MyAppPublisher}
@@ -17,7 +17,7 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 AppMutex=inboxnotifier-115e363ecbfefd771e55c6874680bc0a
-DefaultDirName={pf}\{#MyAppName}
+DefaultDirName={autopf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 LicenseFile=..\LICENSE.md
@@ -27,7 +27,9 @@ OutputBaseFilename={#MyAppName} {#MyAppVersion}
 SetupIconFile=setup.ico
 Compression=lzma
 SolidCompression=yes
+WizardStyle=modern
 PrivilegesRequired=admin
+UsedUserAreasWarning=no
 VersionInfoVersion={#MyAppVersion}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 
@@ -51,7 +53,7 @@ Source: "..\code\bin\Release 64 bits (x64)\*"; DestDir: "{app}"; Flags: ignoreve
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{group}\{cm:ProgramOnTheWeb,{#MyAppName}}"; Filename: "{#MyAppURL}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
-Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: quicklaunchicon
 
 [Run]
