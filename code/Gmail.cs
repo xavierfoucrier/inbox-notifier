@@ -82,9 +82,15 @@ namespace notifier {
 					UI.notifyIcon.Icon = Resources.warning;
 					UI.notifyIcon.Text = Translation.authenticationFailed;
 
-					// exit the application
-					MessageBox.Show(Translation.authenticationWithGmailRefused, Translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-					Application.Exit();
+					// retry or exit the application depending on the user action
+					DialogResult retry = MessageBox.Show(Translation.authenticationWithGmailRefused.Replace("{timeout}", Settings.Default.AUTH_TIMEOUT.ToString()), Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+
+					if (retry == DialogResult.Retry) {
+						Core.RestartApplication();
+					} else {
+						Application.Exit();
+					}
+
 					return;
 				}
 			}

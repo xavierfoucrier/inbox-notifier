@@ -138,9 +138,9 @@ Do you really want to exit?</value>
     <value>Waiting for authentication with your Gmail account...</value>
   </data>
   <data name="authenticationWithGmailRefused" xml:space="preserve">
-    <value>You refused the application accesses your Gmail account. This step is required and will be asked again the next time.
+    <value>The "Inbox Notifier" application was unable to associate with your Gmail account: you have {timeout} seconds to authorize the application to access your account, after this time you need to start the operation again.
 
-The application will now quit.</value>
+This step is required for synchronization to work and will only be requested once. You can restart the authentication process again or cancel to quit the application.</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Error</value>

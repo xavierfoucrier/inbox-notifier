@@ -117,9 +117,9 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous avez refusé que l&apos;application accède à votre compte Gmail. Cette étape est nécessaire et vous sera demandée à nouveau lors du prochain démarrage.
+        ///   Recherche une chaîne localisée semblable à L&apos;application &quot;Inbox Notifier&quot; n&apos;a pas été en mesure de s&apos;associer à votre compte Gmail : vous disposez de {timeout} secondes pour autoriser l&apos;application à accéder à votre compte, passé ce délai vous devez recommencer l&apos;opération.
         ///
-        ///L&apos;application va désormais quitter..
+        ///Cette étape est nécessaire au bon fonctionnement de la synchronisation et ne vous sera demandée qu&apos;une seule fois. Vous pouvez recommencer le processus d&apos;authentification ou annuler pour quitter l&apos;application..
         /// </summary>
         internal static string authenticationWithGmailRefused {
             get {

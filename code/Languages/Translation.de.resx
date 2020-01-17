@@ -138,9 +138,9 @@ Wollen Sie wirklich beenden wollen?</value>
     <value>Warten auf die Authentifizierung mit Ihrem Google Mail-Konto ...</value>
   </data>
   <data name="authenticationWithGmailRefused" xml:space="preserve">
-    <value>Sie verweigert die Anwendung greift Ihr Gmail Konto. Dieser Schritt ist erforderlich und wird das nächste Mal wieder gefragt.
+    <value>Die Anwendung "Inbox Notifier" konnte keine Verbindung zu Ihrem Google Mail-Konto herstellen: Sie haben {timeout} Sekunden, um die Anwendung für den Zugriff auf Ihr Konto zu autorisieren. Danach müssen Sie den Vorgang erneut starten.
 
-Die Anwendung wird nun beendet.</value>
+Dieser Schritt ist für das ordnungsgemäße Funktionieren der Synchronisierung erforderlich und wird nur einmal angefordert. Sie können den Authentifizierungsprozess neu starten oder abbrechen, um die Anwendung zu beenden.</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Fehler</value>
