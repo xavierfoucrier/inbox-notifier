@@ -132,7 +132,7 @@ Do you really want to exit?</value>
     <value>attachments</value>
   </data>
   <data name="authenticationFailed" xml:space="preserve">
-    <value>Authentification failed</value>
+    <value>Authentication failed</value>
   </data>
   <data name="authenticationNeeded" xml:space="preserve">
     <value>Waiting for authentication with your Gmail account...</value>
