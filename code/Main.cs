@@ -273,7 +273,7 @@ namespace notifier {
 		private void fieldNumericDelay_ValueChanged(object sender, EventArgs e) {
 			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * (int)fieldNumericDelay.Value;
 			Settings.Default.NumericDelay = fieldNumericDelay.Value;
-			timer.Interval = (int)Settings.Default.TimerInterval;
+			timer.Interval = Settings.Default.TimerInterval;
 		}
 
 		/// <summary>
@@ -282,7 +282,7 @@ namespace notifier {
 		private void fieldStepDelay_SelectionChangeCommitted(object sender, EventArgs e) {
 			Settings.Default.TimerInterval = 1000 * (fieldStepDelay.SelectedIndex == 0 ? 60 : 3600) * (int)fieldNumericDelay.Value;
 			Settings.Default.StepDelay = (uint)fieldStepDelay.SelectedIndex;
-			timer.Interval = (int)Settings.Default.TimerInterval;
+			timer.Interval = Settings.Default.TimerInterval;
 		}
 
 		/// <summary>
