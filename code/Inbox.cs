@@ -53,6 +53,9 @@ namespace notifier {
 			// temp variable
 			bool userAction = manual;
 
+			// update the synchronization time
+			Time = DateTime.Now;
+
 			// prevent the application from syncing the inbox when the scheduler is enabled and the sync is not scheduled
 			if (Settings.Default.Scheduler && !UI.SchedulerService.ScheduledSync()) {
 				UI.SchedulerService.PauseSync();
@@ -64,9 +67,6 @@ namespace notifier {
 			if (UI.UpdateService.Updating) {
 				return;
 			}
-
-			// update the synchronization time
-			Time = DateTime.Now;
 
 			// reset reconnection count and prevent the application from displaying continuous warning icon when a timertick synchronization occurs after a reconnection attempt
 			if (ReconnectionAttempts != 0) {
