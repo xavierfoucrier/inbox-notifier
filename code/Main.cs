@@ -94,7 +94,7 @@ namespace notifier {
 				Settings.Default.Save();
 
 				// wait for 7 seconds to complete the thread
-				System.Threading.Thread.Sleep(7000);
+				Thread.Sleep(7000);
 			}
 
 			// configure the help provider
