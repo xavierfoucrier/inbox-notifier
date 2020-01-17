@@ -164,7 +164,7 @@ namespace notifier {
 
 			// display the privacy notification setting
 			switch (Settings.Default.PrivacyNotification) {
-				case (int)Notification.Privacy.None:
+				case (uint)Notification.Privacy.None:
 					fieldPrivacyNotificationNone.Checked = true;
 					pictureBoxPrivacyPreview.Image = Resources.privacy_none;
 					break;
@@ -172,7 +172,7 @@ namespace notifier {
 					fieldPrivacyNotificationShort.Checked = true;
 					pictureBoxPrivacyPreview.Image = Resources.privacy_short;
 					break;
-				case (int)Notification.Privacy.All:
+				case (uint)Notification.Privacy.All:
 					fieldPrivacyNotificationAll.Checked = true;
 					pictureBoxPrivacyPreview.Image = Resources.privacy_all;
 					break;
@@ -299,7 +299,7 @@ namespace notifier {
 		/// Manage the PrivacyNotificationNone user setting
 		/// </summary>
 		private void fieldPrivacyNotificationNone_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = (int)Notification.Privacy.None;
+			Settings.Default.PrivacyNotification = (uint)Notification.Privacy.None;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_none;
 		}
 
@@ -307,7 +307,7 @@ namespace notifier {
 		/// Manage the PrivacyNotificationShort user setting
 		/// </summary>
 		private void fieldPrivacyNotificationShort_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = (int)Notification.Privacy.Short;
+			Settings.Default.PrivacyNotification = (uint)Notification.Privacy.Short;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_short;
 		}
 
@@ -315,7 +315,7 @@ namespace notifier {
 		/// Manage the PrivacyNotificationAll user setting
 		/// </summary>
 		private void fieldPrivacyNotificationAll_CheckedChanged(object sender, EventArgs e) {
-			Settings.Default.PrivacyNotification = (int)Notification.Privacy.All;
+			Settings.Default.PrivacyNotification = (uint)Notification.Privacy.All;
 			pictureBoxPrivacyPreview.Image = Resources.privacy_all;
 		}
 

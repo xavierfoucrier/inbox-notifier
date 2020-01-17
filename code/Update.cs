@@ -53,7 +53,7 @@ namespace notifier {
 		/// </summary>
 		/// <returns>Indicate if the update period is currently set to startup</returns>
 		public static bool IsPeriodSetToStartup() {
-			return Settings.Default.UpdatePeriod == (int)Period.Startup;
+			return Settings.Default.UpdatePeriod == (uint)Period.Startup;
 		}
 
 		/// <summary>
@@ -85,7 +85,7 @@ namespace notifier {
 			}
 
 			switch (Settings.Default.UpdatePeriod) {
-				case (int)Period.Day:
+				case (uint)Period.Day:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddDays(1)) {
 						await Check(false).ConfigureAwait(false);
 					}
@@ -97,7 +97,7 @@ namespace notifier {
 					}
 
 					break;
-				case (int)Period.Month:
+				case (uint)Period.Month:
 					if (DateTime.Now >= Settings.Default.UpdateControl.AddMonths(1)) {
 						await Check(false).ConfigureAwait(false);
 					}

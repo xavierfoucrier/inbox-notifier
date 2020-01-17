@@ -186,7 +186,7 @@ namespace notifier {
 						})).ExecuteAsync();
 
 						//  display a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
-						if (Box.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != (int)Notification.Privacy.All) {
+						if (Box.ThreadsUnread == 1 && Settings.Default.PrivacyNotification != (uint)Notification.Privacy.All) {
 							string subject = "";
 							string from = "";
 
@@ -205,7 +205,7 @@ namespace notifier {
 								}
 							}
 
-							if (Settings.Default.PrivacyNotification == (int)Notification.Privacy.None) {
+							if (Settings.Default.PrivacyNotification == (uint)Notification.Privacy.None) {
 								subject = message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : Translation.newUnreadMessage;
 							}
 

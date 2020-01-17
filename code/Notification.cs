@@ -95,12 +95,12 @@ namespace notifier {
 			}
 
 			// do nothing if the notification behavior is set to "do nothing"
-			if (balloon && Settings.Default.NotificationBehavior == (int)Behavior.DoNothing) {
+			if (balloon && Settings.Default.NotificationBehavior == (uint)Behavior.DoNothing) {
 				return;
 			}
 
 			// mark the message as read if the notification behavior is set to "mark as read"
-			if (balloon && Settings.Default.NotificationBehavior == (int)Behavior.MarkAsRead) {
+			if (balloon && Settings.Default.NotificationBehavior == (uint)Behavior.MarkAsRead) {
 				await UI.GmailService.Inbox.MarkAsRead();
 
 				// prevent systray icon restoration when spams are marked as read and there is other messages in the inbox
@@ -209,7 +209,7 @@ namespace notifier {
 		/// </summary>
 		/// <returns>URL to access Gmail simplified or full web interface</returns>
 		public static string GetBaseURL() {
-			return Settings.Default.NotificationBehavior == (int)Behavior.OpenSimplifiedHTML ? Settings.Default.GMAIL_BASEURL + "/h" : Settings.Default.GMAIL_BASEURL;
+			return Settings.Default.NotificationBehavior == (uint)Behavior.OpenSimplifiedHTML ? Settings.Default.GMAIL_BASEURL + "/h" : Settings.Default.GMAIL_BASEURL;
 		}
 
 		#endregion
