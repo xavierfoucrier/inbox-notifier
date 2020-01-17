@@ -135,7 +135,7 @@ Wollen Sie wirklich beenden wollen?</value>
     <value>Fehler bei der Authentifizierung</value>
   </data>
   <data name="authenticationNeeded" xml:space="preserve">
-    <value>Warten auf die Authentifizierung mit Ihrem Google Mail-Konto ...</value>
+    <value>Warten auf die Authentifizierung mit Ihrem Google Mail-Konto...</value>
   </data>
   <data name="authenticationWithGmailRefused" xml:space="preserve">
     <value>Die Anwendung "Inbox Notifier" konnte keine Verbindung zu Ihrem Google Mail-Konto herstellen: Sie haben {timeout} Sekunden, um die Anwendung für den Zugriff auf Ihr Konto zu autorisieren. Danach müssen Sie den Vorgang erneut starten.
