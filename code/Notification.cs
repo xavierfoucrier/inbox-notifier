@@ -171,6 +171,12 @@ namespace notifier {
 			// update the systray icon and text
 			UI.notifyIcon.Icon = Resources.timeout;
 			UI.notifyIcon.Text = Translation.timeout + " - " + (infinite ? "∞" : DateTime.Now.AddMilliseconds(delay).ToShortTimeString());
+
+			// disable some menu items
+			UI.menuItemMarkAsRead.Enabled = false;
+
+			// update some text items
+			UI.menuItemMarkAsRead.Text = Translation.markAsRead;
 		}
 
 		/// <summary>
