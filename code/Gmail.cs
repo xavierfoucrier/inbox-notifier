@@ -188,7 +188,7 @@ namespace notifier {
 		/// </summary>
 		public bool OAuth2TokenResponse {
 			get;
-		} = Directory.EnumerateFiles(Core.ApplicationDataFolder, "*.TokenResponse-user").Any();
+		} = Directory.Exists(Core.ApplicationDataFolder) && Directory.EnumerateFiles(Core.ApplicationDataFolder, "*.TokenResponse-user").Any();
 
 		#endregion
 	}
