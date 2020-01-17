@@ -314,9 +314,9 @@ namespace notifier.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("40")]
-        public uint AUTH_TIMEOUT {
+        public uint OAUTH_TIMEOUT {
             get {
-                return ((uint)(this["AUTH_TIMEOUT"]));
+                return ((uint)(this["OAUTH_TIMEOUT"]));
             }
         }
         

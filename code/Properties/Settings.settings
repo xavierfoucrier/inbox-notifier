@@ -80,7 +80,7 @@
     <Setting Name="REGISTRY_KEY" Type="System.String" Scope="Application">
       <Value Profile="(Default)">SOFTWARE\Microsoft\Windows\CurrentVersion\Run</Value>
     </Setting>
-    <Setting Name="AUTH_TIMEOUT" Type="System.UInt32" Scope="Application">
+    <Setting Name="OAUTH_TIMEOUT" Type="System.UInt32" Scope="Application">
       <Value Profile="(Default)">40</Value>
     </Setting>
     <Setting Name="AudioPop" Type="System.Boolean" Scope="User">

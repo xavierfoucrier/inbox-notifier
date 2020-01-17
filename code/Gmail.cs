@@ -83,7 +83,7 @@ namespace notifier {
 					UI.notifyIcon.Text = Translation.authenticationFailed;
 
 					// retry or exit the application depending on the user action
-					DialogResult retry = MessageBox.Show(Translation.authenticationWithGmailRefused.Replace("{timeout}", Settings.Default.AUTH_TIMEOUT.ToString()), Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+					DialogResult retry = MessageBox.Show(Translation.authenticationWithGmailRefused.Replace("{timeout}", Settings.Default.OAUTH_TIMEOUT.ToString()), Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
 
 					if (retry == DialogResult.Retry) {
 						Core.RestartApplication();
@@ -164,7 +164,7 @@ namespace notifier {
 
 					// define a cancellation token source
 					CancellationTokenSource cancellation = new CancellationTokenSource();
-					cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.AUTH_TIMEOUT));
+					cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.OAUTH_TIMEOUT));
 
 					// wait for the user validation, only if the user has not already authorized the application
 					UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
