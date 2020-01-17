@@ -294,9 +294,6 @@ Tentative de reconnexion ...</value>
   <data name="sync" xml:space="preserve">
     <value>Synchronisation en cours ...</value>
   </data>
-  <data name="syncAutomaticReply" xml:space="preserve">
-    <value>Réponse automatique</value>
-  </data>
   <data name="syncError" xml:space="preserve">
     <value>Erreur lors de la synchronisation</value>
   </data>
