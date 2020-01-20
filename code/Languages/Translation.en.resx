@@ -146,7 +146,7 @@ This step is required for synchronization to work and will only be requested onc
     <value>Error</value>
   </data>
   <data name="firstLoad" xml:space="preserve">
-    <value>Inbox Notifier now runs in background on your computer. In a few seconds you will be prompted to sign in to your Gmail account to allow the application to access your inbox.</value>
+    <value>Inbox Notifier now run in background on your computer. In a few seconds you will be prompted to sign in to your Gmail account to allow the application to access your inbox.</value>
   </data>
   <data name="gmailDisconnect" xml:space="preserve">
     <value>Disconnecting your Gmail account</value>
@@ -157,28 +157,28 @@ This step is required for synchronization to work and will only be requested onc
 Do you really want to disconnect your Gmail account and restart the application now?</value>
   </data>
   <data name="helpAskonExit" xml:space="preserve">
-    <value>Asks a question before completely leaving the app</value>
+    <value>Ask a question before completely leaving the app</value>
   </data>
   <data name="helpAttemptToReconnectNotification" xml:space="preserve">
-    <value>Displays a notification when the application tries to reconnect to the network</value>
+    <value>Display a notification when the application try to reconnect to the network</value>
   </data>
   <data name="helpAudioNotification" xml:space="preserve">
-    <value>Plays a sound when displaying a notification</value>
+    <value>Play a sound when displaying a notification</value>
   </data>
   <data name="helpCheckForUpdate" xml:space="preserve">
-    <value>Check availability of updates immediately</value>
+    <value>Check updates immediately</value>
   </data>
   <data name="helpEmailAddress" xml:space="preserve">
     <value>Gmail account currently logged in to the application</value>
   </data>
   <data name="helpGmailDisconnect" xml:space="preserve">
-    <value>Disconnect the Gmail account and restarts the application to request a new authentication</value>
+    <value>Disconnect the Gmail account and restart the application to request a new authentication</value>
   </data>
   <data name="helpLanguage" xml:space="preserve">
     <value>Language of the interface</value>
   </data>
   <data name="helpMessageNotification" xml:space="preserve">
-    <value>Displays a notification when receiving new messages</value>
+    <value>Display a notification when receiving new messages</value>
   </data>
   <data name="helpNotificationBehavior" xml:space="preserve">
     <value>Action performed when clicking on a notification</value>
@@ -187,13 +187,13 @@ Do you really want to disconnect your Gmail account and restart the application 
     <value>Timing delay of the inbox</value>
   </data>
   <data name="helpPrivacyNotificationAll" xml:space="preserve">
-    <value>Displays a notification containing no information about the message</value>
+    <value>Display a notification that contain no information about the message</value>
   </data>
   <data name="helpPrivacyNotificationNone" xml:space="preserve">
-    <value>Displays the name of the sender and the message content</value>
+    <value>Display the name of the sender and the message content</value>
   </data>
   <data name="helpPrivacyNotificationShort" xml:space="preserve">
-    <value>Displays the name of the sender and the subject line</value>
+    <value>Display the name of the sender and the subject line</value>
   </data>
   <data name="helpRunAtWindowsStartup" xml:space="preserve">
     <value>Launch the application on Windows startup</value>
@@ -208,13 +208,13 @@ Do you really want to disconnect your Gmail account and restart the application 
     <value>End time of synchronization</value>
   </data>
   <data name="helpScheduleService" xml:space="preserve">
-    <value>Enables the scheduled synchronization service</value>
+    <value>Enable the scheduled synchronization service</value>
   </data>
   <data name="helpScheduleStartTime" xml:space="preserve">
     <value>Start time of synchronization</value>
   </data>
   <data name="helpSpamNotification" xml:space="preserve">
-    <value>Displays a notification when receiving a junk message</value>
+    <value>Display a notification when receiving a junk message</value>
   </data>
   <data name="helpStatistics" xml:space="preserve">
     <value>Usage statistics of your inbox</value>
@@ -229,16 +229,16 @@ Do you really want to disconnect your Gmail account and restart the application 
     <value>Last check date of updates</value>
   </data>
   <data name="helpUpdateDownload" xml:space="preserve">
-    <value>When updates are available, the application downloads them and launches the installation automatically</value>
+    <value>When updates are available, the application download them and launch the installation automatically</value>
   </data>
   <data name="helpUpdatePeriod" xml:space="preserve">
     <value>Update check period</value>
   </data>
   <data name="helpUpdateQuiet" xml:space="preserve">
-    <value>When updates are being installed, the application installs them silently in the background</value>
+    <value>When updates are being installed, the application install them silently in background</value>
   </data>
   <data name="helpUpdateService" xml:space="preserve">
-    <value>Enables the automatic update check service</value>
+    <value>Enable the automatic update check service</value>
   </data>
   <data name="hours" xml:space="preserve">
     <value>hour(s)</value>
