@@ -152,7 +152,7 @@ This step is required for synchronization to work and will only be requested onc
     <value>Disconnecting your Gmail account</value>
   </data>
   <data name="gmailDisconnectQuestion" xml:space="preserve">
-    <value>You are about to disconnect your Gmail account from the applivation: you will no longer receive notifications from the account {account_name} and you will be prompted to log in next time.
+    <value>You are about to disconnect your Gmail account from the applivation: you will no longer receive notifications from the account {email} and you will be prompted to log in next time.
 
 Do you really want to disconnect your Gmail account and restart the application now?</value>
   </data>

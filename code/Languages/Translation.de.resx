@@ -152,7 +152,7 @@ Dieser Schritt ist für das ordnungsgemäße Funktionieren der Synchronisierung 
     <value>Trennen Ihres Gmail Konto</value>
   </data>
   <data name="gmailDisconnectQuestion" xml:space="preserve">
-    <value>Sie sind über Ihre Google Mail-Anwendung zu trennen: Sie werden nicht mehr Benachrichtigungen erhalten vom Konto {account_name} und Sie werden aufgefordert , in der nächsten Zeit zu protokollieren.
+    <value>Sie sind über Ihre Google Mail-Anwendung zu trennen: Sie werden nicht mehr Benachrichtigungen erhalten vom Konto {email} und Sie werden aufgefordert , in der nächsten Zeit zu protokollieren.
 
 Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu trennen?</value>
   </data>

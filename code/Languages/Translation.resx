@@ -152,7 +152,7 @@ Cette étape est nécessaire au bon fonctionnement de la synchronisation et ne v
     <value>Déconnexion de votre compte Gmail</value>
   </data>
   <data name="gmailDisconnectQuestion" xml:space="preserve">
-    <value>Vous êtes sur le point de déconnecter votre compte Gmail de l'application : vous ne recevrez plus de notifications en provenance du compte {account_name} et vous serez invité à vous reconnecter au prochain démarrage.
+    <value>Vous êtes sur le point de déconnecter votre compte Gmail de l'application : vous ne recevrez plus de notifications en provenance du compte {email} et vous serez invité à vous reconnecter au prochain démarrage.
 
 Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'application maintenant ?</value>
   </data>

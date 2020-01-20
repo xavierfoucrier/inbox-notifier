@@ -534,7 +534,7 @@ namespace notifier {
 		private void buttonGmailDisconnect_Click(object sender, EventArgs e) {
 
 			// ask the user for disconnect
-			DialogResult dialog = MessageBox.Show(Translation.gmailDisconnectQuestion.Replace("{account_name}", labelEmailAddress.Text), Translation.gmailDisconnect, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+			DialogResult dialog = MessageBox.Show(Translation.gmailDisconnectQuestion.Replace("{email}", labelEmailAddress.Text), Translation.gmailDisconnect, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
 			if (dialog == DialogResult.No) {
 				return;
