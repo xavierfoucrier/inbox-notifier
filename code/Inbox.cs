@@ -192,7 +192,7 @@ namespace notifier {
 
 							foreach (MessagePartHeader header in message.Payload.Headers) {
 								if (header.Name == "Subject") {
-									subject = header.Value != "" ? header.Value : Translation.newUnreadMessage;
+									subject = string.IsNullOrEmpty(header.Value) ? Translation.newUnreadMessage : header.Value;
 								} else if (header.Name == "From") {
 									Match match = Regex.Match(header.Value, ".* <");
 
@@ -206,12 +206,12 @@ namespace notifier {
 							}
 
 							if (Settings.Default.PrivacyNotification == (uint)Notification.Privacy.None) {
-								subject = message.Snippet != "" ? WebUtility.HtmlDecode(message.Snippet) : Translation.newUnreadMessage;
+								subject = string.IsNullOrEmpty(message.Snippet) ? Translation.newUnreadMessage : WebUtility.HtmlDecode(message.Snippet);
 							}
 
 							// detect if the message contains attachments
 							if (message.Payload.Parts != null && message.Payload.MimeType == "multipart/mixed") {
-								int attachments = message.Payload.Parts.Where(part => !String.IsNullOrEmpty(part.Filename)).Count();
+								int attachments = message.Payload.Parts.Where(part => !string.IsNullOrEmpty(part.Filename)).Count();
 
 								if (attachments > 0) {
 									from = (from.Length > 48 ? from.Substring(0, 48) : from) + " – " + attachments.ToString() + " " + (attachments > 1 ? Translation.attachments : Translation.attachment);

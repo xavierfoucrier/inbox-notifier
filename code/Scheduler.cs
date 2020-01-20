@@ -47,7 +47,7 @@ namespace notifier {
 			UI = form;
 
 			// init the slots depending on the user settings
-			Slots = Settings.Default.SchedulerTimeSlot != "" ? JsonConvert.DeserializeObject<List<TimeSlot>>(Settings.Default.SchedulerTimeSlot) : new List<TimeSlot>();
+			Slots = string.IsNullOrEmpty(Settings.Default.SchedulerTimeSlot) ? new List<TimeSlot>() : JsonConvert.DeserializeObject<List<TimeSlot>>(Settings.Default.SchedulerTimeSlot);
 
 			// display the default day of week based on today
 			UI.fieldDayOfWeek.SelectedIndex = Days.IndexOf(DateTime.Now.DayOfWeek);
