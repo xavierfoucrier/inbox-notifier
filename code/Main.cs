@@ -506,7 +506,7 @@ namespace notifier {
 		/// Manage the systray icon balloon click
 		/// </summary>
 		private async void notifyIcon_BalloonTipClicked(object sender, EventArgs e) {
-			if ((Control.MouseButtons & MouseButtons.Right) == MouseButtons.Right) {
+			if ((MouseButtons & MouseButtons.Right) == MouseButtons.Right) {
 				return;
 			}
 
