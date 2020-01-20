@@ -548,6 +548,9 @@ namespace notifier {
 			// reset the user email address
 			Settings.Default.EmailAddress = "-";
 
+			// reset the application first load state
+			Settings.Default.FirstLoad = true;
+
 			// restart the application
 			Core.RestartApplication();
 		}
