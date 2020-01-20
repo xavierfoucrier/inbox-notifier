@@ -165,6 +165,9 @@ Do you really want to disconnect your Gmail account and restart the application 
   <data name="helpAudioNotification" xml:space="preserve">
     <value>Play a sound when displaying a notification</value>
   </data>
+  <data name="helpAudioPop" xml:space="preserve">
+    <value>Play a sound when starting and closing the application</value>
+  </data>
   <data name="helpCheckForUpdate" xml:space="preserve">
     <value>Check updates immediately</value>
   </data>

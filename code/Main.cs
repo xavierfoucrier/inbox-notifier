@@ -100,6 +100,7 @@ namespace notifier {
 			// configure the help provider
 			HelpProvider help = new HelpProvider();
 			help.SetHelpString(fieldRunAtWindowsStartup, Translation.helpRunAtWindowsStartup);
+			help.SetHelpString(fieldAudioPop, Translation.helpAudioPop);
 			help.SetHelpString(fieldAskonExit, Translation.helpAskonExit);
 			help.SetHelpString(fieldLanguage, Translation.helpLanguage);
 			help.SetHelpString(labelEmailAddress, Translation.helpEmailAddress);

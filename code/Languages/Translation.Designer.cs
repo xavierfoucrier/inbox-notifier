@@ -193,6 +193,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Joue un son au démarrage et à la fermeture de l&apos;application.
+        /// </summary>
+        internal static string helpAudioPop {
+            get {
+                return ResourceManager.GetString("helpAudioPop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Vérifie la disponibilité de mises à jour immédiatement.
         /// </summary>
         internal static string helpCheckForUpdate {

@@ -165,6 +165,9 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
   <data name="helpAudioNotification" xml:space="preserve">
     <value>Spielt einen Ton, wenn eine Benachrichtigung angezeigt werden</value>
   </data>
+  <data name="helpAudioPop" xml:space="preserve">
+    <value>Beim Starten und Schließen der Anwendung einen Ton abspielen</value>
+  </data>
   <data name="helpCheckForUpdate" xml:space="preserve">
     <value>Überprüfen Sie sofort die Verfügbarkeit von Updates</value>
   </data>

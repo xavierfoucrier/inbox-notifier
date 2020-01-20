@@ -165,6 +165,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
   <data name="helpAudioNotification" xml:space="preserve">
     <value>Joue un son lors de l'affichage d'une notification</value>
   </data>
+  <data name="helpAudioPop" xml:space="preserve">
+    <value>Joue un son au démarrage et à la fermeture de l'application</value>
+  </data>
   <data name="helpCheckForUpdate" xml:space="preserve">
     <value>Vérifie la disponibilité de mises à jour immédiatement</value>
   </data>
