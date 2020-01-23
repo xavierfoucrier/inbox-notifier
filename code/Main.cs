@@ -459,7 +459,7 @@ namespace notifier {
 		/// <summary>
 		/// Manage the context menu Settings item
 		/// </summary>
-		private void menuItemSettings_Click(object sender, EventArgs e) {
+		private async void menuItemSettings_Click(object sender, EventArgs e) {
 
 			// reset the settings label visibility
 			labelSettingsSaved.Visible = false;
@@ -474,6 +474,11 @@ namespace notifier {
 			ShowInTaskbar = true;
 			WindowState = FormWindowState.Normal;
 			Focus();
+
+			// update the statistics if the account tab is visible
+			if (tabControl.SelectedTab == tabPageAccount) {
+				await GmailService.Inbox.UpdateStatistics();
+			}
 		}
 
 		/// <summary>
@@ -589,6 +594,13 @@ namespace notifier {
 		/// </summary>
 		private void tabPageGeneral_Enter(object sender, EventArgs e) {
 			Computer.RegulatesRegistry();
+		}
+
+		/// <summary>
+		/// Update the user inbox statistics when entering the account tab page
+		/// </summary>
+		private async void tabPageAccount_Enter(object sender, EventArgs e) {
+			await GmailService.Inbox.UpdateStatistics();
 		}
 
 		/// <summary>

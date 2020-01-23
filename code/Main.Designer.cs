@@ -291,6 +291,7 @@ namespace notifier {
 			resources.ApplyResources(this.tabPageAccount, "tabPageAccount");
 			this.tabPageAccount.Name = "tabPageAccount";
 			this.tabPageAccount.UseVisualStyleBackColor = true;
+			this.tabPageAccount.Enter += new System.EventHandler(this.tabPageAccount_Enter);
 			// 
 			// groupBox8
 			// 
@@ -1180,7 +1181,6 @@ namespace notifier {
 		private System.Windows.Forms.ComboBox fieldLanguage;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label labelRestartToApply;
-		private System.Windows.Forms.TabPage tabPageAccount;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.Button buttonGmailDisconnect;
 		private System.Windows.Forms.Label label4;
@@ -1246,5 +1246,6 @@ namespace notifier {
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.CheckBox checkBox2;
 		private System.Windows.Forms.Label labelNotificationOpenSimplifiedHTML;
-	}
+				internal System.Windows.Forms.TabPage tabPageAccount;
+		}
 }

@@ -119,7 +119,9 @@ namespace notifier {
 				Box = await User.Labels.Get("me", "INBOX").ExecuteAsync();
 
 				// update the statistics
-				await UpdateStatistics().ConfigureAwait(false);
+				if (userAction) {
+					await UpdateStatistics().ConfigureAwait(false);
+				}
 
 				// manage the spam notification
 				if (Settings.Default.SpamNotification) {
@@ -415,7 +417,12 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to get account statistics
 		/// </summary>
-		private async Task UpdateStatistics() {
+		public async Task UpdateStatistics() {
+
+			// prevent statistics update if the UI is not visible or if there is no internet connection
+			if (!(UI.Visible && UI.tabControl.SelectedTab == UI.tabPageAccount) || !Computer.IsInternetAvailable()) {
+				return;
+			}
 
 			// get inbox message count
 			int unread = (int)Box.ThreadsUnread;
