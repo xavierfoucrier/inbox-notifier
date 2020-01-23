@@ -82,7 +82,7 @@ namespace notifier {
 			}
 
 			// if internet is down, attempt to reconnect the user mailbox
-			if (!Computer.IsInternetAvailable()) {
+			if (!await Computer.IsInternetAvailable()) {
 				UI.timerReconnect.Enabled = true;
 				UI.timer.Enabled = false;
 
@@ -387,7 +387,7 @@ namespace notifier {
 			}
 
 			// if internet is down, wait for INTERVAL_RECONNECT seconds before next attempt
-			if (!Computer.IsInternetAvailable()) {
+			if (!await Computer.IsInternetAvailable()) {
 
 				// after max unsuccessull reconnection attempts, the application waits for the next sync
 				if (ReconnectionAttempts == Settings.Default.MAX_AUTO_RECONNECT) {
@@ -420,7 +420,7 @@ namespace notifier {
 		public async Task UpdateStatistics() {
 
 			// prevent statistics update if the UI is not visible or if there is no internet connection
-			if (!(UI.Visible && UI.tabControl.SelectedTab == UI.tabPageAccount) || !Computer.IsInternetAvailable()) {
+			if (!(UI.Visible && UI.tabControl.SelectedTab == UI.tabPageAccount) || !await Computer.IsInternetAvailable()) {
 				return;
 			}
 

@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using notifier.Properties;
@@ -132,22 +133,22 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Open the Google website to check the internet connectivity
+		/// Asynchronous method to check the internet connectivity
 		/// </summary>
-		/// <returns>Indicate if the user is connected to the internet, false means that the request to the Google server has failed</returns>
-		public static bool IsInternetAvailable() {
+		/// <returns>Indicate if the user is connected to the internet, false means that the request to the DNS_REGISTRY_IP and Google server has failed</returns>
+		public static async Task<bool> IsInternetAvailable() {
 			try {
 
 				// send a ping to the DNS registry
-				IPStatus status = new Ping().Send(Settings.Default.DNS_REGISTRY_IP, 1000, new byte[32]).Status;
+				PingReply reply = await new Ping().SendPingAsync(Settings.Default.DNS_REGISTRY_IP, 1000, new byte[32]);
 
-				if (status == IPStatus.Success) {
+				if (reply.Status == IPStatus.Success) {
 					return true;
 				} else {
 
 					// use Google secured homepage as alternative to the DNS ping
 					using (WebClient client = new WebClient()) {
-						using (Stream stream = client.OpenRead("https://www.google.com")) {
+						using (Stream stream = await client.OpenReadTaskAsync("https://www.google.com")) {
 							return true;
 						}
 					}
