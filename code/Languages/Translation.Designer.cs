@@ -139,7 +139,7 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à L&apos;application &quot;Inbox Notifier&quot; n&apos;a pas été en mesure de s&apos;associer à votre compte Gmail : le service n&apos;est pas accessible pour le moment, ou une erreur inattendue s&apos;est produite..
+        ///   Recherche une chaîne localisée semblable à L&apos;application &quot;Inbox Notifier&quot; n&apos;a pas été en mesure de se connecter à votre compte Gmail : le service n&apos;est pas accessible pour le moment, ou une erreur inattendue s&apos;est produite..
         /// </summary>
         internal static string authenticationRequestError {
             get {

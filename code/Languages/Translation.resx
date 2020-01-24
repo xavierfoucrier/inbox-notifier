@@ -148,7 +148,7 @@ Cette étape est nécessaire au bon fonctionnement de la synchronisation et ne v
     <value>En attente d'authentification avec votre compte Gmail ...</value>
   </data>
   <data name="authenticationRequestError" xml:space="preserve">
-    <value>L'application "Inbox Notifier" n'a pas été en mesure de s'associer à votre compte Gmail : le service n'est pas accessible pour le moment, ou une erreur inattendue s'est produite.</value>
+    <value>L'application "Inbox Notifier" n'a pas été en mesure de se connecter à votre compte Gmail : le service n'est pas accessible pour le moment, ou une erreur inattendue s'est produite.</value>
   </data>
   <data name="authenticationRevoked" xml:space="preserve">
     <value>L'application "Inbox Notifier" n'est plus en mesure de se connecter à votre compte Gmail : la clef privée permettant de vous authentifier a été révoquée.
