@@ -99,6 +99,17 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;application &quot;Inbox Notifier&quot; n&apos;a pas été en mesure de s&apos;associer à votre compte Gmail : vous disposez de {timeout} secondes pour autoriser l&apos;application à accéder à votre compte, passé ce délai vous devez recommencer l&apos;opération.
+        ///
+        ///Cette étape est nécessaire au bon fonctionnement de la synchronisation et ne vous sera demandée qu&apos;une seule fois. Vous pouvez recommencer le processus d&apos;authentification ou annuler pour quitter l&apos;application..
+        /// </summary>
+        internal static string authenticationCanceled {
+            get {
+                return ResourceManager.GetString("authenticationCanceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur d&apos;authentification.
         /// </summary>
         internal static string authenticationFailed {
@@ -113,17 +124,6 @@ namespace notifier.Languages {
         internal static string authenticationNeeded {
             get {
                 return ResourceManager.GetString("authenticationNeeded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à L&apos;application &quot;Inbox Notifier&quot; n&apos;a pas été en mesure de s&apos;associer à votre compte Gmail : vous disposez de {timeout} secondes pour autoriser l&apos;application à accéder à votre compte, passé ce délai vous devez recommencer l&apos;opération.
-        ///
-        ///Cette étape est nécessaire au bon fonctionnement de la synchronisation et ne vous sera demandée qu&apos;une seule fois. Vous pouvez recommencer le processus d&apos;authentification ou annuler pour quitter l&apos;application..
-        /// </summary>
-        internal static string authenticationWithGmailRefused {
-            get {
-                return ResourceManager.GetString("authenticationWithGmailRefused", resourceCulture);
             }
         }
         

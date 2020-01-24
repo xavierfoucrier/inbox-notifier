@@ -131,16 +131,16 @@ Voulez-vous vraiment quitter l'application ?</value>
   <data name="attachments" xml:space="preserve">
     <value>pièces jointes</value>
   </data>
+  <data name="authenticationCanceled" xml:space="preserve">
+    <value>L'application "Inbox Notifier" n'a pas été en mesure de s'associer à votre compte Gmail : vous disposez de {timeout} secondes pour autoriser l'application à accéder à votre compte, passé ce délai vous devez recommencer l'opération.
+
+Cette étape est nécessaire au bon fonctionnement de la synchronisation et ne vous sera demandée qu'une seule fois. Vous pouvez recommencer le processus d'authentification ou annuler pour quitter l'application.</value>
+  </data>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Erreur d'authentification</value>
   </data>
   <data name="authenticationNeeded" xml:space="preserve">
     <value>En attente d'authentification avec votre compte Gmail ...</value>
-  </data>
-  <data name="authenticationWithGmailRefused" xml:space="preserve">
-    <value>L'application "Inbox Notifier" n'a pas été en mesure de s'associer à votre compte Gmail : vous disposez de {timeout} secondes pour autoriser l'application à accéder à votre compte, passé ce délai vous devez recommencer l'opération.
-
-Cette étape est nécessaire au bon fonctionnement de la synchronisation et ne vous sera demandée qu'une seule fois. Vous pouvez recommencer le processus d'authentification ou annuler pour quitter l'application.</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Erreur</value>

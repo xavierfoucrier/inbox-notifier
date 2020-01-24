@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Apis.Auth.OAuth2;
+using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
@@ -70,29 +71,25 @@ namespace notifier {
 
 				// get the token delivery time
 				UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
-			} catch (Exception exception) {
+			} catch (OperationCanceledException exception) {
 
 				// log the error
 				Core.Log("Authentication: " + exception.Message);
 
-				// exit the application if the google api token file doesn't exists
-				if (!OAuth2TokenResponse) {
+				// display the authentication failure icon and text
+				UI.notifyIcon.Icon = Resources.warning;
+				UI.notifyIcon.Text = Translation.authenticationFailed;
 
-					// display the authentication failure icon and text
-					UI.notifyIcon.Icon = Resources.warning;
-					UI.notifyIcon.Text = Translation.authenticationFailed;
+				// restart or exit the application depending on the user action
+				DialogResult retry = MessageBox.Show(Translation.authenticationCanceled.Replace("{timeout}", Settings.Default.OAUTH_TIMEOUT.ToString()), Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
 
-					// retry or exit the application depending on the user action
-					DialogResult retry = MessageBox.Show(Translation.authenticationWithGmailRefused.Replace("{timeout}", Settings.Default.OAUTH_TIMEOUT.ToString()), Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
-
-					if (retry == DialogResult.Retry) {
-						Core.RestartApplication();
-					} else {
-						Application.Exit();
-					}
-
-					return;
+				if (retry == DialogResult.Retry) {
+					Core.RestartApplication();
+				} else {
+					Application.Exit();
 				}
+
+				return;
 			}
 
 			// synchronize the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
@@ -180,8 +177,7 @@ namespace notifier {
 					return credential;
 				}
 			} catch (Exception exception) {
-				Core.Log("AuthorizationBroker: " + exception.Message);
-				return null;
+				throw exception;
 			}
 		}
 
