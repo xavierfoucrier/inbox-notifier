@@ -110,6 +110,17 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous avez refusé que l&apos;application &quot;Inbox Notifier&quot; soit associée à votre compte Gmail.
+        ///
+        ///Cette étape est nécessaire au bon fonctionnement de la synchronisation et ne vous sera demandée qu&apos;une seule fois. Vous pouvez recommencer le processus d&apos;authentification ou annuler pour quitter l&apos;application..
+        /// </summary>
+        internal static string authenticationDenied {
+            get {
+                return ResourceManager.GetString("authenticationDenied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur d&apos;authentification.
         /// </summary>
         internal static string authenticationFailed {
@@ -124,6 +135,26 @@ namespace notifier.Languages {
         internal static string authenticationNeeded {
             get {
                 return ResourceManager.GetString("authenticationNeeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;application &quot;Inbox Notifier&quot; n&apos;a pas été en mesure de s&apos;associer à votre compte Gmail : le service n&apos;est pas accessible pour le moment, ou une erreur inattendue s&apos;est produite..
+        /// </summary>
+        internal static string authenticationRequestError {
+            get {
+                return ResourceManager.GetString("authenticationRequestError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;application &quot;Inbox Notifier&quot; n&apos;est plus en mesure de se connecter à votre compte Gmail : la clef privée permettant de vous authentifier a été révoquée.
+        ///
+        ///Vous devez télécharger la dernière version de l&apos;application pour continuer..
+        /// </summary>
+        internal static string authenticationRevoked {
+            get {
+                return ResourceManager.GetString("authenticationRevoked", resourceCulture);
             }
         }
         

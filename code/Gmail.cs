@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -71,7 +72,7 @@ namespace notifier {
 
 				// get the token delivery time
 				UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
-			} catch (OperationCanceledException exception) {
+			} catch (Exception exception) {
 
 				// log the error
 				Core.Log("Authentication: " + exception.Message);
@@ -80,11 +81,38 @@ namespace notifier {
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.authenticationFailed;
 
-				// restart or exit the application depending on the user action
-				DialogResult retry = MessageBox.Show(Translation.authenticationCanceled.Replace("{timeout}", Settings.Default.OAUTH_TIMEOUT.ToString()), Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+				// define a user input result
+				DialogResult input;
 
-				if (retry == DialogResult.Retry) {
+				// display a message to the user depending on the exception
+				switch (exception.GetType().Name) {
+					default:
+						input = MessageBox.Show(Translation.authenticationRequestError, Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+						break;
+					case "OperationCanceledException":
+						input = MessageBox.Show(Translation.authenticationCanceled.Replace("{timeout}", Settings.Default.OAUTH_TIMEOUT.ToString()), Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+						break;
+					case "TokenResponseException":
+						switch (((TokenResponseException)exception).Error.Error) {
+							default:
+								input = MessageBox.Show(Translation.authenticationRequestError, Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+								break;
+							case "access_denied":
+								input = MessageBox.Show(Translation.authenticationDenied, Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+								break;
+							case "invalid_client":
+								input = MessageBox.Show(Translation.authenticationRevoked, Translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+								break;
+						}
+
+						break;
+				}
+
+				// restart or exit the application depending on the user input
+				if (input == DialogResult.Retry) {
 					Core.RestartApplication();
+				} else if (input == DialogResult.OK) {
+					Process.Start(Settings.Default.GITHUB_REPOSITORY);
 				} else {
 					Application.Exit();
 				}
