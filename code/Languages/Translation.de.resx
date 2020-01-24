@@ -136,11 +136,24 @@ Wollen Sie wirklich beenden wollen?</value>
 
 Dieser Schritt ist für das ordnungsgemäße Funktionieren der Synchronisierung erforderlich und wird nur einmal angefordert. Sie können den Authentifizierungsprozess neu starten oder abbrechen, um die Anwendung zu beenden.</value>
   </data>
+  <data name="authenticationDenied" xml:space="preserve">
+    <value>Sie haben es abgelehnt, die Zuordnung der Anwendung "Inbox Notifier" zu Ihrem Google Mail-Konto zuzulassen.
+
+Dieser Schritt ist für die Synchronisierung erforderlich und wird nur einmal angefordert. Sie können den Authentifizierungsprozess erneut starten oder abbrechen, um die Anwendung zu beenden.</value>
+  </data>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Fehler bei der Authentifizierung</value>
   </data>
   <data name="authenticationNeeded" xml:space="preserve">
     <value>Warten auf die Authentifizierung mit Ihrem Google Mail-Konto...</value>
+  </data>
+  <data name="authenticationRequestError" xml:space="preserve">
+    <value>Die Anwendung "Inbox Notifier" konnte keine Verbindung zu Ihrem Google Mail-Konto herstellen: Der Dienst ist zurzeit nicht verfügbar, oder es ist ein unerwarteter Fehler aufgetreten.</value>
+  </data>
+  <data name="authenticationRevoked" xml:space="preserve">
+    <value>Die Anwendung "Inbox Notifier" kann keine Verbindung mehr mit Ihrem Google Mail-Konto herstellen: Der Authentifizierungsschlüssel wurde widerrufen.
+
+Sie müssen die neueste Version der Anwendung herunterladen, um fortfahren zu können.</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Fehler</value>
