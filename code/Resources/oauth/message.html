@@ -34,11 +34,39 @@
       .box {
         max-width: 500px;
       }
+
+      .message {
+        display: none;
+      }
     </style>
     <div class="box">
-      <h1>Congratulations! ✨</h1>
-      <p>Inbox Notifier is now linked to your Gmail account and is running with other background applications on your computer.</p>
-      <p>You can close this window.</p>
+      <div class="message lang-fr">
+        <h1>Félicitations ! ✨</h1>
+        <p>Inbox Notifier est désormais associé à votre compte Gmail et fonctionne avec les autres applications en arrière-plan sur votre ordinateur.</p>
+        <p>Vous pouvez fermer cette fenêtre.</p>
+      </div>
+      <div class="message lang-en">
+        <h1>Congratulations! ✨</h1>
+        <p>Inbox Notifier is now linked to your Gmail account and is running with other background applications on your computer.</p>
+        <p>You can close this window.</p>
+      </div>
+      <div class="message lang-de">
+        <h1>Herzlichen Glückwunsch! ✨</h1>
+        <p>Posteingang Mitteilungspflichtiger, der eine Bewertung von Google Mail und einer Bewertung von Anträgen auf Erteilung eines Bestätigungsvermerks für den Bestätigungsvermerk abgibt.</p>
+        <p>Sie können dieses Fenster schließen.</p>
+      </div>
     </div>
+    <script type="text/javascript">
+      (function() {
+        let language = (navigator.language || navigator.userLanguage || 'en-US').substr(0, 2);
+        let message = document.querySelector(`.message.lang-${language}`);
+
+        if (message == null) {
+          message = document.querySelector('.message.lang-en');
+        }
+
+        message.style.display = 'block';
+      })();
+    </script>
   </body>
 </html>
