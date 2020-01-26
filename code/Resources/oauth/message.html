@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -40,29 +40,48 @@
       }
     </style>
     <div class="box">
-      <div class="message lang-fr">
-        <h1>Félicitations ! ✨</h1>
-        <p>Inbox Notifier est désormais associé à votre compte Gmail et fonctionne avec les autres applications en arrière-plan sur votre ordinateur.</p>
-        <p>Vous pouvez fermer cette fenêtre.</p>
+      <div class="lang-fr">
+        <div class="message success">
+          <h1>Félicitations ! ✨</h1>
+          <p>Inbox Notifier est désormais associé à votre compte Gmail et fonctionne avec les autres applications en arrière-plan sur votre ordinateur.</p>
+          <p>Vous pouvez fermer cette fenêtre.</p>
+        </div>
+        <div class="message error">
+          <h1>Oops ! 😩</h1>
+          <p>Inbox Notifier n'a pas été en mesure de se connecter à votre compte Gmail : vous avez refusé l'accès à votre compte, le service n'est pas accessible pour le moment, ou une erreur inattendue s'est produite.</p>
+        </div>
       </div>
-      <div class="message lang-en">
-        <h1>Congratulations! ✨</h1>
-        <p>Inbox Notifier is now linked to your Gmail account and is running with other background applications on your computer.</p>
-        <p>You can close this window.</p>
+      <div class="lang-en">
+        <div class="message success">
+          <h1>Congratulations! ✨</h1>
+          <p>Inbox Notifier is now linked to your Gmail account and is running with other background applications on your computer.</p>
+          <p>You can close this window.</p>
+        </div>
+        <div class="message error">
+          <h1>Oops ! 😩</h1>
+          <p>Inbox Notifier was unable to connect to your Gmail account: you have denied access to your account, the service is not available at the moment, or an unexpected error has occurred.</p>
+        </div>
       </div>
-      <div class="message lang-de">
-        <h1>Herzlichen Glückwunsch! ✨</h1>
-        <p>Posteingang Mitteilungspflichtiger, der eine Bewertung von Google Mail und einer Bewertung von Anträgen auf Erteilung eines Bestätigungsvermerks für den Bestätigungsvermerk abgibt.</p>
-        <p>Sie können dieses Fenster schließen.</p>
+      <div class="lang-de">
+        <div class="message success">
+          <h1>Herzlichen Glückwunsch! ✨</h1>
+          <p>Posteingang Mitteilungspflichtiger, der eine Bewertung von Google Mail und einer Bewertung von Anträgen auf Erteilung eines Bestätigungsvermerks für den Bestätigungsvermerk abgibt.</p>
+          <p>Sie können dieses Fenster schließen.</p>
+        </div>
+        <div class="message error">
+          <h1>Hoppla! 😩</h1>
+          <p>Inbox Notifier konnte keine Verbindung zu Ihrem Google Mail-Konto herstellen: Sie haben den Zugriff auf Ihr Konto verweigert, der Dienst ist derzeit nicht verfügbar oder ein unerwarteter Fehler ist aufgetreten.</p>
+        </div>
       </div>
     </div>
     <script type="text/javascript">
       (function() {
         let language = (navigator.language || navigator.userLanguage || 'en-US').substr(0, 2);
-        let message = document.querySelector(`.message.lang-${language}`);
+        let status = location.href.includes('error=') ? 'error' : 'success';
+        let message = document.querySelector(`.lang-${language} .message.${status}`);
 
         if (message == null) {
-          message = document.querySelector('.message.lang-en');
+          message = document.querySelector(`.lang-en .message.${status}`);
         }
 
         message.style.display = 'block';
