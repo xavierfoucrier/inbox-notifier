@@ -11,6 +11,7 @@ Gmail notifications instantly in the Windows taskbar.
 > Don't hesitate to **contact me if you have any question about the v3**  
 > [xavier.foucrier [at] gmail.com](mailto:xavier.foucrier@gmail.com) :v:
 
+
 ## Features
 Inbox Notifier is provided with **a bunch of useful features that bring your inbox always up to date** and keep you focus on your work:
 
@@ -26,6 +27,10 @@ Inbox Notifier is provided with **a bunch of useful features that bring your inb
 * Network reconnection - *try to reconnect to the network when the internet connection is lost*
 * Scheduled synchronization - *disable the synchronization to have a peaceful weekend*
 * Update service - *keep the application up to date*
+
+Discover application interface and features through **some Youtube videos**:
+* [Authentication process and interface](https://www.youtube.com/watch?v=AHrpkeZk56c) - *1:52*
+* [Mark as read feature](https://www.youtube.com/watch?v=JQet8zBollQ) - *0:30*
 
 
 ## Compatibility
