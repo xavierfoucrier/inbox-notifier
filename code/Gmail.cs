@@ -184,28 +184,24 @@ namespace notifier {
 		private static async Task<UserCredential> AuthorizationBroker() {
 
 			// use the client secret file for the context
-			try {
-				using (FileStream stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
+			using (FileStream stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
 
-					// define a cancellation token source
-					CancellationTokenSource cancellation = new CancellationTokenSource();
-					cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.OAUTH_TIMEOUT));
+				// define a cancellation token source
+				CancellationTokenSource cancellation = new CancellationTokenSource();
+				cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.OAUTH_TIMEOUT));
 
-					// wait for the user validation, only if the user has not already authorized the application
-					UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
-						GoogleClientSecrets.Load(stream).Secrets,
-						new string[] { GmailService.Scope.GmailModify },
-						"user",
-						cancellation.Token,
-						new FileDataStore(Core.ApplicationDataFolder, true),
-						new LocalServerCodeReceiver(Resources.oauth_message)
-					);
+				// wait for the user validation, only if the user has not already authorized the application
+				UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+					GoogleClientSecrets.Load(stream).Secrets,
+					new string[] { GmailService.Scope.GmailModify },
+					"user",
+					cancellation.Token,
+					new FileDataStore(Core.ApplicationDataFolder, true),
+					new LocalServerCodeReceiver(Resources.oauth_message)
+				);
 
-					// return the user credential
-					return credential;
-				}
-			} catch (Exception exception) {
-				throw exception;
+				// return the user credential
+				return credential;
 			}
 		}
 
