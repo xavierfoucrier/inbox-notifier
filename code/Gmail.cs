@@ -120,6 +120,9 @@ namespace notifier {
 				return;
 			}
 
+			// enable the main timer
+			UI.timer.Enabled = true;
+
 			// synchronize the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
 			if (Settings.Default.UpdateService && Update.IsPeriodSetToStartup()) {
 				await UI.UpdateService.Check(!Settings.Default.UpdateDownload, true);

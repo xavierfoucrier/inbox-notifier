@@ -1075,7 +1075,6 @@ namespace notifier {
 			// 
 			// timer
 			// 
-			this.timer.Enabled = true;
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 

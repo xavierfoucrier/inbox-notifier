@@ -546,6 +546,9 @@ namespace notifier {
 				return;
 			}
 
+			// disable the main timer
+			timer.Enabled = false;
+
 			// delete the local application data folder and the client token file
 			if (Directory.Exists(Core.ApplicationDataFolder)) {
 				Directory.Delete(Core.ApplicationDataFolder, true);
