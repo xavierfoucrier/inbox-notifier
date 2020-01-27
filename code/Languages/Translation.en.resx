@@ -131,16 +131,29 @@ Do you really want to exit?</value>
   <data name="attachments" xml:space="preserve">
     <value>attachments</value>
   </data>
+  <data name="authenticationCanceled" xml:space="preserve">
+    <value>The "Inbox Notifier" application was unable to associate with your Gmail account: you have {timeout} seconds to authorize the application to access your account, after this time you need to start the operation again.
+
+This step is required for synchronization to work and will only be requested once. You can restart the authentication process again or cancel to quit the application.</value>
+  </data>
+  <data name="authenticationDenied" xml:space="preserve">
+    <value>You have refused to allow the "Inbox Notifier" application to be associated with your Gmail account.
+
+This step is required for synchronization to work and will only be requested once. You can restart the authentication process again or cancel to quit the application.</value>
+  </data>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Authentication failed</value>
   </data>
   <data name="authenticationNeeded" xml:space="preserve">
     <value>Waiting for authentication with your Gmail account...</value>
   </data>
-  <data name="authenticationWithGmailRefused" xml:space="preserve">
-    <value>The "Inbox Notifier" application was unable to associate with your Gmail account: you have {timeout} seconds to authorize the application to access your account, after this time you need to start the operation again.
+  <data name="authenticationRequestError" xml:space="preserve">
+    <value>The "Inbox Notifier" application was unable to connect with your Gmail account: the service is not available at the moment, or an unexpected error has occurred.</value>
+  </data>
+  <data name="authenticationRevoked" xml:space="preserve">
+    <value>The "Inbox Notifier" application is no longer able to connect with your Gmail account: the authentication key has been revoked.
 
-This step is required for synchronization to work and will only be requested once. You can restart the authentication process again or cancel to quit the application.</value>
+You must download the latest version of the application to continue.</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Error</value>

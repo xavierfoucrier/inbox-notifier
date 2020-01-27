@@ -1,10 +1,12 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Apis.Auth.OAuth2;
+using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
@@ -75,24 +77,47 @@ namespace notifier {
 				// log the error
 				Core.Log("Authentication: " + exception.Message);
 
-				// exit the application if the google api token file doesn't exists
-				if (!OAuth2TokenResponse) {
+				// display the authentication failure icon and text
+				UI.notifyIcon.Icon = Resources.warning;
+				UI.notifyIcon.Text = Translation.authenticationFailed;
 
-					// display the authentication failure icon and text
-					UI.notifyIcon.Icon = Resources.warning;
-					UI.notifyIcon.Text = Translation.authenticationFailed;
+				// define a user input result
+				DialogResult input;
 
-					// retry or exit the application depending on the user action
-					DialogResult retry = MessageBox.Show(Translation.authenticationWithGmailRefused.Replace("{timeout}", Settings.Default.OAUTH_TIMEOUT.ToString()), Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+				// display a message to the user depending on the exception
+				switch (exception.GetType().Name) {
+					default:
+						input = MessageBox.Show(Translation.authenticationRequestError, Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+						break;
+					case "OperationCanceledException":
+						input = MessageBox.Show(Translation.authenticationCanceled.Replace("{timeout}", Settings.Default.OAUTH_TIMEOUT.ToString()), Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+						break;
+					case "TokenResponseException":
+						switch (((TokenResponseException)exception).Error.Error) {
+							default:
+								input = MessageBox.Show(Translation.authenticationRequestError, Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+								break;
+							case "access_denied":
+								input = MessageBox.Show(Translation.authenticationDenied, Translation.authenticationFailed, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+								break;
+							case "invalid_client":
+								input = MessageBox.Show(Translation.authenticationRevoked, Translation.authenticationFailed, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+								break;
+						}
 
-					if (retry == DialogResult.Retry) {
-						Core.RestartApplication();
-					} else {
-						Application.Exit();
-					}
-
-					return;
+						break;
 				}
+
+				// restart or exit the application depending on the user input
+				if (input == DialogResult.Retry) {
+					Core.RestartApplication();
+				} else if (input == DialogResult.OK) {
+					Process.Start(Settings.Default.GITHUB_REPOSITORY);
+				} else {
+					Application.Exit();
+				}
+
+				return;
 			}
 
 			// synchronize the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
@@ -159,29 +184,24 @@ namespace notifier {
 		private static async Task<UserCredential> AuthorizationBroker() {
 
 			// use the client secret file for the context
-			try {
-				using (FileStream stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
+			using (FileStream stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
 
-					// define a cancellation token source
-					CancellationTokenSource cancellation = new CancellationTokenSource();
-					cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.OAUTH_TIMEOUT));
+				// define a cancellation token source
+				CancellationTokenSource cancellation = new CancellationTokenSource();
+				cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.OAUTH_TIMEOUT));
 
-					// wait for the user validation, only if the user has not already authorized the application
-					UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
-						GoogleClientSecrets.Load(stream).Secrets,
-						new string[] { GmailService.Scope.GmailModify },
-						"user",
-						cancellation.Token,
-						new FileDataStore(Core.ApplicationDataFolder, true),
-						new LocalServerCodeReceiver(Resources.oauth_message)
-					);
+				// wait for the user validation, only if the user has not already authorized the application
+				UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+					GoogleClientSecrets.Load(stream).Secrets,
+					new string[] { GmailService.Scope.GmailModify },
+					"user",
+					cancellation.Token,
+					new FileDataStore(Core.ApplicationDataFolder, true),
+					new LocalServerCodeReceiver(Resources.oauth_message)
+				);
 
-					// return the user credential
-					return credential;
-				}
-			} catch (Exception exception) {
-				Core.Log("AuthorizationBroker: " + exception.Message);
-				return null;
+				// return the user credential
+				return credential;
 			}
 		}
 
