@@ -84,6 +84,11 @@ Read the [Softpedia Labs review](http://www.softpedia.com/get/Internet/E-mail/Ma
 If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](CONTRIBUTING.md) before**. Thanks for taking time to contribute to Inbox Notifier.
 
 
+## Sponsor
+Become a Patron and support this project!  
+https://www.patreon.com/inboxnotifier
+
+
 ## License
 The project is developed under the **MIT** license:
 
