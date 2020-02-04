@@ -40,16 +40,14 @@ Note that this version of the .NET Framework **evolve in time**: the application
 
 ## Download
 #### Setup installer
-The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions. Its the better way to install Windows application and allows you to **cleanly install/uninstall** the application with ease. Note that you will need **administrators rights** to properly complete the installation. Recommended for all users.
+The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions: this is the better way to install Windows application and allow you to **cleanly install/uninstall** the application with ease.
 
 * :package: [Inbox Notifier 3.0.0](https://github.com/xavierfoucrier/inbox-notifier/releases/download/v3.0.0/Inbox.Notifier.3.0.0.exe)
 
-#### Portable version
-The portable version is made for users who want to install the application on a **USB key**, or **removable drive**. In the uninstall process, you will need to manually remove some files from the *%AppData%* folder or edit the registry to completely remove the application from your computer. Portable versions are **no longer available since official 1.0 release**. Recommended for beta-tester users.
+> Note that you will need **administrator rights** to properly complete the installation.
 
-#### Old versions
-
-You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/inbox-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and **are not** "production environment" ready. Some old versions are **no longer working** due to the OAuth client secret key revocation. Recommended for power users.
+#### History versions
+You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/inbox-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and **are not** "production environment" ready. Portable versions are **no longer available since official 1.0 release**. Some installers may **no longer working** due to the OAuth client secret key revocation.
 
 
 ## Privacy policy
