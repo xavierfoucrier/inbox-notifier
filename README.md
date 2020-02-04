@@ -57,14 +57,12 @@ Inbox Notifier respect user privacy.
 You can **read the [privacy notice](PRIVACY.md)** to see how the application clearly expose the manner in which it accesses, uses, stores, or shares user data.
 
 
-## Softpedia award certification
-This product was last tested in the **Softpedia Labs** on **August 24th, 2019** by *Teodor Nechita*.
+## Softpedia award
+This product was last tested in the **Softpedia Labs** on **October 17th, 2019** by *Andrei Verdeanu*.
 
 Softpedia guarantees that Inbox Notifier is **100% Free**, which means it does not contain any form of malware, including but not limited to: spyware, viruses, trojans and backdoors. This software product was tested thoroughly and was found **absolutely clean**; therefore, it can be installed with no concern by any computer user. However, it should be noted that this product will be retested periodically and the award may be withdrawn, so you should check back occasionally and pay attention to the date of testing shown above.
 
 Read the [Softpedia Labs review](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml) for more informations.
-
-> The release will be reviewed when the application will be certified by Google
 
 
 ## Contribute
