@@ -1,4 +1,4 @@
-# Inbox Notifier – [![Version](https://img.shields.io/github/release/xavierfoucrier/inbox-notifier)](https://github.com/xavierfoucrier/inbox-notifier/releases/latest) [![Code quality](https://img.shields.io/codacy/grade/088c98657120438ca3f8ffb529abcb79)](https://app.codacy.com/project/xavier.foucrier/inbox-notifier/dashboard) [![Build Status](https://img.shields.io/travis/xavierfoucrier/inbox-notifier/master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/inbox-notifier) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/inbox-notifier/total "Downloads - All releases")](https://github.com/xavierfoucrier/inbox-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-award-%230E7FC0 "Softpedia - Award")](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml#status)
+# Inbox Notifier – [![Version](https://img.shields.io/github/release/xavierfoucrier/inbox-notifier)](https://github.com/xavierfoucrier/inbox-notifier/releases/latest) [![Code quality](https://img.shields.io/codacy/grade/088c98657120438ca3f8ffb529abcb79)](https://app.codacy.com/project/xavier.foucrier/inbox-notifier/dashboard) [![Build Status](https://img.shields.io/travis/xavierfoucrier/inbox-notifier/master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/inbox-notifier) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/inbox-notifier/total "Downloads - All releases")](https://github.com/xavierfoucrier/inbox-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-award-%230E7FC0 "Softpedia - Award")](https://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Inbox-Notifier.shtml#status)
 Gmail notifications instantly in the Windows taskbar.
 
 [![Inbox Notifier](logo.png "Inbox Notifier")](logo.png?raw=true)
@@ -58,11 +58,11 @@ You can **read the [privacy notice](PRIVACY.md)** to see how the application cle
 
 
 ## Softpedia award
-This product was last tested in the **Softpedia Labs** on **October 17th, 2019** by *Andrei Verdeanu*.
+This product was last tested in the **Softpedia Labs** on **February 5th, 2020** by *Tudor Sprinceana*.
 
 Softpedia guarantees that Inbox Notifier is **100% Free**, which means it does not contain any form of malware, including but not limited to: spyware, viruses, trojans and backdoors. This software product was tested thoroughly and was found **absolutely clean**; therefore, it can be installed with no concern by any computer user. However, it should be noted that this product will be retested periodically and the award may be withdrawn, so you should check back occasionally and pay attention to the date of testing shown above.
 
-Read the [Softpedia Labs review](http://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Gmail-notifier.shtml) for more informations.
+Read the [Softpedia Labs review](https://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Inbox-Notifier.shtml) for more informations.
 
 
 ## Contribute
