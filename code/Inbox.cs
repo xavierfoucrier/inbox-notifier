@@ -427,6 +427,10 @@ namespace notifier {
 			// prevent statistics error (mainly due to scheduler setting)
 			if (User == null) {
 				User = await UI.GmailService.Connect();
+			}
+
+			// retrieve the current inbox
+			if (Box == null) {
 				Box = await User.Labels.Get("me", "INBOX").ExecuteAsync();
 			}
 
