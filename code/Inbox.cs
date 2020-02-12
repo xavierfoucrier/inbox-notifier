@@ -424,6 +424,12 @@ namespace notifier {
 				return;
 			}
 
+			// prevent statistics error (mainly due to scheduler setting)
+			if (User == null) {
+				User = await UI.GmailService.Connect();
+				Box = await User.Labels.Get("me", "INBOX").ExecuteAsync();
+			}
+
 			// get inbox message count
 			int unread = (int)Box.ThreadsUnread;
 			int total = (int)Box.ThreadsTotal;
