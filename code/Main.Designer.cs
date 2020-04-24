@@ -878,7 +878,6 @@ namespace notifier {
 			this.linkPrivacy.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(153)))));
 			this.linkPrivacy.Name = "linkPrivacy";
 			this.linkPrivacy.TabStop = true;
-			this.linkPrivacy.UseCompatibleTextRendering = true;
 			this.linkPrivacy.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(153)))));
 			this.linkPrivacy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPrivacy_LinkClicked);
 			// 
