@@ -120,33 +120,65 @@
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>Общее</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="label18.Text" xml:space="preserve">
-    <value>Этикетки</value>
-  </data>
-  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
-  </data>
-  <data name="label19.Text" xml:space="preserve">
-    <value>Черновики</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Входящие</value>
-  </data>
-  <data name="groupBox8.Text" xml:space="preserve">
-    <value>Статистика</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Проверка подлинности</value>
-  </data>
   <data name="tabPageAccount.Text" xml:space="preserve">
     <value>учетная запись</value>
+  </data>
+  <data name="fieldNotificationBehavior.Items" xml:space="preserve">
+    <value>ничего не делать</value>
+  </data>
+  <data name="fieldNotificationBehavior.Items1" xml:space="preserve">
+    <value>открытое сообщение</value>
+  </data>
+  <data name="fieldNotificationBehavior.Items2" xml:space="preserve">
+    <value>отметить сообщение как прочитанное</value>
+  </data>
+  <data name="fieldNotificationBehavior.Items3" xml:space="preserve">
+    <value>открыть сообщение в упрощенном варианте</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 13</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>При нажатии на уведомление:</value>
+  </data>
+  <data name="labelNotificationOpenSimplifiedHTML.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 72</value>
+  </data>
+  <data name="labelNotificationOpenSimplifiedHTML.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 51</value>
+  </data>
+  <data name="labelNotificationOpenSimplifiedHTML.Text" xml:space="preserve">
+    <value>Эта опция откроет упрощённую версию HTML
+из Gmail. Некоторые функции могут быть
+недоступны.</value>
+  </data>
+  <data name="labelNotificationMarkMessageAsRead.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 72</value>
+  </data>
+  <data name="labelNotificationMarkMessageAsRead.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 51</value>
+  </data>
+  <data name="labelNotificationMarkMessageAsRead.Text" xml:space="preserve">
+    <value>При получении нескольких сообщений
+эта опция отметит все входящие сообщения
+как прочитанные.</value>
+  </data>
+  <data name="labelNotificationOpenMessage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 72</value>
+  </data>
+  <data name="labelNotificationOpenMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 38</value>
+  </data>
+  <data name="labelNotificationOpenMessage.Text" xml:space="preserve">
+    <value>При получении нескольких сообщений эта опция
+автоматически откроет папку "Входящие".</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Поведение</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Почта</value>
   </data>
   <data name="tabPageNotification.Text" xml:space="preserve">
     <value>уведомление</value>
@@ -218,6 +250,30 @@
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>спросите перед выходом из программы</value>
   </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Этикетки</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Черновики</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Входящие</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Проверка подлинности</value>
+  </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
   </data>
@@ -236,8 +292,35 @@
   <data name="buttonGmailDisconnect.Text" xml:space="preserve">
     <value>выход</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Поведение</value>
+  <data name="fieldStepDelay.Items" xml:space="preserve">
+    <value>минута(ы)</value>
+  </data>
+  <data name="fieldStepDelay.Items1" xml:space="preserve">
+    <value>час(ы)</value>
+  </data>
+  <data name="fieldSpamNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 17</value>
+  </data>
+  <data name="fieldSpamNotification.Text" xml:space="preserve">
+    <value>Нежелательная почта (Спам)</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Задержка проверки:</value>
+  </data>
+  <data name="fieldMessageNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 17</value>
+  </data>
+  <data name="fieldMessageNotification.Text" xml:space="preserve">
+    <value>Новое сообщение</value>
+  </data>
+  <data name="fieldAudioNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 17</value>
+  </data>
+  <data name="fieldAudioNotification.Text" xml:space="preserve">
+    <value>Звуковое уведомление</value>
   </data>
   <data name="groupBox10.Text" xml:space="preserve">
     <value>Поведение</value>
