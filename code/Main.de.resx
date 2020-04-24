@@ -540,6 +540,12 @@ Entwickelt von Xavier Foucrier</value>
     <value>Icons von Yusuke Kamiyamane,
 einem in Tokio ansässigen Designer und Entwickler</value>
   </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Urheberrechte</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Credits</value>
   </data>
