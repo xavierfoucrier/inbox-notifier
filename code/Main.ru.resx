@@ -126,36 +126,47 @@
   <data name="tabPageNotification.Text" xml:space="preserve">
     <value>уведомление</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 13</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>При получении нового сообщения:</value>
-  </data>
-  <data name="fieldPrivacyNotificationAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 17</value>
-  </data>
-  <data name="fieldPrivacyNotificationAll.Text" xml:space="preserve">
-    <value>Скрывать всё содержимое сообщения</value>
-  </data>
-  <data name="fieldPrivacyNotificationShort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 17</value>
-  </data>
-  <data name="fieldPrivacyNotificationShort.Text" xml:space="preserve">
-    <value>Показывать часть содержимого сообщения</value>
-  </data>
-  <data name="fieldPrivacyNotificationNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 17</value>
-  </data>
-  <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
-    <value>Показывать всё содержимое сообщения</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>уведомление</value>
-  </data>
   <data name="tabPagePrivacy.Text" xml:space="preserve">
     <value>Конфиденциальность</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Временной интервал</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBox2.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 89</value>
+  </data>
+  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 30</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>Отключить автоматическую проверку
+обновлений</value>
+  </data>
+  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 58</value>
+  </data>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 17</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Отключить ручную синхронизацию</value>
+  </data>
+  <data name="fieldScheduler.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="fieldScheduler.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 30</value>
+  </data>
+  <data name="fieldScheduler.Text" xml:space="preserve">
+    <value>Активировать запланированную
+синхронизацию</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Поведение</value>
   </data>
   <data name="tabPageSchedule.Text" xml:space="preserve">
     <value>Расписание</value>
@@ -349,8 +360,92 @@
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Звуковое уведомление</value>
   </data>
-  <data name="groupBox10.Text" xml:space="preserve">
-    <value>Поведение</value>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>уведомление</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>При получении нового сообщения:</value>
+  </data>
+  <data name="fieldPrivacyNotificationAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 17</value>
+  </data>
+  <data name="fieldPrivacyNotificationAll.Text" xml:space="preserve">
+    <value>Скрывать всё содержимое сообщения</value>
+  </data>
+  <data name="fieldPrivacyNotificationShort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 17</value>
+  </data>
+  <data name="fieldPrivacyNotificationShort.Text" xml:space="preserve">
+    <value>Показывать часть содержимого сообщения</value>
+  </data>
+  <data name="fieldPrivacyNotificationNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 17</value>
+  </data>
+  <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
+    <value>Показывать всё содержимое сообщения</value>
+  </data>
+  <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="labelDuration.Text" xml:space="preserve">
+    <value>Весь день</value>
+  </data>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 105</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 13</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>до</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 105</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 13</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>от</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Длительность:</value>
+  </data>
+  <data name="fieldStartTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 100</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>День недели:</value>
+  </data>
+  <data name="fieldDayOfWeek.Items" xml:space="preserve">
+    <value>понедельник</value>
+  </data>
+  <data name="fieldDayOfWeek.Items1" xml:space="preserve">
+    <value>вторник</value>
+  </data>
+  <data name="fieldDayOfWeek.Items2" xml:space="preserve">
+    <value>среда</value>
+  </data>
+  <data name="fieldDayOfWeek.Items3" xml:space="preserve">
+    <value>четверг</value>
+  </data>
+  <data name="fieldDayOfWeek.Items4" xml:space="preserve">
+    <value>пятница</value>
+  </data>
+  <data name="fieldDayOfWeek.Items5" xml:space="preserve">
+    <value>суббота</value>
+  </data>
+  <data name="fieldDayOfWeek.Items6" xml:space="preserve">
+    <value>воскресенье</value>
   </data>
   <data name="groupBox7.Text" xml:space="preserve">
     <value>Поведение</value>
