@@ -567,7 +567,7 @@ prochain démarrage de l'application.</value>
     <value>NoControl</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Compte gmail :</value>
+    <value>Compte Gmail :</value>
   </data>
   <data name="groupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
