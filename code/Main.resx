@@ -1235,7 +1235,7 @@ un designer et développeur basé à Tokyo</value>
     <value>False</value>
   </data>
   <data name="fieldScheduler.Text" xml:space="preserve">
-    <value>Activer la synchronisation planifée</value>
+    <value>Activer la synchronisation planifiée</value>
   </data>
   <data name="tabPageAbout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
