@@ -59,6 +59,9 @@ namespace notifier {
 				case "Deutsch":
 					CultureInfo.CurrentUICulture = new CultureInfo("de-DE");
 					break;
+				case "Русский":
+					CultureInfo.CurrentUICulture = new CultureInfo("ru-RU");
+					break;
 			}
 
 			// check if there is an instance running
