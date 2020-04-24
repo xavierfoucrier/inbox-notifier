@@ -129,47 +129,27 @@
   <data name="tabPagePrivacy.Text" xml:space="preserve">
     <value>Конфиденциальность</value>
   </data>
-  <data name="groupBox11.Text" xml:space="preserve">
-    <value>Временной интервал</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBox2.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 89</value>
-  </data>
-  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 30</value>
-  </data>
-  <data name="checkBox2.Text" xml:space="preserve">
-    <value>Отключить автоматическую проверку
-обновлений</value>
-  </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 58</value>
-  </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 17</value>
-  </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>Отключить ручную синхронизацию</value>
-  </data>
-  <data name="fieldScheduler.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="fieldScheduler.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 30</value>
-  </data>
-  <data name="fieldScheduler.Text" xml:space="preserve">
-    <value>Активировать запланированную
-синхронизацию</value>
-  </data>
-  <data name="groupBox10.Text" xml:space="preserve">
-    <value>Поведение</value>
-  </data>
   <data name="tabPageSchedule.Text" xml:space="preserve">
     <value>Расписание</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Доступность</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 17</value>
+  </data>
+  <data name="fieldUpdateQuiet.Text" xml:space="preserve">
+    <value>Тихая установка</value>
+  </data>
+  <data name="fieldUpdateDownload.Text" xml:space="preserve">
+    <value>Автоматически загружать и устанавливать обновления</value>
+  </data>
+  <data name="fieldUpdateService.Text" xml:space="preserve">
+    <value>Включить автоматическую проверку обновлений</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Поведение</value>
   </data>
   <data name="tabPageUpdate.Text" xml:space="preserve">
     <value>Обновления</value>
@@ -387,6 +367,9 @@
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Показывать всё содержимое сообщения</value>
   </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Временной интервал</value>
+  </data>
   <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
   </data>
@@ -447,8 +430,73 @@
   <data name="fieldDayOfWeek.Items6" xml:space="preserve">
     <value>воскресенье</value>
   </data>
-  <data name="groupBox7.Text" xml:space="preserve">
+  <data name="groupBox10.Text" xml:space="preserve">
     <value>Поведение</value>
+  </data>
+  <data name="checkBox2.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 89</value>
+  </data>
+  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 30</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>Отключить автоматическую проверку
+обновлений</value>
+  </data>
+  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 58</value>
+  </data>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 17</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Отключить ручную синхронизацию</value>
+  </data>
+  <data name="fieldScheduler.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="fieldScheduler.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 30</value>
+  </data>
+  <data name="fieldScheduler.Text" xml:space="preserve">
+    <value>Активировать запланированную
+синхронизацию</value>
+  </data>
+  <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 99</value>
+  </data>
+  <data name="buttonCheckForUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 23</value>
+  </data>
+  <data name="buttonCheckForUpdate.Text" xml:space="preserve">
+    <value>Проверить</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 13</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Период обновления:</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items" xml:space="preserve">
+    <value>при запуске приложения</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items1" xml:space="preserve">
+    <value>раз в день</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items2" xml:space="preserve">
+    <value>раз в неделю</value>
+  </data>
+  <data name="fieldUpdatePeriod.Items3" xml:space="preserve">
+    <value>раз в месяц</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 13</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Последняя проверка:</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 13</value>
