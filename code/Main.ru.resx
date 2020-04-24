@@ -117,7 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tabPageGeneral.Text" xml:space="preserve">
+    <value>Общее</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Этикетки</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Черновики</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Входящие</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Проверка подлинности</value>
+  </data>
+  <data name="tabPageAccount.Text" xml:space="preserve">
+    <value>учетная запись</value>
+  </data>
+  <data name="tabPageNotification.Text" xml:space="preserve">
+    <value>уведомление</value>
+  </data>
+  <data name="tabPagePrivacy.Text" xml:space="preserve">
+    <value>Конфиденциальность</value>
+  </data>
+  <data name="tabPageSchedule.Text" xml:space="preserve">
+    <value>Расписание</value>
+  </data>
+  <data name="tabPageUpdate.Text" xml:space="preserve">
+    <value>Обновления</value>
+  </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>Около</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>интерфейс</value>
+  </data>
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>178, 109</value>
   </data>
@@ -143,8 +191,8 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Язык:</value>
   </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>интерфейс</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Поведение</value>
   </data>
   <data name="fieldAudioPop.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 17</value>
@@ -170,38 +218,32 @@
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>спросите перед выходом из программы</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Поведение</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
   </data>
-  <data name="tabPageGeneral.Text" xml:space="preserve">
-    <value>Общее</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Подключен из:</value>
   </data>
-  <data name="tabPageAccount.Text" xml:space="preserve">
-    <value>учетная запись</value>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Учётная запись Gmail:</value>
+  </data>
+  <data name="buttonGmailDisconnect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 99</value>
+  </data>
+  <data name="buttonGmailDisconnect.Text" xml:space="preserve">
+    <value>выход</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Поведение</value>
   </data>
-  <data name="tabPageNotification.Text" xml:space="preserve">
-    <value>уведомление</value>
-  </data>
-  <data name="tabPagePrivacy.Text" xml:space="preserve">
-    <value>Конфиденциальность</value>
-  </data>
   <data name="groupBox10.Text" xml:space="preserve">
     <value>Поведение</value>
   </data>
-  <data name="tabPageSchedule.Text" xml:space="preserve">
-    <value>Расписание</value>
-  </data>
   <data name="groupBox7.Text" xml:space="preserve">
     <value>Поведение</value>
-  </data>
-  <data name="tabPageUpdate.Text" xml:space="preserve">
-    <value>Обновления</value>
-  </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>Около</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 13</value>
