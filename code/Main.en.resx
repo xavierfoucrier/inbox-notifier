@@ -201,7 +201,7 @@ at the next application startup.</value>
     <value>Gmail account:</value>
   </data>
   <data name="buttonGmailDisconnect.Text" xml:space="preserve">
-    <value>Disconnect</value>
+    <value>Sign out</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>Authentication</value>
