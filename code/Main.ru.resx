@@ -120,8 +120,14 @@
   <data name="tabPageGeneral.Text" xml:space="preserve">
     <value>Общее</value>
   </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Проверка подлинности</value>
+  </data>
   <data name="tabPageAccount.Text" xml:space="preserve">
-    <value>учетная запись</value>
+    <value>профиль</value>
   </data>
   <data name="tabPageNotification.Text" xml:space="preserve">
     <value>уведомление</value>
@@ -135,77 +141,13 @@
   <data name="tabPageUpdate.Text" xml:space="preserve">
     <value>Обновления</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="linkPrivacy.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>0, 27</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="linkPrivacy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 13</value>
-  </data>
-  <data name="linkPrivacy.Text" xml:space="preserve">
-    <value>Политика конфиденциальности</value>
-  </data>
-  <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>52, 12</value>
-  </data>
-  <data name="linkLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 34</value>
-  </data>
-  <data name="linkLicense.Text" xml:space="preserve">
-    <value>© 2020. Все права защищены.
-Открытый исходный код, лицензия MIT</value>
-  </data>
-  <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>36, 15</value>
-  </data>
-  <data name="linkWebsiteXavier.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 34</value>
-  </data>
-  <data name="linkWebsiteXavier.Text" xml:space="preserve">
-    <value>Visual Studio 2019, C#
-Разработано Xavier Foucrier</value>
-  </data>
-  <data name="linkWebsiteYusuke.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>17, 17</value>
-  </data>
-  <data name="linkWebsiteYusuke.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 34</value>
-  </data>
-  <data name="linkWebsiteYusuke.Text" xml:space="preserve">
-    <value>Иконы, сделанные Yusuke Kamiyamane,
-Токийский дизайнер и разработчик</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Авторское право</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 13</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Благодарность</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 13</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>Разработка</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
-  </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Версия</value>
-  </data>
   <data name="tabPageAbout.Text" xml:space="preserve">
     <value>Около</value>
   </data>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>интерфейс</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>178, 109</value>
   </data>
@@ -258,9 +200,6 @@
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>спросите перед выходом из программы</value>
   </data>
-  <data name="groupBox8.Text" xml:space="preserve">
-    <value>Статистика</value>
-  </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
   </data>
@@ -278,9 +217,6 @@
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Входящие</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Проверка подлинности</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -575,6 +511,70 @@
   </data>
   <data name="fieldUpdateService.Text" xml:space="preserve">
     <value>Включить автоматическую проверку обновлений</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="linkPrivacy.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>0, 27</value>
+  </data>
+  <data name="linkPrivacy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 13</value>
+  </data>
+  <data name="linkPrivacy.Text" xml:space="preserve">
+    <value>Политика конфиденциальности</value>
+  </data>
+  <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>52, 12</value>
+  </data>
+  <data name="linkLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 34</value>
+  </data>
+  <data name="linkLicense.Text" xml:space="preserve">
+    <value>© 2020. Все права защищены.
+Открытый исходный код, лицензия MIT</value>
+  </data>
+  <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>36, 15</value>
+  </data>
+  <data name="linkWebsiteXavier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 34</value>
+  </data>
+  <data name="linkWebsiteXavier.Text" xml:space="preserve">
+    <value>Visual Studio 2019, C#
+Разработано Xavier Foucrier</value>
+  </data>
+  <data name="linkWebsiteYusuke.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>17, 17</value>
+  </data>
+  <data name="linkWebsiteYusuke.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 34</value>
+  </data>
+  <data name="linkWebsiteYusuke.Text" xml:space="preserve">
+    <value>Иконы, сделанные Yusuke Kamiyamane,
+Токийский дизайнер и разработчик</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Авторское право</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 13</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Благодарность</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 13</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Разработка</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Версия</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 13</value>
