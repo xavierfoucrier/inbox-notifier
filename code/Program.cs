@@ -37,6 +37,9 @@ namespace notifier {
 					case "de":
 						Settings.Default.Language = "Deutsch";
 						break;
+					case "ru":
+						Settings.Default.Language = "Русский";
+						break;
 				}
 
 				// start with Windows setting
