@@ -105,6 +105,10 @@ namespace notifier {
 
 					// enable the timer properly
 					UI.timer.Enabled = true;
+				} else if (target.Reason == SessionSwitchReason.SessionLock) {
+
+					// suspend the main timer
+					UI.timer.Enabled = false;
 				}
 			});
 		}
