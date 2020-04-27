@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabPageGeneral.Text" xml:space="preserve">
-    <value>Общее</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>интерфейс</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>178, 109</value>
@@ -149,8 +143,8 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Язык:</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Поведение</value>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Интерфейс</value>
   </data>
   <data name="fieldAudioPop.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 17</value>
@@ -171,22 +165,22 @@
     <value>Свернуть в системный трей</value>
   </data>
   <data name="fieldAskonExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 17</value>
+    <value>244, 17</value>
   </data>
   <data name="fieldAskonExit.Text" xml:space="preserve">
-    <value>спросите перед выходом из программы</value>
+    <value>Спрашивать при выходе из приложения</value>
   </data>
-  <data name="tabPageAccount.Text" xml:space="preserve">
-    <value>профиль</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Поведение</value>
   </data>
-  <data name="groupBox8.Text" xml:space="preserve">
-    <value>Статистика</value>
+  <data name="tabPageGeneral.Text" xml:space="preserve">
+    <value>Общее</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
+    <value>94, 13</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
-    <value>Этикетки</value>
+    <value>Папки и ярлыки</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -200,14 +194,14 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Входящие</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Проверка подлинности</value>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Статистика</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 13</value>
+    <value>98, 13</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Подключен из:</value>
+    <value>Токен доставлен:</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 13</value>
@@ -219,13 +213,13 @@
     <value>163, 99</value>
   </data>
   <data name="buttonGmailDisconnect.Text" xml:space="preserve">
-    <value>выход</value>
+    <value>Выйти</value>
   </data>
-  <data name="tabPageNotification.Text" xml:space="preserve">
-    <value>уведомление</value>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Проверка подлинности</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Поведение</value>
+  <data name="tabPageAccount.Text" xml:space="preserve">
+    <value>Аккаунт</value>
   </data>
   <data name="labelNotificationOpenSimplifiedHTML.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 72</value>
@@ -263,13 +257,13 @@
     <value>ничего не делать</value>
   </data>
   <data name="fieldNotificationBehavior.Items1" xml:space="preserve">
-    <value>открытое сообщение</value>
+    <value>открыть сообщение</value>
   </data>
   <data name="fieldNotificationBehavior.Items2" xml:space="preserve">
     <value>отметить сообщение как прочитанное</value>
   </data>
   <data name="fieldNotificationBehavior.Items3" xml:space="preserve">
-    <value>открыть сообщение в упрощенном варианте</value>
+    <value>открыть сообщение в упрощённой версии</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 13</value>
@@ -277,8 +271,8 @@
   <data name="label9.Text" xml:space="preserve">
     <value>При нажатии на уведомление:</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Почта</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Поведение</value>
   </data>
   <data name="fieldStepDelay.Items" xml:space="preserve">
     <value>минута(ы)</value>
@@ -310,11 +304,11 @@
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Звуковое уведомление</value>
   </data>
-  <data name="tabPagePrivacy.Text" xml:space="preserve">
-    <value>Конфиденциальность</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Почта</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>уведомление</value>
+  <data name="tabPageNotification.Text" xml:space="preserve">
+    <value>Уведомление</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 13</value>
@@ -340,11 +334,11 @@
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Показывать всё содержимое сообщения</value>
   </data>
-  <data name="tabPageSchedule.Text" xml:space="preserve">
-    <value>Расписание</value>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Уведомление</value>
   </data>
-  <data name="groupBox11.Text" xml:space="preserve">
-    <value>Временной интервал</value>
+  <data name="tabPagePrivacy.Text" xml:space="preserve">
+    <value>Конфиденциальность</value>
   </data>
   <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
@@ -406,8 +400,8 @@
   <data name="fieldDayOfWeek.Items6" xml:space="preserve">
     <value>воскресенье</value>
   </data>
-  <data name="groupBox10.Text" xml:space="preserve">
-    <value>Поведение</value>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Временной интервал</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="checkBox2.AutoSize" type="System.Boolean, mscorlib">
@@ -447,13 +441,13 @@
     <value>231, 30</value>
   </data>
   <data name="fieldScheduler.Text" xml:space="preserve">
-    <value>Активировать запланированную синхронизацию</value>
+    <value>Включить синхронизацию по расписанию</value>
   </data>
-  <data name="tabPageUpdate.Text" xml:space="preserve">
-    <value>Обновления</value>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Поведение</value>
   </data>
-  <data name="groupBox9.Text" xml:space="preserve">
-    <value>Доступность</value>
+  <data name="tabPageSchedule.Text" xml:space="preserve">
+    <value>Расписание</value>
   </data>
   <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>172, 99</value>
@@ -488,8 +482,8 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Последняя проверка:</value>
   </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>Поведение</value>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Доступность</value>
   </data>
   <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 17</value>
@@ -509,8 +503,11 @@
   <data name="fieldUpdateService.Text" xml:space="preserve">
     <value>Включить автоматическую проверку обновлений</value>
   </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>Около</value>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Поведение</value>
+  </data>
+  <data name="tabPageUpdate.Text" xml:space="preserve">
+    <value>Обновления</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="linkPrivacy.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
@@ -543,14 +540,14 @@
 Разработано Xavier Foucrier</value>
   </data>
   <data name="linkWebsiteYusuke.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>17, 17</value>
+    <value>15, 17</value>
   </data>
   <data name="linkWebsiteYusuke.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 34</value>
+    <value>220, 34</value>
   </data>
   <data name="linkWebsiteYusuke.Text" xml:space="preserve">
-    <value>Иконы, сделанные Yusuke Kamiyamane,
-Токийский дизайнер и разработчик</value>
+    <value>Значки сделаны Yusuke Kamiyamane,
+токийским дизайнером и разработчиком</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -575,6 +572,9 @@
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>Версия</value>
+  </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>Инфо</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 13</value>
@@ -615,15 +615,6 @@
   <data name="menuItemMarkAsRead.Text" xml:space="preserve">
     <value>Отметить как прочитанное</value>
   </data>
-  <data name="menuItemTimout.Text" xml:space="preserve">
-    <value>Не беспокоить</value>
-  </data>
-  <data name="menuItemSettings.Text" xml:space="preserve">
-    <value>Открыть</value>
-  </data>
-  <data name="menuItemExit.Text" xml:space="preserve">
-    <value>Выход</value>
-  </data>
   <data name="menuItemTimeoutDisabled.Text" xml:space="preserve">
     <value>Отключить</value>
   </data>
@@ -641,6 +632,15 @@
   </data>
   <data name="menuItemTimeoutIndefinitely.Text" xml:space="preserve">
     <value>Бессрочно</value>
+  </data>
+  <data name="menuItemTimout.Text" xml:space="preserve">
+    <value>Не беспокоить</value>
+  </data>
+  <data name="menuItemSettings.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="menuItemExit.Text" xml:space="preserve">
+    <value>Выход</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

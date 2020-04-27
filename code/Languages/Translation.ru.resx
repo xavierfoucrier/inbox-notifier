@@ -129,7 +129,7 @@
     <value>прикрепление</value>
   </data>
   <data name="attachments" xml:space="preserve">
-    <value>штук прилагается</value>
+    <value>прикреплений</value>
   </data>
   <data name="authenticationCanceled" xml:space="preserve">
     <value>Приложению "Inbox Notifier" не удалось привязаться к вашей учётной записи Gmail: у Вас есть {timeout} секунд, чтобы авторизовать приложение для доступа к вашей учётной записи. По истечении этого времени Вам необходимо заново начать операцию.
