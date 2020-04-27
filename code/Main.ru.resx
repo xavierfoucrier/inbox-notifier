@@ -341,10 +341,10 @@
     <value>Конфиденциальность</value>
   </data>
   <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>58, 13</value>
   </data>
   <data name="labelDuration.Text" xml:space="preserve">
-    <value>Весь день</value>
+    <value>Интервал</value>
   </data>
   <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
     <value>172, 105</value>
