@@ -151,9 +151,9 @@
     <value>Приложению "Inbox Notifier" не удалось подключиться к вашей учётной записи Gmail: в данный момент служба недоступна или произошла непредвиденная ошибка.</value>
   </data>
   <data name="authenticationRevoked" xml:space="preserve">
-    <value>The "Inbox Notifier" application is no longer able to connect with your Gmail account: the authentication key has been revoked.
+    <value>Приложение "Inbox Notifier" больше не может подключиться к вашей учётной записи Gmail: ключ проверки подлинности был отозван.
 
-You must download the latest version of the application to continue.</value>
+Для продолжения работы необходимо загрузить последнюю версию приложения.</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Ошибка</value>
