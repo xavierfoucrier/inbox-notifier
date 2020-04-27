@@ -170,91 +170,91 @@ You must download the latest version of the application to continue.</value>
 Вы действительно хотите отключить свою учётную запись Gmail и перезапустить приложение?</value>
   </data>
   <data name="helpAskonExit" xml:space="preserve">
-    <value>Задать вопрос перед полным выходом из приложения</value>
+    <value>Ask a question before completely leaving the app</value>
   </data>
   <data name="helpAttemptToReconnectNotification" xml:space="preserve">
-    <value>Показывать уведомление, когда приложение пытается переподключиться к сети</value>
+    <value>Display a notification when the application try to reconnect to the network</value>
   </data>
   <data name="helpAudioNotification" xml:space="preserve">
-    <value>Воспроизведение звука при отображении уведомления</value>
+    <value>Play a sound when displaying a notification</value>
   </data>
   <data name="helpAudioPop" xml:space="preserve">
-    <value>Воспроизведение звука при запуске и закрытии приложения</value>
+    <value>Play a sound when starting and closing the application</value>
   </data>
   <data name="helpCheckForUpdate" xml:space="preserve">
-    <value>Немедленно проверить обновления</value>
+    <value>Check updates immediately</value>
   </data>
   <data name="helpEmailAddress" xml:space="preserve">
-    <value>Аккаунт Gmail в данный момент подключен к приложению</value>
+    <value>Gmail account currently logged in to the application</value>
   </data>
   <data name="helpGmailDisconnect" xml:space="preserve">
-    <value>Отключите учётную запись Gmail и перезапустите приложение, чтобы запросить новую проверку подлинности</value>
+    <value>Disconnect the Gmail account and restart the application to request a new authentication</value>
   </data>
   <data name="helpLanguage" xml:space="preserve">
-    <value>Язык интерфейса</value>
+    <value>Language of the interface</value>
   </data>
   <data name="helpMessageNotification" xml:space="preserve">
-    <value>Показывать уведомление при получении новых сообщений</value>
+    <value>Display a notification when receiving new messages</value>
   </data>
   <data name="helpNotificationBehavior" xml:space="preserve">
-    <value>Действие, выполняемое при нажатии на уведомление</value>
+    <value>Action performed when clicking on a notification</value>
   </data>
   <data name="helpNumericDelay" xml:space="preserve">
-    <value>Время задержки папки "Входящие"</value>
+    <value>Timing delay of the inbox</value>
   </data>
   <data name="helpPrivacyNotificationAll" xml:space="preserve">
-    <value>Показывать уведомление, не содержащее информации о сообщении</value>
+    <value>Display a notification that contain no information about the message</value>
   </data>
   <data name="helpPrivacyNotificationNone" xml:space="preserve">
-    <value>Показывать имя отправителя и содержимое сообщения</value>
+    <value>Display the name of the sender and the message content</value>
   </data>
   <data name="helpPrivacyNotificationShort" xml:space="preserve">
-    <value>Показывать имя отправителя и строку темы</value>
+    <value>Display the name of the sender and the subject line</value>
   </data>
   <data name="helpRunAtWindowsStartup" xml:space="preserve">
-    <value>Запуск приложения при старте Windows</value>
+    <value>Launch the application on Windows startup</value>
   </data>
   <data name="helpScheduleDayOfWeek" xml:space="preserve">
-    <value>День синхронизации</value>
+    <value>Synchronization day</value>
   </data>
   <data name="helpScheduleDuration" xml:space="preserve">
-    <value>Длительность синхронизации</value>
+    <value>Duration of synchronization</value>
   </data>
   <data name="helpScheduleEndTime" xml:space="preserve">
-    <value>Время окончания синхронизации</value>
+    <value>End time of synchronization</value>
   </data>
   <data name="helpScheduleService" xml:space="preserve">
-    <value>Включить службу синхронизации по расписанию</value>
+    <value>Enable the scheduled synchronization service</value>
   </data>
   <data name="helpScheduleStartTime" xml:space="preserve">
-    <value>Время начала синхронизации</value>
+    <value>Start time of synchronization</value>
   </data>
   <data name="helpSpamNotification" xml:space="preserve">
-    <value>Показывать уведомление при получении нежелательного сообщения</value>
+    <value>Display a notification when receiving a junk message</value>
   </data>
   <data name="helpStatistics" xml:space="preserve">
-    <value>Статистика использования папки "Входящие"</value>
+    <value>Usage statistics of your inbox</value>
   </data>
   <data name="helpStepDelay" xml:space="preserve">
-    <value>Временная шкала для синхронизации входящей почты</value>
+    <value>Time scale for the inbox synchronization</value>
   </data>
   <data name="helpTokenDelivery" xml:space="preserve">
-    <value>Последнее обновление доставки токена проверки подлинности</value>
+    <value>Latest update of the authentication token delivery</value>
   </data>
   <data name="helpUpdateControl" xml:space="preserve">
-    <value>Дата последней проверки обновлений</value>
+    <value>Last check date of updates</value>
   </data>
   <data name="helpUpdateDownload" xml:space="preserve">
-    <value>При наличии обновлений приложение загружает их и автоматически запускает установку</value>
+    <value>When updates are available, the application download them and launch the installation automatically</value>
   </data>
   <data name="helpUpdatePeriod" xml:space="preserve">
-    <value>Период проверки обновлений</value>
+    <value>Update check period</value>
   </data>
   <data name="helpUpdateQuiet" xml:space="preserve">
-    <value>При установке обновлений приложение их тихо устанавливает в фоновом режиме</value>
+    <value>When updates are being installed, the application install them silently in background</value>
   </data>
   <data name="helpUpdateService" xml:space="preserve">
-    <value>Включить службу автоматической проверки обновлений</value>
+    <value>Enable the automatic update check service</value>
   </data>
   <data name="hours" xml:space="preserve">
     <value>час(ы)</value>
