@@ -327,7 +327,7 @@
     <value>Обновлено в {time}</value>
   </data>
   <data name="theday" xml:space="preserve">
-    <value>Интервал</value>
+    <value>Целый день</value>
   </data>
   <data name="timeout" xml:space="preserve">
     <value>Не беспокоить</value>
