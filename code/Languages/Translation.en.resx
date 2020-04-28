@@ -347,6 +347,9 @@ on {day} from {start} to {end}</value>
   <data name="updateNow" xml:space="preserve">
     <value>Update now</value>
   </data>
+  <data name="updateServiceName" xml:space="preserve">
+    <value>Inbox Notifier update</value>
+  </data>
   <data name="updateServiceUnreachable" xml:space="preserve">
     <value>The update service is unreachable.</value>
   </data>

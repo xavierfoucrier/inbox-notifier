@@ -347,6 +347,9 @@
   <data name="updateNow" xml:space="preserve">
     <value>Обновить</value>
   </data>
+  <data name="updateServiceName" xml:space="preserve">
+    <value>Обновление Inbox Notifier</value>
+  </data>
   <data name="updateServiceUnreachable" xml:space="preserve">
     <value>Служба обновления недоступна.</value>
   </data>

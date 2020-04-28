@@ -89,9 +89,6 @@
     <Setting Name="APPLICATION_NAME" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Inbox Notifier</Value>
     </Setting>
-    <Setting Name="UPDATE_SERVICE_NAME" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Inbox Notifier Update</Value>
-    </Setting>
     <Setting Name="Scheduler" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
