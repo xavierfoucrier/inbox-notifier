@@ -12,7 +12,7 @@ Inbox Notifier is provided with **a bunch of useful features that bring your inb
 * Do not disturb mode - *keep focus at work*
 * Privacy setting - *choose the privacy level for notifications*
 * Credential managment - *login and logout with ease*
-* Multilingual support - *french/english/german*
+* Multilingual support - *french/english/german/russian*
 * Inbox statistics preview - *display drafts/labels/unreads/totals messages from the inbox*
 * Attachment information - *notice when a message have one or more attachments*
 * Network reconnection - *try to reconnect to the network when the internet connection is lost*
