@@ -109,6 +109,9 @@
     <Compile Include="TimeSlot.cs" />
     <Compile Include="Update.cs" />
     <EmbeddedResource Include="Languages\Translation.de.resx" />
+    <EmbeddedResource Include="Languages\Translation.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Languages\Translation.en.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -121,6 +124,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.ru.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

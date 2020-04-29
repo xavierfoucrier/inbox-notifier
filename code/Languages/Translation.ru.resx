@@ -118,56 +118,56 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="applicationExit" xml:space="preserve">
-    <value>Closing the application</value>
+    <value>Закрытие приложения</value>
   </data>
   <data name="applicationExitQuestion" xml:space="preserve">
-    <value>You are about to leave the application.
+    <value>Вы собираетесь выйти из приложения.
 
-Do you really want to exit?</value>
+Вы действительно хотите выйти?</value>
   </data>
   <data name="attachment" xml:space="preserve">
-    <value>attachment</value>
+    <value>прикрепление</value>
   </data>
   <data name="attachments" xml:space="preserve">
-    <value>attachments</value>
+    <value>прикреплений</value>
   </data>
   <data name="authenticationCanceled" xml:space="preserve">
-    <value>The "Inbox Notifier" application was unable to associate with your Gmail account: you have {timeout} seconds to authorize the application to access your account, after this time you need to start the operation again.
+    <value>Приложению "Inbox Notifier" не удалось привязаться к вашей учётной записи Gmail: у Вас есть {timeout} секунд, чтобы авторизовать приложение для доступа к вашей учётной записи. По истечении этого времени Вам необходимо заново начать операцию.
 
-This step is required for synchronization to work and will only be requested once. You can restart the authentication process again or cancel to quit the application.</value>
+Этот шаг необходим для работы синхронизации и будет запрошен только один раз. Вы можете снова перезапустить процесс проверки подлинности или отменить его, чтобы выйти из приложения.</value>
   </data>
   <data name="authenticationDenied" xml:space="preserve">
-    <value>You have refused to allow the "Inbox Notifier" application to be associated with your Gmail account.
+    <value>Вы отказались разрешить привязку приложения "Inbox Notifier" к вашей учётной записи Gmail.
 
-This step is required for synchronization to work and will only be requested once. You can restart the authentication process again or cancel to quit the application.</value>
+Этот шаг необходим для работы синхронизации и будет запрошен только один раз. Вы можете снова перезапустить процесс проверки подлинности или отменить его, чтобы выйти из приложения.</value>
   </data>
   <data name="authenticationFailed" xml:space="preserve">
-    <value>Authentication failed</value>
+    <value>Не удалось выполнить проверку подлинности</value>
   </data>
   <data name="authenticationNeeded" xml:space="preserve">
-    <value>Waiting for authentication with your Gmail account...</value>
+    <value>Ожидание проверки подлинности с вашей учётной записью Gmail...</value>
   </data>
   <data name="authenticationRequestError" xml:space="preserve">
-    <value>The "Inbox Notifier" application was unable to connect with your Gmail account: the service is not available at the moment, or an unexpected error has occurred.</value>
+    <value>Приложению "Inbox Notifier" не удалось подключиться к вашей учётной записи Gmail: в данный момент служба недоступна или произошла непредвиденная ошибка.</value>
   </data>
   <data name="authenticationRevoked" xml:space="preserve">
-    <value>The "Inbox Notifier" application is no longer able to connect with your Gmail account: the authentication key has been revoked.
+    <value>Приложение "Inbox Notifier" больше не может подключиться к вашей учётной записи Gmail: ключ проверки подлинности был отозван.
 
-You must download the latest version of the application to continue.</value>
+Для продолжения работы необходимо загрузить последнюю версию приложения.</value>
   </data>
   <data name="error" xml:space="preserve">
-    <value>Error</value>
+    <value>Ошибка</value>
   </data>
   <data name="firstLoad" xml:space="preserve">
-    <value>Inbox Notifier now run in background on your computer. In a few seconds you will be prompted to sign in to your Gmail account to allow the application to access your inbox.</value>
+    <value>Inbox Notifier теперь работает в фоновом режиме на вашем компьютере. Через несколько секунд вам будет предложено войти в свою учётную запись Gmail, чтобы приложение могло получить доступ к вашей папке "Входящие".</value>
   </data>
   <data name="gmailDisconnect" xml:space="preserve">
-    <value>Disconnecting your Gmail account</value>
+    <value>Отключение вашей учётной записи Gmail</value>
   </data>
   <data name="gmailDisconnectQuestion" xml:space="preserve">
-    <value>You are about to disconnect your Gmail account from the applivation: you will no longer receive notifications from the account {email} and you will be prompted to log in next time.
+    <value>Вы собираетесь отключить свою учётную запись Gmail от приложения: Вы больше не будете получать уведомления от учётной записи {email}, и Вам будет предложено войти в следующий раз.
 
-Do you really want to disconnect your Gmail account and restart the application now?</value>
+Вы действительно хотите отключить свою учётную запись Gmail и перезапустить приложение?</value>
   </data>
   <data name="helpAskonExit" xml:space="preserve">
     <value>Ask a question before completely leaving the app</value>
@@ -257,106 +257,106 @@ Do you really want to disconnect your Gmail account and restart the application 
     <value>Enable the automatic update check service</value>
   </data>
   <data name="hours" xml:space="preserve">
-    <value>hour(s)</value>
+    <value>час(ы)</value>
   </data>
   <data name="latestVersion" xml:space="preserve">
-    <value>You have the latest version of the application.</value>
+    <value>У Вас последняя версия приложения.</value>
   </data>
   <data name="markAsRead" xml:space="preserve">
-    <value>Mark as read</value>
+    <value>Отметить как прочитанное</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>An error occurred during the "Mark Read" operation:</value>
+    <value>Во время операции "Отметить как прочитанное" произошла ошибка:</value>
   </data>
   <data name="message" xml:space="preserve">
-    <value>message</value>
+    <value>сообщение</value>
   </data>
   <data name="messages" xml:space="preserve">
-    <value>messages</value>
+    <value>сообщений</value>
   </data>
   <data name="multipleInstances" xml:space="preserve">
-    <value>Multiple instances</value>
+    <value>Несколько экземпляров</value>
   </data>
   <data name="mutexError" xml:space="preserve">
-    <value>The "Inbox Notifier" application is already running: you can not run multiple instances of the application on the same computer.
+    <value>Приложение "Inbox Notifier" уже запущено: Вы не можете запустить несколько экземпляров приложения на одном компьютере.
 
-This option is not enabled on this type of application.</value>
+Эта опция не включена на этом типе приложения.</value>
   </data>
   <data name="newUnreadMessage" xml:space="preserve">
-    <value>Double-click the icon to access your inbox.</value>
+    <value>Дважды щёлкните по значку для доступа к папке "Входящие".</value>
   </data>
   <data name="newUnreadSpam" xml:space="preserve">
-    <value>Double-click the icon to access your inbox. Until you have not checked the spam folder, your inbox will not be synchronized and you will not be notified of new messages.</value>
+    <value>Дважды щёлкните по значку для доступа к папке "Входящие". Пока Вы не проверите папку "Спам", ваш почтовый ящик не будет синхронизирован и Вы не будете получать уведомления о новых сообщениях.</value>
   </data>
   <data name="newVersion" xml:space="preserve">
-    <value>A newer version of the application is available on Github: {version}</value>
+    <value>Более новая версия приложения доступна на Github: {version}</value>
   </data>
   <data name="noMessage" xml:space="preserve">
-    <value>No new message</value>
+    <value>Нового сообщения нет</value>
   </data>
   <data name="off" xml:space="preserve">
-    <value>Disabled</value>
+    <value>Отключено</value>
   </data>
   <data name="operationError" xml:space="preserve">
-    <value>Error with the last operation</value>
+    <value>Ошибка с последней операцией</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
-    <value>Offline
-Attempting to reconnect...</value>
+    <value>Не в сети
+Попытка восстановить соединение...</value>
   </data>
   <data name="reconnectFailed" xml:space="preserve">
-    <value>Reconnection failed</value>
+    <value>Переподключение не удалось</value>
   </data>
   <data name="sync" xml:space="preserve">
-    <value>Syncing...</value>
+    <value>Синхронизация...</value>
   </data>
   <data name="syncError" xml:space="preserve">
-    <value>Error when syncing</value>
+    <value>Ошибка при синхронизации</value>
   </data>
   <data name="syncErrorOccured" xml:space="preserve">
-    <value>An error occurred during the synchronization of the inbox:</value>
+    <value>Во время синхронизации папки "Входящие" произошла ошибка:</value>
   </data>
   <data name="syncOff" xml:space="preserve">
-    <value>Synchronization disabled on {day}</value>
+    <value>Синхронизация отключена на {day}</value>
   </data>
   <data name="syncScheduled" xml:space="preserve">
-    <value>Scheduled synchronization
-on {day} from {start} to {end}</value>
+    <value>Синхронизация запланирована
+на {day} от {start} до {end}</value>
   </data>
   <data name="syncTime" xml:space="preserve">
-    <value>Updated at {time}</value>
+    <value>Обновлено в {time}</value>
   </data>
   <data name="theday" xml:space="preserve">
-    <value>The day</value>
+    <value>Целый день</value>
   </data>
   <data name="timeout" xml:space="preserve">
-    <value>Do not disturb</value>
+    <value>Не беспокоить</value>
   </data>
   <data name="unreadMessage" xml:space="preserve">
-    <value>unread message</value>
+    <value>непрочитанное сообщение</value>
   </data>
   <data name="unreadMessages" xml:space="preserve">
-    <value>unread messages</value>
+    <value>непрочитанных сообщений</value>
   </data>
   <data name="unreadSpam" xml:space="preserve">
-    <value>unread spam</value>
+    <value>непрочитанный спам</value>
   </data>
   <data name="unreadSpams" xml:space="preserve">
-    <value>unread spams</value>
+    <value>непрочитанного спама</value>
   </data>
   <data name="updateNow" xml:space="preserve">
-    <value>Update now</value>
+    <value>Обновить</value>
   </data>
   <data name="updateServiceName" xml:space="preserve">
-    <value>Inbox Notifier update</value>
+    <value>Обновление Inbox Notifier</value>
   </data>
   <data name="updateServiceUnreachable" xml:space="preserve">
-    <value>The update service is unreachable.</value>
+    <value>Служба обновления недоступна.</value>
   </data>
   <data name="updating" xml:space="preserve">
-    <value>Downloading update...</value>
+    <value>Загрузка обновления...</value>
   </data>
   <data name="welcome" xml:space="preserve">
-    <value>Welcome!</value>
+    <value>Добро пожаловать!</value>
   </data>
 </root>

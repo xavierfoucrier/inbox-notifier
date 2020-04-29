@@ -37,6 +37,9 @@ namespace notifier {
 					case "de":
 						Settings.Default.Language = "Deutsch";
 						break;
+					case "ru":
+						Settings.Default.Language = "Русский";
+						break;
 				}
 
 				// start with Windows setting
@@ -58,6 +61,9 @@ namespace notifier {
 					break;
 				case "Deutsch":
 					CultureInfo.CurrentUICulture = new CultureInfo("de-DE");
+					break;
+				case "Русский":
+					CultureInfo.CurrentUICulture = new CultureInfo("ru-RU");
 					break;
 			}
 
