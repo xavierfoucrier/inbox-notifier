@@ -1,0 +1,42 @@
+- name: bug
+  description: bug to fix
+  color: fbca04
+- name: community
+  description: regarding the project community or sponsors
+  color: 4654f2
+- name: core
+  description: core code structure or architecture
+  color: 00209a
+- name: critical
+  description: critical failure to fix as soon as possible
+  color: d93f0b
+- name: dependencies
+  description: update/upgrade one or more dependency
+  color: 0366d6
+- name: design
+  description: design request
+  color: ea4c88
+- name: documentation
+  description: regarding the project documentation
+  color: 27d19b
+- name: feature
+  description: feature request to implement
+  color: 1d76db
+- name: help
+  description: need help, any contribution are welcome
+  color: 5319e7
+- name: motion
+  description: motion request
+  color: 32deca
+- name: optimization
+  description: optimization request
+  color: 128a0c
+- name: post-it
+  description: reminder or todo
+  color: fcf49c
+- name: support
+  description: regarding the environment or target platform
+  color: f1f1f1
+- name: wontfix
+  description: negligible issue or that will never be fixed
+  color: 444444
