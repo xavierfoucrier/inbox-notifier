@@ -12,7 +12,7 @@ Inbox Notifier is provided with **a bunch of useful features that bring your inb
 * Do not disturb mode - *keep focus at work*
 * Privacy setting - *choose the privacy level for notifications*
 * Credential managment - *login and logout with ease*
-* Multilingual support - *french/english/german*
+* Multilingual support - *french/english/german/russian*
 * Inbox statistics preview - *display drafts/labels/unreads/totals messages from the inbox*
 * Attachment information - *notice when a message have one or more attachments*
 * Network reconnection - *try to reconnect to the network when the internet connection is lost*
@@ -42,7 +42,7 @@ Note that this version of the .NET Framework **evolve in time**: the application
 #### Setup installer
 The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions: this is the better way to install Windows application and allow you to **cleanly install/uninstall** the application with ease.
 
-* :package: [Inbox Notifier 3.0.1](https://github.com/xavierfoucrier/inbox-notifier/releases/download/v3.0.1/Inbox.Notifier.3.0.1.exe)
+* :package: [Inbox Notifier 3.2.0](https://github.com/xavierfoucrier/inbox-notifier/releases/download/v3.2.0/Inbox.Notifier.3.2.0.exe)
 
 > Note that you will need **administrator rights** to properly complete the installation.
 

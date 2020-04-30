@@ -723,6 +723,15 @@ namespace notifier.Languages {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mise à jour de Inbox Notifier.
+        /// </summary>
+        internal static string updateServiceName {
+            get {
+                return ResourceManager.GetString("updateServiceName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Le service de mise à jour est inaccessible pour le moment..
         /// </summary>
         internal static string updateServiceUnreachable {

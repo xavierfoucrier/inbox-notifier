@@ -21,11 +21,6 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Power resume state of the computer
-		/// </summary>
-		private bool PowerResume;
-
-		/// <summary>
 		/// Reference to the main interface
 		/// </summary>
 		private readonly Main UI;
@@ -82,26 +77,11 @@ namespace notifier {
 		/// Bind the "PowerModeChanged" event to automatically pause/resume the application synchronization
 		/// </summary>
 		public void BindPowerMode() {
-			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler(async (object source, PowerModeChangedEventArgs target) => {
+			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler((object source, PowerModeChangedEventArgs target) => {
 				if (target.Mode == PowerModes.Suspend) {
 
 					// suspend the main timer
 					UI.timer.Enabled = false;
-				} else if (target.Mode == PowerModes.Resume) {
-
-					// store the power resume state
-					PowerResume = true;
-
-					// do nothing if the timeout mode is set to infinite
-					if (UI.NotificationService.Paused && UI.menuItemTimeoutIndefinitely.Checked) {
-						return;
-					}
-
-					// synchronize the inbox and renew the token
-					await UI.GmailService.Inbox.Sync(true, true);
-
-					// enable the timer properly
-					UI.timer.Enabled = true;
 				}
 			});
 		}
@@ -120,14 +100,15 @@ namespace notifier {
 						return;
 					}
 
-					// do nothing if the computer power mode is resumed
-					if (PowerResume) {
-						PowerResume = false;
-						return;
-					}
-
 					// synchronize the inbox and renew the token
 					await UI.GmailService.Inbox.Sync(true, true);
+
+					// enable the timer properly
+					UI.timer.Enabled = true;
+				} else if (target.Reason == SessionSwitchReason.SessionLock) {
+
+					// suspend the main timer
+					UI.timer.Enabled = false;
 				}
 			});
 		}

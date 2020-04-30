@@ -1,5 +1,5 @@
 ﻿#define MyAppName "Inbox Notifier"
-#define MyAppVersion "3.0.1"
+#define MyAppVersion "3.2.0"
 #define MyAppYear GetDateTimeString('yyyy', '', '');
 #define MyAppPublisher "Xavier Foucrier"
 #define MyAppURL "https://github.com/xavierfoucrier/inbox-notifier"
@@ -37,6 +37,7 @@ UninstallDisplayIcon={app}\{#MyAppExeName}
 Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
 Name: "de"; MessagesFile: "compiler:Languages\German.isl"
+Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
