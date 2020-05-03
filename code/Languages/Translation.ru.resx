@@ -126,10 +126,10 @@
 Вы действительно хотите выйти?</value>
   </data>
   <data name="attachment" xml:space="preserve">
-    <value>прикрепление</value>
+    <value>вложение</value>
   </data>
   <data name="attachments" xml:space="preserve">
-    <value>прикреплений</value>
+    <value>вложения(й)</value>
   </data>
   <data name="authenticationCanceled" xml:space="preserve">
     <value>Приложению "Inbox Notifier" не удалось привязаться к вашей учётной записи Gmail: у Вас есть {timeout} секунд, чтобы авторизовать приложение для доступа к вашей учётной записи. По истечении этого времени Вам необходимо заново начать операцию.
@@ -272,7 +272,7 @@
     <value>сообщение</value>
   </data>
   <data name="messages" xml:space="preserve">
-    <value>сообщений</value>
+    <value>сообщения(й)</value>
   </data>
   <data name="multipleInstances" xml:space="preserve">
     <value>Несколько экземпляров</value>
@@ -280,7 +280,7 @@
   <data name="mutexError" xml:space="preserve">
     <value>Приложение "Inbox Notifier" уже запущено: Вы не можете запустить несколько экземпляров приложения на одном компьютере.
 
-Эта опция не включена на этом типе приложения.</value>
+Эта опция не включена для данного типа приложения.</value>
   </data>
   <data name="newUnreadMessage" xml:space="preserve">
     <value>Дважды щёлкните по значку для доступа к папке "Входящие".</value>
@@ -336,7 +336,7 @@
     <value>непрочитанное сообщение</value>
   </data>
   <data name="unreadMessages" xml:space="preserve">
-    <value>непрочитанных сообщений</value>
+    <value>непрочитанных сообщения(й)</value>
   </data>
   <data name="unreadSpam" xml:space="preserve">
     <value>непрочитанный спам</value>
