@@ -314,7 +314,7 @@ Attempting to reconnect...</value>
     <value>Error when syncing</value>
   </data>
   <data name="syncErrorOccured" xml:space="preserve">
-    <value>An error occurred during the synchronization of the inbox:</value>
+    <value>An error occurred during the synchronization of the inbox.</value>
   </data>
   <data name="syncOff" xml:space="preserve">
     <value>Synchronization disabled on {day}</value>

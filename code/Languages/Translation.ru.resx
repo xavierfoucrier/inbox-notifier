@@ -314,7 +314,7 @@
     <value>Ошибка при синхронизации</value>
   </data>
   <data name="syncErrorOccured" xml:space="preserve">
-    <value>Во время синхронизации папки "Входящие" произошла ошибка:</value>
+    <value>Во время синхронизации папки "Входящие" произошла ошибка.</value>
   </data>
   <data name="syncOff" xml:space="preserve">
     <value>Синхронизация отключена на {day}</value>

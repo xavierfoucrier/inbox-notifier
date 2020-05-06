@@ -623,7 +623,7 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Une erreur est survenue lors de la synchronisation de la boite de réception :.
+        ///   Recherche une chaîne localisée semblable à Une erreur est survenue lors de la synchronisation de la boite de réception..
         /// </summary>
         internal static string syncErrorOccured {
             get {

@@ -314,7 +314,7 @@ Der Versuch, die Verbindung wiederherzustellen ...</value>
     <value>Fehler bei der Synchronisierung</value>
   </data>
   <data name="syncErrorOccured" xml:space="preserve">
-    <value>Ein Fehler ist aufgetreten während der Synchronisation des Posteingangs :</value>
+    <value>Ein Fehler ist aufgetreten während der Synchronisation des Posteingangs.</value>
   </data>
   <data name="syncOff" xml:space="preserve">
     <value>Synchronisation deaktiviert am {day}</value>

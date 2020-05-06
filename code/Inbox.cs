@@ -257,7 +257,7 @@ namespace notifier {
 				// display a balloon tip in the systray with the detailed error message
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.syncError;
-				UI.NotificationService.Tip(Translation.error, Translation.syncErrorOccured + exception.Message, Notification.Type.Warning, 1500);
+				UI.NotificationService.Tip(Translation.error, Translation.syncErrorOccured, Notification.Type.Warning, 1500);
 
 				// log the error
 				Core.Log("Sync: " + exception.Message);
