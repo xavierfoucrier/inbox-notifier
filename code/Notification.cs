@@ -76,7 +76,7 @@ namespace notifier {
 			if (Tag == null) {
 
 				if (!balloon) {
-					Process.Start(GetBaseURL() + "/#inbox");
+					Process.Start($"{GetBaseURL()}/#inbox");
 				}
 
 				return;
@@ -108,7 +108,7 @@ namespace notifier {
 					return;
 				}
 			} else {
-				Process.Start(GetBaseURL() + "/" + Tag);
+				Process.Start($"{GetBaseURL()}/{Tag}");
 			}
 
 			// clean the tag
@@ -125,7 +125,7 @@ namespace notifier {
 
 				// restore the default systray icon and text
 				UI.notifyIcon.Icon = Resources.normal;
-				UI.notifyIcon.Text = Translation.noMessage + "\n" + Translation.syncTime.Replace("{time}", DateTime.Now.ToLongTimeString());
+				UI.notifyIcon.Text = $"{Translation.noMessage}\n{Translation.syncTime.Replace("{time}", DateTime.Now.ToLongTimeString())}";
 
 				// disable the mark as read menu item
 				UI.menuItemMarkAsRead.Text = Translation.markAsRead;
@@ -170,7 +170,7 @@ namespace notifier {
 
 			// update the systray icon and text
 			UI.notifyIcon.Icon = Resources.timeout;
-			UI.notifyIcon.Text = Translation.timeout + " - " + (infinite ? "∞" : DateTime.Now.AddMilliseconds(delay).ToShortTimeString());
+			UI.notifyIcon.Text = $"{Translation.timeout} - {(infinite ? "∞" : DateTime.Now.AddMilliseconds(delay).ToShortTimeString())}";
 
 			// disable some menu items
 			UI.menuItemMarkAsRead.Enabled = false;
@@ -215,7 +215,7 @@ namespace notifier {
 		/// </summary>
 		/// <returns>URL to access Gmail simplified or full web interface</returns>
 		public static string GetBaseURL() {
-			return Settings.Default.NotificationBehavior == (uint)Behavior.OpenSimplifiedHTML ? Settings.Default.GMAIL_BASEURL + "/h" : Settings.Default.GMAIL_BASEURL;
+			return Settings.Default.NotificationBehavior == (uint)Behavior.OpenSimplifiedHTML ? $"{Settings.Default.GMAIL_BASEURL}/h" : Settings.Default.GMAIL_BASEURL;
 		}
 
 		#endregion

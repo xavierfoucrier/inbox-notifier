@@ -143,14 +143,14 @@ namespace notifier {
 						}
 
 						// display a balloon tip in the systray with the total of unread threads
-						UI.NotificationService.Tip(spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam), Translation.newUnreadSpam, Notification.Type.Error);
+						UI.NotificationService.Tip($"{spam.ThreadsUnread} {(spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam)}", Translation.newUnreadSpam, Notification.Type.Error);
 
 						// set the notification icon and text
 						UI.notifyIcon.Icon = Resources.spam;
-						UI.notifyIcon.Text = spam.ThreadsUnread.ToString() + " " + (spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam);
+						UI.notifyIcon.Text = $"{spam.ThreadsUnread} {(spam.ThreadsUnread > 1 ? Translation.unreadSpams : Translation.unreadSpam)}";
 
 						// enable the mark as read menu item
-						UI.menuItemMarkAsRead.Text = Translation.markAsRead + " (" + spam.ThreadsUnread + ")";
+						UI.menuItemMarkAsRead.Text = $"{Translation.markAsRead} ({spam.ThreadsUnread})";
 						UI.menuItemMarkAsRead.Enabled = true;
 
 						// update the tag
@@ -202,7 +202,7 @@ namespace notifier {
 										from = match.Captures[0].Value.Replace(" <", "").Replace("\"", "");
 									} else {
 										match = Regex.Match(header.Value, "<?.*>?");
-										from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, Box.ThreadsUnread.ToString() + " " + Translation.unreadMessage);
+										from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, $"{Box.ThreadsUnread} {Translation.unreadMessage}");
 									}
 								}
 							}
@@ -216,24 +216,24 @@ namespace notifier {
 								int attachments = message.Payload.Parts.Where(part => !string.IsNullOrEmpty(part.Filename)).Count();
 
 								if (attachments > 0) {
-									from = (from.Length > 48 ? from.Substring(0, 48) : from) + " – " + attachments.ToString() + " " + (attachments > 1 ? Translation.attachments : Translation.attachment);
+									from = $"{(from.Length > 48 ? from.Substring(0, 48) : from)} - {attachments} {(attachments > 1 ? Translation.attachments : Translation.attachment)}";
 								}
 							}
 
 							UI.NotificationService.Tip(from, subject);
 						} else {
-							UI.NotificationService.Tip(Box.ThreadsUnread.ToString() + " " + (Box.ThreadsUnread > 1 ? Translation.unreadMessages : Translation.unreadMessage), Translation.newUnreadMessage);
+							UI.NotificationService.Tip($"{Box.ThreadsUnread} {(Box.ThreadsUnread > 1 ? Translation.unreadMessages : Translation.unreadMessage)}", Translation.newUnreadMessage);
 						}
 
 						// update the notification tag to allow the user to directly display the specified view (inbox/message/spam) in a browser
-						UI.NotificationService.Tag = "#inbox" + (Box.ThreadsUnread == 1 ? "/" + message.Id : "");
+						UI.NotificationService.Tag = $"#inbox{(Box.ThreadsUnread == 1 ? $"/{message.Id}" : "")}";
 					}
 
 					// display the notification text
-					UI.notifyIcon.Text = Box.ThreadsUnread.ToString() + " " + (Box.ThreadsUnread > 1 ? Translation.unreadMessages : Translation.unreadMessage);
+					UI.notifyIcon.Text = $"{Box.ThreadsUnread} {(Box.ThreadsUnread > 1 ? Translation.unreadMessages : Translation.unreadMessage)}";
 
 					// enable the mark as read menu item
-					UI.menuItemMarkAsRead.Text = Translation.markAsRead + " (" + Box.ThreadsUnread + ")";
+					UI.menuItemMarkAsRead.Text = $"{Translation.markAsRead} ({Box.ThreadsUnread})";
 					UI.menuItemMarkAsRead.Enabled = true;
 				} else {
 
@@ -251,7 +251,7 @@ namespace notifier {
 			} catch (IOException exception) {
 
 				// log the exception from mscorlib: sometimes the process can not access the token response file because it is used by another process
-				Core.Log("IOException: " + exception.Message);
+				Core.Log($"IOException: {exception.Message}");
 			} catch (Exception exception) {
 
 				// display a balloon tip in the systray
@@ -260,9 +260,9 @@ namespace notifier {
 				UI.NotificationService.Tip(Translation.error, Translation.syncErrorOccured, Notification.Type.Warning, 1500);
 
 				// log the error
-				Core.Log("Sync: " + exception.Message);
+				Core.Log($"Sync: {exception.Message}");
 			} finally {
-				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
+				UI.notifyIcon.Text = $"{UI.notifyIcon.Text.Split('\n')[0]}\n{Translation.syncTime.Replace("{time}", Time.ToLongTimeString())}";
 			}
 		}
 
@@ -345,7 +345,7 @@ namespace notifier {
 			} catch (Exception exception) {
 
 				// enabled the mark as read menu item
-				UI.menuItemMarkAsRead.Text = Translation.markAsRead + " (" + Box.ThreadsUnread + ")";
+				UI.menuItemMarkAsRead.Text = $"{Translation.markAsRead} ({Box.ThreadsUnread})";
 				UI.menuItemMarkAsRead.Enabled = true;
 
 				// display a balloon tip in the systray
@@ -354,9 +354,9 @@ namespace notifier {
 				UI.NotificationService.Tip(Translation.error, Translation.markAsReadError, Notification.Type.Warning, 1500);
 
 				// log the error
-				Core.Log("MarkAsRead: " + exception.Message);
+				Core.Log($"MarkAsRead: {exception.Message}");
 			} finally {
-				UI.notifyIcon.Text = UI.notifyIcon.Text.Split('\n')[0] + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
+				UI.notifyIcon.Text = $"{UI.notifyIcon.Text.Split('\n')[0]}\n{Translation.syncTime.Replace("{time}", Time.ToLongTimeString())}";
 			}
 		}
 
@@ -400,7 +400,7 @@ namespace notifier {
 
 					// display the last reconnection message on the icon
 					UI.notifyIcon.Icon = Resources.warning;
-					UI.notifyIcon.Text = Translation.reconnectFailed + "\n" + Translation.syncTime.Replace("{time}", Time.ToLongTimeString());
+					UI.notifyIcon.Text = $"{Translation.reconnectFailed}\n{Translation.syncTime.Replace("{time}", Time.ToLongTimeString())}";
 				}
 			} else {
 
@@ -452,8 +452,8 @@ namespace notifier {
 			}
 
 			// update the tooltip informations
-			UI.tip.SetToolTip(UI.chartUnreadMails, unread + " " + (unread > 1 ? Translation.unreadMessages : Translation.unreadMessage));
-			UI.tip.SetToolTip(UI.chartTotalMails, total + " " + (total > 1 ? Translation.messages : Translation.message));
+			UI.tip.SetToolTip(UI.chartUnreadMails, $"{unread} {(unread > 1 ? Translation.unreadMessages : Translation.unreadMessage)}");
+			UI.tip.SetToolTip(UI.chartTotalMails, $"{total} {(total > 1 ? Translation.messages : Translation.message)}");
 
 			// update the draft informations
 			ListDraftsResponse drafts = await User.Drafts.List("me").ExecuteAsync();

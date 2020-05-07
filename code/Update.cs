@@ -118,7 +118,7 @@ namespace notifier {
 				ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
 				// get the latest tag in the Github repository tags webpage
-				HttpResponseMessage response = await Http.GetAsync(Settings.Default.GITHUB_REPOSITORY + "/tags");
+				HttpResponseMessage response = await Http.GetAsync($"{Settings.Default.GITHUB_REPOSITORY}/tags");
 
 				HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
 				document.LoadHtml(await response.Content.ReadAsStringAsync());
@@ -173,7 +173,7 @@ namespace notifier {
 				}
 
 				// log the error
-				Core.Log("UpdateCheck: " + exception.Message);
+				Core.Log($"UpdateCheck: {exception.Message}");
 			} finally {
 
 				// restore default update button state
@@ -196,8 +196,8 @@ namespace notifier {
 
 			// define the new number version and temp path
 			string newversion = ReleaseAvailable.Split('-')[0].Substring(1);
-			string updatepath = Core.ApplicationDataFolder + "/gmnupdate-" + newversion + ".exe";
-			string package = Settings.Default.GITHUB_REPOSITORY + "/releases/download/" + ReleaseAvailable + "/Inbox.Notifier." + newversion + ".exe";
+			string updatepath = $"{Core.ApplicationDataFolder}/gmnupdate-{newversion}.exe";
+			string package = $"{Settings.Default.GITHUB_REPOSITORY}/releases/download/{ReleaseAvailable}/Inbox.Notifier.{newversion}.exe";
 
 			try {
 
@@ -213,12 +213,12 @@ namespace notifier {
 				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object source, DownloadProgressChangedEventArgs target) => {
 					UI.notifyIcon.ContextMenu = null;
 					UI.notifyIcon.Icon = Resources.updating;
-					UI.notifyIcon.Text = Translation.updating + " " + target.ProgressPercentage.ToString() + "%";
+					UI.notifyIcon.Text = $"{Translation.updating} {target.ProgressPercentage}%";
 				});
 
 				// start the setup installer when the download has complete and exit the current application
 				client.DownloadFileCompleted += new AsyncCompletedEventHandler((object source, AsyncCompletedEventArgs target) => {
-					Process.Start(new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + updatepath + "\" " + (Settings.Default.UpdateQuiet ? "/verysilent" : "")) {
+					Process.Start(new ProcessStartInfo("cmd.exe", $"/C ping 127.0.0.1 -n 2 && \"{updatepath}\" {(Settings.Default.UpdateQuiet ? "/verysilent" : "")}") {
 						WindowStyle = ProcessWindowStyle.Hidden,
 						CreateNoWindow = true
 					});
@@ -247,7 +247,7 @@ namespace notifier {
 				await UI.GmailService.Inbox.Sync();
 
 				// log the error
-				Core.Log("UpdateDownload: " + exception.Message);
+				Core.Log($"UpdateDownload: {exception.Message}");
 			}
 		}
 

@@ -25,7 +25,7 @@ namespace notifier {
 			string VersionMinor = ProductVersion[1];
 			string VersionPatch = ProductVersion[2];
 
-			Version = "v" + VersionMajor + "." + VersionMinor + "." + VersionPatch;
+			Version = $"v{VersionMajor}.{VersionMinor}.{VersionPatch}";
 		}
 
 		/// <summary>
@@ -34,7 +34,7 @@ namespace notifier {
 		public static void RestartApplication() {
 
 			// start a new process
-			Process.Start(new ProcessStartInfo("cmd.exe", "/C ping 127.0.0.1 -n 2 && \"" + Application.ExecutablePath + "\"") {
+			Process.Start(new ProcessStartInfo("cmd.exe", $"/C ping 127.0.0.1 -n 2 && \"{Application.ExecutablePath}\"") {
 				WindowStyle = ProcessWindowStyle.Hidden,
 				CreateNoWindow = true
 			});
@@ -48,8 +48,8 @@ namespace notifier {
 		/// </summary>
 		/// <param name="message">Message to log</param>
 		public static void Log(string message) {
-			using (StreamWriter writer = new StreamWriter(ApplicationDataFolder + "/" + Settings.Default.LOG_FILE, true)) {
-				writer.Write(DateTime.Now + " - " + message + Environment.NewLine);
+			using (StreamWriter writer = new StreamWriter($"{ApplicationDataFolder}/{Settings.Default.LOG_FILE}", true)) {
+				writer.Write($"{DateTime.Now} - {message}{Environment.NewLine}");
 			}
 		}
 
@@ -62,7 +62,7 @@ namespace notifier {
 		/// </summary>
 		public static string ApplicationDataFolder {
 			get;
-		} = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Inbox Notifier";
+		} = $"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}/Inbox Notifier";
 
 		/// <summary>
 		/// Full application version number

@@ -82,7 +82,7 @@ namespace notifier {
 			// display the time slot properties
 			UI.fieldStartTime.Text = slot.Start.ToString(@"h\:mm");
 			UI.fieldEndTime.Text = slot.End.ToString(@"h\:mm");
-			UI.labelDuration.Text = slot.TotalHours.ToString(CultureInfo.CurrentCulture) + " " + Translation.hours;
+			UI.labelDuration.Text = $"{slot.TotalHours.ToString(CultureInfo.CurrentCulture)} {Translation.hours}";
 		}
 
 		/// <summary>
@@ -148,7 +148,7 @@ namespace notifier {
 			TimeSlot slot = SetTimeSlot(day, TimeSpan.Parse(UI.fieldStartTime.Text), TimeSpan.Parse(UI.fieldEndTime.Text));
 
 			// update the duration label
-			UI.labelDuration.Text = slot.TotalHours.ToString(CultureInfo.CurrentCulture) + " " + Translation.hours;
+			UI.labelDuration.Text = $"{slot.TotalHours.ToString(CultureInfo.CurrentCulture)} {Translation.hours}";
 
 			// synchronize the inbox if the selected day of week is today
 			if (GetDayOfWeek(UI.fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {

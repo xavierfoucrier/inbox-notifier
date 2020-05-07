@@ -163,7 +163,7 @@ namespace notifier {
 		public static void SetApplicationStartup(Registration mode) {
 			using (RegistryKey key = Registry.CurrentUser.OpenSubKey(Settings.Default.REGISTRY_KEY, true)) {
 				if (mode == Registration.On) {
-					key.SetValue("Inbox Notifier", '"' + Application.ExecutablePath + '"');
+					key.SetValue("Inbox Notifier", $"{Application.ExecutablePath}");
 				} else {
 					key.DeleteValue("Inbox Notifier", false);
 				}

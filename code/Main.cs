@@ -189,10 +189,10 @@ namespace notifier {
 			linkVersion.Text = Core.Version.Substring(1);
 
 			// display a tooltip for the product version
-			tip.SetToolTip(linkVersion, Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.Version);
+			tip.SetToolTip(linkVersion, $"{Settings.Default.GITHUB_REPOSITORY}/releases/tag/{Core.Version}");
 
 			// display a tooltip for the license link
-			tip.SetToolTip(linkPrivacy, Settings.Default.GITHUB_REPOSITORY + "/blob/master/PRIVACY.md");
+			tip.SetToolTip(linkPrivacy, $"{Settings.Default.GITHUB_REPOSITORY}/blob/master/PRIVACY.md");
 
 			// display a tooltip for the website link
 			tip.SetToolTip(linkWebsiteYusuke, Settings.Default.SITE_YUSUKE);
@@ -201,7 +201,7 @@ namespace notifier {
 			tip.SetToolTip(linkWebsiteXavier, Settings.Default.SITE_AUTHOR);
 
 			// display a tooltip for the license link
-			tip.SetToolTip(linkLicense, Settings.Default.GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
+			tip.SetToolTip(linkLicense, $"{Settings.Default.GITHUB_REPOSITORY}/blob/master/LICENSE.md");
 		}
 
 		/// <summary>
@@ -331,14 +331,14 @@ namespace notifier {
 		/// Open the Github release section of the current build
 		/// </summary>
 		private void linkVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/releases/tag/" + Core.Version);
+			Process.Start($"{Settings.Default.GITHUB_REPOSITORY}/releases/tag/{Core.Version}");
 		}
 
 		/// <summary>
 		/// Open the Github privacy notice file
 		/// </summary>
 		private void linkPrivacy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/blob/master/PRIVACY.md");
+			Process.Start($"{Settings.Default.GITHUB_REPOSITORY}/blob/master/PRIVACY.md");
 		}
 
 		/// <summary>
@@ -359,7 +359,7 @@ namespace notifier {
 		/// Open the Github license file
 		/// </summary>
 		private void linkLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start(Settings.Default.GITHUB_REPOSITORY + "/blob/master/LICENSE.md");
+			Process.Start($"{Settings.Default.GITHUB_REPOSITORY}/blob/master/LICENSE.md");
 		}
 		
 		/// <summary>
@@ -397,7 +397,7 @@ namespace notifier {
 		/// Manage the context menu New message item
 		/// </summary>
 		private void menuItemNewMessage_Click(object sender, EventArgs e) {
-			Process.Start(Settings.Default.GMAIL_BASEURL + "/#inbox?compose=new");
+			Process.Start($"{Settings.Default.GMAIL_BASEURL}/#inbox?compose=new");
 		}
 
 		/// <summary>

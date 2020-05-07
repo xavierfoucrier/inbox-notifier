@@ -75,7 +75,7 @@ namespace notifier {
 			} catch (Exception exception) {
 
 				// log the error
-				Core.Log("Authentication: " + exception.Message);
+				Core.Log($"Authentication: {exception.Message}");
 
 				// display the authentication failure icon and text
 				UI.notifyIcon.Icon = Resources.warning;
@@ -187,7 +187,7 @@ namespace notifier {
 		private static async Task<UserCredential> AuthorizationBroker() {
 
 			// use the client secret file for the context
-			using (FileStream stream = new FileStream(Path.GetDirectoryName(Application.ExecutablePath) + "/client_secret.json", FileMode.Open, FileAccess.Read)) {
+			using (FileStream stream = new FileStream($"{Path.GetDirectoryName(Application.ExecutablePath)}/client_secret.json", FileMode.Open, FileAccess.Read)) {
 
 				// define a cancellation token source
 				CancellationTokenSource cancellation = new CancellationTokenSource();
