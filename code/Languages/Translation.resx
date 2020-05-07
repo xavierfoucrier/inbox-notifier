@@ -266,7 +266,7 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
     <value>Marquer comme lu</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>Une erreur est survenue lors de l'opération "Marquer comme lu" :</value>
+    <value>Une erreur est survenue lors de l'opération "Marquer comme lu".</value>
   </data>
   <data name="message" xml:space="preserve">
     <value>email</value>

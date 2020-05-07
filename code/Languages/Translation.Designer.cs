@@ -485,7 +485,7 @@ namespace notifier.Languages {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Une erreur est survenue lors de l&apos;opération &quot;Marquer comme lu&quot; :.
+        ///   Recherche une chaîne localisée semblable à Une erreur est survenue lors de l&apos;opération &quot;Marquer comme lu&quot;..
         /// </summary>
         internal static string markAsReadError {
             get {

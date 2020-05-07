@@ -266,7 +266,7 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
     <value>Als gelesen markieren</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>Ein Fehler ist aufgetreten während der Operation "Als gelesen markieren":</value>
+    <value>Ein Fehler ist aufgetreten während der Operation "Als gelesen markieren".</value>
   </data>
   <data name="message" xml:space="preserve">
     <value>E-Mail</value>

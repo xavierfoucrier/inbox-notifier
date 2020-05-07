@@ -266,7 +266,7 @@ Do you really want to disconnect your Gmail account and restart the application 
     <value>Mark as read</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>An error occurred during the "Mark Read" operation:</value>
+    <value>An error occurred during the "Mark Read" operation.</value>
   </data>
   <data name="message" xml:space="preserve">
     <value>message</value>

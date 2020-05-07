@@ -266,7 +266,7 @@
     <value>Отметить как прочитанное</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>Во время операции "Отметить как прочитанное" произошла ошибка:</value>
+    <value>Во время операции "Отметить как прочитанное" произошла ошибка.</value>
   </data>
   <data name="message" xml:space="preserve">
     <value>сообщение</value>

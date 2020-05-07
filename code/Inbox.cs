@@ -254,7 +254,7 @@ namespace notifier {
 				Core.Log("IOException: " + exception.Message);
 			} catch (Exception exception) {
 
-				// display a balloon tip in the systray with the detailed error message
+				// display a balloon tip in the systray
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.syncError;
 				UI.NotificationService.Tip(Translation.error, Translation.syncErrorOccured, Notification.Type.Warning, 1500);
@@ -348,10 +348,10 @@ namespace notifier {
 				UI.menuItemMarkAsRead.Text = Translation.markAsRead + " (" + Box.ThreadsUnread + ")";
 				UI.menuItemMarkAsRead.Enabled = true;
 
-				// display a balloon tip in the systray with the detailed error message
+				// display a balloon tip in the systray
 				UI.notifyIcon.Icon = Resources.warning;
 				UI.notifyIcon.Text = Translation.operationError;
-				UI.NotificationService.Tip(Translation.error, Translation.markAsReadError + exception.Message, Notification.Type.Warning, 1500);
+				UI.NotificationService.Tip(Translation.error, Translation.markAsReadError, Notification.Type.Warning, 1500);
 
 				// log the error
 				Core.Log("MarkAsRead: " + exception.Message);
