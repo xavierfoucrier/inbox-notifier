@@ -109,6 +109,11 @@ namespace notifier {
 
 					// suspend the main timer
 					UI.timer.Enabled = false;
+
+					// suspend the reconnect timer and reset reconnection count
+					UI.timerReconnect.Enabled = false;
+					UI.timerReconnect.Interval = 100;
+					UI.GmailService.Inbox.ReconnectionAttempts = 0;
 				}
 			});
 		}
