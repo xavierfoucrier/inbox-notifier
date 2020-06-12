@@ -8,7 +8,8 @@ on:
     branches:
       - master
     paths:
-      - .github/labels.yml
+      - '.github/labels.yml'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,5 +18,3 @@ jobs:
       - uses: micnncim/action-label-syncer@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          manifest: .github/labels.yml
