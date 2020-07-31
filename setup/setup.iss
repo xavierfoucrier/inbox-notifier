@@ -1,5 +1,5 @@
 ﻿#define MyAppName "Inbox Notifier"
-#define MyAppVersion "3.2.2"
+#define MyAppVersion "3.3.0"
 #define MyAppYear GetDateTimeString('yyyy', '', '');
 #define MyAppPublisher "Xavier Foucrier"
 #define MyAppURL "https://github.com/xavierfoucrier/inbox-notifier"
