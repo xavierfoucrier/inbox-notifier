@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tabPageGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>194, 108</value>
@@ -143,6 +146,9 @@ at the next application startup.</value>
   <data name="label3.Text" xml:space="preserve">
     <value>Language:</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
   <data name="fieldAudioPop.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 17</value>
   </data>
@@ -167,11 +173,11 @@ at the next application startup.</value>
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>Ask before leaving the application</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Behavior</value>
+  <data name="tabPageAccount.Text" xml:space="preserve">
+    <value>Account</value>
   </data>
-  <data name="tabPageGeneral.Text" xml:space="preserve">
-    <value>General</value>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Statistics</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -185,8 +191,8 @@ at the next application startup.</value>
   <data name="label6.Text" xml:space="preserve">
     <value>Inbox</value>
   </data>
-  <data name="groupBox8.Text" xml:space="preserve">
-    <value>Statistics</value>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Authentication</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 13</value>
@@ -203,11 +209,8 @@ at the next application startup.</value>
   <data name="buttonGmailDisconnect.Text" xml:space="preserve">
     <value>Sign out</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Authentication</value>
-  </data>
-  <data name="tabPageAccount.Text" xml:space="preserve">
-    <value>Account</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Behavior</value>
   </data>
   <data name="labelNotificationOpenSimplifiedHTML.Location" type="System.Drawing.Point, System.Drawing">
     <value>27, 72</value>
@@ -258,23 +261,23 @@ will automatically open the inbox.</value>
   <data name="label9.Text" xml:space="preserve">
     <value>When the notification is clicked:</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Behavior</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Mail</value>
   </data>
   <data name="fieldStepDelay.Items1" xml:space="preserve">
     <value>hour(s)</value>
   </data>
   <data name="fieldSpamNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 17</value>
+    <value>135, 17</value>
   </data>
   <data name="fieldSpamNotification.Text" xml:space="preserve">
-    <value>Junk mail (SPAM)</value>
+    <value>Junk message (SPAM)</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 13</value>
+    <value>70, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Verification delay:</value>
+    <value>Check every:</value>
   </data>
   <data name="fieldMessageNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 17</value>
@@ -288,8 +291,8 @@ will automatically open the inbox.</value>
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Sound notification</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Mail</value>
+  <data name="tabPagePrivacy.Text" xml:space="preserve">
+    <value>Privacy</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 13</value>
@@ -315,8 +318,11 @@ will automatically open the inbox.</value>
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Display all message content</value>
   </data>
-  <data name="tabPagePrivacy.Text" xml:space="preserve">
-    <value>Privacy</value>
+  <data name="tabPageSchedule.Text" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Time slot</value>
   </data>
   <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -378,8 +384,8 @@ will automatically open the inbox.</value>
   <data name="fieldDayOfWeek.Items6" xml:space="preserve">
     <value>sunday</value>
   </data>
-  <data name="groupBox11.Text" xml:space="preserve">
-    <value>Time slot</value>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Behavior</value>
   </data>
   <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 17</value>
@@ -393,14 +399,17 @@ will automatically open the inbox.</value>
   <data name="checkBox1.Text" xml:space="preserve">
     <value>Disable manual synchronization</value>
   </data>
+  <data name="fieldScheduler.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 17</value>
+  </data>
   <data name="fieldScheduler.Text" xml:space="preserve">
     <value>Enable scheduled synchronization</value>
   </data>
-  <data name="groupBox10.Text" xml:space="preserve">
-    <value>Behavior</value>
+  <data name="tabPageUpdate.Text" xml:space="preserve">
+    <value>Updates</value>
   </data>
-  <data name="tabPageSchedule.Text" xml:space="preserve">
-    <value>Schedule</value>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Availability</value>
   </data>
   <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>165, 99</value>
@@ -435,8 +444,8 @@ will automatically open the inbox.</value>
   <data name="label8.Text" xml:space="preserve">
     <value>Last checked:</value>
   </data>
-  <data name="groupBox9.Text" xml:space="preserve">
-    <value>Availability</value>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Behavior</value>
   </data>
   <data name="fieldUpdateQuiet.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 84</value>
@@ -472,11 +481,8 @@ will automatically open the inbox.</value>
   <data name="fieldUpdateService.Text" xml:space="preserve">
     <value>Enable automatic update checking</value>
   </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>Behavior</value>
-  </data>
-  <data name="tabPageUpdate.Text" xml:space="preserve">
-    <value>Updates</value>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>About</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="linkPrivacy.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
@@ -527,9 +533,6 @@ a Tokyo-based designer and developer</value>
   <data name="label13.Text" xml:space="preserve">
     <value>Development</value>
   </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 13</value>
   </data>
@@ -572,6 +575,9 @@ a Tokyo-based designer and developer</value>
   <data name="menuItemMarkAsRead.Text" xml:space="preserve">
     <value>Mark as read</value>
   </data>
+  <data name="menuItemTimout.Text" xml:space="preserve">
+    <value>Do not disturb</value>
+  </data>
   <data name="menuItemTimeoutDisabled.Text" xml:space="preserve">
     <value>Disable</value>
   </data>
@@ -586,9 +592,6 @@ a Tokyo-based designer and developer</value>
   </data>
   <data name="menuItemTimeoutIndefinitely.Text" xml:space="preserve">
     <value>Indefinitely</value>
-  </data>
-  <data name="menuItemTimout.Text" xml:space="preserve">
-    <value>Do not disturb</value>
   </data>
   <data name="menuItemSettings.Text" xml:space="preserve">
     <value>Open</value>
