@@ -258,6 +258,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\oauth\message.html" />
+    <None Include="Resources\sound.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
