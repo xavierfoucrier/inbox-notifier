@@ -138,6 +138,7 @@ namespace notifier {
 			this.menuItemCustomRingtone = new System.Windows.Forms.MenuItem();
 			this.menuItem6 = new System.Windows.Forms.MenuItem();
 			this.menuItemEditRingtone = new System.Windows.Forms.MenuItem();
+			this.openRingtoneDialog = new System.Windows.Forms.OpenFileDialog();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -1126,6 +1127,7 @@ namespace notifier {
 			// 
 			this.menuItemEditRingtone.Index = 3;
 			resources.ApplyResources(this.menuItemEditRingtone, "menuItemEditRingtone");
+			this.menuItemEditRingtone.Click += new System.EventHandler(this.menuItemEditRingtone_Click);
 			// 
 			// Main
 			// 
@@ -1301,5 +1303,6 @@ namespace notifier {
 		private System.Windows.Forms.MenuItem menuItemEditRingtone;
 		private System.Windows.Forms.MenuItem menuItem6;
 		private System.Windows.Forms.MenuItem menuItemCustomRingtone;
+		private System.Windows.Forms.OpenFileDialog openRingtoneDialog;
 	}
 }

@@ -652,5 +652,12 @@ namespace notifier {
 		private void ringtoneIcon_Click(object sender, EventArgs e) {
 			ringtoneMenu.Show(this, PointToClient(Cursor.Position));
 		}
+
+		/// <summary>
+		/// Open the file dialog to select a ringtone
+		/// </summary>
+		private void menuItemEditRingtone_Click(object sender, EventArgs e) {
+			openRingtoneDialog.ShowDialog();
+		}
 	}
 }
