@@ -1111,12 +1111,14 @@ namespace notifier {
 			this.menuItemDefaultRingtone.Index = 0;
 			this.menuItemDefaultRingtone.RadioCheck = true;
 			resources.ApplyResources(this.menuItemDefaultRingtone, "menuItemDefaultRingtone");
+			this.menuItemDefaultRingtone.Click += new System.EventHandler(this.menuItemDefaultRingtone_Click);
 			// 
 			// menuItemCustomRingtone
 			// 
 			this.menuItemCustomRingtone.Index = 1;
 			this.menuItemCustomRingtone.RadioCheck = true;
 			resources.ApplyResources(this.menuItemCustomRingtone, "menuItemCustomRingtone");
+			this.menuItemCustomRingtone.Click += new System.EventHandler(this.menuItemCustomRingtone_Click);
 			// 
 			// menuItem6
 			// 

@@ -647,6 +647,22 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Manage the ringtone menu state
+		/// </summary>
+		private void menuItemDefaultRingtone_Click(object sender, EventArgs e) {
+			menuItemDefaultRingtone.Checked = true;
+			menuItemCustomRingtone.Checked = false;
+		}
+
+		/// <summary>
+		/// Manage the ringtone menu state
+		/// </summary>
+		private void menuItemCustomRingtone_Click(object sender, EventArgs e) {
+			menuItemCustomRingtone.Checked = true;
+			menuItemDefaultRingtone.Checked = false;
+		}
+
+		/// <summary>
 		/// Display the ringtone menu hover the icon when clicking on it
 		/// </summary>
 		private void ringtoneIcon_Click(object sender, EventArgs e) {
@@ -664,6 +680,8 @@ namespace notifier {
 			}
 
 			menuItemCustomRingtone.Text = openRingtoneDialog.SafeFileName;
+			menuItemCustomRingtone.Checked = true;
+			menuItemDefaultRingtone.Checked = false;
 		}
 	}
 }
