@@ -1129,6 +1129,10 @@ namespace notifier {
 			resources.ApplyResources(this.menuItemEditRingtone, "menuItemEditRingtone");
 			this.menuItemEditRingtone.Click += new System.EventHandler(this.menuItemEditRingtone_Click);
 			// 
+			// openRingtoneDialog
+			// 
+			resources.ApplyResources(this.openRingtoneDialog, "openRingtoneDialog");
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");

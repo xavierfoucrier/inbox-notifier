@@ -4266,6 +4266,9 @@ un designer et développeur basé à Tokyo</value>
   <metadata name="openRingtoneDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>580, 17</value>
   </metadata>
+  <data name="openRingtoneDialog.Filter" xml:space="preserve">
+    <value>wav|*.wav</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
