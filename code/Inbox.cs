@@ -176,7 +176,21 @@ namespace notifier {
 
 						// play a sound on unread threads
 						if (Settings.Default.AudioNotification) {
-							SystemSounds.Asterisk.Play();
+
+							// play a ringtone based on user setting
+							if (Settings.Default.Ringtone) {
+
+								// switch to the default ringtone if the audio file can't be found
+								if (File.Exists(Settings.Default.RingtoneFile)) {
+									using (SoundPlayer player = new SoundPlayer(Settings.Default.RingtoneFile)) {
+										player.Play();
+									}
+								} else {
+									Settings.Default.Ringtone = false;
+								}
+							} else {
+								SystemSounds.Asterisk.Play();
+							}
 						}
 
 						// get the message details
