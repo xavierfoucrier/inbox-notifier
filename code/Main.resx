@@ -1284,28 +1284,28 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="fieldAudioNotificationFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="audioIcon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="fieldAudioNotificationFile.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="audioIcon.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 71</value>
   </data>
-  <data name="fieldAudioNotificationFile.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="audioIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
   </data>
-  <data name="fieldAudioNotificationFile.TabIndex" type="System.Int32, mscorlib">
+  <data name="audioIcon.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;fieldAudioNotificationFile.Name" xml:space="preserve">
-    <value>fieldAudioNotificationFile</value>
+  <data name="&gt;&gt;audioIcon.Name" xml:space="preserve">
+    <value>audioIcon</value>
   </data>
-  <data name="&gt;&gt;fieldAudioNotificationFile.Type" xml:space="preserve">
+  <data name="&gt;&gt;audioIcon.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;fieldAudioNotificationFile.Parent" xml:space="preserve">
+  <data name="&gt;&gt;audioIcon.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="&gt;&gt;fieldAudioNotificationFile.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;audioIcon.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="fieldStepDelay.Items" xml:space="preserve">
@@ -3225,6 +3225,21 @@ un designer et développeur basé à Tokyo</value>
   <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>235, 17</value>
   </metadata>
+  <metadata name="audioMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>450, 17</value>
+  </metadata>
+  <data name="menuItem3.Text" xml:space="preserve">
+    <value>Par défaut</value>
+  </data>
+  <data name="menuItem7.Text" xml:space="preserve">
+    <value>[ custom ]</value>
+  </data>
+  <data name="menuItem6.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="menuItem5.Text" xml:space="preserve">
+    <value>Modifier la sonnerie</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3941,6 +3956,36 @@ un designer et développeur basé à Tokyo</value>
   </data>
   <data name="&gt;&gt;timer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;audioMenu.Name" xml:space="preserve">
+    <value>audioMenu</value>
+  </data>
+  <data name="&gt;&gt;audioMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuItem3.Name" xml:space="preserve">
+    <value>menuItem3</value>
+  </data>
+  <data name="&gt;&gt;menuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuItem7.Name" xml:space="preserve">
+    <value>menuItem7</value>
+  </data>
+  <data name="&gt;&gt;menuItem7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuItem6.Name" xml:space="preserve">
+    <value>menuItem6</value>
+  </data>
+  <data name="&gt;&gt;menuItem6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuItem5.Name" xml:space="preserve">
+    <value>menuItem5</value>
+  </data>
+  <data name="&gt;&gt;menuItem5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>

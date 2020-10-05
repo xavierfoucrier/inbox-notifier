@@ -63,6 +63,7 @@ namespace notifier {
 			this.fieldNotificationBehavior = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.audioIcon = new System.Windows.Forms.LinkLabel();
 			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
 			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
@@ -132,7 +133,11 @@ namespace notifier {
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
 			this.timer = new System.Windows.Forms.Timer(this.components);
-			this.fieldAudioNotificationFile = new System.Windows.Forms.LinkLabel();
+			this.audioMenu = new System.Windows.Forms.ContextMenu();
+			this.menuItem3 = new System.Windows.Forms.MenuItem();
+			this.menuItem7 = new System.Windows.Forms.MenuItem();
+			this.menuItem6 = new System.Windows.Forms.MenuItem();
+			this.menuItem5 = new System.Windows.Forms.MenuItem();
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -456,7 +461,7 @@ namespace notifier {
 			// 
 			// groupBox2
 			// 
-			this.groupBox2.Controls.Add(this.fieldAudioNotificationFile);
+			this.groupBox2.Controls.Add(this.audioIcon);
 			this.groupBox2.Controls.Add(this.fieldStepDelay);
 			this.groupBox2.Controls.Add(this.fieldSpamNotification);
 			this.groupBox2.Controls.Add(this.label1);
@@ -466,6 +471,13 @@ namespace notifier {
 			resources.ApplyResources(this.groupBox2, "groupBox2");
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.TabStop = false;
+			// 
+			// audioIcon
+			// 
+			this.audioIcon.Image = global::notifier.Properties.Resources.sound;
+			resources.ApplyResources(this.audioIcon, "audioIcon");
+			this.audioIcon.Name = "audioIcon";
+			this.audioIcon.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(153)))));
 			// 
 			// fieldStepDelay
 			// 
@@ -1081,12 +1093,36 @@ namespace notifier {
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
 			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
-			// fieldAudioNotificationFile
+			// audioMenu
 			// 
-			this.fieldAudioNotificationFile.Image = global::notifier.Properties.Resources.sound;
-			resources.ApplyResources(this.fieldAudioNotificationFile, "fieldAudioNotificationFile");
-			this.fieldAudioNotificationFile.Name = "fieldAudioNotificationFile";
-			this.fieldAudioNotificationFile.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(153)))));
+			this.audioMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem3,
+            this.menuItem7,
+            this.menuItem6,
+            this.menuItem5});
+			// 
+			// menuItem3
+			// 
+			this.menuItem3.Checked = true;
+			this.menuItem3.Index = 0;
+			this.menuItem3.RadioCheck = true;
+			resources.ApplyResources(this.menuItem3, "menuItem3");
+			// 
+			// menuItem7
+			// 
+			this.menuItem7.Index = 1;
+			this.menuItem7.RadioCheck = true;
+			resources.ApplyResources(this.menuItem7, "menuItem7");
+			// 
+			// menuItem6
+			// 
+			this.menuItem6.Index = 2;
+			resources.ApplyResources(this.menuItem6, "menuItem6");
+			// 
+			// menuItem5
+			// 
+			this.menuItem5.Index = 3;
+			resources.ApplyResources(this.menuItem5, "menuItem5");
 			// 
 			// Main
 			// 
@@ -1256,6 +1292,11 @@ namespace notifier {
 		private System.Windows.Forms.CheckBox checkBox2;
 		private System.Windows.Forms.Label labelNotificationOpenSimplifiedHTML;
 				internal System.Windows.Forms.TabPage tabPageAccount;
-		private System.Windows.Forms.LinkLabel fieldAudioNotificationFile;
+		private System.Windows.Forms.LinkLabel audioIcon;
+		internal System.Windows.Forms.ContextMenu audioMenu;
+		private System.Windows.Forms.MenuItem menuItem3;
+		private System.Windows.Forms.MenuItem menuItem5;
+		private System.Windows.Forms.MenuItem menuItem6;
+		private System.Windows.Forms.MenuItem menuItem7;
 	}
 }
