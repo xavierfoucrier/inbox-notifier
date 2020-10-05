@@ -294,6 +294,9 @@ Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
   <data name="noMessage" xml:space="preserve">
     <value>Keine neuen Beiträge</value>
   </data>
+  <data name="notFound" xml:space="preserve">
+    <value>Nicht gefunden</value>
+  </data>
   <data name="off" xml:space="preserve">
     <value>Untauglich</value>
   </data>
