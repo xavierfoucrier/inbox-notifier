@@ -1284,28 +1284,43 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="audioIcon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ringtoneIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAACF0lEQVQ4T6XMXUhTYRgH8LNn
+        CGEXlqFlHxThhV4k0V1dtW4CIwghglhUlBIeFkTsQmqr1gdEFwsxlsGQYDlxERR5LnJFH3ghy1GNloKW
+        bbrtaHMV23Fb5tPznM7emnRTHfid9z3Pef5/CRH/yx+Hf0N/PZBBemgDacAGVcpJsJBjxE46DHznmYV3
+        eJczSwsaB8/UdYwPnle02ZH4Yj5WwGICsTiNi/mPBU0NxccfORXe4d2ygvsyrAue2+zKpoZjOP8BMTtG
+        RoW3Tzw/Z/MTmJ1+EQs6N7k4IwrutcOh1JveMOZo6WukjP9yi07Msu8wNeINc0YUBE6Ac+FLNIeZMLIe
+        RzOGlav6WZJ8f1anTl7CdKw7xxlR4G+DC98yrzWce4kLn56jx74LnwVa9bNEnXQJqYkrGmdEge84tMaH
+        b0WK6SB+nurCubhbcNt26ErfmanrOPq4LcIZUXD7KGy8e3p9pxr1JHOqD7MJb5mnfbK4J15dTPafqunk
+        jCjoOQKS9zBs88nV7pDfOjQbvaFqyb5iYSaAhZl+zBM+Q3cODPnklW7e5Ywo2LfVJNl3g3TTCqs8Vmgh
+        DtJFuku+pxXkk3d4t2GN6VfB78+eJlOZ5i0A7TvN26/tN/ey+lqTsWlkjQKeVpBKsoLUkg2knjSSJksD
+        HHTsNQ/w3fhXubTATLhkGVlOqkg1qSGrSR1Za9z5X4Uo+Hco/QCNzUp2aYqo8gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ringtoneIcon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="audioIcon.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ringtoneIcon.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 71</value>
   </data>
-  <data name="audioIcon.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ringtoneIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
   </data>
-  <data name="audioIcon.TabIndex" type="System.Int32, mscorlib">
+  <data name="ringtoneIcon.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;audioIcon.Name" xml:space="preserve">
-    <value>audioIcon</value>
+  <data name="&gt;&gt;ringtoneIcon.Name" xml:space="preserve">
+    <value>ringtoneIcon</value>
   </data>
-  <data name="&gt;&gt;audioIcon.Type" xml:space="preserve">
+  <data name="&gt;&gt;ringtoneIcon.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;audioIcon.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ringtoneIcon.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="&gt;&gt;audioIcon.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ringtoneIcon.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="fieldStepDelay.Items" xml:space="preserve">
@@ -3225,19 +3240,19 @@ un designer et développeur basé à Tokyo</value>
   <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>235, 17</value>
   </metadata>
-  <metadata name="audioMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ringtoneMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>450, 17</value>
   </metadata>
-  <data name="menuItem3.Text" xml:space="preserve">
+  <data name="menuItemDefaultRingtone.Text" xml:space="preserve">
     <value>Par défaut</value>
   </data>
-  <data name="menuItem7.Text" xml:space="preserve">
+  <data name="menuItemCustomRingtone.Text" xml:space="preserve">
     <value>[ custom ]</value>
   </data>
   <data name="menuItem6.Text" xml:space="preserve">
     <value>-</value>
   </data>
-  <data name="menuItem5.Text" xml:space="preserve">
+  <data name="menuItemEditRingtone.Text" xml:space="preserve">
     <value>Modifier la sonnerie</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -3957,22 +3972,22 @@ un designer et développeur basé à Tokyo</value>
   <data name="&gt;&gt;timer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;audioMenu.Name" xml:space="preserve">
-    <value>audioMenu</value>
+  <data name="&gt;&gt;ringtoneMenu.Name" xml:space="preserve">
+    <value>ringtoneMenu</value>
   </data>
-  <data name="&gt;&gt;audioMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;ringtoneMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;menuItem3.Name" xml:space="preserve">
-    <value>menuItem3</value>
+  <data name="&gt;&gt;menuItemDefaultRingtone.Name" xml:space="preserve">
+    <value>menuItemDefaultRingtone</value>
   </data>
-  <data name="&gt;&gt;menuItem3.Type" xml:space="preserve">
+  <data name="&gt;&gt;menuItemDefaultRingtone.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;menuItem7.Name" xml:space="preserve">
-    <value>menuItem7</value>
+  <data name="&gt;&gt;menuItemCustomRingtone.Name" xml:space="preserve">
+    <value>menuItemCustomRingtone</value>
   </data>
-  <data name="&gt;&gt;menuItem7.Type" xml:space="preserve">
+  <data name="&gt;&gt;menuItemCustomRingtone.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuItem6.Name" xml:space="preserve">
@@ -3981,10 +3996,10 @@ un designer et développeur basé à Tokyo</value>
   <data name="&gt;&gt;menuItem6.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;menuItem5.Name" xml:space="preserve">
-    <value>menuItem5</value>
+  <data name="&gt;&gt;menuItemEditRingtone.Name" xml:space="preserve">
+    <value>menuItemEditRingtone</value>
   </data>
-  <data name="&gt;&gt;menuItem5.Type" xml:space="preserve">
+  <data name="&gt;&gt;menuItemEditRingtone.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

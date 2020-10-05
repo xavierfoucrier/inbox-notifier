@@ -139,7 +139,7 @@ namespace notifier {
 			notifyIcon.ContextMenu = notifyMenu;
 
 			// attach the context menu to the audio icon
-			audioIcon.ContextMenu = audioMenu;
+			ringtoneIcon.ContextMenu = ringtoneMenu;
 
 			// bind the "PropertyChanged" event of the settings to automatically save the user settings and display the setting label
 			Settings.Default.PropertyChanged += new PropertyChangedEventHandler((object source, PropertyChangedEventArgs target) => {

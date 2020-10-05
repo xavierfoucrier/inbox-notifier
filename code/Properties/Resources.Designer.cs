@@ -207,9 +207,9 @@ namespace notifier.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sound {
+        internal static System.Drawing.Bitmap ringtone {
             get {
-                object obj = ResourceManager.GetObject("sound", resourceCulture);
+                object obj = ResourceManager.GetObject("ringtone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
