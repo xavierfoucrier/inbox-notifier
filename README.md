@@ -11,6 +11,7 @@ Inbox Notifier is provided with **a bunch of useful features that bring your inb
 * SPAM checking - *enforce user to clean SPAMs regularly*
 * Do not disturb mode - *keep focus at work*
 * Privacy setting - *choose the privacy level for notifications*
+* Custom ringtone - *select a custom file to use as notification ringtone*
 * Credential managment - *login and logout with ease*
 * Multilingual support - *french/english/german/russian*
 * Inbox statistics preview - *display drafts/labels/unreads/totals messages from the inbox*
