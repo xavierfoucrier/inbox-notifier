@@ -264,6 +264,24 @@ will automatically open the inbox.</value>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Mail</value>
   </data>
+  <data name="ringtoneIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAACF0lEQVQ4T6XMXUhTYRgH8LNn
+        CGEXlqFlHxThhV4k0V1dtW4CIwghglhUlBIeFkTsQmqr1gdEFwsxlsGQYDlxERR5LnJFH3ghy1GNloKW
+        bbrtaHMV23Fb5tPznM7emnRTHfid9z3Pef5/CRH/yx+Hf0N/PZBBemgDacAGVcpJsJBjxE46DHznmYV3
+        eJczSwsaB8/UdYwPnle02ZH4Yj5WwGICsTiNi/mPBU0NxccfORXe4d2ygvsyrAue2+zKpoZjOP8BMTtG
+        RoW3Tzw/Z/MTmJ1+EQs6N7k4IwrutcOh1JveMOZo6WukjP9yi07Msu8wNeINc0YUBE6Ac+FLNIeZMLIe
+        RzOGlav6WZJ8f1anTl7CdKw7xxlR4G+DC98yrzWce4kLn56jx74LnwVa9bNEnXQJqYkrGmdEge84tMaH
+        b0WK6SB+nurCubhbcNt26ErfmanrOPq4LcIZUXD7KGy8e3p9pxr1JHOqD7MJb5mnfbK4J15dTPafqunk
+        jCjoOQKS9zBs88nV7pDfOjQbvaFqyb5iYSaAhZl+zBM+Q3cODPnklW7e5Ywo2LfVJNl3g3TTCqs8Vmgh
+        DtJFuku+pxXkk3d4t2GN6VfB78+eJlOZ5i0A7TvN26/tN/ey+lqTsWlkjQKeVpBKsoLUkg2knjSSJksD
+        HHTsNQ/w3fhXubTATLhkGVlOqkg1qSGrSR1Za9z5X4Uo+Hco/QCNzUp2aYqo8gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ringtoneIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 72</value>
+  </data>
   <data name="fieldStepDelay.Items1" xml:space="preserve">
     <value>hour(s)</value>
   </data>
@@ -598,6 +616,12 @@ a Tokyo-based designer and developer</value>
   </data>
   <data name="menuItemExit.Text" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="menuItemDefaultRingtone.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="menuItemEditRingtone.Text" xml:space="preserve">
+    <value>Change ringtone</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
