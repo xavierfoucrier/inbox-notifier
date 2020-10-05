@@ -132,13 +132,13 @@ namespace notifier {
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
-			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.ringtoneMenu = new System.Windows.Forms.ContextMenu();
 			this.menuItemDefaultRingtone = new System.Windows.Forms.MenuItem();
 			this.menuItemCustomRingtone = new System.Windows.Forms.MenuItem();
 			this.menuItem6 = new System.Windows.Forms.MenuItem();
 			this.menuItemEditRingtone = new System.Windows.Forms.MenuItem();
 			this.openRingtoneDialog = new System.Windows.Forms.OpenFileDialog();
+			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -1092,11 +1092,6 @@ namespace notifier {
 			// 
 			this.timerReconnect.Tick += new System.EventHandler(this.timerReconnect_Tick);
 			// 
-			// timer
-			// 
-			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
-			this.timer.Tick += new System.EventHandler(this.timer_Tick);
-			// 
 			// ringtoneMenu
 			// 
 			this.ringtoneMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
@@ -1104,10 +1099,10 @@ namespace notifier {
             this.menuItemCustomRingtone,
             this.menuItem6,
             this.menuItemEditRingtone});
+			this.ringtoneMenu.Popup += new System.EventHandler(this.ringtoneMenu_Popup);
 			// 
 			// menuItemDefaultRingtone
 			// 
-			this.menuItemDefaultRingtone.Checked = true;
 			this.menuItemDefaultRingtone.Index = 0;
 			this.menuItemDefaultRingtone.RadioCheck = true;
 			resources.ApplyResources(this.menuItemDefaultRingtone, "menuItemDefaultRingtone");
@@ -1115,6 +1110,7 @@ namespace notifier {
 			// 
 			// menuItemCustomRingtone
 			// 
+			this.menuItemCustomRingtone.Checked = global::notifier.Properties.Settings.Default.Ringtone;
 			this.menuItemCustomRingtone.Index = 1;
 			this.menuItemCustomRingtone.RadioCheck = true;
 			resources.ApplyResources(this.menuItemCustomRingtone, "menuItemCustomRingtone");
@@ -1134,6 +1130,11 @@ namespace notifier {
 			// openRingtoneDialog
 			// 
 			resources.ApplyResources(this.openRingtoneDialog, "openRingtoneDialog");
+			// 
+			// timer
+			// 
+			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
+			this.timer.Tick += new System.EventHandler(this.timer_Tick);
 			// 
 			// Main
 			// 

@@ -4245,9 +4245,6 @@ un designer et développeur basé à Tokyo</value>
   <metadata name="timerReconnect.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>313, 17</value>
   </metadata>
-  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>235, 17</value>
-  </metadata>
   <metadata name="ringtoneMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>450, 17</value>
   </metadata>
@@ -4255,7 +4252,7 @@ un designer et développeur basé à Tokyo</value>
     <value>Par défaut</value>
   </data>
   <data name="menuItemCustomRingtone.Text" xml:space="preserve">
-    <value>[ custom ]</value>
+    <value>...</value>
   </data>
   <data name="menuItem6.Text" xml:space="preserve">
     <value>-</value>
@@ -4269,6 +4266,9 @@ un designer et développeur basé à Tokyo</value>
   <data name="openRingtoneDialog.Filter" xml:space="preserve">
     <value>wav|*.wav</value>
   </data>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>235, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -4980,12 +4980,6 @@ un designer et développeur basé à Tokyo</value>
   <data name="&gt;&gt;timerReconnect.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;timer.Name" xml:space="preserve">
-    <value>timer</value>
-  </data>
-  <data name="&gt;&gt;timer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ringtoneMenu.Name" xml:space="preserve">
     <value>ringtoneMenu</value>
   </data>
@@ -5021,6 +5015,12 @@ un designer et développeur basé à Tokyo</value>
   </data>
   <data name="&gt;&gt;openRingtoneDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timer.Name" xml:space="preserve">
+    <value>timer</value>
+  </data>
+  <data name="&gt;&gt;timer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>

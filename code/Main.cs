@@ -647,19 +647,17 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Manage the ringtone menu state
+		/// Manage the ringtone user setting
 		/// </summary>
 		private void menuItemDefaultRingtone_Click(object sender, EventArgs e) {
-			menuItemDefaultRingtone.Checked = true;
-			menuItemCustomRingtone.Checked = false;
+			Settings.Default.Ringtone = false;
 		}
 
 		/// <summary>
-		/// Manage the ringtone menu state
+		/// Manage the ringtone user setting
 		/// </summary>
 		private void menuItemCustomRingtone_Click(object sender, EventArgs e) {
-			menuItemCustomRingtone.Checked = true;
-			menuItemDefaultRingtone.Checked = false;
+			Settings.Default.Ringtone = true;
 		}
 
 		/// <summary>
@@ -667,6 +665,17 @@ namespace notifier {
 		/// </summary>
 		private void ringtoneIcon_Click(object sender, EventArgs e) {
 			ringtoneMenu.Show(this, PointToClient(Cursor.Position));
+		}
+
+		/// <summary>
+		/// Manage the ringtone menu based on the user setting
+		/// </summary>
+		private void ringtoneMenu_Popup(object sender, EventArgs e) {
+			menuItemDefaultRingtone.Checked = !Settings.Default.Ringtone;
+			menuItemCustomRingtone.Checked = Settings.Default.Ringtone;
+
+			// display a part of the filename in the menu
+			menuItemCustomRingtone.Text = Path.GetFileName(Settings.Default.RingtoneFile);
 		}
 
 		/// <summary>
@@ -679,9 +688,9 @@ namespace notifier {
 				return;
 			}
 
-			menuItemCustomRingtone.Text = openRingtoneDialog.SafeFileName;
-			menuItemCustomRingtone.Checked = true;
-			menuItemDefaultRingtone.Checked = false;
+			// save the ringtone user setting
+			Settings.Default.Ringtone = true;
+			Settings.Default.RingtoneFile = openRingtoneDialog.FileName;
 		}
 	}
 }
