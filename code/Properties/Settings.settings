@@ -104,5 +104,11 @@
     <Setting Name="EmailAddress" Type="System.String" Scope="User">
       <Value Profile="(Default)">-</Value>
     </Setting>
+    <Setting Name="Ringtone" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RingtoneFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
