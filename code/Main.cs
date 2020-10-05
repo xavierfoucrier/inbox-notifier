@@ -657,7 +657,13 @@ namespace notifier {
 		/// Open the file dialog to select a ringtone
 		/// </summary>
 		private void menuItemEditRingtone_Click(object sender, EventArgs e) {
-			openRingtoneDialog.ShowDialog();
+			DialogResult dialog = openRingtoneDialog.ShowDialog();
+
+			if (dialog == DialogResult.Cancel) {
+				return;
+			}
+
+			menuItemCustomRingtone.Text = openRingtoneDialog.SafeFileName;
 		}
 	}
 }
