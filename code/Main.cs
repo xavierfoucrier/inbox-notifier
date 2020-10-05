@@ -645,5 +645,12 @@ namespace notifier {
 				await GmailService.Inbox.Sync();
 			}
 		}
+
+		/// <summary>
+		/// Display the ringtone menu hover the icon when clicking on it
+		/// </summary>
+		private void ringtoneIcon_Click(object sender, EventArgs e) {
+			ringtoneMenu.Show(this, PointToClient(Cursor.Position));
+		}
 	}
 }

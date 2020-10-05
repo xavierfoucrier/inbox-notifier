@@ -474,9 +474,11 @@ namespace notifier {
 			// 
 			// ringtoneIcon
 			// 
+			this.ringtoneIcon.Cursor = System.Windows.Forms.Cursors.Hand;
 			resources.ApplyResources(this.ringtoneIcon, "ringtoneIcon");
 			this.ringtoneIcon.Name = "ringtoneIcon";
 			this.ringtoneIcon.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(153)))));
+			this.ringtoneIcon.Click += new System.EventHandler(this.ringtoneIcon_Click);
 			// 
 			// fieldStepDelay
 			// 
