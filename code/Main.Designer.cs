@@ -1110,7 +1110,6 @@ namespace notifier {
 			// 
 			// menuItemCustomRingtone
 			// 
-			this.menuItemCustomRingtone.Checked = global::notifier.Properties.Settings.Default.Ringtone;
 			this.menuItemCustomRingtone.Index = 1;
 			this.menuItemCustomRingtone.RadioCheck = true;
 			resources.ApplyResources(this.menuItemCustomRingtone, "menuItemCustomRingtone");

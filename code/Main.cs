@@ -671,11 +671,24 @@ namespace notifier {
 		/// Manage the ringtone menu based on the user setting
 		/// </summary>
 		private void ringtoneMenu_Popup(object sender, EventArgs e) {
+
+			// display the ringtone file name
+			if (Settings.Default.RingtoneFile != "") {
+				menuItemCustomRingtone.Visible = true;
+				menuItemCustomRingtone.Enabled = true;
+				menuItemCustomRingtone.Text = Path.GetFileName(Settings.Default.RingtoneFile);
+			}
+
+			// switch to the default ringtone if the audio file can't be found
+			if (!File.Exists(Settings.Default.RingtoneFile)) {
+				Settings.Default.Ringtone = false;
+				menuItemCustomRingtone.Enabled = false;
+				menuItemCustomRingtone.Text = $"{menuItemCustomRingtone.Text} - {Translation.notFound}";
+			}
+
+			// display the current ringtone state
 			menuItemDefaultRingtone.Checked = !Settings.Default.Ringtone;
 			menuItemCustomRingtone.Checked = Settings.Default.Ringtone;
-
-			// display a part of the filename in the menu
-			menuItemCustomRingtone.Text = Path.GetFileName(Settings.Default.RingtoneFile);
 		}
 
 		/// <summary>
