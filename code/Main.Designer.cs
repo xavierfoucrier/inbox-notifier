@@ -475,6 +475,8 @@ namespace notifier {
 			// ringtoneIcon
 			// 
 			this.ringtoneIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ringtoneIcon.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.ringtoneIcon.Enabled = global::notifier.Properties.Settings.Default.AudioNotification;
 			resources.ApplyResources(this.ringtoneIcon, "ringtoneIcon");
 			this.ringtoneIcon.Name = "ringtoneIcon";
 			this.ringtoneIcon.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(153)))));
