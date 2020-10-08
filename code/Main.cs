@@ -138,6 +138,9 @@ namespace notifier {
 			// attach the context menu to the systray icon
 			notifyIcon.ContextMenu = notifyMenu;
 
+			// attach the context menu to the audio icon
+			ringtoneIcon.ContextMenu = ringtoneMenu;
+
 			// bind the "PropertyChanged" event of the settings to automatically save the user settings and display the setting label
 			Settings.Default.PropertyChanged += new PropertyChangedEventHandler((object source, PropertyChangedEventArgs target) => {
 				Settings.Default.Save();
@@ -641,6 +644,66 @@ namespace notifier {
 			if (SchedulerService.GetDayOfWeek(fieldDayOfWeek.SelectedIndex) == DateTime.Now.DayOfWeek) {
 				await GmailService.Inbox.Sync();
 			}
+		}
+
+		/// <summary>
+		/// Manage the ringtone user setting
+		/// </summary>
+		private void menuItemDefaultRingtone_Click(object sender, EventArgs e) {
+			Settings.Default.Ringtone = false;
+		}
+
+		/// <summary>
+		/// Manage the ringtone user setting
+		/// </summary>
+		private void menuItemCustomRingtone_Click(object sender, EventArgs e) {
+			Settings.Default.Ringtone = true;
+		}
+
+		/// <summary>
+		/// Display the ringtone menu hover the icon when clicking on it
+		/// </summary>
+		private void ringtoneIcon_Click(object sender, EventArgs e) {
+			ringtoneMenu.Show(this, PointToClient(Cursor.Position));
+		}
+
+		/// <summary>
+		/// Manage the ringtone menu based on the user setting
+		/// </summary>
+		private void ringtoneMenu_Popup(object sender, EventArgs e) {
+
+			// display the ringtone file name
+			if (Settings.Default.RingtoneFile != "") {
+				menuItemCustomRingtone.Visible = true;
+				menuItemCustomRingtone.Enabled = true;
+				menuItemCustomRingtone.Text = Path.GetFileName(Settings.Default.RingtoneFile);
+			}
+
+			// switch to the default ringtone if the audio file can't be found
+			if (!File.Exists(Settings.Default.RingtoneFile)) {
+				Settings.Default.Ringtone = false;
+				menuItemCustomRingtone.Enabled = false;
+				menuItemCustomRingtone.Text = $"{menuItemCustomRingtone.Text} - {Translation.notFound}";
+			}
+
+			// display the current ringtone state
+			menuItemDefaultRingtone.Checked = !Settings.Default.Ringtone;
+			menuItemCustomRingtone.Checked = Settings.Default.Ringtone;
+		}
+
+		/// <summary>
+		/// Open the file dialog to select a ringtone
+		/// </summary>
+		private void menuItemEditRingtone_Click(object sender, EventArgs e) {
+			DialogResult dialog = openRingtoneDialog.ShowDialog();
+
+			if (dialog == DialogResult.Cancel) {
+				return;
+			}
+
+			// save the ringtone user setting
+			Settings.Default.Ringtone = true;
+			Settings.Default.RingtoneFile = openRingtoneDialog.FileName;
 		}
 	}
 }

@@ -63,6 +63,7 @@ namespace notifier {
 			this.fieldNotificationBehavior = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.ringtoneIcon = new System.Windows.Forms.LinkLabel();
 			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
 			this.fieldSpamNotification = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
@@ -131,6 +132,12 @@ namespace notifier {
 			this.menuItem2 = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
 			this.timerReconnect = new System.Windows.Forms.Timer(this.components);
+			this.ringtoneMenu = new System.Windows.Forms.ContextMenu();
+			this.menuItemDefaultRingtone = new System.Windows.Forms.MenuItem();
+			this.menuItemCustomRingtone = new System.Windows.Forms.MenuItem();
+			this.menuItem6 = new System.Windows.Forms.MenuItem();
+			this.menuItemEditRingtone = new System.Windows.Forms.MenuItem();
+			this.openRingtoneDialog = new System.Windows.Forms.OpenFileDialog();
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.tabControl.SuspendLayout();
 			this.tabPageGeneral.SuspendLayout();
@@ -456,6 +463,7 @@ namespace notifier {
 			// groupBox2
 			// 
 			resources.ApplyResources(this.groupBox2, "groupBox2");
+			this.groupBox2.Controls.Add(this.ringtoneIcon);
 			this.groupBox2.Controls.Add(this.fieldStepDelay);
 			this.groupBox2.Controls.Add(this.fieldSpamNotification);
 			this.groupBox2.Controls.Add(this.label1);
@@ -464,6 +472,16 @@ namespace notifier {
 			this.groupBox2.Controls.Add(this.fieldAudioNotification);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.TabStop = false;
+			// 
+			// ringtoneIcon
+			// 
+			resources.ApplyResources(this.ringtoneIcon, "ringtoneIcon");
+			this.ringtoneIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ringtoneIcon.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::notifier.Properties.Settings.Default, "AudioNotification", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.ringtoneIcon.Enabled = global::notifier.Properties.Settings.Default.AudioNotification;
+			this.ringtoneIcon.Name = "ringtoneIcon";
+			this.ringtoneIcon.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(153)))));
+			this.ringtoneIcon.Click += new System.EventHandler(this.ringtoneIcon_Click);
 			// 
 			// fieldStepDelay
 			// 
@@ -1075,6 +1093,45 @@ namespace notifier {
 			// 
 			this.timerReconnect.Tick += new System.EventHandler(this.timerReconnect_Tick);
 			// 
+			// ringtoneMenu
+			// 
+			this.ringtoneMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemDefaultRingtone,
+            this.menuItemCustomRingtone,
+            this.menuItem6,
+            this.menuItemEditRingtone});
+			resources.ApplyResources(this.ringtoneMenu, "ringtoneMenu");
+			this.ringtoneMenu.Popup += new System.EventHandler(this.ringtoneMenu_Popup);
+			// 
+			// menuItemDefaultRingtone
+			// 
+			resources.ApplyResources(this.menuItemDefaultRingtone, "menuItemDefaultRingtone");
+			this.menuItemDefaultRingtone.Index = 0;
+			this.menuItemDefaultRingtone.RadioCheck = true;
+			this.menuItemDefaultRingtone.Click += new System.EventHandler(this.menuItemDefaultRingtone_Click);
+			// 
+			// menuItemCustomRingtone
+			// 
+			resources.ApplyResources(this.menuItemCustomRingtone, "menuItemCustomRingtone");
+			this.menuItemCustomRingtone.Index = 1;
+			this.menuItemCustomRingtone.RadioCheck = true;
+			this.menuItemCustomRingtone.Click += new System.EventHandler(this.menuItemCustomRingtone_Click);
+			// 
+			// menuItem6
+			// 
+			resources.ApplyResources(this.menuItem6, "menuItem6");
+			this.menuItem6.Index = 2;
+			// 
+			// menuItemEditRingtone
+			// 
+			resources.ApplyResources(this.menuItemEditRingtone, "menuItemEditRingtone");
+			this.menuItemEditRingtone.Index = 3;
+			this.menuItemEditRingtone.Click += new System.EventHandler(this.menuItemEditRingtone_Click);
+			// 
+			// openRingtoneDialog
+			// 
+			resources.ApplyResources(this.openRingtoneDialog, "openRingtoneDialog");
+			// 
 			// timer
 			// 
 			this.timer.Interval = global::notifier.Properties.Settings.Default.TimerInterval;
@@ -1248,5 +1305,12 @@ namespace notifier {
 		private System.Windows.Forms.CheckBox checkBox2;
 		private System.Windows.Forms.Label labelNotificationOpenSimplifiedHTML;
 				internal System.Windows.Forms.TabPage tabPageAccount;
-		}
+		private System.Windows.Forms.LinkLabel ringtoneIcon;
+		internal System.Windows.Forms.ContextMenu ringtoneMenu;
+		private System.Windows.Forms.MenuItem menuItemDefaultRingtone;
+		private System.Windows.Forms.MenuItem menuItemEditRingtone;
+		private System.Windows.Forms.MenuItem menuItem6;
+		private System.Windows.Forms.MenuItem menuItemCustomRingtone;
+		private System.Windows.Forms.OpenFileDialog openRingtoneDialog;
+	}
 }

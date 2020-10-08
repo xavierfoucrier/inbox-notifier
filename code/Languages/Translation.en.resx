@@ -294,6 +294,9 @@ This option is not enabled on this type of application.</value>
   <data name="noMessage" xml:space="preserve">
     <value>No new message</value>
   </data>
+  <data name="notFound" xml:space="preserve">
+    <value>Not found</value>
+  </data>
   <data name="off" xml:space="preserve">
     <value>Disabled</value>
   </data>

@@ -108,7 +108,9 @@
     <Compile Include="Scheduler.cs" />
     <Compile Include="TimeSlot.cs" />
     <Compile Include="Update.cs" />
-    <EmbeddedResource Include="Languages\Translation.de.resx" />
+    <EmbeddedResource Include="Languages\Translation.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Languages\Translation.ru.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -258,6 +260,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\oauth\message.html" />
+    <None Include="Resources\ringtone.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

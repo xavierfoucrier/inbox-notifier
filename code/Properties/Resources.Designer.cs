@@ -19,7 +19,7 @@ namespace notifier.Properties {
     // à l'aide d'un outil, tel que ResGen ou Visual Studio.
     // Pour ajouter ou supprimer un membre, modifiez votre fichier .ResX, puis réexécutez ResGen
     // avec l'option /str ou régénérez votre projet VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -131,15 +131,14 @@ namespace notifier.Properties {
         ///  &lt;body&gt;
         ///    &lt;style media=&quot;screen&quot;&gt;
         ///      :root {
-        ///        --base-color: #2d5bdc;
-        ///        --contrast-color: #fff;
+        ///        --base-color: #fff;
+        ///        --contrast-color: #003899;
+        ///        --darken-color: #002462;
         ///        --font: &apos;Noto Sans&apos;;
         ///      }
         ///
         ///      body {
-        ///        display: flex;
-        ///        flex-direction: column;
-        ///    [le reste de la chaîne a été tronqué]&quot;;.
+        ///        overflow: hidden;        /// [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         internal static string oauth_message {
             get {
@@ -202,6 +201,16 @@ namespace notifier.Properties {
             get {
                 object obj = ResourceManager.GetObject("retry", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ringtone {
+            get {
+                object obj = ResourceManager.GetObject("ringtone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
