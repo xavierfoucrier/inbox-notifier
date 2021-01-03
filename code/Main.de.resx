@@ -535,7 +535,7 @@ automatisch den Posteingang öffnen.</value>
     <value>232, 34</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
-    <value>©2020. Alle Rechte vorbehalten.
+    <value>©2021. Alle Rechte vorbehalten.
 Open Source, unter der MIT-Lizenz vertrieben</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">

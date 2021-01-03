@@ -544,7 +544,7 @@
     <value>210, 34</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
-    <value>© 2020. Все права защищены.
+    <value>©2021. Все права защищены.
 Открытый исходный код, лицензия MIT</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
