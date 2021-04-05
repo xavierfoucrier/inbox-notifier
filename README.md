@@ -71,8 +71,7 @@ If you want to report a bug or if you just want to request for a new feature/imp
 
 
 ## Sponsor
-Become a Patron and support this project!  
-https://www.patreon.com/inboxnotifier
+If you like this application and want to give some recognition, **consider becoming a [Github sponsor](https://www.github.com/sponsors/xavierfoucrier)** to keep this application up to date.
 
 
 ## License
