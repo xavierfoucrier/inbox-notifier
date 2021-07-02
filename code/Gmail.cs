@@ -195,7 +195,7 @@ namespace notifier {
 
 				// wait for the user validation, only if the user has not already authorized the application
 				UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
-					GoogleClientSecrets.Load(stream).Secrets,
+					GoogleClientSecrets.FromStream(stream).Secrets,
 					new string[] { GmailService.Scope.GmailModify },
 					"user",
 					cancellation.Token,
