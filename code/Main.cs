@@ -195,7 +195,7 @@ namespace notifier {
 			tip.SetToolTip(linkVersion, $"{Settings.Default.GITHUB_REPOSITORY}/releases/tag/{Core.Version}");
 
 			// display a tooltip for the license link
-			tip.SetToolTip(linkPrivacy, $"{Settings.Default.GITHUB_REPOSITORY}/blob/master/PRIVACY.md");
+			tip.SetToolTip(linkPrivacy, $"{Settings.Default.GITHUB_REPOSITORY}/blob/main/PRIVACY.md");
 
 			// display a tooltip for the website link
 			tip.SetToolTip(linkWebsiteYusuke, Settings.Default.SITE_YUSUKE);
@@ -204,7 +204,7 @@ namespace notifier {
 			tip.SetToolTip(linkWebsiteXavier, Settings.Default.SITE_AUTHOR);
 
 			// display a tooltip for the license link
-			tip.SetToolTip(linkLicense, $"{Settings.Default.GITHUB_REPOSITORY}/blob/master/LICENSE.md");
+			tip.SetToolTip(linkLicense, $"{Settings.Default.GITHUB_REPOSITORY}/blob/main/LICENSE.md");
 		}
 
 		/// <summary>
@@ -341,7 +341,7 @@ namespace notifier {
 		/// Open the Github privacy notice file
 		/// </summary>
 		private void linkPrivacy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start($"{Settings.Default.GITHUB_REPOSITORY}/blob/master/PRIVACY.md");
+			Process.Start($"{Settings.Default.GITHUB_REPOSITORY}/blob/main/PRIVACY.md");
 		}
 
 		/// <summary>
@@ -362,9 +362,9 @@ namespace notifier {
 		/// Open the Github license file
 		/// </summary>
 		private void linkLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-			Process.Start($"{Settings.Default.GITHUB_REPOSITORY}/blob/master/LICENSE.md");
+			Process.Start($"{Settings.Default.GITHUB_REPOSITORY}/blob/main/LICENSE.md");
 		}
-		
+
 		/// <summary>
 		/// Hide the settings saved label
 		/// </summary>
