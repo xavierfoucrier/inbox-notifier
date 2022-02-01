@@ -516,7 +516,7 @@ will automatically open the inbox.</value>
     <value>223, 34</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
-    <value>©2021. All rights reserved.
+    <value>©2022. All rights reserved.
 Open Source, distributed under MIT License</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
