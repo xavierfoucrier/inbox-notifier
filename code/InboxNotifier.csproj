@@ -227,7 +227,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Google.Apis.Gmail.v1">
-      <Version>1.55.0.2510</Version>
+      <Version>1.57.0.2622</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
       <Version>1.11.42</Version>
