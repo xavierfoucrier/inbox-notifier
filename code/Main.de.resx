@@ -267,7 +267,7 @@ automatisch den Posteingang öffnen.</value>
     <value>Öffnen Sie die vereinfachte Nachricht</value>
   </data>
   <data name="fieldNotificationBehavior.Items4" xml:space="preserve">
-    <value>Posteingang öffnen</value>
+    <value>Öffnen Sie die posteingang </value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 13</value>
