@@ -34,9 +34,10 @@ namespace notifier {
 		/// </summary>
 		public enum Behavior : uint {
 			DoNothing = 0,
-			Open = 1,
+			OpenMessage = 1,
 			MarkAsRead = 2,
-			OpenSimplifiedHTML = 3
+			OpenSimplifiedHTML = 3,
+			OpenInbox = 4
 		}
 
 		/// <summary>
@@ -107,7 +108,17 @@ namespace notifier {
 				if (UI.GmailService.Inbox.UnreadThreads != 0) {
 					return;
 				}
-			} else {
+			}
+
+			// open the inbox if the notification behavior is set to "open the inbox"
+			if (balloon && Settings.Default.NotificationBehavior == (uint)Behavior.OpenInbox) {
+				Process.Start($"{GetBaseURL()}");
+
+				return;
+			}
+
+			// open the inbox if the notification behavior is set to "open the message"
+			if (balloon && Settings.Default.NotificationBehavior == (uint)Behavior.OpenMessage) {
 				Process.Start($"{GetBaseURL()}/{Tag}");
 			}
 
