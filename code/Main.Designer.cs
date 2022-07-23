@@ -451,7 +451,8 @@ namespace notifier {
             resources.GetString("fieldNotificationBehavior.Items"),
             resources.GetString("fieldNotificationBehavior.Items1"),
             resources.GetString("fieldNotificationBehavior.Items2"),
-            resources.GetString("fieldNotificationBehavior.Items3")});
+            resources.GetString("fieldNotificationBehavior.Items3"),
+            resources.GetString("fieldNotificationBehavior.Items4")});
 			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
 			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.fieldNotificationBehavior_SelectionChangeCommitted);
 			// 

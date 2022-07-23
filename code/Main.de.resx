@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabPageGeneral.Text" xml:space="preserve">
-    <value>General</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Schnittstelle</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 109</value>
@@ -146,8 +140,8 @@ nächsten Start der Anwendung.</value>
   <data name="label3.Text" xml:space="preserve">
     <value>Sprache:</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Verhalten</value>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Schnittstelle</value>
   </data>
   <data name="fieldAudioPop.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 17</value>
@@ -180,11 +174,11 @@ nächsten Start der Anwendung.</value>
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>Fragen Sie mich bitte, bevor sie die Anwendung zu verlassen</value>
   </data>
-  <data name="tabPageAccount.Text" xml:space="preserve">
-    <value>Konto</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Verhalten</value>
   </data>
-  <data name="groupBox8.Text" xml:space="preserve">
-    <value>Statistiken</value>
+  <data name="tabPageGeneral.Text" xml:space="preserve">
+    <value>General</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -204,8 +198,8 @@ nächsten Start der Anwendung.</value>
   <data name="label6.Text" xml:space="preserve">
     <value>Empfangsbox</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Beglaubigung</value>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Statistiken</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 13</value>
@@ -222,11 +216,11 @@ nächsten Start der Anwendung.</value>
   <data name="buttonGmailDisconnect.Text" xml:space="preserve">
     <value>Austragen</value>
   </data>
-  <data name="tabPageNotification.Text" xml:space="preserve">
-    <value>Benachrichtigung</value>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Beglaubigung</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Verhalten</value>
+  <data name="tabPageAccount.Text" xml:space="preserve">
+    <value>Konto</value>
   </data>
   <data name="labelNotificationOpenSimplifiedHTML.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 71</value>
@@ -272,14 +266,17 @@ automatisch den Posteingang öffnen.</value>
   <data name="fieldNotificationBehavior.Items3" xml:space="preserve">
     <value>Öffnen Sie die vereinfachte Nachricht</value>
   </data>
+  <data name="fieldNotificationBehavior.Items4" xml:space="preserve">
+    <value>Posteingang öffnen</value>
+  </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 13</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Wenn über die Meldung klicken:</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Post</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Verhalten</value>
   </data>
   <data name="ringtoneIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -338,10 +335,10 @@ automatisch den Posteingang öffnen.</value>
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Sound-Benachrichtigung</value>
   </data>
-  <data name="tabPagePrivacy.Text" xml:space="preserve">
-    <value>Vertraulichkeit</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Post</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
+  <data name="tabPageNotification.Text" xml:space="preserve">
     <value>Benachrichtigung</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
@@ -368,11 +365,11 @@ automatisch den Posteingang öffnen.</value>
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Alle anzeigen Inhalt der Nachricht</value>
   </data>
-  <data name="tabPageSchedule.Text" xml:space="preserve">
-    <value>Planung</value>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Benachrichtigung</value>
   </data>
-  <data name="groupBox11.Text" xml:space="preserve">
-    <value>Zeitplan</value>
+  <data name="tabPagePrivacy.Text" xml:space="preserve">
+    <value>Vertraulichkeit</value>
   </data>
   <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -434,8 +431,8 @@ automatisch den Posteingang öffnen.</value>
   <data name="fieldDayOfWeek.Items6" xml:space="preserve">
     <value>Sonntag</value>
   </data>
-  <data name="groupBox10.Text" xml:space="preserve">
-    <value>Verhalten</value>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Zeitplan</value>
   </data>
   <data name="checkBox2.Text" xml:space="preserve">
     <value>Deaktivieren Sie die Suche nach Updates</value>
@@ -452,11 +449,11 @@ automatisch den Posteingang öffnen.</value>
   <data name="fieldScheduler.Text" xml:space="preserve">
     <value>Geplante Synchronisierung aktivieren</value>
   </data>
-  <data name="tabPageUpdate.Text" xml:space="preserve">
-    <value>Updates</value>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Verhalten</value>
   </data>
-  <data name="groupBox9.Text" xml:space="preserve">
-    <value>Verfügbarkeit</value>
+  <data name="tabPageSchedule.Text" xml:space="preserve">
+    <value>Planung</value>
   </data>
   <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 99</value>
@@ -491,8 +488,8 @@ automatisch den Posteingang öffnen.</value>
   <data name="label8.Text" xml:space="preserve">
     <value>Letzte Prüfung:</value>
   </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>Verhalten</value>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Verfügbarkeit</value>
   </data>
   <data name="fieldUpdateQuiet.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 96</value>
@@ -515,8 +512,11 @@ automatisch den Posteingang öffnen.</value>
   <data name="fieldUpdateService.Text" xml:space="preserve">
     <value>Aktivieren Sie die automatische Überprüfung von Updates</value>
   </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>Über</value>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Verhalten</value>
+  </data>
+  <data name="tabPageUpdate.Text" xml:space="preserve">
+    <value>Updates</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="linkPrivacy.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
@@ -573,6 +573,9 @@ einem in Tokio ansässigen Designer und Entwickler</value>
   <data name="label13.Text" xml:space="preserve">
     <value>Entwicklung</value>
   </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>Über</value>
+  </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 13</value>
   </data>
@@ -615,9 +618,6 @@ einem in Tokio ansässigen Designer und Entwickler</value>
   <data name="menuItemMarkAsRead.Text" xml:space="preserve">
     <value>Als gelesen markieren</value>
   </data>
-  <data name="menuItemTimout.Text" xml:space="preserve">
-    <value>Bitte nicht stören</value>
-  </data>
   <data name="menuItemTimeoutDisabled.Text" xml:space="preserve">
     <value>Deaktiviert</value>
   </data>
@@ -632,6 +632,9 @@ einem in Tokio ansässigen Designer und Entwickler</value>
   </data>
   <data name="menuItemTimeout5h.Text" xml:space="preserve">
     <value>5 Stunden</value>
+  </data>
+  <data name="menuItemTimout.Text" xml:space="preserve">
+    <value>Bitte nicht stören</value>
   </data>
   <data name="menuItemSettings.Text" xml:space="preserve">
     <value>Offen</value>

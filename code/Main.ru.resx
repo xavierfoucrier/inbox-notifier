@@ -265,6 +265,9 @@
   <data name="fieldNotificationBehavior.Items3" xml:space="preserve">
     <value>открыть сообщение в упрощённой версии</value>
   </data>
+  <data name="fieldNotificationBehavior.Items4" xml:space="preserve">
+    <value>открыть почтовый ящик</value>
+  </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 13</value>
   </data>
