@@ -27,3 +27,6 @@ jobs:
 
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1
+
+      - name: Restore NuGet packages
+        run: nuget restore InboxNotifier.sln
