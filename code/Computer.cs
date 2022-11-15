@@ -34,7 +34,7 @@ namespace notifier {
 		/// </summary>
 		/// <param name="form">Reference to the application main window</param>
 		public Computer(ref Main form) {
-			var i = true
+			UI = form;
 		}
 
 		/// <summary>
