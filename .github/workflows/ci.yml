@@ -31,6 +31,10 @@ jobs:
       - name: Restore NuGet packages
         run: nuget restore InboxNotifier.sln
 
-      - name: Build solution
+      - name: Build solution — Debug
         run: |
           msbuild.exe InboxNotifier.sln /p:configuration="Debug" /p:platform="Any CPU"
+
+      - name: Build solution — Release 32 bits (x86)
+        run: |
+          msbuild.exe InboxNotifier.sln /p:configuration="Release x86" /p:platform="Any CPU"
