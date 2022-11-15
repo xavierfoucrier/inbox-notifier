@@ -152,7 +152,6 @@ namespace notifier {
 
 			// bind all computer services
 			ComputerService.BindNetwork();
-			ComputerService.BindPowerMode();
 			ComputerService.BindSessionSwitch();
 
 			// display the notification labels

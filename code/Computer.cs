@@ -74,20 +74,7 @@ namespace notifier {
 		}
 
 		/// <summary>
-		/// Bind the "PowerModeChanged" event to automatically pause/resume the application synchronization
-		/// </summary>
-		public void BindPowerMode() {
-			SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler((object source, PowerModeChangedEventArgs target) => {
-				if (target.Mode == PowerModes.Suspend) {
-
-					// suspend the main timer
-					UI.timer.Enabled = false;
-				}
-			});
-		}
-
-		/// <summary>
-		/// Bind the "SessionSwitch" event to automatically sync the inbox on session unlocking
+		/// Bind the "SessionSwitch" event to automatically pause/resume the application synchronization
 		/// </summary>
 		public void BindSessionSwitch() {
 			SystemEvents.SessionSwitch += new SessionSwitchEventHandler(async (object source, SessionSwitchEventArgs target) => {
