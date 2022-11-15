@@ -19,5 +19,8 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v3
 
-      - name: Display dotnet version
-        run: dotnet --version
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1
