@@ -1,8 +1,0 @@
-language: csharp
-solution: code/InboxNotifier.sln
-
-script:
-  - msbuild /p:Configuration=Debug code/InboxNotifier.sln
-
-notifications:
-  - email: false
