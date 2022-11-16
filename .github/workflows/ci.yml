@@ -42,3 +42,4 @@ jobs:
       - name: Build solution — Release 64 bits (x64)
         run: |
           msbuild.exe InboxNotifier.sln /p:configuration="Release x64" /p:platform="Any CPU" /m
+
