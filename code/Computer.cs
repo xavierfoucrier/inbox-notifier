@@ -41,7 +41,7 @@ namespace notifier {
 		/// Bind the "NetworkAvailabilityChanged" event to automatically sync the inbox when a network is available
 		/// </summary>
 		public void BindNetwork() {
-			NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(async (object source, NetworkAvailabilityEventArgs target) => {
+			NetworkChange.NetworkAvailabilityChanged += async (object source, NetworkAvailabilityEventArgs target) => {
 
 				// stop the reconnect process if it is running
 				if (UI.GmailService.Inbox.ReconnectionAttempts != 0) {
@@ -70,14 +70,14 @@ namespace notifier {
 
 					break;
 				}
-			});
+			};
 		}
 
 		/// <summary>
 		/// Bind the "SessionSwitch" event to automatically pause/resume the application synchronization
 		/// </summary>
 		public void BindSessionSwitch() {
-			SystemEvents.SessionSwitch += new SessionSwitchEventHandler(async (object source, SessionSwitchEventArgs target) => {
+			SystemEvents.SessionSwitch += async (object source, SessionSwitchEventArgs target) => {
 
 				// sync the inbox when the user is unlocking the Windows session
 				if (target.Reason == SessionSwitchReason.SessionUnlock) {
@@ -102,7 +102,7 @@ namespace notifier {
 					UI.timerReconnect.Interval = 100;
 					UI.GmailService.Inbox.ReconnectionAttempts = 0;
 				}
-			});
+			};
 		}
 
 		/// <summary>

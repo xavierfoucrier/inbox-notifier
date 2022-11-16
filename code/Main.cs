@@ -142,13 +142,13 @@ namespace notifier {
 			ringtoneIcon.ContextMenu = ringtoneMenu;
 
 			// bind the "PropertyChanged" event of the settings to automatically save the user settings and display the setting label
-			Settings.Default.PropertyChanged += new PropertyChangedEventHandler((object source, PropertyChangedEventArgs target) => {
+			Settings.Default.PropertyChanged += (object source, PropertyChangedEventArgs target) => {
 				Settings.Default.Save();
 
 				if (target.PropertyName != "UpdateControl") {
 					labelSettingsSaved.Visible = true;
 				}
-			});
+			};
 
 			// bind all computer services
 			ComputerService.BindNetwork();
