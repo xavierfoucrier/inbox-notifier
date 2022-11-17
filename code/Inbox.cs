@@ -197,7 +197,8 @@ namespace notifier {
 						UsersResource.MessagesResource.ListRequest messages = User.Messages.List("me");
 						messages.LabelIds = "UNREAD";
 						messages.MaxResults = 1;
-						Google.Apis.Gmail.v1.Data.Message message = await User.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
+
+						Message message = await User.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
 							return m.Result.Messages.First().Id;
 						})).ExecuteAsync();
 
