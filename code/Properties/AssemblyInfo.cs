@@ -1,6 +1,6 @@
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Resources;
+using System.Runtime.InteropServices;
 
 // Les informations générales relatives à un assembly dépendent de 
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
@@ -14,7 +14,7 @@ using System.Resources;
 [assembly: AssemblyCulture("")]
 
 #if DEBUG
-	[assembly: AssemblyConfiguration("Debug")]
+[assembly: AssemblyConfiguration("Debug")]
 #else
 	[assembly: AssemblyConfiguration("Release")]
 #endif
