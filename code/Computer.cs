@@ -59,7 +59,7 @@ namespace notifier {
 					}
 
 					// discard virtual cards (like virtual box, virtual pc, etc.) and microsoft loopback adapter (showing as ethernet card)
-					if (network.Name.ToLower().Contains("virtual") || network.Description.ToLower().Contains("virtual") || network.Description.ToLower() == ("microsoft loopback adapter")) {
+					if (network.Name.ToLower().Contains("virtual") || network.Description.ToLower().Contains("virtual") || network.Description.ToLower().Contains("microsoft loopback adapter")) {
 						continue;
 					}
 
