@@ -208,16 +208,19 @@ namespace notifier {
 							string from = "";
 
 							foreach (MessagePartHeader header in message.Payload.Headers) {
-								if (header.Name == "Subject") {
-									subject = string.IsNullOrEmpty(header.Value) ? Translation.newUnreadMessage : header.Value;
-								} else if (header.Name == "From") {
-									Match match = Regex.Match(header.Value, ".* <");
+								string name = header.Name.ToLower();
+								string value = header.Value;
+
+								if (name == "subject") {
+									subject = string.IsNullOrEmpty(value) ? Translation.newUnreadMessage : value;
+								} else if (name == "from") {
+									Match match = Regex.Match(value, ".* <");
 
 									if (match.Length != 0) {
 										from = match.Captures[0].Value.Replace(" <", "").Replace("\"", "");
 									} else {
-										match = Regex.Match(header.Value, "<?.*>?");
-										from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, $"{Box.ThreadsUnread} {Translation.unreadMessage}");
+										match = Regex.Match(value, "<?.*>?");
+										from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : value.Replace(match.Value, $"{Box.ThreadsUnread} {Translation.unreadMessage}");
 									}
 								}
 							}
