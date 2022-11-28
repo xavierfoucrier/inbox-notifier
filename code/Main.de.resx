@@ -633,6 +633,9 @@ einem in Tokio ansässigen Designer und Entwickler</value>
   <data name="menuItemTimeout5h.Text" xml:space="preserve">
     <value>5 Stunden</value>
   </data>
+  <data name="menuItemTimeoutIndefinitely.Text" xml:space="preserve">
+    <value>Unbegrenzt</value>
+  </data>
   <data name="menuItemTimout.Text" xml:space="preserve">
     <value>Bitte nicht stören</value>
   </data>
