@@ -118,101 +118,101 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="applicationExit" xml:space="preserve">
-    <value>Beim Schließen der Anwendung</value>
+    <value>Anwendung schließen</value>
   </data>
   <data name="applicationExitQuestion" xml:space="preserve">
-    <value>Sie sind über die Anwendung zu verlassen.
+    <value>Sie sind dabei, die Anwendung zu schließen.
 
-Wollen Sie wirklich beenden wollen?</value>
+Möchten Sie wirklich fortfahren?</value>
   </data>
   <data name="attachment" xml:space="preserve">
-    <value>anhang</value>
+    <value>Anhang</value>
   </data>
   <data name="attachments" xml:space="preserve">
-    <value>anhänge</value>
+    <value>Anhänge</value>
   </data>
   <data name="authenticationCanceled" xml:space="preserve">
-    <value>Die Anwendung "Inbox Notifier" konnte keine Verbindung zu Ihrem Google Mail-Konto herstellen: Sie haben {timeout} Sekunden, um die Anwendung für den Zugriff auf Ihr Konto zu autorisieren. Danach müssen Sie den Vorgang erneut starten.
+    <value>Inbox Notifier konnte sich nicht bei Ihrem Gmail-Konto anmelden: Sie haben {timeout} Sekunden Zeit, um der Anwendung den Zugriff auf Ihr Konto zu erlauben, nach Ablauf dieser Zeit müssen Sie den Vorgang wiederholen.
 
 Dieser Schritt ist für das ordnungsgemäße Funktionieren der Synchronisierung erforderlich und wird nur einmal angefordert. Sie können den Authentifizierungsprozess neu starten oder abbrechen, um die Anwendung zu beenden.</value>
   </data>
   <data name="authenticationDenied" xml:space="preserve">
     <value>Sie haben es abgelehnt, die Zuordnung der Anwendung "Inbox Notifier" zu Ihrem Google Mail-Konto zuzulassen.
 
-Dieser Schritt ist für die Synchronisierung erforderlich und wird nur einmal angefordert. Sie können den Authentifizierungsprozess erneut starten oder abbrechen, um die Anwendung zu beenden.</value>
+Dieser Schritt ist notwendig, damit die Synchronisierung funktioniert, und Sie werden nur einmal dazu aufgefordert. Sie können den Authentifizierungsprozess erneut starten oder abbrechen, um die Anwendung zu verlassen.</value>
   </data>
   <data name="authenticationFailed" xml:space="preserve">
     <value>Fehler bei der Authentifizierung</value>
   </data>
   <data name="authenticationNeeded" xml:space="preserve">
-    <value>Warten auf die Authentifizierung mit Ihrem Google Mail-Konto...</value>
+    <value>Warten auf die Authentifizierung mit Ihrem Gmail-Konto...</value>
   </data>
   <data name="authenticationRequestError" xml:space="preserve">
-    <value>Die Anwendung "Inbox Notifier" konnte keine Verbindung zu Ihrem Google Mail-Konto herstellen: Der Dienst ist zurzeit nicht verfügbar, oder es ist ein unerwarteter Fehler aufgetreten.</value>
+    <value>Inbox Notifier konnte sich nicht bei Ihrem Gmail-Konto anmelden: Der Dienst ist zurzeit nicht verfügbar, oder es ist ein unerwarteter Fehler aufgetreten.</value>
   </data>
   <data name="authenticationRevoked" xml:space="preserve">
-    <value>Die Anwendung "Inbox Notifier" kann keine Verbindung mehr mit Ihrem Google Mail-Konto herstellen: Der Authentifizierungsschlüssel wurde widerrufen.
+    <value>Inbox Notifier konnte sich nicht bei Ihrem Gmail-Konto anmelden: Der Authentifizierungsschlüssel wurde abgelehnt.
 
-Sie müssen die neueste Version der Anwendung herunterladen, um fortfahren zu können.</value>
+Bitte laden Sie die neueste Version der Anwendung herunter, um fortzufahren.</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Fehler</value>
   </data>
   <data name="firstLoad" xml:space="preserve">
-    <value>Inbox Notifier läuft jetzt im Hintergrund auf Ihrem Computer. In wenigen Sekunden werden Sie aufgefordert Konto für die Anmeldung bei Ihrem Google Mail, damit die Anwendung Ihren Posteingang zugreifen.</value>
+    <value>Inbox Notifier läuft jetzt im Hintergrund auf Ihrem Computer. In wenigen Sekunden werden Sie aufgefordert, sich bei Ihrem Gmail-Konto anzumelden, um der Anwendung Zugriff auf Ihren Posteingang zu erlauben.</value>
   </data>
   <data name="gmailDisconnect" xml:space="preserve">
-    <value>Trennen Ihres Gmail Konto</value>
+    <value>Abmelden Ihres Gmail Kontos</value>
   </data>
   <data name="gmailDisconnectQuestion" xml:space="preserve">
-    <value>Sie sind über Ihre Google Mail-Anwendung zu trennen: Sie werden nicht mehr Benachrichtigungen erhalten vom Konto {email} und Sie werden aufgefordert , in der nächsten Zeit zu protokollieren.
+    <value>Sie sind dabei, Ihr Gmail-Konto von der Anwendung abzumelden: Sie erhalten keine Benachrichtigungen von Ihrem Konto {email} und werden beim nächsten Start aufgefordert, sich erneut anzumelden.
 
-Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu trennen?</value>
+Möchten Sie ihr Gmail Konto wirklich abmelden und die Anwendung neu starten?</value>
   </data>
   <data name="helpAskonExit" xml:space="preserve">
-    <value>Eine Frage stellen, bevor vollständig die App zu verlassen</value>
+    <value>Vor dem Verlassen der Anwendung fragen</value>
   </data>
   <data name="helpAttemptToReconnectNotification" xml:space="preserve">
-    <value>Zeigen Sie eine Benachrichtigung, wenn die Anwendung mit dem Netzwerk zu verbinden versucht</value>
+    <value>Anzeige einer Benachrichtigung, wenn die Anwendung versucht, erneut eine Verbindung zum Netzwerk herzustellen</value>
   </data>
   <data name="helpAudioNotification" xml:space="preserve">
-    <value>Spielt einen Ton, wenn eine Benachrichtigung angezeigt werden</value>
+    <value>Ton abspielen, wenn eine Benachrichtigung angezeigt wird</value>
   </data>
   <data name="helpAudioPop" xml:space="preserve">
-    <value>Beim Starten und Schließen der Anwendung einen Ton abspielen</value>
+    <value>Ton abspielen beim Starten und Schließen der Anwendung</value>
   </data>
   <data name="helpCheckForUpdate" xml:space="preserve">
-    <value>Überprüfen Sie sofort die Verfügbarkeit von Updates</value>
+    <value>Überprüfen ob Updates verfügbar sind</value>
   </data>
   <data name="helpEmailAddress" xml:space="preserve">
-    <value>Gmail derzeit mit der Anwendung verbunden</value>
+    <value>Gmail-Konto, das derzeit in der Anwendung angemeldet ist</value>
   </data>
   <data name="helpGmailDisconnect" xml:space="preserve">
-    <value>Trennt die Google Mail-Konto und startet die Anwendung eine neue Authentifizierung anzufordern</value>
+    <value>Meldet das Gmail-Konto ab und startet die Anwendung neu, um eine erneute Authentifizierung vorzunehmen.</value>
   </data>
   <data name="helpLanguage" xml:space="preserve">
-    <value>Sprache für das Interface</value>
+    <value>Sprache der Benutzeroberfläche</value>
   </data>
   <data name="helpMessageNotification" xml:space="preserve">
-    <value>Zeigen Sie eine Benachrichtigung, wenn neue Nachrichten</value>
+    <value>Anzeige einer Benachrichtigung beim Empfang neuer Nachrichten</value>
   </data>
   <data name="helpNotificationBehavior" xml:space="preserve">
-    <value>Aktion ausgeführt wird, wenn auf eine Meldung klicken</value>
+    <value>Aktion, die bei einem Klick auf eine Benachrichtigung ausgeführt wird</value>
   </data>
   <data name="helpNumericDelay" xml:space="preserve">
-    <value>Zeitverzögerung den Posteingang</value>
+    <value>Zeitlimit für die Synchronisierung des Posteingangs</value>
   </data>
   <data name="helpPrivacyNotificationAll" xml:space="preserve">
-    <value>Zeigen Sie eine Meldung keine Informationen über die Nachricht enthält,</value>
+    <value>Anzeige einer Benachrichtigung, die keine Informationen über die Nachricht enthält</value>
   </data>
   <data name="helpPrivacyNotificationNone" xml:space="preserve">
-    <value>Zeigt den Namen des Absenders und den Nachrichteninhalt</value>
+    <value>Anzeige einer Benachrichtigung, die den Namen des Absenders sowie den Inhalt der Nachricht enthält</value>
   </data>
   <data name="helpPrivacyNotificationShort" xml:space="preserve">
-    <value>Zeigt den Namen des Absenders und die Betreffzeile</value>
+    <value>Anzeige einer Benachrichtigung, die den Namen des Absenders und den Betreff der Nachricht enthält</value>
   </data>
   <data name="helpRunAtWindowsStartup" xml:space="preserve">
-    <value>Lance Windows starten Sie die Anwendung</value>
+    <value>Startet die Anwendung beim Hochfahren von Windows</value>
   </data>
   <data name="helpScheduleDayOfWeek" xml:space="preserve">
     <value>Tag der Synchronisation</value>
@@ -221,40 +221,40 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
     <value>Dauer der Synchronisation</value>
   </data>
   <data name="helpScheduleEndTime" xml:space="preserve">
-    <value>Endzeit der Synchronisation</value>
+    <value>Endzeitpunkt der Synchronisation</value>
   </data>
   <data name="helpScheduleService" xml:space="preserve">
-    <value>Aktiviert den geplanten Synchronisierungsdienst</value>
+    <value>Aktiviert den Dienst für die geplante Synchronisation</value>
   </data>
   <data name="helpScheduleStartTime" xml:space="preserve">
-    <value>Startzeit der Synchronisation</value>
+    <value>Startzeitpunkt der Synchronisation</value>
   </data>
   <data name="helpSpamNotification" xml:space="preserve">
-    <value>Zeigen Sie eine Benachrichtigung, wenn Junk-Mail-Empfang</value>
+    <value>Anzeige einer Benachrichtigung beim Empfang von Spam</value>
   </data>
   <data name="helpStatistics" xml:space="preserve">
-    <value>Nutzungsstatistiken für Ihren Posteingang</value>
+    <value>Statistiken zur Nutzung Ihres Posteingangs</value>
   </data>
   <data name="helpStepDelay" xml:space="preserve">
-    <value>Zeitskala für die Synchronisation des Posteingangs</value>
+    <value>Zeitspanne für die Synchronisation des Posteingangs</value>
   </data>
   <data name="helpTokenDelivery" xml:space="preserve">
-    <value>Datum der letzten Aktualisierung der Gültigkeit der Authentifizierungstoken</value>
+    <value>Datum der letzten Aktualisierung des Tokens zum Nachweis der Gültigkeit der Authentifizierung</value>
   </data>
   <data name="helpUpdateControl" xml:space="preserve">
-    <value>Datum der letzten Überprüfung der Aktualisierungen</value>
+    <value>Datum der letzten Überprüfung auf Aktualisierungen</value>
   </data>
   <data name="helpUpdateDownload" xml:space="preserve">
-    <value>Wenn Updates verfügbar sind, lädt die Anwendung sie herunter und startet die Installation automatisch</value>
+    <value>Wenn Updates verfügbar sind, lädt die Anwendung diese herunter und beginnt automatisch mit der Installation</value>
   </data>
   <data name="helpUpdatePeriod" xml:space="preserve">
-    <value>Prüfzeitraum aktualisieren</value>
+    <value>Zeitlimit für die Überprüfung auf Aktualisierungen</value>
   </data>
   <data name="helpUpdateQuiet" xml:space="preserve">
-    <value>Wenn Updates installiert werden, installiert die Anwendung sie automatisch im Hintergrund</value>
+    <value>Wenn Aktualisierungen vorgenommen werden, installiert die Anwendung diese im Hintergrund</value>
   </data>
   <data name="helpUpdateService" xml:space="preserve">
-    <value>Aktiviert den automatischen Update-Prüfdienst</value>
+    <value>Aktiviert den Dienst zur automatischen Überprüfung auf Updates</value>
   </data>
   <data name="hours" xml:space="preserve">
     <value>Stunde(n)</value>
@@ -266,7 +266,7 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
     <value>Als gelesen markieren</value>
   </data>
   <data name="markAsReadError" xml:space="preserve">
-    <value>Ein Fehler ist aufgetreten während der Operation "Als gelesen markieren".</value>
+    <value>Nachricht konnte nicht als "gelesen" markiert werden.</value>
   </data>
   <data name="message" xml:space="preserve">
     <value>E-Mail</value>
@@ -278,37 +278,37 @@ Wollen Sie wirklich jetzt Ihr Google-Konto und starten Sie die Anwendung zu tren
     <value>Mehrere Instanzen</value>
   </data>
   <data name="mutexError" xml:space="preserve">
-    <value>Die "Inbox Notifier" wird bereits ausgeführt: Sie können nicht mehrere Instanzen der Anwendung auf demselben Computer ausgeführt werden.
+    <value>Inbox Notifier wird bereits ausgeführt: Sie können die Anwendung nicht mehrfach auf demselben Computer ausführen.
 
-Diese Option ist auf diese Art der Anwendung nicht erlaubt.</value>
+Diese Option ist bei dieser Art von Anwendung nicht aktiviert.</value>
   </data>
   <data name="newUnreadMessage" xml:space="preserve">
-    <value>Doppelklicken Sie auf das Symbol Posteingang zugreifen.</value>
+    <value>Doppelklicken Sie auf das Symbol, um auf Ihren Posteingang zuzugreifen.</value>
   </data>
   <data name="newUnreadSpam" xml:space="preserve">
-    <value>Doppelklicken Sie auf das Symbol Posteingang zugreifen. Da Sie nicht den Spam-Ordner überprüft haben, werden nicht Ihrem Posteingang synchronisiert werden und Sie werden nicht über neue Nachrichten informiert werden.</value>
+    <value>Doppelklicken Sie auf das Symbol, um auf Ihren Posteingang zuzugreifen. Solange Sie den Spam-Ordner nicht überprüft haben, wird Ihr Posteingang nicht synchronisiert und Sie werden nicht über neue Nachrichten informiert.</value>
   </data>
   <data name="newVersion" xml:space="preserve">
-    <value>Eine neuere Version der Anwendung ist auf Github: {version}</value>
+    <value>Eine neuere Version der Anwendung auf Github ist verfügbar: {version}</value>
   </data>
   <data name="noMessage" xml:space="preserve">
-    <value>Keine neuen Beiträge</value>
+    <value>Keine neuen Nachrichten</value>
   </data>
   <data name="notFound" xml:space="preserve">
     <value>Nicht gefunden</value>
   </data>
   <data name="off" xml:space="preserve">
-    <value>Untauglich</value>
+    <value>Deaktiviert</value>
   </data>
   <data name="operationError" xml:space="preserve">
-    <value>Fehler während der letzten Operation</value>
+    <value>Fehler bei der letzten Aktion</value>
   </data>
   <data name="reconnectAttempt" xml:space="preserve">
     <value>Offline
-Der Versuch, die Verbindung wiederherzustellen ...</value>
+Versuch einer erneuten Verbindung ...</value>
   </data>
   <data name="reconnectFailed" xml:space="preserve">
-    <value>Wiederverbindung möglich</value>
+    <value>Die Neuverbindung ist fehlgeschlagen</value>
   </data>
   <data name="sync" xml:space="preserve">
     <value>Synchronisierung läuft ...</value>
@@ -317,13 +317,13 @@ Der Versuch, die Verbindung wiederherzustellen ...</value>
     <value>Fehler bei der Synchronisierung</value>
   </data>
   <data name="syncErrorOccured" xml:space="preserve">
-    <value>Ein Fehler ist aufgetreten während der Synchronisation des Posteingangs.</value>
+    <value>Fehler bei der Synchronisierung des Posteingangs.</value>
   </data>
   <data name="syncOff" xml:space="preserve">
-    <value>Synchronisation deaktiviert am {day}</value>
+    <value>Synchronisierung deaktiviert am {day}</value>
   </data>
   <data name="syncScheduled" xml:space="preserve">
-    <value>Geplante Synchronisation
+    <value>Geplante Synchronisierung
 am {day} von {start} bis {end}</value>
   </data>
   <data name="syncTime" xml:space="preserve">
@@ -336,16 +336,16 @@ am {day} von {start} bis {end}</value>
     <value>Bitte nicht stören</value>
   </data>
   <data name="unreadMessage" xml:space="preserve">
-    <value>Ungelesene Nachrichten</value>
+    <value>Ungelesene Nachricht</value>
   </data>
   <data name="unreadMessages" xml:space="preserve">
-    <value>Mails ungelesen</value>
+    <value>Ungelesene Nachrichten</value>
   </data>
   <data name="unreadSpam" xml:space="preserve">
-    <value>Spam ungelesen</value>
+    <value>Ungelesene Spam-Nachricht</value>
   </data>
   <data name="unreadSpams" xml:space="preserve">
-    <value>ungelesenen Spam</value>
+    <value>Ungelesene Spam-Nachrichten</value>
   </data>
   <data name="updateNow" xml:space="preserve">
     <value>Jetzt aktualisieren</value>
@@ -354,10 +354,10 @@ am {day} von {start} bis {end}</value>
     <value>Inbox Notifier Update</value>
   </data>
   <data name="updateServiceUnreachable" xml:space="preserve">
-    <value>Der Update-Service ist nicht erreichbar.</value>
+    <value>Der Update-Service ist derzeit nicht erreichbar.</value>
   </data>
   <data name="updating" xml:space="preserve">
-    <value>Herunterladen der Aktualisierung ...</value>
+    <value>Herunterladen des Updates ...</value>
   </data>
   <data name="welcome" xml:space="preserve">
     <value>Willkommen!</value>
