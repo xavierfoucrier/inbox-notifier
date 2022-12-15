@@ -16,6 +16,7 @@ Inbox Notifier is provided with **a bunch of useful features that bring your inb
 * Multilingual support - *french/english/german/russian*
 * Inbox statistics preview - *display drafts/labels/unreads/totals messages from the inbox*
 * Attachment information - *notice when a message have one or more attachments*
+* Proxy support - *use Windows proxy settings when available*
 * Network reconnection - *try to reconnect to the network when the internet connection is lost*
 * User privacy - *use Cloudflare DNS and fallback to Google if needed*
 * Scheduled synchronization - *disable the synchronization to have a peaceful weekend*
