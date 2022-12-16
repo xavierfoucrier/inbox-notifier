@@ -4,7 +4,7 @@ Gmail notifications instantly in the Windows taskbar.
 [![Inbox Notifier](logo.png "Inbox Notifier")](logo.png?raw=true)
 
 ## Features
-Inbox Notifier is provided with **a bunch of useful features that bring your inbox always up to date** and keep you focus on your work:
+Inbox Notifier allows you to display **Gmail notifications** instantly in the Windows taskbar, without the need to have a Google Chrome instance open and running. The application is provided with **a bunch of useful features that bring your inbox always up to date** and keep you focus on your work:
 
 * Synchronization - *automatic sync that keep you up to date every time*
 * Email notifications - *display concise notifications when needed*
