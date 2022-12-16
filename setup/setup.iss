@@ -28,6 +28,7 @@ SetupIconFile=setup.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
+WizardImageFile=image.bmp
 PrivilegesRequired=admin
 UsedUserAreasWarning=no
 VersionInfoVersion={#MyAppVersion}
