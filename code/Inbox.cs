@@ -51,6 +51,14 @@ namespace notifier {
 		/// <param name="token">Indicate if the Gmail token need to be refreshed</param>
 		public async Task Sync(bool manual = true, bool token = false) {
 
+			// do a small ping on the update service
+			await UI.UpdateService.Ping();
+
+			// prevent the application from syncing the inbox when updating
+			if (UI.UpdateService.Updating) {
+				return;
+			}
+
 			// temp variable
 			bool userAction = manual;
 
@@ -61,11 +69,6 @@ namespace notifier {
 			if (Settings.Default.Scheduler && !UI.SchedulerService.ScheduledSync()) {
 				UI.SchedulerService.PauseSync();
 
-				return;
-			}
-
-			// prevent the application from syncing the inbox when updating
-			if (UI.UpdateService.Updating) {
 				return;
 			}
 
@@ -105,9 +108,6 @@ namespace notifier {
 				UI.notifyIcon.Icon = Resources.sync;
 				UI.notifyIcon.Text = Translation.sync;
 			}
-
-			// do a small ping on the update service
-			await UI.UpdateService.Ping();
 
 			try {
 
