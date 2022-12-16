@@ -28,7 +28,7 @@ Discover application interface and features through **some Youtube videos**:
 
 
 ## Compatibility
-Inbox Notifier is fully tested on **Windows 7**, **Windows 10** and **Windows 11**.
+Inbox Notifier is build on top of C# and .NET Framework with Visual Studio, fully tested on **Windows 7**, **Windows 10** and **Windows 11**.
 
 Many other Windows operating systems may work, like Windows 8/8.1/Server, but are not extensively tested for the moment. Regarding the .NET Framework version, some operating systems like Windows Vista/XP are no longer supported.
 
