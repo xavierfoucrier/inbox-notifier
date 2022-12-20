@@ -14,7 +14,7 @@ namespace notifier {
 		/// <summary>
 		/// Mutex associated to the application instance
 		/// </summary>
-		static Mutex Mutex = new Mutex(true, "inboxnotifier-115e363ecbfefd771e55c6874680bc0a");
+		static readonly Mutex Mutex = new Mutex(true, "inboxnotifier-115e363ecbfefd771e55c6874680bc0a");
 
 		#endregion
 

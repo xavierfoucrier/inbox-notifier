@@ -57,11 +57,11 @@ namespace notifier {
 			this.buttonGmailDisconnect = new System.Windows.Forms.Button();
 			this.tabPageNotification = new System.Windows.Forms.TabPage();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.fieldNotificationBehavior = new System.Windows.Forms.ComboBox();
+			this.label9 = new System.Windows.Forms.Label();
 			this.labelNotificationOpenSimplifiedHTML = new System.Windows.Forms.Label();
 			this.labelNotificationMarkMessageAsRead = new System.Windows.Forms.Label();
 			this.labelNotificationOpenMessage = new System.Windows.Forms.Label();
-			this.fieldNotificationBehavior = new System.Windows.Forms.ComboBox();
-			this.label9 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.ringtoneIcon = new System.Windows.Forms.LinkLabel();
 			this.fieldStepDelay = new System.Windows.Forms.ComboBox();
@@ -413,13 +413,32 @@ namespace notifier {
 			// groupBox3
 			// 
 			resources.ApplyResources(this.groupBox3, "groupBox3");
+			this.groupBox3.Controls.Add(this.fieldNotificationBehavior);
+			this.groupBox3.Controls.Add(this.label9);
 			this.groupBox3.Controls.Add(this.labelNotificationOpenSimplifiedHTML);
 			this.groupBox3.Controls.Add(this.labelNotificationMarkMessageAsRead);
 			this.groupBox3.Controls.Add(this.labelNotificationOpenMessage);
-			this.groupBox3.Controls.Add(this.fieldNotificationBehavior);
-			this.groupBox3.Controls.Add(this.label9);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.TabStop = false;
+			// 
+			// fieldNotificationBehavior
+			// 
+			resources.ApplyResources(this.fieldNotificationBehavior, "fieldNotificationBehavior");
+			this.fieldNotificationBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.fieldNotificationBehavior.FormattingEnabled = true;
+			this.fieldNotificationBehavior.Items.AddRange(new object[] {
+            resources.GetString("fieldNotificationBehavior.Items"),
+            resources.GetString("fieldNotificationBehavior.Items1"),
+            resources.GetString("fieldNotificationBehavior.Items2"),
+            resources.GetString("fieldNotificationBehavior.Items3"),
+            resources.GetString("fieldNotificationBehavior.Items4")});
+			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
+			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.fieldNotificationBehavior_SelectionChangeCommitted);
+			// 
+			// label9
+			// 
+			resources.ApplyResources(this.label9, "label9");
+			this.label9.Name = "label9";
 			// 
 			// labelNotificationOpenSimplifiedHTML
 			// 
@@ -441,24 +460,6 @@ namespace notifier {
 			this.labelNotificationOpenMessage.ForeColor = System.Drawing.Color.SlateGray;
 			this.labelNotificationOpenMessage.Image = global::notifier.Properties.Resources.information;
 			this.labelNotificationOpenMessage.Name = "labelNotificationOpenMessage";
-			// 
-			// fieldNotificationBehavior
-			// 
-			resources.ApplyResources(this.fieldNotificationBehavior, "fieldNotificationBehavior");
-			this.fieldNotificationBehavior.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.fieldNotificationBehavior.FormattingEnabled = true;
-			this.fieldNotificationBehavior.Items.AddRange(new object[] {
-            resources.GetString("fieldNotificationBehavior.Items"),
-            resources.GetString("fieldNotificationBehavior.Items1"),
-            resources.GetString("fieldNotificationBehavior.Items2"),
-            resources.GetString("fieldNotificationBehavior.Items3")});
-			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
-			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.fieldNotificationBehavior_SelectionChangeCommitted);
-			// 
-			// label9
-			// 
-			resources.ApplyResources(this.label9, "label9");
-			this.label9.Name = "label9";
 			// 
 			// groupBox2
 			// 

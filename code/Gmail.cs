@@ -175,9 +175,7 @@ namespace notifier {
 		/// Dispose the service
 		/// </summary>
 		public void Dispose() {
-			if (Service != null) {
-				Service.Dispose();
-			}
+			Service?.Dispose();
 		}
 
 		/// <summary>

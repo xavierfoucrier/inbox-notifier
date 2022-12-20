@@ -6,6 +6,7 @@ using System.Media;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using notifier.Languages;
@@ -50,6 +51,14 @@ namespace notifier {
 		/// <param name="token">Indicate if the Gmail token need to be refreshed</param>
 		public async Task Sync(bool manual = true, bool token = false) {
 
+			// do a small ping on the update service
+			await UI.UpdateService.Ping();
+
+			// prevent the application from syncing the inbox when updating
+			if (UI.UpdateService.Updating) {
+				return;
+			}
+
 			// temp variable
 			bool userAction = manual;
 
@@ -60,11 +69,6 @@ namespace notifier {
 			if (Settings.Default.Scheduler && !UI.SchedulerService.ScheduledSync()) {
 				UI.SchedulerService.PauseSync();
 
-				return;
-			}
-
-			// prevent the application from syncing the inbox when updating
-			if (UI.UpdateService.Updating) {
 				return;
 			}
 
@@ -104,9 +108,6 @@ namespace notifier {
 				UI.notifyIcon.Icon = Resources.sync;
 				UI.notifyIcon.Text = Translation.sync;
 			}
-
-			// do a small ping on the update service
-			await UI.UpdateService.Ping();
 
 			try {
 
@@ -197,7 +198,8 @@ namespace notifier {
 						UsersResource.MessagesResource.ListRequest messages = User.Messages.List("me");
 						messages.LabelIds = "UNREAD";
 						messages.MaxResults = 1;
-						Google.Apis.Gmail.v1.Data.Message message = await User.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
+
+						Message message = await User.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
 							return m.Result.Messages.First().Id;
 						})).ExecuteAsync();
 
@@ -207,16 +209,19 @@ namespace notifier {
 							string from = "";
 
 							foreach (MessagePartHeader header in message.Payload.Headers) {
-								if (header.Name == "Subject") {
-									subject = string.IsNullOrEmpty(header.Value) ? Translation.newUnreadMessage : header.Value;
-								} else if (header.Name == "From") {
-									Match match = Regex.Match(header.Value, ".* <");
+								string name = header.Name.ToLower();
+								string value = header.Value;
+
+								if (name == "subject") {
+									subject = string.IsNullOrEmpty(value) ? Translation.newUnreadMessage : value;
+								} else if (name == "from") {
+									Match match = Regex.Match(value, ".* <");
 
 									if (match.Length != 0) {
 										from = match.Captures[0].Value.Replace(" <", "").Replace("\"", "");
 									} else {
-										match = Regex.Match(header.Value, "<?.*>?");
-										from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : header.Value.Replace(match.Value, $"{Box.ThreadsUnread} {Translation.unreadMessage}");
+										match = Regex.Match(value, "<?.*>?");
+										from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : value.Replace(match.Value, $"{Box.ThreadsUnread} {Translation.unreadMessage}");
 									}
 								}
 							}
@@ -266,6 +271,12 @@ namespace notifier {
 
 				// log the exception from mscorlib: sometimes the process can not access the token response file because it is used by another process
 				Core.Log($"IOException: {exception.Message}");
+			} catch (TokenResponseException exception) {
+
+				// restart if the application has no Gmail grant access anymore
+				if (exception.Error.Error == "invalid_grant") {
+					Core.RestartApplication();
+				}
 			} catch (Exception exception) {
 
 				// display a balloon tip in the systray
@@ -356,6 +367,12 @@ namespace notifier {
 					UI.menuItemMarkAsRead.Text = Translation.markAsRead;
 					UI.menuItemMarkAsRead.Enabled = false;
 				}
+			} catch (TokenResponseException exception) {
+
+				// restart if the application has no Gmail grant access anymore
+				if (exception.Error.Error == "invalid_grant") {
+					Core.RestartApplication();
+				}
 			} catch (Exception exception) {
 
 				// enabled the mark as read menu item
@@ -432,52 +449,60 @@ namespace notifier {
 		/// Asynchronous method used to get account statistics
 		/// </summary>
 		public async Task UpdateStatistics() {
+			try {
 
-			// prevent statistics update if the UI is not visible or if there is no internet connection
-			if (!(UI.Visible && UI.tabControl.SelectedTab == UI.tabPageAccount) || !await Computer.IsInternetAvailable()) {
-				return;
+				// prevent statistics update if the UI is not visible or if there is no internet connection
+				if (!(UI.Visible && UI.tabControl.SelectedTab == UI.tabPageAccount) || !await Computer.IsInternetAvailable()) {
+					return;
+				}
+
+				// prevent statistics error (mainly due to scheduler setting)
+				if (User == null) {
+					User = await UI.GmailService.Connect();
+				}
+
+				// retrieve the current inbox
+				if (Box == null) {
+					Box = await User.Labels.Get("me", "INBOX").ExecuteAsync();
+				}
+
+				// get inbox message count
+				int unread = (int)Box.ThreadsUnread;
+				int total = (int)Box.ThreadsTotal;
+
+				// build the chart
+				if (total == 0) {
+					UI.chartUnreadMails.Width = 0;
+					UI.chartTotalMails.Width = 0;
+				} else {
+					const int MAXIMUM_SCALE = 100;
+					bool INBOX_FULL = total > MAXIMUM_SCALE;
+					int scale = INBOX_FULL ? total : MAXIMUM_SCALE;
+
+					UI.chartUnreadMails.Width = INBOX_FULL && unread == 1 ? 1 : (unread * UI.chartInbox.Width) / scale;
+					UI.chartTotalMails.Width = (total * UI.chartInbox.Width) / scale;
+				}
+
+				// update the tooltip informations
+				UI.tip.SetToolTip(UI.chartUnreadMails, $"{unread} {(unread > 1 ? Translation.unreadMessages : Translation.unreadMessage)}");
+				UI.tip.SetToolTip(UI.chartTotalMails, $"{total} {(total > 1 ? Translation.messages : Translation.message)}");
+
+				// update the draft informations
+				ListDraftsResponse drafts = await User.Drafts.List("me").ExecuteAsync();
+				UI.labelTotalDrafts.Enabled = true;
+				UI.labelTotalDrafts.Text = drafts.Drafts != null ? drafts.Drafts.Count.ToString() : "0";
+
+				// update the label informations
+				ListLabelsResponse labels = await User.Labels.List("me").ExecuteAsync();
+				UI.labelTotalLabels.Enabled = true;
+				UI.labelTotalLabels.Text = labels.Labels != null ? labels.Labels.Count.ToString() : "0";
+			} catch (TokenResponseException exception) {
+
+				// restart if the application has no Gmail grant access anymore
+				if (exception.Error.Error == "invalid_grant") {
+					Core.RestartApplication();
+				}
 			}
-
-			// prevent statistics error (mainly due to scheduler setting)
-			if (User == null) {
-				User = await UI.GmailService.Connect();
-			}
-
-			// retrieve the current inbox
-			if (Box == null) {
-				Box = await User.Labels.Get("me", "INBOX").ExecuteAsync();
-			}
-
-			// get inbox message count
-			int unread = (int)Box.ThreadsUnread;
-			int total = (int)Box.ThreadsTotal;
-
-			// build the chart
-			if (total == 0) {
-				UI.chartUnreadMails.Width = 0;
-				UI.chartTotalMails.Width = 0;
-			} else {
-				const int MAXIMUM_SCALE = 100;
-				bool INBOX_FULL = total > MAXIMUM_SCALE;
-				int scale = INBOX_FULL ? total : MAXIMUM_SCALE;
-
-				UI.chartUnreadMails.Width = INBOX_FULL && unread == 1 ? 1 : (unread * UI.chartInbox.Width) / scale;
-				UI.chartTotalMails.Width = (total * UI.chartInbox.Width) / scale;
-			}
-
-			// update the tooltip informations
-			UI.tip.SetToolTip(UI.chartUnreadMails, $"{unread} {(unread > 1 ? Translation.unreadMessages : Translation.unreadMessage)}");
-			UI.tip.SetToolTip(UI.chartTotalMails, $"{total} {(total > 1 ? Translation.messages : Translation.message)}");
-
-			// update the draft informations
-			ListDraftsResponse drafts = await User.Drafts.List("me").ExecuteAsync();
-			UI.labelTotalDrafts.Enabled = true;
-			UI.labelTotalDrafts.Text = drafts.Drafts != null ? drafts.Drafts.Count.ToString() : "0";
-
-			// update the label informations
-			ListLabelsResponse labels = await User.Labels.List("me").ExecuteAsync();
-			UI.labelTotalLabels.Enabled = true;
-			UI.labelTotalLabels.Text = labels.Labels != null ? labels.Labels.Count.ToString() : "0";
 		}
 
 		#endregion

@@ -1,10 +1,10 @@
-# Inbox Notifier – [![Version](https://img.shields.io/github/release/xavierfoucrier/inbox-notifier)](https://github.com/xavierfoucrier/inbox-notifier/releases/latest) [![Code quality](https://img.shields.io/codacy/grade/088c98657120438ca3f8ffb529abcb79)](https://app.codacy.com/project/xavier.foucrier/inbox-notifier/dashboard) [![Build Status](https://img.shields.io/travis/xavierfoucrier/inbox-notifier/master "Travis CI - Builds")](https://travis-ci.org/xavierfoucrier/inbox-notifier) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/inbox-notifier/total "Downloads - All releases")](https://github.com/xavierfoucrier/inbox-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-award-%230E7FC0 "Softpedia - Award")](https://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Inbox-Notifier.shtml#status)
+# Inbox Notifier – [![Version](https://img.shields.io/github/release/xavierfoucrier/inbox-notifier)](https://github.com/xavierfoucrier/inbox-notifier/releases/latest) [![Code quality](https://img.shields.io/codacy/grade/088c98657120438ca3f8ffb529abcb79)](https://app.codacy.com/project/xavier.foucrier/inbox-notifier/dashboard) [![ci](https://img.shields.io/github/actions/workflow/status/xavierfoucrier/inbox-notifier/ci.yml?branch=main)](https://github.com/xavierfoucrier/inbox-notifier/actions?query=workflow:"CI") [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/inbox-notifier/total "Downloads - All releases")](https://github.com/xavierfoucrier/inbox-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-award-%230E7FC0 "Softpedia - Award")](https://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Inbox-Notifier.shtml#status)
 Gmail notifications instantly in the Windows taskbar.
 
 [![Inbox Notifier](logo.png "Inbox Notifier")](logo.png?raw=true)
 
 ## Features
-Inbox Notifier is provided with **a bunch of useful features that bring your inbox always up to date** and keep you focus on your work:
+Inbox Notifier allows you to display **Gmail notifications** instantly in the Windows taskbar, without the need to have a Google Chrome instance open and running. The application is provided with **a bunch of useful features that bring your inbox always up to date** and keep you focus on your work:
 
 * Synchronization - *automatic sync that keep you up to date every time*
 * Email notifications - *display concise notifications when needed*
@@ -16,6 +16,7 @@ Inbox Notifier is provided with **a bunch of useful features that bring your inb
 * Multilingual support - *french/english/german/russian*
 * Inbox statistics preview - *display drafts/labels/unreads/totals messages from the inbox*
 * Attachment information - *notice when a message have one or more attachments*
+* Proxy support - *use Windows proxy settings when available*
 * Network reconnection - *try to reconnect to the network when the internet connection is lost*
 * User privacy - *use Cloudflare DNS and fallback to Google if needed*
 * Scheduled synchronization - *disable the synchronization to have a peaceful weekend*
@@ -27,7 +28,7 @@ Discover application interface and features through **some Youtube videos**:
 
 
 ## Compatibility
-Inbox Notifier is fully tested on **Windows 7**, **Windows 10** and **Windows 11**.
+Inbox Notifier is build on top of C# and .NET Framework with Visual Studio, fully tested on **Windows 7**, **Windows 10** and **Windows 11**.
 
 Many other Windows operating systems may work, like Windows 8/8.1/Server, but are not extensively tested for the moment. Regarding the .NET Framework version, some operating systems like Windows Vista/XP are no longer supported.
 
@@ -44,7 +45,7 @@ Note that this version of the .NET Framework **evolve in time**: the application
 #### Setup installer
 The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions: this is the better way to install Windows application and allow you to **cleanly install/uninstall** the application with ease.
 
-* :package: [Inbox Notifier 3.7.0](https://github.com/xavierfoucrier/inbox-notifier/releases/download/v3.7.0/Inbox.Notifier.3.7.0.exe)
+* :package: [Inbox Notifier 3.9.0](https://github.com/xavierfoucrier/inbox-notifier/releases/download/v3.9.0/Inbox.Notifier.3.9.0.exe)
 
 > Note that you will need **administrator rights** to properly complete the installation.
 

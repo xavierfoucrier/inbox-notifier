@@ -1,5 +1,5 @@
 ﻿#define MyAppName "Inbox Notifier"
-#define MyAppVersion "3.7.0"
+#define MyAppVersion "3.9.0"
 #define MyAppYear GetDateTimeString('yyyy', '', '');
 #define MyAppPublisher "Xavier Foucrier"
 #define MyAppURL "https://github.com/xavierfoucrier/inbox-notifier"
@@ -28,6 +28,7 @@ SetupIconFile=setup.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
+WizardImageFile=image.bmp
 PrivilegesRequired=admin
 UsedUserAreasWarning=no
 VersionInfoVersion={#MyAppVersion}

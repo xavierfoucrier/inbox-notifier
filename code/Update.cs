@@ -210,21 +210,21 @@ namespace notifier {
 				WebClient client = new WebClient();
 
 				// display the download progression on the systray icon, and prevent the application from restoring the context menu and systray icon at startup
-				client.DownloadProgressChanged += new DownloadProgressChangedEventHandler((object source, DownloadProgressChangedEventArgs target) => {
+				client.DownloadProgressChanged += (object source, DownloadProgressChangedEventArgs target) => {
 					UI.notifyIcon.ContextMenu = null;
 					UI.notifyIcon.Icon = Resources.updating;
 					UI.notifyIcon.Text = $"{Translation.updating} {target.ProgressPercentage}%";
-				});
+				};
 
 				// start the setup installer when the download has complete and exit the current application
-				client.DownloadFileCompleted += new AsyncCompletedEventHandler((object source, AsyncCompletedEventArgs target) => {
+				client.DownloadFileCompleted += (object source, AsyncCompletedEventArgs target) => {
 					Process.Start(new ProcessStartInfo("cmd.exe", $"/C ping 127.0.0.1 -n 2 && \"{updatepath}\" {(Settings.Default.UpdateQuiet ? "/verysilent" : "")}") {
 						WindowStyle = ProcessWindowStyle.Hidden,
 						CreateNoWindow = true
 					});
 
 					Application.Exit();
-				});
+				};
 
 				// ensure that the Github package URI is callable
 				client.OpenRead(package).Close();
