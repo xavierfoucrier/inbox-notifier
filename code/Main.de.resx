@@ -528,7 +528,7 @@ als gelesen markiert.</value>
     <value>247, 34</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
-    <value>©2022. Alle Rechte vorbehalten.
+    <value>©2023. Alle Rechte vorbehalten.
 Open Source, veröffentlicht unter der MIT-Lizenz</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
@@ -538,7 +538,7 @@ Open Source, veröffentlicht unter der MIT-Lizenz</value>
     <value>153, 34</value>
   </data>
   <data name="linkWebsiteXavier.Text" xml:space="preserve">
-    <value>Visual Studio 2022, C#
+    <value>Visual Studio 2023, C#
 Entwickelt von Xavier Foucrier</value>
   </data>
   <data name="linkWebsiteYusuke.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">

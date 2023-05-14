@@ -809,7 +809,7 @@ un designer et développeur basé à Tokyo</value>
     <value>2 heures</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
-    <value>© 2022. Tous droits réservés.
+    <value>© 2023. Tous droits réservés.
 Open Source, distribué sous Licence MIT</value>
   </data>
   <data name="labelNotificationOpenMessage.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
@@ -1139,7 +1139,7 @@ de réception comme lus.</value>
     <value>linkVersion</value>
   </data>
   <data name="linkWebsiteXavier.Text" xml:space="preserve">
-    <value>Visual Studio 2022, C#
+    <value>Visual Studio 2023, C#
 Développé par Xavier Foucrier</value>
   </data>
   <data name="labelTokenDelivery.AutoSize" type="System.Boolean, mscorlib">
