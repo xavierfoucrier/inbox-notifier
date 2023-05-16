@@ -1,0 +1,34 @@
+{
+  "name": "inbox-notifier",
+  "version": "0.0.1",
+  "description": "Gmail notifications instantly in the Windows taskbar.",
+  "private": true,
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xavierfoucrier/inbox-notifier.git"
+  },
+  "keywords": [
+    "site",
+    "web",
+    "documentation"
+  ],
+  "author": {
+    "name": "Xavier Foucrier",
+    "email": "xavier.foucrier@gmail.com",
+    "url": "https://xavierfoucrier.dev",
+    "github": "@xavierfoucrier"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xavierfoucrier/inbox-notifier/issues"
+  },
+  "homepage": "https://github.com/xavierfoucrier/inbox-notifier#readme",
+  "engines": {
+    "node": "^18",
+    "npm": "^9"
+  }
+}
