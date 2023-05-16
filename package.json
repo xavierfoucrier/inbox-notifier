@@ -30,5 +30,8 @@
   "engines": {
     "node": "^18",
     "npm": "^9"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.62"
   }
 }
