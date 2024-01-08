@@ -34,7 +34,7 @@
 - name: post-it
   description: reminder or todo
   color: fcf49c
-- name: support
+- name: platform
   description: regarding the environment or target platform
   color: f1f1f1
 - name: wontfix
