@@ -177,7 +177,7 @@
     <value>Общее</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
+    <value>67, 13</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>Все ярлыки</value>
@@ -189,7 +189,7 @@
     <value>Черновики</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>59, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Входящие</value>
@@ -198,7 +198,7 @@
     <value>Статистика</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 13</value>
+    <value>99, 13</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Токен доставлен:</value>
@@ -220,6 +220,27 @@
   </data>
   <data name="tabPageAccount.Text" xml:space="preserve">
     <value>Аккаунт</value>
+  </data>
+  <data name="fieldNotificationBehavior.Items" xml:space="preserve">
+    <value>ничего не делать</value>
+  </data>
+  <data name="fieldNotificationBehavior.Items1" xml:space="preserve">
+    <value>открыть сообщение</value>
+  </data>
+  <data name="fieldNotificationBehavior.Items2" xml:space="preserve">
+    <value>отметить сообщение как прочитанное</value>
+  </data>
+  <data name="fieldNotificationBehavior.Items3" xml:space="preserve">
+    <value>открыть сообщение в упрощённой версии</value>
+  </data>
+  <data name="fieldNotificationBehavior.Items4" xml:space="preserve">
+    <value>открыть почтовый ящик</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 13</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>При нажатии на уведомление:</value>
   </data>
   <data name="labelNotificationOpenSimplifiedHTML.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 72</value>
@@ -253,43 +274,22 @@
     <value>При получении нескольких сообщений эта опция
 автоматически откроет папку "Входящие".</value>
   </data>
-  <data name="fieldNotificationBehavior.Items" xml:space="preserve">
-    <value>ничего не делать</value>
-  </data>
-  <data name="fieldNotificationBehavior.Items1" xml:space="preserve">
-    <value>открыть сообщение</value>
-  </data>
-  <data name="fieldNotificationBehavior.Items2" xml:space="preserve">
-    <value>отметить сообщение как прочитанное</value>
-  </data>
-  <data name="fieldNotificationBehavior.Items3" xml:space="preserve">
-    <value>открыть сообщение в упрощённой версии</value>
-  </data>
-  <data name="fieldNotificationBehavior.Items4" xml:space="preserve">
-    <value>открыть почтовый ящик</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 13</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>При нажатии на уведомление:</value>
-  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Поведение</value>
   </data>
   <data name="ringtoneIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAACF0lEQVQ4T6XMXUhTYRgH8LNn
-        CGEXlqFlHxThhV4k0V1dtW4CIwghglhUlBIeFkTsQmqr1gdEFwsxlsGQYDlxERR5LnJFH3ghy1GNloKW
-        bbrtaHMV23Fb5tPznM7emnRTHfid9z3Pef5/CRH/yx+Hf0N/PZBBemgDacAGVcpJsJBjxE46DHznmYV3
-        eJczSwsaB8/UdYwPnle02ZH4Yj5WwGICsTiNi/mPBU0NxccfORXe4d2ygvsyrAue2+zKpoZjOP8BMTtG
-        RoW3Tzw/Z/MTmJ1+EQs6N7k4IwrutcOh1JveMOZo6WukjP9yi07Msu8wNeINc0YUBE6Ac+FLNIeZMLIe
-        RzOGlav6WZJ8f1anTl7CdKw7xxlR4G+DC98yrzWce4kLn56jx74LnwVa9bNEnXQJqYkrGmdEge84tMaH
-        b0WK6SB+nurCubhbcNt26ErfmanrOPq4LcIZUXD7KGy8e3p9pxr1JHOqD7MJb5mnfbK4J15dTPafqunk
-        jCjoOQKS9zBs88nV7pDfOjQbvaFqyb5iYSaAhZl+zBM+Q3cODPnklW7e5Ywo2LfVJNl3g3TTCqs8Vmgh
-        DtJFuku+pxXkk3d4t2GN6VfB78+eJlOZ5i0A7TvN26/tN/ey+lqTsWlkjQKeVpBKsoLUkg2knjSSJksD
-        HHTsNQ/w3fhXubTATLhkGVlOqkg1qSGrSR1Za9z5X4Uo+Hco/QCNzUp2aYqo8gAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIXSURBVDhPpcxdSFNhGAfws2cIYReWoWUfFOGFXiTR
+        XV21bgIjCCGCWFSUEh4WROxCaqvWB0QXCzGWwZBgOXERFHkuckUfeCHLUY2WgpZtuu1ocxXbcVvm0/Oc
+        zt6adFMd+J33Pc95/n8JEf/LH4d/Q389kEF6aANpwAZVykmwkGPETjoMfOeZhXd4lzNLCxoHz9R1jA+e
+        V7TZkfhiPlbAYgKxOI2L+Y8FTQ3Fxx85Fd7h3bKC+zKsC57b7MqmhmM4/wExO0ZGhbdPPD9n8xOYnX4R
+        Czo3uTgjCu61w6HUm94w5mjpa6SM/3KLTsyy7zA14g1zRhQEToBz4Us0h5kwsh5HM4aVq/pZknx/VqdO
+        XsJ0rDvHGVHgb4ML3zKvNZx7iQufnqPHvgufBVr1s0SddAmpiSsaZ0SB7zi0xodvRYrpIH6e6sK5uFtw
+        23boSt+Zqes4+rgtwhlRcPsobLx7en2nGvUkc6oPswlvmad9srgnXl1M9p+q6eSMKOg5ApL3MGzzydXu
+        kN86NBu9oWrJvmJhJoCFmX7MEz5Ddw4M+eSVbt7ljCjYt9Uk2XeDdNMKqzxWaCEO0kW6S76nFeSTd3i3
+        YY3pV8Hvz54mU5nmLQDtO83br+0397L6WpOxaWSNAp5WkEqygtSSDaSeNJImSwMcdOw1D/Dd+Fe5tMBM
+        uGQZWU6qSDWpIatJHVlr3PlfhSj4dyj9AI3NSnZpiqjyAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ringtoneIcon.Location" type="System.Drawing.Point, System.Drawing">
@@ -507,7 +507,7 @@
     <value>Доступность</value>
   </data>
   <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 17</value>
+    <value>112, 17</value>
   </data>
   <data name="fieldUpdateQuiet.Text" xml:space="preserve">
     <value>Тихая установка</value>
@@ -551,7 +551,7 @@
 Открытый исходный код, лицензия MIT</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>36, 15</value>
+    <value>38, 15</value>
   </data>
   <data name="linkWebsiteXavier.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 34</value>
@@ -587,9 +587,6 @@
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Разработка</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>Версия</value>

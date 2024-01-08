@@ -143,13 +143,10 @@
     <value>Schnittstelle</value>
   </data>
   <data name="fieldAudioPop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 17</value>
+    <value>185, 17</value>
   </data>
   <data name="fieldAudioPop.Text" xml:space="preserve">
     <value>Ton beim Starten und Beenden</value>
-  </data>
-  <data name="fieldRunAtWindowsStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 17</value>
   </data>
   <data name="fieldRunAtWindowsStartup.Text" xml:space="preserve">
     <value>Beim Windows Systemstart öffnen</value>
@@ -231,7 +228,7 @@
     <value>Öffnen Sie die posteingang </value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 13</value>
+    <value>201, 13</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Beim Anklicken der Benachrichtigung:</value>
@@ -270,17 +267,17 @@ als gelesen markiert.</value>
   </data>
   <data name="ringtoneIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAACF0lEQVQ4T6XMXUhTYRgH8LNn
-        CGEXlqFlHxThhV4k0V1dtW4CIwghglhUlBIeFkTsQmqr1gdEFwsxlsGQYDlxERR5LnJFH3ghy1GNloKW
-        bbrtaHMV23Fb5tPznM7emnRTHfid9z3Pef5/CRH/yx+Hf0N/PZBBemgDacAGVcpJsJBjxE46DHznmYV3
-        eJczSwsaB8/UdYwPnle02ZH4Yj5WwGICsTiNi/mPBU0NxccfORXe4d2ygvsyrAue2+zKpoZjOP8BMTtG
-        RoW3Tzw/Z/MTmJ1+EQs6N7k4IwrutcOh1JveMOZo6WukjP9yi07Msu8wNeINc0YUBE6Ac+FLNIeZMLIe
-        RzOGlav6WZJ8f1anTl7CdKw7xxlR4G+DC98yrzWce4kLn56jx74LnwVa9bNEnXQJqYkrGmdEge84tMaH
-        b0WK6SB+nurCubhbcNt26ErfmanrOPq4LcIZUXD7KGy8e3p9pxr1JHOqD7MJb5mnfbK4J15dTPafqunk
-        jCjoOQKS9zBs88nV7pDfOjQbvaFqyb5iYSaAhZl+zBM+Q3cODPnklW7e5Ywo2LfVJNl3g3TTCqs8Vmgh
-        DtJFuku+pxXkk3d4t2GN6VfB78+eJlOZ5i0A7TvN26/tN/ey+lqTsWlkjQKeVpBKsoLUkg2knjSSJksD
-        HHTsNQ/w3fhXubTATLhkGVlOqkg1qSGrSR1Za9z5X4Uo+Hco/QCNzUp2aYqo8gAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIXSURBVDhPpcxdSFNhGAfws2cIYReWoWUfFOGFXiTR
+        XV21bgIjCCGCWFSUEh4WROxCaqvWB0QXCzGWwZBgOXERFHkuckUfeCHLUY2WgpZtuu1ocxXbcVvm0/Oc
+        zt6adFMd+J33Pc95/n8JEf/LH4d/Q389kEF6aANpwAZVykmwkGPETjoMfOeZhXd4lzNLCxoHz9R1jA+e
+        V7TZkfhiPlbAYgKxOI2L+Y8FTQ3Fxx85Fd7h3bKC+zKsC57b7MqmhmM4/wExO0ZGhbdPPD9n8xOYnX4R
+        Czo3uTgjCu61w6HUm94w5mjpa6SM/3KLTsyy7zA14g1zRhQEToBz4Us0h5kwsh5HM4aVq/pZknx/VqdO
+        XsJ0rDvHGVHgb4ML3zKvNZx7iQufnqPHvgufBVr1s0SddAmpiSsaZ0SB7zi0xodvRYrpIH6e6sK5uFtw
+        23boSt+Zqes4+rgtwhlRcPsobLx7en2nGvUkc6oPswlvmad9srgnXl1M9p+q6eSMKOg5ApL3MGzzydXu
+        kN86NBu9oWrJvmJhJoCFmX7MEz5Ddw4M+eSVbt7ljCjYt9Uk2XeDdNMKqzxWaCEO0kW6S76nFeSTd3i3
+        YY3pV8Hvz54mU5nmLQDtO83br+0397L6WpOxaWSNAp5WkEqygtSSDaSeNJImSwMcdOw1D/Dd+Fe5tMBM
+        uGQZWU6qSDWpIatJHVlr3PlfhSj4dyj9AI3NSnZpiqjyAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ringtoneIcon.Location" type="System.Drawing.Point, System.Drawing">
@@ -299,7 +296,7 @@ als gelesen markiert.</value>
     <value>76, 21</value>
   </data>
   <data name="fieldSpamNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 17</value>
+    <value>113, 17</value>
   </data>
   <data name="fieldSpamNotification.Text" xml:space="preserve">
     <value>Junk-Mail (SPAM)</value>
@@ -320,7 +317,7 @@ als gelesen markiert.</value>
     <value>Neue Nachricht</value>
   </data>
   <data name="fieldAudioNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 17</value>
+    <value>140, 17</value>
   </data>
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Ton-Benachrichtigung</value>
@@ -332,7 +329,7 @@ als gelesen markiert.</value>
     <value>Benachrichtigung</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 13</value>
+    <value>200, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Beim Empfang einer neuen Nachricht:</value>
@@ -532,7 +529,7 @@ als gelesen markiert.</value>
 Open Source, veröffentlicht unter der MIT-Lizenz</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>39, 15</value>
+    <value>41, 15</value>
   </data>
   <data name="linkWebsiteXavier.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 34</value>
@@ -545,7 +542,7 @@ Entwickelt von Xavier Foucrier</value>
     <value>10, 17</value>
   </data>
   <data name="linkWebsiteYusuke.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 34</value>
+    <value>258, 34</value>
   </data>
   <data name="linkWebsiteYusuke.Text" xml:space="preserve">
     <value>Icons von Yusuke Kamiyamane,

@@ -121,12 +121,15 @@
   <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="labelRestartToApply.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="fieldStartTime.Items3" xml:space="preserve">
+    <value>8:00</value>
   </data>
   <data name="&gt;&gt;labelDuration.Name" xml:space="preserve">
     <value>labelDuration</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fieldAudioPop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 71</value>
   </data>
   <data name="&gt;&gt;checkBox2.Parent" xml:space="preserve">
     <value>groupBox10</value>
@@ -135,29 +138,23 @@
   <data name="labelUpdateControl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="groupBox8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
   <data name="linkPrivacy.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 49</value>
   </data>
   <data name="fieldSpamNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
+    <value>165, 17</value>
   </data>
   <data name="linkVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="tabPageNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 143</value>
+  <data name="label18.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fieldAskonExit.Parent" xml:space="preserve">
     <value>groupBox1</value>
-  </data>
-  <data name="labelNotificationOpenMessage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
   </data>
   <data name="checkBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -173,9 +170,6 @@
   </data>
   <data name="fieldMinimizeToSystray.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
-  </data>
-  <data name="&gt;&gt;notifyMenu.Name" xml:space="preserve">
-    <value>notifyMenu</value>
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -247,20 +241,23 @@ un designer et développeur basé à Tokyo</value>
   <data name="separator.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
+  <data name="&gt;&gt;fieldEndTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="labelTotalDrafts.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="groupBox11.Text" xml:space="preserve">
     <value>Horaires</value>
   </data>
-  <data name="labelTokenDelivery.Text" xml:space="preserve">
-    <value>-</value>
+  <data name="fieldDayOfWeek.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 46</value>
   </data>
   <data name="labelNotificationOpenMessage.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="labelTotalDrafts.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Disponibilité</value>
   </data>
   <data name="chartTotalMails.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -286,9 +283,6 @@ un designer et développeur basé à Tokyo</value>
   <data name="labelNotificationOpenSimplifiedHTML.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="linkVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 35</value>
-  </data>
   <data name="menuItemSynchronize.Text" xml:space="preserve">
     <value>Synchroniser</value>
   </data>
@@ -298,17 +292,14 @@ un designer et développeur basé à Tokyo</value>
   <data name="menuItemTimeout1h.Text" xml:space="preserve">
     <value>1 heure</value>
   </data>
-  <data name="&gt;&gt;timer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="groupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
-  <data name="labelTotalLabels.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt, style=Bold</value>
+  <data name="fieldStartTime.Items11" xml:space="preserve">
+    <value>16:00</value>
   </data>
   <data name="linkPrivacy.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
     <value>16, 28</value>
-  </data>
-  <data name="&gt;&gt;notifyIcon.Name" xml:space="preserve">
-    <value>notifyIcon</value>
   </data>
   <data name="groupBox8.Text" xml:space="preserve">
     <value>Statistiques</value>
@@ -334,9 +325,6 @@ un designer et développeur basé à Tokyo</value>
   <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Notification sonore</value>
   </data>
@@ -345,9 +333,6 @@ un designer et développeur basé à Tokyo</value>
   </data>
   <data name="groupBox8.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>101</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 18</value>
@@ -363,9 +348,6 @@ un designer et développeur basé à Tokyo</value>
   </data>
   <data name="ringtoneIcon.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 71</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
-    <value>tabPageGeneral</value>
   </data>
   <data name="fieldPrivacyNotificationShort.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -406,14 +388,14 @@ un designer et développeur basé à Tokyo</value>
   <data name="fieldEndTime.Items15" xml:space="preserve">
     <value>20:30</value>
   </data>
-  <data name="&gt;&gt;linkLicense.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="fieldScheduler.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 25</value>
   </data>
   <data name="tabPageSchedule.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Connecté depuis le :</value>
   </data>
   <data name="separator.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -427,8 +409,8 @@ un designer et développeur basé à Tokyo</value>
   <data name="fieldSpamNotification.Text" xml:space="preserve">
     <value>Courrier indésirable (SPAM)</value>
   </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="fieldStartTime.Items6" xml:space="preserve">
+    <value>11:00</value>
   </data>
   <data name="&gt;&gt;fieldUpdateDownload.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -439,8 +421,8 @@ un designer et développeur basé à Tokyo</value>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 13</value>
   </data>
-  <data name="fieldEndTime.Items9" xml:space="preserve">
-    <value>14:30</value>
+  <data name="&gt;&gt;fieldMinimizeToSystray.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fieldStepDelay.Items" xml:space="preserve">
     <value>minute(s)</value>
@@ -475,20 +457,23 @@ un designer et développeur basé à Tokyo</value>
   <data name="&gt;&gt;fieldUpdatePeriod.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="chartTotalMails.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 45</value>
-  </data>
   <data name="&gt;&gt;buttonGmailDisconnect.Parent" xml:space="preserve">
     <value>groupBox6</value>
   </data>
   <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="labelRestartToApply.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="fieldStepDelay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="&gt;&gt;tabPageGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;labelDuration.Parent" xml:space="preserve">
     <value>groupBox11</value>
@@ -498,9 +483,6 @@ un designer et développeur basé à Tokyo</value>
   </data>
   <data name="&gt;&gt;labelSettingsSaved.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="labelUpdateControl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="labelNotificationOpenMessage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -528,9 +510,6 @@ un designer et développeur basé à Tokyo</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
   </data>
   <data name="fieldStartTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>124, 100</value>
@@ -583,9 +562,6 @@ un designer et développeur basé à Tokyo</value>
   <data name="&gt;&gt;groupBox7.Parent" xml:space="preserve">
     <value>tabPageUpdate</value>
   </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
   <data name="&gt;&gt;fieldMinimizeToSystray.Name" xml:space="preserve">
     <value>fieldMinimizeToSystray</value>
   </data>
@@ -598,8 +574,11 @@ un designer et développeur basé à Tokyo</value>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;menuItemCustomRingtone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="buttonGmailDisconnect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 99</value>
+  </data>
+  <data name="&gt;&gt;fieldStartTime.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>groupBox6</value>
@@ -612,21 +591,30 @@ un designer et développeur basé à Tokyo</value>
   </data>
   <data name="ringtoneIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAACF0lEQVQ4T6XMXUhTYRgH8LNn
-        CGEXlqFlHxThhV4k0V1dtW4CIwghglhUlBIeFkTsQmqr1gdEFwsxlsGQYDlxERR5LnJFH3ghy1GNloKW
-        bbrtaHMV23Fb5tPznM7emnRTHfid9z3Pef5/CRH/yx+Hf0N/PZBBemgDacAGVcpJsJBjxE46DHznmYV3
-        eJczSwsaB8/UdYwPnle02ZH4Yj5WwGICsTiNi/mPBU0NxccfORXe4d2ygvsyrAue2+zKpoZjOP8BMTtG
-        RoW3Tzw/Z/MTmJ1+EQs6N7k4IwrutcOh1JveMOZo6WukjP9yi07Msu8wNeINc0YUBE6Ac+FLNIeZMLIe
-        RzOGlav6WZJ8f1anTl7CdKw7xxlR4G+DC98yrzWce4kLn56jx74LnwVa9bNEnXQJqYkrGmdEge84tMaH
-        b0WK6SB+nurCubhbcNt26ErfmanrOPq4LcIZUXD7KGy8e3p9pxr1JHOqD7MJb5mnfbK4J15dTPafqunk
-        jCjoOQKS9zBs88nV7pDfOjQbvaFqyb5iYSaAhZl+zBM+Q3cODPnklW7e5Ywo2LfVJNl3g3TTCqs8Vmgh
-        DtJFuku+pxXkk3d4t2GN6VfB78+eJlOZ5i0A7TvN26/tN/ey+lqTsWlkjQKeVpBKsoLUkg2knjSSJksD
-        HHTsNQ/w3fhXubTATLhkGVlOqkg1qSGrSR1Za9z5X4Uo+Hco/QCNzUp2aYqo8gAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIXSURBVDhPpcxdSFNhGAfws2cIYReWoWUfFOGFXiTR
+        XV21bgIjCCGCWFSUEh4WROxCaqvWB0QXCzGWwZBgOXERFHkuckUfeCHLUY2WgpZtuu1ocxXbcVvm0/Oc
+        zt6adFMd+J33Pc95/n8JEf/LH4d/Q389kEF6aANpwAZVykmwkGPETjoMfOeZhXd4lzNLCxoHz9R1jA+e
+        V7TZkfhiPlbAYgKxOI2L+Y8FTQ3Fxx85Fd7h3bKC+zKsC57b7MqmhmM4/wExO0ZGhbdPPD9n8xOYnX4R
+        Czo3uTgjCu61w6HUm94w5mjpa6SM/3KLTsyy7zA14g1zRhQEToBz4Us0h5kwsh5HM4aVq/pZknx/VqdO
+        XsJ0rDvHGVHgb4ML3zKvNZx7iQufnqPHvgufBVr1s0SddAmpiSsaZ0SB7zi0xodvRYrpIH6e6sK5uFtw
+        23boSt+Zqes4+rgtwhlRcPsobLx7en2nGvUkc6oPswlvmad9srgnXl1M9p+q6eSMKOg5ApL3MGzzydXu
+        kN86NBu9oWrJvmJhJoCFmX7MEz5Ddw4M+eSVbt7ljCjYt9Uk2XeDdNMKqzxWaCEO0kW6S76nFeSTd3i3
+        YY3pV8Hvz54mU5nmLQDtO83br+0397L6WpOxaWSNAp5WkEqygtSSDaSeNJImSwMcdOw1D/Dd+Fe5tMBM
+        uGQZWU6qSDWpIatJHVlr3PlfhSj4dyj9AI3NSnZpiqjyAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="&gt;&gt;fieldSpamNotification.Parent" xml:space="preserve">
+    <value>groupBox2</value>
   </data>
   <data name="fieldEndTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>196, 100</value>
+  </data>
+  <data name="&gt;&gt;label18.Name" xml:space="preserve">
+    <value>label18</value>
+  </data>
+  <data name="fieldStepDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 100</value>
   </data>
   <data name="&gt;&gt;tabPageSchedule.Name" xml:space="preserve">
     <value>tabPageSchedule</value>
@@ -643,20 +631,20 @@ un designer et développeur basé à Tokyo</value>
   <data name="fieldNotificationBehavior.Items" xml:space="preserve">
     <value>ne rien faire</value>
   </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="fieldScheduler.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;tabPageUpdate.Parent" xml:space="preserve">
-    <value>tabControl</value>
+  <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 281</value>
   </data>
   <data name="menuItemDefaultRingtone.Text" xml:space="preserve">
     <value>Par défaut</value>
   </data>
   <data name="&gt;&gt;menuItemTimeoutIndefinitely.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label19.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -672,6 +660,9 @@ un designer et développeur basé à Tokyo</value>
   </data>
   <data name="&gt;&gt;fieldAudioPop.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fieldAudioPop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 17</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -718,11 +709,8 @@ un designer et développeur basé à Tokyo</value>
   <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="groupBox6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
+    <value>63, 13</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -732,6 +720,9 @@ un designer et développeur basé à Tokyo</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
+  </data>
+  <data name="groupBox10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 7</value>
   </data>
   <data name="fieldLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -772,14 +763,17 @@ un designer et développeur basé à Tokyo</value>
   <data name="tabPageUpdate.Text" xml:space="preserve">
     <value>Mises à jour</value>
   </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="fieldSpamNotification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 48</value>
   </data>
   <data name="&gt;&gt;labelTotalLabels.Parent" xml:space="preserve">
     <value>groupBox8</value>
   </data>
   <data name="ringtoneIcon.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="labelTotalLabels.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;tabPageSchedule.Parent" xml:space="preserve">
     <value>tabControl</value>
@@ -793,6 +787,9 @@ un designer et développeur basé à Tokyo</value>
   <data name="tabPagePrivacy.Text" xml:space="preserve">
     <value>Confidentialité</value>
   </data>
+  <data name="&gt;&gt;tabPageAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
@@ -802,11 +799,11 @@ un designer et développeur basé à Tokyo</value>
   <data name="linkPrivacy.Size" type="System.Drawing.Size, System.Drawing">
     <value>219, 20</value>
   </data>
-  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt, style=Bold</value>
-  </data>
   <data name="menuItemTimeout2h.Text" xml:space="preserve">
     <value>2 heures</value>
+  </data>
+  <data name="groupBox4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
   <data name="linkLicense.Text" xml:space="preserve">
     <value>© 2024. Tous droits réservés.
@@ -832,9 +829,6 @@ Open Source, distribué sous Licence MIT</value>
   </data>
   <data name="fieldEndTime.Items11" xml:space="preserve">
     <value>16:30</value>
-  </data>
-  <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
   </data>
   <data name="&gt;&gt;chartInbox.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -869,6 +863,9 @@ Open Source, distribué sous Licence MIT</value>
   <data name="&gt;&gt;fieldUpdateQuiet.Name" xml:space="preserve">
     <value>fieldUpdateQuiet</value>
   </data>
+  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;fieldScheduler.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
@@ -883,9 +880,6 @@ Open Source, distribué sous Licence MIT</value>
   </data>
   <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
-  </data>
-  <data name="fieldUpdatePeriod.Items3" xml:space="preserve">
-    <value>une fois par mois</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Boite de réception</value>
@@ -905,14 +899,14 @@ Open Source, distribué sous Licence MIT</value>
   <data name="&gt;&gt;linkRestartToApply.Parent" xml:space="preserve">
     <value>groupBox5</value>
   </data>
-  <data name="linkRestartToApply.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
   <data name="fieldRunAtWindowsStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 17</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Délai de vérification :</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="fieldUpdatePeriod.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 46</value>
@@ -947,14 +941,14 @@ Open Source, distribué sous Licence MIT</value>
   <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="fieldPrivacyNotificationShort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
-  </data>
   <data name="fieldRunAtWindowsStartup.Text" xml:space="preserve">
     <value>Lancer au démarrage de Windows</value>
   </data>
   <data name="&gt;&gt;fieldUpdateQuiet.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fieldMessageNotification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
   <data name="&gt;&gt;labelNotificationOpenMessage.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -980,6 +974,9 @@ Open Source, distribué sous Licence MIT</value>
   <data name="&gt;&gt;fieldNumericDelay.Name" xml:space="preserve">
     <value>fieldNumericDelay</value>
   </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>À propos</value>
+  </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>255, 130</value>
   </data>
@@ -995,6 +992,9 @@ Open Source, distribué sous Licence MIT</value>
   <data name="groupBox11.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
+  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 48</value>
+  </data>
   <data name="&gt;&gt;fieldStartTime.Name" xml:space="preserve">
     <value>fieldStartTime</value>
   </data>
@@ -1003,6 +1003,9 @@ Open Source, distribué sous Licence MIT</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 25</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fieldStartTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 21</value>
@@ -1034,14 +1037,20 @@ Open Source, distribué sous Licence MIT</value>
   <data name="groupBox9.Location" type="System.Drawing.Point, System.Drawing">
     <value>269, 7</value>
   </data>
+  <data name="fieldScheduler.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
   <data name="&gt;&gt;labelNotificationOpenSimplifiedHTML.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
+  <data name="&gt;&gt;fieldUpdateQuiet.Parent" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
   <data name="menuItemSettings.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fieldAudioPop.Name" xml:space="preserve">
     <value>fieldAudioPop</value>
@@ -1052,8 +1061,8 @@ Open Source, distribué sous Licence MIT</value>
   <data name="&gt;&gt;fieldEndTime.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="labelTotalLabels.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1072,7 +1081,7 @@ de réception comme lus.</value>
   <data name="fieldNotificationBehavior.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 21</value>
   </data>
-  <data name="&gt;&gt;fieldMinimizeToSystray.Type" xml:space="preserve">
+  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fieldPrivacyNotificationShort.Text" xml:space="preserve">
@@ -1083,9 +1092,6 @@ de réception comme lus.</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="linkVersion.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;fieldSpamNotification.Name" xml:space="preserve">
     <value>fieldSpamNotification</value>
@@ -1098,9 +1104,6 @@ de réception comme lus.</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>à</value>
-  </data>
-  <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>59, 11</value>
   </data>
   <data name="chartInbox.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1123,14 +1126,14 @@ de réception comme lus.</value>
   <data name="&gt;&gt;groupBox8.Parent" xml:space="preserve">
     <value>tabPageAccount</value>
   </data>
-  <data name="labelNotificationMarkMessageAsRead.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <data name="&gt;&gt;tabPageUpdate.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuItemCustomRingtone.Name" xml:space="preserve">
     <value>menuItemCustomRingtone</value>
+  </data>
+  <data name="linkWebsiteYusuke.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;chartUnreadMails.Parent" xml:space="preserve">
     <value>groupBox8</value>
@@ -1175,11 +1178,14 @@ Développé par Xavier Foucrier</value>
   <data name="fieldEndTime.Items14" xml:space="preserve">
     <value>19:30</value>
   </data>
-  <data name="buttonGmailDisconnect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 7, 7</value>
+  <data name="fieldEndTime.Items9" xml:space="preserve">
+    <value>14:30</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="labelRestartToApply.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="fieldUpdateService.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 24</value>
@@ -1189,6 +1195,12 @@ Développé par Xavier Foucrier</value>
   </data>
   <data name="fieldMinimizeToSystray.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 17</value>
+  </data>
+  <data name="linkRestartToApply.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 6.75pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;labelNotificationMarkMessageAsRead.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
     <value>checkBox1</value>
@@ -1220,11 +1232,17 @@ Développé par Xavier Foucrier</value>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="groupBox10.Text" xml:space="preserve">
     <value>Comportement</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="&gt;&gt;fieldEndTime.Name" xml:space="preserve">
+    <value>fieldEndTime</value>
   </data>
   <data name="&gt;&gt;tabPageAbout.Parent" xml:space="preserve">
     <value>tabControl</value>
@@ -1245,32 +1263,11 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;label18.Parent" xml:space="preserve">
     <value>groupBox8</value>
   </data>
+  <data name="&gt;&gt;label18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tabPageUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>532, 143</value>
-  </data>
-  <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAABAAAAA0AAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAA
-        ABAAAAANAAAABBoaGj4hISFQISEhUCEhIVAhISFQISEhUCEhIVAhISFQISEhUCEhIVAhISFQISEhUCEh
-        IVAhISFQISEhUBoaGj40NDRMx8fHmefn55nt7e2Z7e3tme3t7Znt7e2Z7e3tme3t7Znt7e2Z7e3tme3t
-        7Znt7e2Z5+fnmcfHx5k0NDRMRUVFSOjo6JnKysqZ3d3dmePj45nj4+OZ4+PjmePj45nj4+OZ4+PjmePj
-        45nj4+OZ3d3dmcrKypno6OiZRUVFSEtLS0bw8PCZ4ODgmc/Pz5ng4OCZ5ubmmebm5pnV1dWZ1dXVmebm
-        5pnm5uaZ4ODgmc/Pz5ng4OCZ8PDwmUtLS0ZQUFBF8/Pzmerq6pnk5OSZ09PTmeTk5JnZ2dmZp6enmaen
-        p5nZ2dmZ5OTkmdPT05nk5OSZ6urqmfPz85lQUFBFVVVVRPX19Znt7e2Z7e3tmejo6JnLy8uZq6urmd3d
-        3Znd3d2Zq6urmcvLy5no6OiZ7e3tme3t7Zn19fWZVVVVRFpaWkP39/eZ8vLymfLy8pnh4eGZr6+vmeHh
-        4Zny8vKZ8vLymeHh4Zmvr6+Z4eHhmfLy8pny8vKZ9/f3mVpaWkNfX19B+vr6mfb29pnm5uaZtLS0mebm
-        5pn29vaZ9vb2mfb29pn29vaZ5ubmmbS0tJnm5uaZ9vb2mfr6+plfX19BZGRkQPz8/Jnp6emZubm5menp
-        6Zn5+fmZ+fn5mfn5+Zn5+fmZ+fn5mfn5+Znp6emZubm5menp6Zn8/PyZZGRkQGhoaD/v7++Zvr6+me3t
-        7Zn8/PyZ/Pz8mfz8/Jn8/PyZ/Pz8mfz8/Jn8/PyZ/Pz8me3t7Zm+vr6Z7+/vmWhoaD9ra2s+wsLCme/v
-        75n///+Z////mf///5n///+Z////mf///5n///+Z////mf///5n///+Z7+/vmcLCwplra2s+bm5uLm5u
-        bj5ubm4+bm5uPm5ubj5ubm4+bm5uPm5ubj5ubm4+bm5uPm5ubj5ubm4+bm5uPm5ubj5ubm4+bm5uLgAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAA//8AAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAD//wAA//8AAA==
-</value>
   </data>
   <data name="separator.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1287,8 +1284,11 @@ prochain démarrage de l'application.</value>
   <data name="labelTotalLabels.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="fieldStartTime.Items11" xml:space="preserve">
-    <value>16:00</value>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="&gt;&gt;tabPageNotification.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;labelDuration.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1320,9 +1320,6 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;label14.Name" xml:space="preserve">
     <value>label14</value>
   </data>
-  <data name="&gt;&gt;fieldUpdateDownload.Parent" xml:space="preserve">
-    <value>groupBox7</value>
-  </data>
   <data name="tabPageAbout.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
@@ -1335,9 +1332,6 @@ prochain démarrage de l'application.</value>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 85</value>
-  </data>
   <data name="fieldMinimizeToSystray.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -1349,6 +1343,9 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>Authentification</value>
+  </data>
+  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
   <data name="tabPageAbout.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1368,8 +1365,8 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;labelNotificationMarkMessageAsRead.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>tabPageAbout</value>
+  <data name="labelTokenDelivery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>11, 13</value>
   </data>
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Afficher tout le contenu du message</value>
@@ -1389,17 +1386,20 @@ prochain démarrage de l'application.</value>
   <data name="fieldPrivacyNotificationNone.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
-  <data name="fieldDayOfWeek.Items" xml:space="preserve">
-    <value>lundi</value>
-  </data>
   <data name="menuItemTimout.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="&gt;&gt;linkRestartToApply.Name" xml:space="preserve">
+    <value>linkRestartToApply</value>
   </data>
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="linkWebsiteXavier.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 34</value>
+  <data name="fieldStartTime.Items12" xml:space="preserve">
+    <value>17:00</value>
+  </data>
+  <data name="labelTotalDrafts.Text" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="fieldAskonExit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -1443,12 +1443,6 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;labelDuration.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 13</value>
-  </data>
-  <data name="&gt;&gt;menuItem4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="labelRestartToApply.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 30</value>
   </data>
@@ -1464,6 +1458,9 @@ prochain démarrage de l'application.</value>
   <data name="linkLicense.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;menuItem2.Name" xml:space="preserve">
+    <value>menuItem2</value>
+  </data>
   <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -1473,17 +1470,17 @@ prochain démarrage de l'application.</value>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>269, 7</value>
   </data>
-  <data name="&gt;&gt;menuItem2.Name" xml:space="preserve">
-    <value>menuItem2</value>
-  </data>
-  <data name="&gt;&gt;groupBox11.Name" xml:space="preserve">
-    <value>groupBox11</value>
+  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
+    <value>tabPageGeneral</value>
   </data>
   <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
     <value>255, 130</value>
   </data>
   <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="tabPageNotification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -1500,8 +1497,8 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;tabPageUpdate.Name" xml:space="preserve">
     <value>tabPageUpdate</value>
   </data>
-  <data name="groupBox9.Text" xml:space="preserve">
-    <value>Disponibilité</value>
+  <data name="&gt;&gt;linkLicense.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fieldPrivacyNotificationAll.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1509,11 +1506,11 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;label13.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;fieldMinimizeToSystray.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;fieldUpdateService.Parent" xml:space="preserve">
+    <value>groupBox7</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
+    <value>45, 13</value>
   </data>
   <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
     <value>groupBox4</value>
@@ -1521,17 +1518,11 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="labelTotalLabels.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 85</value>
+  <data name="pictureBoxHeader.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
   </data>
   <data name="labelTotalDrafts.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="fieldUpdatePeriod.Items" xml:space="preserve">
-    <value>au démarrage de l'application</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="menuItemSettings.Text" xml:space="preserve">
     <value>Ouvrir</value>
@@ -1539,8 +1530,20 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;linkVersion.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelNotificationOpenMessage.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="&gt;&gt;linkRestartToApply.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fieldUpdateDownload.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="labelNotificationOpenMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 38</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;fieldUpdatePeriod.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1574,6 +1577,9 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="tabPageUpdate.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
+  </data>
+  <data name="&gt;&gt;chartTotalMails.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="menuItem4.Text" xml:space="preserve">
     <value>-</value>
@@ -1623,9 +1629,6 @@ prochain démarrage de l'application.</value>
   <data name="fieldEndTime.Items10" xml:space="preserve">
     <value>15:30</value>
   </data>
-  <data name="pictureBoxHeader.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
   <data name="fieldLanguage.Items" xml:space="preserve">
     <value>Français</value>
   </data>
@@ -1644,17 +1647,17 @@ prochain démarrage de l'application.</value>
   <data name="fieldRunAtWindowsStartup.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 25</value>
   </data>
-  <data name="linkWebsiteYusuke.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="fieldLanguage.Items2" xml:space="preserve">
+    <value>Deutsch</value>
   </data>
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>146, 109</value>
   </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Version</value>
-  </data>
   <data name="&gt;&gt;fieldUpdateService.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fieldStartTime.Items4" xml:space="preserve">
+    <value>9:00</value>
   </data>
   <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 67</value>
@@ -1671,9 +1674,6 @@ prochain démarrage de l'application.</value>
   <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="groupBox11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 130</value>
-  </data>
   <data name="&gt;&gt;buttonGmailDisconnect.Name" xml:space="preserve">
     <value>buttonGmailDisconnect</value>
   </data>
@@ -1685,9 +1685,6 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="fieldAudioNotification.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;fieldNotificationBehavior.Parent" xml:space="preserve">
-    <value>groupBox3</value>
   </data>
   <data name="fieldRunAtWindowsStartup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1703,6 +1700,9 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="chartInbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 45</value>
+  </data>
+  <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 130</value>
   </data>
   <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1743,11 +1743,11 @@ prochain démarrage de l'application.</value>
   <data name="labelUpdateControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>11, 13</value>
   </data>
-  <data name="fieldMessageNotification.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="fieldPrivacyNotificationNone.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 49</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
+    <value>groupBox5</value>
   </data>
   <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt, style=Bold</value>
@@ -1770,6 +1770,9 @@ prochain démarrage de l'application.</value>
   <data name="fieldMessageNotification.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;menuItemCustomRingtone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="linkPrivacy.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
@@ -1778,9 +1781,6 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="&gt;&gt;tabPageGeneral.Parent" xml:space="preserve">
     <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;fieldNotificationBehavior.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="fieldAudioPop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1793,9 +1793,6 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
-  </data>
-  <data name="&gt;&gt;linkWebsiteYusuke.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="linkVersion.Text" xml:space="preserve">
     <value>-</value>
@@ -1817,6 +1814,9 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="&gt;&gt;fieldUpdateService.Name" xml:space="preserve">
     <value>fieldUpdateService</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;pictureBoxPrivacyPreview.Name" xml:space="preserve">
     <value>pictureBoxPrivacyPreview</value>
@@ -1848,8 +1848,8 @@ prochain démarrage de l'application.</value>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="groupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
+  <data name="labelNotificationOpenMessage.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>518, 130</value>
@@ -1864,10 +1864,7 @@ prochain démarrage de l'application.</value>
     <value>2, 3, 2, 3</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>38, 15</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>40, 15</value>
   </data>
   <data name="fieldPrivacyNotificationAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1881,8 +1878,8 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;groupBox7.Name" xml:space="preserve">
     <value>groupBox7</value>
   </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Interface</value>
+  <data name="linkVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="&gt;&gt;separator.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1896,7 +1893,13 @@ prochain démarrage de l'application.</value>
   <data name="fieldAudioNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 17</value>
   </data>
+  <data name="&gt;&gt;tabPagePrivacy.Name" xml:space="preserve">
+    <value>tabPagePrivacy</value>
+  </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="linkLicense.Size" type="System.Drawing.Size, System.Drawing">
@@ -1904,9 +1907,6 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
-  </data>
-  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
   </data>
   <data name="buttonGmailDisconnect.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1916,9 +1916,6 @@ prochain démarrage de l'application.</value>
   </data>
   <data name="&gt;&gt;labelRestartToApply.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="buttonCheckForUpdate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;labelNotificationMarkMessageAsRead.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -1944,6 +1941,12 @@ prochain démarrage de l'application.</value>
   <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
+  <data name="labelTotalDrafts.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ringtoneIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
   <data name="pictureBoxPrivacyPreview.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>AutoSize</value>
   </data>
@@ -1968,26 +1971,20 @@ prochain démarrage de l'application.</value>
   <data name="&gt;&gt;fieldUpdatePeriod.Parent" xml:space="preserve">
     <value>groupBox9</value>
   </data>
+  <data name="tabPagePrivacy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
   <data name="fieldScheduler.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
   <data name="tabPageAccount.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
-  <data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
-    <value>checkBox2</value>
-  </data>
   <data name="&gt;&gt;groupBox7.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="labelEmailAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 13</value>
-  </data>
-  <data name="&gt;&gt;fieldNotificationBehavior.Name" xml:space="preserve">
-    <value>fieldNotificationBehavior</value>
-  </data>
-  <data name="groupBox10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 7</value>
+  <data name="labelUpdateControl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -2019,6 +2016,9 @@ prochain démarrage de l'application.</value>
   <data name="buttonOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
@@ -2036,23 +2036,20 @@ prochain démarrage de l'application.</value>
 de Gmail. Certaines fonctionnalités récentes
 peuvent ne pas être disponibles.</value>
   </data>
+  <data name="&gt;&gt;menuItemExit.Name" xml:space="preserve">
+    <value>menuItemExit</value>
+  </data>
   <data name="labelSettingsSaved.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="&gt;&gt;linkLicense.Parent" xml:space="preserve">
     <value>tabPageAbout</value>
   </data>
-  <data name="fieldScheduler.Text" xml:space="preserve">
-    <value>Activer la synchronisation planifiée</value>
-  </data>
   <data name="&gt;&gt;pictureBoxPrivacyPreview.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="fieldDayOfWeek.TabIndex" type="System.Int32, mscorlib">
-    <value>102</value>
   </data>
   <data name="fieldUpdatePeriod.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -2072,9 +2069,6 @@ peuvent ne pas être disponibles.</value>
   <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 13</value>
-  </data>
   <data name="fieldNumericDelay.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -2087,8 +2081,11 @@ peuvent ne pas être disponibles.</value>
   <data name="&gt;&gt;labelNotificationOpenSimplifiedHTML.Name" xml:space="preserve">
     <value>labelNotificationOpenSimplifiedHTML</value>
   </data>
-  <data name="&gt;&gt;menuItemTimeoutIndefinitely.Name" xml:space="preserve">
-    <value>menuItemTimeoutIndefinitely</value>
+  <data name="&gt;&gt;fieldNumericDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;menuItemTimeout30m.Name" xml:space="preserve">
     <value>menuItemTimeout30m</value>
@@ -2102,38 +2099,26 @@ peuvent ne pas être disponibles.</value>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="menuItem1.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="notifyIcon.Text" xml:space="preserve">
-    <value>Démarrage ...</value>
+  <data name="&gt;&gt;fieldRunAtWindowsStartup.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>59, 13</value>
   </data>
   <data name="&gt;&gt;menuItemSettings.Name" xml:space="preserve">
     <value>menuItemSettings</value>
   </data>
-  <data name="fieldStartTime.Items9" xml:space="preserve">
-    <value>14:00</value>
-  </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;menuItemDefaultRingtone.Name" xml:space="preserve">
     <value>menuItemDefaultRingtone</value>
   </data>
-  <data name="&gt;&gt;fieldStartTime.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="fieldAudioNotification.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 71</value>
   </data>
   <data name="chartTotalMails.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 10</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fieldDayOfWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 21</value>
@@ -2177,8 +2162,8 @@ peuvent ne pas être disponibles.</value>
   <data name="&gt;&gt;fieldUpdateService.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;linkRestartToApply.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="buttonCheckForUpdate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2201,29 +2186,20 @@ peuvent ne pas être disponibles.</value>
   <data name="linkWebsiteXavier.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;labelUpdateControl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="label17.TabIndex" type="System.Int32, mscorlib">
     <value>105</value>
   </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>tabPageAbout</value>
+  <data name="buttonGmailDisconnect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 7, 7</value>
   </data>
   <data name="pictureBoxPrivacyPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>279, 21</value>
   </data>
-  <data name="&gt;&gt;groupBox9.Parent" xml:space="preserve">
-    <value>tabPageUpdate</value>
-  </data>
-  <data name="menuItemMarkAsRead.Text" xml:space="preserve">
-    <value>Marquer comme lu</value>
-  </data>
-  <data name="groupBox7.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
   <data name="menuItemEditRingtone.Text" xml:space="preserve">
     <value>Modifier la sonnerie</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="fieldSpamNotification.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2237,17 +2213,14 @@ peuvent ne pas être disponibles.</value>
   <data name="&gt;&gt;pictureBoxHeader.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>540, 171</value>
-  </data>
   <data name="labelUpdateControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="fieldAudioPop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 71</value>
+  <data name="fieldUpdatePeriod.Items3" xml:space="preserve">
+    <value>une fois par mois</value>
   </data>
   <data name="&gt;&gt;groupBox10.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2255,8 +2228,8 @@ peuvent ne pas être disponibles.</value>
   <data name="&gt;&gt;ringtoneIcon.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;buttonGmailDisconnect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
   </data>
   <data name="labelEmailAddress.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2266,6 +2239,9 @@ peuvent ne pas être disponibles.</value>
   </data>
   <data name="&gt;&gt;chartUnreadMails.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>groupBox11</value>
   </data>
   <data name="&gt;&gt;menuItemTimeout30m.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2303,29 +2279,23 @@ peuvent ne pas être disponibles.</value>
   <data name="linkWebsiteXavier.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="fieldStepDelay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="fieldScheduler.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="checkBox1.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="fieldAudioNotification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 71</value>
+  <data name="labelTotalLabels.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt, style=Bold</value>
   </data>
   <data name="fieldMinimizeToSystray.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 48</value>
   </data>
-  <data name="&gt;&gt;fieldNumericDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="linkWebsiteYusuke.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="buttonGmailDisconnect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 99</value>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fieldAudioNotification.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2336,14 +2306,11 @@ peuvent ne pas être disponibles.</value>
   <data name="fieldNumericDelay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
-  <data name="tabPageSchedule.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
   <data name="&gt;&gt;linkVersion.Parent" xml:space="preserve">
     <value>tabPageAbout</value>
   </data>
-  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
   <data name="&gt;&gt;label8.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2351,8 +2318,8 @@ peuvent ne pas être disponibles.</value>
   <data name="buttonCheckForUpdate.Text" xml:space="preserve">
     <value>Vérifier maintenant</value>
   </data>
-  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="groupBox11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 130</value>
   </data>
   <data name="fieldStepDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 21</value>
@@ -2373,8 +2340,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="fieldAskonExit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label18.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
   </data>
   <data name="&gt;&gt;labelTotalDrafts.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2421,8 +2388,11 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
   </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 48</value>
+  <data name="&gt;&gt;notifyMenu.Name" xml:space="preserve">
+    <value>notifyMenu</value>
+  </data>
+  <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="&gt;&gt;linkRestartToApply.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2430,8 +2400,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="linkPrivacy.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="labelUpdateControl.Text" xml:space="preserve">
-    <value>-</value>
+  <data name="fieldScheduler.Text" xml:space="preserve">
+    <value>Activer la synchronisation planifiée</value>
   </data>
   <data name="&gt;&gt;fieldAudioPop.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -2439,14 +2409,14 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tabPageAbout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
+    <value>101, 13</value>
   </data>
   <data name="fieldSpamNotification.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2454,11 +2424,11 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="tabPageGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="labelNotificationOpenMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 38</value>
+  <data name="labelTotalDrafts.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt, style=Bold</value>
   </data>
-  <data name="fieldScheduler.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="fieldUpdatePeriod.Items" xml:space="preserve">
+    <value>au démarrage de l'application</value>
   </data>
   <data name="&gt;&gt;buttonCheckForUpdate.Parent" xml:space="preserve">
     <value>groupBox9</value>
@@ -2481,20 +2451,14 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="labelNotificationOpenSimplifiedHTML.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 51</value>
   </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>Développement</value>
-  </data>
   <data name="fieldUpdateService.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 32</value>
   </data>
   <data name="&gt;&gt;fieldStartTime.Parent" xml:space="preserve">
     <value>groupBox11</value>
   </data>
-  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <data name="&gt;&gt;linkWebsiteYusuke.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2505,14 +2469,17 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;fieldDayOfWeek.Parent" xml:space="preserve">
     <value>groupBox11</value>
   </data>
-  <data name="&gt;&gt;label18.Name" xml:space="preserve">
-    <value>label18</value>
+  <data name="&gt;&gt;fieldUpdateDownload.Parent" xml:space="preserve">
+    <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
     <value>tabPageNotification</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 25</value>
+  </data>
+  <data name="fieldUpdateDownload.Text" xml:space="preserve">
+    <value>Télécharger et lancer l'installation des mises à jour automatiquement</value>
   </data>
   <data name="&gt;&gt;labelEmailAddress.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -2529,8 +2496,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="pictureBoxPrivacyPreview.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
-  <data name="&gt;&gt;fieldUpdateService.Parent" xml:space="preserve">
-    <value>groupBox7</value>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -2550,14 +2517,14 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;fieldScheduler.Name" xml:space="preserve">
     <value>fieldScheduler</value>
   </data>
-  <data name="&gt;&gt;label18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="menuItemMarkAsRead.Text" xml:space="preserve">
+    <value>Marquer comme lu</value>
   </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>À propos</value>
+  <data name="pictureBoxHeader.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
-  <data name="&gt;&gt;labelNotificationMarkMessageAsRead.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tabPageNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>532, 143</value>
   </data>
   <data name="labelEmailAddress.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 43</value>
@@ -2574,8 +2541,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 13</value>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;label9.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2598,8 +2565,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="groupBox9.Size" type="System.Drawing.Size, System.Drawing">
     <value>255, 130</value>
   </data>
-  <data name="labelTokenDelivery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 13</value>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>564, 316</value>
@@ -2609,6 +2576,9 @@ ouvrira automatiquement la boite de réception.</value>
   </data>
   <data name="buttonOK.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 13</value>
   </data>
   <data name="linkWebsiteXavier.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -2631,8 +2601,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="linkPrivacy.Text" xml:space="preserve">
     <value>Consulter notre politique de confidentialité</value>
   </data>
-  <data name="labelTotalLabels.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+  <data name="labelRestartToApply.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;labelTotalDrafts.Name" xml:space="preserve">
     <value>labelTotalDrafts</value>
@@ -2642,6 +2612,9 @@ ouvrira automatiquement la boite de réception.</value>
   </data>
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="tabPageAccount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>groupBox4</value>
@@ -2667,8 +2640,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;fieldEndTime.Parent" xml:space="preserve">
     <value>groupBox11</value>
   </data>
-  <data name="fieldStepDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 100</value>
+  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="labelTokenDelivery.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -2679,11 +2652,11 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 25</value>
   </data>
-  <data name="fieldDayOfWeek.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 46</value>
+  <data name="labelEmailAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>11, 13</value>
   </data>
-  <data name="pictureBoxHeader.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
+  <data name="labelTotalLabels.Location" type="System.Drawing.Point, System.Drawing">
+    <value>141, 85</value>
   </data>
   <data name="fieldUpdatePeriod.Items1" xml:space="preserve">
     <value>une fois par jour</value>
@@ -2694,23 +2667,20 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
     <value>141, 67</value>
   </data>
-  <data name="fieldStartTime.Items8" xml:space="preserve">
-    <value>13:00</value>
-  </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
-    <value>groupBox5</value>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="tabPageAccount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 85</value>
   </data>
   <data name="&gt;&gt;labelEmailAddress.Name" xml:space="preserve">
     <value>labelEmailAddress</value>
   </data>
-  <data name="&gt;&gt;tabPageNotification.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2742,26 +2712,29 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;fieldPrivacyNotificationNone.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;labelUpdateControl.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="linkWebsiteXavier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 34</value>
   </data>
-  <data name="&gt;&gt;menuItemExit.Name" xml:space="preserve">
-    <value>menuItemExit</value>
+  <data name="&gt;&gt;fieldNotificationBehavior.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;fieldSpamNotification.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Interface</value>
   </data>
   <data name="tabPageGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
-  <data name="fieldSpamNotification.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 48</value>
+  <data name="fieldMessageNotification.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;chartTotalMails.Parent" xml:space="preserve">
     <value>groupBox8</value>
   </data>
   <data name="linkVersion.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Comportement</value>
   </data>
   <data name="fieldMessageNotification.Text" xml:space="preserve">
     <value>Nouveau message</value>
@@ -2784,20 +2757,17 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="labelTotalDrafts.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;fieldUpdateDownload.Name" xml:space="preserve">
-    <value>fieldUpdateDownload</value>
-  </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label19.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="linkRestartToApply.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 6.75pt, style=Bold</value>
+  <data name="fieldDayOfWeek.Items" xml:space="preserve">
+    <value>lundi</value>
   </data>
-  <data name="separator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 268</value>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>540, 171</value>
   </data>
   <data name="menuItemMarkAsRead.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2805,8 +2775,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="fieldPrivacyNotificationShort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 17</value>
+  <data name="fieldNumericDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="labelTokenDelivery.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -2826,6 +2796,9 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
+  <data name="fieldStartTime.Items14" xml:space="preserve">
+    <value>19:00</value>
+  </data>
   <data name="&gt;&gt;fieldStepDelay.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
@@ -2835,8 +2808,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="chartUnreadMails.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 45</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
+    <value>checkBox2</value>
   </data>
   <data name="labelTotalDrafts.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 85</value>
@@ -2850,8 +2823,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="linkWebsiteYusuke.Location" type="System.Drawing.Point, System.Drawing">
     <value>255, 35</value>
   </data>
-  <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>476, 281</value>
+  <data name="linkLicense.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>59, 11</value>
   </data>
   <data name="fieldEndTime.Items12" xml:space="preserve">
     <value>17:30</value>
@@ -2877,8 +2850,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="labelDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>101</value>
   </data>
   <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 17</value>
@@ -2886,26 +2859,26 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="fieldUpdateQuiet.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
   </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="labelNotificationOpenMessage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="&gt;&gt;labelNotificationOpenMessage.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="&gt;&gt;tabPageAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tabPageSchedule.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
   </data>
-  <data name="&gt;&gt;tabPageGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="groupBox6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
   <data name="&gt;&gt;openRingtoneDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
-    <value>groupBox11</value>
+  <data name="&gt;&gt;buttonGmailDisconnect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fieldSpamNotification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -2913,35 +2886,35 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="tabPageNotification.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
-  <data name="&gt;&gt;fieldUpdateQuiet.Parent" xml:space="preserve">
-    <value>groupBox7</value>
+  <data name="&gt;&gt;groupBox9.Parent" xml:space="preserve">
+    <value>tabPageUpdate</value>
   </data>
   <data name="fieldStartTime.Items5" xml:space="preserve">
     <value>10:00</value>
   </data>
-  <data name="fieldStartTime.Items4" xml:space="preserve">
-    <value>9:00</value>
+  <data name="groupBox7.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
   <data name="fieldStartTime.Items7" xml:space="preserve">
     <value>12:00</value>
   </data>
-  <data name="fieldStartTime.Items6" xml:space="preserve">
-    <value>11:00</value>
+  <data name="&gt;&gt;fieldNotificationBehavior.Parent" xml:space="preserve">
+    <value>groupBox3</value>
   </data>
-  <data name="fieldStartTime.Items12" xml:space="preserve">
-    <value>17:00</value>
+  <data name="groupBox8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
-  <data name="fieldStartTime.Items3" xml:space="preserve">
-    <value>8:00</value>
+  <data name="&gt;&gt;fieldUpdateDownload.Name" xml:space="preserve">
+    <value>fieldUpdateDownload</value>
   </data>
   <data name="fieldStartTime.Items2" xml:space="preserve">
     <value>7:00</value>
   </data>
-  <data name="fieldAudioPop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 17</value>
+  <data name="fieldStartTime.Items9" xml:space="preserve">
+    <value>14:00</value>
   </data>
-  <data name="fieldStartTime.Items14" xml:space="preserve">
-    <value>19:00</value>
+  <data name="fieldStartTime.Items8" xml:space="preserve">
+    <value>13:00</value>
   </data>
   <data name="fieldLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 21</value>
@@ -2952,14 +2925,17 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;fieldAskonExit.Name" xml:space="preserve">
     <value>fieldAskonExit</value>
   </data>
-  <data name="labelTotalDrafts.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt, style=Bold</value>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Version</value>
   </data>
-  <data name="tabPagePrivacy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;tabPagePrivacy.Name" xml:space="preserve">
-    <value>tabPagePrivacy</value>
+  <data name="fieldDayOfWeek.Items5" xml:space="preserve">
+    <value>samedi</value>
+  </data>
+  <data name="labelTokenDelivery.Text" xml:space="preserve">
+    <value>-</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 25</value>
@@ -2982,20 +2958,20 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="tabPageSchedule.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+  <data name="fieldScheduler.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
     <value>tabPagePrivacy</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Connecté depuis le :</value>
+  <data name="fieldPrivacyNotificationShort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 17</value>
   </data>
   <data name="&gt;&gt;linkWebsiteYusuke.Parent" xml:space="preserve">
     <value>tabPageAbout</value>
   </data>
-  <data name="fieldPrivacyNotificationAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>groupBox11</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3003,8 +2979,11 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
   </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="labelUpdateControl.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="labelNotificationOpenSimplifiedHTML.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="buttonCheckForUpdate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -3015,8 +2994,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="fieldUpdateQuiet.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 97</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 13</value>
+  <data name="linkVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 35</value>
   </data>
   <data name="labelEmailAddress.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -3039,8 +3018,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="menuItemTimeout30m.Text" xml:space="preserve">
     <value>30 minutes</value>
   </data>
-  <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 130</value>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt, style=Bold</value>
   </data>
   <data name="labelTotalLabels.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3054,8 +3033,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="labelEmailAddress.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="groupBox4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
+  <data name="linkRestartToApply.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3099,8 +3078,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;fieldStepDelay.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;fieldEndTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
   <data name="fieldUpdatePeriod.Items2" xml:space="preserve">
     <value>une fois par semaine</value>
@@ -3108,8 +3087,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="fieldPrivacyNotificationNone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="fieldLanguage.Items2" xml:space="preserve">
-    <value>Deutsch</value>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="fieldStepDelay.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3126,8 +3105,29 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;menuItemNewMessage.Name" xml:space="preserve">
     <value>menuItemNewMessage</value>
   </data>
-  <data name="&gt;&gt;fieldRunAtWindowsStartup.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAABAAAAA0AAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAA
+        ABAAAAANAAAABBoaGj4hISFQISEhUCEhIVAhISFQISEhUCEhIVAhISFQISEhUCEhIVAhISFQISEhUCEh
+        IVAhISFQISEhUBoaGj40NDRMx8fHmefn55nt7e2Z7e3tme3t7Znt7e2Z7e3tme3t7Znt7e2Z7e3tme3t
+        7Znt7e2Z5+fnmcfHx5k0NDRMRUVFSOjo6JnKysqZ3d3dmePj45nj4+OZ4+PjmePj45nj4+OZ4+PjmePj
+        45nj4+OZ3d3dmcrKypno6OiZRUVFSEtLS0bw8PCZ4ODgmc/Pz5ng4OCZ5ubmmebm5pnV1dWZ1dXVmebm
+        5pnm5uaZ4ODgmc/Pz5ng4OCZ8PDwmUtLS0ZQUFBF8/Pzmerq6pnk5OSZ09PTmeTk5JnZ2dmZp6enmaen
+        p5nZ2dmZ5OTkmdPT05nk5OSZ6urqmfPz85lQUFBFVVVVRPX19Znt7e2Z7e3tmejo6JnLy8uZq6urmd3d
+        3Znd3d2Zq6urmcvLy5no6OiZ7e3tme3t7Zn19fWZVVVVRFpaWkP39/eZ8vLymfLy8pnh4eGZr6+vmeHh
+        4Zny8vKZ8vLymeHh4Zmvr6+Z4eHhmfLy8pny8vKZ9/f3mVpaWkNfX19B+vr6mfb29pnm5uaZtLS0mebm
+        5pn29vaZ9vb2mfb29pn29vaZ5ubmmbS0tJnm5uaZ9vb2mfr6+plfX19BZGRkQPz8/Jnp6emZubm5menp
+        6Zn5+fmZ+fn5mfn5+Zn5+fmZ+fn5mfn5+Znp6emZubm5menp6Zn8/PyZZGRkQGhoaD/v7++Zvr6+me3t
+        7Zn8/PyZ/Pz8mfz8/Jn8/PyZ/Pz8mfz8/Jn8/PyZ/Pz8me3t7Zm+vr6Z7+/vmWhoaD9ra2s+wsLCme/v
+        75n///+Z////mf///5n///+Z////mf///5n///+Z////mf///5n///+Z7+/vmcLCwplra2s+bm5uLm5u
+        bj5ubm4+bm5uPm5ubj5ubm4+bm5uPm5ubj5ubm4+bm5uPm5ubj5ubm4+bm5uPm5ubj5ubm4+bm5uLgAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAA//8AAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAD//wAA//8AAA==
+</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>À la réception d'un nouveau message :</value>
@@ -3141,17 +3141,17 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;groupBox9.Name" xml:space="preserve">
     <value>groupBox9</value>
   </data>
-  <data name="&gt;&gt;chartTotalMails.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="labelNotificationMarkMessageAsRead.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 17</value>
   </data>
-  <data name="fieldUpdateDownload.Text" xml:space="preserve">
-    <value>Télécharger et lancer l'installation des mises à jour automatiquement</value>
+  <data name="linkVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="labelTotalDrafts.Text" xml:space="preserve">
-    <value>0</value>
+  <data name="fieldPrivacyNotificationAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
   </data>
   <data name="pictureBoxHeader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3159,14 +3159,14 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;fieldUpdatePeriod.Name" xml:space="preserve">
     <value>fieldUpdatePeriod</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="chartTotalMails.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 45</value>
   </data>
   <data name="&gt;&gt;chartTotalMails.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Comportement</value>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="linkPrivacy.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3174,8 +3174,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;tabPageNotification.Parent" xml:space="preserve">
     <value>tabControl</value>
   </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 13</value>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>tabPageAbout</value>
   </data>
   <data name="labelNotificationMarkMessageAsRead.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 72</value>
@@ -3780,23 +3780,20 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;timerReconnect.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
+  <data name="menuItem1.Text" xml:space="preserve">
+    <value>-</value>
   </data>
-  <data name="ringtoneIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
+  <data name="&gt;&gt;groupBox11.Name" xml:space="preserve">
+    <value>groupBox11</value>
   </data>
   <data name="&gt;&gt;fieldMinimizeToSystray.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="fieldMessageNotification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
+  <data name="fieldPrivacyNotificationShort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 72</value>
   </data>
   <data name="tabPageUpdate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
-  </data>
-  <data name="&gt;&gt;groupBox8.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -3825,17 +3822,17 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="labelSettingsSaved.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 13</value>
   </data>
   <data name="linkWebsiteYusuke.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="fieldNumericDelay.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="&gt;&gt;fieldMinimizeToSystray.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Développement</value>
   </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 13</value>
@@ -3852,8 +3849,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="labelTotalLabels.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;notifyIcon.Name" xml:space="preserve">
+    <value>notifyIcon</value>
   </data>
   <data name="tabPageUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
@@ -3873,8 +3870,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;ringtoneMenu.Name" xml:space="preserve">
     <value>ringtoneMenu</value>
   </data>
-  <data name="&gt;&gt;linkRestartToApply.Name" xml:space="preserve">
-    <value>linkRestartToApply</value>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 17</value>
@@ -3888,17 +3885,17 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="fieldDayOfWeek.Items5" xml:space="preserve">
-    <value>samedi</value>
+  <data name="&gt;&gt;menuItem4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="labelNotificationOpenSimplifiedHTML.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="separator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 268</value>
   </data>
   <data name="linkLicense.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="linkVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+  <data name="&gt;&gt;linkWebsiteYusuke.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="labelSettingsSaved.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 286</value>
@@ -3909,8 +3906,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;buttonOK.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="label19.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+  <data name="&gt;&gt;tabPageUpdate.Parent" xml:space="preserve">
+    <value>tabControl</value>
   </data>
   <data name="buttonCheckForUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3929,6 +3926,9 @@ ouvrira automatiquement la boite de réception.</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
     <value>254, 79</value>
+  </data>
+  <data name="&gt;&gt;linkWebsiteXavier.Name" xml:space="preserve">
+    <value>linkWebsiteXavier</value>
   </data>
   <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
     <value>tabPageGeneral</value>
@@ -3954,17 +3954,17 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="&gt;&gt;separator.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;fieldEndTime.Name" xml:space="preserve">
-    <value>fieldEndTime</value>
+  <data name="&gt;&gt;fieldNotificationBehavior.Name" xml:space="preserve">
+    <value>fieldNotificationBehavior</value>
   </data>
-  <data name="linkWebsiteYusuke.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;timer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="buttonGmailDisconnect.Text" xml:space="preserve">
     <value>Déconnexion</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>groupBox6</value>
+  <data name="&gt;&gt;menuItemTimeoutIndefinitely.Name" xml:space="preserve">
+    <value>menuItemTimeoutIndefinitely</value>
   </data>
   <data name="separator.Size" type="System.Drawing.Size, System.Drawing">
     <value>540, 2</value>
@@ -3972,11 +3972,11 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="chartUnreadMails.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 10</value>
   </data>
-  <data name="&gt;&gt;fieldUpdateDownload.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="notifyIcon.Text" xml:space="preserve">
+    <value>Démarrage ...</value>
   </data>
-  <data name="tabPageNotification.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
+  <data name="&gt;&gt;groupBox8.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;labelNotificationOpenMessage.Name" xml:space="preserve">
     <value>labelNotificationOpenMessage</value>
@@ -3984,8 +3984,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="fieldStartTime.Items16" xml:space="preserve">
     <value>21:00</value>
   </data>
-  <data name="&gt;&gt;linkWebsiteXavier.Name" xml:space="preserve">
-    <value>linkWebsiteXavier</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 13</value>
   </data>
   <data name="linkRestartToApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3993,8 +3993,8 @@ ouvrira automatiquement la boite de réception.</value>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 13</value>
   </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>groupBox11</value>
+  <data name="fieldDayOfWeek.TabIndex" type="System.Int32, mscorlib">
+    <value>102</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>de</value>
@@ -4011,8 +4011,8 @@ ouvrira automatiquement la boite de réception.</value>
   <metadata name="timerReconnect.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>313, 17</value>
   </metadata>
-  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>235, 17</value>
+  <metadata name="ringtoneMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>450, 17</value>
   </metadata>
   <metadata name="openRingtoneDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>580, 17</value>
@@ -4023,7 +4023,7 @@ ouvrira automatiquement la boite de réception.</value>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>62</value>
   </metadata>
-  <metadata name="ringtoneMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>450, 17</value>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>235, 17</value>
   </metadata>
 </root>
