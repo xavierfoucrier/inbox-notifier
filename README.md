@@ -69,7 +69,7 @@ Read the [Softpedia Labs review](https://www.softpedia.com/get/Internet/E-mail/M
 
 
 ## Contribute
-If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](.github/CONTRIBUTING.md) before**. Thanks for taking time to contribute to Inbox Notifier.
+If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](https://github.com/xavierfoucrier/inbox-notifier/blob/main/.github/CONTRIBUTING.md) before**. Thanks for taking time to contribute to Inbox Notifier.
 
 
 ## Sponsor
