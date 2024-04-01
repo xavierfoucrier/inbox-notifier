@@ -230,7 +230,7 @@
       <Version>1.66.0.3287</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
-      <Version>1.11.58</Version>
+      <Version>1.11.60</Version>
     </PackageReference>
     <PackageReference Include="log4net">
       <Version>2.0.17</Version>
