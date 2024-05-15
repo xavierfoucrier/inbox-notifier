@@ -11,7 +11,7 @@ on:
       - '.github/labels.yml'
 
 jobs:
-  build:
+  labels:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
