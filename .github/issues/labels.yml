@@ -1,3 +1,9 @@
+- name: a11y
+  description: about accessibility
+  color: fef2c0
+- name: await test repository
+  description: waiting for a minimal test repository
+  color: 5319e7
 - name: bug
   description: bug to fix
   color: fbca04
@@ -9,7 +15,7 @@
   color: 00209a
 - name: critical
   description: critical failure to fix as soon as possible
-  color: d93f0b
+  color: b60205
 - name: dependencies
   description: update/upgrade one or more dependency
   color: 0366d6
@@ -19,14 +25,20 @@
 - name: documentation
   description: regarding the project documentation
   color: 27d19b
+- name: duplicate
+  description: a similar issue already exists
+  color: ededed
 - name: feature
   description: feature request to implement
   color: 1d76db
 - name: help
   description: need help, any contribution are welcome
   color: 5319e7
+- name: source map
+  description: about source mapping
+  color: ebe4da
 - name: motion
-  description: motion request
+  description: about motion and animation
   color: 32deca
 - name: optimization
   description: optimization request
@@ -34,9 +46,9 @@
 - name: post-it
   description: reminder or todo
   color: fcf49c
-- name: platform
+- name: environment
   description: regarding the environment or target platform
   color: f1f1f1
 - name: wontfix
   description: negligible issue or that will never be fixed
-  color: 444444
+  color: 000000

@@ -1,14 +1,18 @@
 # Github workflow to automatically sync labels in a declarative way
 # https://github.com/micnncim/action-label-syncer
 
-name: Sync labels
+name: 🏷️ synchronize labels
 
 on:
   push:
     branches:
       - main
     paths:
-      - '.github/labels.yml'
+      - .github/issues/labels.yml
+
+permissions:
+  contents: write
+  issues: write
 
 jobs:
   labels:
@@ -16,5 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: micnncim/action-label-syncer@v1
+        with:
+          manifest: .github/issues/labels.yml
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
