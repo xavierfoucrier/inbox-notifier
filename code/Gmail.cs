@@ -139,7 +139,7 @@ namespace notifier {
 
 			// refresh the token and update the token delivery date and time on the interface
 			try {
-				if (Credential.Token.IsExpired(Credential.Flow.Clock)) {
+				if (Credential.Token.IsStale) {
 					if (await Credential.RefreshTokenAsync(new CancellationToken())) {
 						UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
 					}
