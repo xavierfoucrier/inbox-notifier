@@ -1,6 +1,6 @@
 # Github workflow for Continuous Integration
 
-name: CI
+name: 🤖 continuous integration
 
 on:
   push:
@@ -13,7 +13,7 @@ on:
       - dev
 
 jobs:
-  build:
+  build-debug:
     runs-on: windows-latest
     defaults:
       run:
@@ -21,11 +21,6 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
-
-      - name: Setup NodeJS
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
@@ -40,11 +35,48 @@ jobs:
         run: |
           msbuild.exe InboxNotifier.sln /p:configuration="Debug" /p:platform="Any CPU" /m
 
+  build-x86:
+    runs-on: windows-latest
+    needs: build-debug
+    defaults:
+      run:
+        working-directory: code
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2
+
+      - name: Restore NuGet packages
+        run: nuget restore InboxNotifier.sln
+
       - name: Build solution — Release 32 bits (x86)
         run: |
           msbuild.exe InboxNotifier.sln /p:configuration="Release x86" /p:platform="Any CPU" /m
 
+  build-x64:
+    runs-on: windows-latest
+    needs: build-x86
+    defaults:
+      run:
+        working-directory: code
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2
+
+      - name: Restore NuGet packages
+        run: nuget restore InboxNotifier.sln
+
       - name: Build solution — Release 64 bits (x64)
         run: |
           msbuild.exe InboxNotifier.sln /p:configuration="Release x64" /p:platform="Any CPU" /m
-
