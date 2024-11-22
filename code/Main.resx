@@ -1142,7 +1142,7 @@ de réception comme lus.</value>
     <value>linkVersion</value>
   </data>
   <data name="linkWebsiteXavier.Text" xml:space="preserve">
-    <value>Visual Studio 17.8.3, C#
+    <value>Visual Studio 17.12.1, C#
 Développé par Xavier Foucrier</value>
   </data>
   <data name="labelTokenDelivery.AutoSize" type="System.Boolean, mscorlib">
