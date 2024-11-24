@@ -222,6 +222,23 @@ namespace notifier {
 		}
 
 		/// <summary>
+		/// Reset the notification area
+		/// </summary>
+		public void Reset() {
+
+			// restore the default systray icon and text
+			UI.notifyIcon.Icon = Resources.normal;
+			UI.notifyIcon.Text = Translation.noMessage;
+
+			// clean the tag
+			UI.NotificationService.Tag = null;
+
+			// disable the mark as read menu item
+			UI.menuItemMarkAsRead.Text = Translation.markAsRead;
+			UI.menuItemMarkAsRead.Enabled = false;
+		}
+
+		/// <summary>
 		/// Return the Gmail base URL depending on the notification behavior
 		/// </summary>
 		/// <returns>URL to access Gmail simplified or full web interface</returns>
