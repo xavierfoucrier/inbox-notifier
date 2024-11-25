@@ -188,21 +188,22 @@ namespace notifier {
 			using (FileStream stream = new FileStream($"{Path.GetDirectoryName(Application.ExecutablePath)}/client_secret.json", FileMode.Open, FileAccess.Read)) {
 
 				// define a cancellation token source
-				CancellationTokenSource cancellation = new CancellationTokenSource();
-				cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.OAUTH_TIMEOUT));
+				using (CancellationTokenSource cancellation = new CancellationTokenSource()) {
+					cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.OAUTH_TIMEOUT));
 
-				// wait for the user validation, only if the user has not already authorized the application
-				UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
-					GoogleClientSecrets.FromStream(stream).Secrets,
-					new string[] { GmailService.Scope.GmailModify },
-					"user",
-					cancellation.Token,
-					new FileDataStore(Core.ApplicationDataFolder, true),
-					new LocalServerCodeReceiver(Resources.oauth_message)
-				);
+					// wait for the user validation, only if the user has not already authorized the application
+					UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+						GoogleClientSecrets.FromStream(stream).Secrets,
+						new string[] { GmailService.Scope.GmailModify },
+						"user",
+						cancellation.Token,
+						new FileDataStore(Core.ApplicationDataFolder, true),
+						new LocalServerCodeReceiver(Resources.oauth_message)
+					);
 
-				// return the user credential
-				return credential;
+					// return the user credential
+					return credential;
+				}
 			}
 		}
 
