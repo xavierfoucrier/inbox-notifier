@@ -246,13 +246,13 @@ namespace notifier {
 		/// <summary>
 		/// Play ringtone based on displayed notification
 		/// </summary>
-		/// <param name="type"></param>
+		/// <param name="type">Type of the ringtone</param>
 		private void Ringtone(Type type = Type.Info) {
 			if (!Settings.Default.AudioNotification) {
 				return;
 			}
 
-			// 
+			// play audio based on type
 			switch (type) {
 				case Type.Info:
 
