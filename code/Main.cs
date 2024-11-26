@@ -533,7 +533,7 @@ namespace notifier {
 			}
 
 			// synchronize the inbox
-			await GmailService.Inbox.Sync(false);
+			await GmailService.Inbox.Sync(Inbox.SyncAction.Automatic);
 		}
 
 		/// <summary>

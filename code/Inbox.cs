@@ -17,6 +17,14 @@ namespace notifier {
 		#region #attributes
 
 		/// <summary>
+		/// Synchronization action
+		/// </summary>
+		public enum SyncAction : uint {
+			Automatic = 0,
+			Manual = 1
+		}
+
+		/// <summary>
 		/// Main user resource
 		/// </summary>
 		private UsersResource User;
@@ -46,9 +54,9 @@ namespace notifier {
 		/// <summary>
 		/// Asynchronous method used to synchronize the user inbox
 		/// </summary>
-		/// <param name="manual">Indicate if the synchronization come's from the timer tick or has been manually triggered</param>
+		/// <param name="action">Indicate if the synchronization come's from the timer tick or has been manually triggered by the user</param>
 		/// <param name="token">Indicate if the Gmail token need to be refreshed</param>
-		public async Task Sync(bool manual = true, bool token = false) {
+		public async Task Sync(SyncAction action = SyncAction.Manual, bool token = false) {
 
 			// do a small ping on the update service
 			await UI.UpdateService.Ping();
@@ -58,8 +66,8 @@ namespace notifier {
 				return;
 			}
 
-			// temp variable
-			bool userAction = manual;
+			// store last user action
+			Action = action;
 
 			// update the synchronization time
 			Time = DateTime.Now;
@@ -73,12 +81,12 @@ namespace notifier {
 
 			// reset reconnection count and prevent the application from displaying continuous warning icon when a timertick synchronization occurs after a reconnection attempt
 			if (ReconnectionAttempts != 0) {
-				userAction = true;
+				Action = SyncAction.Manual;
 				ReconnectionAttempts = 0;
 			}
 
-			// disable the timeout when the user do a manual synchronization
-			if (userAction && UI.NotificationService.Paused) {
+			// resume notification service when the user do a manual synchronization
+			if (Action == SyncAction.Manual && UI.NotificationService.Paused) {
 				await UI.NotificationService.Resume();
 
 				return;
@@ -103,7 +111,7 @@ namespace notifier {
 			UI.menuItemSettings.Enabled = true;
 
 			// display the sync icon, but only on manual synchronization
-			if (userAction) {
+			if (Action == SyncAction.Manual) {
 				UI.notifyIcon.Icon = Resources.sync;
 				UI.notifyIcon.Text = Translation.sync;
 			}
@@ -119,125 +127,18 @@ namespace notifier {
 				Box = await User.Labels.Get("me", "INBOX").ExecuteAsync();
 
 				// update the statistics
-				if (userAction) {
+				if (Action == SyncAction.Manual) {
 					await UpdateStatistics().ConfigureAwait(false);
 				}
 
-				// manage the spam notification
-				if (Settings.Default.SpamNotification) {
-
-					// get the "spam" label
-					Label spam = await User.Labels.Get("me", "SPAM").ExecuteAsync();
-
-					// exit the sync if the number of unread spams is the same as before
-					if (!userAction && (spam.ThreadsUnread == UnreadSpams) && UnreadSpams != 0) {
-						return;
-					}
-
-					// save the number of unread spams
-					UnreadSpams = spam.ThreadsUnread;
-
-					// manage unread spams
-					if (UnreadSpams > 0) {
-
-						// display a balloon tip in the systray with the total of unread threads
-						UI.NotificationService.Tip($"{UnreadSpams} {(UnreadSpams > 1 ? Translation.unreadSpams : Translation.unreadSpam)}", Translation.newUnreadSpam, Notification.Type.Error);
-
-						// set the notification icon and text
-						UI.notifyIcon.Icon = Resources.spam;
-						UI.notifyIcon.Text = $"{UnreadSpams} {(UnreadSpams > 1 ? Translation.unreadSpams : Translation.unreadSpam)}";
-
-						// enable the mark as read menu item
-						UI.menuItemMarkAsRead.Text = $"{Translation.markAsRead} ({UnreadSpams})";
-						UI.menuItemMarkAsRead.Enabled = true;
-
-						// update the tag
-						UI.NotificationService.Tag = "#spam";
-
-						return;
-					}
-				}
-
-				// exit the sync if the number of unread threads is the same as before
-				if (!userAction && (Box.ThreadsUnread == UnreadThreads) && UnreadThreads != 0) {
+				// synchronize inbox spams
+				if (await SyncSpams()) {
 					return;
 				}
 
-				// reset notification service
-				UI.NotificationService.Reset();
-
-				// save the number of unread threads
-				UnreadThreads = Box.ThreadsUnread;
-
-				// manage unread threads
-				if (UnreadThreads > 0) {
-
-					// set the notification icon
-					UI.notifyIcon.Icon = UnreadThreads <= Settings.Default.UNSTACK_BOUNDARY ? Resources.mails : Resources.stack;
-
-					// manage message notification
-					if (Settings.Default.MessageNotification) {
-
-						// get the message details
-						UsersResource.MessagesResource.ListRequest messages = User.Messages.List("me");
-						messages.LabelIds = "UNREAD";
-						messages.MaxResults = 1;
-
-						Message message = await User.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
-							return m.Result.Messages.First().Id;
-						})).ExecuteAsync();
-
-						//  display a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
-						if (UnreadThreads == 1 && Settings.Default.PrivacyNotification != (uint)Notification.Privacy.All) {
-							string subject = "";
-							string from = "";
-
-							foreach (MessagePartHeader header in message.Payload.Headers) {
-								string name = header.Name.ToLower();
-								string value = header.Value;
-
-								if (name == "subject") {
-									subject = string.IsNullOrEmpty(value) ? Translation.newUnreadMessage : value;
-								} else if (name == "from") {
-									Match match = Regex.Match(value, ".* <");
-
-									if (match.Length != 0) {
-										from = match.Captures[0].Value.Replace(" <", "").Replace("\"", "");
-									} else {
-										match = Regex.Match(value, "<?.*>?");
-										from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : value.Replace(match.Value, $"{UnreadThreads} {Translation.unreadMessage}");
-									}
-								}
-							}
-
-							if (Settings.Default.PrivacyNotification == (uint)Notification.Privacy.None) {
-								subject = string.IsNullOrEmpty(message.Snippet) ? Translation.newUnreadMessage : WebUtility.HtmlDecode(message.Snippet);
-							}
-
-							// detect if the message contains attachments
-							if (message.Payload.Parts != null && message.Payload.MimeType == "multipart/mixed") {
-								int attachments = message.Payload.Parts.Where(part => !string.IsNullOrEmpty(part.Filename)).Count();
-
-								if (attachments > 0) {
-									from = $"{(from.Length > 48 ? from.Substring(0, 48) : from)} - {attachments} {(attachments > 1 ? Translation.attachments : Translation.attachment)}";
-								}
-							}
-
-							UI.NotificationService.Tip(from, subject);
-						} else {
-							UI.NotificationService.Tip($"{UnreadThreads} {(UnreadThreads > 1 ? Translation.unreadMessages : Translation.unreadMessage)}", Translation.newUnreadMessage);
-						}
-
-						// update the notification tag to allow the user to directly display the specified view (inbox/message/spam) in a browser
-						UI.NotificationService.Tag = $"#inbox{(UnreadThreads == 1 ? $"/{message.Id}" : "")}";
-					}
-
-					// display the notification text
-					UI.notifyIcon.Text = $"{UnreadThreads} {(UnreadThreads > 1 ? Translation.unreadMessages : Translation.unreadMessage)}";
-
-					// enable the mark as read menu item
-					UI.menuItemMarkAsRead.Text = $"{Translation.markAsRead} ({UnreadThreads})";
-					UI.menuItemMarkAsRead.Enabled = true;
+				// synchronize inbox threads
+				if (await SyncThreads()) {
+					return;
 				}
 			} catch (IOException exception) {
 
@@ -261,6 +162,142 @@ namespace notifier {
 			} finally {
 				UI.notifyIcon.Text = $"{UI.notifyIcon.Text.Split('\n')[0]}\n{Translation.syncTime.Replace("{time}", Time.ToLongTimeString())}";
 			}
+		}
+
+		/// <summary>
+		/// Asynchronous method used to synchronize the inbox spams
+		/// </summary>
+		/// <returns>Whether or not unread spams are present in the inbox</returns>
+		private async Task<bool> SyncSpams() {
+			if (!Settings.Default.SpamNotification) {
+				return false;
+			}
+
+			// get the "spam" label
+			Label spam = await User.Labels.Get("me", "SPAM").ExecuteAsync();
+
+			// exit the sync if the number of unread spams is the same as before
+			if (Action == SyncAction.Automatic && (spam.ThreadsUnread == UnreadSpams) && UnreadSpams != 0) {
+				return true;
+			}
+
+			// save the number of unread spams
+			UnreadSpams = spam.ThreadsUnread;
+
+			// manage unread spams
+			if (UnreadSpams > 0) {
+
+				// display a balloon tip in the systray with the total of unread threads
+				UI.NotificationService.Tip($"{UnreadSpams} {(UnreadSpams > 1 ? Translation.unreadSpams : Translation.unreadSpam)}", Translation.newUnreadSpam, Notification.Type.Error);
+
+				// set the notification icon and text
+				UI.notifyIcon.Icon = Resources.spam;
+				UI.notifyIcon.Text = $"{UnreadSpams} {(UnreadSpams > 1 ? Translation.unreadSpams : Translation.unreadSpam)}";
+
+				// enable the mark as read menu item
+				UI.menuItemMarkAsRead.Text = $"{Translation.markAsRead} ({UnreadSpams})";
+				UI.menuItemMarkAsRead.Enabled = true;
+
+				// update the tag
+				UI.NotificationService.Tag = "#spam";
+
+				return true;
+			}
+
+			return false;
+		}
+
+		/// <summary>
+		/// Asynchronous method used to synchronize the inbox threads
+		/// </summary>
+		/// <returns>Whether or not unread threads are present in the inbox</returns>
+		private async Task<bool> SyncThreads() {
+
+			// exit the sync if the number of unread threads is the same as before
+			if (Action == SyncAction.Automatic && (Box.ThreadsUnread == UnreadThreads) && UnreadThreads != 0) {
+				return false;
+			}
+
+			// reset notification service
+			UI.NotificationService.Reset();
+
+			// save the number of unread threads
+			UnreadThreads = Box.ThreadsUnread;
+
+			// manage unread threads
+			if (UnreadThreads > 0) {
+
+				// set the notification icon
+				UI.notifyIcon.Icon = UnreadThreads <= Settings.Default.UNSTACK_BOUNDARY ? Resources.mails : Resources.stack;
+				
+				// manage message notification
+				if (Settings.Default.MessageNotification) {
+
+					// get the message details
+					UsersResource.MessagesResource.ListRequest messages = User.Messages.List("me");
+					messages.LabelIds = "UNREAD";
+					messages.MaxResults = 1;
+
+					Message message = await User.Messages.Get("me", await messages.ExecuteAsync().ContinueWith(m => {
+						return m.Result.Messages.First().Id;
+					})).ExecuteAsync();
+
+					//  display a balloon tip in the systray with the total of unread threads and message details, depending on the user privacy setting
+					if (UnreadThreads == 1 && Settings.Default.PrivacyNotification != (uint)Notification.Privacy.All) {
+						string subject = "";
+						string from = "";
+
+						foreach (MessagePartHeader header in message.Payload.Headers) {
+							string name = header.Name.ToLower();
+							string value = header.Value;
+
+							if (name == "subject") {
+								subject = string.IsNullOrEmpty(value) ? Translation.newUnreadMessage : value;
+							} else if (name == "from") {
+								Match match = Regex.Match(value, ".* <");
+
+								if (match.Length != 0) {
+									from = match.Captures[0].Value.Replace(" <", "").Replace("\"", "");
+								} else {
+									match = Regex.Match(value, "<?.*>?");
+									from = match.Length != 0 ? match.Value.ToLower().Replace("<", "").Replace(">", "") : value.Replace(match.Value, $"{UnreadThreads} {Translation.unreadMessage}");
+								}
+							}
+						}
+
+						if (Settings.Default.PrivacyNotification == (uint)Notification.Privacy.None) {
+							subject = string.IsNullOrEmpty(message.Snippet) ? Translation.newUnreadMessage : WebUtility.HtmlDecode(message.Snippet);
+						}
+
+						// detect if the message contains attachments
+						if (message.Payload.Parts != null && message.Payload.MimeType == "multipart/mixed") {
+							int attachments = message.Payload.Parts.Where(part => !string.IsNullOrEmpty(part.Filename)).Count();
+
+							if (attachments > 0) {
+								from = $"{(from.Length > 48 ? from.Substring(0, 48) : from)} - {attachments} {(attachments > 1 ? Translation.attachments : Translation.attachment)}";
+							}
+						}
+
+						UI.NotificationService.Tip(from, subject);
+					} else {
+						UI.NotificationService.Tip($"{UnreadThreads} {(UnreadThreads > 1 ? Translation.unreadMessages : Translation.unreadMessage)}", Translation.newUnreadMessage);
+					}
+
+					// update the notification tag to allow the user to directly display the specified view (inbox/message/spam) in a browser
+					UI.NotificationService.Tag = $"#inbox{(UnreadThreads == 1 ? $"/{message.Id}" : "")}";
+				}
+
+				// display the notification text
+				UI.notifyIcon.Text = $"{UnreadThreads} {(UnreadThreads > 1 ? Translation.unreadMessages : Translation.unreadMessage)}";
+
+				// enable the mark as read menu item
+				UI.menuItemMarkAsRead.Text = $"{Translation.markAsRead} ({UnreadThreads})";
+				UI.menuItemMarkAsRead.Enabled = true;
+
+				return true;
+			}
+
+			return false;
 		}
 
 		/// <summary>
@@ -467,6 +504,13 @@ namespace notifier {
 		#endregion
 
 		#region #accessors
+
+		/// <summary>
+		/// Last synchronization action
+		/// </summary>
+		public SyncAction Action {
+			get; set;
+		} = SyncAction.Automatic;
 
 		/// <summary>
 		/// Last synchronization time
