@@ -1,5 +1,7 @@
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using notifier.Languages;
@@ -65,6 +67,9 @@ namespace notifier {
 		/// <param name="duration">How long the notification is displayed</param>
 		public void Tip(string title, string text, Type icon = Type.Info, int duration = 450) {
 			UI.notifyIcon.ShowBalloonTip(duration, title, text, (ToolTipIcon)icon);
+
+			// play audio based on balloon type
+			Ringtone(icon);
 		}
 
 		/// <summary>
@@ -236,6 +241,41 @@ namespace notifier {
 			// disable the mark as read menu item
 			UI.menuItemMarkAsRead.Text = Translation.markAsRead;
 			UI.menuItemMarkAsRead.Enabled = false;
+		}
+
+		/// <summary>
+		/// Play ringtone based on displayed notification
+		/// </summary>
+		/// <param name="type"></param>
+		private void Ringtone(Type type = Type.Info) {
+			if (!Settings.Default.AudioNotification) {
+				return;
+			}
+
+			// 
+			switch (type) {
+				case Type.Info:
+
+					// play a ringtone based on user setting
+					if (Settings.Default.Ringtone) {
+
+						// switch to the default ringtone if the audio file can't be found
+						if (File.Exists(Settings.Default.RingtoneFile)) {
+							using (SoundPlayer player = new SoundPlayer(Settings.Default.RingtoneFile)) {
+								player.Play();
+							}
+						} else {
+							Settings.Default.Ringtone = false;
+						}
+					} else {
+						SystemSounds.Asterisk.Play();
+					}
+
+					break;
+				case Type.Error:
+					SystemSounds.Exclamation.Play();
+					break;
+			}
 		}
 
 		/// <summary>

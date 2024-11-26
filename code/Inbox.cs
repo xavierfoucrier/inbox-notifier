@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Media;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -141,11 +140,6 @@ namespace notifier {
 					// manage unread spams
 					if (UnreadSpams > 0) {
 
-						// play a sound on unread spams
-						if (Settings.Default.AudioNotification) {
-							SystemSounds.Exclamation.Play();
-						}
-
 						// display a balloon tip in the systray with the total of unread threads
 						UI.NotificationService.Tip($"{UnreadSpams} {(UnreadSpams > 1 ? Translation.unreadSpams : Translation.unreadSpam)}", Translation.newUnreadSpam, Notification.Type.Error);
 
@@ -183,25 +177,6 @@ namespace notifier {
 
 					// manage message notification
 					if (Settings.Default.MessageNotification) {
-
-						// play a sound on unread threads
-						if (Settings.Default.AudioNotification) {
-
-							// play a ringtone based on user setting
-							if (Settings.Default.Ringtone) {
-
-								// switch to the default ringtone if the audio file can't be found
-								if (File.Exists(Settings.Default.RingtoneFile)) {
-									using (SoundPlayer player = new SoundPlayer(Settings.Default.RingtoneFile)) {
-										player.Play();
-									}
-								} else {
-									Settings.Default.Ringtone = false;
-								}
-							} else {
-								SystemSounds.Asterisk.Play();
-							}
-						}
 
 						// get the message details
 						UsersResource.MessagesResource.ListRequest messages = User.Messages.List("me");
