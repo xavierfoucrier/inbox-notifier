@@ -114,8 +114,8 @@ namespace notifier {
 		public async Task Check(bool verbose = true, bool startup = false) {
 			try {
 
-				// using tls 1.2 as security protocol to contact Github.com
-				ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+				// using tls 1.3 as security protocol to contact Github.com
+				ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls13;
 
 				// get the latest tag in the Github repository tags webpage
 				HttpResponseMessage response = await Http.GetAsync($"{Settings.Default.GITHUB_REPOSITORY}/tags");
