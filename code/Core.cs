@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using notifier.Properties;
 
@@ -34,13 +35,15 @@ namespace notifier {
 		public static void RestartApplication() {
 
 			// start a new process
-			Process.Start(new ProcessStartInfo("cmd.exe", $"/C ping 127.0.0.1 -n 2 && \"{Application.ExecutablePath}\"") {
+			Process.Start(new ProcessStartInfo {
+				FileName = Application.ExecutablePath,
+				UseShellExecute = true,
 				WindowStyle = ProcessWindowStyle.Hidden,
 				CreateNoWindow = true
 			});
 
-			// exit the application
-			Application.Exit();
+			// exit the environment
+			Environment.Exit(0);
 		}
 
 		/// <summary>
