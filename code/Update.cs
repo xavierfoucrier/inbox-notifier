@@ -5,9 +5,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HtmlAgilityPack;
+using Newtonsoft.Json.Linq;
 using notifier.Languages;
 using notifier.Properties;
 
@@ -30,6 +31,11 @@ namespace notifier {
 		/// Http client used to check for updates
 		/// </summary>
 		private readonly HttpClient Http = new HttpClient();
+
+		/// <summary>
+		/// Github API endpoint
+		/// </summary>
+		private readonly string GithubEndPoint = "https://api.github.com/repos/xavierfoucrier/inbox-notifier/releases";
 
 		/// <summary>
 		/// Reference to the main interface
@@ -114,28 +120,18 @@ namespace notifier {
 		public async Task Check(bool verbose = true, bool startup = false) {
 			try {
 
-				// using tls 1.3 as security protocol to contact Github.com
-				ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls13;
+				// define user agent
+				Http.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("InboxNotifier", Core.Version));
 
-				// get the latest tag in the Github repository tags webpage
-				HttpResponseMessage response = await Http.GetAsync($"{Settings.Default.GITHUB_REPOSITORY}/tags");
+				// request the open Github API
+				HttpResponseMessage httpResponse = await Http.GetAsync(GithubEndPoint);
+				httpResponse.EnsureSuccessStatusCode();
 
-				HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
-				document.LoadHtml(await response.Content.ReadAsStringAsync());
+				string responseBody = await httpResponse.Content.ReadAsStringAsync();
+				JArray releases = JArray.Parse(responseBody);
 
-				HtmlNode node = document.DocumentNode.SelectSingleNode("//a[contains(@href, 'releases/tag/v')]");
-
-				if (node == null) {
-
-					// indicate to the user that the update service is not reachable for the moment
-					if (verbose) {
-						UI.NotificationService.Tip(Translation.updateServiceName, Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
-					}
-
-					return;
-				}
-
-				string release = node.InnerText.Trim();
+				// get the most recent release version
+				string release = releases.First["tag_name"].ToString();
 
 				// store the latest update datetime control
 				Settings.Default.UpdateControl = DateTime.Now;
