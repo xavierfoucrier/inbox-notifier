@@ -229,9 +229,6 @@
     <PackageReference Include="Google.Apis.Gmail.v1">
       <Version>1.68.0.3427</Version>
     </PackageReference>
-    <PackageReference Include="HtmlAgilityPack">
-      <Version>1.11.71</Version>
-    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
     </PackageReference>
