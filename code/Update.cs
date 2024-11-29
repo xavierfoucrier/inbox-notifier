@@ -218,12 +218,18 @@ namespace notifier {
 
 				// start the setup installer when the download has complete and exit the current application
 				client.DownloadFileCompleted += (object source, AsyncCompletedEventArgs target) => {
-					Process.Start(new ProcessStartInfo("cmd.exe", $"/C ping 127.0.0.1 -n 2 && \"{updatepath}\" {(Settings.Default.UpdateQuiet ? "/verysilent" : "")}") {
+
+					// start a new process
+					Process.Start(new ProcessStartInfo {
+						FileName = updatepath,
+						UseShellExecute = true,
 						WindowStyle = ProcessWindowStyle.Hidden,
-						CreateNoWindow = true
+						CreateNoWindow = true,
+						Arguments = Settings.Default.UpdateQuiet ? "/verysilent" : ""
 					});
 
-					Application.Exit();
+					// exit the environment
+					Environment.Exit(0);
 				};
 
 				// ensure that the Github package URI is callable
