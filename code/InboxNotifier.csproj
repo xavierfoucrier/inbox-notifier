@@ -232,9 +232,6 @@
     <PackageReference Include="HtmlAgilityPack">
       <Version>1.11.71</Version>
     </PackageReference>
-    <PackageReference Include="log4net">
-      <Version>3.0.3</Version>
-    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
     </PackageReference>
