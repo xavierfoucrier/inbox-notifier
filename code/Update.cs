@@ -33,9 +33,9 @@ namespace notifier {
 		private readonly HttpClient Http = new HttpClient();
 
 		/// <summary>
-		/// Github API endpoint
+		/// Update endpoint
 		/// </summary>
-		private readonly string GithubEndPoint = "https://api.github.com/repos/xavierfoucrier/inbox-notifier/releases";
+		private readonly string EndPoint = "https://api.github.com/repos/xavierfoucrier/inbox-notifier/releases";
 
 		/// <summary>
 		/// Reference to the main interface
@@ -124,7 +124,7 @@ namespace notifier {
 				Http.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("InboxNotifier", Core.Version));
 
 				// request the open Github API
-				HttpResponseMessage httpResponse = await Http.GetAsync(GithubEndPoint);
+				HttpResponseMessage httpResponse = await Http.GetAsync(EndPoint);
 				httpResponse.EnsureSuccessStatusCode();
 
 				string responseBody = await httpResponse.Content.ReadAsStringAsync();
