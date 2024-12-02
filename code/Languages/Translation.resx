@@ -282,6 +282,9 @@ Voulez-vous vraiment déconnecter votre compte Google et redémarrer l'applicati
 
 Cette option n'est pas activée sur ce type d'application.</value>
   </data>
+  <data name="newMajorVersion" xml:space="preserve">
+    <value>Une nouvelle version majeure de l'application est disponible sur Github : {version}</value>
+  </data>
   <data name="newUnreadMessage" xml:space="preserve">
     <value>Double-cliquez sur l'icône pour accéder à votre boîte de réception.</value>
   </data>
