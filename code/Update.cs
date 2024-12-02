@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -130,8 +131,8 @@ namespace notifier {
 				string responseBody = await httpResponse.Content.ReadAsStringAsync();
 				JArray releases = JArray.Parse(responseBody);
 
-				// get the most recent release version
-				string release = releases.First["tag_name"].ToString();
+				// filter by releases only (exclude pre-releases)
+				string release = releases.Where(version => !(bool)version["prerelease"]).First()["tag_name"].ToString();
 
 				// store the latest update datetime control
 				Settings.Default.UpdateControl = DateTime.Now;
