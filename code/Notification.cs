@@ -89,7 +89,7 @@ namespace notifier {
 			}
 
 			// display the form and focus the update tab
-			if (balloon && Tag == "update") {
+			if (balloon && UI.UpdateService.UpdateAvailable) {
 				UI.Visible = true;
 				UI.ShowInTaskbar = true;
 				UI.WindowState = FormWindowState.Normal;
