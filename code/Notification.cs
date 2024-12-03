@@ -95,6 +95,7 @@ namespace notifier {
 				UI.WindowState = FormWindowState.Normal;
 				UI.Focus();
 				UI.tabControl.SelectTab("tabPageUpdate");
+				UI.buttonCheckForUpdate.Focus();
 				Tag = null;
 
 				return;
