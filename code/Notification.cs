@@ -78,18 +78,8 @@ namespace notifier {
 		/// <param name="balloon">Define if the interaction is provided by the balloon tip</param>
 		public async Task Interaction(bool balloon = false) {
 
-			// by default, always open the gmail inbox in a browser if the interaction is provided by a double click on the systray icon
-			if (Tag == null) {
-
-				if (!balloon) {
-					Process.Start($"{GetBaseURL()}/#inbox");
-				}
-
-				return;
-			}
-
 			// display the form and focus the update tab
-			if (balloon && UI.UpdateService.UpdateAvailable) {
+			if (balloon && UI.UpdateService.UpdateAvailable && (Tag == "update" || Tag == null)) {
 				UI.Visible = true;
 				UI.ShowInTaskbar = true;
 				UI.WindowState = FormWindowState.Normal;
@@ -97,6 +87,16 @@ namespace notifier {
 				UI.tabControl.SelectTab("tabPageUpdate");
 				UI.buttonCheckForUpdate.Focus();
 				Tag = null;
+
+				return;
+			}
+
+			// by default, always open the gmail inbox in a browser if the interaction is provided by a double click on the systray icon
+			if (Tag == null) {
+
+				if (!balloon) {
+					Process.Start($"{GetBaseURL()}/#inbox");
+				}
 
 				return;
 			}
