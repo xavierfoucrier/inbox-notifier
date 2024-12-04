@@ -588,7 +588,12 @@ namespace notifier {
 				WindowState = FormWindowState.Minimized;
 				ShowInTaskbar = false;
 				Visible = false;
-				await UpdateService.Download();
+
+				if (UpdateService.MajorUpdateAvailable) {
+					UpdateService.ShowGithubRelease();
+				} else {
+					await UpdateService.Download();
+				}
 			} else {
 				await UpdateService.Check();
 			}

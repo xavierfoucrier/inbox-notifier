@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
@@ -153,11 +154,26 @@ namespace notifier {
 					// update the check for update button text
 					UI.buttonCheckForUpdate.Text = Translation.updateNow;
 
+					// check for major version changes
+					int major = int.Parse(Regex.Match(release, @"v(\d+)").Groups[1].Value);
+
+					if (major > Core.MajorVersion) {
+
+						// store the major update state
+						MajorUpdateAvailable = true;
+
+						// notify the user about new major release
+						if (verbose) {
+							UI.NotificationService.Tip(Translation.updateServiceName, Translation.newMajorVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
+						}
+				} else {
+
 					// download the update package automatically or ask the user, depending on the user setting and verbosity
 					if (verbose) {
-						UI.NotificationService.Tip(Translation.updateServiceName, Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
-					} else if (Settings.Default.UpdateDownload) {
-						await Download().ConfigureAwait(false);
+							UI.NotificationService.Tip(Translation.updateServiceName, Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
+						} else if (Settings.Default.UpdateDownload) {
+							await Download().ConfigureAwait(false);
+						}
 					}
 				} else if (verbose && !startup) {
 					MessageBox.Show(Translation.latestVersion, Translation.updateServiceName, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -249,6 +265,18 @@ namespace notifier {
 			}
 		}
 
+		/// <summary>
+		/// Show the Github release page in a browser
+		/// </summary>
+		public void ShowGithubRelease() {
+
+			// open the release link in a browser
+			Process.Start($"{Settings.Default.GITHUB_REPOSITORY}/releases/tag/{ReleaseAvailable}");
+
+			// restore default update button state
+			UI.buttonCheckForUpdate.Enabled = true;
+		}
+
 		#endregion
 
 		#region #accessors
@@ -257,6 +285,13 @@ namespace notifier {
 		/// Flag defining if an update is available
 		/// </summary>
 		public bool UpdateAvailable {
+			get; set;
+		} = false;
+
+		/// <summary>
+		/// Flag defining if a major update is available
+		/// </summary>
+		public bool MajorUpdateAvailable {
 			get; set;
 		} = false;
 
