@@ -175,11 +175,6 @@ namespace notifier {
 
 				// restore default update button state
 				UI.buttonCheckForUpdate.Enabled = true;
-
-				// synchronize the inbox if the updates has been checked at startup after asynchronous authentication
-				if (startup) {
-					await UI.GmailService.Inbox.Sync();
-				}
 			}
 		}
 
