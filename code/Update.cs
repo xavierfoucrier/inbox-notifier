@@ -166,10 +166,10 @@ namespace notifier {
 						if (verbose) {
 							UI.NotificationService.Tip(Translation.updateServiceName, Translation.newMajorVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
 						}
-				} else {
+					} else {
 
-					// download the update package automatically or ask the user, depending on the user setting and verbosity
-					if (verbose) {
+						// download the update package automatically or ask the user, depending on the user setting and verbosity
+						if (verbose) {
 							UI.NotificationService.Tip(Translation.updateServiceName, Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
 						} else if (Settings.Default.UpdateDownload) {
 							await Download().ConfigureAwait(false);
