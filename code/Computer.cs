@@ -88,7 +88,7 @@ namespace notifier {
 					}
 
 					// synchronize the inbox and renew the token
-					await UI.GmailService.Inbox.Sync(true, true);
+					await UI.GmailService.Inbox.Sync(token: true);
 
 					// enable the timer properly
 					UI.timer.Enabled = true;

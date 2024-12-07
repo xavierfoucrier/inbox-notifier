@@ -282,6 +282,9 @@ Möchten Sie ihr Gmail Konto wirklich abmelden und die Anwendung neu starten?</v
 
 Diese Option ist bei dieser Art von Anwendung nicht aktiviert.</value>
   </data>
+  <data name="newMajorVersion" xml:space="preserve">
+    <value>Eine neuere Hauptversion der Anwendung auf Github ist verfügbar: {version}</value>
+  </data>
   <data name="newUnreadMessage" xml:space="preserve">
     <value>Doppelklicken Sie auf das Symbol, um auf Ihren Posteingang zuzugreifen.</value>
   </data>

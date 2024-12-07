@@ -533,7 +533,7 @@ namespace notifier {
 			}
 
 			// synchronize the inbox
-			await GmailService.Inbox.Sync(false);
+			await GmailService.Inbox.Sync(Inbox.SyncAction.Automatic);
 		}
 
 		/// <summary>
@@ -588,7 +588,12 @@ namespace notifier {
 				WindowState = FormWindowState.Minimized;
 				ShowInTaskbar = false;
 				Visible = false;
-				await UpdateService.Download();
+
+				if (UpdateService.MajorUpdateAvailable) {
+					UpdateService.ShowGithubRelease();
+				} else {
+					await UpdateService.Download();
+				}
 			} else {
 				await UpdateService.Check();
 			}

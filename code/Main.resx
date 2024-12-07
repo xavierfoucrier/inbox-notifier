@@ -1142,7 +1142,7 @@ de réception comme lus.</value>
     <value>linkVersion</value>
   </data>
   <data name="linkWebsiteXavier.Text" xml:space="preserve">
-    <value>Visual Studio 17.8.3, C#
+    <value>Visual Studio 17.12.2, C#
 Développé par Xavier Foucrier</value>
   </data>
   <data name="labelTokenDelivery.AutoSize" type="System.Boolean, mscorlib">
@@ -1864,7 +1864,7 @@ prochain démarrage de l'application.</value>
     <value>2, 3, 2, 3</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>40, 15</value>
+    <value>41, 15</value>
   </data>
   <data name="fieldPrivacyNotificationAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

@@ -123,12 +123,13 @@ namespace notifier {
 			// enable the main timer
 			UI.timer.Enabled = true;
 
-			// synchronize the user mailbox, after checking for update depending on the user settings, or by default after the asynchronous authentication
+			// check for update depending on the user settings
 			if (Settings.Default.UpdateService && Update.IsPeriodSetToStartup()) {
 				await UI.UpdateService.Check(!Settings.Default.UpdateDownload, true);
-			} else {
-				await Inbox.Sync();
 			}
+
+			// synchronize the user mailbox
+			await Inbox.Sync();
 		}
 
 		/// <summary>
@@ -139,7 +140,7 @@ namespace notifier {
 
 			// refresh the token and update the token delivery date and time on the interface
 			try {
-				if (Credential.Token.IsExpired(Credential.Flow.Clock)) {
+				if (Credential.Token.IsStale) {
 					if (await Credential.RefreshTokenAsync(new CancellationToken())) {
 						UI.labelTokenDelivery.Text = Credential.Token.IssuedUtc.ToLocalTime().ToString();
 					}
@@ -188,21 +189,22 @@ namespace notifier {
 			using (FileStream stream = new FileStream($"{Path.GetDirectoryName(Application.ExecutablePath)}/client_secret.json", FileMode.Open, FileAccess.Read)) {
 
 				// define a cancellation token source
-				CancellationTokenSource cancellation = new CancellationTokenSource();
-				cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.OAUTH_TIMEOUT));
+				using (CancellationTokenSource cancellation = new CancellationTokenSource()) {
+					cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.OAUTH_TIMEOUT));
 
-				// wait for the user validation, only if the user has not already authorized the application
-				UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
-					GoogleClientSecrets.FromStream(stream).Secrets,
-					new string[] { GmailService.Scope.GmailModify },
-					"user",
-					cancellation.Token,
-					new FileDataStore(Core.ApplicationDataFolder, true),
-					new LocalServerCodeReceiver(Resources.oauth_message)
-				);
+					// wait for the user validation, only if the user has not already authorized the application
+					UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+						GoogleClientSecrets.FromStream(stream).Secrets,
+						new string[] { GmailService.Scope.GmailModify },
+						"user",
+						cancellation.Token,
+						new FileDataStore(Core.ApplicationDataFolder, true),
+						new LocalServerCodeReceiver(Resources.oauth_message)
+					);
 
-				// return the user credential
-				return credential;
+					// return the user credential
+					return credential;
+				}
 			}
 		}
 

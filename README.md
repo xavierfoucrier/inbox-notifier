@@ -45,7 +45,7 @@ Note that this version of the .NET Framework **evolve in time**: the application
 #### Setup installer
 The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions: this is the better way to install Windows application and allow you to **cleanly install/uninstall** the application with ease.
 
-* :package: [Inbox Notifier 3.11.0](https://github.com/xavierfoucrier/inbox-notifier/releases/download/v3.11.0/Inbox.Notifier.3.11.0.exe)
+* :package: [Inbox Notifier 3.15.0](https://github.com/xavierfoucrier/inbox-notifier/releases/download/v3.15.0/Inbox.Notifier.3.15.0.exe)
 
 > Note that you will need **administrator rights** to properly complete the installation.
 

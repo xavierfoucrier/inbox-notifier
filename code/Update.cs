@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HtmlAgilityPack;
+using Newtonsoft.Json.Linq;
 using notifier.Languages;
 using notifier.Properties;
 
@@ -30,6 +33,11 @@ namespace notifier {
 		/// Http client used to check for updates
 		/// </summary>
 		private readonly HttpClient Http = new HttpClient();
+
+		/// <summary>
+		/// Update endpoint
+		/// </summary>
+		private readonly string EndPoint = "https://api.github.com/repos/xavierfoucrier/inbox-notifier/releases";
 
 		/// <summary>
 		/// Reference to the main interface
@@ -114,28 +122,18 @@ namespace notifier {
 		public async Task Check(bool verbose = true, bool startup = false) {
 			try {
 
-				// using tls 1.2 as security protocol to contact Github.com
-				ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+				// define user agent
+				Http.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("InboxNotifier", Core.Version));
 
-				// get the latest tag in the Github repository tags webpage
-				HttpResponseMessage response = await Http.GetAsync($"{Settings.Default.GITHUB_REPOSITORY}/tags");
+				// request the open Github API
+				HttpResponseMessage httpResponse = await Http.GetAsync(EndPoint);
+				httpResponse.EnsureSuccessStatusCode();
 
-				HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
-				document.LoadHtml(await response.Content.ReadAsStringAsync());
+				string responseBody = await httpResponse.Content.ReadAsStringAsync();
+				JArray releases = JArray.Parse(responseBody);
 
-				HtmlNode node = document.DocumentNode.SelectSingleNode("//a[contains(@href, 'releases/tag/v')]");
-
-				if (node == null) {
-
-					// indicate to the user that the update service is not reachable for the moment
-					if (verbose) {
-						UI.NotificationService.Tip(Translation.updateServiceName, Translation.updateServiceUnreachable, Notification.Type.Warning, 1500);
-					}
-
-					return;
-				}
-
-				string release = node.InnerText.Trim();
+				// filter by releases only (exclude pre-releases)
+				string release = releases.Where(version => !(bool)version["prerelease"]).First()["tag_name"].ToString();
 
 				// store the latest update datetime control
 				Settings.Default.UpdateControl = DateTime.Now;
@@ -156,11 +154,26 @@ namespace notifier {
 					// update the check for update button text
 					UI.buttonCheckForUpdate.Text = Translation.updateNow;
 
-					// download the update package automatically or ask the user, depending on the user setting and verbosity
-					if (verbose) {
-						UI.NotificationService.Tip(Translation.updateServiceName, Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
-					} else if (Settings.Default.UpdateDownload) {
-						await Download().ConfigureAwait(false);
+					// check for major version changes
+					int major = int.Parse(Regex.Match(release, @"v(\d+)").Groups[1].Value);
+
+					if (major > Core.MajorVersion) {
+
+						// store the major update state
+						MajorUpdateAvailable = true;
+
+						// notify the user about new major release
+						if (verbose) {
+							UI.NotificationService.Tip(Translation.updateServiceName, Translation.newMajorVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
+						}
+					} else {
+
+						// download the update package automatically or ask the user, depending on the user setting and verbosity
+						if (verbose) {
+							UI.NotificationService.Tip(Translation.updateServiceName, Translation.newVersion.Replace("{version}", ReleaseAvailable), Notification.Type.Info, 1500);
+						} else if (Settings.Default.UpdateDownload) {
+							await Download().ConfigureAwait(false);
+						}
 					}
 				} else if (verbose && !startup) {
 					MessageBox.Show(Translation.latestVersion, Translation.updateServiceName, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -178,11 +191,6 @@ namespace notifier {
 
 				// restore default update button state
 				UI.buttonCheckForUpdate.Enabled = true;
-
-				// synchronize the inbox if the updates has been checked at startup after asynchronous authentication
-				if (startup) {
-					await UI.GmailService.Inbox.Sync();
-				}
 			}
 		}
 
@@ -218,12 +226,18 @@ namespace notifier {
 
 				// start the setup installer when the download has complete and exit the current application
 				client.DownloadFileCompleted += (object source, AsyncCompletedEventArgs target) => {
-					Process.Start(new ProcessStartInfo("cmd.exe", $"/C ping 127.0.0.1 -n 2 && \"{updatepath}\" {(Settings.Default.UpdateQuiet ? "/verysilent" : "")}") {
+
+					// start a new process
+					Process.Start(new ProcessStartInfo {
+						FileName = updatepath,
+						UseShellExecute = true,
 						WindowStyle = ProcessWindowStyle.Hidden,
-						CreateNoWindow = true
+						CreateNoWindow = true,
+						Arguments = Settings.Default.UpdateQuiet ? "/verysilent" : ""
 					});
 
-					Application.Exit();
+					// exit the environment
+					Environment.Exit(0);
 				};
 
 				// ensure that the Github package URI is callable
@@ -251,6 +265,18 @@ namespace notifier {
 			}
 		}
 
+		/// <summary>
+		/// Show the Github release page in a browser
+		/// </summary>
+		public void ShowGithubRelease() {
+
+			// open the release link in a browser
+			Process.Start($"{Settings.Default.GITHUB_REPOSITORY}/releases/tag/{ReleaseAvailable}");
+
+			// restore default update button state
+			UI.buttonCheckForUpdate.Enabled = true;
+		}
+
 		#endregion
 
 		#region #accessors
@@ -260,7 +286,14 @@ namespace notifier {
 		/// </summary>
 		public bool UpdateAvailable {
 			get; set;
-		}
+		} = false;
+
+		/// <summary>
+		/// Flag defining if a major update is available
+		/// </summary>
+		public bool MajorUpdateAvailable {
+			get; set;
+		} = false;
 
 		/// <summary>
 		/// Latest release version available
@@ -274,7 +307,7 @@ namespace notifier {
 		/// </summary>
 		public bool Updating {
 			get; set;
-		}
+		} = false;
 
 		#endregion
 	}

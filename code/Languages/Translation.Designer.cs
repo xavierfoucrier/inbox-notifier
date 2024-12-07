@@ -19,7 +19,7 @@ namespace notifier.Languages {
     // à l'aide d'un outil, tel que ResGen ou Visual Studio.
     // Pour ajouter ou supprimer un membre, modifiez votre fichier .ResX, puis réexécutez ResGen
     // avec l'option /str ou régénérez votre projet VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Translation {
@@ -528,6 +528,15 @@ namespace notifier.Languages {
         internal static string mutexError {
             get {
                 return ResourceManager.GetString("mutexError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Une nouvelle version majeure de l&apos;application est disponible sur Github : {version}.
+        /// </summary>
+        internal static string newMajorVersion {
+            get {
+                return ResourceManager.GetString("newMajorVersion", resourceCulture);
             }
         }
         

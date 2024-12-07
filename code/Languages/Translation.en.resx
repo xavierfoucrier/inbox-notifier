@@ -282,6 +282,9 @@ Do you really want to disconnect your Gmail account and restart the application 
 
 This option is not enabled on this type of application.</value>
   </data>
+  <data name="newMajorVersion" xml:space="preserve">
+    <value>A newer major version of the application is available on Github: {version}</value>
+  </data>
   <data name="newUnreadMessage" xml:space="preserve">
     <value>Double-click the icon to access your inbox.</value>
   </data>

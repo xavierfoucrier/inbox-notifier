@@ -1,5 +1,7 @@
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using notifier.Languages;
@@ -65,6 +67,9 @@ namespace notifier {
 		/// <param name="duration">How long the notification is displayed</param>
 		public void Tip(string title, string text, Type icon = Type.Info, int duration = 450) {
 			UI.notifyIcon.ShowBalloonTip(duration, title, text, (ToolTipIcon)icon);
+
+			// play audio based on balloon type
+			Ringtone(icon);
 		}
 
 		/// <summary>
@@ -73,24 +78,25 @@ namespace notifier {
 		/// <param name="balloon">Define if the interaction is provided by the balloon tip</param>
 		public async Task Interaction(bool balloon = false) {
 
+			// display the form and focus the update tab
+			if (balloon && UI.UpdateService.UpdateAvailable && (Tag == "update" || Tag == null)) {
+				UI.Visible = true;
+				UI.ShowInTaskbar = true;
+				UI.WindowState = FormWindowState.Normal;
+				UI.Focus();
+				UI.tabControl.SelectTab("tabPageUpdate");
+				UI.buttonCheckForUpdate.Focus();
+				Tag = null;
+
+				return;
+			}
+
 			// by default, always open the gmail inbox in a browser if the interaction is provided by a double click on the systray icon
 			if (Tag == null) {
 
 				if (!balloon) {
 					Process.Start($"{GetBaseURL()}/#inbox");
 				}
-
-				return;
-			}
-
-			// display the form and focus the update tab
-			if (balloon && Tag == "update") {
-				UI.Visible = true;
-				UI.ShowInTaskbar = true;
-				UI.WindowState = FormWindowState.Normal;
-				UI.Focus();
-				UI.tabControl.SelectTab("tabPageUpdate");
-				Tag = null;
 
 				return;
 			}
@@ -219,6 +225,58 @@ namespace notifier {
 
 			// synchronize the inbox
 			await UI.GmailService.Inbox.Sync();
+		}
+
+		/// <summary>
+		/// Reset the notification area
+		/// </summary>
+		public void Reset() {
+
+			// restore the default systray icon and text
+			UI.notifyIcon.Icon = Resources.normal;
+			UI.notifyIcon.Text = Translation.noMessage;
+
+			// clean the tag
+			UI.NotificationService.Tag = null;
+
+			// disable the mark as read menu item
+			UI.menuItemMarkAsRead.Text = Translation.markAsRead;
+			UI.menuItemMarkAsRead.Enabled = false;
+		}
+
+		/// <summary>
+		/// Play ringtone based on displayed notification
+		/// </summary>
+		/// <param name="type">Type of the ringtone</param>
+		private void Ringtone(Type type = Type.Info) {
+			if (!Settings.Default.AudioNotification) {
+				return;
+			}
+
+			// play audio based on type
+			switch (type) {
+				case Type.Info:
+
+					// play a ringtone based on user setting
+					if (Settings.Default.Ringtone) {
+
+						// switch to the default ringtone if the audio file can't be found
+						if (File.Exists(Settings.Default.RingtoneFile)) {
+							using (SoundPlayer player = new SoundPlayer(Settings.Default.RingtoneFile)) {
+								player.Play();
+							}
+						} else {
+							Settings.Default.Ringtone = false;
+						}
+					} else {
+						SystemSounds.Asterisk.Play();
+					}
+
+					break;
+				case Type.Error:
+					SystemSounds.Exclamation.Play();
+					break;
+			}
 		}
 
 		/// <summary>

@@ -21,11 +21,11 @@ namespace notifier {
 			// initialize the application version number, based on scheme Semantic Versioning - https://semver.org
 			string[] ProductVersion = Application.ProductVersion.Split('.');
 
-			string VersionMajor = ProductVersion[0];
-			string VersionMinor = ProductVersion[1];
-			string VersionPatch = ProductVersion[2];
+			MajorVersion = int.Parse(ProductVersion[0]);
+			MinorVersion = int.Parse(ProductVersion[1]);
+			PatchVersion = int.Parse(ProductVersion[2]);
 
-			Version = $"v{VersionMajor}.{VersionMinor}.{VersionPatch}";
+			Version = $"v{MajorVersion}.{MinorVersion}.{PatchVersion}";
 		}
 
 		/// <summary>
@@ -34,13 +34,15 @@ namespace notifier {
 		public static void RestartApplication() {
 
 			// start a new process
-			Process.Start(new ProcessStartInfo("cmd.exe", $"/C ping 127.0.0.1 -n 2 && \"{Application.ExecutablePath}\"") {
+			Process.Start(new ProcessStartInfo {
+				FileName = Application.ExecutablePath,
+				UseShellExecute = true,
 				WindowStyle = ProcessWindowStyle.Hidden,
 				CreateNoWindow = true
 			});
 
-			// exit the application
-			Application.Exit();
+			// exit the environment
+			Environment.Exit(0);
 		}
 
 		/// <summary>
@@ -70,6 +72,27 @@ namespace notifier {
 		public static string Version {
 			get;
 		} = "";
+
+		/// <summary>
+		/// Major application version number
+		/// </summary>
+		public static int MajorVersion {
+			get;
+		} = 0;
+
+		/// <summary>
+		/// Minor application version number
+		/// </summary>
+		public static int MinorVersion {
+			get;
+		} = 0;
+
+		/// <summary>
+		/// Patch application version number
+		/// </summary>
+		public static int PatchVersion {
+			get;
+		} = 0;
 
 		#endregion
 	}

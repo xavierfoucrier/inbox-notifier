@@ -282,6 +282,9 @@
 
 Эта опция не включена для данного типа приложения.</value>
   </data>
+  <data name="newMajorVersion" xml:space="preserve">
+    <value>Более новая версия приложения доступна на Github: {version}</value>
+  </data>
   <data name="newUnreadMessage" xml:space="preserve">
     <value>Дважды щёлкните по значку для доступа к папке "Входящие".</value>
   </data>
