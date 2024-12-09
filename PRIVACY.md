@@ -13,6 +13,7 @@ Inbox Notifier is using the Gmail API in order to communicate with your Gmail ac
 - read unread email object and message - *in order to display the appropriate informations in the notification area*
 - read the number of drafts and labels - *in order to display the inbox statistics*
 - update the inbox label - *in order to mark as read one or more messages*
+- update the spam label - *in order to mark as read one or more spams*
 
 The Google Cloud Console are logging traffic informations, API methods used, error counts and server latency statistics: all of this informations are exclusively stored on Google servers.
 
@@ -31,4 +32,4 @@ For more informations about Cloudflare resolver terms, read the [Cloudflare Comm
 
 Our Privacy Policy may change from time to time. We will not reduce your rights under this Privacy Policy without your explicit consent. We will post any privacy policy changes on this page and, if the changes are significant, we will provide a more prominent notice.
 
-*Last update: February 8th, 2024*
+*Last update: December 9th, 2024*
