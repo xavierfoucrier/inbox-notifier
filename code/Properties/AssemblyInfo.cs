@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Notifications of new Gmail messages for Windows platforms")]
 [assembly: AssemblyCompany("Xavier Foucrier")]
 [assembly: AssemblyProduct("Inbox Notifier")]
-[assembly: AssemblyCopyright("Copyright © 2024 Inbox Notifier")]
+[assembly: AssemblyCopyright("Copyright © 2025 Inbox Notifier")]
 [assembly: AssemblyTrademark("Xavier Foucrier")]
 [assembly: AssemblyCulture("")]
 

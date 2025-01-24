@@ -32,4 +32,4 @@ For more informations about Cloudflare resolver terms, read the [Cloudflare Comm
 
 Our Privacy Policy may change from time to time. We will not reduce your rights under this Privacy Policy without your explicit consent. We will post any privacy policy changes on this page and, if the changes are significant, we will provide a more prominent notice.
 
-*Last update: December 9th, 2024*
+*Last update: January 24th, 2025*
