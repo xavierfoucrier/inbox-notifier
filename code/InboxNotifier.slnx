@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Release x64" />
+    <BuildType Name="Release x86" />
+  </Configurations>
+  <Project Path="InboxNotifier.csproj" Id="2ec604fa-414a-431e-8397-8e070523d99b">
+    <BuildType Solution="Release x64|*" Project="Release 64 bits (x64)" />
+    <BuildType Solution="Release x86|*" Project="Release 32 bits (x86)" />
+  </Project>
+</Solution>
