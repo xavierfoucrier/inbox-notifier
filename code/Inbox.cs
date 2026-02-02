@@ -229,7 +229,7 @@ namespace notifier {
 
 				// set the notification icon
 				UI.notifyIcon.Icon = UnreadThreads <= Settings.Default.UNSTACK_BOUNDARY ? Resources.mails : Resources.stack;
-				
+
 				// manage message notification
 				if (Settings.Default.MessageNotification) {
 
