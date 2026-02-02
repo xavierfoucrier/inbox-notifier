@@ -535,7 +535,7 @@ Open Source, veröffentlicht unter der MIT-Lizenz</value>
     <value>153, 34</value>
   </data>
   <data name="linkWebsiteXavier.Text" xml:space="preserve">
-    <value>Visual Studio 17.12.2, C#
+    <value>Visual Studio 18.2.1, C#
 Entwickelt von Xavier Foucrier</value>
   </data>
   <data name="linkWebsiteYusuke.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
