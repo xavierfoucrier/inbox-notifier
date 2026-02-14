@@ -74,6 +74,9 @@ Read the [Softpedia Labs review](https://www.softpedia.com/get/Internet/E-mail/M
 ## Assessment
 On **June 8th, 2024**, Inbox Notifier has satisfied CASA application security requirements by successfully completed a **Cloud Application Security Assessment (CASA)**. In meeting these assessment requirements, Inbox Notifier is verified to meet the CASA Tier 2 requirements. The assessment was conducted by **PwC, an independent third party lab**, authorized by the App Defence Alliance to conduct CASA security assessments.
 
+> [!IMPORTANT]
+> **The CASA assessment for 2026 is currently being reviewed**.
+
 | Category                                                        | Status |
 | --------------------------------------------------------------- | ------ |
 | Architecture, Design and Threat Modeling Requirements           |   ✅   |
