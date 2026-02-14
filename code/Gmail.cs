@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Apis.Auth.OAuth2;
+using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
@@ -38,6 +39,16 @@ namespace notifier {
 		/// Reference to the main interface
 		/// </summary>
 		private Main UI;
+
+		/// <summary>
+		/// Client identifier
+		/// </summary>
+		private const string ClientId = "723757215783-caqv5p17r04tdf1puar3n7u91mc7h2nq.apps.googleusercontent.com";
+
+		/// <summary>
+		/// Client secret
+		/// </summary>
+		private const string ClientSecret = "OkONKl4BpLud7uJpk7YDT_fC";
 
 		#endregion
 
@@ -185,26 +196,32 @@ namespace notifier {
 		/// <returns>OAuth 2.0 user credential</returns>
 		private static async Task<UserCredential> AuthorizationBroker() {
 
-			// use the client secret file for the context
-			using (FileStream stream = new FileStream($"{Path.GetDirectoryName(Application.ExecutablePath)}/client_secret.json", FileMode.Open, FileAccess.Read)) {
+			// define a cancellation token source
+			using (CancellationTokenSource cancellation = new CancellationTokenSource()) {
+				cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.OAUTH_TIMEOUT));
 
-				// define a cancellation token source
-				using (CancellationTokenSource cancellation = new CancellationTokenSource()) {
-					cancellation.CancelAfter(TimeSpan.FromSeconds(Settings.Default.OAUTH_TIMEOUT));
+				// use pkce code flow
+				PkceGoogleAuthorizationCodeFlow flow = new PkceGoogleAuthorizationCodeFlow(
+					new GoogleAuthorizationCodeFlow.Initializer {
+						ClientSecrets = new ClientSecrets {
+							ClientId = ClientId,
+							ClientSecret = ClientSecret,
+						},
+						Scopes = new[] {
+							GmailService.Scope.GmailModify
+						},
+						DataStore = new FileDataStore(Core.ApplicationDataFolder, true),
+					}
+				);
 
-					// wait for the user validation, only if the user has not already authorized the application
-					UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
-						GoogleClientSecrets.FromStream(stream).Secrets,
-						new string[] { GmailService.Scope.GmailModify },
-						"user",
-						cancellation.Token,
-						new FileDataStore(Core.ApplicationDataFolder, true),
-						new LocalServerCodeReceiver(Resources.oauth_message)
-					);
+				// build authorization url
+				AuthorizationCodeInstalledApp authCode = new AuthorizationCodeInstalledApp(flow, new LocalServerCodeReceiver(Resources.oauth_message));
 
-					// return the user credential
-					return credential;
-				}
+				// wait for the user validation, only if the user has not already authorized the application
+				UserCredential credential = await authCode.AuthorizeAsync("user", cancellation.Token);
+
+				// return the user credential
+				return credential;
 			}
 		}
 
