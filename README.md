@@ -13,7 +13,7 @@ Inbox Notifier allows you to display **Gmail notifications** instantly in the Wi
 * Privacy setting - *choose the privacy level for notifications*
 * Custom ringtone - *select a custom file to use as notification ringtone*
 * Credential managment - *login and logout with ease*
-* Multilingual support - *french/english/german/russian*
+* Multilingual support - *French/English/German/Russian*
 * Inbox statistics preview - *display drafts/labels/unreads/totals messages from the inbox*
 * Attachment information - *notice when a message have one or more attachments*
 * Proxy support - *use Windows proxy settings when available*
@@ -31,6 +31,10 @@ Discover application interface and features through **some Youtube videos**:
 Inbox Notifier is build on top of C# and .NET Framework with Visual Studio, fully tested on **Windows 7**, **Windows 10** and **Windows 11**.
 
 Many other Windows operating systems may work, like Windows 8/8.1/Server, but are not extensively tested for the moment. Regarding the .NET Framework version, some operating systems like Windows Vista/XP are no longer supported.
+
+> [!WARNING]
+> Compatibility will evolve **in the next major version**, mainly for security reasons.  
+> See related issue about [.NET Framework 4.8.1 migration](https://github.com/xavierfoucrier/inbox-notifier/issues/211).
 
 
 ## Dependencies
@@ -50,11 +54,10 @@ The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions: 
 > Note that you will need **administrator rights** to properly complete the installation.
 
 #### History versions
-You can grab an old version of the application in the [Github version history](https://github.com/xavierfoucrier/inbox-notifier/tags): keep in mind that the alpha/beta versions are just "pre-releases" and **are not** "production environment" ready. Portable versions are **no longer available since official 1.0 release**. Some installers may **no longer working** due to the OAuth client secret key revocation.
+You can grab an old version of the application in the [releases history](https://github.com/xavierfoucrier/inbox-notifier/releases): keep in mind that the alpha/beta versions are just "pre-releases" and **are not** "production environment" ready. Portable versions are **no longer available since official 1.0 release**. Some installers may **no longer working** due to the OAuth client secret key revocation.
 
 
 ## Privacy policy
-
 Inbox Notifier respect user privacy.
 
 You can **read the [privacy notice](PRIVACY.md)** to see how the application clearly expose the manner in which it accesses, uses, stores, or shares user data.
