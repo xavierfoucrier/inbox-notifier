@@ -1,7 +1,7 @@
 # Inbox Notifier – [![Version](https://img.shields.io/github/release/xavierfoucrier/inbox-notifier)](https://github.com/xavierfoucrier/inbox-notifier/releases/latest) [![Code quality](https://img.shields.io/codacy/grade/088c98657120438ca3f8ffb529abcb79)](https://app.codacy.com/gh/xavierfoucrier/inbox-notifier/dashboard) [![Downloads](https://img.shields.io/github/downloads/xavierfoucrier/inbox-notifier/total "Downloads - All releases")](https://github.com/xavierfoucrier/inbox-notifier/releases) [![Softpedia](https://img.shields.io/badge/softpedia-award-%230E7FC0 "Softpedia - Award")](https://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Inbox-Notifier.shtml#status) [![ADA](https://img.shields.io/badge/casa%20-%20assessment%20-%20%23019688 "App Defense Alliance - Cloud Application Security Assessment")](https://github.com/xavierfoucrier/inbox-notifier?tab=readme-ov-file#assessment)
 Gmail notifications instantly in the Windows taskbar.
 
-[![Inbox Notifier](logo.png "Inbox Notifier")](logo.png?raw=true)
+[![Inbox Notifier](logo.jpg "Inbox Notifier")](logo.jpg?raw=true)
 
 ## Features
 Inbox Notifier allows you to display **Gmail notifications** instantly in the Windows taskbar, without the need to have a Google Chrome instance open and running. The application is provided with **a bunch of useful features that bring your inbox always up to date** and keep you focus on your work:
