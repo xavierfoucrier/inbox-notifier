@@ -91,41 +91,50 @@ namespace notifier {
 				return;
 			}
 
-			// by default, always open the gmail inbox in a browser if the interaction is provided by a double click on the systray icon
-			if (Tag == null) {
+			// double click on the systray icon
+			if (!balloon) {
 
-				if (!balloon) {
+				// not tag provided: nothing to do
+				if (Tag == null) {
 					Process.Start($"{GetBaseURL()}/#inbox");
-				}
 
-				return;
-			}
-
-			// do nothing if the notification behavior is set to "do nothing"
-			if (balloon && Settings.Default.NotificationBehavior == (uint)Behavior.DoNothing) {
-				return;
-			}
-
-			// mark the message as read if the notification behavior is set to "mark as read"
-			if (balloon && Settings.Default.NotificationBehavior == (uint)Behavior.MarkAsRead) {
-				await UI.GmailService.Inbox.MarkAsRead();
-
-				// prevent systray icon restoration when spams are marked as read and there is other messages in the inbox
-				if (UI.GmailService.Inbox.UnreadThreads != 0) {
 					return;
 				}
-			}
 
-			// open the inbox if the notification behavior is set to "open the inbox"
-			if (balloon && Settings.Default.NotificationBehavior == (uint)Behavior.OpenInbox) {
-				Process.Start($"{GetBaseURL()}");
-
-				return;
-			}
-
-			// open the inbox if the notification behavior is set to "open the message"
-			if (balloon && Settings.Default.NotificationBehavior == (uint)Behavior.OpenMessage) {
+				// open the inbox by default with the specified tag
 				Process.Start($"{GetBaseURL()}/{Tag}");
+			} else {
+
+				// click on the balloon
+				switch (Settings.Default.NotificationBehavior) {
+
+					// do nothing if the notification behavior is set to "do nothing"
+					case (uint)Behavior.DoNothing:
+						return;
+
+					// open the inbox if the notification behavior is set to "open the message"
+					case (uint)Behavior.OpenMessage:
+						Process.Start($"{GetBaseURL()}/{Tag}");
+
+						break;
+
+					// mark the message as read if the notification behavior is set to "mark as read"
+					case (uint)Behavior.MarkAsRead:
+						await UI.GmailService.Inbox.MarkAsRead();
+
+						// prevent systray icon restoration when spams are marked as read and there is other messages in the inbox
+						if (UI.GmailService.Inbox.UnreadThreads != 0) {
+							return;
+						}
+
+						break;
+
+					// open the inbox if the notification behavior is set to "open the inbox"
+					case (uint)Behavior.OpenInbox:
+						Process.Start($"{GetBaseURL()}");
+
+						return;
+				}
 			}
 
 			// clean the tag
