@@ -59,7 +59,6 @@ namespace notifier {
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.fieldNotificationBehavior = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.labelNotificationOpenSimplifiedHTML = new System.Windows.Forms.Label();
 			this.labelNotificationMarkMessageAsRead = new System.Windows.Forms.Label();
 			this.labelNotificationOpenMessage = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -415,7 +414,6 @@ namespace notifier {
 			resources.ApplyResources(this.groupBox3, "groupBox3");
 			this.groupBox3.Controls.Add(this.fieldNotificationBehavior);
 			this.groupBox3.Controls.Add(this.label9);
-			this.groupBox3.Controls.Add(this.labelNotificationOpenSimplifiedHTML);
 			this.groupBox3.Controls.Add(this.labelNotificationMarkMessageAsRead);
 			this.groupBox3.Controls.Add(this.labelNotificationOpenMessage);
 			this.groupBox3.Name = "groupBox3";
@@ -430,8 +428,7 @@ namespace notifier {
             resources.GetString("fieldNotificationBehavior.Items"),
             resources.GetString("fieldNotificationBehavior.Items1"),
             resources.GetString("fieldNotificationBehavior.Items2"),
-            resources.GetString("fieldNotificationBehavior.Items3"),
-            resources.GetString("fieldNotificationBehavior.Items4")});
+            resources.GetString("fieldNotificationBehavior.Items3")});
 			this.fieldNotificationBehavior.Name = "fieldNotificationBehavior";
 			this.fieldNotificationBehavior.SelectionChangeCommitted += new System.EventHandler(this.fieldNotificationBehavior_SelectionChangeCommitted);
 			// 
@@ -439,13 +436,6 @@ namespace notifier {
 			// 
 			resources.ApplyResources(this.label9, "label9");
 			this.label9.Name = "label9";
-			// 
-			// labelNotificationOpenSimplifiedHTML
-			// 
-			resources.ApplyResources(this.labelNotificationOpenSimplifiedHTML, "labelNotificationOpenSimplifiedHTML");
-			this.labelNotificationOpenSimplifiedHTML.ForeColor = System.Drawing.Color.SlateGray;
-			this.labelNotificationOpenSimplifiedHTML.Image = global::notifier.Properties.Resources.information;
-			this.labelNotificationOpenSimplifiedHTML.Name = "labelNotificationOpenSimplifiedHTML";
 			// 
 			// labelNotificationMarkMessageAsRead
 			// 
@@ -1304,7 +1294,6 @@ namespace notifier {
 		internal System.Windows.Forms.ComboBox fieldDayOfWeek;
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.CheckBox checkBox2;
-		private System.Windows.Forms.Label labelNotificationOpenSimplifiedHTML;
 				internal System.Windows.Forms.TabPage tabPageAccount;
 		private System.Windows.Forms.LinkLabel ringtoneIcon;
 		internal System.Windows.Forms.ContextMenu ringtoneMenu;

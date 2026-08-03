@@ -148,11 +148,14 @@
   <data name="fieldAudioPop.Text" xml:space="preserve">
     <value>Ton beim Starten und Beenden</value>
   </data>
+  <data name="fieldRunAtWindowsStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 17</value>
+  </data>
   <data name="fieldRunAtWindowsStartup.Text" xml:space="preserve">
     <value>Beim Windows Systemstart öffnen</value>
   </data>
   <data name="fieldMinimizeToSystray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 17</value>
+    <value>167, 17</value>
   </data>
   <data name="fieldMinimizeToSystray.Text" xml:space="preserve">
     <value>Minimieren in die Taskleiste</value>
@@ -222,26 +225,13 @@
     <value>Nachricht als gelesen markieren</value>
   </data>
   <data name="fieldNotificationBehavior.Items3" xml:space="preserve">
-    <value>Nachricht in vereinfachter Version Öffnen</value>
-  </data>
-  <data name="fieldNotificationBehavior.Items4" xml:space="preserve">
-    <value>Öffnen Sie die posteingang </value>
+    <value>Öffnen Sie die posteingang</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 13</value>
+    <value>203, 13</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Beim Anklicken der Benachrichtigung:</value>
-  </data>
-  <data name="labelNotificationOpenSimplifiedHTML.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 71</value>
-  </data>
-  <data name="labelNotificationOpenSimplifiedHTML.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 51</value>
-  </data>
-  <data name="labelNotificationOpenSimplifiedHTML.Text" xml:space="preserve">
-    <value>Diese Option öffnet die vereinfachte HTML-Version
-von Google Mail. Einige neuere Funktionen sind möglicherweise nicht verfügbar.</value>
   </data>
   <data name="labelNotificationMarkMessageAsRead.Location" type="System.Drawing.Point, System.Drawing">
     <value>26, 71</value>
@@ -268,16 +258,17 @@ als gelesen markiert.</value>
   <data name="ringtoneIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIXSURBVDhPpcxdSFNhGAfws2cIYReWoWUfFOGFXiTR
-        XV21bgIjCCGCWFSUEh4WROxCaqvWB0QXCzGWwZBgOXERFHkuckUfeCHLUY2WgpZtuu1ocxXbcVvm0/Oc
-        zt6adFMd+J33Pc95/n8JEf/LH4d/Q389kEF6aANpwAZVykmwkGPETjoMfOeZhXd4lzNLCxoHz9R1jA+e
-        V7TZkfhiPlbAYgKxOI2L+Y8FTQ3Fxx85Fd7h3bKC+zKsC57b7MqmhmM4/wExO0ZGhbdPPD9n8xOYnX4R
-        Czo3uTgjCu61w6HUm94w5mjpa6SM/3KLTsyy7zA14g1zRhQEToBz4Us0h5kwsh5HM4aVq/pZknx/VqdO
-        XsJ0rDvHGVHgb4ML3zKvNZx7iQufnqPHvgufBVr1s0SddAmpiSsaZ0SB7zi0xodvRYrpIH6e6sK5uFtw
-        23boSt+Zqes4+rgtwhlRcPsobLx7en2nGvUkc6oPswlvmad9srgnXl1M9p+q6eSMKOg5ApL3MGzzydXu
-        kN86NBu9oWrJvmJhJoCFmX7MEz5Ddw4M+eSVbt7ljCjYt9Uk2XeDdNMKqzxWaCEO0kW6S76nFeSTd3i3
-        YY3pV8Hvz54mU5nmLQDtO83br+0397L6WpOxaWSNAp5WkEqygtSSDaSeNJImSwMcdOw1D/Dd+Fe5tMBM
-        uGQZWU6qSDWpIatJHVlr3PlfhSj4dyj9AI3NSnZpiqjyAAAAAElFTkSuQmCC
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAInSURBVDhPpYxdSFNhGMf/e4cQdmEZWvZBEV7oRRLd
+        1VXrJjCCECKIExWlhGODiF1IbdX6gOhiIcbJYEiwnGwRFHkuckUfeCHLUY2WgpZtuu3M5irO5rbMJ97T
+        9ubsKjzwO89znvP//0BEWAn/HP4X/fXYzPDEwjBoYTWKlZkUKzulWJlNsbKuEnznNxPP8CzvLBc0D51v
+        6JoYuqTkZkdji/logYpxouIMLea/FHJqMDbx1KHwDM9WCB6Z2abAxe1OLTkSpfnPRNo4kTYm+PBc/nOb
+        nyRt5nU04Njm5B0heNjJjiXf94coO070I1yB91qbjrhpHyk56g7xjhD4zzDHwvdIljIh4vTZWymk3NBn
+        mcSnCzrq1FVKR3uzvCME3g52+WfmXY7m3tDC11ck2/bRS3+7PsuoU05BcvJ6jneEwHOatcdG7oaL6QB9
+        m+6huZhL4LLs0Sl/Z6Zv0dizjjDvCMG9k2zrg3Obu9WInMiqHtLi7gpeDJjFHn97JeE7W9fNO0LQd4LB
+        fZzt8phrXUGvNDwbua3mEgPFQspPhZSP8imfPoP3jwx7zGtdPMs7QnBopwG2/Qx3JLZOllibLDG7LLEe
+        WWK9ZX6lFeKTZ3i2aYPhr2Dpc6DFUEHrDsY69xp33zxs7Oc01htEdqmAX6sAVANYA6AewBYAjQCaAbSY
+        mthR+0HjIN9L/6qXC4wlySoAqwHUAKgFUAdgPYAGABtLO/9XJQQr4TeNzUp2XQZmXAAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="ringtoneIcon.Location" type="System.Drawing.Point, System.Drawing">
@@ -329,7 +320,7 @@ als gelesen markiert.</value>
     <value>Benachrichtigung</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 13</value>
+    <value>201, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Beim Empfang einer neuen Nachricht:</value>
@@ -341,7 +332,7 @@ als gelesen markiert.</value>
     <value>Alle Inhalte ausblenden</value>
   </data>
   <data name="fieldPrivacyNotificationShort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 17</value>
+    <value>195, 17</value>
   </data>
   <data name="fieldPrivacyNotificationShort.Text" xml:space="preserve">
     <value>Einen Teil der Nachricht anzeigen</value>
@@ -359,7 +350,7 @@ als gelesen markiert.</value>
     <value>Privatsphäre</value>
   </data>
   <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
+    <value>45, 13</value>
   </data>
   <data name="labelDuration.Text" xml:space="preserve">
     <value>Der Tag</value>

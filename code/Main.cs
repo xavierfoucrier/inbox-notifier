@@ -157,7 +157,6 @@ namespace notifier {
 			// display the notification labels
 			labelNotificationOpenMessage.Visible = Settings.Default.NotificationBehavior == 1;
 			labelNotificationMarkMessageAsRead.Visible = Settings.Default.NotificationBehavior == 2;
-			labelNotificationOpenSimplifiedHTML.Visible = Settings.Default.NotificationBehavior == 3;
 
 			// display the step delay setting
 			fieldStepDelay.SelectedIndex = (int)Settings.Default.StepDelay;
@@ -295,7 +294,6 @@ namespace notifier {
 			Settings.Default.NotificationBehavior = (uint)fieldNotificationBehavior.SelectedIndex;
 			labelNotificationOpenMessage.Visible = Settings.Default.NotificationBehavior == 1;
 			labelNotificationMarkMessageAsRead.Visible = Settings.Default.NotificationBehavior == 2;
-			labelNotificationOpenSimplifiedHTML.Visible = Settings.Default.NotificationBehavior == 3;
 		}
 
 		/// <summary>

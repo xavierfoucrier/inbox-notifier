@@ -38,8 +38,7 @@ namespace notifier {
 			DoNothing = 0,
 			OpenMessage = 1,
 			MarkAsRead = 2,
-			OpenSimplifiedHTML = 3,
-			OpenInbox = 4
+			OpenInbox = 3
 		}
 
 		/// <summary>
@@ -291,9 +290,9 @@ namespace notifier {
 		/// <summary>
 		/// Return the Gmail base URL depending on the notification behavior
 		/// </summary>
-		/// <returns>URL to access Gmail simplified or full web interface</returns>
+		/// <returns>URL to access the Gmail web interface</returns>
 		public static string GetBaseURL() {
-			return Settings.Default.NotificationBehavior == (uint)Behavior.OpenSimplifiedHTML ? $"{Settings.Default.GMAIL_BASEURL}/h" : Settings.Default.GMAIL_BASEURL;
+			return Settings.Default.GMAIL_BASEURL;
 		}
 
 		#endregion

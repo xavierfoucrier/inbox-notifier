@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabPageGeneral.Text" xml:space="preserve">
-    <value>Общее</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Интерфейс</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkRestartToApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>178, 109</value>
@@ -149,8 +143,8 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Язык:</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Поведение</value>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Интерфейс</value>
   </data>
   <data name="fieldAudioPop.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 17</value>
@@ -176,14 +170,14 @@
   <data name="fieldAskonExit.Text" xml:space="preserve">
     <value>Спрашивать при выходе из приложения</value>
   </data>
-  <data name="tabPageAccount.Text" xml:space="preserve">
-    <value>Аккаунт</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Поведение</value>
   </data>
-  <data name="groupBox8.Text" xml:space="preserve">
-    <value>Статистика</value>
+  <data name="tabPageGeneral.Text" xml:space="preserve">
+    <value>Общее</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
+    <value>68, 13</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>Все ярлыки</value>
@@ -195,16 +189,16 @@
     <value>Черновики</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>60, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Входящие</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Проверка подлинности</value>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Статистика</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 13</value>
+    <value>98, 13</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Токен доставлен:</value>
@@ -221,11 +215,11 @@
   <data name="buttonGmailDisconnect.Text" xml:space="preserve">
     <value>Выйти</value>
   </data>
-  <data name="tabPageNotification.Text" xml:space="preserve">
-    <value>Уведомление</value>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Проверка подлинности</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Поведение</value>
+  <data name="tabPageAccount.Text" xml:space="preserve">
+    <value>Аккаунт</value>
   </data>
   <data name="fieldNotificationBehavior.Items" xml:space="preserve">
     <value>ничего не делать</value>
@@ -237,9 +231,6 @@
     <value>отметить сообщение как прочитанное</value>
   </data>
   <data name="fieldNotificationBehavior.Items3" xml:space="preserve">
-    <value>открыть сообщение в упрощённой версии</value>
-  </data>
-  <data name="fieldNotificationBehavior.Items4" xml:space="preserve">
     <value>открыть почтовый ящик</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
@@ -247,17 +238,6 @@
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>При нажатии на уведомление:</value>
-  </data>
-  <data name="labelNotificationOpenSimplifiedHTML.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 72</value>
-  </data>
-  <data name="labelNotificationOpenSimplifiedHTML.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 51</value>
-  </data>
-  <data name="labelNotificationOpenSimplifiedHTML.Text" xml:space="preserve">
-    <value>Эта опция откроет упрощённую версию HTML
-из Gmail. Некоторые функции могут быть
-недоступны.</value>
   </data>
   <data name="labelNotificationMarkMessageAsRead.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 72</value>
@@ -280,22 +260,23 @@
     <value>При получении нескольких сообщений эта опция
 автоматически откроет папку "Входящие".</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Почта</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Поведение</value>
   </data>
   <data name="ringtoneIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIXSURBVDhPpcxdSFNhGAfws2cIYReWoWUfFOGFXiTR
-        XV21bgIjCCGCWFSUEh4WROxCaqvWB0QXCzGWwZBgOXERFHkuckUfeCHLUY2WgpZtuu1ocxXbcVvm0/Oc
-        zt6adFMd+J33Pc95/n8JEf/LH4d/Q389kEF6aANpwAZVykmwkGPETjoMfOeZhXd4lzNLCxoHz9R1jA+e
-        V7TZkfhiPlbAYgKxOI2L+Y8FTQ3Fxx85Fd7h3bKC+zKsC57b7MqmhmM4/wExO0ZGhbdPPD9n8xOYnX4R
-        Czo3uTgjCu61w6HUm94w5mjpa6SM/3KLTsyy7zA14g1zRhQEToBz4Us0h5kwsh5HM4aVq/pZknx/VqdO
-        XsJ0rDvHGVHgb4ML3zKvNZx7iQufnqPHvgufBVr1s0SddAmpiSsaZ0SB7zi0xodvRYrpIH6e6sK5uFtw
-        23boSt+Zqes4+rgtwhlRcPsobLx7en2nGvUkc6oPswlvmad9srgnXl1M9p+q6eSMKOg5ApL3MGzzydXu
-        kN86NBu9oWrJvmJhJoCFmX7MEz5Ddw4M+eSVbt7ljCjYt9Uk2XeDdNMKqzxWaCEO0kW6S76nFeSTd3i3
-        YY3pV8Hvz54mU5nmLQDtO83br+0397L6WpOxaWSNAp5WkEqygtSSDaSeNJImSwMcdOw1D/Dd+Fe5tMBM
-        uGQZWU6qSDWpIatJHVlr3PlfhSj4dyj9AI3NSnZpiqjyAAAAAElFTkSuQmCC
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAInSURBVDhPpYxdSFNhGMf/e4cQdmEZWvZBEV7oRRLd
+        1VXrJjCCECKIExWlhGODiF1IbdX6gOhiIcbJYEiwnGwRFHkuckUfeCHLUY2WgpZtuu3M5irO5rbMJ97T
+        9ubsKjzwO89znvP//0BEWAn/HP4X/fXYzPDEwjBoYTWKlZkUKzulWJlNsbKuEnznNxPP8CzvLBc0D51v
+        6JoYuqTkZkdji/logYpxouIMLea/FHJqMDbx1KHwDM9WCB6Z2abAxe1OLTkSpfnPRNo4kTYm+PBc/nOb
+        nyRt5nU04Njm5B0heNjJjiXf94coO070I1yB91qbjrhpHyk56g7xjhD4zzDHwvdIljIh4vTZWymk3NBn
+        mcSnCzrq1FVKR3uzvCME3g52+WfmXY7m3tDC11ck2/bRS3+7PsuoU05BcvJ6jneEwHOatcdG7oaL6QB9
+        m+6huZhL4LLs0Sl/Z6Zv0dizjjDvCMG9k2zrg3Obu9WInMiqHtLi7gpeDJjFHn97JeE7W9fNO0LQd4LB
+        fZzt8phrXUGvNDwbua3mEgPFQspPhZSP8imfPoP3jwx7zGtdPMs7QnBopwG2/Qx3JLZOllibLDG7LLEe
+        WWK9ZX6lFeKTZ3i2aYPhr2Dpc6DFUEHrDsY69xp33zxs7Oc01htEdqmAX6sAVANYA6AewBYAjQCaAbSY
+        mthR+0HjIN9L/6qXC4wlySoAqwHUAKgFUAdgPYAGABtLO/9XJQQr4TeNzUp2XQZmXAAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="ringtoneIcon.Location" type="System.Drawing.Point, System.Drawing">
@@ -331,10 +312,10 @@
   <data name="fieldAudioNotification.Text" xml:space="preserve">
     <value>Звуковое уведомление</value>
   </data>
-  <data name="tabPagePrivacy.Text" xml:space="preserve">
-    <value>Конфиденциальность</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Почта</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
+  <data name="tabPageNotification.Text" xml:space="preserve">
     <value>Уведомление</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
@@ -361,11 +342,11 @@
   <data name="fieldPrivacyNotificationNone.Text" xml:space="preserve">
     <value>Показывать всё содержимое сообщения</value>
   </data>
-  <data name="tabPageSchedule.Text" xml:space="preserve">
-    <value>Расписание</value>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Уведомление</value>
   </data>
-  <data name="groupBox11.Text" xml:space="preserve">
-    <value>Временной интервал</value>
+  <data name="tabPagePrivacy.Text" xml:space="preserve">
+    <value>Конфиденциальность</value>
   </data>
   <data name="labelDuration.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -427,8 +408,8 @@
   <data name="fieldDayOfWeek.Items6" xml:space="preserve">
     <value>воскресенье</value>
   </data>
-  <data name="groupBox10.Text" xml:space="preserve">
-    <value>Поведение</value>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Временной интервал</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="checkBox2.AutoSize" type="System.Boolean, mscorlib">
@@ -470,11 +451,11 @@
   <data name="fieldScheduler.Text" xml:space="preserve">
     <value>Включить синхронизацию по расписанию</value>
   </data>
-  <data name="tabPageUpdate.Text" xml:space="preserve">
-    <value>Обновления</value>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Поведение</value>
   </data>
-  <data name="groupBox9.Text" xml:space="preserve">
-    <value>Доступность</value>
+  <data name="tabPageSchedule.Text" xml:space="preserve">
+    <value>Расписание</value>
   </data>
   <data name="buttonCheckForUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>172, 99</value>
@@ -509,11 +490,11 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Последняя проверка:</value>
   </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>Поведение</value>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Доступность</value>
   </data>
   <data name="fieldUpdateQuiet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 17</value>
+    <value>111, 17</value>
   </data>
   <data name="fieldUpdateQuiet.Text" xml:space="preserve">
     <value>Тихая установка</value>
@@ -530,8 +511,11 @@
   <data name="fieldUpdateService.Text" xml:space="preserve">
     <value>Включить автоматическую проверку обновлений</value>
   </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>Инфо</value>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Поведение</value>
+  </data>
+  <data name="tabPageUpdate.Text" xml:space="preserve">
+    <value>Обновления</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="linkPrivacy.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
@@ -594,6 +578,9 @@
   <data name="label14.Text" xml:space="preserve">
     <value>Версия</value>
   </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>Инфо</value>
+  </data>
   <data name="labelSettingsSaved.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 13</value>
   </data>
@@ -633,9 +620,6 @@
   <data name="menuItemMarkAsRead.Text" xml:space="preserve">
     <value>Отметить как прочитанное</value>
   </data>
-  <data name="menuItemTimout.Text" xml:space="preserve">
-    <value>Не беспокоить</value>
-  </data>
   <data name="menuItemTimeoutDisabled.Text" xml:space="preserve">
     <value>Отключить</value>
   </data>
@@ -653,6 +637,9 @@
   </data>
   <data name="menuItemTimeoutIndefinitely.Text" xml:space="preserve">
     <value>Бессрочно</value>
+  </data>
+  <data name="menuItemTimout.Text" xml:space="preserve">
+    <value>Не беспокоить</value>
   </data>
   <data name="menuItemSettings.Text" xml:space="preserve">
     <value>Открыть</value>
