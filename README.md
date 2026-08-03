@@ -28,19 +28,19 @@ Discover application interface and features through **some Youtube videos**:
 
 
 ## Compatibility
-Inbox Notifier is build on top of C# and .NET Framework with Visual Studio, fully tested on **Windows 7**, **Windows 10** and **Windows 11**.
+Inbox Notifier is build on top of C# and .NET Framework with Visual Studio, fully tested on **Windows 10** and **Windows 11**.
 
-Many other Windows operating systems may work, like Windows 8/8.1/Server, but are not extensively tested for the moment. Regarding the .NET Framework version, some operating systems like Windows Vista/XP are no longer supported.
+Many other Windows operating systems may work, like Windows Server, but are not extensively tested for the moment. Regarding the .NET Framework version, some operating systems like Windows Vista/XP are no longer supported.
 
 > [!WARNING]
-> Compatibility will evolve **in the next major version**, mainly for security reasons.  
+> Compatibility has evolve **in the last major version**, mainly for security reasons.  
 > See related issue about [.NET Framework 4.8.1 migration](https://github.com/xavierfoucrier/inbox-notifier/issues/211).
 
 
 ## Dependencies
 To ensure a stable running of Inbox Notifier, you need to have **some requirements** setted on your machine.
 
-1. Microsoft `.NET Framework 4.8` minimum required
+1. Microsoft `.NET Framework 4.8.1` minimum required
 
 Note that this version of the .NET Framework **evolve in time**: the application cares about **system security** and having one of the latest .NET version is very important for the final user. By default, if you don't have the required version installed, the application will display a message and propose to download the specified version on the **Microsoft official site**.
 
