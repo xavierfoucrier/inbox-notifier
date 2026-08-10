@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("Gmail notifications for Windows")]
-[assembly: AssemblyDescription("Notifications of new Gmail messages for Windows platforms")]
+[assembly: AssemblyDescription("A Windows desktop notifier for new Gmail messages")]
 [assembly: AssemblyCompany("Xavier Foucrier")]
 [assembly: AssemblyProduct("Inbox Notifier")]
 [assembly: AssemblyCopyright("Copyright © 2026 Inbox Notifier")]
