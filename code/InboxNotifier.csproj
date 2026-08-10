@@ -225,7 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Google.Apis.Gmail.v1">
-      <Version>1.74.0.4162</Version>
+      <Version>1.75.0.4225</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.4</Version>
