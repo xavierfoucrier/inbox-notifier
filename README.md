@@ -6,16 +6,16 @@ Gmail notifications instantly in the Windows taskbar.
 ## Features
 Inbox Notifier allows you to display **Gmail notifications** instantly in the Windows taskbar, without the need to have a Google Chrome instance open and running. The application is provided with **a bunch of useful features that bring your inbox always up to date** and keep you focus on your work:
 
-* Synchronization - *automatic sync that keep you up to date every time*
+* Synchronization - *automatic sync that keeps you up to date every time*
 * Email notifications - *display concise notifications when needed*
-* SPAM checking - *enforce user to clean SPAMs regularly*
+* SPAM checking - *encourage user to clean SPAMs regularly*
 * Do not disturb mode - *keep focus at work*
 * Privacy setting - *choose the privacy level for notifications*
 * Custom ringtone - *select a custom file to use as notification ringtone*
-* Credential managment - *login and logout with ease*
+* Credential management - *login and logout with ease*
 * Multilingual support - *French/English/German/Russian*
-* Inbox statistics preview - *display drafts/labels/unreads/totals messages from the inbox*
-* Attachment information - *notice when a message have one or more attachments*
+* Inbox statistics preview - *display draft/label/unread/total messages from the inbox*
+* Attachment information - *notice when a message has one or more attachments*
 * Proxy support - *use Windows proxy settings when available*
 * Network reconnection - *try to reconnect to the network when the internet connection is lost*
 * User privacy - *use Cloudflare DNS and fallback to Google if needed*
@@ -28,39 +28,39 @@ Discover application interface and features through **some Youtube videos**:
 
 
 ## Compatibility
-Inbox Notifier is build on top of C# and .NET Framework with Visual Studio, fully tested on **Windows 10** and **Windows 11**.
+Inbox Notifier is built on top of C# and .NET Framework with Visual Studio, fully tested on **Windows 10** and **Windows 11**.
 
 Many other Windows operating systems may work, like Windows Server, but are not extensively tested for the moment. Regarding the .NET Framework version, some operating systems like Windows Vista/XP/7/8 are no longer supported.
 
 > [!WARNING]
-> Compatibility has evolve **in the last major version**, mainly for security reasons.  
+> Compatibility has evolved **in the last major version**, mainly for security reasons.  
 > See related issue about [.NET Framework 4.8.1 migration](https://github.com/xavierfoucrier/inbox-notifier/issues/211).
 
 
 ## Dependencies
-To ensure a stable running of Inbox Notifier, you need to have **some requirements** setted on your machine.
+To ensure a stable operation of Inbox Notifier, you need to have **some requirements** installed on your machine.
 
 1. Microsoft `.NET Framework 4.8.1` minimum required
 
-Note that this version of the .NET Framework **evolve in time**: the application cares about **system security** and having one of the latest .NET version is very important for the final user. By default, if you don't have the required version installed, the application will display a message and propose to download the specified version on the **Microsoft official site**.
+Note that this version of the .NET Framework **evolves in time**: the application cares about **system security** and having one of the latest .NET versions is very important for the final user. By default, if you don't have the required version installed, the application will display a message and propose to download the specified version on the **Microsoft official site**.
 
 
 ## Download
 #### Setup installer
-The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions: this is the better way to install Windows application and allow you to **cleanly install/uninstall** the application with ease.
+The setup installer contains both `32 bits (x86)` and `64 bits (x64)` versions: this is the best way to install Windows application and allow you to **cleanly install/uninstall** the application with ease.
 
 * :package: [Inbox Notifier 4.0.0](https://github.com/xavierfoucrier/inbox-notifier/releases/download/v4.0.0/Inbox.Notifier.4.0.0.exe)
 
 > Note that you will need **administrator rights** to properly complete the installation.
 
-#### History versions
-You can grab an old version of the application in the [releases history](https://github.com/xavierfoucrier/inbox-notifier/releases): keep in mind that the alpha/beta versions are just "pre-releases" and **are not** "production environment" ready. Portable versions are **no longer available since official 1.0 release**. Some installers may **no longer working** due to the OAuth client secret key revocation.
+#### Previous versions
+You can grab an old version of the application in the [releases history](https://github.com/xavierfoucrier/inbox-notifier/releases): keep in mind that the alpha/beta versions are just "pre-releases" and **are not** "production environment" ready. Portable versions are **no longer available since official 1.0 release**. Some installers may **no longer work** due to the OAuth client secret key revocation.
 
 
 ## Privacy policy
-Inbox Notifier respect user privacy.
+Inbox Notifier respects user privacy.
 
-You can **read the [privacy notice](PRIVACY.md)** to see how the application clearly expose the manner in which it accesses, uses, stores, or shares user data.
+You can **read the [privacy notice](PRIVACY.md)** to see how the application clearly exposes the manner in which it accesses, uses, stores, or shares user data.
 
 
 ## Softpedia award
@@ -68,11 +68,11 @@ This product was last tested in the **Softpedia Labs** on **December 7th, 2024**
 
 Softpedia guarantees that Inbox Notifier is **100% Free**, which means it does not contain any form of malware, including but not limited to: spyware, viruses, trojans and backdoors. This software product was tested thoroughly and was found **absolutely clean**; therefore, it can be installed with no concern by any computer user. However, it should be noted that this product will be retested periodically and the award may be withdrawn, so you should check back occasionally and pay attention to the date of testing shown above.
 
-Read the [Softpedia Labs review](https://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Inbox-Notifier.shtml) for more informations.
+Read the [Softpedia Labs review](https://www.softpedia.com/get/Internet/E-mail/Mail-Utilities/xavierfoucrier-Inbox-Notifier.shtml) for more information.
 
 
 ## Assessment
-On **June 8th, 2024**, Inbox Notifier has satisfied CASA application security requirements by successfully completed a **Cloud Application Security Assessment (CASA)**. In meeting these assessment requirements, Inbox Notifier is verified to meet the CASA Tier 2 requirements. The assessment was conducted by **PwC, an independent third party lab**, authorized by the App Defence Alliance to conduct CASA security assessments.
+On **June 8th, 2024**, Inbox Notifier has satisfied CASA application security requirements by successfully completing a **Cloud Application Security Assessment (CASA)**. In meeting these assessment requirements, Inbox Notifier is verified to meet the CASA Tier 2 requirements. The assessment was conducted by **PwC, an independent third party lab**, authorized by the App Defense Alliance to conduct CASA security assessments.
 
 | Category                                                        | Status |
 | --------------------------------------------------------------- | ------ |
@@ -91,16 +91,16 @@ On **June 8th, 2024**, Inbox Notifier has satisfied CASA application security re
 | API and Web Service Verification Requirements                   |   ✅   |
 | Configuration Verification Requirements                         |   ✅   |
 
-CASA is based on the industry-recognized **Open Web Application Security Project (OWASP)** Application Security Verification Standard (ASVS) to provide third-party (3P) application developers with a basis for testing technical application security controls, a consistent set of requirements for secure application development, a homogenized coverage and assurance levels for providing security verification using industry-aligned frameworks and open security standards.
+CASA is based on the industry-recognized **Open Web Application Security Project (OWASP)** Application Security Verification Standard (ASVS) to provide third-party (3P) application developers with a basis for testing technical application security controls, a consistent set of requirements for secure application development, a standardized level of coverage and assurance for providing security verification using industry-aligned frameworks and open security standards.
 
 > [!IMPORTANT]
-> **Since 2026, this application is no more CASA-certified**.  
+> **Since 2026, this application is no longer CASA-certified**.  
 >
-> Google now charges for CASA certification with the majority of providers on the market. As this application is developed entirely as open source and lacks regular funding for maintenance, we do not have the financial resources to certify it annually. However, we strive to maintain a high level of rigor across all CASA certification requirements listed above.
+> Google now charges for CASA certification with the majority of providers on the market. As this application is developed entirely as open-source software and lacks regular funding for maintenance, we do not have the financial resources to certify it annually. However, we strive to maintain a high level of rigor across all CASA certification requirements listed above.
 
 
 ## Contribute
-If you want to report a bug or if you just want to request for a new feature/improvement, please **read the project [contributors guidelines](https://github.com/xavierfoucrier/inbox-notifier/blob/main/.github/CONTRIBUTING.md) before**. Thanks for taking time to contribute to Inbox Notifier.
+If you want to report a bug or if you just want to request a new feature/improvement, please **read the project [contributors guidelines](https://github.com/xavierfoucrier/inbox-notifier/blob/main/.github/CONTRIBUTING.md) before**. Thanks for taking the time to contribute to Inbox Notifier.
 
 
 ## Sponsor
