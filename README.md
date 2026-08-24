@@ -72,6 +72,11 @@ Read the [Softpedia Labs review](https://www.softpedia.com/get/Internet/E-mail/M
 
 
 ## Assessment
+> [!IMPORTANT]
+> **Since 2026, this application is no longer CASA-certified**.  
+>
+> Google now charges for CASA certification with the majority of providers on the market. As this application is developed entirely as open-source software and lacks regular funding for maintenance, we do not have the financial resources to certify it annually. However, we strive to maintain a high level of rigor across all CASA certification requirements listed below.
+
 On **June 8th, 2024**, Inbox Notifier has satisfied CASA application security requirements by successfully completing a **Cloud Application Security Assessment (CASA)**. In meeting these assessment requirements, Inbox Notifier is verified to meet the CASA Tier 2 requirements. The assessment was conducted by **PwC, an independent third party lab**, authorized by the App Defense Alliance to conduct CASA security assessments.
 
 | Category                                                        | Status |
@@ -92,11 +97,6 @@ On **June 8th, 2024**, Inbox Notifier has satisfied CASA application security re
 | Configuration Verification Requirements                         |   ✅   |
 
 CASA is based on the industry-recognized **Open Web Application Security Project (OWASP)** Application Security Verification Standard (ASVS) to provide third-party (3P) application developers with a basis for testing technical application security controls, a consistent set of requirements for secure application development, a standardized level of coverage and assurance for providing security verification using industry-aligned frameworks and open security standards.
-
-> [!IMPORTANT]
-> **Since 2026, this application is no longer CASA-certified**.  
->
-> Google now charges for CASA certification with the majority of providers on the market. As this application is developed entirely as open-source software and lacks regular funding for maintenance, we do not have the financial resources to certify it annually. However, we strive to maintain a high level of rigor across all CASA certification requirements listed above.
 
 
 ## Contribute
