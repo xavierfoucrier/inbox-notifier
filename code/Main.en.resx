@@ -510,7 +510,7 @@ will automatically open the inbox.</value>
 Open Source, distributed under MIT License</value>
   </data>
   <data name="linkWebsiteXavier.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>40, 15</value>
+    <value>39, 15</value>
   </data>
   <data name="linkWebsiteXavier.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 34</value>
