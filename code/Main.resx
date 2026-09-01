@@ -1137,7 +1137,7 @@ de réception comme lus.</value>
     <value>linkVersion</value>
   </data>
   <data name="linkWebsiteXavier.Text" xml:space="preserve">
-    <value>Visual Studio 18.8.2, C#
+    <value>Visual Studio 18.9.2, C#
 Développé par Xavier Foucrier</value>
   </data>
   <data name="labelTokenDelivery.AutoSize" type="System.Boolean, mscorlib">
